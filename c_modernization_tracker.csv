@@ -1,0 +1,356 @@
+filename,filepath,file_type,lines,complexity,purpose,dependencies,replacement_strategy,priority,status,estimated_effort,notes,last_updated
+qu2cu.c,./venv/lib/python3.12/site-packages/fontTools/qu2cu/qu2cu.c,C,16767,Medium,Mathematical Algorithm,"['Python.h', 'stddef.h', 'stdint.h', 'math.h', 'omp.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+bezierTools.c,./venv/lib/python3.12/site-packages/fontTools/misc/bezierTools.c,C,40157,High,FFT/Signal Processing,"['Python.h', 'stddef.h', 'stdint.h', 'math.h', 'omp.h']",Numba/SciPy/External Library,High,Not Started,TBD,,2025-11-22
+cu2qu.c,./venv/lib/python3.12/site-packages/fontTools/cu2qu/cu2qu.c,C,15774,Medium,Mathematical Algorithm,"['Python.h', 'stddef.h', 'stdint.h', 'math.h', 'omp.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+iup.c,./venv/lib/python3.12/site-packages/fontTools/varLib/iup.c,C,19855,Medium,Mathematical Algorithm,"['Python.h', 'stddef.h', 'stdint.h', 'math.h', 'omp.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+momentsPen.c,./venv/lib/python3.12/site-packages/fontTools/pens/momentsPen.c,C,13472,Medium,Mathematical Algorithm,"['Python.h', 'stddef.h', 'stdint.h', 'math.h', 'omp.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+lexer.c,./venv/lib/python3.12/site-packages/fontTools/feaLib/lexer.c,C,17357,Medium,Mathematical Algorithm,"['Python.h', 'stddef.h', 'stdint.h', 'math.h', 'omp.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+cfuncs.c,./venv/lib/python3.12/site-packages/Cython/Debugger/Tests/cfuncs.c,C,9,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+ObjectHandling.c,./venv/lib/python3.12/site-packages/Cython/Utility/ObjectHandling.c,C,3274,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+Buffer.c,./venv/lib/python3.12/site-packages/Cython/Utility/Buffer.c,C,866,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+Builtins.c,./venv/lib/python3.12/site-packages/Cython/Utility/Builtins.c,C,811,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+Overflow.c,./venv/lib/python3.12/site-packages/Cython/Utility/Overflow.c,C,385,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+CppSupport.cpp,./venv/lib/python3.12/site-packages/Cython/Utility/CppSupport.cpp,C++,152,Low,File I/O,"['new', 'typeinfo', 'stdexcept', 'ios', 'utility']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+NumpyImportArray.c,./venv/lib/python3.12/site-packages/Cython/Utility/NumpyImportArray.c,C,47,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+FunctionArguments.c,./venv/lib/python3.12/site-packages/Cython/Utility/FunctionArguments.c,C,1044,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+TestUtilityLoader.c,./venv/lib/python3.12/site-packages/Cython/Utility/TestUtilityLoader.c,C,13,Low,Utility/Unknown,[],Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+MemoryView_C.c,./venv/lib/python3.12/site-packages/Cython/Utility/MemoryView_C.c,C,931,Low,File I/O,['stdio.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+UFuncs_C.c,./venv/lib/python3.12/site-packages/Cython/Utility/UFuncs_C.c,C,90,Low,File I/O,"['numpy/arrayobject.h', 'numpy/ufuncobject.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+Printing.c,./venv/lib/python3.12/site-packages/Cython/Utility/Printing.c,C,87,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+CythonFunction.c,./venv/lib/python3.12/site-packages/Cython/Utility/CythonFunction.c,C,1833,Medium,Mathematical Algorithm,['descrobject.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+Complex.c,./venv/lib/python3.12/site-packages/Cython/Utility/Complex.c,C,379,Low,File I/O,"['complex', 'complex.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+StringTools.c,./venv/lib/python3.12/site-packages/Cython/Utility/StringTools.c,C,1380,Low,File I/O,"['string.h', 'string', 'string_view']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+ImportExport.c,./venv/lib/python3.12/site-packages/Cython/Utility/ImportExport.c,C,920,Medium,Mathematical Algorithm,['stdalign.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+TString.c,./venv/lib/python3.12/site-packages/Cython/Utility/TString.c,C,357,Low,File I/O,['internal/pycore_template.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+CMath.c,./venv/lib/python3.12/site-packages/Cython/Utility/CMath.c,C,105,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+CommonStructures.c,./venv/lib/python3.12/site-packages/Cython/Utility/CommonStructures.c,C,227,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+Embed.c,./venv/lib/python3.12/site-packages/Cython/Utility/Embed.c,C,122,Low,File I/O,"['floatingpoint.h', 'locale.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+ExtensionTypes.c,./venv/lib/python3.12/site-packages/Cython/Utility/ExtensionTypes.c,C,996,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+Dataclasses.c,./venv/lib/python3.12/site-packages/Cython/Utility/Dataclasses.c,C,102,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+Optimize.c,./venv/lib/python3.12/site-packages/Cython/Utility/Optimize.c,C,1604,Medium,Mathematical Algorithm,['string.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+ModuleSetupCode.c,./venv/lib/python3.12/site-packages/Cython/Utility/ModuleSetupCode.c,C,3204,Medium,Mathematical Algorithm,"['stddef.h', 'stdint.h', 'structmember.h', 'math.h', 'pythread.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+Profile.c,./venv/lib/python3.12/site-packages/Cython/Utility/Profile.c,C,733,Low,File I/O,"['compile.h', 'frameobject.h', 'traceback.h', 'internal/pycore_frame.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+Synchronization.c,./venv/lib/python3.12/site-packages/Cython/Utility/Synchronization.c,C,400,Low,File I/O,"['pythread.h', 'stdatomic.h', 'atomic', 'intrin.h', 'internal/pycore_critical_section.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+Exceptions.c,./venv/lib/python3.12/site-packages/Cython/Utility/Exceptions.c,C,1017,Low,File I/O,"['compile.h', 'frameobject.h', 'traceback.h', 'internal/pycore_frame.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+AsyncGen.c,./venv/lib/python3.12/site-packages/Cython/Utility/AsyncGen.c,C,1032,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+TypeConversion.c,./venv/lib/python3.12/site-packages/Cython/Utility/TypeConversion.c,C,1402,Medium,Mathematical Algorithm,"['cstdlib', 'string.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+Coroutine.c,./venv/lib/python3.12/site-packages/Cython/Utility/Coroutine.c,C,2301,Low,File I/O,"['frameobject.h', 'internal/pycore_frame.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+arrayarray.h,./venv/lib/python3.12/site-packages/Cython/Utility/arrayarray.h,Header,168,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+ndarrayobject.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/ndarrayobject.h,Header,305,Low,File I/O,"['Python.h', 'ndarraytypes.h', 'dtype_api.h', '__multiarray_api.h', 'npy_2_compat.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+utils.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/utils.h,Header,38,Low,Utility/Unknown,[],Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+__multiarray_api.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/__multiarray_api.h,Header,1629,Medium,Mathematical Algorithm,['numpy/_public_dtype_api_table.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+ufuncobject.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/ufuncobject.h,Header,344,Medium,Mathematical Algorithm,"['numpy/npy_math.h', 'numpy/npy_common.h', 'arrayobject.h', '__ufunc_api.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+npy_common.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_common.h,Header,978,Medium,Mathematical Algorithm,"['Python.h', 'numpyconfig.h', 'npy_config.h', 'io.h', 'sys/types.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+npy_2_complexcompat.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_2_complexcompat.h,Header,29,Medium,Mathematical Algorithm,['numpy/npy_math.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+npy_cpu.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_cpu.h,Header,125,Low,File I/O,['numpyconfig.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+npy_2_compat.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_2_compat.h,Header,250,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+__ufunc_api.c,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/__ufunc_api.c,C,55,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+ndarraytypes.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/ndarraytypes.h,Header,1951,Medium,Mathematical Algorithm,"['npy_common.h', 'npy_endian.h', 'npy_cpu.h', 'utils.h', '_neighborhood_iterator_imp.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+npy_no_deprecated_api.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_no_deprecated_api.h,Header,21,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+__multiarray_api.c,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/__multiarray_api.c,C,377,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+npy_3kcompat.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_3kcompat.h,Header,375,Low,File I/O,"['Python.h', 'stdio.h', 'npy_common.h', 'stdlib.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+npy_os.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_os.h,Header,43,Low,Utility/Unknown,[],Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+npy_endian.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_endian.h,Header,79,Low,Utility/Unknown,"['endian.h', 'sys/endian.h', 'npy_cpu.h']",Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+_numpyconfig.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/_numpyconfig.h,Header,34,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+_neighborhood_iterator_imp.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/_neighborhood_iterator_imp.h,Header,91,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+_public_dtype_api_table.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/_public_dtype_api_table.h,Header,87,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+numpyconfig.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/numpyconfig.h,Header,183,Low,File I/O,['_numpyconfig.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+__ufunc_api.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/__ufunc_api.h,Header,342,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+arrayscalars.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/arrayscalars.h,Header,197,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+dtype_api.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/dtype_api.h,Header,481,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+npy_math.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_math.h,Header,603,Medium,Mathematical Algorithm,"['numpy/npy_common.h', 'math.h', 'npy_math_internal.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+halffloat.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/halffloat.h,Header,71,Medium,Mathematical Algorithm,"['Python.h', 'numpy/npy_math.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+arrayobject.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/arrayobject.h,Header,8,Low,Utility/Unknown,['ndarrayobject.h'],Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+distributions.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/random/distributions.h,Header,210,Medium,Mathematical Algorithm,"['Python.h', 'numpy/npy_common.h', 'stddef.h', 'stdbool.h', 'stdint.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+libdivide.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/random/libdivide.h,Header,2080,Medium,Mathematical Algorithm,"['stdint.h', 'cstdlib', 'cstdio', 'type_traits', 'stdlib.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+bitgen.h,./venv/lib/python3.12/site-packages/numpy/_core/include/numpy/random/bitgen.h,Header,21,Low,File I/O,"['stddef.h', 'stdbool.h', 'stdint.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+limited_api1.c,./venv/lib/python3.12/site-packages/numpy/_core/tests/examples/limited_api/limited_api1.c,C,18,Medium,Mathematical Algorithm,"['Python.h', 'numpy/arrayobject.h', 'numpy/ufuncobject.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+limited_api_latest.c,./venv/lib/python3.12/site-packages/numpy/_core/tests/examples/limited_api/limited_api_latest.c,C,20,Medium,Mathematical Algorithm,"['Python.h', 'numpy/arrayobject.h', 'numpy/ufuncobject.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+generate_umath_validation_data.cpp,./venv/lib/python3.12/site-packages/numpy/_core/tests/data/generate_umath_validation_data.cpp,C++,171,Medium,Mathematical Algorithm,"['algorithm', 'fstream', 'iostream', 'math.h', 'random']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+wrapmodule.c,./venv/lib/python3.12/site-packages/numpy/f2py/tests/src/array_from_pyobj/wrapmodule.c,C,236,Medium,Mathematical Algorithm,"['Python.h', 'fortranobject.h', 'math.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+fortranobject.h,./venv/lib/python3.12/site-packages/numpy/f2py/src/fortranobject.h,Header,174,Medium,Mathematical Algorithm,"['Python.h', 'numpy/arrayobject.h', 'numpy/npy_3kcompat.h', 'sys/timeb.h', 'dmalloc.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+fortranobject.c,./venv/lib/python3.12/site-packages/numpy/f2py/src/fortranobject.c,C,1437,Medium,Mathematical Algorithm,"['fortranobject.h', 'stdarg.h', 'stdlib.h', 'string.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+_random.c,./venv/lib/python3.12/site-packages/numba/_random.c,C,493,High,FFT/Signal Processing,['pthread.h'],Numba/SciPy/External Library,Medium,Not Started,1 week,,2025-11-22
+_lapack.c,./venv/lib/python3.12/site-packages/numba/_lapack.c,C,1947,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+capsulethunk.h,./venv/lib/python3.12/site-packages/numba/capsulethunk.h,Header,109,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+_hashtable.h,./venv/lib/python3.12/site-packages/numba/_hashtable.h,Header,133,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+_helperlib.c,./venv/lib/python3.12/site-packages/numba/_helperlib.c,C,1252,Medium,Mathematical Algorithm,"['_pymodule.h', 'stddef.h', 'stdio.h', 'math.h', 'complex.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+_devicearray.h,./venv/lib/python3.12/site-packages/numba/_devicearray.h,Header,26,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+_typeof.h,./venv/lib/python3.12/site-packages/numba/_typeof.h,Header,17,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+_helpermod.c,./venv/lib/python3.12/site-packages/numba/_helpermod.c,C,278,Medium,Mathematical Algorithm,"['cext/cext.h', '_pymodule.h', 'math.h', 'stdbool.h', 'cext/cext.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+_arraystruct.h,./venv/lib/python3.12/site-packages/numba/_arraystruct.h,Header,22,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+pythoncapi_compat.h,./venv/lib/python3.12/site-packages/numba/pythoncapi_compat.h,Header,1697,Low,File I/O,['Python.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+_dynfuncmod.c,./venv/lib/python3.12/site-packages/numba/_dynfuncmod.c,C,94,Low,File I/O,['_dynfunc.c'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+mathnames.h,./venv/lib/python3.12/site-packages/numba/mathnames.h,Header,78,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+_numba_common.h,./venv/lib/python3.12/site-packages/numba/_numba_common.h,Header,44,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+_dynfunc.c,./venv/lib/python3.12/site-packages/numba/_dynfunc.c,C,535,Low,File I/O,"['_pymodule.h', 'string.h', 'pythoncapi_compat.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+_pymodule.h,./venv/lib/python3.12/site-packages/numba/_pymodule.h,Header,36,Low,File I/O,"['Python.h', 'structmember.h', 'frameobject.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+mviewbuf.c,./venv/lib/python3.12/site-packages/numba/mviewbuf.c,C,384,Medium,Mathematical Algorithm,['_pymodule.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+_unicodetype_db.h,./venv/lib/python3.12/site-packages/numba/_unicodetype_db.h,Header,6092,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+_nrt_python.c,./venv/lib/python3.12/site-packages/numba/core/runtime/_nrt_python.c,C,487,Low,File I/O,"['../../_pymodule.h', 'numpy/ndarrayobject.h', 'numpy/arrayscalars.h', '../../_arraystruct.h', '../../_numba_common.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+nrt.h,./venv/lib/python3.12/site-packages/numba/core/runtime/nrt.h,Header,274,Low,File I/O,"['stdlib.h', 'stdio.h', '../../_numba_common.h', 'nrt_external.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+nrt_external.h,./venv/lib/python3.12/site-packages/numba/core/runtime/nrt_external.h,Header,66,Low,File I/O,['stdlib.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+_nrt_pythonmod.c,./venv/lib/python3.12/site-packages/numba/core/runtime/_nrt_pythonmod.c,C,218,Low,File I/O,['_nrt_python.c'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+nrt.cpp,./venv/lib/python3.12/site-packages/numba/core/runtime/nrt.cpp,C++,630,Low,File I/O,"['atomic', 'inttypes.h', 'stdarg.h', 'string.h', 'nrt.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+cuda_fp16.h,./venv/lib/python3.12/site-packages/numba/cuda/cuda_fp16.h,Header,3632,Medium,Mathematical Algorithm,['cuda_fp16.hpp'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+cuda_fp16.hpp,./venv/lib/python3.12/site-packages/numba/cuda/cuda_fp16.hpp,Header,2466,Medium,Mathematical Algorithm,"['utility', 'cstring']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+modulemixin.c,./venv/lib/python3.12/site-packages/numba/pycc/modulemixin.c,C,222,Medium,Mathematical Algorithm,"['../_numba_common.h', '../_pymodule.h', '../_helperlib.c', '../_dynfunc.c', '../core/runtime/_nrt_python.c']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+dictobject.h,./venv/lib/python3.12/site-packages/numba/cext/dictobject.h,Header,229,Medium,Mathematical Algorithm,['cext.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+listobject.c,./venv/lib/python3.12/site-packages/numba/cext/listobject.c,C,978,Medium,Mathematical Algorithm,['listobject.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+utils.c,./venv/lib/python3.12/site-packages/numba/cext/utils.c,C,9,Low,Utility/Unknown,['cext.h'],Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+dictobject.c,./venv/lib/python3.12/site-packages/numba/cext/dictobject.c,C,1266,Medium,Mathematical Algorithm,['dictobject.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+cext.h,./venv/lib/python3.12/site-packages/numba/cext/cext.h,Header,22,Low,File I/O,"['Python.h', '../_numba_common.h', 'dictobject.h', 'listobject.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+listobject.h,./venv/lib/python3.12/site-packages/numba/cext/listobject.h,Header,138,Low,File I/O,['cext.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+_blas_subroutines.h,./venv/lib/python3.12/site-packages/scipy/linalg/_blas_subroutines.h,Header,165,Low,File I/O,"['npy_cblas.h', 'fortran_defs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+_lapack_subroutines.h,./venv/lib/python3.12/site-packages/scipy/linalg/_lapack_subroutines.h,Header,1522,Low,File I/O,"['npy_cblas.h', 'fortran_defs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+_ufuncs_cxx_defs.h,./venv/lib/python3.12/site-packages/scipy/special/_ufuncs_cxx_defs.h,Header,148,Low,File I/O,"['boost_special_functions.h', 'stirling2.h', 'ellint_carlson_wrap.hh', '_wright.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+_ufuncs_defs.h,./venv/lib/python3.12/site-packages/scipy/special/_ufuncs_defs.h,Header,58,Low,Utility/Unknown,"['_cosine.h', 'xsf_wrappers.h']",Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+shape_file.h,./ccpnmr2.4/c/memops/global/shape_file.h,Header,89,Low,File I/O,"['macros.h', 'types.h', 'consts.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+sorts.h,./ccpnmr2.4/c/memops/global/sorts.h,Header,51,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_mem_cache.c,./ccpnmr2.4/c/memops/global/py_mem_cache.c,C,281,Low,File I/O,"['py_mem_cache.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+ps_handler.c,./ccpnmr2.4/c/memops/global/ps_handler.c,C,501,Low,File I/O,"['ps_handler.h', 'clipping.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+gauss_jordan.h,./ccpnmr2.4/c/memops/global/gauss_jordan.h,Header,52,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+diag_dbl.c,./ccpnmr2.4/c/memops/global/diag_dbl.c,C,206,Low,File I/O,['diag_dbl.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+list.c,./ccpnmr2.4/c/memops/global/list.c,C,201,Low,File I/O,['list.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+store_file.h,./ccpnmr2.4/c/memops/global/store_file.h,Header,88,Low,File I/O,"['macros.h', 'types.h', 'consts.h', 'polyline.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+tk_handler.h,./ccpnmr2.4/c/memops/global/tk_handler.h,Header,159,Low,File I/O,"['tk.h', 'macros.h', 'types.h', 'drawing_funcs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+eigenvalue.h,./ccpnmr2.4/c/memops/global/eigenvalue.h,Header,51,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+python_util.c,./ccpnmr2.4/c/memops/global/python_util.c,C,874,Low,File I/O,"['python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+fit1d.h,./ccpnmr2.4/c/memops/global/fit1d.h,Header,56,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_tk_util.h,./ccpnmr2.4/c/memops/global/py_tk_util.h,Header,57,Low,File I/O,"['tk.h', 'Python.h', 'macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+gamma.c,./ccpnmr2.4/c/memops/global/gamma.c,C,141,Low,File I/O,['gamma.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+linalg.c,./ccpnmr2.4/c/memops/global/linalg.c,C,87,Low,File I/O,['linalg.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+block_file.c,./ccpnmr2.4/c/memops/global/block_file.c,C,1405,Low,File I/O,"['block_file.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+clipping.h,./ccpnmr2.4/c/memops/global/clipping.h,Header,58,Low,File I/O,"['macros.h', 'types.h', 'drawing_funcs.h', 'polyline.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+point.h,./ccpnmr2.4/c/memops/global/point.h,Header,58,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+nonlinear_model.h,./ccpnmr2.4/c/memops/global/nonlinear_model.h,Header,69,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+cpmg.c,./ccpnmr2.4/c/memops/global/cpmg.c,C,210,Low,File I/O,"['cpmg.h', 'fit1d.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_gl_handler.c,./ccpnmr2.4/c/memops/global/py_gl_handler.c,C,735,Low,File I/O,"['py_gl_handler.h', 'windows.h', 'GL/gl.h', 'python_util.h', 'py_tk_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+types.h,./ccpnmr2.4/c/memops/global/types.h,Header,113,High,FFT/Signal Processing,['macros.h'],Numba/SciPy/External Library,Medium,Not Started,1 week,,2025-11-22
+utility.c,./ccpnmr2.4/c/memops/global/utility.c,C,555,Low,File I/O,['utility.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+line_fit.c,./ccpnmr2.4/c/memops/global/line_fit.c,C,151,Low,File I/O,"['line_fit.h', 'gamma.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+mem_cache.h,./ccpnmr2.4/c/memops/global/mem_cache.h,Header,81,Low,File I/O,"['hash_list.h', 'mutex.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_tk_handler.c,./ccpnmr2.4/c/memops/global/py_tk_handler.c,C,724,Low,File I/O,"['py_tk_handler.h', 'python_util.h', 'py_tk_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_store_handler.c,./ccpnmr2.4/c/memops/global/py_store_handler.c,C,252,Low,File I/O,"['py_store_handler.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_store_file.c,./ccpnmr2.4/c/memops/global/py_store_file.c,C,267,Low,File I/O,"['py_store_file.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+contourer.c,./ccpnmr2.4/c/memops/global/contourer.c,C,746,Medium,Mathematical Algorithm,['contourer.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+pdf_handler.h,./ccpnmr2.4/c/memops/global/pdf_handler.h,Header,131,Low,File I/O,"['macros.h', 'types.h', 'drawing_funcs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_shape_file.c,./ccpnmr2.4/c/memops/global/py_shape_file.c,C,311,Low,File I/O,"['py_shape_file.h', 'py_mem_cache.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+mutex.c,./ccpnmr2.4/c/memops/global/mutex.c,C,146,Low,File I/O,"['pthread.h', 'mutex.h', 'windows.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+hash_list.c,./ccpnmr2.4/c/memops/global/hash_list.c,C,327,Low,File I/O,['hash_list.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_ps_handler.h,./ccpnmr2.4/c/memops/global/py_ps_handler.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'ps_handler.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_fit.c,./ccpnmr2.4/c/memops/global/py_fit.c,C,664,Low,File I/O,"['py_fit.h', 'fit.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_draw_handler.h,./ccpnmr2.4/c/memops/global/py_draw_handler.h,Header,62,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'drawing_funcs.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+fit.h,./ccpnmr2.4/c/memops/global/fit.h,Header,140,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_pdf_handler.c,./ccpnmr2.4/c/memops/global/py_pdf_handler.c,C,443,Low,File I/O,"['py_pdf_handler.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+color.h,./ccpnmr2.4/c/memops/global/color.h,Header,50,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_block_file.h,./ccpnmr2.4/c/memops/global/py_block_file.h,Header,70,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'block_file.h', 'py_shape_file.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+random.c,./ccpnmr2.4/c/memops/global/random.c,C,146,Low,File I/O,['random.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+gl_handler.h,./ccpnmr2.4/c/memops/global/gl_handler.h,Header,166,Low,File I/O,"['tk.h', 'macros.h', 'types.h', 'drawing_funcs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+drawing_funcs.h,./ccpnmr2.4/c/memops/global/drawing_funcs.h,Header,86,Low,File I/O,"['macros.h', 'types.h', 'polyline.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+store_handler.h,./ccpnmr2.4/c/memops/global/store_handler.h,Header,104,Low,File I/O,"['macros.h', 'types.h', 'consts.h', 'drawing_funcs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+geometry.c,./ccpnmr2.4/c/memops/global/geometry.c,C,174,Low,File I/O,['geometry.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+w32func.c,./ccpnmr2.4/c/memops/global/w32func.c,C,151,Low,File I/O,"['windows.h', 'w32func.h', 'consts.h', 'macros.h', 'types.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+store_consts.h,./ccpnmr2.4/c/memops/global/store_consts.h,Header,53,Low,File I/O,"['store_handler.h', 'utility.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+int_array.c,./ccpnmr2.4/c/memops/global/int_array.c,C,115,Low,File I/O,"['int_array.h', 'hash_table.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+polyline.h,./ccpnmr2.4/c/memops/global/polyline.h,Header,57,Low,File I/O,"['macros.h', 'types.h', 'point.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+hash_table.h,./ccpnmr2.4/c/memops/global/hash_table.h,Header,96,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+tk_handler.c,./ccpnmr2.4/c/memops/global/tk_handler.c,C,1017,Low,File I/O,"['tk_handler.h', 'clipping.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+store_file.c,./ccpnmr2.4/c/memops/global/store_file.c,C,370,Low,File I/O,"['store_file.h', 'store_consts.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+gauss_jordan.c,./ccpnmr2.4/c/memops/global/gauss_jordan.c,C,176,Low,File I/O,['gauss_jordan.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+list.h,./ccpnmr2.4/c/memops/global/list.h,Header,101,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+diag_dbl.h,./ccpnmr2.4/c/memops/global/diag_dbl.h,Header,52,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+ps_handler.h,./ccpnmr2.4/c/memops/global/ps_handler.h,Header,131,Low,File I/O,"['macros.h', 'types.h', 'drawing_funcs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+sorts.c,./ccpnmr2.4/c/memops/global/sorts.c,C,100,Low,File I/O,['sorts.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_mem_cache.h,./ccpnmr2.4/c/memops/global/py_mem_cache.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'mem_cache.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+shape_file.c,./ccpnmr2.4/c/memops/global/shape_file.c,C,197,Low,File I/O,['shape_file.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+macros.h,./ccpnmr2.4/c/memops/global/macros.h,Header,522,Medium,Mathematical Algorithm,"['stdio.h', 'math.h', 'string.h', 'stdlib.h', 'ctype.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+cpmg.h,./ccpnmr2.4/c/memops/global/cpmg.h,Header,64,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_gl_handler.h,./ccpnmr2.4/c/memops/global/py_gl_handler.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'gl_handler.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+clipping.c,./ccpnmr2.4/c/memops/global/clipping.c,C,256,Low,File I/O,['clipping.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+block_file.h,./ccpnmr2.4/c/memops/global/block_file.h,Header,227,Medium,Mathematical Algorithm,"['macros.h', 'types.h', 'consts.h', 'hash_table.h', 'int_array.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+nonlinear_model.c,./ccpnmr2.4/c/memops/global/nonlinear_model.c,C,304,Low,File I/O,"['nonlinear_model.h', 'gauss_jordan.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_tk_util.c,./ccpnmr2.4/c/memops/global/py_tk_util.c,C,116,Low,File I/O,['py_tk_util.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+gamma.h,./ccpnmr2.4/c/memops/global/gamma.h,Header,54,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+linalg.h,./ccpnmr2.4/c/memops/global/linalg.h,Header,63,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+python_util.h,./ccpnmr2.4/c/memops/global/python_util.h,Header,140,Low,File I/O,"['Python.h', 'macros.h', 'types.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+eigenvalue.c,./ccpnmr2.4/c/memops/global/eigenvalue.c,C,217,Low,File I/O,['eigenvalue.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+fit1d.c,./ccpnmr2.4/c/memops/global/fit1d.c,C,143,Low,Utility/Unknown,['fit1d.h'],Direct Python Port,Medium,Not Started,1 week,,2025-11-22
+consts.h,./ccpnmr2.4/c/memops/global/consts.h,Header,47,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_fit.h,./ccpnmr2.4/c/memops/global/py_fit.h,Header,59,Low,File I/O,"['Python.h', 'macros.h', 'fit.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_ps_handler.c,./ccpnmr2.4/c/memops/global/py_ps_handler.c,C,458,Low,File I/O,"['py_ps_handler.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+hash_list.h,./ccpnmr2.4/c/memops/global/hash_list.h,Header,88,Low,File I/O,"['macros.h', 'types.h', 'hash_table.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_draw_handler.c,./ccpnmr2.4/c/memops/global/py_draw_handler.c,C,100,Low,File I/O,"['py_draw_handler.h', 'py_gl_handler.h', 'py_pdf_handler.h', 'py_ps_handler.h', 'py_store_handler.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+pdf_handler.c,./ccpnmr2.4/c/memops/global/pdf_handler.c,C,563,Low,File I/O,"['pdf_handler.h', 'clipping.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_shape_file.h,./ccpnmr2.4/c/memops/global/py_shape_file.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'shape_file.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+contourer.h,./ccpnmr2.4/c/memops/global/contourer.h,Header,97,Medium,Mathematical Algorithm,"['macros.h', 'types.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+mutex.h,./ccpnmr2.4/c/memops/global/mutex.h,Header,58,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_store_file.h,./ccpnmr2.4/c/memops/global/py_store_file.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'store_file.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_store_handler.h,./ccpnmr2.4/c/memops/global/py_store_handler.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'store_handler.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_tk_handler.h,./ccpnmr2.4/c/memops/global/py_tk_handler.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'tk_handler.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+line_fit.h,./ccpnmr2.4/c/memops/global/line_fit.h,Header,59,Medium,Mathematical Algorithm,"['macros.h', 'types.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+utility.h,./ccpnmr2.4/c/memops/global/utility.h,Header,162,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+mem_cache.c,./ccpnmr2.4/c/memops/global/mem_cache.c,C,301,Low,File I/O,['mem_cache.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+hash_table.c,./ccpnmr2.4/c/memops/global/hash_table.c,C,395,Low,File I/O,['hash_table.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+w32func.h,./ccpnmr2.4/c/memops/global/w32func.h,Header,47,Low,File I/O,['windows.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+int_array.h,./ccpnmr2.4/c/memops/global/int_array.h,Header,72,Low,File I/O,"['macros.h', 'types.h', 'consts.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+gl_handler.c,./ccpnmr2.4/c/memops/global/gl_handler.c,C,1544,Low,File I/O,"['gl_handler.h', 'windows.h', 'tkPlatDecls.h', 'GL/glx.h', 'GL/gl.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+random.h,./ccpnmr2.4/c/memops/global/random.h,Header,62,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+geometry.h,./ccpnmr2.4/c/memops/global/geometry.h,Header,69,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+store_handler.c,./ccpnmr2.4/c/memops/global/store_handler.c,C,416,Low,File I/O,"['store_handler.h', 'store_consts.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+color.c,./ccpnmr2.4/c/memops/global/color.c,C,59,Low,File I/O,['color.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_pdf_handler.h,./ccpnmr2.4/c/memops/global/py_pdf_handler.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'pdf_handler.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+fit.c,./ccpnmr2.4/c/memops/global/fit.c,C,1570,Medium,Mathematical Algorithm,"['fit.h', 'cpmg.h', 'line_fit.h', 'nonlinear_model.h', 'random.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_block_file.c,./ccpnmr2.4/c/memops/global/py_block_file.c,C,922,Low,File I/O,"['py_block_file.h', 'py_mem_cache.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+bayesys3.c,./ccpnmr2.4/c/other/cambridge/bayes/bayesys3.c,C,7272,High,FFT/Signal Processing,"['license.txt', 'stdlib.h', 'float.h', 'math.h', 'bayesys3.h']",Numba/SciPy/External Library,High,Not Started,TBD,,2025-11-22
+distribution.c,./ccpnmr2.4/c/other/cambridge/bayes/distribution.c,C,159,Medium,Mathematical Algorithm,"['stdio.h', 'math.h', 'distribution.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_bayes.c,./ccpnmr2.4/c/other/cambridge/bayes/py_bayes.c,C,310,Low,File I/O,"['py_bayes.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+bayes_nmr.h,./ccpnmr2.4/c/other/cambridge/bayes/bayes_nmr.h,Header,171,Low,File I/O,"['Python.h', 'stdio.h', 'string.h', 'time.h', 'sys/types.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+hilbert.c,./ccpnmr2.4/c/other/cambridge/bayes/hilbert.c,C,1196,High,FFT/Signal Processing,"['license.txt', 'stdlib.h', 'hilbert.h']",Numba/SciPy/External Library,High,Not Started,TBD,,2025-11-22
+random.c,./ccpnmr2.4/c/other/cambridge/bayes/random.c,C,2670,Medium,Mathematical Algorithm,"['license.txt', 'stddef.h', 'time.h', 'math.h', 'float.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+app.h,./ccpnmr2.4/c/other/cambridge/bayes/app.h,Header,40,Low,File I/O,['userstr.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+userstr.h,./ccpnmr2.4/c/other/cambridge/bayes/userstr.h,Header,113,Low,File I/O,"['Python.h', 'python_util.h', 'types.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+distribution.h,./ccpnmr2.4/c/other/cambridge/bayes/distribution.h,Header,46,Low,File I/O,[],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+bayesys3.h,./ccpnmr2.4/c/other/cambridge/bayes/bayesys3.h,Header,206,High,FFT/Signal Processing,[],Numba/SciPy/External Library,Medium,Not Started,1 week,,2025-11-22
+hilbert.h,./ccpnmr2.4/c/other/cambridge/bayes/hilbert.h,Header,140,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_bayes.h,./ccpnmr2.4/c/other/cambridge/bayes/py_bayes.h,Header,49,Low,File I/O,"['macros.h', 'types.h', 'bayes_nmr.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+bayes_nmr.c,./ccpnmr2.4/c/other/cambridge/bayes/bayes_nmr.c,C,762,Medium,Mathematical Algorithm,['bayes_nmr.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+random.h,./ccpnmr2.4/c/other/cambridge/bayes/random.h,Header,160,Low,File I/O,[],Python I/O,Medium,Not Started,1 week,,2025-11-22
+app.c,./ccpnmr2.4/c/other/cambridge/bayes/app.c,C,499,Medium,Mathematical Algorithm,"['stdio.h', 'stdlib.h', 'math.h', 'bayesys3.h', 'userstr.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+meccano2_stat_ramaDB_fwd.c,./ccpnmr2.4/c/other/meccano/meccano2_stat_ramaDB_fwd/meccano2_stat_ramaDB_fwd.c,C,715,Medium,Mathematical Algorithm,"['stdlib.h', 'stddef.h', 'stdio.h', 'string.h', 'math.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+meccano2_stat_ramaDB_main.c,./ccpnmr2.4/c/other/meccano/meccano2_stat_ramaDB_fwd/meccano2_stat_ramaDB_main.c,C,111,Low,File I/O,['../inc/meccano.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+myHBSC.h,./ccpnmr2.4/c/other/meccano/inc/myHBSC.h,Header,20,Medium,Mathematical Algorithm,"['../inc/myMACRO.h', '../inc/mySTRUCT.h', '../inc/myDAT.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+gradient.h,./ccpnmr2.4/c/other/meccano/inc/gradient.h,Header,21,Medium,Mathematical Algorithm,"['stdlib.h', 'gsl/gsl_blas.h', 'gsl/gsl_math.h', 'gsl/gsl_errno.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myPPGEO.h,./ccpnmr2.4/c/other/meccano/inc/myPPGEO.h,Header,40,Low,Utility/Unknown,"['gsl/gsl_blas.h', '../inc/myGEOMETRY.h']",Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+myDAT.h,./ccpnmr2.4/c/other/meccano/inc/myDAT.h,Header,63,Medium,Mathematical Algorithm,"['stdio.h', 'stdlib.h', 'string.h', 'math.h', 'gsl/gsl_math.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myMINIMISATION.h,./ccpnmr2.4/c/other/meccano/inc/myMINIMISATION.h,Header,35,Medium,Mathematical Algorithm,"['math.h', 'gsl/gsl_math.h', 'gsl/gsl_blas.h', 'gsl/gsl_multimin.h', 'gsl/gsl_rng.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myRDC.h,./ccpnmr2.4/c/other/meccano/inc/myRDC.h,Header,68,Medium,Mathematical Algorithm,"['stdio.h', 'string.h', 'math.h', 'gsl/gsl_blas.h', '../inc/myMACRO.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myMACRO.h,./ccpnmr2.4/c/other/meccano/inc/myMACRO.h,Header,64,Medium,Mathematical Algorithm,[],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+mySTRUCT.h,./ccpnmr2.4/c/other/meccano/inc/mySTRUCT.h,Header,61,Medium,Mathematical Algorithm,"['stdlib.h', 'stdio.h', 'string.h', 'gsl/gsl_math.h', 'gsl/gsl_sf.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myRAMACHANDRAN.h,./ccpnmr2.4/c/other/meccano/inc/myRAMACHANDRAN.h,Header,39,Medium,Mathematical Algorithm,"['stdio.h', 'math.h', 'gsl/gsl_sf.h', 'gsl/gsl_randist.h', 'gsl/gsl_blas.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myGEOMETRY.h,./ccpnmr2.4/c/other/meccano/inc/myGEOMETRY.h,Header,63,Medium,Mathematical Algorithm,"['stdio.h', 'stdlib.h', 'string.h', 'gsl/gsl_math.h', 'gsl/gsl_blas.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+meccano.h,./ccpnmr2.4/c/other/meccano/inc/meccano.h,Header,29,Medium,Mathematical Algorithm,"['stdlib.h', 'stdio.h', 'string.h', 'gsl/gsl_math.h', 'gsl/gsl_sf.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myJUNC.h,./ccpnmr2.4/c/other/meccano/inc/myJUNC.h,Header,16,Medium,Mathematical Algorithm,"['stdlib.h', 'stdio.h', 'string.h', '../inc/myMACRO.h', '../inc/myDAT.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myPARAMS.h,./ccpnmr2.4/c/other/meccano/inc/myPARAMS.h,Header,25,Low,Utility/Unknown,"['../inc/mySTRUCT.h', '../inc/myRDC.h', '../inc/myDAT.h', '../inc/myPPGEO.h', '../inc/myRAMACHANDRAN.h']",Direct Python Port,Low,Not Started,1-2 days,,2025-11-22
+py_meccano.c,./ccpnmr2.4/c/other/meccano/pysrc/py_meccano.c,C,339,Low,File I/O,"['meccano.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+mySTRUCT.c,./ccpnmr2.4/c/other/meccano/src/mySTRUCT.c,C,592,Medium,Mathematical Algorithm,['../inc/mySTRUCT.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myRDC.c,./ccpnmr2.4/c/other/meccano/src/myRDC.c,C,1170,Medium,Mathematical Algorithm,['../inc/myRDC.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myGEOMETRY.c,./ccpnmr2.4/c/other/meccano/src/myGEOMETRY.c,C,421,Medium,Mathematical Algorithm,['../inc/myGEOMETRY.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myRAMACHANDRAN.c,./ccpnmr2.4/c/other/meccano/src/myRAMACHANDRAN.c,C,168,Low,File I/O,['../inc/myRAMACHANDRAN.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+myJUNC.c,./ccpnmr2.4/c/other/meccano/src/myJUNC.c,C,53,Medium,Mathematical Algorithm,['../inc/myJUNC.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myHBSC.c,./ccpnmr2.4/c/other/meccano/src/myHBSC.c,C,432,Medium,Mathematical Algorithm,['../inc/myHBSC.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+gradient.c,./ccpnmr2.4/c/other/meccano/src/gradient.c,C,77,Low,File I/O,['../inc/gradient.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+myPPGEO.c,./ccpnmr2.4/c/other/meccano/src/myPPGEO.c,C,118,Low,Utility/Unknown,['../inc/myPPGEO.h'],Direct Python Port,Medium,Not Started,1 week,,2025-11-22
+myMINIMISATION.c,./ccpnmr2.4/c/other/meccano/src/myMINIMISATION.c,C,597,Medium,Mathematical Algorithm,['../inc/myMINIMISATION.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+myDAT.c,./ccpnmr2.4/c/other/meccano/src/myDAT.c,C,516,Low,File I/O,['../inc/myDAT.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_struct_util.h,./ccpnmr2.4/c/ccp/structure/py_struct_util.h,Header,50,Low,File I/O,"['Python.h', 'macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+atom.c,./ccpnmr2.4/c/ccp/structure/atom.c,C,341,High,FFT/Signal Processing,"['atom.h', 'bond.h', 'color.h']",Numba/SciPy/External Library,Medium,Not Started,1 week,,2025-11-22
+structure.h,./ccpnmr2.4/c/ccp/structure/structure.h,Header,90,Low,File I/O,"['macros.h', 'types.h', 'atom.h', 'bond.h', 'drawing_funcs.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_atom.c,./ccpnmr2.4/c/ccp/structure/py_atom.c,C,477,Low,File I/O,"['py_atom.h', 'python_util.h', 'bond.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+struct_util.c,./ccpnmr2.4/c/ccp/structure/struct_util.c,C,386,Medium,Mathematical Algorithm,"['struct_util.h', 'eigenvalue.h', 'geometry.h', 'linalg.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_bond.c,./ccpnmr2.4/c/ccp/structure/py_bond.c,C,382,Low,File I/O,"['py_bond.h', 'py_atom.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+bond.c,./ccpnmr2.4/c/ccp/structure/bond.c,C,335,High,FFT/Signal Processing,['bond.h'],Numba/SciPy/External Library,Medium,Not Started,1 week,,2025-11-22
+py_structure.c,./ccpnmr2.4/c/ccp/structure/py_structure.c,C,637,Low,File I/O,"['py_structure.h', 'py_atom.h', 'py_bond.h', 'py_draw_handler.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+atom.h,./ccpnmr2.4/c/ccp/structure/atom.h,Header,105,Low,File I/O,"['macros.h', 'types.h', 'drawing_funcs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_struct_util.c,./ccpnmr2.4/c/ccp/structure/py_struct_util.c,C,324,Low,File I/O,"['py_struct_util.h', 'struct_util.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_atom.h,./ccpnmr2.4/c/ccp/structure/py_atom.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'atom.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+struct_util.h,./ccpnmr2.4/c/ccp/structure/struct_util.h,Header,77,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+structure.c,./ccpnmr2.4/c/ccp/structure/structure.c,C,408,High,FFT/Signal Processing,"['structure.h', 'geometry.h', 'sorts.h']",Numba/SciPy/External Library,Medium,Not Started,1 week,,2025-11-22
+py_bond.h,./ccpnmr2.4/c/ccp/structure/py_bond.h,Header,62,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'bond.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_structure.h,./ccpnmr2.4/c/ccp/structure/py_structure.h,Header,62,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'structure.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+bond.h,./ccpnmr2.4/c/ccp/structure/bond.h,Header,85,Low,File I/O,"['macros.h', 'types.h', 'atom.h', 'drawing_funcs.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_atom_coord.c,./ccpnmr2.4/c/ccpnmr/dynamics/py_atom_coord.c,C,291,Low,File I/O,"['py_atom_coord.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_atom_coord_list.c,./ccpnmr2.4/c/ccpnmr/dynamics/py_atom_coord_list.c,C,411,Low,File I/O,"['py_atom_coord_list.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_constraint.c,./ccpnmr2.4/c/ccpnmr/dynamics/dist_constraint.c,C,87,Low,File I/O,['dist_constraint.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint_list.c,./ccpnmr2.4/c/ccpnmr/dynamics/py_dist_constraint_list.c,C,434,Low,File I/O,"['py_dist_constraint_list.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_force.h,./ccpnmr2.4/c/ccpnmr/dynamics/dist_force.h,Header,69,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+atom_coord_list.h,./ccpnmr2.4/c/ccpnmr/dynamics/atom_coord_list.h,Header,73,Low,File I/O,['atom_coord.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint.h,./ccpnmr2.4/c/ccpnmr/dynamics/py_dist_constraint.h,Header,70,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'dist_constraint.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+atom_coord.h,./ccpnmr2.4/c/ccpnmr/dynamics/atom_coord.h,Header,65,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+dynamics.c,./ccpnmr2.4/c/ccpnmr/dynamics/dynamics.c,C,812,Medium,Mathematical Algorithm,"['dynamics.h', 'random.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_dynamics.c,./ccpnmr2.4/c/ccpnmr/dynamics/py_dynamics.c,C,428,Low,File I/O,"['py_dynamics.h', 'py_atom_coord_list.h', 'py_dist_constraint_list.h', 'py_dist_force.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_constraint_list.c,./ccpnmr2.4/c/ccpnmr/dynamics/dist_constraint_list.c,C,183,Low,File I/O,['dist_constraint_list.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_dist_force.c,./ccpnmr2.4/c/ccpnmr/dynamics/py_dist_force.c,C,325,Low,File I/O,"['py_dist_force.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_constraint.h,./ccpnmr2.4/c/ccpnmr/dynamics/dist_constraint.h,Header,71,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_atom_coord_list.h,./ccpnmr2.4/c/ccpnmr/dynamics/py_atom_coord_list.h,Header,72,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'py_atom_coord.h', 'atom_coord_list.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_atom_coord.h,./ccpnmr2.4/c/ccpnmr/dynamics/py_atom_coord.h,Header,69,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'atom_coord.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint.c,./ccpnmr2.4/c/ccpnmr/dynamics/py_dist_constraint.c,C,363,Low,File I/O,"['py_dist_constraint.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+atom_coord_list.c,./ccpnmr2.4/c/ccpnmr/dynamics/atom_coord_list.c,C,180,Low,File I/O,['atom_coord_list.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_force.c,./ccpnmr2.4/c/ccpnmr/dynamics/dist_force.c,C,72,Low,File I/O,['dist_force.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint_list.h,./ccpnmr2.4/c/ccpnmr/dynamics/py_dist_constraint_list.h,Header,72,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'py_dist_constraint.h', 'dist_constraint_list.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dynamics.h,./ccpnmr2.4/c/ccpnmr/dynamics/py_dynamics.h,Header,67,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'dynamics.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+dynamics.h,./ccpnmr2.4/c/ccpnmr/dynamics/dynamics.h,Header,79,Low,File I/O,"['atom_coord_list.h', 'dist_constraint_list.h', 'dist_force.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+atom_coord.c,./ccpnmr2.4/c/ccpnmr/dynamics/atom_coord.c,C,69,Low,File I/O,['atom_coord.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_force.h,./ccpnmr2.4/c/ccpnmr/dynamics/py_dist_force.h,Header,67,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'dist_force.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+dist_constraint_list.h,./ccpnmr2.4/c/ccpnmr/dynamics/dist_constraint_list.h,Header,75,Low,File I/O,['dist_constraint.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_win_peak_list.c,./ccpnmr2.4/c/ccpnmr/analysis/py_win_peak_list.c,C,416,Low,File I/O,"['py_win_peak_list.h', 'py_draw_handler.h', 'py_peak_list.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+peak_cluster.c,./ccpnmr2.4/c/ccpnmr/analysis/peak_cluster.c,C,241,Low,File I/O,['peak_cluster.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+contour_levels.h,./ccpnmr2.4/c/ccpnmr/analysis/contour_levels.h,Header,67,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+slice_file.c,./ccpnmr2.4/c/ccpnmr/analysis/slice_file.c,C,266,Low,File I/O,['slice_file.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_contour_file.h,./ccpnmr2.4/c/ccpnmr/analysis/py_contour_file.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'contour_file.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+win_peak_list.h,./ccpnmr2.4/c/ccpnmr/analysis/win_peak_list.h,Header,86,Low,File I/O,"['drawing_funcs.h', 'peak_list.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+symbol.h,./ccpnmr2.4/c/ccpnmr/analysis/symbol.h,Header,60,Low,File I/O,['drawing_funcs.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+peak_list.h,./ccpnmr2.4/c/ccpnmr/analysis/peak_list.h,Header,116,Low,File I/O,"['block_file.h', 'peak.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_contour_levels.c,./ccpnmr2.4/c/ccpnmr/analysis/py_contour_levels.c,C,263,Low,File I/O,"['py_contour_levels.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_peak.c,./ccpnmr2.4/c/ccpnmr/analysis/py_peak.c,C,596,Low,File I/O,"['py_peak.h', 'py_block_file.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+method.h,./ccpnmr2.4/c/ccpnmr/analysis/method.h,Header,64,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_peak_cluster.c,./ccpnmr2.4/c/ccpnmr/analysis/py_peak_cluster.c,C,453,Low,File I/O,"['py_peak_cluster.h', 'py_draw_handler.h', 'py_peak.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+contour_style.h,./ccpnmr2.4/c/ccpnmr/analysis/contour_style.h,Header,69,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_slice_file.h,./ccpnmr2.4/c/ccpnmr/analysis/py_slice_file.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'slice_file.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+peak.c,./ccpnmr2.4/c/ccpnmr/analysis/peak.c,C,896,Low,File I/O,"['peak.h', 'method.h', 'nonlinear_model.h', 'symbol.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+contour_data.h,./ccpnmr2.4/c/ccpnmr/analysis/contour_data.h,Header,71,Low,File I/O,"['block_file.h', 'contour_levels.h', 'int_array.h', 'polyline.h', 'store_file.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_contour_style.c,./ccpnmr2.4/c/ccpnmr/analysis/py_contour_style.c,C,278,Low,File I/O,"['py_contour_style.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_peak_list.c,./ccpnmr2.4/c/ccpnmr/analysis/py_peak_list.c,C,1102,Low,File I/O,"['py_peak_list.h', 'py_block_file.h', 'py_peak.h', 'py_pdf_handler.h', 'py_ps_handler.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+contour_file.h,./ccpnmr2.4/c/ccpnmr/analysis/contour_file.h,Header,87,Low,File I/O,"['block_file.h', 'contour_data.h', 'contour_levels.h', 'contour_style.h', 'drawing_funcs.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+peak_cluster.h,./ccpnmr2.4/c/ccpnmr/analysis/peak_cluster.h,Header,83,Low,File I/O,"['peak.h', 'drawing_funcs.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_win_peak_list.h,./ccpnmr2.4/c/ccpnmr/analysis/py_win_peak_list.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'win_peak_list.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+peak_list.c,./ccpnmr2.4/c/ccpnmr/analysis/peak_list.c,C,919,Low,File I/O,"['peak_list.h', 'symbol.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_contour_file.c,./ccpnmr2.4/c/ccpnmr/analysis/py_contour_file.c,C,406,Low,File I/O,"['py_contour_file.h', 'py_block_file.h', 'py_contour_levels.h', 'py_contour_style.h', 'py_draw_handler.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+slice_file.h,./ccpnmr2.4/c/ccpnmr/analysis/slice_file.h,Header,81,Low,File I/O,"['block_file.h', 'drawing_funcs.h', 'mem_cache.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+symbol.c,./ccpnmr2.4/c/ccpnmr/analysis/symbol.c,C,121,Low,File I/O,['symbol.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+win_peak_list.c,./ccpnmr2.4/c/ccpnmr/analysis/win_peak_list.c,C,259,Low,File I/O,"['win_peak_list.h', 'symbol.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+contour_levels.c,./ccpnmr2.4/c/ccpnmr/analysis/contour_levels.c,C,126,Low,File I/O,['contour_levels.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+contour_style.c,./ccpnmr2.4/c/ccpnmr/analysis/contour_style.c,C,79,Low,File I/O,['contour_style.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_peak_cluster.h,./ccpnmr2.4/c/ccpnmr/analysis/py_peak_cluster.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'peak_cluster.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+method.c,./ccpnmr2.4/c/ccpnmr/analysis/method.c,C,235,Medium,Mathematical Algorithm,['method.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_peak.h,./ccpnmr2.4/c/ccpnmr/analysis/py_peak.h,Header,64,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'peak.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_contour_levels.h,./ccpnmr2.4/c/ccpnmr/analysis/py_contour_levels.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'contour_levels.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_contour_style.h,./ccpnmr2.4/c/ccpnmr/analysis/py_contour_style.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'contour_style.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_peak_list.h,./ccpnmr2.4/c/ccpnmr/analysis/py_peak_list.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'peak_list.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+contour_file.c,./ccpnmr2.4/c/ccpnmr/analysis/contour_file.c,C,602,Low,File I/O,"['contour_file.h', 'int_array.h', 'store_handler.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+peak.h,./ccpnmr2.4/c/ccpnmr/analysis/peak.h,Header,139,Low,File I/O,"['block_file.h', 'drawing_funcs.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+contour_data.c,./ccpnmr2.4/c/ccpnmr/analysis/contour_data.c,C,726,Medium,Mathematical Algorithm,"['contour_data.h', 'contourer.h', 'utility.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_slice_file.c,./ccpnmr2.4/c/ccpnmr/analysis/py_slice_file.c,C,362,Low,File I/O,"['py_slice_file.h', 'py_block_file.h', 'py_draw_handler.h', 'py_mem_cache.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_atom_coord.c,./ccpnmr2.4/c/ccpnmr/clouds/py_atom_coord.c,C,279,Low,File I/O,"['py_atom_coord.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+bacus.h,./ccpnmr2.4/c/ccpnmr/clouds/bacus.h,Header,47,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_atom_coord_list.c,./ccpnmr2.4/c/ccpnmr/clouds/py_atom_coord_list.c,C,401,Low,File I/O,"['py_atom_coord_list.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_constraint.c,./ccpnmr2.4/c/ccpnmr/clouds/dist_constraint.c,C,62,Low,File I/O,['dist_constraint.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint_list.c,./ccpnmr2.4/c/ccpnmr/clouds/py_dist_constraint_list.c,C,406,Low,File I/O,"['py_dist_constraint_list.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_bacus.c,./ccpnmr2.4/c/ccpnmr/clouds/py_bacus.c,C,111,Low,File I/O,"['py_bacus.h', 'bacus.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_force.h,./ccpnmr2.4/c/ccpnmr/clouds/dist_force.h,Header,61,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+atom_coord_list.h,./ccpnmr2.4/c/ccpnmr/clouds/atom_coord_list.h,Header,66,Low,File I/O,['atom_coord.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint.h,./ccpnmr2.4/c/ccpnmr/clouds/py_dist_constraint.h,Header,63,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'dist_constraint.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_cloud_util.c,./ccpnmr2.4/c/ccpnmr/clouds/py_cloud_util.c,C,292,Low,File I/O,['python_util.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_midge.c,./ccpnmr2.4/c/ccpnmr/clouds/py_midge.c,C,333,Low,File I/O,"['py_midge.h', 'midge.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+atom_coord.h,./ccpnmr2.4/c/ccpnmr/clouds/atom_coord.h,Header,57,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+dynamics.c,./ccpnmr2.4/c/ccpnmr/clouds/dynamics.c,C,675,Medium,Mathematical Algorithm,"['dynamics.h', 'random.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_dynamics.c,./ccpnmr2.4/c/ccpnmr/clouds/py_dynamics.c,C,421,Low,File I/O,"['py_dynamics.h', 'py_atom_coord_list.h', 'py_dist_constraint_list.h', 'py_dist_force.h', 'python_util.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_constraint_list.c,./ccpnmr2.4/c/ccpnmr/clouds/dist_constraint_list.c,C,174,Low,File I/O,['dist_constraint_list.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+py_dist_force.c,./ccpnmr2.4/c/ccpnmr/clouds/py_dist_force.c,C,285,Low,File I/O,"['py_dist_force.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+midge.h,./ccpnmr2.4/c/ccpnmr/clouds/midge.h,Header,78,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+dist_constraint.h,./ccpnmr2.4/c/ccpnmr/clouds/dist_constraint.h,Header,60,Low,File I/O,"['macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_atom_coord_list.h,./ccpnmr2.4/c/ccpnmr/clouds/py_atom_coord_list.h,Header,65,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'py_atom_coord.h', 'atom_coord_list.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+bacus.c,./ccpnmr2.4/c/ccpnmr/clouds/bacus.c,C,1315,Medium,Mathematical Algorithm,['bacus.h'],NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_atom_coord.h,./ccpnmr2.4/c/ccpnmr/clouds/py_atom_coord.h,Header,62,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'atom_coord.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint.c,./ccpnmr2.4/c/ccpnmr/clouds/py_dist_constraint.c,C,307,Low,File I/O,"['py_dist_constraint.h', 'python_util.h', 'utility.h']",Python I/O,Medium,Not Started,1 week,,2025-11-22
+atom_coord_list.c,./ccpnmr2.4/c/ccpnmr/clouds/atom_coord_list.c,C,173,Low,File I/O,['atom_coord_list.h'],Python I/O,Medium,Not Started,1 week,,2025-11-22
+dist_force.c,./ccpnmr2.4/c/ccpnmr/clouds/dist_force.c,C,64,Low,File I/O,['dist_force.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_bacus.h,./ccpnmr2.4/c/ccpnmr/clouds/py_bacus.h,Header,50,Low,File I/O,"['Python.h', 'macros.h', 'types.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dist_constraint_list.h,./ccpnmr2.4/c/ccpnmr/clouds/py_dist_constraint_list.h,Header,65,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'py_dist_constraint.h', 'dist_constraint_list.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_dynamics.h,./ccpnmr2.4/c/ccpnmr/clouds/py_dynamics.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'dynamics.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+dynamics.h,./ccpnmr2.4/c/ccpnmr/clouds/dynamics.h,Header,72,Low,File I/O,"['atom_coord_list.h', 'dist_constraint_list.h', 'dist_force.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+atom_coord.c,./ccpnmr2.4/c/ccpnmr/clouds/atom_coord.c,C,61,Low,File I/O,['atom_coord.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
+py_midge.h,./ccpnmr2.4/c/ccpnmr/clouds/py_midge.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'midge.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+midge.c,./ccpnmr2.4/c/ccpnmr/clouds/midge.c,C,611,Medium,Mathematical Algorithm,"['midge.h', 'diag_dbl.h']",NumPy/SciPy/Numba,Medium,Not Started,1 week,,2025-11-22
+py_dist_force.h,./ccpnmr2.4/c/ccpnmr/clouds/py_dist_force.h,Header,60,Low,File I/O,"['Python.h', 'macros.h', 'types.h', 'dist_force.h']",Python I/O,Low,Not Started,1-2 days,,2025-11-22
+dist_constraint_list.h,./ccpnmr2.4/c/ccpnmr/clouds/dist_constraint_list.h,Header,66,Low,File I/O,['dist_constraint.h'],Python I/O,Low,Not Started,1-2 days,,2025-11-22
