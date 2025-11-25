@@ -1,0 +1,208 @@
+Found 41 wrapper files
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_fit.py
+  Found impl path: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/math/fit/fit.py
+  Import: SUCCESS
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_block_file.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'block_file', and importing the compiled extension failed: No module named 'block_file'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_shape_file.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'shape_file', and importing the compiled extension failed: No module named 'shape_file'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_pdf_handler.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'pdf_handler', and importing the compiled extension failed: No module named 'pdf_handler'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_store_file.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'store_file', and importing the compiled extension failed: No module named 'store_file'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_tk_util.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'tk_util', and importing the compiled extension failed: No module named 'tk_util'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_tk_handler.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'tk_handler', and importing the compiled extension failed: No module named 'tk_handler'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_mem_cache.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'mem_cache', and importing the compiled extension failed: No module named 'mem_cache'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_draw_handler.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'draw_handler', and importing the compiled extension failed: No module named 'draw_handler'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_store_handler.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'store_handler', and importing the compiled extension failed: No module named 'store_handler'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_gl_handler.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'gl_handler', and importing the compiled extension failed: No module named 'gl_handler'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/memops/global/py_ps_handler.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'ps_handler', and importing the compiled extension failed: No module named 'ps_handler'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/other/cambridge/bayes/py_bayes.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'bayes', and importing the compiled extension failed: No module named 'bayes'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/other/meccano/pysrc/py_meccano.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'meccano', and importing the compiled extension failed: No module named 'meccano'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccp/structure/py_struct_util.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'struct_util', and importing the compiled extension failed: No module named 'struct_util'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccp/structure/py_atom.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'atom', and importing the compiled extension failed: No module named 'atom'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccp/structure/py_bond.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'bond', and importing the compiled extension failed: No module named 'bond'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccp/structure/py_structure.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'structure', and importing the compiled extension failed: No module named 'structure'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/dynamics/py_dist_constraint.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dist_constraint', and importing the compiled extension failed: No module named 'dist_constraint'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/dynamics/py_dynamics.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dynamics', and importing the compiled extension failed: No module named 'dynamics'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/dynamics/py_atom_coord_list.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'atom_coord_list', and importing the compiled extension failed: No module named 'atom_coord_list'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/dynamics/py_dist_constraint_list.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dist_constraint_list', and importing the compiled extension failed: No module named 'dist_constraint_list'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/dynamics/py_atom_coord.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'atom_coord', and importing the compiled extension failed: No module named 'atom_coord'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/dynamics/py_dist_force.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dist_force', and importing the compiled extension failed: No module named 'dist_force'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_contour_style.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'contour_style', and importing the compiled extension failed: No module named 'contour_style'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_contour_levels.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'contour_levels', and importing the compiled extension failed: No module named 'contour_levels'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_peak.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'peak', and importing the compiled extension failed: No module named 'peak'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_peak_cluster.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'peak_cluster', and importing the compiled extension failed: No module named 'peak_cluster'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_contour_file.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'contour_file', and importing the compiled extension failed: No module named 'contour_file'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_peak_list.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'peak_list', and importing the compiled extension failed: No module named 'peak_list'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_slice_file.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'slice_file', and importing the compiled extension failed: No module named 'slice_file'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/analysis/py_win_peak_list.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'win_peak_list', and importing the compiled extension failed: No module named 'win_peak_list'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_dist_constraint.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dist_constraint', and importing the compiled extension failed: No module named 'dist_constraint'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_dynamics.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dynamics', and importing the compiled extension failed: No module named 'dynamics'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_atom_coord_list.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'atom_coord_list', and importing the compiled extension failed: No module named 'atom_coord_list'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_cloud_util.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'cloud_util', and importing the compiled extension failed: No module named 'cloud_util'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_dist_constraint_list.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dist_constraint_list', and importing the compiled extension failed: No module named 'dist_constraint_list'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_bacus.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'bacus', and importing the compiled extension failed: No module named 'bacus'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_atom_coord.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'atom_coord', and importing the compiled extension failed: No module named 'atom_coord'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_midge.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'midge', and importing the compiled extension failed: No module named 'midge'
+
+Wrapper: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/c/ccpnmr/clouds/py_dist_force.py
+  Found impl path: (none)
+  Import: FAILED
+  Error: ImportError: No pure-Python implementation found for 'dist_force', and importing the compiled extension failed: No module named 'dist_force'
+
+
+Converted files:
