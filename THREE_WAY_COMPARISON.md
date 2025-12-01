@@ -41,6 +41,10 @@ python3 tests/run_three_way_comparison.py --module bond --benchmark
 | **atom** | 5.1M ops/s | 454K ops/s | Python | **11.3x faster** |
 | **bond** | 2.5M ops/s | 344K ops/s | Python | **7.4x faster** |
 | **peak** | ~3M ops/s | ~800K ops/s | Python | **~4x faster** |
+| **contour*** | TBD | TBD | TBD | Run benchmarks |
+
+\* **Note**: The contour implementations are simplified standalone versions for comparison,
+not wrappers around the existing C code. See "Important Notes" section below.
 
 ## Key Findings
 
@@ -214,5 +218,11 @@ The numba implementations serve as:
 - ✅ Demonstration of JIT patterns
 - ✅ Benchmark baseline for C extensions
 - ✅ Foundation for future array-based algorithms
+
+## Additional Resources
+
+- **README_NUMBA.md** - Complete implementation guide and patterns
+- **README_CONTOUR.md** (in python_impl/) - Why contour uses simplified implementations
+- **benchmark_contour.py** - Standalone benchmarks for contour (Python/Numba/Cython)
 
 For **production use**, stick with **Pure Python** for excellent performance, zero dependencies, and maximum compatibility.
