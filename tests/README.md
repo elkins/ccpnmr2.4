@@ -1,6 +1,6 @@
 # Testing Framework for C-to-Python Migration
 
-This directory demonstrates the pattern for creating implementation-agnostic tests that work with both C extensions and pure Python replacements. Currently includes complete examples for **mem_cache**, **peak**, and **atom** modules.
+This directory demonstrates the pattern for creating implementation-agnostic tests that work with both C extensions and pure Python replacements. Currently includes complete examples for **mem_cache**, **peak**, **atom**, and **bond** modules.
 
 ## What's Included
 
@@ -113,6 +113,43 @@ Ran 45 tests in 0.001s
 OK
 ```
 
+### Example 4: Bond (`bond.py`)
+
+#### Pure Python Implementation
+- Molecular bond connecting two atoms
+- Matches C API: `new_bond()`, `set_color_bond()`, `get_other_atom_bond()`, etc.
+- Drop-in replacement for bond visualization and connectivity
+- ~260 lines with full documentation
+
+**Key features:**
+- Connects two atoms (atom1, atom2)
+- Custom color or gradient from atom colors
+- Line width and line style (normal/dashed)
+- Text annotation labels
+- Get opposite atom in bond
+- Depth parameter calculation for 3D rendering
+- Distance checking (point to line segment with perspective)
+
+**Note:** The `draw_bond()` function is stubbed pending drawing_funcs infrastructure. All other operations (properties, connectivity, geometry) are fully implemented.
+
+#### Unit Tests (`test_bond.py`)
+- **33 tests** covering all implemented functionality
+- Test categories:
+  - Basic operations: creation with/without color, initial properties
+  - Property setters: color, line width, line style, annotation
+  - Atom queries: get_other_atom from both atoms
+  - Depth parameter: calculation at various depths
+  - Distance checks: within_xy_tol, behind camera, z_out
+  - Integration: bonds connect atoms, use positions, multiple bonds
+  - Constants: BOND_NCOLORS, DEFAULT_BOND_WIDTH, line styles, depth values
+  - API compatibility: all C functions present
+
+**Test results:**
+```
+Ran 33 tests in 0.001s
+OK
+```
+
 ### Comparison Test Runner (`run_comparison_tests.py`)
 - Runs same tests against both implementations
 - Reports equivalence (or differences)
@@ -135,6 +172,11 @@ python3 tests/test_peak.py
 python3 tests/test_atom.py
 ```
 
+### Quick test - bond:
+```bash
+python3 tests/test_bond.py
+```
+
 ### Run all tests:
 ```bash
 python3 -m unittest discover tests
@@ -150,6 +192,7 @@ python3 tests/run_comparison_tests.py
 python3 -m unittest tests.test_mem_cache.TestMemCacheEviction
 python3 -m unittest tests.test_peak.TestPeakRegion
 python3 -m unittest tests.test_atom.TestAtomTransformations
+python3 -m unittest tests.test_bond.TestBondProperties
 ```
 
 ## Example Test Output
@@ -201,6 +244,23 @@ Ran 45 tests in 0.001s
 OK
 ```
 
+### bond tests:
+```
+test_bond_creation_with_color (__main__.TestBondBasics)
+Test creating a bond with explicit color. ... ok
+test_get_other_atom_from_atom1 (__main__.TestBondAtomQueries)
+Test getting other atom when given atom1. ... ok
+test_set_line_width (__main__.TestBondProperties)
+Test setting line width. ... ok
+test_depth_param_at_depth (__main__.TestBondDepthParam)
+Test depth parameter at reference depth. ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.001s
+
+OK
+```
+
 ## Pattern for Other Modules
 
 This same approach works for any C extension module:
@@ -239,8 +299,9 @@ High-priority modules from `scripts/priority_backlog.csv`:
 1. ~~**mem_cache.py**~~ - ✅ Complete with 16 tests
 2. ~~**peak.py**~~ - ✅ Complete with 39 tests  
 3. ~~**atom.py**~~ - ✅ Complete with 45 tests
-4. **contour_file.py** - Contour data handling (next priority)
-5. **block_file.py** - Block file I/O
+4. ~~**bond.py**~~ - ✅ Complete with 33 tests
+5. **contour_file.py** - Contour data handling (next priority)
+6. **block_file.py** - Block file I/O
 
 For each module:
 1. Copy this pattern (implementation + tests)
@@ -271,18 +332,21 @@ For each module:
 # Pure Python implementations (in proper package locations):
 ccpnmr2.4/python/memops/c/python_impl/mem_cache.py     # ✅ Complete
 ccpnmr2.4/python/ccp/c/python_impl/atom.py             # ✅ Complete
+ccpnmr2.4/python/ccp/c/python_impl/bond.py             # ✅ Complete
 ccpnmr2.4/python/ccpnmr/analysis/python_impl/peak.py  # ✅ Complete
 
 # Unit tests:
 tests/test_mem_cache.py         # 16 tests for mem_cache
 tests/test_peak.py              # 39 tests for peak
 tests/test_atom.py              # 45 tests for atom
+tests/test_bond.py              # 33 tests for bond
 tests/run_comparison_tests.py   # Comparison runner
 tests/README.md                 # This file
 
 # Wrappers (auto-generated, point to python_impl):
 ccpnmr2.4/c/memops/global/py_mem_cache.py       # Wrapper for mem_cache
-ccpnmr2.4/c/ccp/structure/py_atom.py            # Wrapper for atom  
+ccpnmr2.4/c/ccp/structure/py_atom.py            # Wrapper for atom
+ccpnmr2.4/c/ccp/structure/py_bond.py            # Wrapper for bond
 ccpnmr2.4/c/ccpnmr/analysis/py_peak.py          # Wrapper for peak
 ```
 
@@ -296,7 +360,8 @@ ccpnmr2.4/
 │   ├── memops/global/
 │   │   └── py_mem_cache.py     # Wrapper: loads Python or C implementation
 │   ├── ccp/structure/
-│   │   └── py_atom.py          # Wrapper: loads Python or C implementation
+│   │   ├── py_atom.py          # Wrapper: loads Python or C implementation
+│   │   └── py_bond.py          # Wrapper: loads Python or C implementation
 │   └── ccpnmr/analysis/
 │       └── py_peak.py          # Wrapper: loads Python or C implementation
 │
@@ -308,7 +373,8 @@ ccpnmr2.4/
     ├── ccp/c/
     │   ├── StructAtom.so       # C extension (compiled)
     │   └── python_impl/
-    │       └── atom.py         # Pure Python implementation ✅
+    │       ├── atom.py         # Pure Python implementation ✅
+    │       └── bond.py         # Pure Python implementation ✅
     └── ccpnmr/analysis/
         └── python_impl/
             └── peak.py         # Pure Python implementation ✅
@@ -353,6 +419,18 @@ Bonds are stored as references in a dynamically-growing list. The C code uses re
 ### atom - Drawing and Depth
 `draw_atom()` is stubbed pending drawing_funcs infrastructure. The C code implements sophisticated 3D rendering with perspective transformation, depth cueing (color blending based on z-position), and multi-circle sphere effects. Helper functions (`get_depth_param_atom`, `inverted_grey_color`) are fully implemented for when drawing support is added.
 
+### bond - Color Modes
+Bonds support two color modes: (1) explicit color via `set_color_bond()`, or (2) gradient between atom colors. When `have_color` is False, `draw_bond()` blends colors from atom1 to atom2 along the bond length.
+
+### bond - Line Styles
+Two line styles supported: NORMAL_LINE_STYLE (0) and DASHED_LINE_STYLE (1). Line width -1.0 indicates use default (DEFAULT_BOND_WIDTH = 3.0).
+
+### bond - Geometric Functions
+`within_xy_tol_bond()` implements full 3D-to-2D projection with perspective transform. Calculates closest point on line segment using lambda parameter, handles camera culling (z > 0 rejected), and returns depth value for z-ordering.
+
+### bond - Drawing
+`draw_bond()` is stubbed pending drawing_funcs infrastructure. The C code implements bi-color gradient rendering, depth cueing, annotation placement at bond midpoint, and line style (solid/dashed) via drawing primitives.
+
 ## Debugging Tips
 
 ### Check cache state (mem_cache):
@@ -384,6 +462,18 @@ py_atom.translate_atom(atom, [1.0, 1.0, 1.0])
 print(atom)
 # Atom(symbol='C', size=1.50, pos=[2.00, 3.00, 4.00], nbonds=0, drawn=True)
 print(f'Within tolerance: {py_atom.within_xy_tol_atom(atom, 2.5, 3.5, 1.0)}')
+```
+
+### Inspect bond data:
+```python
+atom1 = py_atom.new_atom(1.0, 'C', 'CA', [0.0, 0.0, 0.0], [1.0, 0.0, 0.0])
+atom2 = py_atom.new_atom(1.0, 'N', 'N', [1.5, 0.0, 0.0], [0.0, 0.0, 1.0])
+bond = py_bond.new_bond(atom1, atom2, [1.0, 1.0, 0.0])
+py_bond.set_line_width_bond(bond, 5.0)
+py_bond.set_annotation_bond(bond, 'C-N bond')
+print(bond)
+# Bond(atom1=Atom(C), atom2=Atom(N), color=[1.0,1.0,0.0], width=5.0)
+print(f'Other atom: {py_bond.get_other_atom_bond(bond, atom1).symbol}')
 ```
 
 ### Verify implementation:
@@ -418,10 +508,11 @@ When adding tests for new modules:
 | **mem_cache** | ~300 | 16 | ✅ Complete | Thread-safe LRU cache with eviction |
 | **peak** | ~350 | 39 | ✅ Complete | NMR peak data structure, some stubs for fitting/drawing |
 | **atom** | ~400 | 45 | ✅ Complete | 3D atom with geometry, bonds, visualization properties |
+| **bond** | ~260 | 33 | ✅ Complete | Molecular bond connecting two atoms |
 
-**Total:** 100 passing tests across 3 modules
+**Total:** 133 passing tests across 4 modules
 
-All three implementations demonstrate the full pattern:
+All four implementations demonstrate the full pattern:
 - Pure Python matching C API exactly
 - Comprehensive implementation-agnostic tests
 - Full documentation and debugging support

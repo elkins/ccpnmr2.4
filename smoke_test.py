@@ -3,7 +3,7 @@
 Comprehensive smoke test for ccpnmr2.4 repository.
 
 Tests:
-1. Python implementation imports (mem_cache, atom, peak)
+1. Python implementation imports (mem_cache, atom, peak, bond)
 2. Wrapper imports (py_*.py files)
 3. Unit test suite execution
 4. Basic functionality of new implementations
@@ -56,6 +56,7 @@ def test_python_implementations():
         ('memops.c.python_impl.mem_cache', 'MemCache', 'new_mem_cache'),
         ('ccp.c.python_impl.atom', 'Atom', 'new_atom'),
         ('ccpnmr.analysis.python_impl.peak', 'Peak', 'new_peak'),
+        ('ccp.c.python_impl.bond', 'Bond', 'new_bond'),
     ]
     
     for module_name, class_name, func_name in tests:
@@ -81,6 +82,12 @@ def test_python_implementations():
                 obj = module.new_atom(1.0, 'C', 'CA', [0.0, 0.0, 0.0], [1.0, 1.0, 1.0])
             elif module_name.endswith('peak'):
                 obj = module.new_peak(2)
+            elif module_name.endswith('bond'):
+                # Need an atom to create bond, create dummy atoms
+                atom_module = __import__('ccp.c.python_impl.atom', fromlist=['new_atom'])
+                a1 = atom_module.new_atom(1.0, 'C', '', [0.0, 0.0, 0.0], [1.0, 1.0, 1.0])
+                a2 = atom_module.new_atom(1.0, 'N', '', [1.5, 0.0, 0.0], [0.0, 0.0, 1.0])
+                obj = module.new_bond(a1, a2, None)
             
             print_success(f"{module_name}: OK (class {class_name}, function {func_name})")
             results['passed'] += 1
@@ -99,11 +106,12 @@ def test_wrapper_imports():
     
     root = Path(__file__).parent
     
-    # Test our three main wrappers
+    # Test our four main wrappers
     wrappers = [
         root / 'ccpnmr2.4' / 'c' / 'memops' / 'global' / 'py_mem_cache.py',
         root / 'ccpnmr2.4' / 'c' / 'ccp' / 'structure' / 'py_atom.py',
         root / 'ccpnmr2.4' / 'c' / 'ccpnmr' / 'analysis' / 'py_peak.py',
+        root / 'ccpnmr2.4' / 'c' / 'ccp' / 'structure' / 'py_bond.py',
     ]
     
     import importlib.util
@@ -234,6 +242,22 @@ def test_basic_functionality():
             results['failed'] += 1
     except Exception as e:
         print_failure(f"peak: {str(e)}")
+        results['failed'] += 1
+    
+    # Test bond
+    try:
+        from ccp.c.python_impl import atom, bond
+        a1 = atom.new_atom(1.0, 'C', 'CA', [0.0, 0.0, 0.0], [1.0, 0.0, 0.0])
+        a2 = atom.new_atom(1.0, 'N', 'N', [1.5, 0.0, 0.0], [0.0, 0.0, 1.0])
+        b = bond.new_bond(a1, a2, [1.0, 1.0, 0.0])
+        if b.have_color and b.color == [1.0, 1.0, 0.0]:
+            print_success("bond: creation with color works")
+            results['passed'] += 1
+        else:
+            print_failure(f"bond: color setting failed")
+            results['failed'] += 1
+    except Exception as e:
+        print_failure(f"bond: {str(e)}")
         results['failed'] += 1
     
     return results

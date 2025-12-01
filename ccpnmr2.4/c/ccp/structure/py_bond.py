@@ -1,11 +1,13 @@
 # Auto-generated wrapper for py_bond.c
-# Loads the pure-Python implementation found at: /Users/georgeelkins/nmr/ccpnmr2.4/bond.py
+# Loads the pure-Python implementation using relative path from this file
 import importlib.util
 import importlib.machinery
 import sys
 import os
 
-_impl_path = os.path.normpath(r'''/Users/georgeelkins/nmr/ccpnmr2.4/bond.py''')
+# Calculate path relative to this wrapper file
+_wrapper_dir = os.path.dirname(os.path.abspath(__file__))
+_impl_path = os.path.normpath(os.path.join(_wrapper_dir, '..', '..', '..', 'python', 'ccp', 'c', 'python_impl', 'bond.py'))
 _spec = importlib.util.spec_from_file_location('bond_impl_auto', _impl_path)
 _impl = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_impl)
