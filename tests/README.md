@@ -187,6 +187,11 @@ python3 -m unittest discover tests
 python3 tests/run_comparison_tests.py
 ```
 
+### Three-way comparison (Python vs Numba vs C):
+```bash
+python3 tests/run_three_way_comparison.py --benchmark
+```
+
 ### Run specific test class:
 ```bash
 python3 -m unittest tests.test_mem_cache.TestMemCacheEviction
@@ -274,7 +279,12 @@ This same approach works for any C extension module:
    - Preserve behavior (thread-safety, error handling, etc.)
    - Add docstrings and type hints
    
-3. **Write implementation-agnostic tests**
+3. **Optionally create numba-accelerated version**
+   - Use `@jit` decorators for numerical operations
+   - Best for array operations and tight loops
+   - See `ccpnmr2.4/python/README_NUMBA.md` for details
+   
+4. **Write implementation-agnostic tests**
    - Import through the wrapper (`py_*.py` files)
    - Test public API behavior, not implementation
    - Cover edge cases, threading, memory management
@@ -330,18 +340,26 @@ For each module:
 
 ```
 # Pure Python implementations (in proper package locations):
-ccpnmr2.4/python/memops/c/python_impl/mem_cache.py     # ✅ Complete
-ccpnmr2.4/python/ccp/c/python_impl/atom.py             # ✅ Complete
-ccpnmr2.4/python/ccp/c/python_impl/bond.py             # ✅ Complete
-ccpnmr2.4/python/ccpnmr/analysis/python_impl/peak.py  # ✅ Complete
+ccpnmr2.4/python/memops/c/python_impl/mem_cache.py        # ✅ Complete
+ccpnmr2.4/python/memops/c/python_impl/mem_cache_numba.py  # ✅ Numba variant
+ccpnmr2.4/python/ccp/c/python_impl/atom.py                # ✅ Complete
+ccpnmr2.4/python/ccp/c/python_impl/atom_numba.py          # ✅ Numba variant
+ccpnmr2.4/python/ccp/c/python_impl/bond.py                # ✅ Complete
+ccpnmr2.4/python/ccp/c/python_impl/bond_numba.py          # ✅ Numba variant
+ccpnmr2.4/python/ccpnmr/analysis/python_impl/peak.py     # ✅ Complete
+ccpnmr2.4/python/ccpnmr/analysis/python_impl/peak_numba.py # ✅ Numba variant
 
 # Unit tests:
-tests/test_mem_cache.py         # 16 tests for mem_cache
-tests/test_peak.py              # 39 tests for peak
-tests/test_atom.py              # 45 tests for atom
-tests/test_bond.py              # 33 tests for bond
-tests/run_comparison_tests.py   # Comparison runner
-tests/README.md                 # This file
+tests/test_mem_cache.py            # 16 tests for mem_cache
+tests/test_peak.py                 # 39 tests for peak
+tests/test_atom.py                 # 45 tests for atom
+tests/test_bond.py                 # 33 tests for bond
+tests/run_comparison_tests.py      # Two-way comparison runner
+tests/run_three_way_comparison.py  # Three-way comparison with benchmarks
+tests/README.md                    # This file
+
+# Documentation:
+ccpnmr2.4/python/README_NUMBA.md   # Numba implementation guide
 
 # Wrappers (auto-generated, point to python_impl):
 ccpnmr2.4/c/memops/global/py_mem_cache.py       # Wrapper for mem_cache
