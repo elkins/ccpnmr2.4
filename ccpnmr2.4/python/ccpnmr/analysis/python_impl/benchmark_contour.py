@@ -9,6 +9,11 @@ See contour.py for rationale on why simplified implementations were created
 instead of wrapping the existing complex C code with its file I/O, caching,
 and rendering infrastructure.
 
+IMPORTANT: For Numba, warmup iterations ensure JIT compilation happens before
+timing begins. The first call to a Numba function can be 10,000x+ slower due
+to compilation overhead. Our warmup strategy ensures we only measure the fast
+compiled code performance.
+
 Tests performance on:
 - Various grid sizes
 - Multiple contour levels
@@ -84,8 +89,11 @@ def benchmark_tracer(tracer_class, name, data, levels, iterations=10):
     tracer = tracer_class(size, size)
     tracer.set_data(data)
     
-    # Warmup
-    tracer.trace_level(levels[0])
+    # Warmup - especially important for Numba JIT compilation
+    # Run multiple warmup iterations to ensure all code paths are compiled
+    for _ in range(3):
+        for level in levels:
+            tracer.trace_level(level)
     
     # Benchmark
     start = time.perf_counter()
