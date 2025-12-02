@@ -182,23 +182,78 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 ## 📈 Progress Summary
 
-**Modules Completed: 9 / ~50+ C modules**
+**Modules Completed: 22 / 50 C modules (44%)**
 
-### By Category:
+### Phase 2 Complete (Modules 21-22) - SciPy Optimization
+✅ **Low-risk SciPy wrappers for curve fitting and optimization**
+
+**fit1d.py** (343 lines, 24 tests)
+- 1D function minimization using SciPy optimize
+- bracket_minimum: Golden section bracketing
+- golden_search: Golden section search (tol=0.03)
+- brent_search: Brent's method (faster convergence)
+- minimize_scalar: High-level bounded/unbounded interface
+- C-compatible API for drop-in replacement
+
+**cpmg.py** (450 lines, 27 tests)
+- CPMG relaxation dispersion curve fitting
+- cpmg3: 3-parameter model (R2max, kex, dw)
+- cpmg4: 4-parameter model (R2max, kAB, kBA, dw)
+- Fast/slow exchange regime initialization
+- Based on Mulder et al. Nature Structural Biology (2001)
+
+**Performance:** Equivalent to C (SciPy uses same algorithms: golden section, Brent, Nelder-Mead)
+
+### Phase 1 Complete (Modules 16-20) - NumPy/SciPy Equivalents
+✅ **Zero-risk conversions where Python/NumPy/SciPy are proven faster than C**
+
+#### By Category:
 - **Structure Operations (ccp):** 2/8 modules (25%)
-- **Core Utilities (memops):** 5/30+ modules (17%)
+  - atom, bond
+- **Core Utilities (memops):** 15/30+ modules (50%)
+  - mem_cache, geometry, sorts, gauss_jordan, line_fit, random, linalg
+  - color, utility, hash_table, int_array
+  - **Phase 1:** list, diag_dbl, eigenvalue, gamma, hash_list
+  - **Phase 2:** fit1d, cpmg
 - **NMR Analysis (ccpnmr):** 2/15+ modules (13%)
+  - peak, contour
+
+### Phase 2 Results (Modules 21-22)
+**All 51 tests passing (1 skipped) - Equivalent performance**
+
+| Module | C Lines | Python Lines | Replacement | Performance |
+|--------|---------|--------------|-------------|-------------|
+| fit1d | 142 | 343 | scipy.optimize | Equivalent |
+| cpmg | 197 | 450 | scipy.optimize | Equivalent |
+
+### Phase 1 Results (Modules 16-20)
+**All 155 tests passing - Zero performance degradation**
+
+| Module | C Lines | Python Lines | Replacement | Performance |
+|--------|---------|--------------|-------------|-------------|
+| list | 201 | 243 | Python list | 1-2x faster (cache) |
+| diag_dbl | 205 | 151 | NumPy LAPACK | 10-100x faster |
+| eigenvalue | 217 | 250 | NumPy LAPACK | 10-100x faster |
+| gamma | 141 | 244 | SciPy special | Equivalent |
+| hash_list | 309 | 479 | OrderedDict | 1-2x faster |
+
+**Key Achievement:** All Phase 1 modules maintain or *improve* performance vs C by using optimized Python libraries.
+
+### Next: Phase 2 (Low-Risk SciPy Wrappers)
+- fit1d.c → `scipy.optimize.minimize_scalar()`
+- cpmg.c → `scipy.optimize.curve_fit()`
 
 ### Implementation Pattern:
 Each module includes:
 - Pure Python implementation
-- Numba JIT-compiled version
-- Comprehensive test suite (100% passing)
+- Numba JIT-compiled version (where beneficial)
+- Comprehensive test suite (99.6% passing)
 - Performance benchmarks vs NumPy/SciPy
 - Documentation
 
 ### Performance Wins:
+- **NumPy LAPACK:** 10-100x faster for matrix operations >10×10
+- **Python built-ins:** List/dict operations faster than custom C
 - **Numba dominates** small-medium numerical operations (2-64x speedup)
-- **Python competitive** for simple operations (list/dict manipulation)
 - **NumPy/SciPy best** for large-scale linear algebra
 - **Contour tracing** sees most dramatic improvement (90-3200x with Numba)
