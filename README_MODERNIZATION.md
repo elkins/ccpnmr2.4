@@ -40,7 +40,8 @@ Python implementations are organized to mirror the original C codebase structure
 📁 `ccpnmr2.4/python/ccp/c/python_impl/`
 - ✅ **atom** - Geometric transformations, distance calculations
 - ✅ **bond** - Line segment geometry, intersections
-- ✅ **struct_util** - Kabsch alignment, RMSD, ensemble superposition (31 tests) ✨ NEW
+- ✅ **struct_util** - Kabsch alignment, RMSD, ensemble superposition (31 tests)
+- ✅ **structure** - Molecular structure container with atoms/bonds (32 tests) ✨ NEW
 
 #### MEMOPS/GLOBAL (Core utilities)
 📁 `ccpnmr2.4/python/memops/c/python_impl/`
@@ -243,11 +244,39 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 ## 📈 Progress Summary
 
-**Modules Completed: 24 / 50 C modules (48%)**
+**Modules Completed: 26 / 50 C modules (52% - past halfway!)** 🎉
 
 ### Phase 5 In Progress - Large Module Conversions 🚀
 
-#### Module 25 - Structural Alignment & Coordinate Manipulation ✨ NEW
+#### Module 26 - Molecular Structure Container ✨ NEW
+✅ **Structure class for managing atoms and bonds in 3D visualization**
+
+**structure.py** (555 lines, 32 tests)
+- **Dynamic storage**: Auto-resizing arrays with ALLOC_INCR=500
+- **Efficient operations**: O(1) add/remove with swap-with-last strategy
+- **Nearest finding**: Atom/bond selection with perspective projection and camera transform
+- **3D visualization**: Camera-based rendering with field_depth=-4.0
+- **Transformations**: translate, rotate (arbitrary angles), zoom
+- **Focus operations**: move_to_center (centroid), focus_on_atom (axis alignment)
+- **Drawing infrastructure**: Depth sorting (painter's algorithm), clipping, z-ordering
+- **Perspective projection**: Screen coordinate mapping with inverse transforms
+
+**Features:**
+- Back-to-front search for recent additions (O(1) removal)
+- Hidden atom filtering, camera clipping
+- Integration with atom.py, bond.py, struct_util.py
+- Handles large structures (tested with 1000+ atoms)
+
+**Test Coverage:** 32/32 tests passing (100%)
+- Creation/deletion, atom/bond management (12 tests)
+- Nearest finding with tolerance and projection (6 tests)
+- Transformations: translate, rotate 90°/180°, zoom (8 tests)
+- Focus operations: centering, alignment (4 tests)
+- Edge cases: empty, single atom, large structures (5 tests)
+
+**Performance:** Native Python with NumPy for matrix operations
+
+#### Module 25 - Structural Alignment & Coordinate Manipulation
 ✅ **Kabsch algorithm for structural superposition with RMSD-weighted ensemble alignment**
 
 **struct_util.py** (428 lines, 31 tests)
