@@ -40,6 +40,7 @@ Python implementations are organized to mirror the original C codebase structure
 📁 `ccpnmr2.4/python/ccp/c/python_impl/`
 - ✅ **atom** - Geometric transformations, distance calculations
 - ✅ **bond** - Line segment geometry, intersections
+- ✅ **struct_util** - Kabsch alignment, RMSD, ensemble superposition (31 tests) ✨ NEW
 
 #### MEMOPS/GLOBAL (Core utilities)
 📁 `ccpnmr2.4/python/memops/c/python_impl/`
@@ -56,7 +57,8 @@ Python implementations are organized to mirror the original C codebase structure
 - ✅ **fit1d** - 1D curve fitting (polynomial, spline, smoothing)
 - ✅ **cpmg** - CPMG relaxation dispersion (Carver-Richards, Baldwin-Kay)
 - ✅ **nonlinear_model** - Nonlinear least squares via Levenberg-Marquardt
-- ✅ **color** - RGB/HSV color conversion, contrast utilities (206 tests)
+- ✅ **fit** - 18 NMR fitting methods with bootstrap errors (34 tests) ✨ NEW
+- ✅ **color** - RGB/HSV color conversion, contrast utilities (43 tests)
 - ✅ **utility** - Endianness, file I/O, math utilities, array parsing (39 tests)
 - ✅ **hash_table** - Dynamic hash table with linear probing (38 tests)
 - ✅ **int_array** - Integer array data structure for indexing (36 tests)
@@ -243,7 +245,37 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 **Modules Completed: 24 / 50 C modules (48%)**
 
-### Phase 5 Complete (Module 24) - Comprehensive Curve Fitting ✨ NEW
+### Phase 5 In Progress - Large Module Conversions 🚀
+
+#### Module 25 - Structural Alignment & Coordinate Manipulation ✨ NEW
+✅ **Kabsch algorithm for structural superposition with RMSD-weighted ensemble alignment**
+
+**struct_util.py** (428 lines, 31 tests)
+- **Kabsch algorithm**: SVD-based optimal structural alignment
+- **translate_coordinates**: Center of mass translation with optional atomic weighting
+- **align_coordinates**: Eigenvalue-based optimal rotation matrix computation
+- **align_translate_coordinates**: Combined translation + alignment in one step
+- **align_ensemble**: Iterative RMSD-weighted alignment for NMR ensembles
+  - Two-pass alignment (fit to first, then refit to best member)
+  - Exponential weighting: exp(-t²) where t = RMSD/threshold (0.8 Å)
+  - Robust handling of mobile loops and flexible regions
+- **calculate_rmsd**: Root-mean-square deviation between structures
+- **superimpose**: High-level superposition with comprehensive statistics
+
+**Algorithm:** Uses eigenvalue decomposition for principal axes, constructs rotation via eigenvectors, handles degenerate cases (planar, collinear, single atom)
+
+**Test Coverage:** 31/31 tests passing (100%)
+- Translation: weighted/unweighted, centered/uncentered (4 tests)
+- Alignment: identity, 90°/180° rotations, weighted (5 tests)
+- Ensemble: identical, varied, mobile loops, NMR-like 20-structure ensembles (4 tests)
+- RMSD: identical, simple, weighted, translation (4 tests)
+- Superposition: basic, weighted, with/without translation (3 tests)
+- Edge cases: single atom, two atoms, planar, collinear, large coords, zero weights (6 tests)
+- Numerical stability: repeated alignment, orthonormal rotation, symmetry (3 tests)
+
+**Performance:** Uses SciPy's optimized LAPACK eigenvalue solvers, NumPy vectorization
+
+#### Module 24 - Comprehensive Curve Fitting
 ✅ **18 NMR-specific curve fitting methods with bootstrap error estimation**
 
 **fit.py** (792 lines, 34 tests)
@@ -258,6 +290,8 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 **Test Coverage:** 34/34 tests passing (100%)  
 **Performance:** Equivalent to C (uses SciPy's optimized MINPACK backend)
+
+---
 
 ### Phase 4 Complete - Testing & Documentation Sprint
 ✅ **Comprehensive test coverage for all converted modules**
