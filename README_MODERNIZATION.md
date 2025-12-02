@@ -58,13 +58,14 @@ Python implementations are organized to mirror the original C codebase structure
 - ✅ **fit1d** - 1D curve fitting (polynomial, spline, smoothing)
 - ✅ **cpmg** - CPMG relaxation dispersion (Carver-Richards, Baldwin-Kay)
 - ✅ **nonlinear_model** - Nonlinear least squares via Levenberg-Marquardt
-- ✅ **fit** - 18 NMR fitting methods with bootstrap errors (34 tests) ✨ NEW
+- ✅ **fit** - 18 NMR fitting methods with bootstrap errors (34 tests) ✨
 - ✅ **color** - RGB/HSV color conversion, contrast utilities (43 tests)
 - ✅ **utility** - Endianness, file I/O, math utilities, array parsing (39 tests)
 - ✅ **hash_table** - Dynamic hash table with linear probing (38 tests)
 - ✅ **int_array** - Integer array data structure for indexing (36 tests)
 - ✅ **linalg** - Matrix operations (multiply, transpose, trace) (50 tests)
 - ✅ **random** - Random number generation (LCG + Box-Muller)
+- ✅ **clipping** - Cohen-Sutherland line clipping algorithm (30 tests) 🎯
 
 #### CCPNMR/ANALYSIS (NMR analysis)
 📁 `ccpnmr2.4/python/ccpnmr/analysis/python_impl/`
@@ -76,6 +77,8 @@ Python implementations are organized to mirror the original C codebase structure
 - ✅ **peak_cluster** - Peak grouping (multiplet, shift, static, symmetry) with labels (42 tests)
 - ✅ **symbol** - Peak symbol drawing (cross, plus, circle, disk, box) with aliasing (30 tests)
 - ✅ **contour_style** - Contour color and line style configuration (28 tests)
+- ✅ **method** - Peak fitting methods (parabolic, Gaussian, volume) (38 tests) 🎯
+- ✅ **win_peak_list** - Window peak rendering with depth cueing (34 tests) 🎯
 
 ---
 
@@ -250,7 +253,7 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 ## 📈 Progress Summary
 
-**Modules Completed: 32 / 50 C modules (64%)** 🎯
+**Modules Completed: 35 / 50 C modules (70%)** 🎯🎉
 
 ### Phase 5 In Progress - Large Module Conversions 🚀
 
