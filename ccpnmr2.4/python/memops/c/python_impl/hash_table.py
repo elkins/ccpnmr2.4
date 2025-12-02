@@ -309,8 +309,11 @@ class HashTable:
                 should_move = pe_index <= index and pe_index > ne_index
             
             if should_move:
-                # Move entry to fill gap
-                self.entries[index] = ne
+                # Move entry to fill gap (copy values, not reference)
+                self.entries[index].used = True
+                self.entries[index].key = ne.key
+                self.entries[index].data = ne.data
+                self.entries[index].hash = ne.hash
                 ne.used = False
                 index = ne_index
             
