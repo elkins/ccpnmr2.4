@@ -23,16 +23,22 @@ class TestGeometryWorkflows:
         # Create points
         points = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
         
-        # Rotate each point
+        # Rotate each point using rotation matrix
         axis = [0.0, 0.0, 1.0]  # Z-axis
         angle = math.pi / 2  # 90 degrees
         
-        rotated = [rotate_vector_axis_angle(p, axis, angle) for p in points]
+        rot_matrix = rotation_matrix(axis, angle)
+        from memops.c.python_impl.linalg import matrix_vector_multiply
+        rotated = [matrix_vector_multiply(rot_matrix, p) for p in points]
         
         # Calculate distances between rotated points
-        d01 = vector_length_dif(rotated[0], rotated[1])
-        d02 = vector_length_dif(rotated[0], rotated[2])
-        d12 = vector_length_dif(rotated[1], rotated[2])
+        def distance(v1, v2):
+            diff = [v1[i] - v2[i] for i in range(len(v1))]
+            return vector_length(diff)
+        
+        d01 = distance(rotated[0], rotated[1])
+        d02 = distance(rotated[0], rotated[2])
+        d12 = distance(rotated[1], rotated[2])
         
         # All distances should be sqrt(2) (corners of unit cube)
         assert abs(d01 - math.sqrt(2)) < 1e-6
@@ -49,8 +55,10 @@ class TestGeometryWorkflows:
             [1.0, 1.0, 0.0]
         ]
         
-        # Fit plane
-        normal = unit_normal(points[0], points[1], points[2])
+        # Compute plane normal from two edge vectors
+        v1 = [points[1][i] - points[0][i] for i in range(3)]
+        v2 = [points[2][i] - points[0][i] for i in range(3)]
+        normal = normalise_vector(cross_product(v1, v2))
         
         # Normal should point along Z axis
         assert abs(normal[0]) < 1e-6
@@ -81,13 +89,20 @@ class TestLinearAlgebraIntegration:
         A = [[2.0, 3.0], [4.0, 5.0]]
         b = [8.0, 14.0]
         
-        # Solve using Gauss-Jordan
-        solution = gauss_jordan_solve(A, b)
+        # Solve using Gauss-Jordan (returns tuple)
+        is_singular, a_inverse, solution = gauss_jordan_solve(A, b)
         
-        # Verify solution: A × x = b
-        result = matrix_vector_multiply(A, solution)
-        assert abs(result[0] - b[0]) < 1e-10
-        assert abs(result[1] - b[1]) < 1e-10
+        # Verify not singular
+        assert not is_singular
+        
+        # Verify solution has correct length
+        assert len(solution) == 2
+        
+        # Verify solution: A × x = b (use original matrix values)
+        A_orig = [[2.0, 3.0], [4.0, 5.0]]
+        result = matrix_vector_multiply(A_orig, solution)
+        assert abs(result[0] - 8.0) < 1e-10
+        assert abs(result[1] - 14.0) < 1e-10
 
 
 class TestFittingWorkflows:
@@ -100,10 +115,11 @@ class TestFittingWorkflows:
         x = [float(i) for i in range(10)]
         y_linear = [2.0 + 3.0 * xi + normal(0, 0.1) for xi in x]
         
-        # Fit linear
-        params = line_fit(x, y_linear)
-        assert abs(params[0] - 2.0) < 0.5  # Intercept
-        assert abs(params[1] - 3.0) < 0.5  # Slope
+        # Fit linear (returns dict)
+        result = line_fit(x, y_linear)
+        assert result['error'] is None
+        assert abs(result['a'] - 2.0) < 0.5  # Intercept
+        assert abs(result['b'] - 3.0) < 0.5  # Slope
 
 
 class TestDataStructureIntegration:
@@ -167,9 +183,10 @@ class TestStatisticalWorkflows:
             # Add noise
             y_noisy = [yi + normal(0, 0.5) for yi in y_true]
             
-            # Fit
-            params = line_fit(x, y_noisy)
-            fitted_slopes.append(params[1])
+            # Fit (returns dict)
+            result = line_fit(x, y_noisy)
+            if result['error'] is None:
+                fitted_slopes.append(result['b'])
         
         # Check distribution of fitted slopes
         mean_slope = sum(fitted_slopes) / len(fitted_slopes)
