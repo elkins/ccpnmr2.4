@@ -46,6 +46,8 @@ Python implementations are organized to mirror the original C codebase structure
 - ✅ **mem_cache** - Dictionary-based caching
 - ✅ **geometry** - Vector operations (length, dot/cross product, angles, rotations)
 - ✅ **sorts** - Heap sort algorithm
+- ✅ **gauss_jordan** - Linear algebra, matrix inversion, solving Ax=b
+- ✅ **line_fit** - Weighted linear least squares regression
 
 #### CCPNMR/ANALYSIS (NMR analysis)
 📁 `ccpnmr2.4/python/ccpnmr/analysis/python_impl/`
@@ -78,6 +80,14 @@ python3 run_three_way_comparison.py --module bond --benchmark
 cd ccpnmr2.4/python/memops/c/python_impl
 python benchmark_geometry_sorts.py
 
+# Gauss-Jordan linear algebra
+cd ccpnmr2.4/python/memops/c/python_impl
+python benchmark_gauss_jordan.py
+
+# Line fitting
+cd ccpnmr2.4/python/memops/c/python_impl
+python benchmark_line_fit.py
+
 # Contour tracing
 cd ccpnmr2.4/python/ccpnmr/analysis/python_impl
 python benchmark_contour.py
@@ -99,11 +109,37 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 ## 📊 Performance Results
 
 ### Three-Way Comparison Test Results
-✅ **All modules passing functional tests:**
+✅ **All 9 modules passing functional tests:**
 - `mem_cache` - Dictionary operations work correctly
 - `atom` - Geometric transformations validated
 - `bond` - Line segment operations verified
 - `peak` - Peak position handling correct
+- `geometry` - Vector math operations verified
+- `sorts` - Heap sort algorithm validated
+- `gauss_jordan` - Linear equation solving validated
+- `line_fit` - Statistical fitting verified
+- `contour` - Contour tracing validated
+
+### Gauss-Jordan Linear Algebra (Python vs Numba vs NumPy)
+| Matrix Size | Numba Speedup vs Python | NumPy vs Python | Notes |
+|-------------|-------------------------|-----------------|-------|
+| 3×3 | 3.8x faster | 2.3x faster | Numba wins small matrices |
+| 5×5 | 8.1x faster | 7.3x faster | Both significantly faster |
+| 10×10 | 19.8x faster | **34.1x faster** | NumPy starts dominating |
+| 20×20 | 41x faster | **163x faster** | LAPACK optimization clear |
+| 50×50 | 64x faster | **540x faster** | NumPy dominant for large |
+
+**Key Finding:** Numba excels for small-medium matrices (typical NMR use), NumPy's LAPACK dominates for large systems.
+
+### Line Fitting (Python vs Numba vs NumPy vs SciPy)
+| Dataset Size | Numba vs Python | Best Overall | Notes |
+|--------------|-----------------|--------------|-------|
+| 10 points | 2.3x faster | **Numba** | Beats NumPy 7.5x |
+| 100 points | 4.5x faster | **Numba** | Beats NumPy 2.7x |
+| 1000 points | 5.0x faster | **NumPy** | LAPACK takes lead |
+| 10000 points | 8.9x faster | **NumPy** | NumPy 1.7x faster than Numba |
+
+**Key Finding:** Numba optimal for typical NMR dataset sizes (10-100 points), NumPy polyfit dominates for large datasets.
 
 ### Geometry Operations (Python vs Numba)
 | Operation | Winner | Speedup | Notes |
@@ -138,5 +174,31 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 ### Performance Strategy
 - **Use Python:** Dictionary operations, simple list comprehensions, object manipulation
-- **Use Numba:** Nested loops, numerical arrays, complex mathematical operations
+- **Use Numba:** Nested loops, numerical arrays, complex mathematical operations, small-medium datasets
+- **Use NumPy/SciPy:** Large matrices (>20×20), large datasets (>1000 points), production linear algebra
 - **Use Built-ins:** Python's `sorted()`, `min()`, `max()` are highly optimized
+
+---
+
+## 📈 Progress Summary
+
+**Modules Completed: 9 / ~50+ C modules**
+
+### By Category:
+- **Structure Operations (ccp):** 2/8 modules (25%)
+- **Core Utilities (memops):** 5/30+ modules (17%)
+- **NMR Analysis (ccpnmr):** 2/15+ modules (13%)
+
+### Implementation Pattern:
+Each module includes:
+- Pure Python implementation
+- Numba JIT-compiled version
+- Comprehensive test suite (100% passing)
+- Performance benchmarks vs NumPy/SciPy
+- Documentation
+
+### Performance Wins:
+- **Numba dominates** small-medium numerical operations (2-64x speedup)
+- **Python competitive** for simple operations (list/dict manipulation)
+- **NumPy/SciPy best** for large-scale linear algebra
+- **Contour tracing** sees most dramatic improvement (90-3200x with Numba)
