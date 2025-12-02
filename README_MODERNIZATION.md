@@ -182,7 +182,21 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 ## 📈 Progress Summary
 
-**Modules Completed: 22 / 50 C modules (44%)**
+**Modules Completed: 23 / 50 C modules (46%)**
+
+### Phase 3 Complete (Module 23) - Nonlinear Model Fitting
+✅ **General nonlinear least-squares fitting with Levenberg-Marquardt**
+
+**nonlinear_model.py** (425 lines, 27 tests)
+- General nonlinear model fitting using SciPy optimize
+- Levenberg-Marquardt via Trust Region Reflective algorithm
+- Weighted fitting with arbitrary weights
+- Parameter bounds and constraints
+- Covariance matrix and parameter uncertainties
+- Convenience wrappers: exponential_fit, gaussian_fit
+- curve_fit_wrapper: Alternative high-level interface
+
+**Performance:** Equivalent to C (SciPy uses optimized FORTRAN MINPACK backend)
 
 ### Phase 2 Complete (Modules 21-22) - SciPy Optimization
 ✅ **Low-risk SciPy wrappers for curve fitting and optimization**
@@ -210,13 +224,21 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 #### By Category:
 - **Structure Operations (ccp):** 2/8 modules (25%)
   - atom, bond
-- **Core Utilities (memops):** 15/30+ modules (50%)
+- **Core Utilities (memops):** 16/30+ modules (53%)
   - mem_cache, geometry, sorts, gauss_jordan, line_fit, random, linalg
   - color, utility, hash_table, int_array
   - **Phase 1:** list, diag_dbl, eigenvalue, gamma, hash_list
   - **Phase 2:** fit1d, cpmg
+  - **Phase 3:** nonlinear_model
 - **NMR Analysis (ccpnmr):** 2/15+ modules (13%)
   - peak, contour
+
+### Phase 3 Results (Module 23)
+**All 27 tests passing - Equivalent performance**
+
+| Module | C Lines | Python Lines | Replacement | Performance |
+|--------|---------|--------------|-------------|-------------|
+| nonlinear_model | 303 | 425 | scipy.optimize | Equivalent |
 
 ### Phase 2 Results (Modules 21-22)
 **All 51 tests passing (1 skipped) - Equivalent performance**
