@@ -70,6 +70,7 @@ Python implementations are organized to mirror the original C codebase structure
 📁 `ccpnmr2.4/python/ccpnmr/analysis/python_impl/`
 - ✅ **peak** - Peak region checking, validation
 - ✅ **contour** - Marching squares contour tracing (Python + Numba + Cython)
+- ✅ **peak_list** - Peak collection management with search and automated picking (49 tests)
 
 ---
 
@@ -244,11 +245,52 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 ## 📈 Progress Summary
 
-**Modules Completed: 26 / 50 C modules (52% - past halfway!)** 🎉
+**Modules Completed: 27 / 50 C modules (54%)** 🎉
 
 ### Phase 5 In Progress - Large Module Conversions 🚀
 
-#### Module 26 - Molecular Structure Container ✨ NEW
+#### Module 27 - Peak List Collection Management ✨ NEW
+✅ **NMR peak collection with comprehensive search and automated peak picking**
+
+**peak_list.py** (735 lines, 49 tests)
+- **PeakList class**: Container for managing collections of NMR peaks
+- **Peak operations**: Add, remove, selection, color/symbol management
+- **Region search**: Find peaks within spectral regions with aliasing support
+- **Nearest peak**: Interactive peak selection with distance calculations
+- **Automated peak picking**: Sophisticated algorithm with multiple criteria:
+  - Local extrema detection (maxima/minima in intensity)
+  - Diagonal exclusion regions (e.g., exclude NOESY diagonal)
+  - Rectangular exclusion regions for artifacts
+  - Minimum buffer distance between peaks
+  - Intensity drop requirements (fractional height)
+  - Linewidth filtering per dimension
+  - Adjacent (2n) vs non-adjacent (3^n neighbors) checking
+- **Peak scaling**: Logarithmic intensity/volume scaling for display
+- **DiagonalExclusion**: Define exclusion lines |a1*x - a2*y + b| < d
+
+**Key Algorithms:**
+- Multi-dimensional peak search with cumulative indexing
+- Intensity drop validation in all directions
+- Half-maximum linewidth calculation
+- Scaled region determination around peaks
+- Distance-squared calculations for nearest neighbor
+
+**Test Coverage:** 49/49 tests passing (100%)
+- Peak list basics: creation 1D/2D/3D, color, symbol (8 tests)
+- Add/remove operations: single, multiple, many peaks (6 tests)
+- Selection: select all, unselect, remove selected (4 tests)
+- Region search: empty list, finds peaks, no peaks (3 tests)
+- Nearest search: empty list, finds nearest (2 tests)
+- Max determination: intensity, volume, both, negative (5 tests)
+- Peak scale: zero, maximum, logarithmic (4 tests)
+- Diagonal exclusion: creation, parameters (2 tests)
+- Helper methods: find_point, buffer checking (6 tests)
+- C API compatibility: all functions (7 tests)
+- Mock block file for testing (3 tests)
+
+**Performance:** Pure Python with NumPy for array operations
+
+#### Module 26 - Molecular Structure Container
 ✅ **Structure class for managing atoms and bonds in 3D visualization**
 
 **structure.py** (555 lines, 32 tests)
