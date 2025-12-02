@@ -73,6 +73,7 @@ Python implementations are organized to mirror the original C codebase structure
 - ✅ **peak_list** - Peak collection management with search and automated picking (49 tests)
 - ✅ **contour_levels** - Contour level organization (negative first, then positive) (36 tests)
 - ✅ **contour_file** - Contour caching and rendering system with hash table (31 tests)
+- ✅ **peak_cluster** - Peak grouping (multiplet, shift, static, symmetry) with labels (42 tests)
 
 ---
 
@@ -247,7 +248,7 @@ This makes it easy to navigate: "Where's `atom.c`? → Look in `ccp/c/python_imp
 
 ## 📈 Progress Summary
 
-**Modules Completed: 29 / 50 C modules (58%)** 🎉
+**Modules Completed: 30 / 50 C modules (60%)** 🎯
 
 ### Phase 5 In Progress - Large Module Conversions 🚀
 
