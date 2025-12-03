@@ -12,7 +12,37 @@ The Structure class provides:
 - Focus operations for centering and alignment
 - Drawing infrastructure integration
 
-Based on ccpnmr2.4/c/ccp/structure/structure.c
+Performance Notes:
+    - Add/remove operations are O(1) using swap-with-last strategy
+    - Nearest atom finding uses perspective projection with early rejection
+    - Pre-allocated arrays minimize memory allocations
+    - All transformations use NumPy for vectorized operations
+
+Example Usage:
+    >>> from ccp.c.python_impl.structure import Structure
+    >>> from ccp.c.python_impl.atom import Atom
+    >>> 
+    >>> # Create structure and add atoms
+    >>> structure = Structure()
+    >>> atom1 = Atom()
+    >>> atom1.set_coords(0.0, 0.0, 0.0)
+    >>> structure.add_atom(atom1)
+    >>> 
+    >>> # Transform structure
+    >>> structure.translate([1.0, 0.0, 0.0])
+    >>> structure.zoom(2.0)
+    >>> 
+    >>> # Find nearest atom to screen coordinates
+    >>> nearest = structure.nearest_atom(10.0, 20.0, tol=5.0)
+    >>> if nearest:
+    >>>     print(f"Found atom at {nearest.x}")
+
+See Also:
+    - atom.py: Atom class for individual atoms
+    - bond.py: Bond class connecting atoms
+    - struct_util.py: RMSD and Kabsch alignment utilities
+
+Based on ccpnmr2.4/c/ccp/structure/structure.c (1,207 lines)
 """
 
 import numpy as np

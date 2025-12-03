@@ -4,9 +4,97 @@ Binary block file I/O for spectral data with random access.
 This module provides random access read/write to blocked data files,
 commonly used for storing large NMR spectral datasets efficiently.
 
+Block files divide large spectral data into fixed-size blocks for efficient
+random access and memory caching. This is essential for working with datasets
+too large to fit in memory (e.g., 4D NMR spectra).
+
+Features:
+    - Random access to arbitrary points and regions
+    - Automatic block caching with LRU eviction
+    - Support for both float32 and int16 data
+    - Big-endian and little-endian file formats
+    - Dimension wrapping for periodic data
+    - Memory-mapped file support for large files
+    - Dirty block tracking for efficient writes
+
+Performance:
+    - O(1) access to any point (after block load)
+    - Block caching minimizes disk I/O
+    - Vectorized operations with NumPy
+    - Typical block size: 32-128 points per dimension
+    - Cache size: 10-100 blocks (configurable)
+
+Example Usage:
+    >>> from memops.global_.python_impl.block_file import new_block_file
+    >>> from memops.global_.python_impl.mem_cache import new_mem_cache
+    >>> import numpy as np
+    >>> 
+    >>> # Create block file for 2D spectrum (1024 x 1024)
+    >>> cache = new_mem_cache(remove_callback=None, cache_size=50)
+    >>> block_file = new_block_file(
+    >>>     file='spectrum.dat',
+    >>>     ndim=2,
+    >>>     points=np.array([1024, 1024]),
+    >>>     block_size=np.array([32, 32]),
+    >>>     dim_wrapped=np.array([False, False]),
+    >>>     bytes_per_point=4,
+    >>>     big_endian=False,
+    >>>     padded=True,
+    >>>     header=0,
+    >>>     integer=False,
+    >>>     writeable=True,
+    >>>     block_header=0
+    >>> )
+    >>> 
+    >>> # Open file and access data
+    >>> block_file.open_file()
+    >>> 
+    >>> # Get single point
+    >>> value = block_file.get_point(np.array([100, 200]))
+    >>> print(f"Intensity at (100, 200): {value}")
+    >>> 
+    >>> # Get rectangular region
+    >>> region = block_file.get_box(
+    >>>     box_min=np.array([100, 200]),
+    >>>     box_max=np.array([132, 232])
+    >>> )
+    >>> print(f"Region shape: {region.shape}")
+    >>> 
+    >>> # Set region (for writeable files)
+    >>> new_data = np.random.randn(32, 32).astype(np.float32)
+    >>> block_file.set_box(
+    >>>     box_min=np.array([100, 200]),
+    >>>     box_max=np.array([132, 232]),
+    >>>     values=new_data
+    >>> )
+    >>> 
+    >>> # Save changes
+    >>> block_file.save()
+    >>> block_file.close_file()
+
+File Format:
+    The block file format consists of:
+    1. Optional header (length specified in header parameter)
+    2. Data blocks in C-order (last dimension varies fastest)
+    3. Optional per-block headers (for Varian format)
+    
+    Block layout for 2D data with block_size=[32, 32]:
+        Block (0,0): points [0:32, 0:32]
+        Block (0,1): points [0:32, 32:64]
+        Block (1,0): points [32:64, 0:32]
+        ...
+    
+    If padded=True, end blocks are padded to full block_size.
+    If padded=False, end blocks contain only actual data points.
+
+See Also:
+    - mem_cache.py: LRU cache for block management
+    - shape_file.py: On-the-fly generation of synthetic data
+    - slice_file.py: 1D slice extraction through blocks
+
 Module: block_file
 Original: ccpnmr2.4/c/memops/global/block_file.c (1,404 lines)
-Purpose: Random access blocked data file I/O with memory caching
+Python implementation: 672 lines (52% reduction)
 """
 
 from typing import Optional, List, Tuple, Callable, Any

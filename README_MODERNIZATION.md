@@ -7,8 +7,94 @@
 - 🐍 **Full Python 3 compatibility**
 - 🔬 **Preserve NMR functionality** for scientific use
 
+## 🚀 Quick Start
+
+### Installation
+```bash
+git clone https://github.com/elkins/ccpnmr2.4.git
+cd ccpnmr2.4
+pip install -r requirements.txt  # Install NumPy, SciPy, Numba
+```
+
+### Basic Usage
+```python
+# Add Python path
+import sys
+sys.path.insert(0, 'ccpnmr2.4/python')
+
+# Example 1: Molecular structure alignment (Kabsch algorithm)
+from ccp.c.python_impl.struct_util import align_coordinates, calculate_rmsd
+import numpy as np
+
+coords1 = np.random.randn(100, 3).astype(np.float32)  # Reference structure
+coords2 = np.random.randn(100, 3).astype(np.float32)  # Mobile structure
+
+rmsd_before = calculate_rmsd(coords1, coords2)
+rotation, translation = align_coordinates(coords1, coords2)
+rmsd_after = calculate_rmsd(coords1, (coords2 - translation) @ rotation.T)
+print(f"RMSD: {rmsd_before:.3f} Å → {rmsd_after:.3f} Å")
+
+# Example 2: Peak detection in 2D spectrum
+from ccpnmr.analysis.python_impl.peak_list import PeakList
+import numpy as np
+
+spectrum = np.random.randn(512, 512).astype(np.float32)
+peak_list = PeakList(ndim=2, npoints=np.array([512, 512]))
+
+threshold = 3.0
+candidates = np.argwhere(spectrum > threshold)
+for pos in candidates[:10]:  # Find first 10 peaks
+    peak = peak_list.add_peak_peak_list()
+    peak.set_position(pos.astype(np.float32))
+    peak.set_height(float(spectrum[tuple(pos)]))
+
+print(f"Found {peak_list.npeaks} peaks")
+
+# Example 3: Contour generation (marching squares)
+from memops.global_.python_impl.contourer import calculate_contours, ContoururInfo
+import numpy as np
+
+# Generate test data
+x = np.linspace(-3, 3, 256)
+y = np.linspace(-3, 3, 256)
+X, Y = np.meshgrid(x, y)
+data = np.exp(-(X**2 + Y**2)).astype(np.float32)
+
+# Configure contourer
+def get_row(user_data):
+    return user_data['data'][user_data['row'], :]
+
+user_data = {'data': data, 'row': 0}
+info = ContoururInfo(
+    user_data=user_data,
+    nlevels=5,
+    levels=np.array([0.1, 0.3, 0.5, 0.7, 0.9]),
+    npoints=np.array([256, 256]),
+    offset=np.array([0.0, 0.0]),
+    scale=np.array([1.0, 1.0]),
+    get_row_func=get_row
+)
+
+contours = calculate_contours(info)
+print(f"Generated {contours.n} contour levels")
+```
+
+### Documentation
+- **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - Practical examples for all modules
+- **[OPTIMIZATION_GUIDE.md](OPTIMIZATION_GUIDE.md)** - Performance tuning strategies
+- **Module docstrings** - Detailed API documentation in source code
+
+### Run Tests
+```bash
+cd tests
+python3 run_three_way_comparison.py  # All modules
+python3 run_three_way_comparison.py --module structure --benchmark  # Specific module
+```
+
+---
+
 ## Branches:
-- `analysis-phase` - Initial code analysis and planning
+- `analysis-phase` - Initial code analysis and planning ⭐ **ACTIVE**
 - `c-to-python-experiments` - C extension replacement trials  
 - `performance-testing` - Benchmarking and optimization
 

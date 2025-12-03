@@ -11,8 +11,72 @@ Key features:
 - Handles saddle points (ambiguous cases) correctly
 - Chain processing for contour path extraction
 
+Algorithm:
+    The marching squares algorithm processes a 2D grid cell-by-cell, examining
+    each 2×2 block of data points. Based on which corners are above/below the
+    contour level, one of 16 edge cases is selected. Linear interpolation
+    determines exact vertex positions along edges.
+    
+    For saddle point cases (opposite corners above/below threshold), the
+    average value of the four corners determines the disambiguation.
+
+Performance:
+    - O(n*m) complexity for n×m grid
+    - Single pass for multiple contour levels
+    - Block vertex allocation reduces malloc overhead
+    - No recursion (iteration-based chain traversal)
+
+Example Usage:
+    >>> import numpy as np
+    >>> from memops.global_.python_impl.contourer import calculate_contours, ContoururInfo
+    >>> 
+    >>> # Generate test data
+    >>> x = np.linspace(-3, 3, 100)
+    >>> y = np.linspace(-3, 3, 100)
+    >>> X, Y = np.meshgrid(x, y)
+    >>> data = np.exp(-(X**2 + Y**2))
+    >>> 
+    >>> # Create row access function
+    >>> def get_row(user_data):
+    >>>     row_index = user_data['row']
+    >>>     return user_data['data'][row_index, :]
+    >>> 
+    >>> # Configure contourer
+    >>> user_data = {'data': data, 'row': 0}
+    >>> info = ContoururInfo(
+    >>>     user_data=user_data,
+    >>>     nlevels=3,
+    >>>     levels=np.array([0.3, 0.5, 0.7]),
+    >>>     npoints=np.array([100, 100]),
+    >>>     offset=np.array([0.0, 0.0]),
+    >>>     scale=np.array([1.0, 1.0]),
+    >>>     get_row_func=get_row
+    >>> )
+    >>> 
+    >>> # Generate contours
+    >>> contours = calculate_contours(info)
+    >>> print(f"Generated {contours.n} contour levels")
+    >>> print(f"Level 0 has {contours.vertices[0].nvertices} vertices")
+    >>> 
+    >>> # Extract contour paths
+    >>> def draw_callback(vertices, first_vertex):
+    >>>     coords = []
+    >>>     v = first_vertex
+    >>>     while v is not None:
+    >>>         coords.append(v.x)
+    >>>         v = v.v1  # Follow chain
+    >>>     return coords
+    >>> 
+    >>> from memops.global_.python_impl.contourer import process_chains
+    >>> paths = process_chains(contours, 0, draw_callback)
+
+See Also:
+    - contour_file.py: Storage and caching of generated contours
+    - contour_levels.py: Level calculation strategies
+    - slice_file.py: 1D slice extraction through spectral data
+
 Original C: ccpnmr2.4/c/memops/global/contourer.c (745 lines)
-Python implementation: More compact with NumPy
+Python implementation: 577 lines (22% reduction with NumPy)
 """
 
 import numpy as np

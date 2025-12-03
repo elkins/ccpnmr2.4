@@ -3,11 +3,60 @@ Pure Python implementation of geometry operations.
 
 Vector operations for NMR analysis:
 - vector_length: Calculate vector magnitude
-- inner_product: Dot product of two vectors
+- inner_product: Dot product of two vectors  
 - cross_product: Cross product (3D only)
 - normalise_vector: Scale vector to unit length
 - vectors_angle: Angle between two vectors
 - rotation_matrix: Create rotation matrix
+
+Mathematical Background:
+    All operations use standard vector algebra:
+    - Inner product: v1·v2 = Σ(v1[i] * v2[i])
+    - Cross product: v1×v2 = [v1[1]*v2[2]-v1[2]*v2[1], ...]
+    - Angle: θ = arccos((v1·v2)/(|v1||v2|))
+    - Rotation: Rodrigues' formula R = I + sin(θ)K + (1-cos(θ))K²
+
+Performance:
+    - Pure Python for small vectors (< 10 elements)
+    - For large arrays, use geometry_numba.py or NumPy directly
+    - No NumPy dependency for maximum portability
+
+Example Usage:
+    >>> from memops.c.python_impl.geometry import *
+    >>> 
+    >>> # Calculate vector length
+    >>> v = [3.0, 4.0, 0.0]
+    >>> length = vector_length(v)  # Returns 5.0
+    >>> 
+    >>> # Dot product
+    >>> v1 = [1.0, 0.0, 0.0]
+    >>> v2 = [0.0, 1.0, 0.0]
+    >>> dot = inner_product(v1, v2)  # Returns 0.0 (orthogonal)
+    >>> 
+    >>> # Cross product
+    >>> v3 = cross_product(v1, v2)  # Returns [0, 0, 1] (right-hand rule)
+    >>> 
+    >>> # Normalize vector
+    >>> v_unit = normalise_vector([3.0, 4.0, 0.0])  # [0.6, 0.8, 0.0]
+    >>> 
+    >>> # Angle between vectors
+    >>> import math
+    >>> angle = vectors_angle(v1, v2)  # π/2 radians (90 degrees)
+    >>> degrees = angle * 180 / math.pi  # 90.0
+    >>> 
+    >>> # Create rotation matrix (rotate 90° about z-axis)
+    >>> axis = [0.0, 0.0, 1.0]
+    >>> angle = math.pi / 2
+    >>> R = rotation_matrix(axis, angle)
+    >>> # Apply to vector: result = [sum(R[i][j]*v[j] for j in range(3)) for i in range(3)]
+
+See Also:
+    - geometry_numba.py: Numba-accelerated versions for large datasets
+    - struct_util.py: Kabsch algorithm using these operations
+    - linalg.py: Matrix operations and decompositions
+
+Original C: ccpnmr2.4/c/memops/c/geometry.c (430 lines)
+Python implementation: 200 lines
 """
 
 import math
