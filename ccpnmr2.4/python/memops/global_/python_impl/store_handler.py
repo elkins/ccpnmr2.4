@@ -15,7 +15,7 @@ STORE_VERSION = 1
 STORE_DRAWING = 3  # Drawing function type identifier
 
 # Header components (in 4-byte words)
-HEADER0 = 6  # magic, version, header_size, ndim, xdim, ydim
+HEADER0 = 7  # magic, version, header_size, ndim, xdim, ydim, nlevels
 HEADER1 = 4  # per dimension: npoints, first, last, block_size
 HEADER2 = 1  # per level: level value (as float = 1 word)
 
@@ -195,8 +195,12 @@ class StoreHandler:
         header.append(nlevels)
         
         # Header without levels (integers only)
-        if len(header) != HEADER0 + ndim * HEADER1 + 1:
-            raise ValueError(f"inconsistent header int count: {len(header)} vs {HEADER0 + ndim * HEADER1 + 1}")
+        if len(header) != HEADER0 + ndim * HEADER1:
+            raise ValueError(f"inconsistent header int count: {len(header)} vs {HEADER0 + ndim * HEADER1}")
+        
+        # Verify total header size including levels
+        if len(header) + nlevels != header_size:
+            raise ValueError(f"inconsistent header size: {len(header) + nlevels} vs {header_size}")
         
         # Determine if we have positive and/or negative contours
         have_pos = np.any(levels >= 0)
@@ -221,9 +225,11 @@ class StoreHandler:
         # Initialize directory (all -1 means no data)
         directory = np.full(dir_size, -1, dtype=np.int32)
         
-        # Write header
+        # Write header integers
         for val in header:
             self._write_int(int(val))
+        
+        # Write levels as part of header
         for val in levels:
             self._write_float(float(val))
         

@@ -36,7 +36,7 @@ class TestConstants:
         
     def test_header_constants(self):
         """Test header size constants."""
-        assert HEADER0 == 6
+        assert HEADER0 == 7
         assert HEADER1 == 4
         assert HEADER2 == 1
         assert BYTES_PER_WORD == 4
