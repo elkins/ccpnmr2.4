@@ -1,3 +1,11 @@
+import logging
+logger = logging.getLogger("ccpnmr.nmrStar.chemShiftsIO")
+logger.setLevel(logging.DEBUG)
+if not logger.hasHandlers():
+  handler = logging.StreamHandler()
+  formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+  handler.setFormatter(formatter)
+  logger.addHandler(handler)
 """
 ======================COPYRIGHT/LICENSE START==========================
 
@@ -55,7 +63,7 @@ Development of a Software Pipeline. Proteins 59, 687 - 696.
 import os
 
 from ccp.format.nmrStar.generalIO import NmrStarGenericFile
-from ccp.format.nmrStar.generalIO import NmrStarFile
+from ccp.format.nmrStar.generalIO import NmrStarFile as NmrStarFileIO
 
 from ccp.format.general.Util import getSeqAndInsertCode
 from ccp.format.general.Constants import defaultMolCode
@@ -64,7 +72,7 @@ from ccp.format.general.Constants import defaultMolCode
 # Class definitions #
 #####################
 
-class NmrStarFile(NmrStarFile):
+class NmrStarFile(NmrStarFileIO):
 
   def initialize(self, version = '2.1.1'):
   
@@ -109,8 +117,8 @@ class NmrStarFile(NmrStarFile):
           text += "save_\n"
         
         self.text = text
-        print self.text
-        print "Warning: fixing input file to be correct NMR-STAR. This might not work."
+        print(self.text)
+        print("Warning: fixing input file to be correct NMR-STAR. This might not work.")
         
     self.readComponent(verbose = verbose) 
 
@@ -142,40 +150,65 @@ class NmrStarChemShiftFile(NmrStarGenericFile):
       self.parseSaveFrame()
 
   def parseSaveFrame(self):
+    if hasattr(self, 'saveFrame') and self.saveFrame is not None:
+      logger.debug(f"Parsing saveframe: {getattr(self.saveFrame, 'name', str(self.saveFrame))}")
+      logger.debug(f"Saveframe category: {getattr(self.saveFrame, 'category', str(getattr(self.saveFrame, 'category', None)))}")
+      if hasattr(self.saveFrame, 'tables') and self.saveFrame.tables is not None:
+        logger.debug(f"Tables found in saveframe: {list(self.saveFrame.tables.keys())}")
+      else:
+        logger.debug("No tables found in saveframe.")
+    else:
+      logger.debug("No saveFrame attribute or saveFrame is None.")
+    logger.debug(f"setData called with sfs type: {type(sfs)}, sfDict type: {type(sfDict)}")
+    if sfs is not None:
+      logger.debug(f"setData: {len(sfs)} saveframes")
+      for sf in sfs:
+        logger.debug(f"Examining saveframe: {getattr(sf, 'name', str(sf))} (category: {getattr(sf, 'category', str(getattr(sf, 'category', None)))})")
+        if hasattr(sf, 'tables') and sf.tables is not None:
+          logger.debug(f"Tables in saveframe: {list(sf.tables.keys())}")
+        else:
+          logger.debug("No tables found in saveframe.")
+      if not sfs:
+        logger.debug("No saveframes in sfs; checking sfDict for fallback.")
+        if sfDict is not None:
+          logger.debug(f"sfDict keys: {list(sfDict.keys())}")
+          for key, sf in sfDict.items():
+            logger.debug(f"sfDict key: {key}, saveframe: {getattr(sf, 'name', str(sf))}")
+            if hasattr(sf, 'tables') and sf.tables is not None:
+              logger.debug(f"Tables in sfDict saveframe: {list(sf.tables.keys())}")
+            else:
+              logger.debug("No tables found in sfDict saveframe.")
+        else:
+          logger.debug("sfDict is None.")
+    else:
+      logger.debug("setData called with missing sfs argument.")
 
     if not self.checkVersion():
       return
 
     if self.version == '2.1.1':
       # In case is missing in loop_ only shift files.
-      if self.saveFrame.tags.has_key('_Mol_system_component_name'):
+      molCode = defaultMolCode
+      if self.saveFrame and hasattr(self.saveFrame, 'tags') and '_Mol_system_component_name' in self.saveFrame.tags:
         molCode = self.saveFrame.tags['_Mol_system_component_name']
-      else:
-        molCode = defaultMolCode
-      
-      if '_Atom_shift_assign_ID' not in self.saveFrame.tables.keys():
+      if not (self.saveFrame and hasattr(self.saveFrame, 'tables') and '_Atom_shift_assign_ID' in self.saveFrame.tables):
         # Possible apparently
         return
-      
-      chemShiftTableTags = self.saveFrame.tables['_Atom_shift_assign_ID'].tags
-      numChemShifts = len(chemShiftTableTags['_Atom_shift_assign_ID'])
+      chemShiftTableTags = self.saveFrame.tables['_Atom_shift_assign_ID'].tags if hasattr(self.saveFrame.tables['_Atom_shift_assign_ID'], 'tags') else {}
+      numChemShifts = len(chemShiftTableTags['_Atom_shift_assign_ID']) if '_Atom_shift_assign_ID' in chemShiftTableTags else 0
     else:
-      if self.attrToTagMappings:
-
+      if self.attrToTagMappings and self.saveFrame and hasattr(self.saveFrame, 'tags'):
         for (attrName,tagName,default) in self.attrToTagMappings:
-          if self.saveFrame.tags.has_key(tagName):
-            attrValue = self.saveFrame.tags[tagName]
-          else:
-            attrValue = default
-        
-          if not hasattr(self,attrName) or not self.attrName:
-            setattr(self,attrName,attrValue)
-
+          attrValue = self.saveFrame.tags[tagName] if tagName in self.saveFrame.tags else default
+          if getattr(self, attrName, None) is None:
+            setattr(self, attrName, attrValue)
       molCode = None
-      chemShiftTableTags = self.saveFrame.tables['_Atom_chem_shift'].tags
-      if chemShiftTableTags.has_key('ID'):
+      chemShiftTableTags = {}
+      if self.saveFrame and hasattr(self.saveFrame, 'tables') and '_Atom_chem_shift' in self.saveFrame.tables:
+        chemShiftTableTags = self.saveFrame.tables['_Atom_chem_shift'].tags if hasattr(self.saveFrame.tables['_Atom_chem_shift'], 'tags') else {}
+      if 'ID' in chemShiftTableTags:
         numChemShifts = len(chemShiftTableTags['ID'])
-      elif chemShiftTableTags.has_key('Comp_ID'):
+      elif 'Comp_ID' in chemShiftTableTags:
         numChemShifts = len(chemShiftTableTags['Comp_ID'])
       else:
         numChemShifts = 0
@@ -187,7 +220,7 @@ class NmrStarChemShiftFile(NmrStarGenericFile):
       if not tmpMolCode:
         # TODO could in principle find entity_assembly name (or code)
         # What is the best way to handle this?
-        if chemShiftTableTags.has_key('Entity_assembly_ID'):
+        if 'Entity_assembly_ID' in chemShiftTableTags:
           tmpMolCode = str(chemShiftTableTags['Entity_assembly_ID'][i])
         else:
           tmpMolCode = defaultMolCode
@@ -243,21 +276,14 @@ class NmrStarChemShift:
       
     
     for (attrName,tagName,default) in assignList:
-
-      if chemShiftTableTags.has_key(tagName):
-        if chemShiftTableTags[tagName][i] != None:
-          setattr(self,attrName,chemShiftTableTags[tagName][i])
-        else:
-          setattr(self,attrName,default)
-    
+      value = chemShiftTableTags[tagName][i] if tagName in chemShiftTableTags and chemShiftTableTags[tagName][i] is not None else default
+      setattr(self, attrName, value)
     # Little hack - not sure what is best in the end...
-    if not self.seqCode and hasattr(self,'backupSeqCode') and self.backupSeqCode:
-      self.seqCode = self.backupSeqCode
-          
+    if not getattr(self, 'seqCode', None) and hasattr(self, 'backupSeqCode') and getattr(self, 'backupSeqCode', None):
+      self.seqCode = getattr(self, 'backupSeqCode', None)
     # For completeness...
-    (self.seqCode,self.seqInsertCode) = getSeqAndInsertCode(self.seqCode)
-
+    (self.seqCode, self.seqInsertCode) = getSeqAndInsertCode(self.seqCode)
     # This is a hack, is possible in older NMR-STAR files! Use resLabel as chain ID
-    if self.seqCode == None and hasattr(self,'resLabel') and self.resLabel:
+    if self.seqCode is None and hasattr(self, 'resLabel') and getattr(self, 'resLabel', None):
       self.seqCode = 1
-      self.chainCode = self.resLabel
+      self.chainCode = getattr(self, 'resLabel', None)

@@ -60,7 +60,7 @@ from memops.universal.Util import returnInt
 from ccp.format.general.Util import getRegularExpressions, getSeqAndInsertCode
 from ccp.format.general.Constants import defaultMolCode
 
-class FileParseError(StandardError):
+class FileParseError(Exception):
 
   def __init__(self, value):
     
@@ -251,7 +251,7 @@ class SequenceElement:
     
     if not (bondedSeqEl,bondedAtomName) in self.bonds[bondType][atomName]:
       self.bonds[bondType][atomName].append((bondedSeqEl,bondedAtomName))
-      print "  Set %s bond from %s.%s - %s.%s" % (bondType,self.seqCode,atomName,bondedSeqEl.seqCode,bondedAtomName)
+      print("  Set %s bond from %s.%s - %s.%s" % (bondType,self.seqCode,atomName,bondedSeqEl.seqCode,bondedAtomName))
     
   def setSecStrucInfo(self,secStrucType,secStrucSerial,specificInfo):
     

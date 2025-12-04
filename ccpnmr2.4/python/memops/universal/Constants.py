@@ -55,8 +55,8 @@ software development. Bioinformatics 21, 1678-1684.
 """
 
 # Special constants
-True =  not 0
-False =  not 1
+# True is a reserved keyword in Python 3; assignment removed.
+# False is a reserved keyword in Python 3; assignment removed.
 
 trueString = 'True'
 falseString = 'False'

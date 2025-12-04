@@ -59,7 +59,7 @@ software development. Bioinformatics 21, 1678-1684.
 
 import os
 import shutil
-import StringIO
+from io import StringIO
 import sys
 import traceback
 import glob
