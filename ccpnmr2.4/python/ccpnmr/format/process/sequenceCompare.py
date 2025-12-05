@@ -6,7 +6,7 @@ from ccpnmr.format.general.Util import updateResonanceNamesDict, getNameInfo
 
 from pdbe.adatah.Util import AlignNeedlemanWunsch, getAlignmentInfo
 
-class SequenceCompareError(StandardError):
+class SequenceCompareError(Exception):
 
   def __init__(self, value):
     self.value = value

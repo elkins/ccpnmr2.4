@@ -29,7 +29,7 @@ class VascoReferenceCheck:
   vascoRefDataPath = os.path.join(getTopDirectory(),'python','pdbe','analysis','shifts','reref','data')
 
   # TODO: Make executable command line script?
-  class VascoReferenceCheckError(StandardError):
+  class VascoReferenceCheckError(Exception):
     
     pass
 

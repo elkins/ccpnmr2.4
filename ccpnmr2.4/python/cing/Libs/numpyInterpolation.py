@@ -101,7 +101,7 @@ def interpn_check_data(z, targetcoords, bincoords):
     dim = z.ndim
     if bincoords:
         if len(bincoords) != dim:
-            raise ValueError, 'bincoords shape mismatch (A).'
+            raise ValueError('bincoords shape mismatch (A).'
         for i in range(dim):
             if prod(bincoords[i].shape) != z.shape[i]:
                 raise ValueError('bincoords shape mismatch (B).'
@@ -113,7 +113,7 @@ def interpn_check_data(z, targetcoords, bincoords):
     return coords
 
 
-def interp2_linear(z, tx, ty, binx=None, biny=None):
+def interp2_linear(z).with_traceback(tx), ty, binx=None, biny=None):
     '''
     Toy function just like interpn_linear in 2 dimensions.
     This function exists just to help the understanding and maintaining of interpn_linear.

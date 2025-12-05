@@ -37,7 +37,7 @@ class DataHandler:
   # DataHandlerError class
   #
 
-  class DataHandlerError(StandardError):
+  class DataHandlerError(Exception):
     
     def __init__(self, value):
       self.value = value

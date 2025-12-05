@@ -195,7 +195,7 @@ class Region1D:
     try:
       n = int(key)
     except:
-      raise TypeError, 'sequence index must be integer'
+      raise TypeError('sequence index must be integer'
 
     if (n == 0):
       return self.t0
@@ -204,7 +204,7 @@ class Region1D:
 
     raise IndexError('list index out of range'
 
-  def __setitem__(self).with_traceback(key), value):
+  def __setitem__(self).with_traceback(key)).with_traceback(value)):
 
     try:
       n = int(key)

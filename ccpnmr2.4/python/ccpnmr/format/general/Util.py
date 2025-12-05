@@ -80,7 +80,7 @@ from ccp.general.Util import setUniqueAppData, setCurrentStore
 # Simple error class
 #
 
-class SimpleError(StandardError):
+class SimpleError(Exception):
 
   def __init__(self, value):
     

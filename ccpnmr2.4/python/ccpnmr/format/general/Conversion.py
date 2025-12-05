@@ -95,7 +95,7 @@ def getFullErrorString(errorMessage):
   
   return returnStr
 
-class FormatConversionError(StandardError):
+class FormatConversionError(Exception):
 
   def __init__(self, value):
     
@@ -907,7 +907,7 @@ class FormatConversion(object):
       missingDim = None
       missingExpDim = None
       for expDimIndex in range(len(refExpDimPpmRange)):
-        print expDimIndex,
+        print(expDimIndex, end=' ')
         if not expDimIndex in uniqueMatches.values():
           missingExpDim = expDimIndex
         if not expDimIndex + 1 in uniqueMatches.keys():
@@ -1046,7 +1046,7 @@ class FormatConversion(object):
         
         if testMode:
           self.endSilent()   
-          print informationType,formatName, fileRead, fileInformation
+          print(informationType, formatName, fileRead, fileInformation)
         
         if fileRead:
           formatNameSuggestions.append(formatName)      
@@ -1443,7 +1443,7 @@ class FormatConversion(object):
       elif len(constraintLists) > 1:  
         # TODO can here have option to just select first one?
         # TODO Or, alternatively, export all relevant lists?
-        print constraintLists
+        print(constraintLists)
         raise FormatConversionError("Multiple %ss present - have to select one and pass it as 'constraintList' using addKeywords" % listType)
       else:
         constraintList = constraintLists.pop()
@@ -1777,7 +1777,7 @@ class FormatConversion(object):
       forceChainMappings = sequenceComparison.compareFormatFileToCcpnInfo()        
       if forceChainMappings:
         keywds['forceChainMappings'] = forceChainMappings
-        print forceChainMappings
+        print(forceChainMappings)
         
     return keywds.copy()
              

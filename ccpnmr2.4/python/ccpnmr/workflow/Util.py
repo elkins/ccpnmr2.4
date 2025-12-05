@@ -42,7 +42,7 @@ class WorkFlow:
   # TODO Connect this to command line arguments? See eNmr.convertCasdNmrToCcpn
   #
 
-  WorkFlowError = StandardError
+  WorkFlowError = Exception
   
   def __init__(self,**keywds):
   

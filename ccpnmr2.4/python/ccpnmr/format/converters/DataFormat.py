@@ -807,7 +807,7 @@ class DataFormat(TopShared):
   # FormatConverter Error Class
   #
   
-  class FormatConverterError(StandardError):
+  class FormatConverterError(Exception):
     
     def __init__(self, value):
       self.value = value
