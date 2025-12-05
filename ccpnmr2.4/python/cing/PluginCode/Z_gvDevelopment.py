@@ -369,7 +369,7 @@ class gvProcheck:
         Return result, which is a dict type or None
         on error (i.e. too short line)
         """
-    #    print ">>", line
+    #    print(">>", line)
         result = {}
         if (len(line) >= 64):
             for field,fieldDef in self.procheckDefs.iteritems():
@@ -403,7 +403,7 @@ class gvProcheck:
 
         for i in range(1,self.molecule.modelCount+1):
             path = os.path.join( self.rootPath, sprintf('%s_%03d.rin', self.molecule.name, i) )
-            #print '> parsing >', path
+            #print('> parsing >', path)
 
             for line in AwkLike( path, minLength = 64, commentString = "#" ):
                 result = self._parseProcheckLine( line.dollar[0] )

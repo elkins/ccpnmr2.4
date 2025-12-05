@@ -334,10 +334,10 @@ class Menu(Tkinter.Menu, Base):
 if __name__ == '__main__':
 
   def new():
-    print 'new'
+    print('new')
 
   def pick():
-    print 'pick'
+    print('pick')
 
   root = Tkinter.Tk()
  

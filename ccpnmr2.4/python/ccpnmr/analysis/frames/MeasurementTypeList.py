@@ -61,7 +61,7 @@ class MeasurementTypeList(PulldownMenu):
  
   def destroy(self):
 
-    #print 'MeasurementTypeList destroy'
+    #print('MeasurementTypeList destroy')
     PulldownMenu.destroy(self)
  
   def setMeasurementTypes(self, *type):

@@ -372,7 +372,7 @@ class GenericFormatPopup(BasePopup):
                   self.IOkeywords[component].update(self.formatModule.IOkeywords[superClassFunc])
 
             else:
-              print "  Warning: no IOkeywords information for %s!" % self.function[component]
+              print("  Warning: no IOkeywords information for %s!" % self.function[component])
               self.IOkeywords[component] = {}
 
             #
@@ -404,7 +404,7 @@ class GenericFormatPopup(BasePopup):
             inputKeyWord = addItem[1]
             
             if inputKeyWord not in self.IOkeywords[component]:
-              print "  Error: invalid %s keyword '%s' for %s!" % (self.importExportFlag,inputKeyWord,component)
+              print("  Error: invalid %s keyword '%s' for %s!" % (self.importExportFlag,inputKeyWord,component))
               continue
 
             # Check whether keyword already exists! If so, replace...
@@ -560,7 +560,7 @@ class GenericFormatPopup(BasePopup):
         if self.importExportFlag == 'export':
 
           row += 1
-          #print 'export button row %d' % row
+          #print('export button row %d' % row)
 
           self.exportButton[component] = Tkinter.Button(master, text = "Export %s file." % component, command = lambda comp = component: self.importExportFile(comp))
           self.exportButton[component].grid(row=row, column=0, columnspan = 3, sticky=Tkinter.EW)
@@ -611,14 +611,14 @@ class GenericFormatPopup(BasePopup):
     popup = InfoPopup(self,'Information popup',text)
   
   def toggleInfo(self,hidden,curRow,toggleWidgets):
-    #print "Current row:", curRow
+    #print("Current row:", curRow)
     if hidden:
       for twidgets in toggleWidgets:
         for twidget in twidgets:
           if twidget != None and type(twidget) != type(''):
             twidget.grid_forget()
 
-        #print "Hiding 1 row..."
+        #print("Hiding 1 row...")
         
     else:
       
@@ -630,20 +630,20 @@ class GenericFormatPopup(BasePopup):
         
         if label == None and infoButton == None:
           widget.grid(row = row, column = 0, columnspan = 3, sticky = Tkinter.EW)
-          #print "LONG"
+          #print("LONG")
         else:
           label.grid(row=row, column=0, sticky=Tkinter.E)
-          #print "LABEL",
+          #print("LABEL",)
           if widget:
             if widget == 'TOGGLE':
               doToggle = label
             else:
-              #print "WIDGET",
+              #print("WIDGET",)
               widget.grid(row=row, column=1, sticky=Tkinter.W)
               infoButton.grid(row=row, column=2, sticky=Tkinter.E)
           #print
 
-        #print "Show %d - %s,%s,%s (%d)" % (row,label,widget,infoButton,curRow)
+        #print("Show %d - %s,%s,%s (%d)" % (row,label,widget,infoButton,curRow))
 
       if doToggle:
         doToggle.callback(1)

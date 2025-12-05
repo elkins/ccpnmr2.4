@@ -792,10 +792,10 @@ class FormatConverter(BasePopup):
     try:
       self.project.saveModified()
       return True
-    except IOError, e:
+    except IOError as e:
       showError('Saving file', str(e))
       return False
-    except ApiError, e:
+    except ApiError as e:
       showError('Saving file', str(e))
       return False
 

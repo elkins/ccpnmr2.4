@@ -58,7 +58,7 @@ and contains original contributions embedded in the framework
 ===========================REFERENCE END===============================
 """
 
-import cStringIO
+import io
 #import sets
 import traceback
 import types
@@ -151,7 +151,7 @@ class Chain(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.Chain.__init__"
+        print("ERROR in utrecht.Haddock.Chain.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -186,10 +186,10 @@ class Chain(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -927,7 +927,7 @@ class EnergyTermParameter(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.EnergyTermParameter.__init__"
+        print("ERROR in utrecht.Haddock.EnergyTermParameter.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -962,10 +962,10 @@ class EnergyTermParameter(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -1667,7 +1667,7 @@ class HaddockEnergyTerm(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.HaddockEnergyTerm.__init__"
+        print("ERROR in utrecht.Haddock.HaddockEnergyTerm.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -1710,10 +1710,10 @@ class HaddockEnergyTerm(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -3199,7 +3199,7 @@ class HaddockPartner(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.HaddockPartner.__init__"
+        print("ERROR in utrecht.Haddock.HaddockPartner.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -3234,10 +3234,10 @@ class HaddockPartner(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -5012,7 +5012,7 @@ class HaddockProject(memops.api.Implementation.TopObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.HaddockProject.__init__"
+        print("ERROR in utrecht.Haddock.HaddockProject.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -5071,10 +5071,10 @@ class HaddockProject(memops.api.Implementation.TopObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -6401,7 +6401,7 @@ class Residue(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.Residue.__init__"
+        print("ERROR in utrecht.Haddock.Residue.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -6436,10 +6436,10 @@ class Residue(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -7367,7 +7367,7 @@ class Run(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.Run.__init__"
+        print("ERROR in utrecht.Haddock.Run.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -7413,10 +7413,10 @@ class Run(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -14881,7 +14881,7 @@ class ScoringWeight(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in utrecht.Haddock.ScoringWeight.__init__"
+        print("ERROR in utrecht.Haddock.ScoringWeight.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -14924,10 +14924,10 @@ class ScoringWeight(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 

@@ -439,7 +439,7 @@ class BasePopup(Tkinter.Toplevel, Base):
     except:
       pass
 
-    raise AttributeError, "%s instance has no attribute '%s'" % (self.__class__.__name__, name)
+    raise AttributeError("%s instance has no attribute '%s'" % (self.__class__.__name__).with_traceback(name))
 
   def body(self, master):
     pass # this method should be overridden by subclass
@@ -452,14 +452,14 @@ def createPopup(parent, frameClass, title = '', location = '',
                 popup_args = [], popup_kw = {},
                 *frame_args, **frame_kw):
 
-  #print 'frameClass =', frameClass
-  #print 'title =', title
-  #print 'location =', location
-  #print 'hide =', hide
-  #print 'popup_args =', popup_args
-  #print 'popup_kw =', popup_kw
-  #print 'frame_args =', frame_args
-  #print 'frame_kw =', frame_kw
+  #print('frameClass =', frameClass)
+  #print('title =', title)
+  #print('location =', location)
+  #print('hide =', hide)
+  #print('popup_args =', popup_args)
+  #print('popup_kw =', popup_kw)
+  #print('frame_args =', frame_args)
+  #print('frame_kw =', frame_kw)
 
   popup = BasePopup(parent, title=title, location=location, hide=hide, modal=modal, *popup_args, **popup_kw)
 

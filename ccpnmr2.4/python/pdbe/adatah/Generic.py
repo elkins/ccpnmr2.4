@@ -261,7 +261,7 @@ class DataHandler:
       else:
         ccpnProjectDir = os.path.join(self.entryDir,self.baseName)
         if os.path.exists(ccpnProjectDir):
-          print "Removing existing project..."
+          print("Removing existing project...")
           shutil.rmtree(ccpnProjectDir)
 
     #
@@ -549,7 +549,7 @@ class DataHandler:
       
         keywds['forceChainMappings'] = forceChainMappings
         
-        print "  Automatically setting chain mappings to %s" % str(forceChainMappings)
+        print("  Automatically setting chain mappings to %s" % str(forceChainMappings))
         
       else:
       
@@ -583,7 +583,7 @@ class DataHandler:
         if forceChainMappings:
           keywds['forceChainMappings'] = forceChainMappings
 
-          print "  Automatically setting chain mappings by alignment to %s" % str(forceChainMappings)
+          print("  Automatically setting chain mappings by alignment to %s" % str(forceChainMappings))
 
 
     #

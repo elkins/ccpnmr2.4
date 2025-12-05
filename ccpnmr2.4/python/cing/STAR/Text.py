@@ -179,7 +179,7 @@ def pattern_unquoted_find(text, pattern, pos=0):
         ## Is the first character matched an eol it self
         if text[pos]=='\n':
             if verbosity >= 9:
-                print 'Found pattern: [%s] at the beginning of a line' % pattern.pattern
+                print('Found pattern: [%s] at the beginning of a line' % pattern.pattern)
             return pos
 
         ## I hope the rfind is optimized to stroll backwards from pos
@@ -195,7 +195,7 @@ def pattern_unquoted_find(text, pattern, pos=0):
         # Not the one
         if line[0] == ';':
             if verbosity > 1:
-                print 'WARNING: (1) found pattern: [%s] preceded by: [%s]' % (
+                print('WARNING: (1) found pattern: [%s] preceded by: [%s]' % ()
                     pattern.pattern, line )
             pos = pos + 1
             continue
@@ -212,11 +212,11 @@ def pattern_unquoted_find(text, pattern, pos=0):
         if squoted or dquoted:
 ##            if squoted and dquoted:
 ##                ## Should not be possible to occur, delete when confident
-##                print "ERROR: code error, mixing of quote styles in line:"
-##                print "ERROR: [%s]" % line
+##                print("ERROR: code error, mixing of quote styles in line:")
+##                print("ERROR: [%s]" % line)
 ##                return None
             if verbosity > 1:
-                print 'WARNING: (2) found pattern: [%s] preceded by: [%s]' % (
+                print('WARNING: (2) found pattern: [%s] preceded by: [%s]' % ()
                     pattern.pattern, line )
 
             # Not the one
@@ -233,29 +233,29 @@ def tag_value_quoted_parse( text, pos ):
     value for the first non white space char.
     In case of error the position value of None will signal failure.
     """
-#    print 'text: [%s]' % text[pos:pos+80]
-#    print 'pos:  [%s]' % pos
+#    print('text: [%s]' % text[pos:pos+80])
+#    print('pos:  [%s]' % pos)
     if text[ pos ] == '"':
         match_d_quote = pattern_d_quote.search( text, pos+1)
         if not match_d_quote:
-            print "ERROR: No matching double quote char found for double quote char at offset:", 0
-            print "ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ]
+            print("ERROR: No matching double quote char found for double quote char at offset:", 0)
+            print("ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ])
             return None, None
     ##            if verbosity >= 9:
-    ##                print "pos, span():", pos, match_d_quote.span()
-    ##                print 'Found Q tag value: [%s]' % text[ pos+1:match_d_quote.start() ]
+    ##                print("pos, span():", pos, match_d_quote.span())
+    ##                print('Found Q tag value: [%s]' % text[ pos+1:match_d_quote.start() ])
         return text[ pos+1:match_d_quote.start() ], match_d_quote.end()
 
     if text[ pos ] == "'":
         match_s_quote = pattern_s_quote.search( text, pos+1)
         if not match_s_quote:
-            print "ERROR: No matching single quote char found for single quote char at offset:", 0
-            print "ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ]
+            print("ERROR: No matching single quote char found for single quote char at offset:", 0)
+            print("ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ])
             return None, None
         value = text[ pos+1:match_s_quote.start() ]
     ##            if verbosity >= 9:
-    ##                print "pos, span():", pos, match_s_quote.span()
-    ##                print 'Found Q tag value: [%s]' % value
+    ##                print("pos, span():", pos, match_s_quote.span())
+    ##                print('Found Q tag value: [%s]' % value)
         return value, match_s_quote.end()
 
     ## Remove check for speed if you want
@@ -263,26 +263,26 @@ def tag_value_quoted_parse( text, pos ):
     if text[ pos ] == ";":
         match_e_semicolon = pattern_e_semicolon.search( text, pos+1)
         if not match_e_semicolon:
-            print "ERROR: No matching semicolon found for semicolon char at offset:", 0
-            print "ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ]
+            print("ERROR: No matching semicolon found for semicolon char at offset:", 0)
+            print("ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ])
             return None, None
-    ##            print "pos, span():", pos, match_e_semicolon.span()
+    ##            print("pos, span():", pos, match_e_semicolon.span())
         ## Include the first eol and the eol before the semicolon
         value = text[ pos+1:match_e_semicolon.start()+eol_string_length ]
         ## Expansion relatively cheap here and harmless if unique string as defined in
         ## eol_string is indeed unique
-        ## print 'Found Q (semicolon) tag value: unexpanded [%s]' % value
-        ## print '-----------'
+        ## print('Found Q (semicolon) tag value: unexpanded [%s]' % value)
+        ## print('-----------')
         ## print text[ match_e_semicolon.start()+eol_string_length : match_e_semicolon.start()+eol_string_length + 20]
-        ## print '-----------'
+        ## print('-----------')
         value = semicolon_block_expand( value )
-        ## print 'Found Q (semicolon) tag value: expanded   [%s]' % value
+        ## print('Found Q (semicolon) tag value: expanded   [%s]' % value)
 
         return value, match_e_semicolon.end()
 
-    print   "ERROR: Position in text:", pos
+    print("ERROR: Position in text:", pos)
     print """ERROR: should contain a ', ", or a ; but was not found:"""
-    print   "ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ]
+    print("ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ])
     return None, None
 
 
@@ -301,12 +301,12 @@ def tag_value_parse( text, pos):
 
     match_word = pattern_word.search( text, pos )
     if not match_word:
-        print "ERROR: No match for a 'word' at offset:", pos
-        print "ERROR: Next 70 chars are:", text[ pos:pos+70 ]
+        print("ERROR: No match for a 'word' at offset:", pos)
+        print("ERROR: Next 70 chars are:", text[ pos:pos+70 ])
         return None, None
     if match_word.start() != pos:
-        print "ERROR: Match for a 'word' at wrong offset:", match_word.start() - pos
-        print "ERROR: Next 70 chars are:", text[ pos:pos+70 ]
+        print("ERROR: Match for a 'word' at wrong offset:", match_word.start() - pos)
+        print("ERROR: Next 70 chars are:", text[ pos:pos+70 ])
         return None, None
 
     ## Include the first eol and the eol before the semicolon
@@ -351,7 +351,7 @@ def semicolon_block_collapse( text ):
         try:
             endpos = startpos + 1 + semicolon_end.end() - len(semicolon_end.group(1)) + 1
         except:
-            print "ERROR in semicolon_block_collapse for text starting at: ["+ text[startpos:startpos+100]+ "]"
+            print("ERROR in semicolon_block_collapse for text starting at: ["+ text[startpos:startpos+100]+ "]")
             raise
 
         text_replace = re.sub("\n", eol_string,text[startpos:endpos])
@@ -452,31 +452,31 @@ def comments_strip( text ):
     i=0
 #    count = 0
     ls = len(lines)
-#    print "DEBUG: processing lines: ", ls
+#    print("DEBUG: processing lines: ", ls)
     while i<ls:
-#        print "DEBUG: processing A line: ", i
+#        print("DEBUG: processing A line: ", i)
         line = lines[i]
         # Scan past semi colon blocks.
         n = len(line)
         if n < 1:
-#            print "DEBUG: skipping empty line: "
+#            print("DEBUG: skipping empty line: ")
             i += 1
             continue
         if line[0] == ';':                        # start a semicolon block
-#            print "DEBUG: found start of semi colon block."
+#            print("DEBUG: found start of semi colon block.")
             i += 1
             line = lines[i]
-#            print "DEBUG: processing B line: ", i
+#            print("DEBUG: processing B line: ", i)
             while len(line)==0 or line[0] != ';':
                 i += 1
                 line = lines[i]
-#                print "DEBUG: processing C line: ", i
+#                print("DEBUG: processing C line: ", i)
                                                     # end a semicolon block
         else:
             line = _comments_strip_line(line)
             if len(line) != n:
                 lines[i] = line
-#                print "Changed from lenght",n,"to line: ["+line+"] at:", i
+#                print("Changed from lenght",n,"to line: ["+line+"] at:", i)
 #                count += 1
         i += 1
 
@@ -496,10 +496,10 @@ def _comments_strip_line( line ):
     n = len(line)
     while c < n: # parse range [0,n> where n is length and exclusive.
         ch=line[c]
-#        print "DEBUG: Processing char '"+ch+"' at "+repr(c)+" in state:", state
+#        print("DEBUG: Processing char '"+ch+"' at "+repr(c)+" in state:", state)
         if ( ch == sharp and state == FREE and    # A sharp in FREE state
                 (c==0 or line[c-1].isspace())):   # behind a space or at beginning of a line.
-#            print "DEBUG: Found sharpie"
+#            print("DEBUG: Found sharpie")
             if c==0:
                 return ''
             return line[0:c] # this is fast.
@@ -546,21 +546,21 @@ def translateStarNanToNone(starValue):
 #def _comments_strip1( text ):
 #    text, count = pattern_comment_begin.subn( '', text )
 #    if verbosity >= 9:
-#        print 'Done [%s] subs with comment at beginning of line' % count
+#        print('Done [%s] subs with comment at beginning of line' % count)
 #    return text
 #
 #def _comments_strip2( text ):
 #    text, count = pattern_comment_middle.subn( '\g<1>', text )
 #    if verbosity >= 9:
-#        print 'Done [%s] subs with comment not at beginning of line' % count
+#        print('Done [%s] subs with comment not at beginning of line' % count)
 #    return text
 
 def nmrView_compress( text ):
 
     text, count = pattern_nmrView_compress_empty.subn( '{}', text )
-    print 'Compressed [%s] nmrView empty { } tags' % count
+    print('Compressed [%s] nmrView empty { } tags' % count)
 
     text, count = pattern_nmrView_compress_questionmark.subn( '{?}', text )
-    print 'Compressed [%s] nmrView question mark { ?} tags' % count
+    print('Compressed [%s] nmrView question mark { ?} tags' % count)
 
     return text

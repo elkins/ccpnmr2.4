@@ -85,10 +85,10 @@ try:
   from ccpnmr.c.PeakCluster import PeakCluster as CPeakCluster
   from ccpnmr.c.SliceFile import SliceFile
   from ccpnmr.c.WinPeakList import WinPeakList as CWinPeakList
-except Exception, e:
-  print 'Error, the Analysis module will not work, something is wrong with the C code.'
-  print 'Exception:', e
-  print 'Will continue without Analysis C functionality'
+except Exception as e:
+  print('Error, the Analysis module will not work, something is wrong with the C code.')
+  print('Exception:', e)
+  print('Will continue without Analysis C functionality')
   MemCache = StoreFile = ContourFile = StoredContourFile = CPeakList = CPeakCluster = SliceFile = CWinPeakList = None
 
 X_Y = set(['x', 'y'])
@@ -159,7 +159,7 @@ class Analysis:
     version = Copyright.version
     print self.versionInfo
     if version.timestamp:
-      print 'Distribution created %s' % version.timestamp
+      print('Distribution created %s' % version.timestamp)
     
     print analysisReference
 
@@ -201,7 +201,7 @@ class Analysis:
     # if have added extra stripAxis axisRegion
     # then add orthogonal ones
     axisPanel = axisRegion.axisPanel
-    #print 'Analysis.addedAxisRegion', axisPanel.label, axisPanel.spectrumWindow.stripAxis
+    #print('Analysis.addedAxisRegion', axisPanel.label, axisPanel.spectrumWindow.stripAxis)
     
     if axisPanel.label == axisPanel.spectrumWindowPane.spectrumWindow.stripAxis:
       axisPanels = axisPanel.spectrumWindowPane.sortedAxisPanels()
@@ -628,8 +628,8 @@ class Analysis:
     try:
       backupProject(self.project)
       
-    except Implementation.ApiError, e:
-      print 'Backup error %s: %s' % (time.ctime(time.time()), e.error_msg)
+    except Implementation.ApiError as e:
+      print('Backup error %s: %s' % (time.ctime(time.time()), e.error_msg))
 
   def setupPeakAnnotation(self, peak):
 
@@ -863,14 +863,14 @@ class Analysis:
 
   def removeCPeak(self, peak):
 
-    #print 'removeCPeak1'
+    #print('removeCPeak1')
     if hasattr(peak,'cPeakList') and hasattr(peak,'cPeak'):
       try:
         if peak.cPeak.getIsSelected():
           try:
             self.currentPeaks.remove(peak)
           except:
-            print 'C <-> Python peak mismatch. Selected C peak was not in currentPeaks.'
+            print('C <-> Python peak mismatch. Selected C peak was not in currentPeaks.')
 
       except:
         pass
@@ -880,7 +880,7 @@ class Analysis:
     if peak is self.currentPeak:
       self.currentPeak = None
 
-    #print 'removeCPeak2'
+    #print('removeCPeak2')
 
   def setupCPeakCluster(self, peakCluster):
     
@@ -939,7 +939,7 @@ class Analysis:
 
   def removeCPeakList(self, peakList):
 
-    #print 'removeCPeakList'
+    #print('removeCPeakList')
     for peak in peakList.peaks:
       if hasattr(peak, 'cPeakList'):
         del peak.cPeakList
@@ -968,7 +968,7 @@ class Analysis:
 
   def removeCWinPeakList(self, winPeakList):
 
-    #print 'removeCWinPeakList'
+    #print('removeCWinPeakList')
     if hasattr(winPeakList,'cWinPeakList'):
       del winPeakList.cWinPeakList
 
@@ -1251,7 +1251,7 @@ class Analysis:
 
     try:
       storedContour.storeFile = self.initStoreFile(storedContour)
-    except StoreFile.error, e:
+    except StoreFile.error as e:
       fileName = storedContour.fullPath
       msg = 'Contour file "%s": %s: delete corresponding stored contour?'
       
@@ -1524,7 +1524,7 @@ class Analysis:
         axisType = Util.findAxisTypeMatch(dataDim)
         if not axisType:
           break
-        #print 'checkCreateSpectrumViews', dataDim.dim, axisType.name
+        #print('checkCreateSpectrumViews', dataDim.dim, axisType.name)
         axisTypes[dataDim.dim-1] = axisType
 
       if None not in axisTypes:
@@ -1862,7 +1862,7 @@ class Analysis:
           break
           
       else:
-        #print 'determineMapping failed at dataDim', dataDim.dim
+        #print('determineMapping failed at dataDim', dataDim.dim)
         return None # no mapping possible
 
       mapping[dataDim] = panel
@@ -2240,7 +2240,7 @@ class Analysis:
     
   def symbolDrawnPeakList(self, windowPeakList):
 
-    #print 'symbolDrawnPeakList', windowPeakList.spectrumWindowView.spectrumWindow.name, \
+    #print('symbolDrawnPeakList', windowPeakList.spectrumWindowView.spectrumWindow.name, \)
     #      windowPeakList.spectrumWindowView.analysisSpectrum.dataSource.experiment.name, \
     #      windowPeakList.spectrumWindowView.analysisSpectrum.dataSource.name, \
     #      windowPeakList.isSymbolDrawn

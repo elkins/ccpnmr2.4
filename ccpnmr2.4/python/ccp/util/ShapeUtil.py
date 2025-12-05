@@ -66,7 +66,7 @@ def getShapeFile(spectrum):
     cmin = componentList[0][0]
     cmax = componentList[-1][0]
     if cmax - cmin + 1 != ncomp:
-      print 'Warning: in %s, components are not numbered consecutively' % fileName
+      print('Warning: in %s, components are not numbered consecutively' % fileName)
 
     aDict = {}
     points = []
@@ -97,12 +97,12 @@ def getShapeFile(spectrum):
             adim = aa
           shapeFile.setShapeData(comp, aa, offset, values)
 
-  except Exception, e:
-    print 'Warning: in %s had exception: %s' % (fileName, e)
+  except Exception as e:
+    print('Warning: in %s had exception: %s' % (fileName, e))
     shapeFile = None
 
-  except ShapeFile.error, e:
-    print 'Warning: in %s had ShapeFile error: %s' % (fileName, e)
+  except ShapeFile.error as e:
+    print('Warning: in %s had ShapeFile error: %s' % (fileName, e))
     shapeFile = None
 
   return shapeFile
@@ -124,12 +124,12 @@ def get1dShapeFile(spectrum, valuesList):
       dim = offset = 0
       shapeFile.setShapeData(comp, dim, offset, valuesList[comp])
 
-  except Exception, e:
-    print 'Warning: in %s:%s had exception: %s' % (spectrum.experiment.name, spectrum.name, e)
+  except Exception as e:
+    print('Warning: in %s:%s had exception: %s' % (spectrum.experiment.name, spectrum.name, e))
     shapeFile = None
 
-  except ShapeFile.error, e:
-    print 'Warning: in %s:%s had ShapeFile error: %s' % (spectrum.experiment.name, spectrum.name, e)
+  except ShapeFile.error as e:
+    print('Warning: in %s:%s had ShapeFile error: %s' % (spectrum.experiment.name, spectrum.name, e))
     shapeFile = None
 
   return shapeFile
@@ -173,7 +173,7 @@ if __name__ == '__main__':
   import sys
 
   if len(sys.argv) != 2:
-    print 'need to specify shapeFile'
+    print('need to specify shapeFile')
     sys.exit()
 
   fileName = sys.argv[1]

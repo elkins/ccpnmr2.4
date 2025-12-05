@@ -84,7 +84,7 @@ for line in AwkLike(sourceFile, commentString = '#'):
         atomdef = resdef.getAtomDefByName( cingName, INTERNAL)
 
         if resdef.name == 'HOH':
-            print '>>', dianaName, cingName, ccpnName, resdef, atomdef
+            print('>>', dianaName, cingName, ccpnName, resdef, atomdef)
 
         if ccpnName in ['next_1','prev_1','prev_2']: # skip these lines as they are ccpn specific
             pass
@@ -116,7 +116,7 @@ for line in AwkLike(sourceFile, commentString = '#'):
 
 # Check all residueDefs and atomDefs
 for res in NTdb.allResidueDefs():
-    print '===================================='
+    print('====================================')
     print res, 'CCPN:', res.translate(CCPN)
 
     for atm in res.allAtomDefs():

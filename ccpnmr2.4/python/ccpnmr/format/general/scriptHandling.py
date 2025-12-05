@@ -30,7 +30,7 @@ def check_namingSystemName(option, opt, value):
   except:
     raise OptionValueError("Option %s: invalid naming system value: %r" % (opt, value))
   
-  print "Valid naming system names: %s" % (', '.join(namingSystemNames[1:]))
+  print("Valid naming system names: %s" % (', '.join(namingSystemNames[1:])))
   raise OptionValueError("Option %s: invalid naming system value: %r" % (opt, value))
 
 def check_yesNo(option, opt, value):
@@ -165,13 +165,13 @@ class ScriptHandler:
       argValue = getattr(self.options,longOpt)
       
       if isMandatory and argValue is None:     
-        print "A mandatory option is missing\n"
+        print("A mandatory option is missing\n")
         self.optionParser.print_help()
         exit(-1)
                     
       setattr(self,longOpt,argValue)
       
-      #print "Set %s to %s." % (longOpt, str(argValue))
+      #print("Set %s to %s." % (longOpt, str(argValue)))
 
   def setDefaultOptions(self):
   

@@ -582,7 +582,7 @@ def getWmsInteractive(argServer, protocolName=None):
   if entryProtocol is None:
     dataPath = getDataPath()
     jsonFile = os.path.join(dataPath,'ccpnmr', 'integrator', protocolName+'.json')
-    # print 'Enter name of %s protocol definition file' % protocolName
+    # print('Enter name of %s protocol definition file' % protocolName)
     # jsonFile = argServer.getFile()
     entryProtocol = loadProtocol(project, jsonFile)
   #
@@ -1117,7 +1117,7 @@ def runCyana2Ccpn(argServer, protocolName, prelimProtocolName=None,
 
     if executeScript:
       process = subprocess.call(['python', executeScript])
-      #print 'CCPN executing %s process: %s' % (protocolName,pid)
+      #print('CCPN executing %s process: %s' % (protocolName,pid))
       # process.poll()
       #
       # if process.returncode is not None:
@@ -1147,7 +1147,7 @@ def runCyana2CcpnDialogue(argServer, protocolName, prelimProtocolName=None,
     if xx:
       if executeScript:
         process = subprocess.call([sys.executable, executeScript])
-        #print 'CCPN executing %s process: %s' % (protocolName,pid)
+        #print('CCPN executing %s process: %s' % (protocolName,pid))
         # process.poll()
         #
         # if process.returncode is not None:
@@ -1161,7 +1161,7 @@ def runCyana2CcpnDialogue(argServer, protocolName, prelimProtocolName=None,
        print('CCPN not executing %s - no script generated' % protocolName)
     else:
       pass
-    print "calculationData",calculationData
+    print("calculationData",calculationData)
     return calculationData
 
 def setupPreviousCalculation(argServer, protocolName, prelimProtocolName=None,
@@ -1188,7 +1188,7 @@ def runPreviousCalculation(argServer, protocolName, prelimProtocolName=None,
 
     if executeScript:
       process = subprocess.call(['python', executeScript])
-      #print 'CCPN executing %s process: %s' % (protocolName,pid)
+      #print('CCPN executing %s process: %s' % (protocolName,pid))
       # process.poll()
       #
       # if process.returncode is not None:

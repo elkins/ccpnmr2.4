@@ -99,7 +99,7 @@ if __name__ == '__main__':
         value = "%6.2f" % value
       infoDict[attrName] = value
   
-    print "%-4d   %-10s %-10s %-10s" % (dc.serial,infoDict['lowerLimit'],infoDict['targetValue'],infoDict['upperLimit'])
+    print("%-4d   %-10s %-10s %-10s" % (dc.serial,infoDict['lowerLimit'],infoDict['targetValue'],infoDict['upperLimit']))
 
     for dci in dc.sortedItems():
 
@@ -107,7 +107,7 @@ if __name__ == '__main__':
       if not resonances:
         resonances = dci.sortedResonances()
 
-      print "  Resonances %3d - %3d" % (resonances[0].serial,resonances[1].serial)
+      print("  Resonances %3d - %3d" % (resonances[0].serial,resonances[1].serial))
       
     print
 
@@ -153,13 +153,13 @@ if __name__ == '__main__':
     dihedralConstraintItem = dihedralConstraint.newDihedralConstraintItem(lowerLimit = 300.0, upperLimit = 20.0,  targetValue = 0.0)
 
   for dhdlConst in dhcl.sortedConstraints():
-    print 'Constraint [%d]: resonances [%s] - [%s] - [%s] - [%s]' % (
+    print('Constraint [%d]: resonances [%s] - [%s] - [%s] - [%s]' % ()
       dhdlConst.serial,
       dhdlConst.resonances[0].serial, dhdlConst.resonances[1].serial,
       dhdlConst.resonances[2].serial, dhdlConst.resonances[3].serial)
 
     for dhdlConstItem in dhdlConst.sortedItems():
-      print 'Item [%d]: [%.2f] - [%.2f]; [%.2f]' % (
+      print('Item [%d]: [%.2f] - [%.2f]; [%.2f]' % ()
         dhdlConstItem.serial, dhdlConstItem.lowerLimit,
         dhdlConstItem.upperLimit, dhdlConstItem.targetValue)
 

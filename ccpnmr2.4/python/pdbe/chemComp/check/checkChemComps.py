@@ -29,24 +29,24 @@ def printAtomsBonds(chemComp):
 
   for chemBond in chemComp.sortedChemBonds():
     chemAtomNames = ["%s (%d)" % (chemAtom.name,chemAtom.subType) for chemAtom in chemBond.chemAtoms]
-    print "    %-12s-%-12s: %s" % (chemAtomNames[0],chemAtomNames[1],chemBond.bondType)
+    print("    %-12s-%-12s: %s" % (chemAtomNames[0],chemAtomNames[1],chemBond.bondType))
     
   # Print CCV info
   print
   print drawBox("ChemCompVar atom information",indent = "  ")
   for ccv in chemComp.sortedChemCompVars():
   
-    print "  %s, %s" % (ccv.linking,ccv.descriptor)
+    print("  %s, %s" % (ccv.linking,ccv.descriptor))
     
     chemAtoms = ccv.sortedChemAtoms()
-    print "    %s" % ', '.join(["%s (%d)" % (chemAtom.name,chemAtom.subType) for chemAtom in chemAtoms])
+    print("    %s" % ', '.join(["%s (%d)" % (chemAtom.name,chemAtom.subType) for chemAtom in chemAtoms]))
     
     otherChemAtoms = []
     for chemAtom in chemComp.sortedChemAtoms():
       if not chemAtom in chemAtoms:
         otherChemAtoms.append(chemAtom)
         
-    print "    NOT INCLUDED: %s" % ', '.join(["%s (%d)" % (chemAtom.name,chemAtom.subType) for chemAtom in otherChemAtoms])
+    print("    NOT INCLUDED: %s" % ', '.join(["%s (%d)" % (chemAtom.name,chemAtom.subType) for chemAtom in otherChemAtoms]))
     print
     
   print
@@ -120,7 +120,7 @@ def checkAtomBinding(chemComp,verbose=False):
           elif bondType == 'dative':
             numBond = 0
           else:
-            print " ERROR: NOT USING BONDTYPE %s" % bondType
+            print(" ERROR: NOT USING BONDTYPE %s" % bondType)
         
         if ccvAtom.elementSymbol == 'C' and numBond != 4:
           errorText =  "    %-4s: Carbon has %.1f bonds %s." % (ccvAtom.name,numBond,ccvAtomBindings[ccvAtom])
@@ -136,7 +136,7 @@ def checkAtomBinding(chemComp,verbose=False):
         
     if errorList:
 
-      print "  %s, %s" % (ccv.linking,ccv.descriptor)
+      print("  %s, %s" % (ccv.linking,ccv.descriptor))
       
       for errorText in errorList:
         print errorText
@@ -156,7 +156,7 @@ if __name__ == "__main__":
   for (molType,ccpCodes) in ccpCodeList:
   
     if not ccpCodes:
-      print "NO %s" % molType
+      print("NO %s" % molType)
       continue
     
     for ccpCode in ccpCodes[:1]:
@@ -170,5 +170,5 @@ if __name__ == "__main__":
       if chemComp:
         checkChemComp(chemComp,verbose = verbose)
       else:
-        print "  ERROR: not available!"
+        print("  ERROR: not available!")
         print

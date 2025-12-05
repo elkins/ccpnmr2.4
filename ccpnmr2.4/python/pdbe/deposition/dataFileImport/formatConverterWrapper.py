@@ -489,7 +489,7 @@ class FormatConverterWrapper:
     
     forceChainMappings = self.sequenceComparison.compareFormatFileToCcpnInfo()
 
-    print "\n*** Chain mappings set by alignment information ***\n"
+    print("\n*** Chain mappings set by alignment information ***\n")
     print forceChainMappings
       
     #

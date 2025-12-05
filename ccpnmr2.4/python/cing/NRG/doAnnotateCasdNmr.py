@@ -56,17 +56,17 @@ def annotateEntry(entryCodeNew, *extraArgList):
 #        minimalPrompts = True
 #        verbose = False
 
-    print 'allowPopups                                                                                   ', allowPopups
-    print 'isInteractive                                                                                 ', isInteractive
-    print 'minimalPrompts                                                                                ', minimalPrompts
-    print 'verbose                                                                                       ', verbose
-    print 'sourceIsOrgProject                      (or new CCPN file)                                    ', sourceIsOrgProject
-    print 'checkOrgProject                                                                               ', checkOrgProject
-    print 'replaceCoordinates                                                                            ', replaceCoordinates
-    print 'replaceRestraints                                                                             ', replaceRestraints
-    print 'doSwapCheck                                                                                   ', doSwapCheck
-    print 'doSaveProject                                                                                 ', doSaveProject
-    print 'doExport                                                                                      ', doExport
+    print('allowPopups                                                                                   ', allowPopups)
+    print('isInteractive                                                                                 ', isInteractive)
+    print('minimalPrompts                                                                                ', minimalPrompts)
+    print('verbose                                                                                       ', verbose)
+    print('sourceIsOrgProject                      (or new CCPN file)                                    ', sourceIsOrgProject)
+    print('checkOrgProject                                                                               ', checkOrgProject)
+    print('replaceCoordinates                                                                            ', replaceCoordinates)
+    print('replaceRestraints                                                                             ', replaceRestraints)
+    print('doSwapCheck                                                                                   ', doSwapCheck)
+    print('doSaveProject                                                                                 ', doSaveProject)
+    print('doExport                                                                                      ', doExport)
 
     guiRoot = None
     if allowPopups:
@@ -132,7 +132,7 @@ def annotateEntry(entryCodeNew, *extraArgList):
 #            nmrProject = ccpnProject.currentNmrProject
 #            ccpnMolSystem = ccpnProject.findFirstMolSystem()
 #            nTmessage('found ccpnMolSystem: %s' % ccpnMolSystem)
-#    print 'status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.
+#    print('status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.)
 
     if replaceCoordinates or replaceRestraints:
         if programId == CYANA:

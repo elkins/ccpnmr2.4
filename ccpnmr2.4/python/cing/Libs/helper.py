@@ -171,11 +171,11 @@ def isInternetConnected():
         f = urllib2.urlopen(req)
         result = f.readlines()
     except:
-#        print "DEBUG: Failed to find internet connection to: %s\nDEBUG: Presuming internet is down." % url
+#        print("DEBUG: Failed to find internet connection to: %s\nDEBUG: Presuming internet is down." % url)
         pass
 
     if result:
-#        print "DEBUG: isInternetConnected retrieved from %s:\n%s" % (url,result)
+#        print("DEBUG: isInternetConnected retrieved from %s:\n%s" % (url,result))
         return True
     return False
 # end def
@@ -273,7 +273,7 @@ def getStopMessage(starttime):
     at = time.asctime(time.localtime(starttime))
     now = time.asctime()
 
-#    memory TODO print "in use and allocated"
+#    memory TODO print("in use and allocated")
     msg = "CING started at : %s\n" % at
     msg += "CING stopped at : %s\n" % now
     msg += "CING took       : %-.3f s\n\n" % (time.time() - starttime)

@@ -201,7 +201,7 @@ class CnsGenericFile(FormatFile):
 
     while (openBracket):
     
-      print "OPEN", elementNum, elementInnerNum, assiLine
+      print("OPEN", elementNum, elementInnerNum, assiLine)
       print constraintElements
       print
 
@@ -219,7 +219,7 @@ class CnsGenericFile(FormatFile):
 
       while (openInnerBracket):
       
-        print 'OPEN INNER', elementNum, elementInnerNum, assiLine
+        print('OPEN INNER', elementNum, elementInnerNum, assiLine)
         print
 
         assiLine = assiLine[openInnerBracket.end():]
@@ -431,17 +431,17 @@ class CnsGenericFile(FormatFile):
             line = ""
        
           #if commentStartIndex != None:
-          #  print "ONE LINE",  origLine[commentStartIndex:commentEndIndex]
+          #  print("ONE LINE",  origLine[commentStartIndex:commentEndIndex])
           #else:
-          #  print "END", origLine[:commentEndIndex]
+          #  print("END", origLine[:commentEndIndex])
             
         # If it is a comment and origLine not set means it's a standalone line
         #                    and line not set means it's been handled by start or end comment (nothing left)
         elif commentStartIndex == None:
-          #print "MIDDLE",line
+          #print("MIDDLE",line)
           continue       
         elif not line:
-          #print "START", origLine[commentStartIndex:]
+          #print("START", origLine[commentStartIndex:])
           continue
       
       # Doublecheck if line now empty

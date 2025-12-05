@@ -216,12 +216,12 @@ if __name__ == '__main__':
     
     nmrCalcRun = intIo.getNmrCalcRun(projectDir, nmrCalcRunId)
     if nmrCalcRun is None:
-      print "No NmrCalcRun found. Aborting"
+      print("No NmrCalcRun found. Aborting")
     else:
       read(nmrCalcRun, rosettaDir)
       nmrCalcRun.root.saveModified()
     
   else:
-    print "Usage: read projectDir NmrCalcRun.IDstring RosettaDataDir"
+    print("Usage: read projectDir NmrCalcRun.IDstring RosettaDataDir")
   
   

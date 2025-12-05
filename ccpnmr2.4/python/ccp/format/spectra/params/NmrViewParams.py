@@ -124,7 +124,7 @@ class NmrViewParams(ExternalParams):
     
     expectedSize = (dataSize *4) + headerLength   
     #if __debug__:    
-    #  print 'expected bytes',expectedSize
+    #  print('expected bytes',expectedSize)
     
     
     fileSize = stat(self.dataFile).st_size
@@ -218,7 +218,7 @@ class NmrViewParams(ExternalParams):
         sfs.sort(reverse=True)
       
         #if __debug__:
-        #  print 'sfs',sfs
+        #  print('sfs',sfs)
       
         bestSets  = {}
 
@@ -234,24 +234,24 @@ class NmrViewParams(ExternalParams):
           nuclei = nuclei[1:]
         
           #if __debug__:
-          #  print '\n'
-          #  print 'start',topNucleus, ratiosTop, sfsTop
-          #  print 'remaining', nuclei, ratios,sfs
+          #  print('\n')
+          #  print('start',topNucleus, ratiosTop, sfsTop)
+          #  print('remaining', nuclei, ratios,sfs)
         
         
           targetRatio = sfsTop/ratiosTop
         
           #if __debug__:
-          #  print 'target',targetRatio
+          #  print('target',targetRatio)
         
           currentSet  = [(sfsTop,topNucleus)]         
           bestSum  = 0
           #if __debug__:
-          #  print 'sfs',sfs
+          #  print('sfs',sfs)
           for sf  in sfs:
         
             #if __debug__:
-            #  print '\n\tsf',sf
+            #  print('\n\tsf',sf)
             
             best  = int(float(sys.maxint))
             for i,pair in enumerate(zip(ratios,nuclei)):
@@ -261,14 +261,14 @@ class NmrViewParams(ExternalParams):
               error  = abs((sf/ratio) - targetRatio)
             
               #if __debug__:
-              #  print '\n\t',i,nucleus,ratio,sf,sf/ratio,error
+              #  print('\n\t',i,nucleus,ratio,sf,sf/ratio,error)
             
               if error < best:
                   best = error
                   bestIndex  = i
                 
                   #if __debug__:
-                  #  print '\t','update',bestIndex,best
+                  #  print('\t','update',bestIndex,best)
                   
             currentSet.append((sf,nuclei[bestIndex]))
             bestSum += best
@@ -276,7 +276,7 @@ class NmrViewParams(ExternalParams):
           bestSets[bestSum] = currentSet
         
           #if __debug__:
-          #  print 'result',best,bestIndex,nuclei[bestIndex],currentSet
+          #  print('result',best,bestIndex,nuclei[bestIndex],currentSet)
       
         keys = bestSets.keys()
         keys.sort()

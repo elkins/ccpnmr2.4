@@ -70,7 +70,7 @@ class AxisTypeList(PulldownMenu):
 
   def destroy(self):
 
-    #print 'AxisTypeList destroy'
+    #print('AxisTypeList destroy')
     popup = self.getPopup()
     for func in notify_funcs:
       popup.unregisterNotify(self.setAxisTypes, 'ccpnmr.Analysis.AxisType', func)

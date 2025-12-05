@@ -211,7 +211,7 @@ class PulldownMenu(Frame):
       else:
         text = entries[e]['label']
     elif (entry_index != -1):
-      #print 'getEntryText', entry_index, entries
+      #print('getEntryText', entry_index, entries)
       entry = entries[entry_index]
       if (self.text_attr):
         text = getattr(entry, self.text_attr)
@@ -229,7 +229,7 @@ class PulldownMenu(Frame):
 
   def setup(self, entries, selected_index, first_pass=True, colors=None):
 
-    #print 'setup', entries, selected_index
+    #print('setup', entries, selected_index)
     if first_pass is not None:
       self.first_pass = first_pass
       
@@ -438,7 +438,7 @@ class PulldownMenu(Frame):
     if (force_callback or self.force_callback or \
         (selected_index != self.selected_index)):
 
-      #print 'setSelectedIndex', self.entries, selected_index, self.selected_index, self.first_pass
+      #print('setSelectedIndex', self.entries, selected_index, self.selected_index, self.first_pass)
       self.selected_index = selected_index
       self.setLabel(selected_index)
 
@@ -471,7 +471,7 @@ class PulldownMenu(Frame):
 
   def findEntryIndex(self, entry, entries = None):
 
-    #print 'findEntryIndex1', entry, entries
+    #print('findEntryIndex1', entry, entries)
     if (entries):
       noEntries = True
     else:
@@ -483,10 +483,10 @@ class PulldownMenu(Frame):
       except:
         pass
 
-    #print 'findEntryIndex2', entry, entries
+    #print('findEntryIndex2', entry, entries)
     for n in range(len(entries)):
       e = entries[n]
-      #print 'findEntryIndex3', entry, e
+      #print('findEntryIndex3', entry, e)
       if e == entry:
         if noEntries:
           return [n]
@@ -508,14 +508,14 @@ class PulldownMenu(Frame):
   # selects first item found in entries which matches
   def setSelected(self, selected):
 
-    #print 'setSelected1', selected, type(selected), self.entries
+    #print('setSelected1', selected, type(selected), self.entries)
     try:
       selected_index = self.findEntryIndex(selected)
     except:
       #selected_index = -1
       return
 
-    #print 'setSelected2', selected_index
+    #print('setSelected2', selected_index)
     self.setSelectedIndex(selected_index)
 
   def makeColorTile(self, color):
@@ -549,10 +549,10 @@ if __name__ == '__main__':
   popup_select = None
 
   def callback(n, text):
-    print 'callback: n =', n, 'text =', text
+    print('callback: n =', n, 'text =', text)
 
   def callback2(inds, text):
-    print 'callback2: inds =', inds, 'text =', text
+    print('callback2: inds =', inds, 'text =', text)
 
   def add():
     global n, popup_select
@@ -563,12 +563,12 @@ if __name__ == '__main__':
   def getSelected():
     global popup_select
     selected = popup_select.getSelected()
-    print 'getSelected', selected
+    print('getSelected', selected)
 
   def getSelectedInd():
     global popup_select
     selected = popup_select.getSelectedIndex()
-    print 'getSelectedInd', selected
+    print('getSelectedInd', selected)
 
   def remove():
     global popup_select

@@ -545,7 +545,7 @@ if __name__ == '__main__':
 
   def callback(obj):
     global pulldownMenu
-    print 'callback: object=', obj
+    print('callback: object=', obj)
     print pulldownMenu.getText()
     print pulldownMenu.getObject()
     print pulldownMenu.getSelected()

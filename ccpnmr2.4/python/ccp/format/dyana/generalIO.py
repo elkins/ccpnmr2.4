@@ -331,7 +331,7 @@ class DyanaGenericDistanceConstraintFile(DyanaGenericFile):
         print("  Warning: old DYANA can't handle ambiguous restraints - left out items:")
 
         for i in range(1,len(constraint.items)):
-          print "    ",i,
+          print("    ",i,)
           for j in  range(0,2):
             member = constraint.items[i].members[j]
             print ("%3d %-4s %-5s " % (member.seqCode,member.resLabel,member.atomName)),

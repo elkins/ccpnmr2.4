@@ -80,7 +80,7 @@ class GromacsDistanceConstraintFile(GromacsGenericFile):
 
     if verbose:
     
-      print "Reading %s distance constraint list %s" % (self.format,self.name)
+      print("Reading %s distance constraint list %s" % (self.format,self.name))
     
     fin = open(self.name, 'rU')
      
@@ -96,7 +96,7 @@ class GromacsDistanceConstraintFile(GromacsGenericFile):
       return
 
     if verbose: 
-      print "Writing %s distance constraint list %s" % (self.format,self.name)
+      print("Writing %s distance constraint list %s" % (self.format,self.name))
     
     fout = open(self.name,'w')
 

@@ -124,7 +124,7 @@ class DataTablesServer:
         try:
             self.dbh = psycopg2.connect(conn_string)            
             if 0: # Default: False
-                print "Content-Type: text/plain\n"
+                print("Content-Type: text/plain\n")
                 # conn.cursor will return a cursor object, you can use this query to perform queries
                 # note that in this example we pass a cursor_factory argument that will
                 # dictionary cursor so COLUMNS will be returned as a dictionary so we
@@ -141,9 +141,9 @@ class DataTablesServer:
                 # access the column by numeric index:
                 # even though we enabled columns by name I'm showing you this to
                 # show that you can still access columns by index and iterate over them.
-                print "Value: ", memory[0]
+                print("Value: ", memory[0])
 #    #             print the entire row 
-                print "Row:    ", memory
+                print("Row:    ", memory)
 #                return
             # end if            
         except:
@@ -166,12 +166,12 @@ class DataTablesServer:
                                           
         
         if self.cgi.has_key('query_type') and self.cgi['query_type'].value == "normal":
-            print "Content-Type: text/plain\n"
+            print("Content-Type: text/plain\n")
 #            log( "DEBUG: Processing normal query.\n" )
             self.runQueries(usePaging=True)
             self.outputResult()
         else:
-            print "Content-Disposition: attachment; filename=NRG-CING_summary_selection.csv;\n"
+            print("Content-Disposition: attachment; filename=NRG-CING_summary_selection.csv;\n")
 #            log( "DEBUG: Processing download query.\n" )
 #            self.cgi['iDisplayLength'] = -1 # All filtered rows please
             self.runQueries(usePaging=False)
@@ -185,7 +185,7 @@ class DataTablesServer:
         '''
         Redirect any which way the input.
         '''
-        print "Content-Type: text/html\n"
+        print("Content-Type: text/html\n")
         basicRedirectHtml = """<html><META HTTP-EQUIV="Refresh"
               CONTENT="0; URL=%s">
               </html>
@@ -217,7 +217,7 @@ class DataTablesServer:
         <p>Alternatively, you may go back and try again.</P>
         """   
              
-#        print 'DEBUG: now in processSimpleTextBoxQuery'
+#        print('DEBUG: now in processSimpleTextBoxQuery')
         # Sanity check.        
         dbValue = self.cgi['database'].value
         if dbValue != 'pdb':
@@ -347,7 +347,7 @@ class DataTablesServer:
         dataCursor = self.dbh.cursor(cursor_factory=DictCursor)
         query = """SELECT count(*) FROM %s where pdb_id='%s'""" % (
                 _sTable, dbValue )
-#        print 'query: %s' % query
+#        print('query: %s' % query)
         dataCursor.execute( query )
         count = dataCursor.fetchone()[0]
         return count > 0
@@ -362,9 +362,9 @@ class DataTablesServer:
         if usePaging:
 #            log("Paging\n")
             limit=self.paging()
-#        print 'where: %s' % where
-#        print 'order: %s' % order
-#        print 'limit: %s' % limit
+#        print('where: %s' % where)
+#        print('order: %s' % order)
+#        print('limit: %s' % limit)
 #        SELECT SQL_CALC_FOUND_ROWS %(columns)s
         query = """
             SELECT %(columns)s
@@ -372,10 +372,10 @@ class DataTablesServer:
                 columns=', '.join(_columns), table=_sTable, 
                 where=where, order=order, limit=limit
             )
-#        print 'query: %s' % query
+#        print('query: %s' % query)
         dataCursor.execute( query )
         self.resultData = dataCursor.fetchall()
-#        print 'Debug: resultData length: %s' % len(self.resultData)
+#        print('Debug: resultData length: %s' % len(self.resultData))
         
         cadinalityFilteredCursor = self.dbh.cursor() # Extra real query needed in pgsql w.r.t. postgresql.
         cadinalityFilteredCursor.execute( """
@@ -385,14 +385,14 @@ class DataTablesServer:
                 where=where
         ) )
         self.cadinalityFiltered = cadinalityFilteredCursor.fetchone()[0]
-#        print 'Debug: cadinalityFiltered length: %s' % self.cadinalityFiltered
+#        print('Debug: cadinalityFiltered length: %s' % self.cadinalityFiltered)
         
         cadinalityCursor = self.dbh.cursor()
         query = "SELECT COUNT(*) FROM %s"  %  _sTable         
-#        print 'query: %s' % query
+#        print('query: %s' % query)
         cadinalityCursor.execute( query )
         self.cardinality = cadinalityCursor.fetchone()[0]
-#        print 'Debug: cardinality length: %s' % self.cardinality
+#        print('Debug: cardinality length: %s' % self.cardinality)
     # end def
         
     def filtering( self ):

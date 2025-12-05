@@ -10,14 +10,14 @@ class AllChecks(TestCase):
     def testPeirceTest1(self):        
         values = [101.2, 90.0, 99.0, 102.0, 103.0, 100.2, 89.0, 98.1, 101.5, 102.0]
         vOld,_oOld = peirceTest.peirceTestOld( values )
-#        print 'v=',vOld
+#        print('v=',vOld)
 #        print vOld.av, vOld.sd
-#        print 'o=',_oOld
+#        print('o=',_oOld)
 #        
         v,_o = peirceTest.peirceTest( values )
-#        print 'v=',v
+#        print('v=',v)
 #        print v.av, v.sd
-#        print 'o=',_o
+#        print('o=',_o)
     
         self.assertTrue( vOld == v )
 
@@ -31,14 +31,14 @@ class AllChecks(TestCase):
             values[i] = 2        
         # Will only note first 9 outliers
         vOld,oOld = peirceTest.peirceTestOld( values )
-#        print 'v=',vOld
+#        print('v=',vOld)
 #        print vOld.av, vOld.sd
-#        print 'obj=',oOld
+#        print('obj=',oOld)
 #        
         v,obj = peirceTest.peirceTest( values )
-#        print 'v=',v
+#        print('v=',v)
 #        print v.av, v.sd
-#        print 'obj=',obj
+#        print('obj=',obj)
     
         self.assertFalse( vOld == v )
         self.assertFalse( oOld == obj )
@@ -58,7 +58,7 @@ class AllChecks(TestCase):
         while n > 3:
             values = values[:n]        
             _v,obj = peirceTest.peirceTest( values )
-#            print 'number of outliers at size: '+repr(n)+ ' =',len(obj)
+#            print('number of outliers at size: '+repr(n)+ ' =',len(obj))
             self.assertTrue(len(obj)<=m)
             n -= 1
                     
@@ -71,7 +71,7 @@ class AllChecks(TestCase):
         result = peirceTest.peirceTest( values )
         self.failUnless(result)
         v,obj = result
-#        print 'number of outliers at size: '+repr(n)+ ' =',len(obj)
+#        print('number of outliers at size: '+repr(n)+ ' =',len(obj))
         self.assertTrue(len(v) == n)
         self.assertTrue(len(obj) == 0)
         
@@ -83,7 +83,7 @@ class AllChecks(TestCase):
         result = peirceTest.peirceTest( values )
         self.failUnless(result)
         v,obj = result
-#        print 'number of outliers at size: '+repr(n)+ ' =',len(obj)
+#        print('number of outliers at size: '+repr(n)+ ' =',len(obj))
         self.assertTrue(len(v) == 10)
         self.assertTrue(len(obj) == 10)
 

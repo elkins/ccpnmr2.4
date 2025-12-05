@@ -7,7 +7,7 @@ import cProfile
 import pstats
 
 def run():
-    print "hello"
+    print("hello")
     cing.verbosity = verbosityDebug
     nTdebug( "hello again" )
 

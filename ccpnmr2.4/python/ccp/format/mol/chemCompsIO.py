@@ -79,7 +79,7 @@ class MolChemCompFile(MolGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s chemComp file %s" % (self.format,self.name)
+      print("Reading %s chemComp file %s" % (self.format,self.name))
       
     
     #
@@ -163,10 +163,10 @@ class MolChemCompFile(MolGenericFile):
       elif chemCompRead and line[:6] == 'M  END':
 
         if self.chemComps[-1].numAtoms:
-          print "  Warning: there are %d atoms not handled!" % self.chemComps[-1].numAtoms
+          print("  Warning: there are %d atoms not handled!" % self.chemComps[-1].numAtoms)
           
         if self.chemComps[-1].numBonds:
-          print "  Warning: there are %d bonds not handled!" % self.chemComps[-1].numBonds
+          print("  Warning: there are %d bonds not handled!" % self.chemComps[-1].numBonds)
 
         chemCompRead = 0
         atomSerial = 0

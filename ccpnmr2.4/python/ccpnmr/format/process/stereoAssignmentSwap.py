@@ -113,12 +113,12 @@ def createResAtomSwapDict(resAtomSetDict,compareWithWattos=False):
 
       refAtom = atomSetList[0].findFirstAtom()
       if not refAtom.chemAtom:
-        print "  Error: no chemAtom for atom %s in residue %s, %s" % (refAtom.name,refAtom.residue.molType, refAtom.residue.ccpCode)
+        print("  Error: no chemAtom for atom %s in residue %s, %s" % (refAtom.name,refAtom.residue.molType, refAtom.residue.ccpCode))
         continue
 #      if compareWithWattos:
 #          resName = refAtom.residue.ccpCode.upper()
 #          if resName == 'PHE' or resName == 'TYR':
-##              print 'DEBUG: skipping Phe/Tyr for comparison with Wattos.'
+##              print('DEBUG: skipping Phe/Tyr for comparison with Wattos.')
 #              continue
 
       refChemAtomSet = refAtom.chemAtom.chemAtomSet
@@ -359,11 +359,11 @@ class StereoAssignmentSwapCheck:
   def checkSwapsAndClean(self,method = 'SUM_AVERAGING', violationCodes = None, swapFraction = 0.75, deassignAll = False):
 
     if not self.distanceConstraintLists or not self.structureEnsemble or not self.structureEnsemble.models:
-      print "Error: no constraint lists or no structures available! Aborting..."
+      print("Error: no constraint lists or no structures available! Aborting...")
       return
 
     print
-    print "Checking swap status and cleaning prochiral groups in constraint lists..."
+    print("Checking swap status and cleaning prochiral groups in constraint lists...")
     print
 
     #
@@ -394,11 +394,11 @@ class StereoAssignmentSwapCheck:
 
     (self.resAtomDict,self.resAtomSetDict) = createResonanceAtomAndAtomSetDict(self.distanceConstraintLists[0].parent.fixedResonances)
     if self.verbose:
-      print "Made resAtomDict, resAtomSetDict"
+      print("Made resAtomDict, resAtomSetDict")
 
     (self.resAtomSwapDict,self.prochiralResonancesDict) = createResAtomSwapDict(self.resAtomSetDict)
     if self.verbose:
-      print "Made resAtomSwapDict,prochiralResonancesDict"
+      print("Made resAtomSwapDict,prochiralResonancesDict")
 
     structureViolations = []
 
@@ -455,7 +455,7 @@ class StereoAssignmentSwapCheck:
               self.atomCoordDict[cAtom.atom] = model.findFirstCoord(atom = cAtom)
 
       if self.verbose:
-        print "Made atomCoordDict for model %d" % model.serial
+        print("Made atomCoordDict for model %d" % model.serial)
 
       #
       # Go over the distance constraints
@@ -487,7 +487,7 @@ class StereoAssignmentSwapCheck:
       structureViolations.append(self.prochiralViolationDict)
 
       if self.verbose:
-        print "Total violations %d" % totalViols
+        print("Total violations %d" % totalViols)
 
     #
     # Check whether original or swap state was the best...
@@ -586,7 +586,7 @@ class StereoAssignmentSwapCheck:
             if len(prochiralResonances) == 1:
 
               otherProchiralResonance = self.nmrConstraintStore.newFixedResonance(isotopeCode = prochiralResonances[0].isotopeCode)
-              print "NEW1 resonance %d" % otherProchiralResonance.serial
+              print("NEW1 resonance %d" % otherProchiralResonance.serial)
               otherAtoms = self.resAtomSwapDict[prochiralResonances[0]]
               otherAtomSet = otherAtoms[0].findFirstFixedAtomSet(nmrConstraintStore=self.nmrConstraintStore)
               if not otherAtomSet:
@@ -684,13 +684,13 @@ class StereoAssignmentSwapCheck:
         resSet.addAtomSet(atomSet)
               
         otherProchiralResonance = self.nmrConstraintStore.newFixedResonance(name=otherAtoms[0].name,isotopeCode=prochiralResonance.isotopeCode,resonanceSet=resSet)
-        print "NEW2 resonance %d" % otherProchiralResonance.serial
+        print("NEW2 resonance %d" % otherProchiralResonance.serial)
         for ats in resSet.sortedAtomSets():
           if ats == atomSet:
             tt = "NEW"
           else:
             tt = "EXI"
-          print "  %s AS" % tt,ats,ats.sortedAtoms()
+          print("  %s AS" % tt,ats,ats.sortedAtoms())
   
         atomList = []
         for atomSet in resSet.sortedAtomSets():
@@ -959,7 +959,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
   def storeToAppData(self, star_text ):
     appData1 = Implementation.AppDataString(value=star_text, application='FormatConverter', keyword='stereoAssignmentCorrectionsFile')
     self.nmrConstraintStore.addApplicationData(appData1)
-    print "Added STAR file to application data within nmrConstraintStore"
+    print("Added STAR file to application data within nmrConstraintStore")
 
   def checkSwapsAndClean( self,              # For comparison the NRG tags and defaults on March 2nd, 2011 are presented.
                           energy_abs_criterium = 0.1,         # _Stereo_assign_list.Crit_abs_e_diff      0.100
@@ -978,7 +978,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
     Return True on error.
     """
     if not self.distanceConstraintLists or not self.structureEnsemble or not self.structureEnsemble.models:
-      print "Error: no constraint lists or no structures available! Aborting..."
+      print("Error: no constraint lists or no structures available! Aborting...")
       return True
 
     #
@@ -1006,9 +1006,9 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
         self.VIOLATION_CODE_REPORTINGX_STR ]
     for violationCode in self.violationCodeList:
         if not self.violationCodes.has_key(violationCode):
-            print 'ERROR: expected violationCode [%s] in StereoAssignmentCleanup.violationCodes ' % violationCode
+            print('ERROR: expected violationCode [%s] in StereoAssignmentCleanup.violationCodes ' % violationCode)
             return True
-#        print 'DEBUG: self.violationCode[%s] : %s' % ( violationCode, str(self.violationCodes[violationCode]))
+#        print('DEBUG: self.violationCode[%s] : %s' % ( violationCode, str(self.violationCodes[violationCode])))
 
     #
     # Initialise some variables
@@ -1029,17 +1029,17 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
     #
 
     print
-    print "Checking swap status and cleaning prochiral groups in constraint lists..."
+    print("Checking swap status and cleaning prochiral groups in constraint lists...")
     print
 
     (self.resAtomDict,self.resAtomSetDict) = createResonanceAtomAndAtomSetDict(self.distanceConstraintLists[0].parent.fixedResonances)
     if self.verbose:
-      print "Made resAtomDict, resAtomSetDict"
+      print("Made resAtomDict, resAtomSetDict")
 
     # resAtomSwapDict is list of atoms associated with a resonance, prochiralResonancesDict links to (chainCode,seqId,prochiralChemAtomSet) tuple
     (self.resAtomSwapDict,self.prochiralResonancesDict) = createResAtomSwapDict(self.resAtomSetDict,compareWithWattos=self.compareWithWattos)
     if self.verbose:
-      print "Made resAtomSwapDict,prochiralResonancesDict"
+      print("Made resAtomSwapDict,prochiralResonancesDict")
 
     self.triplets = {}
 
@@ -1070,7 +1070,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
     prochiralKeys.sort()
     Triplet_count = len(prochiralKeys)
     if Triplet_count < 1:
-        print "WARNING: expected at least one triplet. Are there SSA distance restraints available?"
+        print("WARNING: expected at least one triplet. Are there SSA distance restraints available?")
         return
     invalidTripletCount = 0 # Like 1a24 1    185    LEU    CD* that is invalid and can easily be recognized because it gets no involved restraints.
     for prochiralKey in prochiralKeys:
@@ -1109,7 +1109,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
                   unambiguousStereoConstraints.append(constraint)
                 else:
                   pass
-#                  print 'DEBUG: ambi in %s:\n    %s' % (prochiralKey, ccpnDistanceRestraintToString(constraint)) # JFD doesn't know how to easily show atoms here.
+#                  print('DEBUG: ambi in %s:\n    %s' % (prochiralKey, ccpnDistanceRestraintToString(constraint)) # JFD doesn't know how to easily show atoms here.)
 
       #
       # Clean up restraints so that constraints that are already fully ambiguous for the prochiral resonances (and they point to exactly the same resonances) are not included in the list to check..
@@ -1137,7 +1137,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
       resIdCcpn = prochiralKey[1]
       chemAtomSetName = prochiralKey[2].name
       priorityKey = (len(connectedConstraints),len(unambiguousStereoConstraints),chainIdCcpn,resIdCcpn,chemAtomSetName)
-#      print "DEBUG: priorityKey:", priorityKey
+#      print("DEBUG: priorityKey:", priorityKey)
       if not prochiralPriority.has_key(priorityKey):
         prochiralPriority[priorityKey] = []
 
@@ -1183,9 +1183,9 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
     if debug:
         for pk in priorityKeys:
           for pck in prochiralPriority[pk]:
-            print "pck: ", pck
+            print("pck: ", pck)
             for at in self.triplets[pck].keys():
-              print "  at, self.triplets[pck][at]: ",at, self.triplets[pck][at]
+              print("  at, self.triplets[pck][at]: ",at, self.triplets[pck][at])
             print
 
     #
@@ -1253,7 +1253,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
           totalEnergyLowState += energyLowState
           if energyHighState > energyLowState: # swapping needed because for this model the assumption on the unswapped being the highest energy state was correct
             doSwapCount += 1.0
-#          print "DEBUG: tripletIdx,modelIndex,energyHighState,energyLowState: %s" % str((tripletIdx,modelIndex,energyHighState,energyLowState))
+#          print("DEBUG: tripletIdx,modelIndex,energyHighState,energyLowState: %s" % str((tripletIdx,modelIndex,energyHighState,energyLowState)))
         # end for model loop
         swappedFavouredFraction = doSwapCount / self.numModels
 
@@ -1290,9 +1290,9 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
             swapAssignment = True
         # end if/else
         if not swapAssignment:
-            print "DEBUG maintaining tripletIdx %s because %s" % ( tripletIdx, msg)
+            print("DEBUG maintaining tripletIdx %s because %s" % ( tripletIdx, msg))
         else:
-            print "DEBUG swapping    tripletIdx %s" % tripletIdx
+            print("DEBUG swapping    tripletIdx %s" % tripletIdx)
         # end if
         finalSwapType = self.swapTypes[0]
         favouredPercent = (1 - swappedFavouredFraction) * 100.0
@@ -1325,7 +1325,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
           
           if debug:
             print
-            print "SWAPPING", prochiralResonances
+            print("SWAPPING", prochiralResonances)
             print
 
           if len(prochiralResonances) == 2:
@@ -1423,7 +1423,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
               fractionFound = ( 1.0 * numViol ) / self.numModels
               if fractionFound >= fractionByViolationCode: # inclusive
                   if debug:
-                      print "DEBUG:    DEASSIGNING BASED ON %s %s" % (violationCode, str(prochiralViolationInfo[finalSwapType][self.REQUIRES_DEASSIGNMENT_STR]))
+                      print("DEBUG:    DEASSIGNING BASED ON %s %s" % (violationCode, str(prochiralViolationInfo[finalSwapType][self.REQUIRES_DEASSIGNMENT_STR])))
                   deassign = True
                   Deassign_count += 1
                   break # no need to look at other potentially qualifying restraints
@@ -1464,7 +1464,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
         if totalConstraints:
             finalList[(chainCode,seqId,chemAtomSetName)] = lineItem
         else:
-            print "warning skipping triplet without restraints: " + lineItem
+            print("warning skipping triplet without restraints: " + lineItem)
             invalidTripletCount += 1
         # end if
         
@@ -1541,14 +1541,14 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
 
       # Let's do the same with a STAR table.
       if invalidTripletCount:
-          print "Warning: found triplets without restraints."
+          print("Warning: found triplets without restraints.")
       validTripletCount = Triplet_count - invalidTripletCount
       if validTripletCount < 1:
-          print "Error: found no triplets with restraints."
+          print("Error: found no triplets with restraints.")
           return True
       validTripletCount2 = len(finalIds) # double check.
       if validTripletCount != validTripletCount2:
-          print "Error: found number of triplets with restraints %d but number of report list %d" % ( validTripletCount, validTripletCount2)
+          print("Error: found number of triplets with restraints %d but number of report list %d" % ( validTripletCount, validTripletCount2))
 #          return True
           
       Swap_percentage = ( 100.0 * Swap_count ) / validTripletCount
@@ -1684,19 +1684,19 @@ Description of the tags in the table below:
 
       starFile = File()
       if starFile.read(text=star_text):
-          print "Error: reading STAR text by STAR api."
+          print("Error: reading STAR text by STAR api.")
           return True
       if starFile.check_integrity():
-          print "Error: STAR text failed integrity check."
+          print("Error: STAR text failed integrity check.")
           return True
       starFile.filename = outputFileName
       if starFile.write():
-          print "Error: writing file %" % outputFileName
+          print("Error: writing file %" % outputFileName)
           return True
       if not os.path.exists(outputFileName):
-          print "Error: failed to find STAR file %s" % outputFileName
+          print("Error: failed to find STAR file %s" % outputFileName)
           return True
-#      print "Written meta data to STAR file: %s" % outputFileName      # already printed by write()
+#      print("Written meta data to STAR file: %s" % outputFileName      # already printed by write())
           
       
       self.storeToAppData( star_text )
@@ -1807,8 +1807,8 @@ Description of the tags in the table below:
           #  debug = False
           
           if debug:
-            print "   R     ",resonance, resonance.resonanceSet.atomSets
-            print "   OtherR",otherResonance, otherResonance.resonanceSet.atomSets
+            print("   R     ",resonance, resonance.resonanceSet.atomSets)
+            print("   OtherR",otherResonance, otherResonance.resonanceSet.atomSets)
 
           itemAtoms = (self.resAtomDict[resonance],self.resAtomDict[otherResonance])
           if itemAtoms in itemAtomsList:
@@ -1838,13 +1838,13 @@ Description of the tags in the table below:
                               
           # end for
           if atomListsAdded == 2:
-            print "  Warning: restraint item between prochiral resonances of same triplet %s.%d.%s. Ignoring... ." % (prochiralKey[0],prochiralKey[1],prochiralKey[2].name)
+            print("  Warning: restraint item between prochiral resonances of same triplet %s.%d.%s. Ignoring... ." % (prochiralKey[0],prochiralKey[1],prochiralKey[2].name))
             continue
 
           if debug:
             print prochiralKey, atomListsAdded
-            print "  AL", atomLists
-            print "  OAL", otherAtomLists
+            print("  AL", atomLists)
+            print("  OAL", otherAtomLists)
 
           localSumsIndex = 0
 
@@ -1855,7 +1855,7 @@ Description of the tags in the table below:
                   for otherAtom in otherAtomList:
 
                     if atom == otherAtom:
-                      print "  Warning: restraint between same atom."
+                      print("  Warning: restraint between same atom.")
                       continue
 
                     checkAromaticAtomInfo = None
@@ -1880,11 +1880,11 @@ Description of the tags in the table below:
                           avgLocalSums[localSumsIndex][i] += max(avgSumContrib,otherAvgSumContrib)
                           
                       else:
-                        print "  Warning: empty coordinate for atom %s or %s" % (atom,otherAtom)
+                        print("  Warning: empty coordinate for atom %s or %s" % (atom,otherAtom))
                     else:
-                      print "  Warning: no coordinate for atom %s" % otherAtom
+                      print("  Warning: no coordinate for atom %s" % otherAtom)
                 else:
-                  print "  Warning: no coordinate for atom %s" % atom
+                  print("  Warning: no coordinate for atom %s" % atom)
 
               localSumsIndex += 1
           # end for atomList
@@ -1906,7 +1906,7 @@ Description of the tags in the table below:
             violationInfo[violationCode] = [0.0] * self.numModels
 
           if debug:
-            print "  ",swapType
+            print("  ",swapType)
 
           for modelIndex in range(self.numModels):
             # Possible that some data missing or not linked, ignore in that case.
@@ -1916,7 +1916,7 @@ Description of the tags in the table below:
             avgDist = math.pow(1.0 / avgLocalSums[i][modelIndex], self.factor)
 
             if debug:
-              print "    ",modelIndex, avgDist
+              print("    ",modelIndex, avgDist)
 
             viol = None
             if lowerLimit and avgDist < lowerLimit:
@@ -1927,7 +1927,7 @@ Description of the tags in the table below:
             # If violated, add to overall prochiral energy and check whether it's a bad violation...
             if viol:
               if debug:
-                print "    -> VIOL",viol,math.pow(viol,2)
+                print("    -> VIOL",viol,math.pow(viol,2))
               prochiralViolationInfo[swapType]['energy'][modelIndex] += math.pow(viol,2)
 
               for violationCode in self.violationCodeList:
@@ -1938,18 +1938,18 @@ Description of the tags in the table below:
               # end for violationCode
             # end if viol
           # end for over models
-#          print "DEBUG: Now check whether deassignment required for this particular restraint"
+#          print("DEBUG: Now check whether deassignment required for this particular restraint")
           for violationCode in self.violationCodeList:
             violationCount = self.numModels - violationInfo[violationCode].count(0.0)
             violationFraction = violationCount * 1.0 / self.numModels
             maxViol = max(violationInfo[violationCode]) #@UnusedVariable
 #            if violationCode == self.VIOLATION_CODE_REPORTINGS_STR and maxViol > 0.2:
-#            print "DEBUG: violationCode, maxViol, violationCount, violationFraction, self.violationCodes[violationCode]['fraction'] :", violationCode, maxViol, violationCount, violationFraction, self.violationCodes[violationCode]['fraction']
+#            print("DEBUG: violationCode, maxViol, violationCount, violationFraction, self.violationCodes[violationCode]['fraction'] :", violationCode, maxViol, violationCount, violationFraction, self.violationCodes[violationCode]['fraction'])
             if violationCount and (violationFraction > self.violationCodes[violationCode]['fraction']):
               prochiralViolationInfo[swapType][self.REQUIRES_DEASSIGNMENT_STR].append((violationCode,violationInfo[violationCode]))
           # end for violationCode
           if debug:
-            print "  ", prochiralViolationInfo
+            print("  ", prochiralViolationInfo)
             print
           # end if debug
         # at indent 9 end for over swapTypes
@@ -2008,7 +2008,7 @@ def ccpnDistanceRestraintToString(ccpnConstraint):
         resonanceListLength = len(resonanceList)
         assert(resonanceListLength == 2) # During a regular run (not with -O option given to python interpreter) this might cause a exception being thrown.
         if resonanceListLength != 2:
-            print "ERROR: expected a pair but found number: %d for ccpnConstraint %s" % (resonanceListLength, ccpnConstraint)
+            print("ERROR: expected a pair but found number: %d for ccpnConstraint %s" % (resonanceListLength, ccpnConstraint))
             return None
         for resonance in resonanceList:
             resAtomList = []
@@ -2020,7 +2020,7 @@ def ccpnDistanceRestraintToString(ccpnConstraint):
                         resAtomList.append('%d.%s' % (
                             atom.residue.seqCode, atom.name))
             else:
-                print "WARNING: No resonanceSet (means unassigned) for ccpnConstraint %s" % ccpnConstraint
+                print("WARNING: No resonanceSet (means unassigned) for ccpnConstraint %s" % ccpnConstraint)
             resAtomList.sort()
             resAtomString = ','.join(resAtomList)
             atomList.append(resAtomString)

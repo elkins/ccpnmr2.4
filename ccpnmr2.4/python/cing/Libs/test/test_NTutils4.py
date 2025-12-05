@@ -133,7 +133,7 @@ b
         a.append('abc')
         a.append('abc')
         x = d.getDeepAvgByKeys('key')
-#        print 'x=', x
+#        print('x=', x)
         self.assertEquals( x, 'abc')
 
         # Fraction by default needs to be 1.0; complete consensus

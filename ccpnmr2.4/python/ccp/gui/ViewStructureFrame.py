@@ -74,10 +74,10 @@ try:
   from ccp.c import StructBond
   from ccp.c import StructStructure
   from memops.c import TkHandler
-except Exception, e:
-  print 'Error, the ViewStructureFrame module will not work, something is wrong with the C code.'
-  print 'Exception:', e
-  print 'Will continue without Analysis structure viewing functionality'
+except Exception as e:
+  print('Error, the ViewStructureFrame module will not work, something is wrong with the C code.')
+  print('Exception:', e)
+  print('Will continue without Analysis structure viewing functionality')
   StructAtom = StructBond = StructStructure = TkHandler = None
 
 isWindowsOS = sys.platform[:3].lower() == 'win'
@@ -1136,7 +1136,7 @@ class ViewStructureFrame(ScrolledCanvas):
       file_name = outputHandler.file_name
       printHandler.close() # clears file_name, hence first need to save, as above
       showInfo('Wrote file', 'Successfully wrote file "%s"' % file_name, parent=self)
-    except IOError, e:
+    except IOError as e:
       showError('IO Error', str(e), parent=self)
 
   def drawStructure(self, handler=None):

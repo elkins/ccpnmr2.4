@@ -342,7 +342,7 @@ class NmrDrawFormat(DataFormat):
       for peakDimContrib in peakDimContribs:
       
         if isinstance(peakDimContrib,Nmr.PeakDimContribN):
-          print "   Warning: cannot handle multiple resonances for one peakDim contribution. Ignored."
+          print("   Warning: cannot handle multiple resonances for one peakDim contribution. Ignored.")
           continue
      
         # get resonanceToAtoms

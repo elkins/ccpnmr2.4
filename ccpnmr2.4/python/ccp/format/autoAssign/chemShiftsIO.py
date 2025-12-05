@@ -79,7 +79,7 @@ class AutoAssignChemShiftFile(AutoAssignGenericFile):
   def read(self, verbose = 0):
 
     if verbose == 1:
-      print "Reading %s chemical shift list %s" % (self.format,self.name)
+      print("Reading %s chemical shift list %s" % (self.format,self.name))
 
     fin = open(self.name, 'rU')
     
@@ -144,7 +144,7 @@ class AutoAssignChemShiftFile(AutoAssignGenericFile):
               for i in range(len(self.chemShifts)-1,-1,-1):
                 chemShift = self.chemShifts[i]
                 if chemShift.seqCode == (seqCode - 1) and chemShift.atomName == atomName:
-                  #print "Resetting", seqCode -1, atomName,value
+                  #print("Resetting", seqCode -1, atomName,value)
                   atomName = None
                   chemShift.value =  (chemShift.value + value) / 2
                   chemShift.allValues['i+1'] = value
@@ -157,7 +157,7 @@ class AutoAssignChemShiftFile(AutoAssignGenericFile):
               iCode = 'i+1'
                   
             self.chemShifts.append(AutoAssignChemShift(value,atomName,curSeqCode,spinSystemId,peakId,curResCode,self.defaultMolCode,iCode = iCode))
-            #print "set",curSeqCode,curResCode,atomName,value
+            #print("set",curSeqCode,curResCode,atomName,value)
             
         elif cols[0] == 'AA':
          
@@ -174,7 +174,7 @@ class AutoAssignChemShiftFile(AutoAssignGenericFile):
 
   def write(self,verbose = 0):
     
-    print "Not relevant"
+    print("Not relevant")
 
 class AutoAssignChemShift:
 

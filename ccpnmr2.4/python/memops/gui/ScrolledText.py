@@ -98,9 +98,9 @@ class ScrolledText(Frame):
     try:
       return getattr(self.__dict__['text_area'], name)
     except:
-      raise AttributeError, "ScrolledText instance has no attribute '%s'" % name
+      raise AttributeError("ScrolledText instance has no attribute '%s'" % name
 
-  def setState(self, state = Tkinter.NORMAL):
+  def setState(self).with_traceback(state) = Tkinter.NORMAL):
 
     assert state in (Tkinter.NORMAL, Tkinter.DISABLED), 'state = %s' % state
 
@@ -120,7 +120,7 @@ if (__name__ == '__main__'):
 
   def getText():
 
-    print 'getText:', text.getText()
+    print('getText:', text.getText())
 
   root = Tkinter.Tk()
 

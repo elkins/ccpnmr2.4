@@ -140,11 +140,11 @@ class ExperimentCreatePopup(TemporaryBasePopup):
   
     for nep in self.project.sortedNmrExpPrototypes():
     
-      #print "%d: %s (%s)   %s" % (nep.serial, nep.name, nep.category, nep.synonym)
+      #print("%d: %s (%s)   %s" % (nep.serial, nep.name, nep.category, nep.synonym))
     
       for re in nep.refExperiments:
         """
-        #print "  %s:" % re.name,
+        #print("  %s:" % re.name,)
         atomDimList = []
         for refExpDim in re.refExpDims:
           for refExpDimRef in refExpDim.refExpDimRefs:

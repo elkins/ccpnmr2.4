@@ -89,7 +89,7 @@ def getCasdNmrProjects(saveDataDir = None, forceWrite = False):
     localDataFilePath = os.path.join(saveDataDir,fileName)
     
     if forceWrite or not os.path.exists(localDataFilePath):
-      print "  Downloading CASD-NMR project %s..." % fileName
+      print("  Downloading CASD-NMR project %s..." % fileName)
 
       dataLines = getDataFromHttp(dataUrl)
       

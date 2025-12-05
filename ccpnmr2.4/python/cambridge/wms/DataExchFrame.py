@@ -189,11 +189,11 @@ class DataExchFrame(Frame):
       objects.append(strg)
       callbacks.append(None)
 
-    print 'UPDATE ', ss
-    print 'UPDATE ', len(ss)
+    print('UPDATE ', ss)
+    print('UPDATE ', len(ss))
 
     if len(ss) > 0:
-      print 'UPDATE: updating '
+      print('UPDATE: updating ')
       tree.update(parents, objects, texts, icons, callbacks)
     
 

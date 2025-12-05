@@ -110,5 +110,5 @@ for t, chemCompVar in resData:
   for a in atomTexts:
     print a
 
-  print 'ENDRES'
+  print('ENDRES')
       

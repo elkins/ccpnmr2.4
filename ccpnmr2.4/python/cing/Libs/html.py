@@ -595,10 +595,10 @@ def setupHtml(project):
 
     DihedralByProjectListHTMLfile( project)
     project.dihedralByProjectList.append(NTtree("dummy")) # circumvent check on emptiness.
-#    print "now  project.dihedralByProjectList initialized: " , project.dihedralByProjectList
-#    print "now tmp initialized: " , tmp
-#    print "now tmp initialized: " , tmp.dihedralByProjectList
-#    print "now it's initialized: " , project.dihedralByProjectList.html
+#    print("now  project.dihedralByProjectList initialized: " , project.dihedralByProjectList)
+#    print("now tmp initialized: " , tmp)
+#    print("now tmp initialized: " , tmp.dihedralByProjectList)
+#    print("now it's initialized: " , project.dihedralByProjectList.html)
 
     if hasattr(molecule, 'atomList'):
         AtomsHTMLfile( project, molecule.atomList )
@@ -747,7 +747,7 @@ class MakeHtmlTable:
         """iteration routine: loop of rows
         Which also starts the table tag!
         """
-#        print 'iter>', self._rows, self._iter
+#        print('iter>', self._rows, self._iter)
         if self._rows == None: 
             return None
 
@@ -771,7 +771,7 @@ class MakeHtmlTable:
     #end def
 
     def next( self ):
-#        print 'next>', self._rows, self._iter
+#        print('next>', self._rows, self._iter)
         if self._iter > 0:
             if self._columnOpen:
                 self.closeColumn()
@@ -834,7 +834,7 @@ class MakeHtmlTable:
         TODO: add foot functionality.
         """
         headers = nTzap(self.columnFormats, 0)
-        #print "headers>", headers
+        #print("headers>", headers)
 #        doHeaders = False
 #        for h in headers:
 #            if h != None:
@@ -1126,7 +1126,7 @@ class HTMLfile:
 
     # Having a del method might upset the gc.
 #    def __del__(self):
-#        print '>>deleting>', self.title, self.fileName
+#        print('>>deleting>', self.title, self.fileName)
 #        print self
 #        if self in htmlObjects:
 #            htmlObjects.remove(self)
@@ -1183,7 +1183,7 @@ class HTMLfile:
             newLine = True
         v = { True: None, False: -1 }
 
-        #print '****', htmlList,'*',tag,'*', openTag,'*', closeTag, '*', args
+        #print('****', htmlList,'*',tag,'*', openTag,'*', closeTag, '*', args)
 
         if openTag and closeTag:
             s = ( self.openTag( tag, *args, **kwds )[:-1] +
@@ -1420,7 +1420,7 @@ class HTMLfile:
     def tag( self, tag, *args, **kwds ):
         "Return (openingTag, content, closingTag) triple"
 
-        #print '*****', tag, [args], (kwds)
+        #print('*****', tag, [args], (kwds))
         openTag = sprintf('<%s',tag)
         for key,value in kwds.iteritems():
             openTag = openTag + sprintf(' %s="%s"', key, value)
@@ -1944,7 +1944,7 @@ class DihedralByProjectHTMLfile( HTMLfile ):
 #        self.main('h1','Residue-based analysis')
         mol = self.project.molecule
         for chain in mol.allChains():
-#            print '>>',mol, chain
+#            print('>>',mol, chain)
             self.insertHtmlLinkInTag( 'h1', self.main, mol, chain, text='Chain %s' % chain.name )
             _makeDihedralByProjectTableHtml( self.dihedralByProject, residues=chain.allResidues(), ncols=self.ncols,
                     pictureBaseName = self.dihedralByProject.name,
@@ -2066,7 +2066,7 @@ class DihedralByProjectListHTMLfile( HTMLfile ):
                 nTerror("Failed to find resDir: %s" % resDir)
             for dihed in dihedralList:
                 tmpPath = os.path.join(resDir, dihed + '.png') #@UnusedVariable
-#                print 'tmpPath:', tmpPath, os.path.exists(tmpPath)
+#                print('tmpPath:', tmpPath, os.path.exists(tmpPath))
                 if os.path.exists(tmpPath):
 #                if True:
                     dihedralPresentMap[ dihed ] = None
@@ -2476,7 +2476,7 @@ class MoleculeHTMLfile( HTMLfile ):
 
         self.main('h1','Residue-based analysis')
         for chain in self.molecule.allChains():
-            #print '>>',self.molecule, chain
+            #print('>>',self.molecule, chain)
             self.insertHtmlLinkInTag( 'h1', self.main, self.molecule, chain,
                                        text='Chain %s' % chain.name
                                      )
@@ -2677,7 +2677,7 @@ class ResidueHTMLfile( HTMLfile ):
             # up from Molecule/A/ala181 to tailLink
             relLink = os.path.join('../../..', tailLink)
 #            absLink = os.path.join( project.moleculePath(), moleculeDirectories.html, tailLink )
-#            print "all: tailLink, relLink, absLink", tailLink, relLink, absLink
+#            print("all: tailLink, relLink, absLink", tailLink, relLink, absLink)
 
             residue.html.left('a',   "",      href = relLink, closeTag=False )
             residue.html.left( 'h2', plotDihedralComboName, id=plotDihedralComboName)

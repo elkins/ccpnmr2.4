@@ -1785,7 +1785,7 @@ class LinkSideChainsPopup(BasePopup):
       for i, (rootPos, nonRootPositions, peaks, score) in enumerate(newPositions):
         #score /= bestMatchListScore
         
-        #print 'PK', i, ['%.3f' % x for x in rootPos], '%.4f' % score
+        #print('PK', i, ['%.3f' % x for x in rootPos], '%.4f' % score)
 
         for j, atomSets in enumerate(sideChainAtomSets):
           # Work with atomSets or chemAtomSets?
@@ -1848,8 +1848,8 @@ class LinkSideChainsPopup(BasePopup):
           if k == i:
             continue
             
-          #print 'LINK', ','.join(['%.3f' % x for x in rootPos]), ','.join(['%.3f' % x for x in rootPos2])
-          #print 'NR', 
+          #print('LINK', ','.join(['%.3f' % x for x in rootPos]), ','.join(['%.3f' % x for x in rootPos2]))
+          #print('NR', )
 
           linkScore = 0.0      # From shared peak positions, or NOEs...
  
@@ -1872,7 +1872,7 @@ class LinkSideChainsPopup(BasePopup):
               q = exp(-e)/gausRoot2pi
               linkScore += q
             
-              #print '%.3f' % nonRootPos[0], '%.3f' % closest[1][0],
+              #print('%.3f' % nonRootPos[0], '%.3f' % closest[1][0],)
           
           #print ''
           #print linkScore
@@ -2141,7 +2141,7 @@ class LinkSideChainsPopup(BasePopup):
     for location2, peaks2 in newRootPeakLocations:
       for peak in peaks2:
         peakDims = peak.sortedPeakDims()
-        #print "PEAK", ['%.3f' % x.value for x in peakDims], peak.serial
+        #print("PEAK", ['%.3f' % x.value for x in peakDims], peak.serial)
         if done.get(peak):
           continue
         else:
@@ -2160,7 +2160,7 @@ class LinkSideChainsPopup(BasePopup):
           position.append(peakDims[i].value)
  
         newRoots.append((1.0, position, [peak,], delta))
-        #print 'PRE-MERGED', ['%.3f' % x for x in position]
+        #print('PRE-MERGED', ['%.3f' % x for x in position])
     
     # # # # # MERGE REPEAT FOUND H-C LOCATIONS # # # # # 
     
@@ -2207,7 +2207,7 @@ class LinkSideChainsPopup(BasePopup):
       #dev = delta/(pT) # Can use to select according to closeness to original indirect dim search ppm
       testRoots.append((position, peaks))
  
-      #print 'ROOTMERGE', ['%.3f' % x for x in position], ','.join(['%d' % p.serial for p in peaks])
+      #print('ROOTMERGE', ['%.3f' % x for x in position], ','.join(['%d' % p.serial for p in peaks]))
         
     return testRoots
         
@@ -2339,7 +2339,7 @@ class LinkSideChainsPopup(BasePopup):
         if use:
           doneRoots[position0] = True
           rootPositions.append( (position0, nonRootPositions, peaks, matchListScore) )
-          #print 'ALIAS', ['%f' % x for x in position0], '%.3f' % matchListScore
+          #print('ALIAS', ['%f' % x for x in position0], '%.3f' % matchListScore)
   
     return rootPositions
           
@@ -2383,7 +2383,7 @@ class LinkSideChainsPopup(BasePopup):
     #if resonanceH not in resonanceC.covalentlyBound:
     #  resonanceC.addCovalentlyBound(resonanceH)
     
-    #print "Commit", atomH.name, atomC.name, shiftH, shiftC, resonanceH.serial, resonanceC.serial
+    #print("Commit", atomH.name, atomC.name, shiftH, shiftC, resonanceH.serial, resonanceC.serial)
     
     self.updateAfter() # Update spin system table and selected atom assignments
 

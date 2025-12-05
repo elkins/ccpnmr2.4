@@ -1346,14 +1346,14 @@ class Ccpn:
                                 resonances.append(resonancesDim[0])
                                 # debugging
                                 #if len(resonancesDim) > 1:
-                                #    print 'oooo ',len(resonancesDim)
+                                #    print('oooo ',len(resonancesDim))
                             else:
                                 resonances.append(None)
                             # end if
                         # end for
                         #cingResonances = resonances
                         cingResonances = list(resonances)
-                        #print "3@@@", len(cingResonances), vValue
+                        #print("3@@@", len(cingResonances), vValue)
 
                         peak = Peak(dimension = ccpnNumDim,
                                           positions = ccpnPositions,

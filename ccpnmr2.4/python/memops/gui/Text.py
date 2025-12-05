@@ -121,7 +121,7 @@ if __name__ == '__main__':
     text.append(s)
     s = s + 10
 
-    print 'text = ' + text.getText()
+    print('text = ' + text.getText())
 
   def setText():
 
@@ -130,7 +130,7 @@ if __name__ == '__main__':
     text.setText(s)
     s = s + 10
 
-    print 'text = ' + text.getText()
+    print('text = ' + text.getText())
 
   def clearText():
 

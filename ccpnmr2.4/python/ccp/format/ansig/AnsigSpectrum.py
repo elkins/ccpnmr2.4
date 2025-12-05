@@ -81,7 +81,7 @@ class AnsigSpectrum:
 def readSpectraFile(project, directoryDict, verbose=False):
 
   if verbose:
-    print 'Reading Ansig spectra file "%s"' % project.spectraFile
+    print('Reading Ansig spectra file "%s"' % project.spectraFile)
 
   project.spectra = []
 
@@ -110,7 +110,7 @@ def readSpectraFile(project, directoryDict, verbose=False):
 
     try:
       x = float(value)
-    except ValueError, e:
+    except ValueError as e:
       raise AnsigParseException(errorMsg % value)
 
     return x
@@ -227,7 +227,7 @@ def readSpectraFile(project, directoryDict, verbose=False):
       if os.path.exists(parFile):
         try:
           readParFile(parFile)
-        except IOError, e:
+        except IOError as e:
           raise AnsigParseException(str(e))
 
     elif key == 'ndim':
@@ -274,7 +274,7 @@ def readSpectraFile(project, directoryDict, verbose=False):
     if not project.spectra:
       raise IOError('no "spectrum" statement found in file "%s"' % spectraFile)
     if verbose:
-      print 'Number of spectra found = %d' % len(project.spectra)
+      print('Number of spectra found = %d' % len(project.spectra))
   except:
     project.spectra = []
     raise

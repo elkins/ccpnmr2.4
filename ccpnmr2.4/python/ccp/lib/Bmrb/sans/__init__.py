@@ -105,7 +105,7 @@ def quote_style( value, verbose = False ) :
 
 def quote( value, verbose = False ) :
 
-    import cStringIO
+    import io
 
 # must sanitize the same way as quote_style()
 #
@@ -118,7 +118,7 @@ def quote( value, verbose = False ) :
         if len( rc ) < 1 : return "."
         else : return rc
 
-    buf = cStringIO.StringIO()
+    buf = io.StringIO()
     if qs == STARLexer.DVNSEMICOLON :
 # expn: if the newline around ; was added by our pretty-printer, then it'll be adding an extra
 # blank line every time the file is printed.

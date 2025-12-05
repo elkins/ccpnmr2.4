@@ -85,7 +85,7 @@ class ProntoPeakFile(ProntoGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading Pronto peak list %s" % self.name
+      print("Reading Pronto peak list %s" % self.name)
 
     fin = open(self.name, 'rU')
 
@@ -169,7 +169,7 @@ class ProntoPeakFile(ProntoGenericFile):
   def write(self, verbose = 0):
 
     if verbose == 1:
-      print "Writing Pronto peak list %s" % self.name
+      print("Writing Pronto peak list %s" % self.name)
 
     #fout = open(self.name,'w')
 

@@ -77,7 +77,7 @@ def showInputMessage(input_types, message):
       elif (answer == input_types[1][:k]):
         n = 0
 
-  #print 'showInputMessage: returning', n
+  #print('showInputMessage: returning', n)
   return n
 
 class MessageReporter:

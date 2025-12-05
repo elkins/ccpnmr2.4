@@ -395,7 +395,7 @@ class XmlModelRead(TextWriter_py_2_1.TextWriter_py_2_1):
               for ee in elem:
                 dd[ee.get('tag')] = ee.text
                 #if ee.get('tag') == 'python' and tag != 'typeCodes':
-                  #print '\n\n\n###', tag, currentObj, 'python\n'
+                  #print('\n\n\n###', tag, currentObj, 'python\n')
                   #print ee.text
               setattr(currentObj, tag, dd)
  

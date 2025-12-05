@@ -506,10 +506,10 @@ class DangleGui(BasePopup):
 
     try:
       self.project.saveModified()
-      print 'Successfully saved project'
+      print('Successfully saved project')
       return True
       
-    except IOError, e:
+    except IOError as e:
       showError('Saving file', str(e))
       return False
 
@@ -570,7 +570,7 @@ def launchDangle(filename=None):
       applicationName = top.application.name
       project = loadProject(file, showWarning=showWarning, askDir=askdir,
                             askFile=askfile)
-    except ApiError, e:
+    except ApiError as e:
       showError('Reading project', e.error_msg)
  
   top.update_idletasks()

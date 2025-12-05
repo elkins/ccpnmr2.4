@@ -255,13 +255,13 @@ class SetupStructureCalcFrame(Frame):
       names = [sl.name or str(sl.serial) for sl in shiftLists]
       index = shiftLists.index(shiftList)
         
-    print "getShiftList", names, index
+    print("getShiftList", names, index)
 
     self.shiftListPulldown.setup(names,index)
 
   def setShiftList(self, index, name=None):
   
-    print "setShiftList", index, name
+    print("setShiftList", index, name)
   
     if not name:
       index = self.shiftListPulldown.getSelectedIndex()

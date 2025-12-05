@@ -101,7 +101,7 @@ class AuremolFormat(DataFormat):
     try:
 
       if self.verbose == 1:
-        print "Reading %ss from %s file %s" % (self.measurementType,self.formatLabel,self.fileName)
+        print("Reading %ss from %s file %s" % (self.measurementType,self.formatLabel,self.fileName))
 
       # TODO HERE: have to figure out what to do if project file read...
   

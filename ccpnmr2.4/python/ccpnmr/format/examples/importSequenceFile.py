@@ -141,14 +141,14 @@ if __name__ == "__main__":
   #
   
   print
-  print "Project object:", ccpnProject
-  print "List of MolSystem objects:", ccpnProject.sortedMolSystems()
-  print "List of Molecule objects:", ccpnProject.sortedMolecules()
+  print("Project object:", ccpnProject)
+  print("List of MolSystem objects:", ccpnProject.sortedMolSystems())
+  print("List of Molecule objects:", ccpnProject.sortedMolecules())
   
   # Select first available molecule
   mol = ccpnProject.findFirstMolecule()
 
-  print "MolType of first molecule:", mol.molType
+  print("MolType of first molecule:", mol.molType)
   print
   
   #

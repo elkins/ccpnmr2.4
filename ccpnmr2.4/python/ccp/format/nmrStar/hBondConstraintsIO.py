@@ -98,4 +98,4 @@ if __name__ == "__main__":
           mlist = []
           for member in node.members:
             mlist.append(member.Id)
-          print "   " + str(mlist)
+          print("   " + str(mlist))

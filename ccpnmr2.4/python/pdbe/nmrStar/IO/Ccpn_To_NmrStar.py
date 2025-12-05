@@ -280,7 +280,7 @@ class Ccpn_To_NmrStar:
 
   def printTag(self,tag):
 
-    print 'TAG: [%s]' % tag
+    print('TAG: [%s]' % tag)
 
     return tag
 
@@ -299,11 +299,11 @@ class Ccpn_To_NmrStar:
 
     study = entry.study
 
-    #print 'STUDY [%s]' % study
+    #print('STUDY [%s]' % study)
 
     keywords = study.keywords
 
-    #print 'KEYS: [%s]' % keywords
+    #print('KEYS: [%s]' % keywords)
 
     return keywords
 
@@ -378,7 +378,7 @@ class Ccpn_To_NmrStar:
     if citation:
       self.authors = list(citation.authors)
 
-    #print 'AUTHORS: [%s]' % [auth.familyName for auth in self.authors]
+    #print('AUTHORS: [%s]' % [auth.familyName for auth in self.authors])
 
     return self.authors
 
@@ -392,11 +392,11 @@ class Ccpn_To_NmrStar:
 
     #return self.count
 
-    #print 'NAME: [%s]' % author.familyName
+    #print('NAME: [%s]' % author.familyName)
 
     self.idx = self.authors.index(author)
 
-    #print 'IDX: [%s] ' % idx
+    #print('IDX: [%s] ' % idx)
 
     return (self.idx + 1)
 
@@ -504,21 +504,21 @@ class Ccpn_To_NmrStar:
     ambConfState = False
 
     for chain in molecule.sortedChains():
-      #print 'CHAIN: [%s]' % chain
+      #print('CHAIN: [%s]' % chain)
       count = 0
       for chainStateSet in chain.sortedChainStateSets():
-        #print 'CHAINSTATESET: [%s]' % chainStateSet
+        #print('CHAINSTATESET: [%s]' % chainStateSet)
         if chainStateSet.stateSetType in ('protonation', 'isotopomer'):
-        #  print 'CONTINUING'
+        #  print('CONTINUING')
           continue
-        #print 'LENGTH: [%s]' % len(chainStateSet.sortedChainStates() )
+        #print('LENGTH: [%s]' % len(chainStateSet.sortedChainStates() ))
         count += len(chainStateSet.sortedChainStates() )
 
       if count > 1:
-        #print 'COUNT: [%s]' % count
+        #print('COUNT: [%s]' % count)
         ambConfState = True
 
-    #print 'STATE: [%s]' % ambConfState
+    #print('STATE: [%s]' % ambConfState)
 
     return ambConfState
 
@@ -565,7 +565,7 @@ class Ccpn_To_NmrStar:
     else:
       value = None
 
-    #print 'VAL: [%s]' % value
+    #print('VAL: [%s]' % value)
 
     return value  
 
@@ -1131,7 +1131,7 @@ class Ccpn_To_NmrStar:
     self.naturalSources = []
 
     for entMol in nmrEntry.sortedEntryMolecules():
-      #print 'ENTMOL: [%s]' % entMol
+      #print('ENTMOL: [%s]' % entMol)
       if entMol.molecule and hasattr(entMol.molecule, 'naturalSource'):
         naturalSource = entMol.molecule.naturalSource
         if naturalSource not in self.naturalSources:
@@ -1703,17 +1703,17 @@ class Ccpn_To_NmrStar:
 
       if resLabFrac:
         if atomLabFlag:
-          print '  Warning: mixture of labelling types in molecule %s' % component.molecule.name
+          print('  Warning: mixture of labelling types in molecule %s' % component.molecule.name)
           break
 
         resLabFracFlag = True
 
         bmrbLabel = bmrbLabelDict[resLabFrac.schemeName]
-        #print 'BMRB: [%s]' % bmrbLabel
+        #print('BMRB: [%s]' % bmrbLabel)
 
       else:
         if resLabFracFlag:
-          print '  Warning: mixture of labelling types in molecule %s' % component.molecule.name
+          print('  Warning: mixture of labelling types in molecule %s' % component.molecule.name)
           break
 
         atomLabFlag = True
@@ -1793,7 +1793,7 @@ class Ccpn_To_NmrStar:
         if firstBmrbLabel:
 
           if firstBmrbLabel != bmrbLabel:
-            print '  Warning: multiple labels for this molecule %s' % component.molecule.name
+            print('  Warning: multiple labels for this molecule %s' % component.molecule.name)
             break
 
         else:
@@ -1876,7 +1876,7 @@ class Ccpn_To_NmrStar:
 
     conc = component.concentration
 
-    #print 'CONC: [%s]' % conc
+    #print('CONC: [%s]' % conc)
 
     if component.concentrationUnit == 'M': # and component.concDisplayUnit == 'mM':
       conc = conc*1000
@@ -2099,14 +2099,14 @@ class Ccpn_To_NmrStar:
     self.spectrometers = []
 
     #for spec in self.spectrometers:
-    #  print 'SPEC A: [%s]' % spec
+    #  print('SPEC A: [%s]' % spec)
 
     for exp in nmrEntry.sortedExperiments():
       if exp.spectrometer and exp.spectrometer not in self.spectrometers:
         self.spectrometers.append(exp.spectrometer)
 
     #for spec in self.spectrometers:
-    #  print 'SPEC B: [%s]' % spec
+    #  print('SPEC B: [%s]' % spec)
 
     keywds = {'application': 'nmrStar',
               'keyword':     'specFlag',
@@ -2122,7 +2122,7 @@ class Ccpn_To_NmrStar:
             self.spectrometers.append(instrument)
 
     #for spec in self.spectrometers:
-    #  print 'SPEC C: [%s]' % spec
+    #  print('SPEC C: [%s]' % spec)
 
     return self.spectrometers
 
@@ -2517,7 +2517,7 @@ class Ccpn_To_NmrStar:
               if shiftRefsSet1.issubset(shiftRefsSet2) and shiftRefsSet1 in shiftRefsSetsSet:
                 shiftRefsSetsSet.remove(shiftRefsSet1)
 
-      #print 'SET SET: [%s]' % shiftRefsSetsSet
+      #print('SET SET: [%s]' % shiftRefsSetsSet)
 
       shiftRefsIds = []
 
@@ -2545,7 +2545,7 @@ class Ccpn_To_NmrStar:
           if appData:
             shiftRefsIdStr = appData.value
             if shiftRefsSetUse and shiftRefsIdStr != str(shiftRefsSetUse):
-              print '  Error: NMR Experiment %s has potentially the wrong chemical shift referencing.' % nmrExpt.name
+              print('  Error: NMR Experiment %s has potentially the wrong chemical shift referencing.' % nmrExpt.name)
               shiftRefsIdStr = str(shiftRefsSetUse)
 
           else:
@@ -2568,17 +2568,17 @@ class Ccpn_To_NmrStar:
 
             self.trackCustomObjects['chemShiftRef'][shiftRefsSetUse] = self.shiftReferenceList[-1]
 
-            #print 'LIST: [%s]' % shiftRefsIdStr
+            #print('LIST: [%s]' % shiftRefsIdStr)
 
             for Id in shiftRefsSetUse:
               shiftRef = nmrProject.findFirstShiftReference(serial=Id)
               if not shiftRef:
-                print '  Error: NMR Experiment %s does not have chemical shift reference with serial %d' % (nmrExpt, Id)
+                print('  Error: NMR Experiment %s does not have chemical shift reference with serial %d' % (nmrExpt, Id))
               else:
                 self.shiftReferenceList[-1].add(shiftRef)
 
     #for shiftRef in self.shiftReferenceList:
-    #  print 'REF: [%s]' % shiftRef
+    #  print('REF: [%s]' % shiftRef)
 
     return self.shiftReferenceList
 
@@ -2751,7 +2751,7 @@ class Ccpn_To_NmrStar:
         shiftIdx = shiftReference
         break
 
-    #print 'IDX: [%s]' % shiftIdx
+    #print('IDX: [%s]' % shiftIdx)
 
     return shiftIdx
 
@@ -3129,7 +3129,7 @@ Dihedral_angle_rmsd_err
           if hasattr(strucGen, 'nmrConstraintStore') and strucGen.nmrConstraintStore:
             #l = list(strucGen.nmrConstraintStore.findAllConstraintLists(className = className) )
             #if len(l):
-            #  print 'NUMBER OF CONSTRAINTS: [' + str(len(l[0].constraints) ) + ']'
+            #  print('NUMBER OF CONSTRAINTS: [' + str(len(l[0].constraints) ) + ']')
             constraintLists.extend(list(strucGen.nmrConstraintStore.findAllConstraintLists(className = className) ) )
 
     return constraintLists
@@ -9299,7 +9299,7 @@ class Ccpn_To_NmrStar_test(Ccpn_To_NmrStar):
 
     #self.sfDict['assigned_chemical_shifts']['ccpnLoop'] = "nmrEntry.findAllMeasurementLists(className='ChemicalShiftList', isSimulated=False)",
 
-    print "  Modifying mapping dictionary... "
+    print("  Modifying mapping dictionary... ")
 
     pass
  

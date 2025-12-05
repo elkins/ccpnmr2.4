@@ -137,7 +137,7 @@ class Peak(NTdict, Lister):
         return not isNaN(self.volume.value)
 
     def __str__(self):
-        #print '>>', self.resonances.zap('atom')
+        #print('>>', self.resonances.zap('atom'))
         return sprintf('Peak %4d (%dD)  [%s]   height: %s   volume: %s    Assiged to: %s',
                          self.peakIndex, self.dimension,
                          self.positions.format('%8.2f'),
@@ -902,10 +902,10 @@ class DistanceRestraint(Restraint):
                 #nTdebug('DistanceRestraint.calculateAverage: %s.realAtoms() None (%s)', atm2, self)
                 continue
             for a1 in atms1:
-                #print '>>>', a1.format()
+                #print('>>>', a1.format())
                 if len(a1.coordinates) == modelCount:
                     for a2 in atms2:
-                        #print '>>', atm1, a1, atm2, a2
+                        #print('>>', atm1, a1, atm2, a2)
                         i = 0
                         if len(a2.coordinates) == modelCount:
                             for i in models:

@@ -78,12 +78,12 @@ class AllChecks(TestCase):
             if not result:
                 nTerror("Failed to save file to server")
             else:
-                print "result of save request: %s" % result
+                print("result of save request: %s" % result)
                 urls = getResultUrls(credentials, entryId, DEFAULT_URL)
-                print "Base URL", urls[0]
-                print "Results URL:", urls[1]
-                print "Log URL:", urls[2]
-                print "Zip URL:", urls[3]
+                print("Base URL", urls[0])
+                print("Results URL:", urls[1])
+                print("Log URL:", urls[2])
+                print("Zip URL:", urls[3])
 
 
     ##############################################################################################################

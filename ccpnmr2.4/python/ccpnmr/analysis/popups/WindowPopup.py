@@ -658,7 +658,7 @@ class WindowPopup(BasePopup):
 
   def open(self):
 
-    #print 'WindowPopup open'
+    #print('WindowPopup open')
     self.window.isIconified = False
     self.update_idletasks()
     self.updateAll()
@@ -666,13 +666,13 @@ class WindowPopup(BasePopup):
 
   def deiconify(self):
 
-    #print 'WindowPopup deiconify'
+    #print('WindowPopup deiconify')
     self.window.isIconified = False
     BasePopup.deiconify(self)
 
   def iconify(self):
 
-    #print 'WindowPopup iconify'
+    #print('WindowPopup iconify')
     for windowFrame in self.windowFrames:
       windowFrame.unpostMenu()
     
@@ -681,7 +681,7 @@ class WindowPopup(BasePopup):
 
   def close(self):
 
-    #print 'WindowPopup close'
+    #print('WindowPopup close')
     for windowFrame in self.windowFrames:
       windowFrame.unpostMenu()
     
@@ -690,7 +690,7 @@ class WindowPopup(BasePopup):
 
   def withdraw(self):
 
-    #print 'WindowPopup withdraw'
+    #print('WindowPopup withdraw')
     for windowFrame in self.windowFrames:
       windowFrame.unpostMenu()
     
@@ -846,7 +846,7 @@ class WindowPopup(BasePopup):
         else:
           color = '#808080'
           analysisSpectrum.posColors = [color,]
-          print 'Warning %s missing positive color scheme' % analysisSpectrum
+          print('Warning %s missing positive color scheme' % analysisSpectrum)
 
         spectra.append( spectrum )
         colors.append( color )
@@ -1168,10 +1168,10 @@ class WindowPopup(BasePopup):
   def setWindowLocation(self, window):
 
     if window is self.window:
-      #print 'setWindowLocation1', self.geometry(), window.location
+      #print('setWindowLocation1', self.geometry(), window.location)
       location = '+%s+%s' % (window.location[0], window.location[1])
       self.geometry(location)
-      #print 'setWindowLocation2', self.geometry()
+      #print('setWindowLocation2', self.geometry())
 
   def getWindowLocation(self, *event):
 
@@ -1180,7 +1180,7 @@ class WindowPopup(BasePopup):
     # crosshair) also seems to come with configure events, which calls this function
     ###self.drawAllAfter()
 
-    #print 'getWindowLocation1', location
+    #print('getWindowLocation1', location)
     # below only so that geometry manager does not resize without being told to
     #w = int(location.split('x')[0])
     #if ((w > 1) and self.firstPass):
@@ -1192,7 +1192,7 @@ class WindowPopup(BasePopup):
     n = location.find('+')
     xy = location[n+1:]
     (x, y) = map(int, xy.split('+'))
-    #print 'getWindowLocation2', (x, y)
+    #print('getWindowLocation2', (x, y))
     if not self.window.isDeleted and not self.isBeingDestroyed:
       self.unregisterNotify(self.setWindowLocation, 'ccpnmr.Analysis.SpectrumWindow', 'setLocation')
       self.window.location = (x, y)

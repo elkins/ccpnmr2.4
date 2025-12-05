@@ -67,16 +67,16 @@ def annotateEntry(entry_code, bmrb_id, *extraArgList):
 #        minimalPrompts = True
 #        verbose = False
 
-    print 'entry_code                                                                                    ', entry_code
-    print 'bmrb_id                                                                                       ', bmrb_id
-    print 'allowPopups                                                                                   ', allowPopups
-    print 'isInteractive                                                                                 ', isInteractive
-    print 'minimalPrompts                                                                                ', minimalPrompts
-    print 'verbose                                                                                       ', verbose
-    print 'checkOrgProject                                                                               ', checkOrgProject
-    print 'doSwapCheck                                                                                   ', doSwapCheck
-    print 'doSaveProject                                                                                 ', doSaveProject
-    print 'doExport                                                                                      ', doExport
+    print('entry_code                                                                                    ', entry_code)
+    print('bmrb_id                                                                                       ', bmrb_id)
+    print('allowPopups                                                                                   ', allowPopups)
+    print('isInteractive                                                                                 ', isInteractive)
+    print('minimalPrompts                                                                                ', minimalPrompts)
+    print('verbose                                                                                       ', verbose)
+    print('checkOrgProject                                                                               ', checkOrgProject)
+    print('doSwapCheck                                                                                   ', doSwapCheck)
+    print('doSaveProject                                                                                 ', doSaveProject)
+    print('doExport                                                                                      ', doExport)
 
     guiRoot = None
     if allowPopups:
@@ -140,7 +140,7 @@ def annotateEntry(entry_code, bmrb_id, *extraArgList):
 #            nmrProject = ccpnProject.currentNmrProject
 #            ccpnMolSystem = ccpnProject.findFirstMolSystem()
 #            nTmessage('found ccpnMolSystem: %s' % ccpnMolSystem)
-#    print 'status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.
+#    print('status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.)
 
     importStarChemicalShifts(ccpnProject, inputStarDir, guiRoot, allowPopups=allowPopups, minimalPrompts=minimalPrompts, 
                              verbose=verbose, **presets)

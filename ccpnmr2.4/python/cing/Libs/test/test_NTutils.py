@@ -192,7 +192,7 @@ class AllChecks(TestCase):
         nTdebug("Message to debug")
         nTerror("Intended message to error")
         switchOutput( showOutput=False, doStdOut=True, doStdErr=True)
-        print "Message to regular sys.stdout should not be printed"
+        print("Message to regular sys.stdout should not be printed")
         nTdebug("Message to debug 2 should not be printed")
         nTerror("Message to error 2 should not be printed")
         switchOutput( showOutput=True, doStdOut=True, doStdErr=True)

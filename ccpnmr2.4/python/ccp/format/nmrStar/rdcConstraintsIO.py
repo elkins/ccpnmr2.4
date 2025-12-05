@@ -295,10 +295,10 @@ class NmrStarRdcConstraint(GenericConstraint):
     refAtom = cyanaLib.findAtom(resLabel,refAtomName)
 
     if not refAtom:
-      print "  Error: atom %s (%s %s, chain '%s') not found in Cyana library!" % (refAtomName,resLabel,seqCode,chainCode)
+      print("  Error: atom %s (%s %s, chain '%s') not found in Cyana library!" % (refAtomName,resLabel,seqCode,chainCode))
     
     elif refAtom.bondedAtomSerials.count(0) != 3:
-      print "  Error: invalid single atom %s (%s %s, chain '%s'). No or multiple bonded atoms" % (refAtomName,resLabel,seqCode,chainCode)
+      print("  Error: invalid single atom %s (%s %s, chain '%s'). No or multiple bonded atoms" % (refAtomName,resLabel,seqCode,chainCode))
     
     else:
     
@@ -372,4 +372,4 @@ if __name__ == "__main__":
           mlist = []
           for member in item.members:
             mlist.append([member.seqCode,member.atomName])
-          print "   " + str(mlist)
+          print("   " + str(mlist))

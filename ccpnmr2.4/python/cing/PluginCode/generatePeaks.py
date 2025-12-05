@@ -309,7 +309,7 @@ class CCONH( ExperimentDef ):
                ):
                 carbons.append( atm )
         #end for
-#        print '>>',carbons
+#        print('>>',carbons)
 
         self.peaks = NTlist()
         #Generate all CCONH peaks of carbons
@@ -342,7 +342,7 @@ class CCH( ExperimentDef ):
                ):
                 carbons.append( atm )
         #end for
-#        print '>>',carbons
+#        print('>>',carbons)
 
         self.peaks = NTlist()
         #Generate all CCH peaks of carbons

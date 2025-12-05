@@ -74,7 +74,7 @@ class NmrViewSequenceFile(NmrViewGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading nmrView sequence file %s" % self.name
+      print("Reading nmrView sequence file %s" % self.name)
 
     self.sequences.append(NmrViewSequence())
 
@@ -125,17 +125,17 @@ class NmrViewSequenceFile(NmrViewGenericFile):
     
     if len(lineErrors) > min(5,validLines * 0.5):
       self.sequences = []
-      print "  Bad %s format lines:%s" % (self.format,self.newline)
+      print("  Bad %s format lines:%s" % (self.format,self.newline))
       for lineError in lineErrors:
         print lineError
 
   def write(self,verbose = 0):
 
     if verbose == 1:
-      print "Writing nmrView sequence file %s" % self.name
+      print("Writing nmrView sequence file %s" % self.name)
 
     if len(self.sequences) > 1:
-      print "Warning: multiple sequences - writing to same file."        
+      print("Warning: multiple sequences - writing to same file."        )
 
     fout = open(self.name,'w')
 

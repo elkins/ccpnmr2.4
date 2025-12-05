@@ -149,7 +149,7 @@ class RegionSelector(Frame):
     if (self.myCallback):
       self.myCallback(view_region)
  
-    #print 'doCallback', view_region
+    #print('doCallback', view_region)
     self.setEntry(view_region)
 
   def setEntry(self, view_region = None):

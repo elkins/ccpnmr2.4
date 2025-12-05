@@ -1431,8 +1431,8 @@ class EditAssignmentPopup(BasePopup):
           
             else:
               AssignmentBasic.mergeResonances(resonance, resonance2)
-              print 'NOTICE: Atom assignment %s existed in a different shift list for a different resonance.' % atomStr
-              print 'NOTICE: Resonance [%d] has been merged with resonance [%d].' % (resonance2.serial, resonance.serial)
+              print('NOTICE: Atom assignment %s existed in a different shift list for a different resonance.' % atomStr)
+              print('NOTICE: Resonance [%d] has been merged with resonance [%d].' % (resonance2.serial, resonance.serial))
           
           return
           

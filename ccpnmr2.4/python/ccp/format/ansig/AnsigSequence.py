@@ -33,7 +33,7 @@ class AnsigSequence:
 def readSequenceFile(project, directoryDict, verbose=False):
 
   if verbose:
-    print 'Reading Ansig sequence file "%s"' % project.sequenceFile
+    print('Reading Ansig sequence file "%s"' % project.sequenceFile)
 
   project.sequence = None
 
@@ -60,7 +60,7 @@ def readSequenceFile(project, directoryDict, verbose=False):
     if not project.sequence:
       raise IOError('no "sequence" statement found in file "%s"' % sequenceFile)
     if verbose:
-      print 'Number of residues found = %s' % len(project.sequence.residues)
+      print('Number of residues found = %s' % len(project.sequence.residues))
   except:
     project.sequence = None
     raise

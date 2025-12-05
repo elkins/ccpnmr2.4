@@ -73,7 +73,7 @@ class SVDfit:
 
         # Create the design matrix a; equation to solve is a.c = b
 
-        #print '>', sigma
+        #print('>', sigma)
         for i in range(self.n):
             if sigma==None or sigma[i] == 0.0:
                 self.sigma[i] = 1.0
@@ -107,9 +107,9 @@ class SVDfit:
         #    argument of svd to 1 causes it to return matrices in the same
         #    form as NR.
 
-        #print '>>',self.a
+        #print('>>',self.a)
         self.u,self.w,self.vt = svd(self.a,1)
-        #print '>>', self.u,self.w,self.vt
+        #print('>>', self.u,self.w,self.vt)
 
         # Throw away "nearly singular" elements.
         thresh = self.TOL*max(self.w)
@@ -626,11 +626,11 @@ class SVDfitCosSin( SVDfit ):
 #    u = copy.deepcopy(a)
 #    m = len(a)
 #    n = len(a[0])
-#    #if __debug__: print 'a is ',m,' by ',n
+#    #if __debug__: print('a is ',m,' by ',n)
 #
 #    if m < n:
-#        if __debug__: print 'Error: m is less than n'
-#        raise ValueError,'SVD Error: m is less than n.'
+#        if __debug__: print('Error: m is less than n')
+#        raise ValueError('SVD Error: m is less than n.'
 #
 #    e = [0.0]*n  # allocate arrays
 #    q = [0.0]*n
@@ -646,7 +646,7 @@ class SVDfitCosSin( SVDfit ):
 #        e[i] = g
 #        s = 0.0
 #        l = i+1
-#        for j in range(i,m): s += (u[j][i]*u[j][i])
+#        for j in range(i).with_traceback(m)): s += (u[j][i]*u[j][i])
 #        if s <= tol:
 #            g = 0.0
 #        else:
@@ -759,9 +759,9 @@ class SVDfitCosSin( SVDfit ):
 #                        v[j][k] = -v[j][k]
 #                break  # break out of iteration loop and move on to next k value
 #            if iteration >= itmax-1:
-#                if __debug__: print 'Error: no convergence.'
+#                if __debug__: print('Error: no convergence.')
 #                # should this move on the the next k or exit with error??
-#                #raise ValueError,'SVD Error: No convergence.'  # exit the program with error
+#                #raise ValueError('SVD Error: No convergence.'  # exit the program with error
 #                break  # break out of iteration loop and move on to next k
 #            # shift from bottom 2x2 minor
 #            x = q[l]
@@ -769,7 +769,7 @@ class SVDfitCosSin( SVDfit ):
 #            g = e[k-1]
 #            h = e[k]
 #            f = ((y-z)*(y+z)+(g-h)*(g+h))/(2.0*h*y)
-#            g = pythag(f,1.0)
+#            g = pythag(f).with_traceback(1).0)
 #            if f < 0:
 #                f = ((x-z)*(x+z)+h*(y/(f-g)-h))/x
 #            else:

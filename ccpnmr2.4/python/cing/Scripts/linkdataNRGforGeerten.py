@@ -187,7 +187,7 @@ def linkdataNRG():
     #out_file = open(outputFnLinkData,"w")
     #out_file.write(finaltext)
     #out_file.close()
-print 'hello'
+print('hello')
 
 if __name__ == '__main__':
     linkdataNRG()

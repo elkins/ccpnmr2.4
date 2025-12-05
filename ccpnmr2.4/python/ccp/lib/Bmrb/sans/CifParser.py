@@ -21,13 +21,13 @@ class parser :
     
     def parse( self ) :
         if self._lex == None : 
-            print "Lexer not initialized"
+            print("Lexer not initialized")
             sys.exit( 1 )
         if self._ch == None : 
-            print "Content handler not initialized"
+            print("Content handler not initialized")
             sys.exit( 1 )
         if self._eh == None : 
-            print "Error handler not initialized"
+            print("Error handler not initialized")
             sys.exit( 1 )
         while True :
             tok = self._lex.yylex()
@@ -59,13 +59,13 @@ class parser :
 #
     def parseDataBlock( self ) :
         if self._lex == None : 
-            print "Lexer not initialized"
+            print("Lexer not initialized")
             sys.exit( 1 )
         if self._ch == None : 
-            print "Content handler not initialized"
+            print("Content handler not initialized")
             sys.exit( 1 )
         if self._eh == None : 
-            print "Error handler not initialized"
+            print("Error handler not initialized")
             sys.exit( 1 )
         tag = None
         tagline = -1
@@ -73,9 +73,9 @@ class parser :
         needvalue = False
         while True :
             tok = self._lex.yylex()
-            if self._verbose : print "B:", tok, self._lex.getText()
+            if self._verbose : print("B:", tok, self._lex.getText())
             if tok == STARLexer.ERROR :
-                print "+ error", self._lex.getText()
+                print("+ error", self._lex.getText())
                 self._eh.fatalError( self._lex.getLine(), self._lex.getText() )
                 return True
             elif tok == STARLexer.WARNING :
@@ -146,13 +146,13 @@ class parser :
 #
     def parseLoop( self ) :
         if self._lex == None : 
-            print "Lexer not initialized"
+            print("Lexer not initialized")
             sys.exit( 1 )
         if self._ch == None : 
-            print "Content handler not initialized"
+            print("Content handler not initialized")
             sys.exit( 1 )
         if self._eh == None : 
-            print "Error handler not initialized"
+            print("Error handler not initialized")
             sys.exit( 1 )
         tags = []
         taglines = []
@@ -168,7 +168,7 @@ class parser :
         parsingvalues = False
         while True :
             tok = self._lex.yylex()
-            if self._verbose : print "L:", tok, self._lex.getText()
+            if self._verbose : print("L:", tok, self._lex.getText())
             if tok == STARLexer.ERROR :
                 self._eh.fatalError( self._lex.getLine(), self._lex.getText() )
                 return True

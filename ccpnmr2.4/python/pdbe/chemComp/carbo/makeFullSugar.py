@@ -141,7 +141,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
 
     fileName = os.path.join(importDir,carboBaseName,importFile)
     
-    print "Reading mol2 file %s..." % fileName
+    print("Reading mol2 file %s..." % fileName)
 
     ccs = mol2Format.readChemComps(
                              fileName,
@@ -159,7 +159,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
   # 
   
   if len(chemComps) == 1 and chemComps[0].ccpCode[0] == 'o':
-    print "  Warning: only open form available, not creating a/b isoforms."
+    print("  Warning: only open form available, not creating a/b isoforms.")
     hasOnlyOpenForm = True
   else: 
     hasOnlyOpenForm = False
@@ -186,13 +186,13 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
  
   # In this case, getting nothing back with replace - False means that it does exist!
   if chemCompXmlFile and not replace:
-    print "  ChemComp %s, %s already exists - aborting creation." % (carboMolType,carboBaseName) 
+    print("  ChemComp %s, %s already exists - aborting creation." % (carboMolType,carboBaseName) )
 
     try:
       refChemComp = getChemComp(project, carboMolType, carboBaseName, download=False, chemCompArchiveDir = editChemCompDataDir,copyFile=False)
       
     except:
-      print "WARNING: chemcomp was already loaded!"
+      print("WARNING: chemcomp was already loaded!")
       refChemComp = project.findFirstChemComp(molType = carboMolType, ccpCode = carboBaseName)
 
     return refChemComp
@@ -213,7 +213,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
   
   refGlycoCtCode = "RES\n1b:%s" % baseGlycoCtCode
   
-  print "Setting GlycoCT code to:\n\n%s\n" % refGlycoCtCode
+  print("Setting GlycoCT code to:\n\n%s\n" % refGlycoCtCode)
   print
   
   project.override = True
@@ -317,7 +317,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
         break
 
     if not anomericHydrogen:
-      print "  Warning: no anomeric hydrogen found."
+      print("  Warning: no anomeric hydrogen found.")
 
   
   #
@@ -421,11 +421,11 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
       if len(validConnectedAtoms) == 1:
         # Carboxylic acid (except for ring O-C-OH!)
         if len(validConnectedAtoms['O']) == 2 and not searchCarbon == anomericCarbon:
-          print "  Warning: ignoring oxygen %s - is carboxylic acid (or similar)" % validOHgroups[0].name
+          print("  Warning: ignoring oxygen %s - is carboxylic acid (or similar)" % validOHgroups[0].name)
           validOHgroups = []
       else:
         # Amide or something similar
-        print "  Warning: ignoring oxygen %s - is amide (or similar)" % validOHgroups[0].name
+        print("  Warning: ignoring oxygen %s - is amide (or similar)" % validOHgroups[0].name)
         validOHgroups = []
 
       if validOHgroups:
@@ -434,7 +434,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
         bindingHydrogens[validOHgroups[0]] = connectedChemAtom
 
         if not hasOnlyOpenForm and searchCarbon in otherCarbons:
-          print "  Warning: setting oxygen %s as binding one (not directly connected to ring)." % (validOHgroups[0].name)
+          print("  Warning: setting oxygen %s as binding one (not directly connected to ring)." % (validOHgroups[0].name))
   
   
   #
@@ -580,13 +580,13 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
           descriptor = 'neutral'
 
         if not refChemComp.findFirstChemCompVar(linking = linking, descriptor = descriptor):
-          print "  Trying %s,%s" % (linking,descriptor)
+          print("  Trying %s,%s" % (linking,descriptor))
           #for ca in currentChemAtoms:
           #  if ca.className == 'LinkAtom':
-          #    print "   LA:",ca.name, ca.subType
+          #    print("   LA:",ca.name, ca.subType)
           #  else:
-          #    print "   CA:",ca.name, ca.subType
-          #print "   ",linkedAtomKeys
+          #    print("   CA:",ca.name, ca.subType)
+          #print("   ",linkedAtomKeys)
           
           # Create the stereospecific GlycoCt code
           if stereoType == "stereo_1":
@@ -657,7 +657,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
   # Get the coordinates as well!
   #
       
-  print "  Creating coordinates!!"
+  print("  Creating coordinates!!")
   
   chemCompCoord = project.newChemCompCoord(sourceName = coordSystem,molType = refChemComp.molType, ccpCode = refChemComp.ccpCode)
   
@@ -678,7 +678,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
       stereoDescriptor = "none"
     
     else:
-      print "  Not handling type '%s' for coordinates - ignored." % baseName[0]
+      print("  Not handling type '%s' for coordinates - ignored." % baseName[0])
       continue
           
     #
@@ -723,11 +723,11 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
           break
           
       if not coords:
-        print "  Warning: no coordinate for %s, atom key %s." % (coordSystem,chemAtomKey)
+        print("  Warning: no coordinate for %s, atom key %s." % (coordSystem,chemAtomKey))
       elif not chemAtomCoordDict.has_key(chemAtomKey):
         chemAtomCoordDict[chemAtomKey] = coords
       else:
-        print "  Error: double atom key %s!" % chemAtomKey
+        print("  Error: double atom key %s!" % chemAtomKey)
 
     #
     # Set the coordinates
@@ -752,7 +752,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
       
         caKey = (ca.name,ca.subType)
         
-        #print "%-20s" % str(caKey),
+        #print("%-20s" % str(caKey),)
         
         if chemAtomCoordDict.has_key(caKey):
           coords = chemAtomCoordDict[caKey]
@@ -802,10 +802,10 @@ if __name__ == '__main__':
   coordSystem = 'euroCarbDb'
    
   if '-create' in sys.argv:
-    print "Warning: creating new sugar in edit/ directory!"
+    print("Warning: creating new sugar in edit/ directory!")
     testMode = False
   else:
-    print "Creating in test directory!"
+    print("Creating in test directory!")
     testMode = True
     
   makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode,saveData = False)

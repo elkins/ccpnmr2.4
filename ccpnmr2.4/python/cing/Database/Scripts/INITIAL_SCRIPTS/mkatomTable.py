@@ -70,7 +70,7 @@
 #
 #resNameTranslations = {}
 #for (aaa,a) in resNameDefs:
-##  print '>>',aaa,a
+##  print('>>',aaa,a)
 #  resNames = [a, aaa.upper(), aaa.capitalize(), aaa.lower()]
 ##  print resNames
 #  for name in resNames:
@@ -2220,7 +2220,7 @@
 #for r in AwkLikeS( proteinTable ):
 #    if ((not r.isComment()) and r.NF == 11 ):
 #        resname = resNameTranslations[ r.dollar[1] ][1]
-#        #print '>>', resname, r.dollar[1], r.dollar[11]
+#        #print('>>', resname, r.dollar[1], r.dollar[11])
 #        fullName = resname + '.' + r.dollar[11]
 #        names[fullName] = dict( BMRB = r.dollar[2],
 #                                IUPAC = r.dollar[3],
@@ -2234,7 +2234,7 @@
 #for r in AwkLikeS( rnaTable ):
 #    if ((not r.isComment()) and r.NF == 10 ):
 #        resname = rnaRes[ r.dollar[4]]
-#        #print '>>', resname, r.dollar[1], r.dollar[11]
+#        #print('>>', resname, r.dollar[1], r.dollar[11])
 #        fullName = resname + '.' + r.dollar[3]
 #        names[fullName] = dict( BMRB = r.dollar[3],
 #                                IUPAC = '-',
@@ -2248,7 +2248,7 @@
 #for r in AwkLikeS( dnaTable ):
 #    if ((not r.isComment()) and r.NF == 10 ):
 #        resname = dnaRes[ r.dollar[4]]
-#        #print '>>', resname, r.dollar[1], r.dollar[11]
+#        #print('>>', resname, r.dollar[1], r.dollar[11])
 #        fullName = resname + '.' + r.dollar[3]
 #        names[fullName] = dict( BMRB = r.dollar[3],
 #                                IUPAC = '-',

@@ -16,8 +16,8 @@ import unittest
 # Import using optional plugins.
 try:
     from cing.PluginCode.Ccpn import Ccpn #@UnusedImport needed to throw a ImportWarning so that the test is handled properly.
-except ImportWarning, extraInfo: # Disable after done debugging; can't use nTdebug yet.
-    print "Got ImportWarning %-10s Skipping unit check %s." % ( CCPN_STR, getCallerFileName() )
+except ImportWarning as extraInfo: # Disable after done debugging; can't use nTdebug yet.
+    print("Got ImportWarning %-10s Skipping unit check %s." % ( CCPN_STR, getCallerFileName() ))
     raise SkipTest(CCPN_STR)
 # end try
 try:
@@ -26,8 +26,8 @@ try:
     from cing.Scripts.Analysis.PyRPF import DEFAULT_DIAGONAL_EXCLUSION_SHIFT
     from cing.Scripts.Analysis.PyRPF import DEFAULT_DISTANCE_THRESHOLD
     from cing.Scripts.Analysis.PyRPF import DEFAULT_PROCHIRAL_EXCLUSION_SHIFT
-except ImportWarning, extraInfo: # Disable after done debugging; can't use nTdebug yet.
-    print "Got ImportWarning %-10s Skipping unit check %s." % ( ANALYSIS_STR, getCallerFileName() )
+except ImportWarning as extraInfo: # Disable after done debugging; can't use nTdebug yet.
+    print("Got ImportWarning %-10s Skipping unit check %s." % ( ANALYSIS_STR, getCallerFileName() ))
     raise SkipTest(ANALYSIS_STR)
 # end try
 

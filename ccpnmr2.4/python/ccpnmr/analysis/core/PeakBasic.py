@@ -2156,8 +2156,8 @@ def fitPeaks(peaks, fitMethod, updatePosition=True):
   """
   try:
     from ccpnmr.c.PeakList import fitPeaksInRegion
-  except Exception, e:
-    print 'Could not import fitPeaksInRegion'
+  except Exception as e:
+    print('Could not import fitPeaksInRegion')
     print e
     return
 
@@ -2389,9 +2389,9 @@ def findPeakBoxValues(peak):
     boxSize.append(b-a)
     center.append(position-a)
 
-  #print 'findPeakBoxValues1', boxMin, boxMax
+  #print('findPeakBoxValues1', boxMin, boxMax)
   values = block_file.getValues(boxMin, boxMax)
-  #print 'findPeakBoxValues2', len(values)
+  #print('findPeakBoxValues2', len(values))
 
   return (values, boxSize, center)
 
@@ -2428,7 +2428,7 @@ def findPeakVolume(peak, volumeMethod=None):
       method = 0 # only one so far for C world
       dimDone = getDimChecked(spectrum)
       volume = peak.cPeak.fitVolume(method, block_file, dimDone)
-      #print 'findPeakVolume1', volume
+      #print('findPeakVolume1', volume)
 
     else:
       heightIntensity = peak.findFirstPeakIntensity(intensityType='height')
@@ -2449,11 +2449,11 @@ def findPeakVolume(peak, volumeMethod=None):
     (values, boxSize, center) = findPeakBoxValues(peak)
     if volumeMethod == 'truncated box sum':
       volume = truncatedBoxIntegral(values, boxSize, center)
-      #print 'findPeakVolume2', volume
+      #print('findPeakVolume2', volume)
     elif volumeMethod == 'box sum':
       #volume = reduce(operator.add, values)
       volume = sum(values)
-      #print 'findPeakVolume3', volume
+      #print('findPeakVolume3', volume)
     else:
       raise ApiError('unknown volumeMethod "%s" in findPeakVolume()' % volumeMethod)
 
@@ -2567,7 +2567,7 @@ def isPeakInRegion(peak, region, acceptAlias=True):
   for peakDim in peak.sortedPeakDims():
     p = peakDim.position - 1
     (r0, r1) = region[n]
-    #print 'isPeakInRegion', n, peak.serial, peakDim.dim, p, r0, r1
+    #print('isPeakInRegion', n, peak.serial, peakDim.dim, p, r0, r1)
     npoints = peakDim.dataDim.numPointsOrig
     if (acceptAlias):
       m = int(math.floor(float(p - r0) / npoints))
@@ -2581,7 +2581,7 @@ def isPeakInRegion(peak, region, acceptAlias=True):
         return False
     n = n + 1
  
-  #print 'isPeakInRegion returning True', peak.serial
+  #print('isPeakInRegion returning True', peak.serial)
 
   return True
 
@@ -2602,7 +2602,7 @@ def findDataDimRegions(dataDim, region, axisUnit, thickness, addOneToUpperPoint=
   # find contiguous regions: there can be 0, 1 or 2
  
   (p0, p1) = convertRegion(region, axisUnit, dataDim)
-  #print 'findDataDimRegions0', dataDim.dim, region, p0, p1
+  #print('findDataDimRegions0', dataDim.dim, region, p0, p1)
   # 15 Sep 2009: subtract and add 0.5 because the grid point maximum
   # can be outside the search bin but the interpolated maximum inside
   # the bin, and without the -+ 0.5 those maxima will be missed
@@ -2610,7 +2610,7 @@ def findDataDimRegions(dataDim, region, axisUnit, thickness, addOneToUpperPoint=
   p1 = int(math.floor(p1+0.5) + thickness)
   if addOneToUpperPoint:
     p1 += 1
-  #print 'findDataDimRegions0A', dataDim.dim, region, p0, p1
+  #print('findDataDimRegions0A', dataDim.dim, region, p0, p1)
  
   if dataDim.className == 'FreqDataDim':
     # TBD: assumes that axisType.axisUnits[0] is same as min(max)AliasedFreq units
@@ -2634,12 +2634,12 @@ def findDataDimRegions(dataDim, region, axisUnit, thickness, addOneToUpperPoint=
     ###a = dataDim.pointOffset
     a = 0
     b = a + dataDim.numPoints
-    #print 'findDataDimRegions1', dataDim.dim, p0, p1, a, b, n
+    #print('findDataDimRegions1', dataDim.dim, p0, p1, a, b, n)
  
     d = p1 - p0
     p0 = p0 % n
     p1 = p0 + d
-    #print 'findDataDimRegions2', dataDim.dim, p0, p1
+    #print('findDataDimRegions2', dataDim.dim, p0, p1)
  
     if (p0 <= a):
       if (p1 <= a):
@@ -2670,7 +2670,7 @@ def findDataDimRegions(dataDim, region, axisUnit, thickness, addOneToUpperPoint=
     max_point = p1
     regions = [ (p0, p1) ]
  
-  #print 'findDataDimRegions3', dataDim.dim, regions
+  #print('findDataDimRegions3', dataDim.dim, regions)
  
   return (regions, min_point, max_point)
 
@@ -2697,7 +2697,7 @@ def findPeaks(peakList, region, parent=None, thickness=None,
   List of Nmr.Peaks
   """
 
-  #print 'findPeaks0', peakList.serial, region, thickness
+  #print('findPeaks0', peakList.serial, region, thickness)
 
   spectrum = peakList.dataSource
   block_file = spectrum.block_file
@@ -2797,7 +2797,7 @@ def findPeaks(peakList, region, parent=None, thickness=None,
       min_point[dim] = min(max(r0, 0), npoints)
       max_point[dim] = min(max(r1, 0), npoints)
 
-  #print 'findPeaks0A', regions
+  #print('findPeaks0A', regions)
 
   peaks = []
 
@@ -2834,14 +2834,14 @@ def findPeaks(peakList, region, parent=None, thickness=None,
       first[dim] = reg[dim][0]
       last[dim] = reg[dim][1]
 
-    #print 'findPeaks1', first, last, have_high, have_low, high, low, buffer, nonadjacent, drop_factor, min_linewidth
+    #print('findPeaks1', first, last, have_high, have_low, high, low, buffer, nonadjacent, drop_factor, min_linewidth)
     positions = peakList.cPeakList.findPeaks(first, last,
                   block_file, have_high=have_high, have_low=have_low,
                   high=high, low=low, buffer=buff, nonadjacent=nonadjacent,
                   drop_factor=drop_factor, min_linewidth=min_linewidth,
                   diagonal_exclusions=diagonalExclusions, excluded_regions=excludedRegions,
                   dim_checked=dimChecked)
-    #print 'findPeaks2', positions
+    #print('findPeaks2', positions)
 
     for position in positions:
       for dataDim in spectrum.dataDims:
@@ -2875,14 +2875,14 @@ def findPeaks(peakList, region, parent=None, thickness=None,
 
         ntiles_array[dim] = max_t - min_t + 1
         tile_offset[dim] = min_t
-        #print 'findPeaks3', dim, min_point[dim], max_point[dim], position[dim], n, min_t, max_t
+        #print('findPeaks3', dim, min_point[dim], max_point[dim], position[dim], n, min_t, max_t)
 
       (ntiles, cum_tiles) = cumulativeProductArray(ntiles_array)
       for tile_ind in range(ntiles):
         tile_rel = arrayOfIndex(tile_ind, cum_tiles)
         for dim in range(ndim):
           tile_abs[dim] = tile_rel[dim] + tile_offset[dim]
-        #print 'findPeaks4', tile_ind, tile_rel, tile_abs, position
+        #print('findPeaks4', tile_ind, tile_rel, tile_abs, position)
         peak = addPeak(peakList, position, tile=tile_abs, parent=parent)
         peaks.append(peak)
       
@@ -2988,7 +2988,7 @@ def searchPeaks(peakLists, region, parent=None, thickness=None, considerAliased=
   List of Nmr.Peaks
   """
 
-  #print 'searchPeaks1', region, parent
+  #print('searchPeaks1', region, parent)
   all_peaks = []
   for peakList in peakLists:
     if not (hasattr(peakList, 'cPeakList') and peakList.cPeakList):
@@ -3030,12 +3030,12 @@ def searchPeaks(peakLists, region, parent=None, thickness=None, considerAliased=
       first[dim] = r0
       last[dim] = r1
     else:
-      #print 'searchPeaks2', first, last
+      #print('searchPeaks2', first, last)
       allow_aliasing = getDimWrapped(spectrum)
       for d in range(ndim):
         allow_aliasing[d] &= considerAliased
       peakIndices = peakList.cPeakList.searchPeaks(first, last, allow_aliasing)
-      #print 'searchPeaks3', peakIndices
+      #print('searchPeaks3', peakIndices)
       peaks = peakList.sortedPeaks()
       for ind in peakIndices:
         peak = peaks[ind]
@@ -4034,7 +4034,7 @@ def translateSpectrumUsingPeaks(referencePeak, translatePeak, dimMapping):
     msg = 'translating %s dim %d dataDimRef refValue from %4.3f to ' % (s, trnDim, trnDataDimRef.refValue)
     trnDataDimRef.refValue += refPeakDim.value - trnPeakDim.value
     
-    print '%s%4.3f' % (msg, trnDataDimRef.refValue)
+    print('%s%4.3f' % (msg, trnDataDimRef.refValue))
 
 def getPeakAnnotation(peak, noPeakAnnotationChar='', noPeakDimAnnotationChar='', joinChar='', doPeakDims=True):
   """

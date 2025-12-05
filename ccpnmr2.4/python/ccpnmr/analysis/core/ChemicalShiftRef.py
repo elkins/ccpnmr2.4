@@ -692,7 +692,7 @@ def chemShiftRefMacro(argServer):
   keys.sort()
   
   for key in keys:
-    print '  ', key, ': {'
+    print('  ', key, ': {')
     
     subDict = shiftRefDict[key]
 
@@ -707,9 +707,9 @@ def chemShiftRefMacro(argServer):
       else:
         boundName = '"%s"' % boundName
 	
-      print '       "%s":(%s,%s),' % (key2, vals, boundName)
+      print('       "%s":(%s,%s),' % (key2, vals, boundName))
 
-    print '   },'
+    print('   },')
   
   
 def buildSdMeanRefDict(project, sourceName='RefDB'):

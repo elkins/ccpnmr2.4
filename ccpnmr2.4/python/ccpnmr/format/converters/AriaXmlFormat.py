@@ -156,7 +156,7 @@ class AriaXmlFormat:
       refExperiment = getRefExpFromOldExpType(ccpNmrConv.ccpnProject,spectrum.type)
       
       if not refExperiment:
-        print "  Error unknown experiment type %s... not created." % spectrum.type
+        print("  Error unknown experiment type %s... not created." % spectrum.type)
 
       peakLists = ccpNmrConv.readPeakList(spectrum.cross_peaks.filename,
                                          refExperiment,
@@ -244,7 +244,7 @@ class AriaXmlFormat:
     
   def exitError(self,attrName):
   
-    print "Invalid conversion xml file: need %s information" % (attrName)
+    print("Invalid conversion xml file: need %s information" % (attrName))
     sys.exit()
 
 

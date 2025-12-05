@@ -86,7 +86,7 @@ class Ticker(Label):
 
   def stop(self):
     
-    #print "thread done"
+    #print("thread done")
     #del self.thread
     self.thread = None
     self.offset = 0

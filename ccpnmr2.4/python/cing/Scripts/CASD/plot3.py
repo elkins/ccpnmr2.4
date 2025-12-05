@@ -382,7 +382,7 @@ def findMatches():
                     (e1.peaklist == 'Refined' and e2.peaklist=='Unrefined') # only take one of the two combinations
                     ):
                     matches.append((e1,e2))
-                    #print 'match'
+                    #print('match')
                 #end if
             #end for
         #end for

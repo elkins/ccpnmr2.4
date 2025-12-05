@@ -83,7 +83,7 @@ class AnsigProjectFile(AnsigGenericFile):
   def read(self,readSpectra = True, verbose = 0):
 
     if verbose == 1:
-      print "Reading %s project file %s" % (self.format,self.name)
+      print("Reading %s project file %s" % (self.format,self.name))
       
     #
     # Initialize
@@ -160,7 +160,7 @@ class AnsigSpectraFile(AnsigGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s spectra file %s" % (self.format,self.name)
+      print("Reading %s spectra file %s" % (self.format,self.name))
       
     #
     # Initialize
@@ -251,10 +251,10 @@ class AnsigSpectraFile(AnsigGenericFile):
           pass
          
         else:
-          print "Warning: did not handle inside tag %s" % line
+          print("Warning: did not handle inside tag %s" % line)
        
       else:
-        print "Warning: did not handle %s" % line
+        print("Warning: did not handle %s" % line)
         
       line = fin.readline()
 

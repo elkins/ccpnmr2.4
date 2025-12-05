@@ -799,7 +799,7 @@ class DangleFrame(Frame):
         else:
           # make new resonance
           if not atom.chemAtom:
-            print 'no chem atom'
+            print('no chem atom')
             
           ic = atom.chemAtom.elementSymbol
           if (ic == 'C'):
@@ -1320,7 +1320,7 @@ class DangleFrame(Frame):
 	mean = chemAtomNmrRef.meanValue
 	sd   = chemAtomNmrRef.stdDev
 	
-	print '%5s%5s   %.3f   %.3f' % (ccpCode, atomName, mean, sd)
+	print('%5s%5s   %.3f   %.3f' % (ccpCode, atomName, mean, sd))
 
 
 

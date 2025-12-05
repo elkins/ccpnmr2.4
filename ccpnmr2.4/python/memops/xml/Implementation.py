@@ -4371,7 +4371,7 @@ def saveToStream(stream, topObject, mapping=None, comment=None, simplified=True,
   strapp('\n')
 
   # Write objects
-  print 'start generating output : ', topObject.getQualifiedName()
+  print('start generating output : ', topObject.getQualifiedName())
   stack = [topObject]
   mapStack = [mapping['abstractTypes'][topObject.__class__.__name__]]
   while stack:
@@ -4757,11 +4757,11 @@ def loadFromStream(stream, topObjId=None, topObject=None, partialLoad=False):
           # get map and test
           try:
             curMap = loadMaps[tag]
-          except KeyError, ex:
+          except KeyError as ex:
             raise ApiError("""no map found for element"""
              + ": %s" % (tag,)
             )
-          except Exception, ex:
+          except Exception as ex:
             raise ApiError("""Load maps not set up correctly - should not get here"""
              + ": %s" % (tag,)
             )
@@ -4947,7 +4947,7 @@ def loadFromStream(stream, topObjId=None, topObject=None, partialLoad=False):
                 else:
                   try:
                     tmpMap = contMap[tag2]
-                  except KeyError, ex:
+                  except KeyError as ex:
                     raise ApiError("""no map found for XML attribute"""
                      + ": %s" % (tag2,)
                     )
@@ -5082,11 +5082,11 @@ def loadFromStream(stream, topObjId=None, topObject=None, partialLoad=False):
 
         try:
           curMap = loadMaps[tag]
-        except KeyError, ex:
+        except KeyError as ex:
           raise ApiError("""no map found for element"""
            + ": %s" % (tag,)
           )
-        except Exception, ex:
+        except Exception as ex:
           raise ApiError("""Load maps not set up correctly - should not get here"""
            + ": %s" % (tag,)
           )
@@ -5346,7 +5346,7 @@ def loadFromStream(stream, topObjId=None, topObject=None, partialLoad=False):
     if ((topObjectKey is not None and topObjectKey != 'ignore')):
       xx = result.getFullKey()
       if (topObjectKey != xx):
-        print 'WARNING TopObject key changed on reading', topObjectKey, xx
+        print('WARNING TopObject key changed on reading', topObjectKey, xx)
 
     for obj in objectDict.values():
       obj.checkValid()
@@ -5363,14 +5363,14 @@ def loadFromStream(stream, topObjId=None, topObject=None, partialLoad=False):
     if (result is not None):
       result.getTopObject().__dict__['isReading'] = False
 
-    print 'Error loading file for: ', result
-    print 'Reading: ', stream
-    print 'Last xml tag read: ', tag
-    print 'Parser state was: ', parserState
+    print('Error loading file for: ', result)
+    print('Reading: ', stream)
+    print('Last xml tag read: ', tag)
+    print('Parser state was: ', parserState)
     if (objStack):
-      print 'Current object was: ', objStack[-1]
+      print('Current object was: ', objStack[-1])
     else:
-      print 'Object stack was empty'
+      print('Object stack was empty')
 
     raise
 
@@ -5602,9 +5602,9 @@ def delayedLoadLinksStd(objectDict, linkData):
       setattr(obj, name, ov)
 
   except:
-    print 'Error during Std link dereferencing. Object was: ', obj
-    print 'values were: ', val
-    print 'tag name was: ', name
+    print('Error during Std link dereferencing. Object was: ', obj)
+    print('values were: ', val)
+    print('tag name was: ', name)
     raise
 
 def delayedLoadLinksExo(objectDict, linkData):
@@ -5654,7 +5654,7 @@ def delayedLoadLinksExo(objectDict, linkData):
       setattr(obj, name, ov)
 
   except:
-    print 'Error during Exo link dereferencing. Object was: ', obj
-    print 'values were: ', val
-    print 'tag name was: ', name
+    print('Error during Exo link dereferencing. Object was: ', obj)
+    print('values were: ', val)
+    print('tag name was: ', name)
     raise

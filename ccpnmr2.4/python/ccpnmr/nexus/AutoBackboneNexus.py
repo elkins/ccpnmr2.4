@@ -269,7 +269,7 @@ def autoBackboneNexus(chain, spinSystems, shiftList,
     if ensemble[-1][0] > scBest:
       scBest = ensemble[-1][0]
       assignBest = ensemble[-1][1].copy()
-      print 'Best Score:', scBest
+      print('Best Score:', scBest)
     
     randint(1,len(ensemble))
     scW, assignW = ensemble[0]
@@ -510,7 +510,7 @@ def getInitialAssignMatrix(chain, spinSystems, peakLists, shiftList,
     if progressBar:
       progressBar.increment()
 
-  #print "Time", time.time() - t0
+  #print("Time", time.time() - t0)
     
   A = matrix(aMatrix)
   R = matrix(rMatrix)

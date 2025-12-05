@@ -107,7 +107,7 @@ class ShiftxChemShiftFile(ShiftxGenericFile):
   def read(self,isOutputFile = False, headerCols = None, verbose = 0):
   
     if verbose == 1:
-      print "Reading %s chemical shift list %s" % (self.format,self.name)
+      print("Reading %s chemical shift list %s" % (self.format,self.name))
 
     fin = open(self.name, 'rU')
 
@@ -163,7 +163,7 @@ class ShiftxChemShiftFile(ShiftxGenericFile):
   def write(self,verbose = 0):
 
     if verbose == 1:
-      print "Writing %s chemical shift list %s" % (self.format,self.name)
+      print("Writing %s chemical shift list %s" % (self.format,self.name))
 
 
     fout = open(self.name,'w')
@@ -187,7 +187,7 @@ class ShiftxChemShiftFile(ShiftxGenericFile):
       for seqCode in seqCodeRange:
 
         if not self.seqCodeLabels.has_key(seqCode):
-          print "  Warning: no Shiftx output for sequence code %d - no information available." % seqCode
+          print("  Warning: no Shiftx output for sequence code %d - no information available." % seqCode)
           continue
 
         resLabel = self.seqCodeLabels[seqCode]
@@ -254,4 +254,4 @@ class ShiftxChemShiftFile(ShiftxGenericFile):
     
     else:
       
-      print "  Error: no sequence codes set for %s export. Aborting." % self.format
+      print("  Error: no sequence codes set for %s export. Aborting." % self.format)

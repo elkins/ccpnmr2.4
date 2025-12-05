@@ -79,7 +79,7 @@ def sendRequest(url, fields, files=None):
     try:
         response = urllib2.urlopen(request)
 
-    except urllib2.URLError, e:
+    except urllib2.URLError as e:
         if hasattr(e, 'reason'):
             msg = 'Connection to server URL %s failed with reason:\n%s' % (url, e.reason)
         elif hasattr(e, 'code'):

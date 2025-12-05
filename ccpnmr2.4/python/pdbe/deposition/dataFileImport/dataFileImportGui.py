@@ -199,9 +199,9 @@ class DataFileImportGui(BasePopup):
     try:
       saveProject(self.project, createFallback=True)
 
-      print 'successfully saved project'
+      print('successfully saved project')
       return True
-    except IOError, e:
+    except IOError as e:
       showError('Saving file', str(e), parent=self)
       return False
 

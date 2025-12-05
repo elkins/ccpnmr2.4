@@ -164,7 +164,7 @@ class TableExportPopup(BasePopup):
 
     try:
       fp = open(file, 'w')
-    except IOError, e:
+    except IOError as e:
       showError('File error', str(e))
       return False
 

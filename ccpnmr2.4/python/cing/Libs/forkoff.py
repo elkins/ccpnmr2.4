@@ -430,7 +430,7 @@ class Process:
 
         try:
             exit_pid, exit_status = os.waitpid(pid, options)
-        except OSError, info:
+        except OSError as info:
             if self.verbosity:
                 nTwarning("caught an OSError with info: %s" % info)
 
@@ -447,7 +447,7 @@ class Process:
 
         try:
             os.kill( pid, sig )
-        except OSError, info:
+        except OSError as info:
             if self.verbosity:
                 nTwarning("caught an OSError with info: %s" % info)
             return 0

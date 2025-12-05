@@ -83,7 +83,7 @@ class FelixPeakFile(FelixGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading Felix peak list %s" % self.name
+      print("Reading Felix peak list %s" % self.name)
 
     fin = open(self.name, 'rU')
     
@@ -148,7 +148,7 @@ class FelixPeakFile(FelixGenericFile):
   def write(self, verbose = 0):
 
     if verbose == 1:
-      print "Writing Felix peak list %s" % self.name
+      print("Writing Felix peak list %s" % self.name)
 
     #fout = open(self.name,'w')
 

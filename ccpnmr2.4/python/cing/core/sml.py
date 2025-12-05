@@ -268,7 +268,7 @@ Example file:
             return None
         line = line[0:-1]
 #        result = NTlist(line, *line.split())
-        #print '>', result, '<'
+        #print('>', result, '<')
         # Much quicker then previous NTlist stuff!
         if SMLhandler.debug: 
 #            s = sprintf('%s l:%d> %s\n', SMLfileVersion, fp.NR, [line]+line.split())
@@ -466,7 +466,7 @@ class SMLMoleculeHandler( SMLhandler ):
             if n > 3 and key=='_sequence'  and SMLstarthandlers.has_key(line[3]):
                 _sequence = SMLstarthandlers[line[3]].handle( [' '.join(line[3:])] + line[3:], fp, mol )
                 # Restore the sequence
-                #print '>>', _sequence
+                #print('>>', _sequence)
                 if SMLfileVersion < 0.23:
                 # older _sequence format without N-, C-terminal defs <= 0.23
                     for chain, resName, resNum, convention in _sequence:
@@ -553,12 +553,12 @@ class SMLChainHandler( SMLhandler ):
     def handle(self, line, fp, molecule=None):
         # The handle restores the attributes of chain
         # Needs a valid molecule
-        #print 'Chain.handle>', line, len(line)
+        #print('Chain.handle>', line, len(line))
         if molecule == None: 
             return None
 
         nameTuple = eval(' '.join(line[2:]))
-        #print '>>', nameTuple, len(nameTuple)
+        #print('>>', nameTuple, len(nameTuple))
 
         chain = molecule.decodeNameTuple(nameTuple)
         if chain == None:
@@ -846,7 +846,7 @@ class SMLPeakHandler( SMLhandler ):
 
             # Check if we have to make the linkage
             if pk.atoms and project.molecule:
-                #print '>>',pk.atoms
+                #print('>>',pk.atoms)
                 for i in range(pk.dimension):
                     if pk.atoms[i] != None:
                         atm = project.molecule.decodeNameTuple(pk.atoms[i])
@@ -1386,7 +1386,7 @@ class SMLDihedralDefHandler( SMLhandler ):
     def toSML(self, dihedDef, stream = sys.stdout, convention = INTERNAL  ):
         """Store dihedDef in SML format
         """
-        #print '>', convention
+        #print('>', convention)
         fprintf( stream, '\t#---------------------------------------------------------------\n')
         fprintf( stream, '\t%s %-8s\n', self.startTag, dihedDef.name)
         fprintf( stream, '\t#---------------------------------------------------------------\n')
@@ -1408,7 +1408,7 @@ class SMLDihedralDefHandler( SMLhandler ):
                     atms.append( (resId,atm.translate(convention)) )
                 #end if
             #end for
-            #print 'atms', atms
+            #print('atms', atms)
         #end if
         fprintf( stream, "\t\t%-8s = %r\n", 'atoms', atms )
 
@@ -1453,7 +1453,7 @@ class SMLAtomDefHandler( SMLhandler ):
     def toSML(self, atmDef, stream = sys.stdout, convention = INTERNAL  ): 
         """Store dihedDef in SML format
         """
-        #print '>', convention
+        #print('>', convention)
         fprintf( stream, '\t#---------------------------------------------------------------\n')
         fprintf( stream, '\t%s %-8s\n', self.startTag, atmDef.translate(convention) )
         fprintf( stream, '\t#---------------------------------------------------------------\n')
@@ -1476,7 +1476,7 @@ class SMLAtomDefHandler( SMLhandler ):
                     top2.append( (resId,atm.translate(convention)) )
                 #end if
             #end for
-            #print 'top2', top2
+            #print('top2', top2)
         #end if
         fprintf( stream, "\t\t%-10s = %r\n", 'topology', top2 )
 

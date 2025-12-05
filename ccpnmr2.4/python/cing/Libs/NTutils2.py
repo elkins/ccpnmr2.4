@@ -101,11 +101,11 @@ class NTlistOfLists(NTlist):
 
 def addStreamnTmessageList(stream):
     for nTm in nTmessageList:
-#        print "EEE: starting addStream to %s" % nTm
+#        print("EEE: starting addStream to %s" % nTm)
         nTm.addStream(stream)
 def removeStreamnTmessageList():
     for nTm in nTmessageList:
-#        print "EEE: starting removeStream to %s" % nTm
+#        print("EEE: starting removeStream to %s" % nTm)
         nTm.removeStream()
 
 def teeToFile(logFile):
@@ -139,7 +139,7 @@ def teeToFile(logFile):
 
 def nTtracebackError():
     traceBackString = format_exc()
-#    print 'DEBUG: nTtracebackError: [%s]' % traceBackString
+#    print('DEBUG: nTtracebackError: [%s]' % traceBackString)
     if traceBackString == None:
         traceBackString = 'No traceback error string available.'
     nTerror(traceBackString)
@@ -162,7 +162,7 @@ def _setStdErrStreamsTo(stream):
 
 def _setOutStreamList(stream, outputStreamContainerList):
     for outputStreamContainer in outputStreamContainerList:
-#        print "Setting the outputStreamContainer [%s] stream to: %s" % (outputStreamContainer, stream)
+#        print("Setting the outputStreamContainer [%s] stream to: %s" % (outputStreamContainer, stream))
         outputStreamContainer.flush()
         outputStreamContainer.stream = stream
 
@@ -179,18 +179,18 @@ def switchOutput( showOutput, doStdOut=True, doStdErr=False):
         if doStdOut:
             sys.stdout = _returnMyStdOut
             _setStdOutStreamsTo( _returnMyStdOut )
-#            print "1DEBUG: enabled stdout"
+#            print("1DEBUG: enabled stdout")
         if doStdErr:
             sys.stderr = _returnMyStdErr
             _setStdErrStreamsTo( _returnMyStdErr )
-#            print "1DEBUG: enabled stderr"
+#            print("1DEBUG: enabled stderr")
         return
     if doStdOut:
-#        print "1DEBUG: disabling stdout"
+#        print("1DEBUG: disabling stdout")
         sys.stdout = _bitBucket
         _setStdOutStreamsTo( _bitBucket )
     if doStdErr:
-#        print "1DEBUG: disabling stderr"
+#        print("1DEBUG: disabling stderr")
         sys.stderr = _bitBucket
         _setStdErrStreamsTo( _bitBucket )
 

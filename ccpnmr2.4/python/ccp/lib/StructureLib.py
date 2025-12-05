@@ -504,7 +504,7 @@ def compareEnsembles(structure1, structure2, compareBackboneOnly=False):
       # Maybe adaptive weights will not work for just two structures. Trynwithout
       #defWeight = 1.0
       #weights = [(x and x**-2.0) or defWeight for x in atomRmsds]
-      #print '~~~2', structure1, model1.serial, structure2, model2.serial
+      #print('~~~2', structure1, model1.serial, structure2, model2.serial)
       #error, atomRmsds, structureRmsds = alignEnsemble(ensemble, weights)
       
       # atomRmsds are out by sqrt(2) because C code
@@ -569,7 +569,7 @@ def _getMatchedStructureCoordinates(structure1, structure2, atomNameDict=None):
     if jj is not None:
       matchDict2[jj] = ii
   
-  #print '### matchdicts', len(matchDict1), len(matchDict2)
+  #print('### matchdicts', len(matchDict1), len(matchDict2))
   
   # make coords for structure 1
   models = structure1.sortedModels()
@@ -782,7 +782,7 @@ def getAtomSetCoords(atomSet, structure, model=None):
 
   if not coordList:
     data = (chain.code, residue.ccpCode, residue.seqCode, atomSet.name)
-    print 'Couldn\'t find coordinate atoms %s %s %d %s' % data
+    print('Couldn\'t find coordinate atoms %s %s %d %s' % data)
     return []
   
   structure.coordDict[key] = coordList

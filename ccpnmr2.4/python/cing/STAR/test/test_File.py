@@ -44,7 +44,7 @@ save_
 """
         self.assertFalse(self.strf.parse(text = text))
         st = self.strf.star_text()
-#            print "unparsed text:[" +st+ "]"
+#            print("unparsed text:[" +st+ "]")
 
         exp = """data_no_comments_here
 save_comment   _Saveframe_category  comment   loop_
@@ -80,7 +80,7 @@ def testEntry(entry):
     "block_text_type=%s&file_detail=%s&pdb_id=%s" +
     "&program=STAR&request_type=archive&subtype=full&type=entry") % (stage, stage, entry)
     fnamezip = entry + ".zip"
-#    print "DEBUG: downloading url:", urlLocation
+#    print("DEBUG: downloading url:", urlLocation)
     # TODO: wrap this in a try so the test is less invulnerable to network outages.
     try:
         urllib.urlretrieve(urlLocation, fnamezip)
@@ -88,7 +88,7 @@ def testEntry(entry):
         # not a real error since there might not be a network connection.
         nTwarning("Failed to get; " + urlLocation)
         return
-#    print "DEBUG: opening local zip file:", fnamezip
+#    print("DEBUG: opening local zip file:", fnamezip)
     zfobj = zipfile.ZipFile(fnamezip)
     fname = None
     for name in zfobj.namelist():

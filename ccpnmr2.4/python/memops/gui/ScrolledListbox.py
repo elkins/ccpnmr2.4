@@ -284,17 +284,17 @@ class ScrolledListbox(Frame):
     try:
       return getattr(self.__dict__['listbox'], name)
     except:
-      raise AttributeError, "%s instance has no attribute '%s'" % (self.__class__.__name__, name)
+      raise AttributeError("%s instance has no attribute '%s'" % (self.__class__.__name__).with_traceback(name))
 
 if (__name__ == '__main__'):
 
   def myCallback(event):
 
-    print 'myCallback:', listbox.getSelected(), listbox.getSelectedItems()
+    print('myCallback:', listbox.getSelected(), listbox.getSelectedItems())
 
   def myCallback2(event):
 
-    print 'myCallback2:', listbox.getSelected()
+    print('myCallback2:', listbox.getSelected())
     #listbox.moveSelectedItemUp()
     listbox.moveSelectedItemDown()
 

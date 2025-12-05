@@ -169,10 +169,10 @@ class Application:
 
   def getValue(self, object, keyword, defaultValue = None, deleteAppData = False):
 
-    #print 'getValue1', object, keyword, defaultValue, type(defaultValue)
+    #print('getValue1', object, keyword, defaultValue, type(defaultValue))
     appData = object.findFirstApplicationData(application=self.name,
                                               keyword=keyword)
-    #print 'getValue2', appData
+    #print('getValue2', appData)
 
     if not appData:
       for name in self.alternativeNames:

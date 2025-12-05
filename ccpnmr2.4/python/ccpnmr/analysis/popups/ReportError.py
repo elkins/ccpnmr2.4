@@ -160,14 +160,14 @@ class ReportErrorPopup(BasePopup):
       try:
         self.close();
       except:
-        print '"Always send" option'
+        print('"Always send" option')
         
     except:
-      print "Report failed ", sys.exc_info()[0]
+      print("Report failed ", sys.exc_info()[0])
       try:
         self.close();
       except:
-        print '"Always send" option'
+        print('"Always send" option')
   def close(self):
     BasePopup.close(self)
     self.destroy()

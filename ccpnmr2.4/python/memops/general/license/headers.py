@@ -158,7 +158,7 @@ def doSetLicenses(curDir, licenseDir, infoModule, level, warnSkippedFiles, mode)
   licenseDir is the relative path from the level 0 directory
   to the directory with license texts
   """
-  print 'Checking...', curDir
+  print('Checking...', curDir)
   
   # set-up - handle directory changes
   olddir = os.getcwd()
@@ -180,7 +180,7 @@ def doSetLicenses(curDir, licenseDir, infoModule, level, warnSkippedFiles, mode)
   
   # set-up - prepare exclude patterns
   if infoModule is None:
-    print 'No active _licenseInfo'
+    print('No active _licenseInfo')
     infoRange = ()
     excludeDirs = globalExcludeDirs 
     includeDirs = ()
@@ -266,7 +266,7 @@ def doSetLicenses(curDir, licenseDir, infoModule, level, warnSkippedFiles, mode)
   # Process not-found files
   if files and warnSkippedFiles:
     for ss in files:
-      print " No match found for %s" % os.path.join(curDir,ss)
+      print(" No match found for %s" % os.path.join(curDir,ss))
   
   
   # Process directories:

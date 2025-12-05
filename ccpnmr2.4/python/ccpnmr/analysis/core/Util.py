@@ -399,13 +399,13 @@ def setIsotopeExclusion(isotope, exclusion):
 def getShortcutSpectrum(project, shortcut):
 
   application = project.application
-  #print 'getShortcutSpectrum1', shortcut, type(shortcut)
+  #print('getShortcutSpectrum1', shortcut, type(shortcut))
   spectra = getSpectra(project)
   for spectrum in spectra:
-    #print 'getShortcutSpectrum2', spectrum.name
+    #print('getShortcutSpectrum2', spectrum.name)
     #value = application.getValue(spectrum, keyword='shortcut')
     value = spectrum.analysisSpectrum.shortcut
-    #print 'getShortcutSpectrum3', value, type(value)
+    #print('getShortcutSpectrum3', value, type(value))
     if value == shortcut:
       return spectrum
     # make alt and ctrl synonymous for now
@@ -665,7 +665,7 @@ def getSpectrumNoesResidueRanges(spectrum):
 
       ranges.append([dataDims, chain, startRes, endRes])
 
-  #print "getSpectrumNoesResidueRanges", ranges
+  #print("getSpectrumNoesResidueRanges", ranges)
 
   return ranges
 
@@ -980,7 +980,7 @@ def setTopObjectAnalysisSaveTime(topObject):
   application.setValue(topObject, keyword='CcpNmrAnalysisTimeStamp',
                         value=timeStamp)
 
-  #print "Set app time stamp", timeStamp, topObject
+  #print("Set app time stamp", timeStamp, topObject)
 
 def findPanelType(project, axisType, axisPanels):
 
@@ -1067,7 +1067,7 @@ def createSpectrumWindowView(windowPane, spectrum, axisPanelMapping,
 
 def addAxisPanelRegion(axisPanel, region, size):
 
-  #print 'addAxisPanelRegion', region, size
+  #print('addAxisPanelRegion', region, size)
   axisPanel.newAxisRegion(region=region, size=size)
 
 expt_spectrum_separator = ': '
@@ -1237,7 +1237,7 @@ def getNmrIsotopes(project):
 
 def fitViewInWorld(view, world):
 
-  #print 'fitViewInWorld', view, world
+  #print('fitViewInWorld', view, world)
 
   if (world[0] < world[1]):
     if (view[1] <= world[0] or view[0] >= world[1]):
@@ -1256,7 +1256,7 @@ def fitViewInWorld(view, world):
 
 def expandWorldToView(view, world):
 
-  #print 'expandWorldToView', view, world
+  #print('expandWorldToView', view, world)
 
   if (world[0] < world[1]):
     world[0] = max(view[0], world[0])
@@ -1305,7 +1305,7 @@ def haveTypeMatch(axisPanel, dataDim):
   axisType = axisPanel.panelType.axisType
   if isinstance(dataDim, FreqDataDim):
     #TBD: look at below again
-    #print 'haveTypeMatch', dataDim.dim, dataDim.findFirstDataDimRef().expDimRef.isotopes, axisType.isotopes
+    #print('haveTypeMatch', dataDim.dim, dataDim.findFirstDataDimRef().expDimRef.isotopes, axisType.isotopes)
     
     if dataDim.dataDimRefs:
       expDimRef = getPrimaryDataDimRef(dataDim).expDimRef
@@ -1395,7 +1395,7 @@ def defaultContourLevels(spectrum, updateContourLevels = False):
     v = v * multiplier
     w.append(v)
 
-  #print "defaultContourLevels", getNoiseEstimate(spectrum), analysisProject.globalContourScale, w
+  #print("defaultContourLevels", getNoiseEstimate(spectrum), analysisProject.globalContourScale, w)
 
   analysisSpectrum.posLevels = w
   analysisSpectrum.negLevels = [-v,]

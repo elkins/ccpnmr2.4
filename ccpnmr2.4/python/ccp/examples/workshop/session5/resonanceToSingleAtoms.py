@@ -18,17 +18,17 @@ def linkResonanceAtomsUnambiguous(atomSetName,atomList,resonance):
   
 def printResonanceToAtoms(resonance):
   
-  print 'Resonance %d' % resonance.serial,
+  print('Resonance %d' % resonance.serial,)
   
   resSet = resonance.resonanceSet
   
   if resSet:
-    print ' -> ResonanceSet ->'
+    print(' -> ResonanceSet ->')
     
     for atomSet in resSet.atomSets:
       refAtom = atomSet.findFirstAtom()
       residue = refAtom.residue
-      print "        AtomSet '%s' with atoms %s (chain '%s', residue %d)" % (atomSet.name,str([atom.name for atom in atomSet.sortedAtoms()]),residue.chain.code,residue.seqId)
+      print("        AtomSet '%s' with atoms %s (chain '%s', residue %d)" % (atomSet.name,str([atom.name for atom in atomSet.sortedAtoms()]),residue.chain.code,residue.seqId))
   
   else:
     print

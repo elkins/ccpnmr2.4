@@ -79,7 +79,7 @@ class ProntoChemShiftFile(ProntoGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading Pronto chemical shift list %s" % self.name
+      print("Reading Pronto chemical shift list %s" % self.name)
 
     fin = open(self.name, 'rU')
 
@@ -183,11 +183,11 @@ class ProntoChemShiftFile(ProntoGenericFile):
 
   def write(self,verbose = 0):
     
-    print "NOT WORKING YET"
+    print("NOT WORKING YET")
     return
 
     if verbose == 1:
-      print "Writing Pronto chemical shift list %s" % self.name
+      print("Writing Pronto chemical shift list %s" % self.name)
 
 
     fout = open(self.name,'w')

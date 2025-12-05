@@ -271,21 +271,21 @@ def newMoleculeFromXplor( project, path, name, models=None ):
 
        NB model_000.pdb becomes model number 0. Ie model=0
     """
-#    print '>', path, name, models
+#    print('>', path, name, models)
 #    nTmessage(name,models[0])
 
     if models == None:
         models = NTlist()
         model = 0
         xplorFile = sprintf(path,model)
-        #print '>>', xplorFile
+        #print('>>', xplorFile)
         while os.path.exists( xplorFile ):
             model += 1
             models.append( model )
             xplorFile = sprintf(path,model)
-            #print '>>', xplorFile
+            #print('>>', xplorFile)
         #end while
-        #print '>>', models
+        #print('>>', models)
     #end if
 
     if len(models) == 0:

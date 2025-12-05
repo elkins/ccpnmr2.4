@@ -180,9 +180,9 @@ try:
 except:
   HAVE_NUMPY = False
   print ''
-  print 'WARNING: Python NumPy module not installed or accessible.'
-  print 'NumPy is required for CcpNmr automatic assignment and'
-  print 'peak separator routines.'
+  print('WARNING: Python NumPy module not installed or accessible.')
+  print('NumPy is required for CcpNmr automatic assignment and')
+  print('peak separator routines.')
   print ''
 
 
@@ -371,7 +371,7 @@ class AnalysisPopup(BasePopup, Analysis):
           if self.errorHandler.reportNeeded(formatedTb, *args):  
             popup = ReportErrorPopup(self, formatedTb, *args) 
       except:
-         print 'Automated report failed' 
+         print('Automated report failed' )
     
     self._root().report_callback_exception_tk_native = self._root().report_callback_exception
     self._root().report_callback_exception = show_error
@@ -591,7 +591,7 @@ class AnalysisPopup(BasePopup, Analysis):
         self.currentPeak = None
         
       for object in self.selected_objects:
-        #print 'deleteSelected', object.serial
+        #print('deleteSelected', object.serial)
         object.delete()
         # automatically redrawn by notify
 
@@ -827,7 +827,7 @@ class AnalysisPopup(BasePopup, Analysis):
           del self.popups[key]
           popup.destroy()
     
-    #print 'changedWindowGroupWindows', [window.name for window in windows]
+    #print('changedWindowGroupWindows', [window.name for window in windows])
     for window in windows:
       if not window.isIconified:
         popup = self.getWindowPopup(window.name)
@@ -1363,7 +1363,7 @@ class AnalysisPopup(BasePopup, Analysis):
       if popup:
         del self.popups[old_popup_name]
       else:
-        print 'Warning: popup %s was expected to exist but did not, in popups list' % old_popup_name
+        print('Warning: popup %s was expected to exist but did not, in popups list' % old_popup_name)
       new_popup_name = self.getWindowPopupName(new_name)
       self.popups[new_popup_name] = popup
       
@@ -1630,7 +1630,7 @@ class AnalysisPopup(BasePopup, Analysis):
       
       try:
         Analysis.initProject(self, project)
-      except Implementation.ApiError, e:
+      except Implementation.ApiError as e:
         showError('Project invalid', errText + e.error_msg, parent=self)
         self.curatePopupNotifiers(self.unregisterNotify)
         self.project = None
@@ -1709,7 +1709,7 @@ class AnalysisPopup(BasePopup, Analysis):
     if hasattr(analysisProfile, 'userName'):
       if isRegistered(analysisProfile):
         if not self.printedRegistration:
-          print 'Registered (%s, %s, %s)' % (analysisProfile.userName, analysisProfile.userOrganisation, analysisProfile.userEmail)
+          print('Registered (%s, %s, %s)' % (analysisProfile.userName, analysisProfile.userOrganisation, analysisProfile.userEmail))
           self.printedRegistration = True
         try:
           updateRegister(analysisProfile)
@@ -2096,7 +2096,7 @@ class AnalysisPopup(BasePopup, Analysis):
   #  #self.pales()
     
   #  #else:
-  #  #  print 'PALES cannot be started without an open project'
+  #  #  print('PALES cannot be started without an open project')
 
   #def activateModule(self):
 
@@ -2108,7 +2108,7 @@ class AnalysisPopup(BasePopup, Analysis):
   #  #self.blackledge_module()
 
   #  #else:
-  #  #  print 'MODULE cannot be started without an open project'
+  #  #  print('MODULE cannot be started without an open project')
 
   def chemShiftsTable(self):
 
@@ -2190,14 +2190,14 @@ class AnalysisPopup(BasePopup, Analysis):
     for dataSource in dataSources:
       # self.finishInitSpectrum(dataSource)
       Analysis.finishInitSpectrum(self, dataSource)
-    print "DONE"
+    print("DONE")
 
   def runCyana2Ccpn(self):
 
     from ccpnmr.analysis.macros.MultiStructure  import runCyana2CcpnDialogue
     calculationData = runCyana2CcpnDialogue(self.argumentServer)
     yy = self.argumentServer.askYesNo("Import Calculation Results")
-    print 'calcData',calculationData
+    print('calcData',calculationData)
     if yy:
       print calculationData
       self.importCyanaData(calculationData=calculationData)
@@ -2284,7 +2284,7 @@ class AnalysisPopup(BasePopup, Analysis):
   def meccano(self):
     try:
       from grenoble.meccano.MeccanoPopup import MeccanoPopup
-    except Exception, e:
+    except Exception as e:
       showWarning('Meccano exception', str(e), parent=self)
       print e
       return
@@ -2315,8 +2315,8 @@ class AnalysisPopup(BasePopup, Analysis):
           try:
             title = popup.getTitle()
             popup.setTitle(title)
-          except Exception, e:
-            print 'saveCallback exception', str(e)
+          except Exception as e:
+            print('saveCallback exception', str(e))
             continue
           except:
             continue
@@ -2520,8 +2520,8 @@ class AnalysisPopup(BasePopup, Analysis):
     try:
       geometry = popup.geometry()
       self.application.setValue(self.analysisProject, key, geometry)
-    except Exception, e:
-      print 'setPopupGeometry exception', str(e)
+    except Exception as e:
+      print('setPopupGeometry exception', str(e))
     except:
       pass
 
@@ -2555,8 +2555,8 @@ class AnalysisPopup(BasePopup, Analysis):
       popup = self.popups[key]
       try:
         state = popup.state()
-      except Exception, e:
-        print 'setPopupsOpen exception', str(e)
+      except Exception as e:
+        print('setPopupsOpen exception', str(e))
         continue
       except:
         continue
@@ -2571,8 +2571,8 @@ class AnalysisPopup(BasePopup, Analysis):
 
     try:
       self.application.setValue(self.analysisProject, key, value)
-    except Exception, e:
-      print 'setPopupsOpen setValue exception', str(e)
+    except Exception as e:
+      print('setPopupsOpen setValue exception', str(e))
 
   def saveFile(self):
 
@@ -2582,12 +2582,12 @@ class AnalysisPopup(BasePopup, Analysis):
     try:
       self.setSaveState()
       if saveProject(self.project, createFallback=True, showWarning=showWarning):
-        print 'successfully saved project'
+        print('successfully saved project')
         self.saveCallback()
         return True
       else:
         return False
-    except IOError, e:
+    except IOError as e:
       showError('Saving file', str(e), parent=self)
       return False
 
@@ -2833,11 +2833,11 @@ class AnalysisPopup(BasePopup, Analysis):
     if not isActiveWindow(window):
       return None
 
-    #print 'openWindow', window.name
+    #print('openWindow', window.name)
     window.old_name = window.name
     popup_name = self.getWindowPopupName(window.name)
     location = '+%d+%d' % window.location
-    #print 'openWindow', window.name, window.location
+    #print('openWindow', window.name, window.location)
     popup = self.openPopup(popup_name, WindowPopup, window=window, location=location)
     #self.update_idletasks() # TBD: not sure if this is needed
 

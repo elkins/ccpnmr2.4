@@ -81,7 +81,7 @@ class ColorSchemeList(PulldownMenu):
     #names.sort()
     if (self.extra_label):
       names = names + [self.extra_label]
-    #print 'setColorSchemes', names, self.selected_index
+    #print('setColorSchemes', names, self.selected_index)
     
     hexColors = []
     for scheme in schemes:

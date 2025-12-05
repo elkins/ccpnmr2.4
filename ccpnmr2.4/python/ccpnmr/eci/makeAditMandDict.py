@@ -37,7 +37,7 @@ def parseFile(fileName):
     row = line.strip('\n').split('\t')
 
     #if len(row) == 8:
-    #  print 'ROW: [%s]' % row
+    #  print('ROW: [%s]' % row)
 
     if len(row) > 5:
       (sfTable, tagName) = row[4].split('.')
@@ -47,7 +47,7 @@ def parseFile(fileName):
       if sfTable in starSfNameDict:
         sfName = starSfNameDict[sfTable]
 
-        #print 'SF: [%s] [%s]' % (sfName, tagName)
+        #print('SF: [%s] [%s]' % (sfName, tagName))
 
         if sfName not in aditMandDict:
           aditMandDict[sfName] = {}
@@ -85,52 +85,52 @@ def parseFile(fileName):
           aditMandDict[sfName]['tables'][tableName]['tags'][tagName] = row[5:] + [row[3]]
           aditMandDict[sfName]['tables'][tableName]['tagNames'].add(tagName)
 
-        #print 'TABLE: [%s] [%s] [%s]' % (sfName, tableName, tagName)
+        #print('TABLE: [%s] [%s] [%s]' % (sfName, tableName, tagName))
 
-  print 'aditMandDict = {\n'
+  print('aditMandDict = {\n')
 
   for sfName in aditMandDict.keys():
 
     if aditMandDict[sfName]['tagNames'] or aditMandDict[sfName]['tableNames']:
-      print "  '%s': {\n" % sfName
+      print("  '%s': {\n" % sfName)
 
       if aditMandDict[sfName]['tagNames']:
-        print  "    'tags': {\n"
+        print("    'tags': {\n")
 
         for tagName in sorted(aditMandDict[sfName]['tagNames']):
-          print "      '%s': %s," % (tagName, aditMandDict[sfName]['tags'][tagName])
+          print("      '%s': %s," % (tagName, aditMandDict[sfName]['tags'][tagName]))
 
-        print '\n      },\n'
+        print('\n      },\n')
 
-        print "    'tagNames': %s,\n" % sorted(list(aditMandDict[sfName]['tagNames']) )
+        print("    'tagNames': %s,\n" % sorted(list(aditMandDict[sfName]['tagNames']) ))
 
       if aditMandDict[sfName]['tableNames']:
-        print "    'tables': {"
+        print("    'tables': {")
 
         for tableName in aditMandDict[sfName]['tableNames']:
-          print "\n      '%s': {\n" % tableName
+          print("\n      '%s': {\n" % tableName)
 
           if aditMandDict[sfName]['tables'][tableName]['tagNames']:
-            print "        'tags': {\n"
+            print("        'tags': {\n")
 
             for tagName in aditMandDict[sfName]['tables'][tableName]['tagNames']:
-              print "          '%s': %s," % (tagName, aditMandDict[sfName]['tables'][tableName]['tags'][tagName])
+              print("          '%s': %s," % (tagName, aditMandDict[sfName]['tables'][tableName]['tags'][tagName]))
 
-            print '\n          },\n'
+            print('\n          },\n')
 
-            print "        'tagNames': %s,\n" % sorted(list(aditMandDict[sfName]['tables'][tableName]['tagNames']) )
+            print("        'tagNames': %s,\n" % sorted(list(aditMandDict[sfName]['tables'][tableName]['tagNames']) ))
 
-          print '        },'
+          print('        },')
 
-        print '      },\n'
+        print('      },\n')
 
-        print "    'tableNames': %s,\n" % sorted(list(aditMandDict[sfName]['tableNames']) )
+        print("    'tableNames': %s,\n" % sorted(list(aditMandDict[sfName]['tableNames']) ))
 
-      print '    },\n'
+      print('    },\n')
 
   #print aditMandDict
 
-  print '  }'
+  print('  }')
 
 if __name__ == '__main__':
 

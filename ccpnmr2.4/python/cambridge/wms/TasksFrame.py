@@ -211,12 +211,12 @@ class TasksFrame(Frame):
   def selectTask(self):
 
     row = self.task_matrix.currentCell
-    print 'in select task ', row
+    print('in select task ', row)
 
 
   def set_daemon(self, text):
 
-    print 'setting daemon ', text
+    print('setting daemon ', text)
 
     if text == 'on':
       self.basePopup.taskDaemon.active = True
@@ -225,7 +225,7 @@ class TasksFrame(Frame):
     
   def set_refresh(self, text):
 
-    print 'setting refresh ', text
+    print('setting refresh ', text)
 
     if text == 'on':
       self.autoRefresh = True
@@ -236,7 +236,7 @@ class TasksFrame(Frame):
   def refresh(self):
 
     if self.autoRefresh:
-      print 'refreshing frame ', time.time()
+      print('refreshing frame ', time.time())
       self.drawFrame()
       
     self.after(5000, self.refresh)
@@ -373,10 +373,10 @@ class TaskFilterFrame(LabelFrame):
     proj = self.projText.getText()[:-1]
     user = self.userText.getText()[:-1]
 
-    print 'status ',status,'.'
-    print 'type ', type,'.'
-    print 'proj ', proj,'.'
-    print 'user ', user,'.'
+    print('status ',status,'.')
+    print('type ', type,'.')
+    print('proj ', proj,'.')
+    print('user ', user,'.')
 
     select = {}
     if status not in ["", None]:
@@ -392,7 +392,7 @@ class TaskFilterFrame(LabelFrame):
     if user not in ["", None]:
       select['user'] = user.__str__()
 
-    print 'set select hash ', select
+    print('set select hash ', select)
 
     self.guiParent.select = select
     self.guiParent.drawFrame()

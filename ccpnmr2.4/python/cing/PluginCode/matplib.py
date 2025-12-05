@@ -324,39 +324,39 @@ class NTplot( NTdict ):
         if 'pointType' in keys:
             if attributes.pointType:
                 if mappingPointType2MatLibPlot.has_key(attributes.pointType):
-#                    print "doing pointType"
+#                    print("doing pointType")
                     result['marker'] =  mappingPointType2MatLibPlot[attributes.pointType]
                 else:
                     nTcodeerror("Failed to map point type ["+repr(attributes.pointType)+"]to mat lib plot's marker id)")
                     return True
         if 'pointColor' in keys:
-#            print "doing pointColor"
+#            print("doing pointColor")
             result['markeredgecolor'] =  attributes.pointColor
             result['markerfacecolor'] =  attributes.pointColor
             result['color']           =  attributes.pointColor
         if 'pointSize' in keys:
-#            print "doing pointSize"
+#            print("doing pointSize")
             result['markersize'] =  attributes.pointSize
         if 'pointEdgeWidth' in keys:
-#            print "doing pointEdgeWidth"
+#            print("doing pointEdgeWidth")
             result['markeredgewidth'] =  attributes.pointEdgeWidth
 
         if 'lineColor' in keys:
-#            print "doing lineColor"
+#            print("doing lineColor")
             result['color']           =  attributes.lineColor
         if 'lineType' in keys:
-#            print "doing lineType (linestyle)"
+#            print("doing lineType (linestyle)")
             if not mappingLineType2MatLibPlot.has_key( attributes.lineType ):
                 nTcodeerror("Failed to set line style [%s] because it is absent in mappingLineType2MatLibPlot %s" %
                             (attributes.lineType, mappingLineType2MatLibPlot))
             else:
                 result['linestyle']       =  mappingLineType2MatLibPlot[attributes.lineType]
         if 'color' in keys:
-#            print "doing color"
+#            print("doing color")
             result['color']           =  attributes.color
         if 'fill' in keys:
             if attributes.fill: # it might still be set to False.
-    #            print "doing fill"
+    #            print("doing fill")
                 markerColor = result['color']
                 if 'pointColor' in keys:
                     markerColor = attributes.pointColor
@@ -373,7 +373,7 @@ class NTplot( NTdict ):
 #    a.pointColor = 'blue' # in matplotlib: markeredgecolor
 
         if 'alpha' in keys:
-#            print "doing alpha"
+#            print("doing alpha")
             result['alpha']           =  attributes.alpha
         return result
 

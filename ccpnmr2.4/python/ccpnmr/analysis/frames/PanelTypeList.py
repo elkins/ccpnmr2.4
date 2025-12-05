@@ -65,7 +65,7 @@ class PanelTypeList(PulldownMenu):
 
   def destroy(self):
 
-    #print 'PanelTypeList destroy'
+    #print('PanelTypeList destroy')
     for func in notify_funcs:
       Implementation.unregisterNotify(self.setPanelTypes, 'ccpnmr.Analysis.PanelType', func)
 

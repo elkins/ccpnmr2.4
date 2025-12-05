@@ -263,7 +263,7 @@ class Output:
       y = 0.5 * h
       b = 0.5
  
-    #print 'doBorder', w, h, x, a, y, b, text, location
+    #print('doBorder', w, h, x, a, y, b, text, location)
     self.drawText(text, x, y, a, b)
 
   def newRange(self, x0, y0, x1, y1, clip = False):

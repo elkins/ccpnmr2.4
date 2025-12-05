@@ -164,7 +164,7 @@ class CloudThreaderPopup(BasePopup):
   def assignSideChains(self):
 
     if self.assignment and self.scores:
-      print "Fitting side chains"
+      print("Fitting side chains")
       pattern = self.filenameEntry.get()
       files     = getFileNamesFromPattern(pattern , '.')
       clouds    = getCloudsFromFile(files, self.chain.root)
@@ -239,7 +239,7 @@ class CloudThreaderPopup(BasePopup):
             spinSystem = self.assignment[residue]
             name = '%d%s' % (residue.seqCode,residue.ccpCode)
             spinSystem.name = name
-            print 'Assign %d%s - {%d) %s' % (residue.seqCode,residue.ccpCode,spinSystem.serial,name)
+            print('Assign %d%s - {%d) %s' % (residue.seqCode,residue.ccpCode,spinSystem.serial,name))
             #assignSpinSystemResidue(spinSystem,residue=residue)
       
       showWarning('Done','%d residues assigned' % i)
@@ -401,14 +401,14 @@ def searchPosterior(project, residues, spinSystems, clouds, known=None, nSteps=1
     for atom in residue.atoms:
       residue.atomDict[atom.name] = atom
 
-  print "Generating intial assignment"
+  print("Generating intial assignment")
   
   assignment0 = getInitialAssignment(residues, spinSystems, known or {}, graph=graph)
   assignmentB = assignment0
     
   intra = {}
   if not inter:
-    print "Reading distance distributions"
+    print("Reading distance distributions")
     intra, inter = getDistDistributions()
 
   p0 = generatePosterior(residues, assignment0, clouds, intra, inter, known, 0, preserveAssign)
@@ -427,7 +427,7 @@ def searchPosterior(project, residues, spinSystems, clouds, known=None, nSteps=1
   if graph:
     updateGraph(graph, chain.residues, assignment0, 0)
 
-  print "Generate posterior"
+  print("Generate posterior")
   for i in range(nSteps):
     t = i/float(nSteps) * 20
 
@@ -499,7 +499,7 @@ def searchPosterior(project, residues, spinSystems, clouds, known=None, nSteps=1
             typed += '-'
 
         print i, p, p0
-        print 'Found: %d' % found
+        print('Found: %d' % found)
         print scores
         print foundCodes
         print typed
@@ -553,7 +553,7 @@ def printResidueScores(residues, assignment, clouds, interDistrib, known):
     spinSystem = assignment[residue]
     l = getResidueLikelihood(residue, spinSystem, assignment, clouds, interDistrib, known) or 0.0
     s = getSpinSystemScore(residue.ccpCode, spinSystem) or 0.0
-    print "%d %s %f %f" % (residue.seqCode,residue.ccpCode, s, l)
+    print("%d %s %f %f" % (residue.seqCode,residue.ccpCode, s, l))
  
  
 def generatePosterior(residues, assignment, clouds, intra, inter, known, i, preserveAssign=0):
@@ -668,7 +668,7 @@ def getResidueLikelihood(residue1, spinSystem1, assignment, clouds, interDistrib
   
   if N == 0:
     if v:
-      print "barf"
+      print("barf")
       print r2
       print coords1
       print coords2
@@ -680,7 +680,7 @@ def getResidueLikelihood(residue1, spinSystem1, assignment, clouds, interDistrib
   out = p/float(N)  
   
   if v:
-    print "ok", out
+    print("ok", out)
     print r2
     print coords1
     print coords2
@@ -874,7 +874,7 @@ def swapSpinSystem(assignment, clouds, interDistrib, known, n, iteration):
 
 def getInitialAssignment(residues, spinSystems, init, graph=None, progressBar=None):
 
-  print "Gen initial assignment"
+  print("Gen initial assignment")
    
   shiftList = residues[0].chain.root.findFirstNmrMeasurementList(className='ShiftList')
   #typeScores, bestGuess = getSpinSystemTypes(residues, spinSystems, False, ('1H','13C'), shiftList=shiftList, graph=graph, progressBar=progressBar)
@@ -912,11 +912,11 @@ def fitSideChains(scores, assignment, clouds, threshold, shiftList=None):
   
   # Search with likelihood from clouds
   
-  print 'Calculating distance distributions'
+  print('Calculating distance distributions')
   
   intraDistrib = readDistribution('intraDistribs001.txt')
   
-  print 'Monte Carlo...'
+  print('Monte Carlo...')
 
   # Get only the good assignments
   assign = {}
@@ -1041,7 +1041,7 @@ def fitSideChain(shifts, residue, clouds, distrib, useAssignNames=False):
   for atomName, atomSetName in atomNames0:
     nameMap[atomName] = atomSetName
   
-  print "Fitting residue %d %s" % (residue.seqCode, residue.ccpCode)
+  print("Fitting residue %d %s" % (residue.seqCode, residue.ccpCode))
   #print atomNames0
   
   sz = len(atomNames0)
@@ -1107,7 +1107,7 @@ def fitSideChain(shifts, residue, clouds, distrib, useAssignNames=False):
       bestM  = mapping
       
       #print i, '%.3f' % likelihood,'%.3f' % prior,'%.3f' % score, 
-      #print ' '.join(['%s:%.3f' % (key,mapping[key].value) for key in mapping.keys() if mapping.get(key)])
+      #print(' '.join(['%s:%.3f' % (key,mapping[key].value) for key in mapping.keys() if mapping.get(key)]))
     else:
       passes += 1
  
@@ -1119,7 +1119,7 @@ def fitSideChain(shifts, residue, clouds, distrib, useAssignNames=False):
      shift = bestM.get(atomName)
      if shift:
        s = getAtomCloudScores2(bestM, ccpCode, clouds, distrib, atomName) or -10.0
-       print '%-5.5s S: %.3f D: %.3f' % (atomName, atomScores[shift][nameMap[atomName]], s)
+       print('%-5.5s S: %.3f D: %.3f' % (atomName, atomScores[shift][nameMap[atomName]], s))
 
   # do some provisional assignment
   if bestM:
@@ -1136,7 +1136,7 @@ def fitSideChain(shifts, residue, clouds, distrib, useAssignNames=False):
         #resonance.setName(atomName)
         #print atomName, 
         #continue
-        print ' ',
+        print(' ',)
         if atomName in ('HA','HA1','HA2'):
           resonance.setName(atomName)
           print atomName, 
@@ -1160,12 +1160,12 @@ def fitSideChain(shifts, residue, clouds, distrib, useAssignNames=False):
         if atomNames4 and (atomName not in atomNames4):
           #if residue.seqCode == 8:
           #print i, best
-          print "******ERR*******", atomName, shift.value
-          print 'Debug %5.5s %3.3f - %s' % (atomName, shift.value, makeResonanceGuiName(resonance))
+          print("******ERR*******", atomName, shift.value)
+          print('Debug %5.5s %3.3f - %s' % (atomName, shift.value, makeResonanceGuiName(resonance)))
           for atom4 in residue.atoms:
             if atom4.chemAtom.elementSymbol == 'H':
               if not atom4.chemAtom.waterExchangeable:
-                print '     %3.3f %5.5s %.3f' % (shift.value, atom4.atomSet.name, atomScores[shift][atom4.atomSet.name] or -1000.0),
+                print('     %3.3f %5.5s %.3f' % (shift.value, atom4.atomSet.name, atomScores[shift][atom4.atomSet.name] or -1000.0),)
                 print check[shift].get(atom4.atomSet.name)
         """  
   return bestM
@@ -1222,10 +1222,10 @@ def getAtomCloudScores(mapping, ccpCode, clouds, distrib, atomNames=None):
                 score += log(val)
                 count += 1.0
               """else:
-                print '  %3.3s' % atomName1, '%3.3s' % atomName2,
+                print('  %3.3s' % atomName1, '%3.3s' % atomName2,)
                 print makeResonanceGuiName(shift1.resonance),
                 print makeResonanceGuiName(shift2.resonance),
-                print '%.3f' % log(val or 1.0), '%.3f' % dist
+                print('%.3f' % log(val or 1.0), '%.3f' % dist)
                 kk = distrib[atomName1][atomName2].keys()
                 kk.sort
                 print kk
@@ -1237,7 +1237,7 @@ def getAtomCloudScores(mapping, ccpCode, clouds, distrib, atomNames=None):
   else:
     score = -10.0
 
-  #print ' '.join(['%s:%.3f' % (key,mapping[key].value) for key in mapping.keys()]), '%.3f' % score
+  #print(' '.join(['%s:%.3f' % (key,mapping[key].value) for key in mapping.keys()]), '%.3f' % score)
   
   return score
 
@@ -1293,10 +1293,10 @@ def getAtomCloudScores2(mapping, ccpCode, clouds, distrib, atomName, atomNames=N
                 score += log(val)
                 count += 1.0
               """else:
-                print '  %3.3s' % atomName1, '%3.3s' % atomName2,
+                print('  %3.3s' % atomName1, '%3.3s' % atomName2,)
                 print makeResonanceGuiName(shift1.resonance),
                 print makeResonanceGuiName(shift2.resonance),
-                print '%.3f' % log(val or 1.0), '%.3f' % dist
+                print('%.3f' % log(val or 1.0), '%.3f' % dist)
                 kk = distrib[atomName1][atomName2].keys()
                 kk.sort
                 print kk
@@ -1306,7 +1306,7 @@ def getAtomCloudScores2(mapping, ccpCode, clouds, distrib, atomName, atomNames=N
   if count:
     score /= count
 
-  #print ' '.join(['%s:%.3f' % (key,mapping[key].value) for key in mapping.keys()]), '%.3f' % score
+  #print(' '.join(['%s:%.3f' % (key,mapping[key].value) for key in mapping.keys()]), '%.3f' % score)
   
   return score
 
@@ -1587,7 +1587,7 @@ def getResonanceCoord(cloud, resonance):
 
 def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, preserveAssign=False, progressBar=None):
 
-  print "Loading distance distributions"
+  print("Loading distance distributions")
   intra, inter = getDistDistributions()
   
   project   = chain.root
@@ -1600,7 +1600,7 @@ def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, 
   for residue in residues:
     residue.spinSystemScoreDict = {}
 
-  print "Initialisation"
+  print("Initialisation")
   residueDict = {}
   for ss in spinSystems:
     ss.shifts = getSpinSystemShifts(ss, shiftList, ['1H','13C','15N'] )
@@ -1620,10 +1620,10 @@ def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, 
       s1  = getSpinSystemPairLikelihood(ss1, ss2, clouds, inter)
       s2  = getSpinSystemScore(r1.ccpCode, ss1)
       dat = (r1.seqCode,r1.ccpCode,r2.seqCode,r2.ccpCode,s1,s2)
-      print '%d%s %d%s %.3f %.3f' % dat
+      print('%d%s %d%s %.3f %.3f' % dat)
 
 
-  print "Peptide search"
+  print("Peptide search")
   dict, hits   = peptideSearch(8, residues, spinSystems, clouds, inter, exclude=None)
 
   dict2, hits2 = peptideSearch(7, residues, spinSystems, clouds, inter, exclude=dict)
@@ -1652,7 +1652,7 @@ def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, 
     hits[residue] = hits2[residue]
 
 
-  print "Finding unique mappings"
+  print("Finding unique mappings")
   assignment = {}
   matchDict = {}
   nhits = 0
@@ -1685,9 +1685,9 @@ def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, 
           else:
             gb = '*BAD*'
             
-        print "Match %d%s - %d [%s]" % (residue.seqCode,residue.ccpCode,match.serial,gb)
+        print("Match %d%s - %d [%s]" % (residue.seqCode,residue.ccpCode,match.serial,gb))
 
-  print "HITS: ", nhits
+  print("HITS: ", nhits)
 
   #return
 
@@ -1706,7 +1706,7 @@ def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, 
   nSteps0 = len(residues)
   nSteps0 *= nSteps0 * 5
 
-  print "Searching posterior 1"
+  print("Searching posterior 1")
   score1, scores, assignment3 = searchPosterior(project, residues, spinSystems2,
                                                clouds, nSteps=nSteps0, graph=graph, known=assignment,
                                                preserveAssign=preserveAssign, inter=inter,
@@ -1735,7 +1735,7 @@ def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, 
     nSteps0 = len(residues)
     nSteps0 *= nSteps0 * 5
  
-    print "Searching posterior 2"
+    print("Searching posterior 2")
     score3, scores, assignment4 = searchPosterior(project, residues, spinSystems2,
                                                  clouds, nSteps=nSteps0, graph=graph, known=assignment,
                                                  preserveAssign=preserveAssign, inter=inter,
@@ -1744,7 +1744,7 @@ def fastCloudThreader(chain, clouds, spinSystems=None, nSteps=5000, graph=None, 
     assignment[residue] = assignment4[residue]
 
      
-  print "Searching posterior 3"
+  print("Searching posterior 3")
   score, scores, assignment5 = searchPosterior(project, chain.residues, spinSystems,
                                                clouds, nSteps=nSteps, graph=graph, known=assignment, 
                                                preserveAssign=preserveAssign, inter=inter,
@@ -1831,8 +1831,8 @@ def peptideSearch(win, residues, spinSystems, clouds, inter, exclude=None):
     if route:
       rr = [ss.residue for ss in route]
       dd = ' '.join(['%d%s' % (r.seqCode,r.ccpCode) for r in rr if r])
-      print "Best for", pp, '\n        ', dd
-      #print "Match for", pp
+      print("Best for", pp, '\n        ', dd)
+      #print("Match for", pp)
       for j in range(len(route)):
         residue    = peptide[j]
         spinSystem = route[j]
@@ -1857,7 +1857,7 @@ def peptideSearch(win, residues, spinSystems, clouds, inter, exclude=None):
         if spinSystem not in partners[residue]:
           partners[residue].append(spinSystem)
     else:
-      #print '%d Missing ' % i, pp
+      #print('%d Missing ' % i, pp)
       i += 1
       continue
 

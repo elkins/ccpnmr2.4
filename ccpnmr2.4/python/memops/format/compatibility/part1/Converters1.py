@@ -640,7 +640,7 @@ def removeElementName(guid, globalMapping, newElementsByGuid):
         # Could be (is?) abstract multi-inheritance class
         pass
       else:
-        print 'WARNING, no previous map found for %s (%s)' % (useObj, guid)
+        print('WARNING, no previous map found for %s (%s)' % (useObj, guid))
     else:
       del globalMapping['loadMaps'][oldMap['tag']]
   

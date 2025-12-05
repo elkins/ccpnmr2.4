@@ -101,7 +101,7 @@ class AutoAssignPeakFile(AutoAssignGenericFile):
   def read(self,verbose = False):
 
     if verbose:
-      print "Reading AutoAssign peak list %s" % self.name
+      print("Reading AutoAssign peak list %s" % self.name)
 
     fin = open(self.name, 'rU')
     initialized = 0
@@ -164,7 +164,7 @@ class AutoAssignPeakFile(AutoAssignGenericFile):
   def write(self, verbose = 0):
 
     if verbose == 1:
-      print "Writing AutoAssign peak list %s" % self.name
+      print("Writing AutoAssign peak list %s" % self.name)
 
     fout = open(self.name,'w')
 

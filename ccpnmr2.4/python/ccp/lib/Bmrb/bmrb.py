@@ -54,7 +54,7 @@ def diff(entry1,entry2):
     """Prints the differences between two entries. Non-equal entries will always be detected, but specific differences detected depends on order of entries."""
     diffs = entry1.compare(entry2)
     if len(diffs) == 0:
-        print "Identical entries."
+        print("Identical entries.")
     for difference in diffs:
         print difference
 
@@ -62,7 +62,7 @@ def validate(entry,schema=None):
     """Prints a validation report of an entry."""
     validation = entry.validate(schema)
     if len(validation) == 0:
-        print "No problems found during validation."
+        print("No problems found during validation.")
     for err in validation:
         print err
 
@@ -188,38 +188,38 @@ class __entryParser__(ContentHandler, ErrorHandler):
         self.curloop = None
 
     def comment(self, line, text):
-        if verbose: print "Comment '%s' on line: %d" % (text, line)
+        if verbose: print("Comment '%s' on line: %d" % (text, line))
         pass
 
     def startData(self, line, name):
-        if verbose: print "Data '%s' started on line: %d" % (name, line)
+        if verbose: print("Data '%s' started on line: %d" % (name, line))
         self.ent.bmrb_id = name
 
     def endData(self, line, name):
-        if verbose: print "Data '%s' ended on line: %d" % (name, line)
+        if verbose: print("Data '%s' ended on line: %d" % (name, line))
         pass
 
     def startSaveFrame(self, line, name):
-        if verbose: print "Saveframe '%s' started on line: %d" % (name, line)
+        if verbose: print("Saveframe '%s' started on line: %d" % (name, line))
         self.curframe = saveframe.fromScratch(saveframe_name=name)
         self.ent.addSaveframe(self.curframe)
 
     def endSaveFrame(self, line, name):
-        if verbose: print "Saveframe '%s' ended on line: %d" % (name, line)
+        if verbose: print("Saveframe '%s' ended on line: %d" % (name, line))
         self.curframe = None
 
     def startLoop(self, line):
-        if verbose: print "Loop started on line: %d" % (line)
+        if verbose: print("Loop started on line: %d" % (line))
         self.curloop = loop.fromScratch()
         self.curframe.addLoop(self.curloop)
 
     def endLoop(self, line):
-        if verbose: print "Loop ended on line: %d" % (line)
+        if verbose: print("Loop ended on line: %d" % (line))
         self.curloop = None
 
     def data(self, tag, tagline, val, valline, delim, inloop):
 
-        if verbose: print "Tag / value: %s : %s ( %d : %d ) d %s" % (tag, val, tagline, valline, delim)
+        if verbose: print("Tag / value: %s : %s ( %d : %d ) d %s" % (tag, val, tagline, valline, delim))
 
         if delim == 13:
                 val = "$"+str(val)
@@ -241,7 +241,7 @@ class __entryParser__(ContentHandler, ErrorHandler):
         if raise_parse_warnings:
             raise Warning("Parse warning: " + str(msg),line)
         if verbose:
-            print "Parse warning: " + str(msg) + " " + str(line)
+            print("Parse warning: " + str(msg) + " " + str(line))
 
 
 class schema:
@@ -283,7 +283,7 @@ class schema:
                 self.types[line[8][:line[8].index(".")]] = (line[1],line[42])
             else:
                 if verbose:
-                    print "Detected invalid tag in schema: %s" % str(line)
+                    print("Detected invalid tag in schema: %s" % str(line))
 
     def __repr__(self):
         """Return how we can be initialized."""
@@ -530,9 +530,9 @@ class entry:
         """Prints a summary, tree style, of the frames and loops in the entry."""
         print repr(self)
         for pos,frame in enumerate(self):
-            print "\t[" + str(pos) + "] " + repr(frame)
+            print("\t[" + str(pos) + "] " + repr(frame))
             for pos2,loop in enumerate(frame):
-                print "\t\t[" + str(pos2) + "] " + repr(loop)
+                print("\t\t[" + str(pos2) + "] " + repr(loop))
 
     def validate(self,validation_schema=None):
         """Validate an entry against a STAR schema. You can pass your own custom schema if desired, otherwise the schema will be fetched from the BMRB servers. Returns a list of errors found. 0-length list indicates no errors found."""
@@ -751,7 +751,7 @@ class saveframe:
             raise ValueError("Column names can not contain spaces.")
 
         if verbose:
-            print "Adding tag: ("+name+") with value ("+value+")"
+            print("Adding tag: ("+name+") with value ("+value+")")
 
         self.tags[name] = value
 
@@ -913,7 +913,7 @@ class saveframe:
         """Prints a summary, tree style, of the loops in the saveframe."""
         print repr(self)
         for pos,loop in enumerate(self):
-            print "\t[" + str(pos) + "] " + repr(loop)
+            print("\t[" + str(pos) + "] " + repr(loop))
 
     def validate(self,validation_schema=None):
         """Validate a saveframe against a STAR schema. You can pass your own custom schema if desired, otherwise the schema will be fetched from the BMRB servers. Returns a list of errors found. 0-length list indicates no errors found."""
@@ -1410,7 +1410,7 @@ if __name__ == '__main__':
         diff(entry.fromFile(cmd_input[0]), entry.fromFile(cmd_input[1]))
         sys.exit(0)
 
-    print "Running unit tests..."
+    print("Running unit tests...")
 
     errors = 0
 
@@ -1424,9 +1424,9 @@ if __name__ == '__main__':
                 tmp.write(ent_str)
             for x in range(e.args[1]-5,e.args[1]+2):
                 try:
-                    print "\t%-5d: %s" % (x,splitted[x])
+                    print("\t%-5d: %s" % (x,splitted[x]))
                 except IndexError:
-                    print "\t%-5d: %s" % (x,"EOF")
+                    print("\t%-5d: %s" % (x,"EOF"))
                     return
 
     myrange = (15000,15200)
@@ -1437,7 +1437,7 @@ if __name__ == '__main__':
     if os.path.exists("/bmrb/linux/bin/stardiff"):
         import subprocess
         use_stardiff = True
-        print "External stardiff detected. Will use to verify results."
+        print("External stardiff detected. Will use to verify results.")
 
     for x in xrange(*myrange):
         try:
@@ -1486,8 +1486,8 @@ if __name__ == '__main__':
             diff(ent,reent)
 
     if errors == 0:
-        print "If you didn't see any errors, than everything is working!"
+        print("If you didn't see any errors, than everything is working!")
     else:
-        print "At least %d errors were found." % (errors)
+        print("At least %d errors were found." % (errors))
 
     sys.exit(0)

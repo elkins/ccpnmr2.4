@@ -186,7 +186,7 @@ Sum                %s""" % (
         'Convenience method.'
         return self.setConsensus(minFraction=minFraction, useLargest=useLargest)
 #        w = getattr(self, CONSENSUS_STR)
-#        print 'w: ', w
+#        print('w: ', w)
 #        return w
     # end def
 
@@ -203,16 +203,16 @@ Sum                %s""" % (
         count = {}
         n = len(self)
         minCount = minFraction * n
-#        print 'minCount: ', minCount
+#        print('minCount: ', minCount)
         for v in self:
             count.setdefault(v, 0)
             count[v] +=1
-#            print 'count: ', count
+#            print('count: ', count)
         for v in count:
-#            print 'considering v: ', v
+#            print('considering v: ', v)
             if count[v] >= minCount:
                 setattr(self, CONSENSUS_STR, v)
-#                print 'returning v: ', v
+#                print('returning v: ', v)
                 return v
         if not useLargest:
             return False
@@ -1289,7 +1289,7 @@ class NTdict(dict):
                                                           format == None) attribute.
             keysformat()                                  Set __FORMAT__ to include all keys.
             printAttr( hidden=0 )                         Print all attributes to stream (mainly for debugging purposes).
-                                                          Also print 'hidden' attributes when hidden!=0.
+                                                          Also print('hidden' attributes when hidden!=0.)
 
             getdefault( key, defaultKey )                 Return self[key] if key exists, self[defaultKey] otherwise.
             uniqueKey( key )                              Return an unique key derived from key.
@@ -1330,7 +1330,7 @@ class NTdict(dict):
     hiddenAttributesSize = len( hiddenAttributesMap.keys() )
     def __init__(self, *args, **kwds):
         global NTdictObjectId # pylint: disable=W0603
-        #print '>>>', args, kwds
+        #print('>>>', args, kwds)
         self.__CLASS__ = 'NTdict'
         self.__FORMAT__ = None
         self.__SAVEXML__ = None
@@ -1361,7 +1361,7 @@ class NTdict(dict):
 #        if hasattr(self, attr):
         if not self.has_key(attr):
             # Happens at H2_2Ca_64_100.cing TODO: fix.
-#            print 'CODE ERROR "%s" not found.' % attr
+#            print('CODE ERROR "%s" not found.' % attr)
 #            return ""
             raise AttributeError( '"%s" not found.' % attr )
         return self[attr]
@@ -1456,7 +1456,7 @@ class NTdict(dict):
 #        return 1
 
     def __hash__(self):
-        #print 'hash>', self, self['__OBJECTID__']
+        #print('hash>', self, self['__OBJECTID__'])
         return int(self['__OBJECTID__'])
         #return hash(self['__OBJECTID__'])
     #end def
@@ -1566,7 +1566,7 @@ class NTdict(dict):
         keys = self.keys()
         if hidden:
             keys = keys + NTdict.hiddenAttributesMap.keys()
-#    print '>>',keys
+#    print('>>',keys)
         for key in keys:
             msg += sprintf('%-12s : %s\n', key, str(self[key]))
         return msg
@@ -2188,7 +2188,7 @@ class NTtree(NTdict):
         uses recursion
         return NTtree object or None on error
         """
-        #print ">>", self, nodeNames
+        #print(">>", self, nodeNames)
         if len(nodeNames) == 0:
             return None
         elif len(nodeNames) == 1:
@@ -2357,7 +2357,7 @@ class NTtree(NTdict):
         Traverse the tree, infinite depth recursion for depth < 0
         finite depth recursion for depth > 0
         """
-#        print '>>', self, depth
+#        print('>>', self, depth)
         if result == None:
             result = NTlist()
 
@@ -2371,7 +2371,7 @@ class NTtree(NTdict):
     def subNodes(self, result = None, depth = -1):
         """Traverse the tree, returning all subnodes at depth
         """
-#        print '>>', self, depth
+#        print('>>', self, depth)
 
         if result == None:
             result = NTlist()
@@ -2433,7 +2433,7 @@ class NTparameter(NTtree): # pylint: disable=R0904
         """Update preserves/establises the linked structure
         """
         for key, value in fromDict.iteritems():
-#            print '>>', repr(self), type(self), repr(value), type(value)
+#            print('>>', repr(self), type(self), repr(value), type(value))
             if (type(self) == type(value) and not self.has_key(key)):
                 self.addChild2(value)
             else:
@@ -2851,7 +2851,7 @@ def nTaverage(theList, byIndex=None ): # pylint: disable=C0103
     if n == 1:
         return (s, NaN, 1) # sd not defined for serie of length one.
 #    fn = float(n)
-#    print '>>', n, s, sumsq, sumsq/(fn-1.0), (s*s)/(fn*(fn-1.0))
+#    print('>>', n, s, sumsq, sumsq/(fn-1.0), (s*s)/(fn*(fn-1.0)))
     av = s/n
     # routine below makes it much slower but easier to read than one pass.
     for item in theList:
@@ -3082,7 +3082,7 @@ class XMLhandler:
         # first collect all element nodes, skipping the 'empty' text nodes
         subNodes = []
         for n in node.childNodes:
-#            print '>>',n
+#            print('>>',n)
             if n.nodeType == Node.ELEMENT_NODE: 
                 subNodes.append(n)
         #end for
@@ -3103,7 +3103,7 @@ class XMLhandler:
                 value = nThandle(subNodes[i+1])
                 i += 2
 
-#            print ">>", keyName, value
+#            print(">>", keyName, value)
             result[keyName] = value
         #end while
 #        nTdebug("==>%s %s",repr(node), result)
@@ -3303,7 +3303,7 @@ class XMLNTtreeHandler(XMLhandler):
         attrs = self.handleDictElements(node)
         if attrs == None: 
             return None
-#       print ">>attrs", attrs
+#       print(">>attrs", attrs)
         result = NTtree(name = attrs['name'])
 
         # update the attrs values
@@ -3311,7 +3311,7 @@ class XMLNTtreeHandler(XMLhandler):
 
         # restore the tree structure
         for child in result._children: # pylint: disable=W0212
-#           print '>child>', repr(child)
+#           print('>child>', repr(child))
             result[child.name] = child
             child._parent = result
         return result
@@ -3534,7 +3534,7 @@ class Sorter:
 
     def byItem(self, data, itemindex=None, inplace=False):
         'Sorting the data by given index'
-#        print "Now in byItem with data: %s and itemindex %s" % (data, itemindex)
+#        print("Now in byItem with data: %s and itemindex %s" % (data, itemindex))
         if itemindex is None:
             if inplace:
 #                data.sort() # Gave recursion
@@ -3708,7 +3708,7 @@ def list2asci(theList):
 
     # reduce this sorted list myList to pairs start, stop
     ls = myList[0:1]
-    #print '>>',ls
+    #print('>>',ls)
     for i in range(0, len(myList)-1):
         if myList[i] < myList[i+1]-1:
             ls.append(myList[i])
@@ -3717,12 +3717,12 @@ def list2asci(theList):
     #end for
     ls.append(myList[-1])
 
-    #print '>>',ls
+    #print('>>',ls)
 
     # generate the string from ls
     result = ''
     for i in range(0, len(ls), 2):
-        #print '>', i, result
+        #print('>', i, result)
         if ls[i] == ls[i+1]:
             result = sprintf('%s%s,', result, str(ls[i]))
         else:
@@ -3980,22 +3980,22 @@ class PrintWrap:
         'Add a second stream (called stream2) for echoing.'
         if self.stream2 != None:
 #            self.stream2.flush()
-#            print "DDD: Flushed 2nd stream and closing before adding new one."
+#            print("DDD: Flushed 2nd stream and closing before adding new one.")
             try:
                 self.stream2.close()
             except:
                 nTdebug("Failed to close stream2")
-#        print "DDD: Adding 2nd stream to %s." % self
+#        print("DDD: Adding 2nd stream to %s." % self)
         self.stream2 = stream
     # end def
 
     def removeStream(self):
         'Remove the second stream if set.'
         if self.stream2 == None:
-#            print "DDD: Strange 2nd stream was already closed in %s." % self
+#            print("DDD: Strange 2nd stream was already closed in %s." % self)
             return
 #        self.stream2.flush()
-#        print "DDD: Flushed 2nd stream and closing."
+#        print("DDD: Flushed 2nd stream and closing.")
 #        self.stream2.close()
         self.stream2 = None
     # end def
@@ -4327,13 +4327,13 @@ def findFiles(pattern, startdir, exclude=[]): # pylint: disable=W0102
 
         excludePath = False
         for e in exclude:
-            #print '>>',dirpath,e
+            #print('>>',dirpath,e)
             if fnmatch(str(dirpath), e):
                 excludePath = True
                 break
             #end if
         #end for
-        #print '>>',dirpath, excludePath
+        #print('>>',dirpath, excludePath)
 
         if not excludePath:
             for fileName in files:
@@ -4344,7 +4344,7 @@ def findFiles(pattern, startdir, exclude=[]): # pylint: disable=W0102
         #end if
     #end for
     result.sort()
-    #print '>>',result
+    #print('>>',result)
     return result
 #end def
 

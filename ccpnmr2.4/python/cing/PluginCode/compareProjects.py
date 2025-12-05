@@ -186,7 +186,7 @@ class PhiPsiModelList( NTlist ):
         rmsd = 0.0
         for i in range(n):
             rmsd += self[i].distanceSquared(other[i], period=360.0)
-            #print '>',i, self[i].residue, other[i].residue, rmsd
+            #print('>',i, self[i].residue, other[i].residue, rmsd)
         return math.sqrt( rmsd/n )
     #end def
 
@@ -215,7 +215,7 @@ class PhiPsiLists( NTlist ):
 #            if res and res.has_key('PHI') and res.has_key('PSI'):
             if res and res.has_key('PHI') and res.has_key('PSI') and res.has_key('Cb4N') and res.has_key('Cb4C'):
                 for i in range(0,molecule.modelCount):
-                    #print '>>', res, i,molecule.modelCount,len(res.PHI),len(res.PSI),len(res.Cb4N),len(res.Cb4C)
+                    #print('>>', res, i,molecule.modelCount,len(res.PHI),len(res.PSI),len(res.Cb4N),len(res.Cb4C))
 #                    self[i].append(res.PHI[i],res.PSI[i])
                     self[i].append(res.PHI[i],res.PSI[i],res.Cb4N[i],res.Cb4C[i])
                     self[i].last().residue = res
@@ -242,7 +242,7 @@ def calculatePairWisePhiPsiRmsd( mol1, mol2, ranges='auto' ):
     fitResidues2 = mol2.setResiduesFromRanges(ranges)
     models2 = PhiPsiLists( mol2, fitResidues2 )
 
-    #print '>', ranges, models1, models2
+    #print('>', ranges, models1, models2)
 
     l1 = len(models1)
     l2 = len(models2)
@@ -258,7 +258,7 @@ def calculatePairWisePhiPsiRmsd( mol1, mol2, ranges='auto' ):
 
     for i in range(len(models)):
         for j in range(i+1, len(models)):
-            #print '>>', i,j
+            #print('>>', i,j)
             r = models[i].calculateRMSD( models[j] )
             if r == None:
                 nTdebug('calculatePairWisePhiPsiRmsd: error for %s and %s', models[i], models[j])
@@ -273,20 +273,20 @@ def calculatePairWisePhiPsiRmsd( mol1, mol2, ranges='auto' ):
     for i in range(l1):
         for j in range(i+1, l1):
             pairwise1.append(result[i][j])
-#            print '1>', i,j
+#            print('1>', i,j)
 
     pairwise2 = NTlist()
     for i in range(l1, l1+l2):
         for j in range(i+1, l1+l2):
             pairwise2.append(result[i][j])
-#            print '2>', i,j
+#            print('2>', i,j)
 
     pairwise12 = NTlist()
     for i in range(l1):
         for j in range(l1, l1+l2):
             pairwise12.append(result[i][j])
 
-#            print '12>', i,j
+#            print('12>', i,j)
 #    print len(pairwise1), len(pairwise2), len(pairwise12)
     return ( result, pairwise1.average2(fmt='%6.2f +- %5.2f'),pairwise2.average2(fmt='%6.2f +- %5.2f'),
         pairwise12.average2(fmt='%6.2f +- %5.2f') )
@@ -365,20 +365,20 @@ def calculatePairWiseRmsd( mol1, mol2, ranges=None ):
     for i in range(l1):
         for j in range(i+1, l1):
             pairwise1.append(result[i][j])
-#            print '1>', i,j
+#            print('1>', i,j)
 
     pairwise2 = NTlist()
     for i in range(l1, l1+l2):
         for j in range(i+1, l1+l2):
             pairwise2.append(result[i][j])
-#            print '2>', i,j
+#            print('2>', i,j)
 
     pairwise12 = NTlist()
     for i in range(l1):
         for j in range(l1, l1+l2):
             pairwise12.append(result[i][j])
 
-#            print '12>', i,j
+#            print('12>', i,j)
 #    print len(pairwise1), len(pairwise2), len(pairwise12)
     return ( result, pairwise1.average2(fmt='%6.2f +- %5.2f'),pairwise2.average2(fmt='%6.2f +- %5.2f'),
         pairwise12.average2(fmt='%6.2f +- %5.2f'))
@@ -478,7 +478,7 @@ def printRestraintScores( projects, stream=sys.stdout ):
         return
 
 #    print dots20*(n+1)
-#    print ' Restraints target', projects[0].target
+#    print(' Restraints target', projects[0].target)
 #    print dots20*(n+1)
 #    print
 
@@ -541,7 +541,7 @@ def printResidueScores( projects ):
     n = len(projects)
 
     print dots20*(n+1)
-    print '    Residues'
+    print('    Residues')
     print dots20*(n+1)
     p0 = projects[0]
     for res in p0.molecule.allResidues():
@@ -651,7 +651,7 @@ def colorPDBmacro( projects ):
     for p in projects.entries:
         #fprintf(fp, 'loadPDB %s\n', os.path.abspath(projects.path(p.name+'.pdb')))
         selectedResidues = p.molecule.setResiduesFromRanges(projects.ranges)
-        #print '>>', selectedResidues
+        #print('>>', selectedResidues)
         if p.has_key('color'):
             fprintf(fp, 'ColorObject %d, %d\n', p.id+1, p.color)
             for res in p.molecule.allResidues():
@@ -748,7 +748,7 @@ def copyFiles2Project( projects ):
     for p in projects:
         source = projects.path('*')
         destination = p.validationPath('Cing','CASD-NMR')
-        #print '>>', source, destination
+        #print('>>', source, destination)
         copydir(source,destination)
 #end def
 
@@ -764,12 +764,12 @@ def generatePDBfiles( projects ):
     for m in closestToMean[1:]:
         #print m.format()
         _r = m.superpose(closestToMean[0])
-        #print '>', m.format()
-        #print '>', r
+        #print('>', m.format())
+        #print('>', r)
     # Export
     for p in projects:
         cl = p.molecule.rmsd.closestToMean
-        #print 'saving model>', p.molecule.ensemble[cl].format()
+        #print('saving model>', p.molecule.ensemble[cl].format())
         p.molecule.toPDB( projects.path(p.name+'.pdb'), model=cl)
 
     return closestToMean
@@ -786,7 +786,7 @@ def getRanges( projects, cutoff = 1.7 ):
     for res in projects.entries[0].molecule.allResidues():
         phi = NTlist() # list for all phi values
         psi = NTlist() # list for all psi values
-        #print '>>>', res
+        #print('>>>', res)
         if res.has_key('PHI') and res.has_key('PSI'):
 
             for p in projects:

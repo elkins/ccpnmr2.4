@@ -245,7 +245,7 @@ class Entry( NTdict ):
     def readProject(self):
         path = self.path()
         if not path.exists():
-            print 'Error Entry.readProject: file %s does not exist' % path
+            print('Error Entry.readProject: file %s does not exist' % path)
             return None
         nTmessage( '==> reading project from %s', path )
         self.project = cing.Project.open(path,'old')
@@ -255,7 +255,7 @@ class Entry( NTdict ):
     def readSummary(self, fix=False):
         path = self.path(self.entryName, 'Cing', 'CingSummaryDict.xml')
         if not path.exists():
-            print 'Error Entry.readSummary: file %s does not exist' % path
+            print('Error Entry.readSummary: file %s does not exist' % path)
             return None
         nTmessage( '==> reading summary from %s', path )
         self.cingSummary = xML2obj(path)
@@ -431,7 +431,7 @@ class ResultsList(NTlist):
         tmp = []
         for entry in self:
             tmp.append(entry)
-        print '==> Saving %d entries to %s' % (len(tmp), path)
+        print('==> Saving %d entries to %s' % (len(tmp), path))
         obj2XML(tmp, path=path)
     #end def
     
@@ -478,7 +478,7 @@ methods:    %s
         else:
             targets = [target]
         for t in targets:
-            print "===============", t, "==============="
+            print("===============", t, "===============")
             for entry in self.byTarget[t]:
                 print entry.format()
     #end def
@@ -539,20 +539,20 @@ methods:    %s
         for i in range(l1):
             for j in range(i+1, l1):
                 pairwise1.append(result[i][j])
-    #            print '1>', i,j
+    #            print('1>', i,j)
 
         pairwise2 = NTlist()
         for i in range(l1, l1+l2):
             for j in range(i+1, l1+l2):
                 pairwise2.append(result[i][j])
-    #            print '2>', i,j
+    #            print('2>', i,j)
 
         pairwise12 = NTlist()
         for i in range(l1):
             for j in range(l1, l1+l2):
                 pairwise12.append(result[i][j])
 
-    #            print '12>', i,j
+    #            print('12>', i,j)
     #    print len(pairwise1), len(pairwise2), len(pairwise12)
         return (result, pairwise1.average2( fmt='%.2f +- %.2f'),
                         pairwise2.average2( fmt='%.2f +- %.2f'),
@@ -574,11 +574,11 @@ methods:    %s
         if e1.project == None:
             e1.readProject()
         ranges = e1.project.molecule.rangesByCv()
-        print '%s: %s' % (e1, ranges)
+        print('%s: %s' % (e1, ranges))
         
         for e in self.byTarget[target][1:]:
             mol,res,atms = getFitted(e,ranges)
-            print  '%s: %d-%d' % (e, atms[0].residue.resNum, atms[-1].residue.resNum)
+            print('%s: %d-%d' % (e, atms[0].residue.resNum, atms[-1].residue.resNum))
     #end def
     
     def getValues(self, target, par):
@@ -637,7 +637,7 @@ methods:    %s
             
             _tmp,e1.rmsd,entry.rmsd,entry.rmsdToTarget = self.calculatePairWiseRmsd(e1, entry, e1.ranges)
         #endif
-        print '==> %s rmsdToTarget: %s ranges: %s' % (entry, entry.rmsdToTarget, entry.ranges)
+        print('==> %s rmsdToTarget: %s ranges: %s' % (entry, entry.rmsdToTarget, entry.ranges))
         return False
     #end def
 #end class
@@ -713,7 +713,7 @@ if init:
     results.readCingSummaries()
     results.save()
 else:
-    print '==> Restoring results'
+    print('==> Restoring results')
     results = ResultsList.restore()
 
 print results.format()
@@ -748,7 +748,7 @@ if t>=0:
 #(options, args) = parser.parse_args()
 #
 #if options.verbosity >= 0 and options.verbosity <= 9:
-##        print "In main, setting verbosity to:", options.verbosity
+##        print("In main, setting verbosity to:", options.verbosity)
 #    cing.verbosity = options.verbosity
 #else:
 #    nTerror("set verbosity is outside range [0-9] at: " + options.verbosity)
@@ -799,7 +799,7 @@ if t>=0:
 #    fitted = closestToMean.zap('fitCoordinates')
 #    for m in closestToMean[1:]:
 #        r = m.superpose(closestToMean[0])
-#        #print '>', r
+#        #print('>', r)
 #    # Export'
 #    for p in pTree:
 #        p.molecule.toPDBfile( pTree.path(p.name+'.pdb'), model=p.molecule.rmsd.closestToMean)

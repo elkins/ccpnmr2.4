@@ -486,7 +486,7 @@ class GroupChemShiftsPopup(BasePopup):
 
         fout.write(self.groupText[group])
   
-      print "Wrote file %s..." % filePopup.file
+      print("Wrote file %s..." % filePopup.file)
       
   def apply(self):
     

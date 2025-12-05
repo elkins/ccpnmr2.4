@@ -175,7 +175,7 @@ if __name__ == '__main__':
 
     global color_chooser
 
-    print 'color:', color_chooser.getColor()
+    print('color:', color_chooser.getColor())
     sys.exit(0)
 
   root = Tkinter.Tk()

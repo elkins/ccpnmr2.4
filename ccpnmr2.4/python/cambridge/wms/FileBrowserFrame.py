@@ -114,7 +114,7 @@ class FileBrowserFrame(Frame):
       else:
         callbacks.append(None)
 
-    print 'updating', texts
+    print('updating', texts)
     
     self.fileTree.update(parents, objects, texts, icons, callbacks)
                
@@ -187,21 +187,21 @@ class FileBrowserFrame(Frame):
 
   def isCancel(self):
 
-    print 'should be exiting'
+    print('should be exiting')
     self.quit()
 
   def isOk(self):
 
-    print 'setting selected ', self.fileTree.getSelected()
+    print('setting selected ', self.fileTree.getSelected())
 
   def destroy(self):
 
-    print 'in main destroy method'
+    print('in main destroy method')
     Frame.destroy(self)
     
   def quit(self):
   
-    print 'in main quit method'
+    print('in main quit method')
     self.guiParent.parent.destroy()
 
 if __name__ == '__main__':

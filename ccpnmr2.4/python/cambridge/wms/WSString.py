@@ -113,7 +113,7 @@ class WSString:
 
             for i in range(nbKeys):
 
-                #print 'looping ', fixDeep, i
+                #print('looping ', fixDeep, i)
             
                 strg += set[i]
                 strg += '<=>'
@@ -123,7 +123,7 @@ class WSString:
 
                 else:
 
-                    #print 'appending ', hashmap[set[i]] , ' (from ',  set[i], ')' 
+                    #print('appending ', hashmap[set[i]] , ' (from ',  set[i], ')' )
                     if isinstance(hashmap[set[i]],str):
                         strg += hashmap[set[i]]
                         
@@ -178,13 +178,13 @@ class WSString:
             regex = '<Arraylist[0-9]+.[0-9]+>'
             pattern = re.compile(regex)
             matcher = pattern.search(strg, 0)
-            #print ' first match ', matcher.start()
+            #print(' first match ', matcher.start())
 
             if matcher.start() == 0:
                 startTag = matcher.group()
-                #print 'group', startTag
+                #print('group', startTag)
                 endTag = startTag[:-1] + '/>'
-                #print 'group', endTag
+                #print('group', endTag)
                 startSeq = matcher.end()
                 endSeq= strg.find(endTag,startSeq)
                 strg=strg[startSeq:endSeq]
@@ -193,11 +193,11 @@ class WSString:
 
                     cutAt = strg.find('<#>')
 
-                    #print ' value from ', strg
+                    #print(' value from ', strg)
 
                     if strg[:8] == '<Hashmap':
                         value = self.stringToHashMap(strg)
-                        #print ' getting hashmap from ', strg
+                        #print(' getting hashmap from ', strg)
                         lst.append(value)
                 
                         regex = '<Hashmap[0-9]+.[0-9]+>'
@@ -206,13 +206,13 @@ class WSString:
                         endTag = matcher.group()[:-1] + '/>'
                         endSeq= strg.find(endTag,startSeq)
                         strg=strg[endSeq + len(endTag):]
-                        # print ' trimming string to: ', strg, startSeq, endSeq
+                        # print(' trimming string to: ', strg, startSeq, endSeq)
 
                         cutAt = strg.find('<#>')
                         if cutAt == 0:
                             strg = strg[3:]
 
-                        #print ' returning ', strg
+                        #print(' returning ', strg)
                         
                     elif strg[:10] == '<Arraylist':
                         value = self.stringToList(strg)
@@ -265,13 +265,13 @@ class WSString:
             regex = '<Hashmap[0-9]+.[0-9]+>'
             pattern = re.compile(regex)
             matcher = pattern.search(strg, 0)
-            #print ' first match ', matcher.start()
+            #print(' first match ', matcher.start())
 
             if matcher.start() == 0:
                 startTag = matcher.group()
-                #print 'group', startTag
+                #print('group', startTag)
                 endTag = startTag[:-1] + '/>'
-                #print 'group', endTag
+                #print('group', endTag)
                 startSeq = matcher.end()
                 endSeq= strg.find(endTag,startSeq)
                 strg=strg[startSeq:endSeq]
@@ -282,15 +282,15 @@ class WSString:
 
                     cutAt = strg.find('<=>')
                     key = strg[0:cutAt]
-                    # print 'KEY VALUE ', key
+                    # print('KEY VALUE ', key)
                     strg=strg[cutAt+3:]
 
-                    #print ' value from ', strg
+                    #print(' value from ', strg)
 
                     # print strg[:8]
                     if strg[:8] == '<Hashmap':
                         value = self.stringToHashMap(strg)
-                        #print ' getting hashmap from ', strg
+                        #print(' getting hashmap from ', strg)
                         map[key]=value
                 
                         regex = '<Hashmap[0-9]+.[0-9]+>'
@@ -299,20 +299,20 @@ class WSString:
                         endTag = matcher.group()[:-1] + '/>'
                         endSeq= strg.find(endTag,startSeq)
                         strg=strg[endSeq + len(endTag):]
-                        #print ' trimming string to: ', strg, startSeq, endSeq
+                        #print(' trimming string to: ', strg, startSeq, endSeq)
 
                         cutAt = strg.find('<;>')
                         if cutAt == 0:
                             strg = strg[3:]
 
-                        #print ' returning ', strg
+                        #print(' returning ', strg)
                         
                     elif strg[:10] == '<Arraylist':
                         value = self.stringToList(strg)
                         map[key]=value
                             
                         regex = '<Arraylist[0-9]+.[0-9]+>'
-                        #print 'ArrayList group', matcher.group()
+                        #print('ArrayList group', matcher.group())
                         pattern = re.compile(regex)
                         matcher = pattern.search(strg, 0)
                         endTag = matcher.group()[:-1] + '/>'

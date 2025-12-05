@@ -1067,7 +1067,7 @@ class ScrolledMatrix(Frame):
           try:
             text = headingList[i+ho]
           except:
-            print 'Missing heading in ScrolledMatrix input'
+            print('Missing heading in ScrolledMatrix input')
             
         justify = justifyList[i+ho]
         if (i >= len(textHeading)) or not textHeading[i]:
@@ -1161,7 +1161,7 @@ class ScrolledMatrix(Frame):
               try:
                 text = textMatrix[i+vo][j+ho]
               except:
-                print 'Missing text in ScrolledMatrix input'
+                print('Missing text in ScrolledMatrix input')
               try:
                 color = colorMatrix[i+vo][j+ho]
               except:

@@ -94,7 +94,7 @@ class AutoAssignProjectFile(AutoAssignGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s project file %s" % (self.format,self.name)
+      print("Reading %s project file %s" % (self.format,self.name))
 
     #
     # Read the sequence from the project file
@@ -191,7 +191,7 @@ class AutoAssignProjectFile(AutoAssignGenericFile):
   def write(self,verbose = 0):
 
     if verbose == 1:
-      print "Writing %s project file %s" % (self.format,self.name)
+      print("Writing %s project file %s" % (self.format,self.name))
 
     fout = open(self.name,'w')
     

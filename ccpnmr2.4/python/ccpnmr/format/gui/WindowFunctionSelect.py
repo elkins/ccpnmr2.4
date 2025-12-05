@@ -396,8 +396,8 @@ if __name__ == '__main__':
   popup = WindowFunctionSelect(root)
 
   if popup.chemAtoms:
-    print "chemAtoms %s selected" % (popup.chemAtoms)
+    print("chemAtoms %s selected" % (popup.chemAtoms))
   
   else:
-    print "Nothing selected - aborting script"
+    print("Nothing selected - aborting script")
     

@@ -2465,7 +2465,7 @@ class EditMoleculesPopup(BasePopup):
           chemComp = self.project.importData(filePath)      
           XmlIO.save(projDir, chemComp)
           
-        except ApiError, e:
+        except ApiError as e:
           msg = 'XML file could not be loaded, it may be corrupt.'
           msg += '\n\nUnderlying error:\n\n%s' % e
           showWarning('Import Failure', msg, parent=self)

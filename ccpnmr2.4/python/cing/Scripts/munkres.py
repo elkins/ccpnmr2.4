@@ -112,8 +112,8 @@ total = 0
 for row, column in indexes:
     value = matrix[row][column]
     total += value
-    print '(%d, %d) -> %d' % (row, column, value)
-print 'total cost: %d' % total
+    print('(%d, %d) -> %d' % (row, column, value))
+print('total cost: %d' % total)
 
 Running that program produces::
 
@@ -173,9 +173,9 @@ large value. For example::
     for row, column in indexes:
         value = matrix[row][column]
         total += value
-        print '(%d, %d) -> %d' % (row, column, value)
+        print('(%d, %d) -> %d' % (row, column, value))
 
-    print 'total profit=%d' % total
+    print('total profit=%d' % total)
 
 Running that program produces::
 
@@ -214,8 +214,8 @@ So, the above profit-calculation program can be recast as::
     for row, column in indexes:
         value = matrix[row][column]
         total += value
-        print '(%d, %d) -> %d' % (row, column, value)
-    print 'total profit=%d' % total
+        print('(%d, %d) -> %d' % (row, column, value))
+    print('total profit=%d' % total)
 
 References
 ==========
@@ -783,7 +783,7 @@ if __name__ == '__main__':
         for r, c in indexes:
             x = cost_matrix[r][c]
             total_cost += x
-            print '(%d, %d) -> %d' % (r, c, x)
-        print 'lowest cost=%d' % total_cost
+            print('(%d, %d) -> %d' % (r, c, x))
+        print('lowest cost=%d' % total_cost)
         assert expected_total == total_cost
 

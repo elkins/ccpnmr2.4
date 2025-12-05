@@ -332,7 +332,7 @@ if __name__ == '__main__':
   labels = ['%d' % (x+1) for x in obj]
   
   def clicked(*args):
-    print "Clicked", args
+    print("Clicked", args)
   
   ps =  PartitionedSelector(root, callback=clicked, toggled=True, radio=True, grid=(0,0),
                             toggledBg='#000000', toggledFg='#80FF80',

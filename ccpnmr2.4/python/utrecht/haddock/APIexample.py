@@ -99,15 +99,15 @@ if __name__ == '__main__':
   # Loop over stored projects
   print("\n** Summary of stored Haddock projects and their content **")
   for pr in api.projects:
-      print "project: ", pr.name
+      print("project: ", pr.name)
  
       # Loop over stored Haddock partners
       for partner in pr.partners:
-          print "  partners: ", partner.code
+          print("  partners: ", partner.code)
  
       # Loop over stored runs
       for run in pr.runs:
-          print "  run: ", run.serial
+          print("  run: ", run.serial)
 
   # Projects, partners and runs can be retrieved specificly by name
   print("\n** Query the Haddock projects **")

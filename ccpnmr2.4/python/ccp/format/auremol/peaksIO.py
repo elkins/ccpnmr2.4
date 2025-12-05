@@ -105,7 +105,7 @@ class AuremolPeakFile(AuremolFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s peak list %s" % (self.format,self.name)
+      print("Reading %s peak list %s" % (self.format,self.name))
 
     #
     # Read info and other info
@@ -157,7 +157,7 @@ class AuremolPeakFile(AuremolFile):
           (mapping,returnFunc) = self.headerPars[parameterKey]
           
           if not mapping and cols[1] != '*':
-            print "  Warning: not handling parameter %s, but has value '%s'!" % (parameter,cols[1])
+            print("  Warning: not handling parameter %s, but has value '%s'!" % (parameter,cols[1]))
             
           elif mapping:
             

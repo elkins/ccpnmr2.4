@@ -40,17 +40,17 @@ def getStarIsotopeLabeling(refComp):
 
     if resLabFrac:
       if atomLabFlag:
-        print '  Warning: mixture of labelling types in molecule %s' % molecule.name
+        print('  Warning: mixture of labelling types in molecule %s' % molecule.name)
         break
 
       resLabFracFlag = True
 
       bmrbLabel = bmrbLabelDict[resLabFrac.schemeName]
-      #print 'BMRB: [%s]' % bmrbLabel
+      #print('BMRB: [%s]' % bmrbLabel)
 
     else:
       if resLabFracFlag:
-        print '  Warning: mixture of labelling types in molecule %s' % molecule.name
+        print('  Warning: mixture of labelling types in molecule %s' % molecule.name)
         break
 
       atomLabFlag = True
@@ -130,7 +130,7 @@ def getStarIsotopeLabeling(refComp):
       if firstBmrbLabel:
 
         if firstBmrbLabel != bmrbLabel:
-          print '  Warning: multiple labels for this molecule %s' % molecule.name
+          print('  Warning: multiple labels for this molecule %s' % molecule.name)
           break
 
       else:
@@ -181,7 +181,7 @@ def parseBmrbLabelName(bmrbLabelName):
 
   bmrbLabelName = resLabPatt.sub(']', bmrbLabelName)
 
-  #print 'SPEC: [%s] [%s]' % (bmrbLabelName, specificResidue)
+  #print('SPEC: [%s] [%s]' % (bmrbLabelName, specificResidue))
 
   if bmrbLabelName.count(';'):
     labels = bmrbLabelName.split(';')
@@ -194,7 +194,7 @@ def parseBmrbLabelName(bmrbLabelName):
   for label in labels:
     label = label.strip('[] \t')
 
-    #print 'LABEL: [%s]' % label
+    #print('LABEL: [%s]' % label)
 
     if label == 'natural abundance':
       return None # pass ???
@@ -226,7 +226,7 @@ def makeUniformLabels(resLabel, atomType, mass, percent):
                    'H': 'hydrogen'}
 
   if mass != isotopeMasses[atomType]:
-    print '  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType])
+    print('  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType]))
     return
 
   if not percent:
@@ -235,7 +235,7 @@ def makeUniformLabels(resLabel, atomType, mass, percent):
     weight = float(percent[:-1])/100.0
 
   if weight < 0 and weight > 1:
-    print '  Warning: degree of isotope labelling not in the correct range (0-100%)'
+    print('  Warning: degree of isotope labelling not in the correct range (0-100%)')
     return
 
 
@@ -259,7 +259,7 @@ def makeSpecAtomLabels(resLabel, atomType, mass, percent, specificAtom):
                    'H': 'hydrogen'}
 
   if mass != isotopeMasses[atomType]:
-    print '  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType])
+    print('  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType]))
     return
 
   if not percent:
@@ -268,7 +268,7 @@ def makeSpecAtomLabels(resLabel, atomType, mass, percent, specificAtom):
     weight = float(percent[:-1])/100.0
 
   if weight < 0 and weight > 1:
-    print '  Warning: degree of isotope labelling not in the correct range (0-100%)'
+    print('  Warning: degree of isotope labelling not in the correct range (0-100%)')
     return
 
   specAtomLabel2 = None
@@ -277,7 +277,7 @@ def makeSpecAtomLabels(resLabel, atomType, mass, percent, specificAtom):
   if weight != 1.00:
     specAtomLabel2 = resLabel.newSingleAtomLabel(atomName=atomType + specificAtom, massNumber=int(mass)-1, weight=1.00-weight)
 
-  #print 'SPECS: [%s] [%s]' % (specAtomLabel1, specAtomLabel2)
+  #print('SPECS: [%s] [%s]' % (specAtomLabel1, specAtomLabel2))
 
   return (specAtomLabel1, specAtomLabel2)
 
@@ -342,26 +342,26 @@ def doLabels(labelInfo, bmrbLabelName, molLabel, molecule=None, molRes=None):
 
           #elif sugar  # TODO: ???
 
-        #print "DATA: [%s] [%s] [%s] [%s] [%s] [%s] [%s] [%s] [%s]" % (uniform, percent, mass, atomType, specificResidue, molRes, molRes.ccpCode, ccpCode, specificAtom)
+        #print("DATA: [%s] [%s] [%s] [%s] [%s] [%s] [%s] [%s] [%s]" % (uniform, percent, mass, atomType, specificResidue, molRes, molRes.ccpCode, ccpCode, specificAtom))
 
         if specificResidue is not None and specificResidue != ccpCode:
           continue
 
         if uniform == 'U-':
-          #print 'Making uniform labels'
+          #print('Making uniform labels')
           uniformLabels = makeUniformLabels(resLabel, atomType, mass, percent)
 
           if uniformLabels is None:
             continue
 
         elif specificAtom:
-          #print 'Making specific labels'
+          #print('Making specific labels')
           specAtomLabels = makeSpecAtomLabels(resLabel, atomType, mass, percent, specificAtom)
 
         else:
           continue
 
-    #print 'RES2: [%s] [%s] [%s]' % (resLabel, uniformLabels[0], uniformLabels[1])
+    #print('RES2: [%s] [%s] [%s]' % (resLabel, uniformLabels[0], uniformLabels[1]))
 
 def makeLabelObjects(mr, refComp, bmrbLabelName):
 

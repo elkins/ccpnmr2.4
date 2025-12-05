@@ -196,10 +196,10 @@ if __name__ == "__main__":
 
     for aquaAtomName in atomNameList:
       
-      print "  " + aquaAtomName
+      print("  " + aquaAtomName)
       
       formatList = chemCompCodes[chemCompCode][aquaAtomName].keys()
       formatList.sort()
       
       for format in formatList:
-        print "  " + str(chemCompCodes[chemCompCode][aquaAtomName][format]) + " (%s)" % format
+        print("  " + str(chemCompCodes[chemCompCode][aquaAtomName][format]) + " (%s)" % format)

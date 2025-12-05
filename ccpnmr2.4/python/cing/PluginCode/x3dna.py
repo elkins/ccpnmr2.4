@@ -299,7 +299,7 @@ class X3dna(NTdict):
 
     def identifyParameterBlock(self, block):
         # Identify the block by the first line
-        #    print '#',block.split('\n')[1]
+        #    print('#',block.split('\n')[1])
         found = False
         infoText = None # Helping pylint.
         parameterBlockId = None

@@ -749,7 +749,7 @@ problem resides in the multiple assignments that alters format
                 header[fieldNames[line.NR-2]] = line[1:]
             elif (line.NR == len(fieldNames)+2): # field names line
                 header[ 'fields' ] = line[1:]
-                print 'header>', header
+                print('header>', header)
 
             # 'regular' lines with data
             elif (not line.isComment('#') and line.NF > 0):

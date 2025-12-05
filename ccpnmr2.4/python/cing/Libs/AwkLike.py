@@ -45,8 +45,8 @@ class _AwkLike(list):
            Return 0 on skip
            Return 1 on parse
         """
-        #print '>>', line
-        #print '>>', len(self), self
+        #print('>>', line)
+        #print('>>', len(self), self)
 
         #check if we need to remove the previous elements
         if len(self) > 0:
@@ -88,7 +88,7 @@ class _AwkLike(list):
         elif self.minLength < 0 and l >= 0:
             return 1
         #end if
-        #print 'returning -1'
+        #print('returning -1')
         return -1
     #end def
 

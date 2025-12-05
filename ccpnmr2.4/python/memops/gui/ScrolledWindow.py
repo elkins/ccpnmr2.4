@@ -99,11 +99,11 @@ class WindowScrollbar(Scrollbar):
 
     if (self.orient == Tkinter.HORIZONTAL):
       (lo, hi) = self.parent.xviewRegionToFraction(view_region)
-      #print 'setRegion x', lo, hi
+      #print('setRegion x', lo, hi)
     else:
       (lo, hi) = self.parent.yviewRegionToFraction(view_region)
       (lo, hi) = (1.0-hi, 1.0-lo)
-      #print 'setRegion y', lo, hi
+      #print('setRegion y', lo, hi)
 
     self.set(lo, hi)
 
@@ -116,7 +116,7 @@ class WindowScrollbar(Scrollbar):
     # perhaps need to have add some tolerance
     if ((lo == self.old_lo) and (hi == self.old_hi)):
       return
-    #print 'view1', lo, hi, self.old_lo, self.old_hi
+    #print('view1', lo, hi, self.old_lo, self.old_hi)
     self.old_lo = lo
     self.old_hi = hi
 
@@ -230,7 +230,7 @@ class TickCanvas(Canvas, Ticks):
       else:
         anchor = Tkinter.CENTER
 
-    #print 'drawText', x, y, a, b, text, anchor
+    #print('drawText', x, y, a, b, text, anchor)
     self.create_text(x, y, text=text, anchor=anchor, font=self.font, fill=self.fill)
 
   def clearCrosshairs(self):
@@ -287,13 +287,13 @@ class SliceCanvas(Frame):
   # and so a right-mouse click then causes an X11 crash
   def destroy(self):
 
-    #print 'SliceCanvas destroy1', self.bind()
+    #print('SliceCanvas destroy1', self.bind())
     for name in self.parent.slice_event_handlers.keys():
-      #print 'SliceCanvas destroy2', name
+      #print('SliceCanvas destroy2', name)
       self.bind(name)
 
     Frame.destroy(self)
-    #print 'SliceCanvas destroy3'
+    #print('SliceCanvas destroy3')
 
   def setRegion(self, view_region):
 
@@ -431,14 +431,14 @@ class CornerCanvas(Canvas):
       dx = event.x - self.x
       self.calcXMultiplier(self.resizeCanvas)
       s = self.xMultiplier * dx / float(w)
-      #print 'doResize1', s, self.resizeType
+      #print('doResize1', s, self.resizeType)
       self.parent.xResize(self.resizeCanvas, s, self.resizeType)
     else:
       h = self.winfo_height()
       dy = event.y - self.y
       self.calcYMultiplier(self.resizeCanvas)
       t = - self.yMultiplier * dy / float(h)
-      #print 'doResize2', t, self.resizeType
+      #print('doResize2', t, self.resizeType)
       self.parent.yResize(self.resizeCanvas, t, self.resizeType)
 
     self.x = event.x
@@ -563,13 +563,13 @@ class WindowCanvas(Frame):
   # and so a right-mouse click then causes an X11 crash
   def destroy(self):
 
-    #print 'WindowCanvas destroy1', self.bind()
+    #print('WindowCanvas destroy1', self.bind())
     for name in self.parent.event_handlers.keys():
-      #print 'WindowCanvas destroy2', name
+      #print('WindowCanvas destroy2', name)
       self.bind(name)
 
     Frame.destroy(self)
-    #print 'WindowCanvas destroy3'
+    #print('WindowCanvas destroy3')
 
   def setXviewRegion(self, xview_region):
 
@@ -583,7 +583,7 @@ class WindowCanvas(Frame):
 
   def updateView(self):
 
-    #print 'WindowCanvas updateView', self.parent.getCanvasRowCol(self), self.xview_region, self.yview_region
+    #print('WindowCanvas updateView', self.parent.getCanvasRowCol(self), self.xview_region, self.yview_region)
     if (self.parent.view_set_func):
       self.parent.view_set_func(self, self.xview_region, self.yview_region)
 
@@ -976,7 +976,7 @@ class ScrolledWindow(Frame):
 
     #state = event.state
     key = (button, state)
-    #print 'pressFunc', key
+    #print('pressFunc', key)
     if (not self.pressFuncs.has_key(key)):
       state = no_key_state
       key = (button, state)
@@ -989,7 +989,7 @@ class ScrolledWindow(Frame):
   def motionFunc(self, event, button, state):
 
     key = (button, self.state)
-    #print 'motionFunc', key
+    #print('motionFunc', key)
     func = self.motionFuncs[key]
     if (func):
       event.state = self.state
@@ -998,7 +998,7 @@ class ScrolledWindow(Frame):
   def releaseFunc(self, event, button, state):
 
     key = (button, self.state)
-    #print 'releaseFunc', key
+    #print('releaseFunc', key)
     func = self.releaseFuncs[key]
     if (func):
       event.state = self.state
@@ -1149,7 +1149,7 @@ class ScrolledWindow(Frame):
 
   def zeroWeights(self, row = None, col = None):
 
-    #print 'zeroWeights', row, col
+    #print('zeroWeights', row, col)
 
     for j in range(self.nrows):
       if (row == j):
@@ -1165,7 +1165,7 @@ class ScrolledWindow(Frame):
 
   def oneWeights(self):
 
-    #print 'oneWeights'
+    #print('oneWeights')
 
     for j in range(self.nrows):
       self.grid_rowconfigure(2*j, weight=1)
@@ -1302,7 +1302,7 @@ class ScrolledWindow(Frame):
     lo = (v0 - w0) / d
     hi = (v1 - w0) / d
 
-    #print 'viewRegionToFraction', v0, v1, w0, w1, lo, hi
+    #print('viewRegionToFraction', v0, v1, w0, w1, lo, hi)
 
     return (lo, hi)
 
@@ -1344,15 +1344,15 @@ class ScrolledWindow(Frame):
     xview_region = self.fractionToXviewRegion(lo, hi)
     col = self.xscrollbars.index(scrollbar)
 
-    #print 'xScroll1', lo, hi, col, xview_region
+    #print('xScroll1', lo, hi, col, xview_region)
     for j in range(self.nrows):
-      #print 'xScroll2', j, col
+      #print('xScroll2', j, col)
       self.canvases[j][col].setXviewRegion(xview_region)
 
     for name in self.xpanel_names:
       (panel, shown) = self.xpanel_dict[name]
       if (isArray(panel)):
-        #print 'xScroll3', name, len(panel)
+        #print('xScroll3', name, len(panel))
         panel[col].setRegion(xview_region)
 
     self.corner_canvas.redraw()
@@ -1360,7 +1360,7 @@ class ScrolledWindow(Frame):
   def yScroll(self, scrollbar, lo, hi):
 
     yview_region = self.fractionToYviewRegion(lo, hi)
-    #print 'yScroll', lo, hi, yview_region
+    #print('yScroll', lo, hi, yview_region)
     row = self.yscrollbars.index(scrollbar)
 
     for i in range(self.ncols):
@@ -1375,7 +1375,7 @@ class ScrolledWindow(Frame):
 
   def enter(self, event):
 
-    #print 'enter', id(event.widget)
+    #print('enter', id(event.widget))
     event.widget.focus()
     #event.widget.haveFocus = True
 
@@ -1384,7 +1384,7 @@ class ScrolledWindow(Frame):
 
   def leave(self, event):
 
-    #print 'leave', id(event.widget)
+    #print('leave', id(event.widget))
     #event.widget.haveFocus = False
 
     if (self.leave_func):
@@ -1392,7 +1392,7 @@ class ScrolledWindow(Frame):
 
   def slice_enter(self, event):
 
-    #print 'sliceEnter', id(event.widget)
+    #print('sliceEnter', id(event.widget))
     event.widget.focus()
 
     if (self.slice_enter_func):
@@ -1442,7 +1442,7 @@ class ScrolledWindow(Frame):
 
   def markLocation(self, event):
 
-    #print 'markLocation', event.state, event.x, event.y
+    #print('markLocation', event.state, event.x, event.y)
     self.x = event.x
     self.y = event.y
 
@@ -1457,7 +1457,7 @@ class ScrolledWindow(Frame):
       self.markLocation(event)
 
     canvas = event.widget
-    #print 'translateEvent1', self.getCanvasRowCol(canvas)
+    #print('translateEvent1', self.getCanvasRowCol(canvas))
 
     w = canvas.winfo_width()
     h = canvas.winfo_height()
@@ -1465,7 +1465,7 @@ class ScrolledWindow(Frame):
     dy = event.y - self.y
     s = -dx / float(w)
     t = dy / float(h)
-    #print 'translateEvent2', s, t
+    #print('translateEvent2', s, t)
     
     # TBD: Trial only 
     self.update_idletasks()
@@ -1508,11 +1508,11 @@ class ScrolledWindow(Frame):
 
     ''' old code
     # cannot just do below: all canvases need to be scaled because of aspect ratio
-    #print 'ScrolledWindow zoom1', canvas.xview_region
+    #print('ScrolledWindow zoom1', canvas.xview_region)
     canvas.xview_region.zoom(scale, self.world_region.x_region, xmax_extent)
-    #print 'ScrolledWindow zoom2', canvas.yview_region
+    #print('ScrolledWindow zoom2', canvas.yview_region)
     canvas.yview_region.zoom(scale, self.world_region.y_region, ymax_extent)
-    #print 'ScrolledWindow zoom3', canvas.xview_region, canvas.yview_region
+    #print('ScrolledWindow zoom3', canvas.xview_region, canvas.yview_region)
 
     self.updateView(canvas)
     '''
@@ -1645,20 +1645,20 @@ class ScrolledWindow(Frame):
     try:
       row = self.yslices.index(slice)
     except:
-      raise ValueError, 'slice not in row list' # should never be here
+      raise ValueError('slice not in row list' # should never be here
 
     return row
 
-  def getSliceCol(self, slice):
+  def getSliceCol(self).with_traceback(slice)):
 
     try:
       col = self.xslices.index(slice)
     except:
-      raise ValueError, 'slice not in col list' # should never be here
+      raise ValueError('slice not in col list' # should never be here
 
     return col
 
-  def getCanvasRowCol(self, canvas):
+  def getCanvasRowCol(self).with_traceback(canvas)):
 
     for row in range(self.nrows):
       try:
@@ -1667,36 +1667,36 @@ class ScrolledWindow(Frame):
       except:
         pass
     else:
-      raise ValueError, 'canvas not in list' # should never be here
+      raise ValueError('canvas not in list' # should never be here
 
-    #print 'row, col', row, col
+    #print('row).with_traceback(col)', row, col)
     return (row, col)
 
   def updateView(self, canvas):
 
     (row, col) = self.getCanvasRowCol(canvas)
 
-    #print 'updateView1', row, col
+    #print('updateView1', row, col)
     for name in self.xpanel_names:
       (panel, shown) = self.xpanel_dict[name]
       if (isArray(panel)):
-        #print 'updateView2', name, id(panel[col])
+        #print('updateView2', name, id(panel[col]))
         panel[col].setRegion(canvas.xview_region)
 
     for name in self.ypanel_names:
       (panel, shown) = self.ypanel_dict[name]
       if (isArray(panel)):
-        #print 'updateView3', name, id(panel[row])
+        #print('updateView3', name, id(panel[row]))
         panel[row].setRegion(canvas.yview_region)
 
     self.canvases[row][col].updateView()
     #for j in range(self.nrows):
-    #  #print 'updateView4', j, id(self.canvases[j][col])
+    #  #print('updateView4', j, id(self.canvases[j][col]))
     #  self.canvases[j][col].updateView()
 
     #for i in range(self.ncols):
     #  if (i != col):
-    #    #print 'updateView5', i, id(self.canvases[row][i])
+    #    #print('updateView5', i, id(self.canvases[row][i]))
     #    self.canvases[row][i].updateView()
 
     self.corner_canvas.redraw()
@@ -1735,7 +1735,7 @@ class ScrolledWindow(Frame):
       else:
         assert y0 >= b0 and b0 > b1 and b1 >= y1, 'y0 = %f, b0 = %f, b1 = %f, y1 = %f' % (y0, b0, b1, y1)
 
-    #print 'setWorldRegion', x0, y0, x1, y1, a0, a1, b0, b1
+    #print('setWorldRegion', x0, y0, x1, y1, a0, a1, b0, b1)
 
     for name in self.xpanel_names:
       (panel, shown) = self.xpanel_dict[name]
@@ -1803,20 +1803,20 @@ class ScrolledWindow(Frame):
     #  for i in range(self.ncols):
     #    self.canvases[j][i].grid_propagate(False)
 
-    #print 'setXviewWidth1', width, col
+    #print('setXviewWidth1', width, col)
     # below does not work for scrollbars since width means thickness
     for name in self.xpanel_names:
       (panel, shown) = self.xpanel_dict[name]
       if (isArray(panel)):
-        #print 'setXviewWidth2', name, panel[col].winfo_width(), panel[col].winfo_height()
+        #print('setXviewWidth2', name, panel[col].winfo_width(), panel[col].winfo_height())
         #panel[col].config(width=width)
-        #print 'setXviewWidth3', name, panel[col].winfo_width(), panel[col].winfo_height()
+        #print('setXviewWidth3', name, panel[col].winfo_width(), panel[col].winfo_height())
         pass # TBD: for now
 
     for j in range(self.nrows):
-      #print 'setXviewWidth4', j, col, self.canvases[j][col].winfo_width(), width
+      #print('setXviewWidth4', j, col, self.canvases[j][col].winfo_width(), width)
       self.canvases[j][col].config(width=width)
-      #print 'setXviewWidth5', j, col, self.canvases[j][col].winfo_width()
+      #print('setXviewWidth5', j, col, self.canvases[j][col].winfo_width())
 
     #for j in range(self.nrows):
     #  for i in range(self.ncols):
@@ -1854,19 +1854,19 @@ class ScrolledWindow(Frame):
     x = event.x
     col = self.xseparators.index(separator)
 
-    #print 'moveXSeparator1', col, x
+    #print('moveXSeparator1', col, x)
     dx = x - separator.x
     separator.x = x
 
     w0 = self.canvases[0][col].winfo_width()
     w1 = self.canvases[0][col+1].winfo_width()
-    #print 'moveXSeparator2', w0, w1
+    #print('moveXSeparator2', w0, w1)
     self.setXviewWidth(w0+dx, col)
     self.setXviewWidth(w1-dx, col+1)
 
     #w0 = self.canvases[0][col].winfo_width()
     #w1 = self.canvases[0][col+1].winfo_width()
-    #print 'moveXSeparator3', w0, w1
+    #print('moveXSeparator3', w0, w1)
 
   def moveYSeparator(self, event, separator):
 
@@ -2270,22 +2270,22 @@ if (__name__ == '__main__'):
     change(-5)
 
   def configure(event):
-    print 'configure:', event.width, event.height, s.getCanvasRowCol(event.widget)
+    print('configure:', event.width, event.height, s.getCanvasRowCol(event.widget))
 
   def expose(event):
-    #print 'expose:', event.x, event.y, event.width, event.height
+    #print('expose:', event.x, event.y, event.width, event.height)
     pass
 
   #def keypress(canvas, event):
   def keypress(event):
-    print 'keypress'
+    print('keypress')
 
   def view_set(canvas, xview, yview):
-    #print 'view_set:', xview.t0, xview.t1, yview.t0, yview.t1
+    #print('view_set:', xview.t0, xview.t1, yview.t0, yview.t1)
     pass
 
   def test(n, event):
-    print 'test:', n, event.x, event.y
+    print('test:', n, event.x, event.y)
 
   root = Tkinter.Tk()
 

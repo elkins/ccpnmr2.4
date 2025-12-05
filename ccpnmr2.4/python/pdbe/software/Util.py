@@ -111,7 +111,7 @@ def getResMapping(resonances, ignoreSerials = None, ignoreChains = None, ignoreR
         #
 
         if curResidue != residue:
-          print "  ERROR two residues to same resonance!"
+          print("  ERROR two residues to same resonance!")
           atomNameList = []
           break
           
@@ -160,7 +160,7 @@ def getResMapping(resonances, ignoreSerials = None, ignoreChains = None, ignoreR
 
           if chainCode == seqCode == atomName == None:
             excludedResonances.append(resonance)
-            print "  Removed invalid resonance."
+            print("  Removed invalid resonance.")
 
           elif atomName:
 
@@ -175,7 +175,7 @@ def getResMapping(resonances, ignoreSerials = None, ignoreChains = None, ignoreR
                 
             if not elementPresent:
               excludedResonances.append(resonance)
-              print "  Removed resonance %s - not connected and bad element." % resName
+              print("  Removed resonance %s - not connected and bad element." % resName)
 
   return (resMapping,assignedResidues,excludedResonances)
 
@@ -394,12 +394,12 @@ class ContactOccurrenceHandler:
       contactInfoModule = __import__(fullModule,{},{},moduleString)
       contactInfo = getattr(contactInfoModule,'contactShortDict')
       referenceInfo = getattr(contactInfoModule,'referenceInfo')
-      print 'Imported %s' % fullModule
+      print('Imported %s' % fullModule)
       
     except:
       contactInfo = None
       referenceInfo = None
-      print 'Could not import dictionary %s - no information available' % moduleString
+      print('Could not import dictionary %s - no information available' % moduleString)
       
     return (contactInfo,referenceInfo)
 
@@ -488,7 +488,7 @@ class ContactOccurrenceHandler:
     if 0.0 <= confidence <= 1.0:
       self.invConfidence = 1.0 - confidence
     else:
-      print "  Confidence has to be between 0 and 1 - resetting to default %.2f" % self.defaultConfidence
+      print("  Confidence has to be between 0 and 1 - resetting to default %.2f" % self.defaultConfidence)
       self.invConfidence = 1.0 - self.defaultConfidence
           
   def createAtomSetInfo(self,project):
@@ -798,7 +798,7 @@ class ContactOccurrenceHandler:
       chain = molSystem.findFirstChain(code = chainCode)
       
       if not chain:
-        print "  Chain %s missing in secondary structure info conversion, ignored." % chainCode
+        print("  Chain %s missing in secondary structure info conversion, ignored." % chainCode)
         continue
 
       for residueKey in ssInfo[chainCode].keys():
@@ -808,7 +808,7 @@ class ContactOccurrenceHandler:
         residue = chain.findFirstResidue(seqCode = seqCode, seqInsertCode = insertionCode)
 
         if not residue:
-          print "No mapping", chainCode, seqCode
+          print("No mapping", chainCode, seqCode)
 
         residueSecStrucDict[(chain.code,residue.seqId)] = ssInfo[chainCode][residueKey]
       
@@ -887,13 +887,13 @@ class ContactOccurrenceHandler:
     (distanceClassIndex,ssCodeIndex) = self.getDistanceClassAndSsCodeIndex(distance,ssCodeTuple,chainCodesTuple)
     
     if debugMode:
-      print "RK:",residueNames
-      print "CD:",contactDist
-      print "AL0:",atomNamesList[0]
-      print "AL1:",atomNamesList[1]
-      print "ST:", sortType
-      print "SS:", ssCodes, ssCodeIndex
-      print "DIST:", distance, distanceClassIndex
+      print("RK:",residueNames)
+      print("CD:",contactDist)
+      print("AL0:",atomNamesList[0])
+      print("AL1:",atomNamesList[1])
+      print("ST:", sortType)
+      print("SS:", ssCodes, ssCodeIndex)
+      print("DIST:", distance, distanceClassIndex)
       print
 
     #
@@ -907,10 +907,10 @@ class ContactOccurrenceHandler:
 
     if contactShortDict.has_key(residueNames):
       #if debugMode:
-      #  print "  Found residueNames"
+      #  print("  Found residueNames")
       if contactShortDict[residueNames].has_key(contactDist):
         #if debugMode:
-        #   print "  Found contactDist"
+        #   print("  Found contactDist")
         
         atomNameKey1 = self.findAtomNameKey(contactShortDict[residueNames][contactDist],molTypes[0],residueNames[0],atomNamesList[0])
 
@@ -920,14 +920,14 @@ class ContactOccurrenceHandler:
 
         if atomNameKey1:
           if debugMode:
-            print "SKEY1",atomNameKey1, atomNamesList[0]
+            print("SKEY1",atomNameKey1, atomNamesList[0])
 
           self.residueCcpCode = residueNames[1]
           atomNameKey2 = self.findAtomNameKey(contactShortDict[residueNames][contactDist][atomNameKey1],molTypes[1],residueNames[1],atomNamesList[1])
 
           if atomNameKey2:
             if debugMode:
-              print "SKEY2",atomNameKey2, atomNamesList[1]
+              print("SKEY2",atomNameKey2, atomNamesList[1])
               print contactShortDict[residueNames][contactDist][atomNameKey1][atomNameKey2]
               print self.secStrucKeysInfoDict[chainCodesTuple]['number']
             

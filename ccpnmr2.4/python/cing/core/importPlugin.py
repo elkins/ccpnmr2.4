@@ -8,7 +8,7 @@ import glob
 # NB This routine gets executed before main.py gets a chance to set the verbosity.
 #     If you need to debug this; (getting debug messages) then set verbosity = verbosityDebug in the __init__.py
 
-#print "Now at importPlugin.py"
+#print("Now at importPlugin.py")
 #nTdebug("This is nTdebug in importPlugin.py")
 
 #-----------------------------------------------------------------------------
@@ -28,10 +28,10 @@ def importPlugin( pluginName ):
             plugin = plugins[pluginName]
 #            nTdebug("reloading same module just to see it change")
             reload( plugin.module )
-        except ImportWarning, extraInfo: # Disable after done debugging; can't use nTdebug yet.
+        except ImportWarning as extraInfo: # Disable after done debugging; can't use nTdebug yet.
             nTmessage("Skipping reload of an optional compound (please recode to use SkipTest): %s" % extraInfo)
             # Internally we need to know if we're called by nosetests or by regular call.           
-        # except SkipTest, extraInfo:
+        # except SkipTest as extraInfo:
         #     nTmessage("Skipping reload report of an optional compound: %s" % extraInfo)
         except Exception:
             nTtracebackError()
@@ -104,7 +104,7 @@ pluginFileList.remove( os.path.join( pluginDir, '__init__.py') )
 #    nTdebug('importPlugin: Running CING without CCPN support')
 #    pluginFileList.remove( os.path.join( pluginDir, 'Ccpn.py') )
 
-#print "Now at importPlugin.py real job"
+#print("Now at importPlugin.py real job")
 for _p in pluginFileList:
     _d,_pname,_e = nTpath(_p)
 #    if _pname.find('Whatif')>=0:

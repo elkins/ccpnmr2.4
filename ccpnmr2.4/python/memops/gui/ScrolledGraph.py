@@ -1410,7 +1410,7 @@ if __name__ == '__main__':
   root.grid_rowconfigure(0, weight=1)
   
   def click(*args):
-    print 'Clicked', args
+    print('Clicked', args)
   
   dataSets = []
   

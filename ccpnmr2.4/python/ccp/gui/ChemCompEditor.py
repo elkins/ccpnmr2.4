@@ -178,7 +178,7 @@ def setCcpnObjectValue(guiParent,ccpnObject,metaAttrOrRole,value,widget,updateAf
               else:
                 ccpnObject.checkAllValid()
                 
-          except Implementation.ApiError, e:
+          except Implementation.ApiError as e:
             ccpnObject.__dict__[attrName] = origValue
             showError('Cannot set non-changeable value', e.error_msg, parent = guiParent)
 
@@ -191,14 +191,14 @@ def setCcpnObjectValue(guiParent,ccpnObject,metaAttrOrRole,value,widget,updateAf
           if checkValid:
             ccpnObject.checkAllValid()
             
-        except Implementation.ApiError, e:
+        except Implementation.ApiError as e:
           setattr(ccpnObject,attrName,origValue)
           showError('Problems setting value', e.error_msg, parent = guiParent)
     
     if value != origValue:
       updateAfterSet()
 
-  except Implementation.ApiError, e:
+  except Implementation.ApiError as e:
     showError('Setting value', e.error_msg, parent = guiParent)
 
 
@@ -299,7 +299,7 @@ class MultiWidget:
   
   def getWidget(self):
     
-    #print "WidgetCreate"
+    #print("WidgetCreate")
     
     # DON'T FORGET: also put info for setter, getter!!
     
@@ -428,7 +428,7 @@ class MultiWidget:
     return self.widget
   
   def set(self,value):
-    #print "WSet"
+    #print("WSet")
     #print value
        
     attrName = self.window.getCurrentAttributeName()
@@ -499,7 +499,7 @@ class MultiWidget:
   
   def get(self):
 
-    #print "WGet"
+    #print("WGet")
 
     if self.widgetType in ['Entry','PulldownMenu']:
       value = self.widget.get()
@@ -654,7 +654,7 @@ class CcpnAttributeEditPopup(BasePopup):
 
   def getValue(self, attrName):
 
-    #print "Get %s" % attrName
+    #print("Get %s" % attrName)
     
     if not hasattr(self.ccpnObject,'dummy') and self.metaRoleOrder[attrName]:
       (attrName,attrIndex) = self.metaRoleOrder[attrName]
@@ -676,7 +676,7 @@ class CcpnAttributeEditPopup(BasePopup):
     
   def setValue(self, *extra):
 
-    #print "Set"
+    #print("Set")
     
     value = self.objectValueEdit['Value'].get()
     attrName = self.getCurrentAttributeName()
@@ -1068,7 +1068,7 @@ class CreateCcpnObject(CcpnAttributeEditPopup):
         ccpnObject.delete()
         raise
     
-    except Implementation.ApiError, e:
+    except Implementation.ApiError as e:
       showError(message, e.error_msg, parent = self)
     
     
@@ -1109,7 +1109,7 @@ class ChemCompEditPopup(CcpnAttributeEditPopup):
       #refUrl = getUrl(self.ccpnObject.root,'localTest',os.path.join(os.getcwd(),'local'))
       #self.ccpnObject.chemCompHead.contentStorage.url = refUrl
       print
-      print " WARNING NOT WORKING!"
+      print(" WARNING NOT WORKING!")
       print
     
     self.popups = {}
@@ -1231,7 +1231,7 @@ class ChemCompEditPopup(CcpnAttributeEditPopup):
       self.ccpnObject.checkAllValid(complete = True)
       isValid = True
       showInfo('All valid','All valid',parent = self)
-    except Implementation.ApiError, e:
+    except Implementation.ApiError as e:
       showError('Error in validity check', e.error_msg, parent = self)
     
     return isValid

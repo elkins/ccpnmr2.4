@@ -837,7 +837,7 @@ class ObjectEditPopup(TemporaryBasePopup):
     pass
 
   def startToggle(self,toggleName):
-    #print "Setting up toggle"
+    #print("Setting up toggle")
     if not self.toggleWidgetInfo.has_key(toggleName):
       self.row += 1      
 
@@ -854,17 +854,17 @@ class ObjectEditPopup(TemporaryBasePopup):
     
     if not self.toggleWidgetInfo[toggleName].has_key('endRow'):
       self.toggleWidgetInfo[toggleName]['endRow'] = self.row
-      #print "CB from endToggle"
+      #print("CB from endToggle")
       self.toggleWidgetInfo[toggleName]['widget'].callback(1)
 
   def toggleInfo(self,hidden,toggleName):
-    #print "*** INITIALISING %s, %s***" % (toggleName, str(hidden))
+    #print("*** INITIALISING %s, %s***" % (toggleName, str(hidden)))
     if hidden:
       gridWidgets = self.selfMaster.grid_slaves()
       toggleStartRow = self.toggleWidgetInfo[toggleName]['startRow']
       toggleEndRow = self.toggleWidgetInfo[toggleName]['endRow']
       
-      #print "HIDDEN: %d, %d, %d" % (len(gridWidgets),toggleStartRow,toggleEndRow)
+      #print("HIDDEN: %d, %d, %d" % (len(gridWidgets),toggleStartRow,toggleEndRow))
       
       for widget in gridWidgets:
         widgetInfo = widget.grid_info()
@@ -874,14 +874,14 @@ class ObjectEditPopup(TemporaryBasePopup):
           if not self.toggleWidgetInfo[toggleName]['toggleWidgets'].has_key(widget):
             self.toggleWidgetInfo[toggleName]['toggleWidgets'][widget] = [widgetRow,int(widgetInfo['column']),int(widgetInfo['rowspan']),int(widgetInfo['columnspan']),widgetInfo['sticky']]
             self.toggledWidgets.append(widget)
-          #print "  Hiding: %s" % self.toggleWidgetInfo[toggleName]['toggleWidgets'][widget]
+          #print("  Hiding: %s" % self.toggleWidgetInfo[toggleName]['toggleWidgets'][widget])
           widget.grid_forget()
 
     else:
       
       for widget in self.toggleWidgetInfo[toggleName]['toggleWidgets']:        
         (row,column,rowspan,columnspan,sticky) = self.toggleWidgetInfo[toggleName]['toggleWidgets'][widget]
-        #print "  Showing: %s" % self.toggleWidgetInfo[toggleName]['toggleWidgets'][widget]
+        #print("  Showing: %s" % self.toggleWidgetInfo[toggleName]['toggleWidgets'][widget])
         widget.grid(row = row, column = column, rowspan = rowspan, columnspan = columnspan, sticky = sticky)
 
 class ObjectCreatePopup(TemporaryBasePopup):
@@ -901,7 +901,7 @@ class ObjectCreatePopup(TemporaryBasePopup):
     self.setStoreInfo()
     
     setCurrentStore(self.project,self.storeClassName, linkName = self.storeLinkName)
-    #print "INIT", objectName, ccpnParent
+    #print("INIT", objectName, ccpnParent)
     TemporaryBasePopup.__init__(self, parent=parent, title="Project '%s': " % project.name + 'Create %s' % objectName, modal=True, transient=True)
 
   def body(self, master):

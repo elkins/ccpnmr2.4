@@ -13,8 +13,8 @@ queryText = """
 """
 
 
-print "query:\n", queryText
-print "querying PDB...\n"
+print("query:\n", queryText)
+print("querying PDB...\n")
 
 req = urllib2.Request(url, data=queryText)
 f = urllib2.urlopen(req)
@@ -22,6 +22,6 @@ result = f.read()
 
 
 if result:
-    print "Found number of PDB entries:", result.count('\n')
+    print("Found number of PDB entries:", result.count('\n'))
 else:
-    print "Failed to retrieve results"
+    print("Failed to retrieve results")

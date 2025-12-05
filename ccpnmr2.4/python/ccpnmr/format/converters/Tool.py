@@ -114,10 +114,10 @@ class Tool:
 
     try:
       self.ccpnProject = loadProject(dirPath)
-      print "Read existing CCPN project..."
+      print("Read existing CCPN project...")
       
     except:
-      print "Creating new CCPN project..."
+      print("Creating new CCPN project...")
       
       projectName = returnMemopsWord(projectName)
       self.ccpnProject = Implementation.MemopsRoot(name = projectName)

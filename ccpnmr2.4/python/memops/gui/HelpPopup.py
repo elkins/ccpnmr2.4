@@ -263,7 +263,7 @@ class HelpFrame(Frame):
     self.current = self.current + 1
     self.urls[self.current:] = [[url, 0.0]]
     self.setButtonState()
-    #print 'newUrl', self.current, self.urls
+    #print('newUrl', self.current, self.urls)
 
   def prevUrl(self):
 
@@ -274,7 +274,7 @@ class HelpFrame(Frame):
       self.updateUrlList = True
       self.current = self.current - 1
       self.setButtonState()
-    #print 'prevUrl', self.current, self.urls
+    #print('prevUrl', self.current, self.urls)
       
   def nextUrl(self):
 
@@ -285,7 +285,7 @@ class HelpFrame(Frame):
       self.updateUrlList = True
       self.current = self.current + 1
       self.setButtonState()
-    #print 'nextUrl', self.current, self.urls
+    #print('nextUrl', self.current, self.urls)
 
   def showText(self, message, popup = None):
 
@@ -305,7 +305,7 @@ class HelpFrame(Frame):
 
   def endOpenUrl(self, url):
 
-    #print 'endOpenUrl', url, self.updateUrlList
+    #print('endOpenUrl', url, self.updateUrlList)
     self.url_entry.set(url)
     if (self.updateUrlList):
       self.newUrl(url)

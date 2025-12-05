@@ -1119,8 +1119,8 @@ e.pdb_id = s1.pdb_id;
                     x = np.array(x)
     #                y = np.random.random(nr) * 10
                     y = np.array(y)
-                    print "x: %s" % x
-                    print "y: %s" % y
+                    print("x: %s" % x)
+                    print("y: %s" % y)
                     binned_valueList, numBins = bin_by(y, x, nbins=nbins, ymin=dateMin, ymax=dateMax)
                     bins = []
                     widths = []
@@ -1139,7 +1139,7 @@ e.pdb_id = s1.pdb_id;
                     sym = 'k.'
                     wiskLoL = boxplot(dataAll, positions=bins, widths=widths, sym=sym)
     #                scatter(x, y, s=0.1) # Plot of the data and the fit
-                    print 'wiskLoL: %s' % wiskLoL
+                    print('wiskLoL: %s' % wiskLoL)
                 # end if scatterOnly            
                 # When trending the limits are for the y-axis.
                 if xmin != None:

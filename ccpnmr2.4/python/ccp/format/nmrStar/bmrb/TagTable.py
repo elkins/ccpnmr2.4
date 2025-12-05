@@ -402,11 +402,11 @@ class TagTable (Lister):
         if not ( pos_tagtable_loop!=-1 or pos_tagtable_stop!=-1 or pos_tagname!=-1 ):
             if self.verbosity > 1:
                 print('WARNING: EOF in tagtable, must be a CIF file')
-##                print 'Items looked for are a begin or end of a saveframe, or'
-##                print 'a begin (loop_) or end (stop_ or _tagname) of a tagtable'
-##                print '(free or looped).'
-##                print 'Actually the begin/end of saveframe is not checked since'
-##                print 'NMR-STAR and mmCIF both end a tagtable without it.'
+##                print('Items looked for are a begin or end of a saveframe, or')
+##                print('a begin (loop_) or end (stop_ or _tagname) of a tagtable')
+##                print('(free or looped).')
+##                print('Actually the begin/end of saveframe is not checked since')
+##                print('NMR-STAR and mmCIF both end a tagtable without it.')
         
         # Tag values
         if self._tagtable_loop_values_parse(

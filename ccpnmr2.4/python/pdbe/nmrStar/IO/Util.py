@@ -40,7 +40,7 @@ def getNmrStarDict(version):
     importName = "nmrStarDict__%s__" % importVersion
     nmrStarDict = __import__("pdbe.nmrStar.IO.%s" % importName,{},{},importName)
   except:
-    #print "  Warning: no NMR-STAR version %s dictionary available, using default." % version
+    #print("  Warning: no NMR-STAR version %s dictionary available, using default." % version)
     nmrStarDict = __import__("pdbe.nmrStar.IO.nmrStarDict",{},{},"nmrStarDict")
   
   return nmrStarDict
@@ -137,7 +137,7 @@ def getConstants_ByVersion(specificImport,defaultImport):
     conversionDict = getattr(convModule,constantsDictNameFormat % specificImport)
     
   except:
-    print "  Warning: No %s constants dictionary available, using %s default." % (specificImport,defaultImport)
+    print("  Warning: No %s constants dictionary available, using %s default." % (specificImport,defaultImport))
     convModule = __import__("pdbe.nmrStar.IO.Constants_ByVersion",{},{},constantsDictNameFormat % defaultImport)
     conversionDict = getattr(convModule,constantsDictNameFormat % defaultImport)  
   
@@ -155,7 +155,7 @@ def getConversionClass(specificImport,defaultImport):
     ConversionClass = getattr(convModule,specificImport)
     
   except:
-    print "  Warning: No %s conversion class available, using %s default." % (specificImport,defaultImport)
+    print("  Warning: No %s conversion class available, using %s default." % (specificImport,defaultImport))
     convModule = __import__("%s.%s" % (mappingImportLocation,defaultImport),{},{},defaultImport)
     ConversionClass = getattr(convModule,defaultImport)  
   

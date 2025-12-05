@@ -81,7 +81,7 @@ def addToCurChain(curChain,pdbCoordinate):
   curChain[3].append([])
   curChain[4].append(pdbCoordinate.hetFlag)
   
-  #print "ADDED", curChain[0][-1], curChain[1][-1], curChain[4][-1]
+  #print("ADDED", curChain[0][-1], curChain[1][-1], curChain[4][-1])
   return curChain[3][-1]
   
 def insertInCurChain(curChain,pdbCoordinate):
@@ -101,7 +101,7 @@ def insertInCurChain(curChain,pdbCoordinate):
       curChain[3].insert(seqIndex,[])
       curChain[4].insert(seqIndex,pdbCoordinate.hetFlag)
       returnCoordList = curChain[3][seqIndex]
-      #print "INSERTED", seqIndex, curChain[0][seqIndex], curChain[1][seqIndex], curChain[4][seqIndex]
+      #print("INSERTED", seqIndex, curChain[0][seqIndex], curChain[1][seqIndex], curChain[4][seqIndex])
       break
       
     # Ignore if exists!
@@ -187,7 +187,7 @@ class PdbSequenceFile(PdbGenericFile):
               fakeModelCoordinates[modelKey][chainId].append(FakeModelCoordinate(chainId,resName,seqCode,insertionCode))
 
       except:
-        print "  Warning: trying to use remark 465 for missing residue info, but failed."
+        print("  Warning: trying to use remark 465 for missing residue info, but failed.")
             
     # TODO: Missing coordinate info is in remark '470'!!
 
@@ -239,7 +239,7 @@ class PdbSequenceFile(PdbGenericFile):
         oldSeqCode = pdbCoordinate.seqCode
         oldInsertionCode = pdbCoordinate.insertionCode
 
-        #print "NEW", oldSeqCode, pdbCoordinate.seqCode, self.version
+        #print("NEW", oldSeqCode, pdbCoordinate.seqCode, self.version)
 
         # Now also have to make provision for HETATM stuff defined at end of file... this is version 3.0 and higher only
         # Can be sure one chain code defines one molecule, so just use that one if already available...
@@ -263,7 +263,7 @@ class PdbSequenceFile(PdbGenericFile):
         
       elif (oldSeqCode == pdbCoordinate.seqCode + 1 or oldSeqCode == pdbCoordinate.seqCode - 1) or \
            (oldSeqCode == pdbCoordinate.seqCode and oldInsertionCode != pdbCoordinate.insertionCode):
-        #print "SEQUENTIAL", oldSeqCode, pdbCoordinate.seqCode, self.version
+        #print("SEQUENTIAL", oldSeqCode, pdbCoordinate.seqCode, self.version)
         if not self.isIndependentHetGroup(pdbCoordinate):
           # For safety better to insert - will add if necessary.
           curCoordList = insertInCurChain(curChain,pdbCoordinate)
@@ -275,7 +275,7 @@ class PdbSequenceFile(PdbGenericFile):
         oldInsertionCode = pdbCoordinate.insertionCode
             
       else:
-        #print "JUMP",oldSeqCode, pdbCoordinate.seqCode, self.version
+        #print("JUMP",oldSeqCode, pdbCoordinate.seqCode, self.version)
         # Sequence jump, same chain code
         
         oldSeqCode = pdbCoordinate.seqCode
@@ -318,7 +318,7 @@ class PdbSequenceFile(PdbGenericFile):
     
     """ 
     for chainId in chainIds:
-      print "CHAIN '%s'" % chainId
+      print("CHAIN '%s'" % chainId)
       for curChain in chainIdInfo[chainId]:
         print curChain[0]
         print curChain[1]
@@ -339,7 +339,7 @@ class PdbSequenceFile(PdbGenericFile):
       chainId = pdbChain.chainId
       
       if not chainIdInfo.has_key(chainId):
-        print "  Error: unrecognized %s code '%s' for polymer... ignored." % (self.format,chainId)
+        print("  Error: unrecognized %s code '%s' for polymer... ignored." % (self.format,chainId))
         print chainIdInfo.keys()
         continue
 
@@ -391,7 +391,7 @@ class PdbSequenceFile(PdbGenericFile):
               if not matchChainString.count(resNamesString):
                 resNames.reverse()
               else:
-                print "WARNING: reversing residue names. Sequence reversed in PDB file!"
+                print("WARNING: reversing residue names. Sequence reversed in PDB file!")
           
           #
           # Also need to check if there's het residues in the matchchain...
@@ -454,18 +454,18 @@ class PdbSequenceFile(PdbGenericFile):
               matchAddIndexCorrection = 0
               for matchAddIndex in range(1,matchAddLen):
               
-                #print "START",matchAddIndex, matchAddIndexCorrection
+                #print("START",matchAddIndex, matchAddIndexCorrection)
                 #print 
                 if (matchAddIndex + matchAddIndexCorrection >= resNamesLen) or (matchIndex + matchAddIndex >= matchChainLen):
-                  #print "BREAK", matchAddIndex + matchAddIndexCorrection, resNamesLen, matchIndex + matchAddIndex, matchChainLen
+                  #print("BREAK", matchAddIndex + matchAddIndexCorrection, resNamesLen, matchIndex + matchAddIndex, matchChainLen)
                   break
 
                 if matchChain[0][matchIndex + matchAddIndex] == resNames[matchAddIndex + matchAddIndexCorrection]:
                   matchNum +=1
                 # Special case for HET groups - often not in SEQRES
                 elif matchChain[4][matchIndex + matchAddIndex] and matchChainLen > matchIndex + matchAddIndex + 1:
-                  #print "HETS",matchIndex + matchAddIndex, matchChain[4][matchIndex + matchAddIndex]
-                  #print "HETS",matchChain[0][matchIndex + matchAddIndex + 1], resNames[matchAddIndex + matchAddIndexCorrection]
+                  #print("HETS",matchIndex + matchAddIndex, matchChain[4][matchIndex + matchAddIndex])
+                  #print("HETS",matchChain[0][matchIndex + matchAddIndex + 1], resNames[matchAddIndex + matchAddIndexCorrection])
                   if matchChain[0][matchIndex + matchAddIndex + 1] == resNames[matchAddIndex + matchAddIndexCorrection]:
                     matchAddIndexCorrection -= 1
                     matchNum += 1
@@ -549,10 +549,10 @@ class PdbSequenceFile(PdbGenericFile):
 
                       if pdbCoord.atomName in rnaAtoms:
                         pdbSeq[-1][3] = 'RNA'
-                        #print "  Set %d to RNA" % seqCode
+                        #print("  Set %d to RNA" % seqCode)
                       elif pdbCoord.atomName in dnaAtoms and not pdbSeq[-1][3]:
                         pdbSeq[-1][3] = 'DNA'
-                        #print "  Set %d to DNA" % seqCode
+                        #print("  Set %d to DNA" % seqCode)
                         
                   
                   # Do not reuse info once it's set! (new code!)
@@ -578,7 +578,7 @@ class PdbSequenceFile(PdbGenericFile):
       #
       
       if not pdbSeq:
-        print "  Error: no sequence match found in %s coordinates for chain %s!" % (self.format,chainId)
+        print("  Error: no sequence match found in %s coordinates for chain %s!" % (self.format,chainId))
         continue
       
       #print pdbChain
@@ -678,7 +678,7 @@ class PdbSequenceFile(PdbGenericFile):
             break
 
         if addedHetGroup:       
-          print "  Warning: adding HET residue %s in position %d (index %d) of chain %s!" % (code3Letter,seqCode,len(currentSequence.elements),currentSequence.chainCode)
+          print("  Warning: adding HET residue %s in position %d (index %d) of chain %s!" % (code3Letter,seqCode,len(currentSequence.elements),currentSequence.chainCode))
 
         #
         # Add this element
@@ -782,18 +782,18 @@ class PdbSequenceFile(PdbGenericFile):
       
       #print pdbHetChainId
       for (pdbHetGroup,pdbCoords) in pdbHetChains[pdbHetChainId]:
-        #print "DOING",pdbHetGroup.Id,pdbHetGroup.seqNum,pdbHetGroup.iCode
+        #print("DOING",pdbHetGroup.Id,pdbHetGroup.seqNum,pdbHetGroup.iCode)
                 
         pdbLinkedHetGroups = []
         matchFound = 0
         for pdbCoord in pdbCoords:
           for bondType in ('link','covalent'):
             if pdbCoord.bonds.has_key(bondType):
-              #print "  LINK %s" % bondType
+              #print("  LINK %s" % bondType)
               # Do NOT match HOH - gets too complicated to create 'chains'.
               # Will still create bonds...
               if pdbHetGroup.Id in doNotLinkHetGroupIds:
-                #print "skip"
+                #print("skip")
                 continue
               for otherPdbCoord in pdbCoord.bonds[bondType]:
               
@@ -806,23 +806,23 @@ class PdbSequenceFile(PdbGenericFile):
                   # Do NOT match HOH - gets too complicated to create 'chains'.
                   # Will still create bonds...
                   if otherPdbHetGroup.Id in doNotLinkHetGroupIds:
-                    #print "skipother"
+                    #print("skipother")
                     continue
                     
                   if otherPdbCoord in otherPdbCoords:
-                    #print "  MATCH", otherPdbHetGroup.Id,otherPdbHetGroup.seqNum
+                    #print("  MATCH", otherPdbHetGroup.Id,otherPdbHetGroup.seqNum)
 
                     matchFound = 1
                     if not [otherPdbHetGroup,otherPdbCoords] in pdbLinkedHetGroups:
                       pdbLinkedHetGroups.append([otherPdbHetGroup,otherPdbCoords])
-                      #print "     added"
+                      #print("     added")
                     break
                     
               if matchFound:
                 break
         
         if (not matchFound or not pdbHetGroups) and (not pdbHetGroup.Id in doNotLinkHetGroupIds):
-          #print "new added to hetgroups (1)", pdbHetGroup.Id, pdbHetGroup.seqNum
+          #print("new added to hetgroups (1)", pdbHetGroup.Id, pdbHetGroup.seqNum)
           pdbHetGroups.append([[pdbHetGroup,pdbCoords]])
           if [pdbHetGroup,pdbCoords] in pdbLinkedHetGroups:
             pdbLinkedHetGroups.pop(pdbLinkedHetGroups.index([pdbHetGroup,pdbCoords]))
@@ -835,14 +835,14 @@ class PdbSequenceFile(PdbGenericFile):
           for pdbHetGroupSet in pdbHetGroups:
             for pdbLinkedHetGroupInfo in pdbLinkedHetGroups:
               if pdbLinkedHetGroupInfo in pdbHetGroupSet and [pdbHetGroup,pdbCoords] not in pdbHetGroupSet:
-                #print "  ADD", pdbHetGroup.Id
+                #print("  ADD", pdbHetGroup.Id)
                 pdbHetGroupSet.append([pdbHetGroup,pdbCoords])
                 
             if [pdbHetGroup,pdbCoords] in pdbHetGroupSet:
               hetGroupExists = True
           
           if not hetGroupExists:
-            #print "new added to hetgroups (2)", pdbHetGroup.Id, pdbHetGroup.seqNum
+            #print("new added to hetgroups (2)", pdbHetGroup.Id, pdbHetGroup.seqNum)
             pdbHetGroups.append([[pdbHetGroup,pdbCoords]])
             if [pdbHetGroup,pdbCoords] in pdbLinkedHetGroups:
               pdbLinkedHetGroups.pop(pdbLinkedHetGroups.index([pdbHetGroup,pdbCoords]))
@@ -989,7 +989,7 @@ class PdbSequenceFile(PdbGenericFile):
             
           elif not ignoreResNames or not pdbHetGroup.Id in ignoreResNames:
           
-            print "  Error: could not find sequence elements for hetGroup '%s'! Not included in sequence..." % pdbHetGroup.Id
+            print("  Error: could not find sequence elements for hetGroup '%s'! Not included in sequence..." % pdbHetGroup.Id)
 
     #
     # Set the bonds on the sequence element level!
@@ -1003,7 +1003,7 @@ class PdbSequenceFile(PdbGenericFile):
             if coordToSeq.has_key(pdbCoord):
               seqEl = coordToSeq[pdbCoord]
             else:
-              print "  Error: could not find sequence element for coordinate %d ('%s.%d.%s') to set bond..." % (pdbCoord.serial,pdbCoord.chainId,pdbCoord.seqCode,pdbCoord.atomName)
+              print("  Error: could not find sequence element for coordinate %d ('%s.%d.%s') to set bond..." % (pdbCoord.serial,pdbCoord.chainId,pdbCoord.seqCode,pdbCoord.atomName))
               seqEl = None
             seqEls.append(seqEl)
           
@@ -1060,7 +1060,7 @@ class PdbSequenceFile(PdbGenericFile):
           sequence.setSecondaryStructure(seqStrucTypeText,serial,specificInfo,seqEls)
 
         else:
-          print "  Warning: could not find chain code '%s' for setting secondary structure info." % chainCode
+          print("  Warning: could not find chain code '%s' for setting secondary structure info." % chainCode)
 
     #
     # Clean up...
@@ -1070,7 +1070,7 @@ class PdbSequenceFile(PdbGenericFile):
       sequence = self.sequences[i]
       if not sequence.elements:
         self.sequences.pop(i)
-        print "Removed empty sequence '%s', '%s'" % (sequence.molName, sequence.chainCode)
+        print("Removed empty sequence '%s', '%s'" % (sequence.molName, sequence.chainCode))
 
 
   def createNewChain(self,pdbCoordinate,chainIdInfo,oldChainId,location):
@@ -1078,7 +1078,7 @@ class PdbSequenceFile(PdbGenericFile):
     if not chainIdInfo.has_key(oldChainId):
       chainIdInfo[oldChainId] = []
 
-    #print "New chain (%d), hetFlag %d" % (location,pdbCoordinate.hetFlag)
+    #print("New chain (%d), hetFlag %d" % (location,pdbCoordinate.hetFlag))
     
     # Doublecheck that doesn't exist already if single chemComp! Just in case... is sometimes a problem
     moleculeExists = False
@@ -1088,7 +1088,7 @@ class PdbSequenceFile(PdbGenericFile):
           moleculeExists = True
           curChain = tempChain
           curCoordList = tempChain[3][0]
-          #print "EXISTING FOUND"
+          #print("EXISTING FOUND")
           break
     
     if not moleculeExists:
@@ -1122,10 +1122,10 @@ class PdbSequenceFile(PdbGenericFile):
 
         for link in pdbFile.links:
           for (atomName,resName,chainId,seqCode,iCode) in link:
-            #print "  ",chainId, seqCode
+            #print("  ",chainId, seqCode)
             if pdbCoordinate.chainId == chainId and pdbCoordinate.seqCode == seqCode:
               isIndependent = False
-              #print 'FOUND'
+              #print('FOUND')
               break
           
     return isIndependent

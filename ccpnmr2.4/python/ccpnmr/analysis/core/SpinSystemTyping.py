@@ -87,7 +87,7 @@ def getSpinSystemTypes(residues, spinSystems, preserveAssign, isotopes=('1H','13
 
   residues = list(residues)
 
-  print "Typing spin systems"
+  print("Typing spin systems")
   project  = residues[0].root
 
   N = len(residues)
@@ -206,7 +206,7 @@ def getSpinSystemTypes(residues, spinSystems, preserveAssign, isotopes=('1H','13
       
       typeScores[ss][ccpCode] = score
 
-  print "Done typing spin systems"
+  print("Done typing spin systems")
   
   return typeScores, cc0
  

@@ -317,7 +317,7 @@ def setPartnerChains(haddockPartner, chains):
     for chain in chains:
         if molType is None: molType = chain.molecule.molType
         elif molType != chain.molecule.molType:
-            print 'CCPN-HADDOCK setPartnerChains failed: Chains not of same type'
+            print('CCPN-HADDOCK setPartnerChains failed: Chains not of same type')
             return
 
     for chain in chains:

@@ -62,7 +62,7 @@ and contains original contributions embedded in the framework
 ===========================REFERENCE END===============================
 """
 
-import cStringIO
+import io
 #import sets
 import traceback
 import types
@@ -168,7 +168,7 @@ class BlueprintComponent(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in ccp.lims.ExpBlueprint.BlueprintComponent.__init__"
+        print("ERROR in ccp.lims.ExpBlueprint.BlueprintComponent.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -214,10 +214,10 @@ class BlueprintComponent(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -1252,8 +1252,7 @@ class BlueprintComponent(memops.api.Implementation.DataObject):
   
   def getExpBlueprint(self):
     """
-    Get for ccp.lims.ExpBlueprint.BlueprintComponent.expBlueprint
-    """
+    Get for ccp.lims.ExpBlueprint.BlueprintComponent.expBlueprint("""
     dataDict = self.__dict__
     result = dataDict.get('expBlueprint')
     return result
@@ -1263,7 +1262,7 @@ class BlueprintComponent(memops.api.Implementation.DataObject):
   getFieldNames = memops.api.Implementation.ComplexDataType.getFieldNames
   
   def getFullKey(self, useGuid=False):
-    """
+    """)
     GetFullKey for ccp.lims.ExpBlueprint.BlueprintComponent
     """
     dataDict = self.__dict__
@@ -2704,13 +2703,12 @@ class BlueprintComponent(memops.api.Implementation.DataObject):
   """)
   
   parent = property(getParent, None, None,
-  r"""link to parent object - synonym for expBlueprint
-  """)
+  r"""link to parent object - synonym for expBlueprint(""")
 
   root = memops.api.Implementation.MemopsObject.root
   
   sampleComponents = property(getSampleComponents, setSampleComponents, None,
-  r"""
+  r""")
   """)
   
   target = property(getTarget, setTarget, None,
@@ -2791,7 +2789,7 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in ccp.lims.ExpBlueprint.BlueprintDbRef.__init__"
+        print("ERROR in ccp.lims.ExpBlueprint.BlueprintDbRef.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -2837,10 +2835,10 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -3194,8 +3192,7 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
   
   def getExpBlueprint(self):
     """
-    Get for ccp.lims.ExpBlueprint.BlueprintDbRef.expBlueprint
-    """
+    Get for ccp.lims.ExpBlueprint.BlueprintDbRef.expBlueprint("""
     dataDict = self.__dict__
     result = dataDict.get('expBlueprint')
     return result
@@ -3205,7 +3202,7 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
   getFieldNames = memops.api.Implementation.ComplexDataType.getFieldNames
   
   def getFullKey(self, useGuid=False):
-    """
+    """)
     GetFullKey for ccp.lims.ExpBlueprint.BlueprintDbRef
     """
     dataDict = self.__dict__
@@ -3545,8 +3542,7 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
   """)
   
   parent = property(getParent, None, None,
-  r"""link to parent object - synonym for expBlueprint
-  """)
+  r"""link to parent object - synonym for expBlueprint(""")
 
   root = memops.api.Implementation.MemopsObject.root
 
@@ -3554,7 +3550,7 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
 
 ###############################################################################
 class BlueprintStatus(memops.api.Implementation.DataObject):
-  r"""
+  r""")
   """
   #   from data model element ccp.lims.ExpBlueprint.BlueprintStatus revision ?
   _metaclass = metaPackage.getElement('BlueprintStatus')
@@ -3621,7 +3617,7 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in ccp.lims.ExpBlueprint.BlueprintStatus.__init__"
+        print("ERROR in ccp.lims.ExpBlueprint.BlueprintStatus.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -3667,10 +3663,10 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -4068,8 +4064,7 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
   
   def getExpBlueprint(self):
     """
-    Get for ccp.lims.ExpBlueprint.BlueprintStatus.expBlueprint
-    """
+    Get for ccp.lims.ExpBlueprint.BlueprintStatus.expBlueprint("""
     dataDict = self.__dict__
     result = dataDict.get('expBlueprint')
     return result
@@ -4077,7 +4072,7 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
   getExpandedKey = memops.api.Implementation.MemopsObject.getExpandedKey
   
   def getExperiment(self):
-    """
+    """)
     Get for ccp.lims.ExpBlueprint.BlueprintStatus.experiment
     """
     dataDict = self.__dict__
@@ -4553,8 +4548,7 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
   """)
   
   parent = property(getParent, None, None,
-  r"""link to parent object - synonym for expBlueprint
-  """)
+  r"""link to parent object - synonym for expBlueprint(""")
 
   root = memops.api.Implementation.MemopsObject.root
 
@@ -4562,7 +4556,7 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
 
 ###############################################################################
 class ExpBlueprint(memops.api.Implementation.DataObject):
-  r"""The information on the ExpBlueprint that represents well defined 
+  r""")The information on the ExpBlueprint that represents well defined 
 experimental objectives. The ExpBlueprint groups wish targets or domain 
 of wish targets and non-polymer molecules.
   """
@@ -4576,12 +4570,11 @@ of wish targets and non-polymer molecules.
   
   def __init__(self, parent, **attrlinks):
     """
-    Constructor for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    Constructor for ccp.lims.ExpBlueprint.ExpBlueprint("""
     dataDict = self.__dict__
     dataDict['expBlueprintStore'] = parent
     if (not isinstance(parent, ExpBlueprintStore)):
-      raise ApiError("""%s.__init__:
+      raise ApiError(""")%s.__init__:
        value is not of class ccp.lims.ExpBlueprint.ExpBlueprintStore""" % self.qualifiedName
        + ": %s" % (parent,)
       )
@@ -4647,7 +4640,7 @@ of wish targets and non-polymer molecules.
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in ccp.lims.ExpBlueprint.ExpBlueprint.__init__"
+        print("ERROR in ccp.lims.ExpBlueprint.ExpBlueprint.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -4699,10 +4692,10 @@ of wish targets and non-polymer molecules.
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -4917,8 +4910,7 @@ of wish targets and non-polymer molecules.
 
   def checkAllValid(self, complete=False):
     """
-    CheckAllValid for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    CheckAllValid for ccp.lims.ExpBlueprint.ExpBlueprint("""
     dataDict = self.__dict__
     self.checkValid(complete)
     values = dataDict.get('blueprintComponents').values()
@@ -4934,12 +4926,11 @@ of wish targets and non-polymer molecules.
       value.checkAllValid(complete)
 
   def checkValid(self, complete=False):
-    """
-    CheckValid for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    """)
+    CheckValid for ccp.lims.ExpBlueprint.ExpBlueprint("""
     dataDict = self.__dict__
     if (dataDict.get('isDeleted')):
-      raise ApiError("""%s.checkValid:
+      raise ApiError(""")%s.checkValid:
        called on deleted object""" % self.qualifiedName
       )
 
@@ -5997,8 +5988,7 @@ of wish targets and non-polymer molecules.
   
   def get(self, name):
     """
-    GetAttr for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    GetAttr for ccp.lims.ExpBlueprint.ExpBlueprint("""
     dataDict = self.__dict__
     return getattr(self, name)
 
@@ -6009,7 +5999,7 @@ of wish targets and non-polymer molecules.
   getApplicationData = memops.api.Implementation.DataObject.getApplicationData
   
   def getBiochemicalFunction(self):
-    """
+    """)
     Get for ccp.lims.ExpBlueprint.ExpBlueprint.biochemicalFunction
     """
     dataDict = self.__dict__
@@ -6053,13 +6043,12 @@ of wish targets and non-polymer molecules.
   
   def getByKey(startObj, fullKey):
     """
-    GetByKey for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    GetByKey for ccp.lims.ExpBlueprint.ExpBlueprint("""
 
     result = None
     if (startObj.__class__.__name__ == 'MemopsRoot'):
       if (2 != len(fullKey)):
-        raise ApiError("""'ccp.lims.ExpBlueprint.ExpBlueprint'.getByKey:
+        raise ApiError(""")'ccp.lims.ExpBlueprint.ExpBlueprint'.getByKey:
          getByKey called with fullKey of wrong length. Parameters:"""
          + ": %s:%s" % (startObj, fullKey)
         )
@@ -6158,8 +6147,7 @@ of wish targets and non-polymer molecules.
   
   def getFullKey(self, useGuid=False):
     """
-    GetFullKey for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    GetFullKey for ccp.lims.ExpBlueprint.ExpBlueprint("""
     dataDict = self.__dict__
     result = list()
 
@@ -6175,7 +6163,7 @@ of wish targets and non-polymer molecules.
     return result
   
   def getFunctionDescription(self):
-    """
+    """)
     Get for ccp.lims.ExpBlueprint.ExpBlueprint.functionDescription
     """
     dataDict = self.__dict__
@@ -6188,14 +6176,13 @@ of wish targets and non-polymer molecules.
   
   def getLocalKey(self):
     """
-    GetLocalKey for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    GetLocalKey for ccp.lims.ExpBlueprint.ExpBlueprint("""
     dataDict = self.__dict__
     result = dataDict.get('serial')
     return result
   
   def getLocalName(self):
-    """
+    """)
     Get for ccp.lims.ExpBlueprint.ExpBlueprint.localName
     """
     dataDict = self.__dict__
@@ -6376,8 +6363,7 @@ of wish targets and non-polymer molecules.
 
   def set(self, name, value):
     """
-    SetAttr for ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    SetAttr for ccp.lims.ExpBlueprint.ExpBlueprint("""
     dataDict = self.__dict__
     setattr(self, name, value)
 
@@ -6386,7 +6372,7 @@ of wish targets and non-polymer molecules.
   setApplicationData = memops.api.Implementation.DataObject.setApplicationData
   
   def setBiochemicalFunction(self, value):
-    """
+    """)
     Set for ccp.lims.ExpBlueprint.ExpBlueprint.biochemicalFunction
     """
     dataDict = self.__dict__
@@ -7806,7 +7792,7 @@ class ExpBlueprintStore(memops.api.Implementation.TopObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in ccp.lims.ExpBlueprint.ExpBlueprintStore.__init__"
+        print("ERROR in ccp.lims.ExpBlueprint.ExpBlueprintStore.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -7865,10 +7851,10 @@ class ExpBlueprintStore(memops.api.Implementation.TopObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -8613,8 +8599,7 @@ class ExpBlueprintStore(memops.api.Implementation.TopObject):
   
   def newExpBlueprint(self, **attrlinks):
     """
-    Factory function to create ccp.lims.ExpBlueprint.ExpBlueprint
-    """
+    Factory function to create ccp.lims.ExpBlueprint.ExpBlueprint("""
     return ExpBlueprint(self, **attrlinks)
 
   removeApplicationData = memops.api.Implementation.DataObject.removeApplicationData
@@ -8628,7 +8613,7 @@ class ExpBlueprintStore(memops.api.Implementation.TopObject):
   saveTo = memops.api.Implementation.TopObject.saveTo
   
   def set(self, name, value):
-    """
+    """)
     SetAttr for ccp.lims.ExpBlueprint.ExpBlueprintStore
     """
     dataDict = self.__dict__
@@ -8778,11 +8763,10 @@ class ExpBlueprintStore(memops.api.Implementation.TopObject):
   activeRepositories = memops.api.Implementation.TopObject.activeRepositories
   
   expBlueprints = property(getExpBlueprints,  None, None,
-  r"""child link to class ExpBlueprint
-  """)
+  r"""child link to class ExpBlueprint(""")
   
   memopsRoot = property(getMemopsRoot,  None, None,
-  r"""parent link
+  r""")parent link
   """)
 
   packageLocator = memops.api.Implementation.TopObject.packageLocator

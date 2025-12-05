@@ -74,7 +74,7 @@ class ShiftxSequenceFile(ShiftxGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s sequence file %s" % (self.format,self.name)
+      print("Reading %s sequence file %s" % (self.format,self.name))
 
     self.sequences.append(ShiftxSequence())
 

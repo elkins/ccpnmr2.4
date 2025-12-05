@@ -85,7 +85,7 @@ class Command:
     #  self.func(argServer=self.argumentServer)
     #except Implementation.ApiError:
     #  raise
-    #except TypeError, e:
+    #except TypeError as e:
     #  raise Implementation.ApiError(str(e))
     #except:
     #  raise Implementation.ApiError('could not run function "' + self.func_name + '" in module "' + self.module_name + '"')

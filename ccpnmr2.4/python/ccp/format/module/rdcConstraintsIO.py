@@ -78,7 +78,7 @@ class ModuleRdcConstraintFile(ModuleGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s rdc constraint list %s" % (self.format,self.name)
+      print("Reading %s rdc constraint list %s" % (self.format,self.name))
 
     rdcId = 0
     chainCode = self.defaultMolCode
@@ -121,7 +121,7 @@ class ModuleRdcConstraintFile(ModuleGenericFile):
     # ...
 
     if verbose == 1:
-      print "Writing %s rdc constraint list %s" % (self.format,self.name)
+      print("Writing %s rdc constraint list %s" % (self.format,self.name))
 
     fout = open(self.name,'w')
 
@@ -195,7 +195,7 @@ if __name__ == "__main__":
 
           print member.seqCode, member.atomName,
 
-        print "|",
+        print("|",)
 
       print
     

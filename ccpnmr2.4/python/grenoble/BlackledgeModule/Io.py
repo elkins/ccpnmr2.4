@@ -123,7 +123,7 @@ def getFixedResonance(chain, nmrConstraintStore, seqCode, atomName):
   atomName = atomDict.get(atomName, atomName)
   atom = residue.findFirstAtom(name=atomName)
   #if not atom:
-  #  print 'HERE11', atomName, seqCode, residue.ccpCode, [x.name for x in residue.sortedAtoms()]
+  #  print('HERE11', atomName, seqCode, residue.ccpCode, [x.name for x in residue.sortedAtoms()])
 
   atoms = (atom,)
   fixedAtomSet = nmrConstraintStore.findFirstFixedAtomSet(atoms=atoms)

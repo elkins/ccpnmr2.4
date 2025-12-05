@@ -174,7 +174,7 @@ if __name__ == '__main__':
 
   for distConstr in ccpnConstraintList.sortedConstraints():
 
-    print "Constraint %d: %.1f-%.1f" % (distConstr.serial, distConstr.lowerLimit, distConstr.upperLimit)
+    print("Constraint %d: %.1f-%.1f" % (distConstr.serial, distConstr.lowerLimit, distConstr.upperLimit))
 
     for constrItem in distConstr.sortedItems():
 
@@ -197,7 +197,7 @@ if __name__ == '__main__':
         atomList[-1].sort()
         atomList[-1] = ','.join(atomList[-1])
 
-      print "   (%s) - (%s)" % (atomList[0],atomList[1])
+      print("   (%s) - (%s)" % (atomList[0],atomList[1]))
 
     print
 

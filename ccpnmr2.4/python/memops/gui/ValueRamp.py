@@ -214,7 +214,7 @@ class ValueRamp(Frame):
 if (__name__ == '__main__'):
 
   def callback(multiplier):
-    print 'callback', multiplier
+    print('callback', multiplier)
 
   r = Tkinter.Tk()
 

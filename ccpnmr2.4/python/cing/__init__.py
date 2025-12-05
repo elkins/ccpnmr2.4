@@ -28,7 +28,7 @@ valSets.cfg             Validation settings. Might be moved around.
 #try:
 #    import nose
 #except:
-#    print "No nose: that's strange, everyone has to semll something"
+#    print("No nose: that's strange, everyone has to semll something")
 
 
 from cing.Libs.helper import *

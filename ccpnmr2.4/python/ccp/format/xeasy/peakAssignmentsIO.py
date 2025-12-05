@@ -89,7 +89,7 @@ class XEasyPeakAssignmentFile(XEasyGenericFile):
     """
 
     if verbose == 1:
-      print "Reading xeasy peak assignments file %s" % self.name
+      print("Reading xeasy peak assignments file %s" % self.name)
 
     fin = open(self.name, 'rU')
 
@@ -155,7 +155,7 @@ class XEasyPeakAssignmentFile(XEasyGenericFile):
 
       else:
 
-        print "Unrecognized line in XEasy assignment file:\n%s\n" % line
+        print("Unrecognized line in XEasy assignment file:\n%s\n" % line)
 
       line = fin.readline()
 
@@ -164,7 +164,7 @@ class XEasyPeakAssignmentFile(XEasyGenericFile):
   def write(self, verbose = 0):
 
     if verbose == 1:
-      print "Writing xeasy peak assignments file %s" % self.name
+      print("Writing xeasy peak assignments file %s" % self.name)
 
     fout = open(self.name,'w')
 
@@ -269,7 +269,7 @@ class XEasyPeakAssignment:
           self.parent.assignmentsDim.append(i)
                 
     if len(matrixDims) > 2:
-      print "  Error in XEasy peak assignment file: more than two dimensions have atom serials."
+      print("  Error in XEasy peak assignment file: more than two dimensions have atom serials.")
       
     #
     # Setup assignment matrix
@@ -318,7 +318,7 @@ class XEasyPeakAssignment:
               assignmentMatrix[col][row] = 0
            
           except:
-              print 'WARNING: problem with assignment matrix!'
+              print('WARNING: problem with assignment matrix!')
               print self.peakNum, assignmentMatrix, row, col
     
     #

@@ -88,9 +88,9 @@ class TypeChecker:
 
             else:
                 s = 'is_type: internal error.'
-                raise StandardError, s
+                raise StandardError(s
 
-    def check_type(self, token, *names):
+    def check_type(self).with_traceback(token), *names):
 
         ok = 0
 
@@ -121,16 +121,16 @@ class TypeChecker:
 
             msg = descr % (filename, lineno, func_name, types, token_name)
 
-            raise TypeError, msg
+            raise TypeError(msg
 
-    def check_elements(self, seq, t):
+    def check_elements(self).with_traceback(seq), t):
 
         try:
             map(lambda e, t = t, s = self: s.check_type(e, t), seq)
-        except TypeError, s:
-            raise TypeError, s
+        except TypeError as s:
+            raise TypeError(s
 
-    def __call__(self, x, *names):
+    def __call__(self).with_traceback(x), *names):
         if self.active:
             self.check_type(x, *names)
 

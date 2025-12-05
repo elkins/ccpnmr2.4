@@ -59,7 +59,7 @@ import string
 try:
   import urllib
 except:
-  print 'Warning: ScrolledHtml will only be able to open local files'
+  print('Warning: ScrolledHtml will only be able to open local files')
 import urlparse
 
 import Tkinter
@@ -102,7 +102,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
 
   def openUrl(self, url, forceLoad = False, allowModifyPath = True):
 
-    #print 'openUrl "%s" "%s" "%s" "%s" "%s"' % (url, self.protocol, self.location, self.path, self.dir)
+    #print('openUrl "%s" "%s" "%s" "%s" "%s"' % (url, self.protocol, self.location, self.path, self.dir))
 
     if (self.startUrlCallback):
       self.startUrlCallback(self.yview())
@@ -110,7 +110,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
     self.setState(Tkinter.NORMAL)
 
     (protocol, location, path, query, fragment) = urlparse.urlsplit(url)
-    #print 'openUrl1 "%s" "%s" "%s" "%s" "%s"' % (protocol, location, path, query, fragment)
+    #print('openUrl1 "%s" "%s" "%s" "%s" "%s"' % (protocol, location, path, query, fragment))
 
     if (not protocol):
       protocol = self.protocol
@@ -122,11 +122,11 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
           allowModifyPath = False
           path = self.path
 
-    #print 'openUrl2 "%s" "%s" "%s"' % (protocol, location, path)
+    #print('openUrl2 "%s" "%s" "%s"' % (protocol, location, path))
     if (allowModifyPath and self.dir and path and (path[0] != '/')):
       path = self.dir + '/' + path
 
-    #print 'openUrl3 "%s" "%s" "%s"' % (protocol, location, path)
+    #print('openUrl3 "%s" "%s" "%s"' % (protocol, location, path))
 
     if (forceLoad or (protocol != self.protocol) or \
         (location != self.location) or (path != self.path)):
@@ -196,7 +196,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
   def stripSpaceTagAdd(self, tag, start, end):
 
     while (1):
-      #print 'stripSpaceTagAdd1', start
+      #print('stripSpaceTagAdd1', start)
       c = self.text_area.get(start)
       if (c not in string.whitespace):
         break
@@ -205,7 +205,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
       start = self.text_area.index('%s+1c' % start)
 
     while (1):
-      #print 'stripSpaceTagAdd2', end
+      #print('stripSpaceTagAdd2', end)
       c = self.text_area.get('%s-1c' % end)
       if (c not in string.whitespace):
         break
@@ -272,7 +272,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
 
   def anchor_bgn(self, href, name, type):
 
-    #print 'anchor_bgn1 "%s" "%s" "%s"' % (href, name, type)
+    #print('anchor_bgn1 "%s" "%s" "%s"' % (href, name, type))
 
     htmllib.HTMLParser.anchor_bgn(self, href, name, type)
 
@@ -292,13 +292,13 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
  
   def anchor_end(self):
 
-    #print 'anchor_end'
+    #print('anchor_end')
     #htmllib.HTMLParser.anchor_end(self)
     self.link_tag = None
 
   def handle_image(self, src, alt, *args):
 
-    #print 'handle_image1 "%s" "%s"' % (src, alt), args
+    #print('handle_image1 "%s" "%s"' % (src, alt), args)
 
     if (args):
       (width, height) = args[2:4]
@@ -319,7 +319,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
 
     if (self.link_tag is not None):
       end = self.index(Tkinter.CURRENT)
-      #print 'handle_image2', start, end
+      #print('handle_image2', start, end)
       #self.stripSpaceTagAdd(self.link_tag, start, end)
       self.tag_add(self.link_tag, start, end)
 
@@ -336,12 +336,12 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
 
   def new_alignment(self, align):
 
-    #print 'new_alignment', align
+    #print('new_alignment', align)
     pass
 
   def new_font(self, font):
 
-    #print 'new_font', font
+    #print('new_font', font)
     if (font):
       (size, italic, bold, teletype) = font
       size = font_sizes.get(size, default_size)
@@ -351,7 +351,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
       if (italic):
         s.append('italic')
       style = ' '.join(s)
-      #print 'new_font1', (font_family, size, style)
+      #print('new_font1', (font_family, size, style))
       tag = self.tags
       self.tags = tag + 1
       self.font_tag = tag
@@ -361,7 +361,7 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
 
   def new_margin(self, margin, level):
 
-    #print 'new_margin', margin, level
+    #print('new_margin', margin, level)
 
     if (margin is None):
       self.margin_tag = None
@@ -374,33 +374,33 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
       
   def new_spacing(self, spacing):
 
-    #print 'new_spacing', spacing
+    #print('new_spacing', spacing)
     pass
 
   def send_line_break(self):
 
-    #print 'send_line_break'
+    #print('send_line_break')
     self.append('\n')
 
   def send_paragraph(self, blankline):
 
-    #print 'send_paragraph', blankline
+    #print('send_paragraph', blankline)
     self.append(blankline*'\n')
 
   def send_hor_rule(self, *args, **kw):
 
-    #print 'send_hor_rule', args, kw
+    #print('send_hor_rule', args, kw)
     pass
 
   def send_flowing_data(self, data):
 
-    #print 'send_flowing_data1: "%s"' % data
+    #print('send_flowing_data1: "%s"' % data)
 
     start = self.index(Tkinter.CURRENT)
     self.append(data)
     end = self.index(Tkinter.CURRENT)
 
-    #print 'send_flowing_data2', start, end
+    #print('send_flowing_data2', start, end)
     # link tag has to be done differently because there seems to be
     # an unfortunate bug in the parser and we don't want white
     # space at the beginning or end of the highlighted section
@@ -412,19 +412,19 @@ class ScrolledHtml(formatter.NullWriter, htmllib.HTMLParser, ScrolledText):
 
   def send_literal_data(self, data):
 
-    #print 'send_literal_data', data
+    #print('send_literal_data', data)
     self.append(data)
 
   def send_label_data(self, data):
 
-    #print 'send_label_data', data
+    #print('send_label_data', data)
     if (self.margin_tag is not None):
       s = (2*self.margin_level)*' ' + data + ' '
       start = self.index(Tkinter.CURRENT)
       self.append(s)
-      #print 'send_label_data1', start
+      #print('send_label_data1', start)
       #for n in range(len(s)):
-      #  print 'send_label_data2', n, s[n], self.bbox('%s+%d*c' % (start, n))
+      #  print('send_label_data2', n, s[n], self.bbox('%s+%d*c' % (start, n)))
       #self.tag_config(tag, lmargin2=30)
 
 if (__name__ == '__main__'):

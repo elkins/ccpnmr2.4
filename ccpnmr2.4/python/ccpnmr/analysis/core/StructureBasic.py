@@ -187,7 +187,7 @@ def getRmsd(structureCoords):
         Ni += 1
         N  += 1
     d2i = sqrt(d2i/Ni)
-    #print "RMSD>", coord, d2i
+    #print("RMSD>", coord, d2i)
 
   return sqrt(d2/N)
 

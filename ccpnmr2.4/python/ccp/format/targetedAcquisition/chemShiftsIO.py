@@ -77,7 +77,7 @@ class TargetedAcquisitionChemShiftFile(TargetedAcquisitionGenericFile):
   def read(self, verbose = 0):
 
     if verbose == 1:
-      print "Reading %s chemical shift list %s" % (self.format, self.name)
+      print("Reading %s chemical shift list %s" % (self.format, self.name))
 
     fin = open(self.name, 'rU')
 
@@ -102,7 +102,7 @@ class TargetedAcquisitionChemShiftFile(TargetedAcquisitionGenericFile):
             seqCode = returnInt(seqCode1Or1LetterAndCodeSearch.group(2))
 
             if not self.seqCodes or (seqCode, resCode) not in self.seqCodes:
-              print 'New residue %i,%s' % (seqCode, resCode)
+              print('New residue %i,%s' % (seqCode, resCode))
               self.seqCodes.append((seqCode, resCode))
 
             for colNum in range(3, len(cols)):
@@ -125,7 +125,7 @@ class TargetedAcquisitionChemShiftFile(TargetedAcquisitionGenericFile):
                     curResCode = chemShift.resLabel
                     iCode = 'i+1'
                     #if abs(chemShift.value - value) > 0.1:
-                    #  print "Resetting %i %s %5.2f\twith\t%i %5.2f" % \
+                    #  print("Resetting %i %s %5.2f\twith\t%i %5.2f" % \)
                     #  (curSeqCode, atomName, chemShift.value, seqCode, value)
                     #chemShift.value = (chemShift.value + value) / 2
                     chemShift.allValues['i+1'] = value
@@ -147,7 +147,7 @@ class TargetedAcquisitionChemShiftFile(TargetedAcquisitionGenericFile):
                   if not curResCode:
                     continue
 
-              #print "set", value, atomName, curSeqCode, figOfMerit, curResCode, self.defaultMolCode, iCode
+              #print("set", value, atomName, curSeqCode, figOfMerit, curResCode, self.defaultMolCode, iCode)
               self.chemShifts.append(TargetedAcquisitionChemShift(value, atomName, curSeqCode, figOfMerit, curResCode, self.defaultMolCode, iCode = iCode))
 
         elif cols[0] == '#Res':
@@ -172,7 +172,7 @@ class TargetedAcquisitionChemShiftFile(TargetedAcquisitionGenericFile):
 
   def write(self, verbose = 0):
 
-    print "Not relevant"
+    print("Not relevant")
 
 class TargetedAcquisitionChemShift:
 

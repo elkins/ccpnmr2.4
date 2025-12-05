@@ -109,14 +109,14 @@ class AriaFrame(Frame):
     self.ariaRootDir = ariaRootDir = os.environ.get('ARIA2')
     
     if not ariaRootDir:
-      print 'ARIA2 environment variable not set'
+      print('ARIA2 environment variable not set')
       self.isAriaInstalled = False
       #label = Label(self, text='ARIA 2 environment variable not set')
       #label.grid(row=1, column=0, sticky='ew')
       #return
     
     elif not os.path.exists(ariaRootDir):
-      print 'ARIA2 path does not exist'
+      print('ARIA2 path does not exist')
       self.isAriaInstalled = False
       #label = Label(self, text='ARIA2 path does not exist')
       #label.grid(row=1, column=0, sticky='ew')
@@ -130,7 +130,7 @@ class AriaFrame(Frame):
       import aria2
       
     except ImportError:
-      print 'Cannot import ARIA2 modules:\nCannot run ARIA locally.'
+      print('Cannot import ARIA2 modules:\nCannot run ARIA locally.')
       self.isAriaInstalled = False
       #label = Label(self, text=)
       #label.grid(row=1, column=0, sticky='ew')
@@ -148,7 +148,7 @@ class AriaFrame(Frame):
         try:
           __import__(module)
  
-        except ImportError, msg:
+        except ImportError as msg:
           failedModules.append(module)
           print msg
  

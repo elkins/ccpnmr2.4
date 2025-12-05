@@ -1719,7 +1719,7 @@ def getRefExperiment(experiments, acqName, shapeNames):
 
           refExpDimRef = xpDimRef.refExpDimRef
           if refExpDimRef is None:
-            print 'WARNING, %s has no refExpDimRef' % xpDimRef
+            print('WARNING, %s has no refExpDimRef' % xpDimRef)
             return None
 
           elif xpDimRef.displayName in nameSet:

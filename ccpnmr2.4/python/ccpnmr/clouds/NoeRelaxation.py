@@ -165,7 +165,7 @@ def disambiguateNoesyPeaks(noesy2dPeakList,noesy3dPeakList,tocsy3dPeakList,hsqcP
     peaks3d.extend(interPeaks)
     
     ii += 1
-    print "SS", ii, spinSystem
+    print("SS", ii, spinSystem)
     
     # pick assign 2d equivalents to intra and unambiguous 3d and find anchor point peaks
     for p3 in peaks3d:
@@ -268,10 +268,10 @@ def disambiguateNoesyPeaks(noesy2dPeakList,noesy3dPeakList,tocsy3dPeakList,hsqcP
   resonances = list(noesy2dPeakList.root.resonances)
   N = len(resonances)
   
-  print "Final 2d matches for %d resonances" % N
+  print("Final 2d matches for %d resonances" % N)
   
   for i in range(N-1):
-    print "R", i
+    print("R", i)
     for j in range(i+1,N):
       ppm1 = resonances[i].findFirstShift().value
       ppm2 = resonances[j].findFirstShift().value
@@ -392,7 +392,7 @@ def optimiseRelaxation(resonances,amat,tmix=60,sf=500,tcor=3,rleak=2,C13=1,N15=1
 
   m = Midge(nhs, types)
   err = m.run(amat, rmat, maxIter, sf, tmix, tcor, rleak, N15, C13)
-  print 'error = %3.2e' % err
+  print('error = %3.2e' % err)
 
   """
   fp = open('amat.out', 'w')
@@ -442,7 +442,7 @@ def optimiseRelaxation(resonances,amat,tmix=60,sf=500,tcor=3,rleak=2,C13=1,N15=1
         constraint = NmrConstraint.DistanceConstraint(distConstraintList, weight=1, targetValue=dist, upperLimit=dist+(dist/2.0), lowerLimit=dist-(dist/2.0), error=dist/5)
         item = NmrConstraint.DistanceConstraintItem(constraint, resonances=[fixedResonanceI,fixedResonanceJ])
         
-  print "Midge for CcpNmr Done"
+  print("Midge for CcpNmr Done")
   return distConstraintList, resonances
 
 def getResonancesFromPeaks(peaks): 

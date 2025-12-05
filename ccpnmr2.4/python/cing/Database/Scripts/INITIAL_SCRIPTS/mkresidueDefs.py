@@ -1322,7 +1322,7 @@ at = dict(
 residueDefs = MolDef( name='residueDefs' )
 
 for r in AwkLike( 'atomTable.def' ):
-#    print '>', doresidue,'<',r.dollar[0]
+#    print('>', doresidue,'<',r.dollar[0])
     if (r.isComment() or r.isEmpty()):
         pass
     elif (r.dollar[1] == 'RESIDUE'):
@@ -1355,7 +1355,7 @@ for r in AwkLikeS( cyanaLib ):
                 r.next()
                 tmp2[r.dollar[2]] = [r.int(6), r.int(7), r.int(8), r.int(9)]
 
-            # print '>>>', tmp2
+            # print('>>>', tmp2)
 
             # temporarily store data from the atom lines
             tmp = {}

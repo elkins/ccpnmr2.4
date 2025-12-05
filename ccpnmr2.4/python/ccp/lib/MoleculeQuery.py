@@ -791,7 +791,7 @@ def getResidueObservableAtoms(residue, refExperiment=None, labelling=None,
             atomSiteDict[atomSite] = []
           atomSiteDict[atomSite].append(atom)
           
-          #print 'AS', atomSite.name, atom.name
+          #print('AS', atomSite.name, atom.name)
         
       filteredAtoms.append(atom)
       
@@ -940,7 +940,7 @@ def getResidueObservableAtoms(residue, refExperiment=None, labelling=None,
  
               if addAtom:
                 grown = True
-                #print 'AB', atomA.name, atomA.residue.seqCode,'+', atomB.name, atomB.residue.seqCode
+                #print('AB', atomA.name, atomA.residue.seqCode,'+', atomB.name, atomB.residue.seqCode)
                 if not atomRoutes:
                   atomRoutes2.append( [(atomA,atomSiteA),(atomB,atomSiteB),] )
                   #print atomA.name, atomB.name
@@ -948,7 +948,7 @@ def getResidueObservableAtoms(residue, refExperiment=None, labelling=None,
                 else:
                   for atomRoute in atomRoutes:
                     atomRoutes2.append( atomRoute[:] + [(atomB,atomSiteB),] )
-                  #print '+', atomB.name
+                  #print('+', atomB.name)
 
                
           atomRoutes = []

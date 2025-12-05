@@ -90,7 +90,7 @@ def checkAriaInstallation():
     try:
       __import__(module)
 
-    except ImportError, errMsg:
+    except ImportError as errMsg:
       failedModules.append(module)
       print errMsg
 
@@ -483,11 +483,11 @@ if __name__ == '__main__':
 
   try:
     ccpnProject = loadProject(ccpnProjectDir)
-  except Exception, err:
+  except Exception as err:
     raise Exception(FAIL + 'CCPN project failed to load. original error:' + err)
 
 
   makeAriaProject(ccpnProject, ariaProjectPath,
                   workingDir=workingDir, tempDir=tempDir)
 
-  print 'Done. Saved ARIA project to: %s' % ariaProjectPath
+  print('Done. Saved ARIA project to: %s' % ariaProjectPath)

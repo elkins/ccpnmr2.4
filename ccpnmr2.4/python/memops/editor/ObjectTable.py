@@ -128,7 +128,7 @@ class ObjectTable(ScrolledMatrix):
     try:
       self.update(objectList=objects, textMatrix=textMatrix)
     except:
-      print '***', self.metaclass.name, textMatrix
+      print('***', self.metaclass.name, textMatrix)
 
 if (__name__ == '__main__'):
 

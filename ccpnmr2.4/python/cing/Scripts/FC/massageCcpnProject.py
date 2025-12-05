@@ -34,7 +34,7 @@ def convert(projectName, inputDir, projectNameNew):
 
     ccpnMolSystem = ccpnProject.findFirstMolSystem()
     nTmessage( 'found ccpnMolSystem: %s' % ccpnMolSystem )
-#    print 'status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.
+#    print('status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.)
 
     if removeOriginalStructureEnsemble:
         structureEnsemble = ccpnProject.findFirstStructureEnsemble()
@@ -117,7 +117,7 @@ def replaceCoordinates():
                 nmrProject = ccpnProject.currentNmrProject
                 ccpnMolSystem = ccpnProject.findFirstMolSystem()
                 nTmessage( 'found ccpnMolSystem: %s' % ccpnMolSystem )
-            #    print 'status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.
+            #    print('status: %s' % ccpnMolSystem.setCode(projectName) # impossible; reported to ccpn team.)
 
                 if removeOriginalStructureEnsemble:
                     structureEnsemble = ccpnProject.findFirstStructureEnsemble()
@@ -156,10 +156,10 @@ def processInputAndRun(): # TODO fix this code if usable.
             projectNameNew = sys.argv[3]
 #            if len(sys.argv) > 5:
 #                outputDir = sys.argv[4]
-    print "projectName: %s" % projectName
-    print "projectNameNew: %s" % projectNameNew
-    print "inputDir: %s" % inputDir
-    print "outputDir: %s" % outputDir
+    print("projectName: %s" % projectName)
+    print("projectNameNew: %s" % projectNameNew)
+    print("inputDir: %s" % inputDir)
+    print("outputDir: %s" % outputDir)
 
     if False:
         convert(projectName, inputDir, projectNameNew )

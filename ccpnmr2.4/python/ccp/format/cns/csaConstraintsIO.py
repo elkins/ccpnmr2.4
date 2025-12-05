@@ -76,7 +76,7 @@ class CnsCsaConstraintFile(CnsGenericFile):
   def read(self,verbose = False):
 
     if verbose:
-      print "Reading %s CSA constraint list %s" % (self.format,self.name)
+      print("Reading %s CSA constraint list %s" % (self.format,self.name))
 
     return self.readGeneric(CnsCsaConstraint)
 
@@ -93,7 +93,7 @@ class CnsCsaConstraintFile(CnsGenericFile):
     # ...
 
     if verbose == 1:
-      print "Writing %s CSA constraint list %s" % (self.format,self.name)
+      print("Writing %s CSA constraint list %s" % (self.format,self.name))
 
     fout = open(self.name,'w')
 

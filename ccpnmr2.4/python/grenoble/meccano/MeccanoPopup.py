@@ -27,7 +27,7 @@ from ccp.lib.MoleculeQuery import getLinkedResidue
 
 try:
   from grenoble.c import Meccano
-except Exception, e:
+except Exception as e:
   ee = Exception('There was a problem importing Meccano module, perhaps the C code was not compiled, exception thrown by system was: %s (please contact ccpn-dev@ccpn.ac.uk for further information)' % e)
   raise ee
 

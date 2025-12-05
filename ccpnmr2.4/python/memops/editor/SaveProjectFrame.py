@@ -170,9 +170,9 @@ class SaveProjectFrame(Frame):
           self.callback(self.project)
       elif self.modal:
         return # give another chance
-    except Implementation.ApiError, e:
+    except Implementation.ApiError as e:
       showError('Save project', e.error_msg)
-    except IOError, e:
+    except IOError as e:
       showError('Save project', str(e))
 
     if done:

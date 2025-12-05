@@ -67,7 +67,7 @@ def boxplot(self, x, notch=0, sym='b+', vert=1, whis=1.5,
         .. plot:: pyplots/boxplot_demo.py
         """
 
-        print "notch %s sym %s whis %s" % ( notch, sym, whis)
+        print("notch %s sym %s whis %s" % ( notch, sym, whis))
         wiskLoL = []
 
         if not self._hold: self.cla()
@@ -105,24 +105,24 @@ def boxplot(self, x, notch=0, sym='b+', vert=1, whis=1.5,
 
         # loop through columns, adding each to plot
         self.hold(True)
-        print "Number of columns: %s" % col
+        print("Number of columns: %s" % col)
         for i,pos in enumerate(positions):
             d = np.ravel(x[i])
             row = len(d)
-            print "Working on serie i %s at pos %s with length %s" % (i,pos,row)
+            print("Working on serie i %s at pos %s with length %s" % (i,pos,row))
             if row==0:
                 # no data, skip this position
                 continue
             # get median and quartiles
             p10, q1, med, q3, p90 = mlab.prctile(d,[10,25,50,75,90])
-            print "p10, q1, med, q3, p90 %s %s %s %s %s" % (p10, q1, med, q3, p90 )
+            print("p10, q1, med, q3, p90 %s %s %s %s %s" % (p10, q1, med, q3, p90 ))
             wisk_lo, wisk_hi = p10, p90
             wiskLoL.append( [wisk_lo, wisk_hi] )
             # get high extreme
 #            iq = q3 - q1
 #            hi_val = q3 + whis*iq
 #            wisk_hi = np.compress( d <= hi_val , d )
-#            print "iq, hi_val, wisk_hi  %s %s %s" % (iq, hi_val, wisk_hi )
+#            print("iq, hi_val, wisk_hi  %s %s %s" % (iq, hi_val, wisk_hi ))
 #            if len(wisk_hi) == 0:
 #                wisk_hi = q3
 #            else:
@@ -134,21 +134,21 @@ def boxplot(self, x, notch=0, sym='b+', vert=1, whis=1.5,
 #                wisk_lo = q1
 #            else:
 #                wisk_lo = min(wisk_lo)
-            print "wisk_lo, wisk_hi %s %s" % (wisk_lo, wisk_hi)
+            print("wisk_lo, wisk_hi %s %s" % (wisk_lo, wisk_hi))
             # get fliers - if we are showing them
             flier_hi = []
             flier_lo = []
             flier_hi_x = []
             flier_lo_x = []
             if len(sym) != 0:
-                print "Adding fliers"
+                print("Adding fliers")
                 flier_hi = np.compress( d > wisk_hi, d )
                 flier_lo = np.compress( d < wisk_lo, d )
                 flier_hi_x = [pos for _i in range(flier_hi.shape[0])]
                 flier_lo_x = [pos for _i in range(flier_lo.shape[0])]
 #                flier_lo_x = np.ones(flier_lo.shape[0]) * pos
 #                flier_lo_x = np.ones(flier_lo.shape[0]) * pos
-            print "flier_lo, flier_hi %s %s" % (flier_lo, flier_hi)
+            print("flier_lo, flier_hi %s %s" % (flier_lo, flier_hi))
 
             # get x locations for fliers, whisker, whisker cap and box sides
             halfWidth =  datetime.timedelta(183)

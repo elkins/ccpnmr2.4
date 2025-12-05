@@ -165,7 +165,7 @@ if __name__ == '__main__':
       atom = res.findFirstAtom(name=atName)
       if atom is None:
         raise Exception("No atom found for shift: %s" % str(tt))
-        #print "WARNING, no atom found for shift: %s" % str(tt)
+        #print("WARNING, no atom found for shift: %s" % str(tt))
       
       if atName.startswith('H'):
         isotope = '1H'

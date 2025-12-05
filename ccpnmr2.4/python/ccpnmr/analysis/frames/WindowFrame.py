@@ -68,10 +68,10 @@ try:
   import ccpnmr.c.PeakList as PeakList
   import ccpnmr.c.SliceFile as SliceFile
   import ccpnmr.c.WinPeakList as WinPeakList
-except Exception, e:
-  print 'Error, the WindowFrame module will not work, something is wrong with the C code.'
-  print 'Exception:', e
-  print 'Will continue without Analysis window drawing functionality'
+except Exception as e:
+  print('Error, the WindowFrame module will not work, something is wrong with the C code.')
+  print('Exception:', e)
+  print('Will continue without Analysis window drawing functionality')
   ContourFile = ContourStyle = ContourLevels = PeakList = SliceFile = WinPeakList = None
 
 try:
@@ -83,7 +83,7 @@ try:
 except:
   TkHandler = None
 if (not GlHandler and not TkHandler):
-  print 'Error, the WindowFrame module will not work, something is wrong with both the GlHandler and TkHandler C code.'
+  print('Error, the WindowFrame module will not work, something is wrong with both the GlHandler and TkHandler C code.')
 
 from ccpnmr.analysis.core.AssignmentBasic import clearSeqSpinSystemLinks, addPeakResonancesToSeqSpinSystems, propagatePeakAssignments, addPeakResonancesToSpinSystem
 from ccpnmr.analysis.core.ExperimentBasic import getSpectrumIsotopes, getDataDimRefFullRange
@@ -196,7 +196,7 @@ class WindowFrame(Frame, WindowDraw):
     yname = windowPane.findFirstAxisPanel(label='y').axisType.name
     self.xyName = '(%s,%s)' % (xname,yname)
 
-    #print 'handler info', handlerClass, handlerXorColor
+    #print('handler info', handlerClass, handlerXorColor)
     
     # WindowDraw.__init__ sets self.windowPane
     WindowDraw.__init__(self, parent, windowPane)
@@ -518,7 +518,7 @@ class WindowFrame(Frame, WindowDraw):
     
     (x, y, propX, propY) = self.calcWorldCoord(canvas, event.x, event.y)
     (row, col) = scrolled_window.getCanvasRowCol(canvas)
-    #print 'updateMenuState', row, col
+    #print('updateMenuState', row, col)
     xAxisRegion = windowPane.findFirstAxisPanel(label='x').sortedAxisRegions()[col]
     yAxisRegion = windowPane.findFirstAxisPanel(label='y').sortedAxisRegions()[row]
 
@@ -1737,7 +1737,7 @@ class WindowFrame(Frame, WindowDraw):
   def centerAtLocation(self, canvas, x, y):
 
     (a, b, s, t) = self.calcWorldCoord(canvas, x, y)
-    #print 'center', a, b, s, t
+    #print('center', a, b, s, t)
 
     s = s - 0.5
     if (not self.hasValueAxis):
@@ -1755,7 +1755,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def windowsZoom(self, event):
 
-    #print "windowsZoom", event
+    #print("windowsZoom", event)
 
     delta  = event.delta
     canvas = event.widget
@@ -1854,10 +1854,10 @@ class WindowFrame(Frame, WindowDraw):
       (w0, w1) = (w1, w0)
     (r0, r1) = axisRegion.region
     d = r1 - r0
-    #print 'orthogScroll1', step, d, (r0, r1), (w0, w1)
+    #print('orthogScroll1', step, d, (r0, r1), (w0, w1))
     r0 = r0 + step*d
     r1 = r0 + d
-    #print 'orthogScroll2', (r0, r1)
+    #print('orthogScroll2', (r0, r1))
 
     if (r0 < w0):
       r0 = w0
@@ -1942,7 +1942,7 @@ class WindowFrame(Frame, WindowDraw):
             region0 = int(math.floor(region0))
             region1 = int(math.ceil(region1))
             if region0 < 0 or region1 > dataDim.numPoints:
-              print 'Outside fundamental region for spectrum %s:%s and noise calculation only works inside that' %(spectrum.experiment.name, spectrum.name)
+              print('Outside fundamental region for spectrum %s:%s and noise calculation only works inside that' %(spectrum.experiment.name, spectrum.name))
               break
             boxMin[dataDim.dim-1] = region0
             boxMax[dataDim.dim-1] = region1
@@ -2075,7 +2075,7 @@ class WindowFrame(Frame, WindowDraw):
       (r0, r1) = self.convertPositionRegion(r, axisPanel, dataDim)
       spectrum_region[dim] = [ r0-tt, r1+tt ]
 
-    #print 'findNearbyViewPeak', spectrum.name, spectrum_region
+    #print('findNearbyViewPeak', spectrum.name, spectrum_region)
     result = self.findNearbyPeak(peakList, spectrum_region, xdim, ydim, xscale, yscale)
 
     return result
@@ -2122,7 +2122,7 @@ class WindowFrame(Frame, WindowDraw):
 
       position_region = self.findPositionRegion(a, b, stripNum)
 
-      #print 'selectSingle1', position_region
+      #print('selectSingle1', position_region)
       activeViews = self.getActiveSpectrumViews()
       for view in activeViews:
         result = self.findNearbyViewPeak(view, position_region, xAxisRegion, yAxisRegion)
@@ -2205,7 +2205,7 @@ class WindowFrame(Frame, WindowDraw):
                     parent=self.topPopup, doFit=False)
  
         else:
-          #print 'createNewPeak', position, spectrum_position, spectrum_tile
+          #print('createNewPeak', position, spectrum_position, spectrum_tile)
           addPeak(peakList, position=specPosition, tile=specTile,
                  parent=self.topPopup, doFit=False)
  
@@ -2214,7 +2214,7 @@ class WindowFrame(Frame, WindowDraw):
   def examineRegion(self, canvas, a0, b0, a1, b1, x0, y0, x1, y1, state=no_key_state):
 
     # TBD: do more
-    #print 'examineRegion1', a0, b0, a1, b1, x0, y0, x1, y1
+    #print('examineRegion1', a0, b0, a1, b1, x0, y0, x1, y1)
 
     (row, col) = self.scrolled_window.getCanvasRowCol(canvas)
     if self.windowPane.spectrumWindow.stripAxis == 'x':
@@ -2223,7 +2223,7 @@ class WindowFrame(Frame, WindowDraw):
       stripNum = row
 
     region = self.findRegion(min(a0,a1), min(b0,b1), max(a0,a1), max(b0,b1), n=stripNum)
-    #print 'examineRegion2', region
+    #print('examineRegion2', region)
 
     if (state == shift_key_state or state == no_key_state):
 
@@ -2335,8 +2335,8 @@ class WindowFrame(Frame, WindowDraw):
 
     self.unpostMenu()
     
-    #print 'selectMulti', state
-    #print 'selectMulti', a0, b0, a1, b1, x0, y0, x1, y1
+    #print('selectMulti', state)
+    #print('selectMulti', a0, b0, a1, b1, x0, y0, x1, y1)
     self.topPopup.currentRegion = (a0, b0, a1, b1)
     self.topPopup.startSelection()
 
@@ -2362,7 +2362,7 @@ class WindowFrame(Frame, WindowDraw):
   def dragBox(self, canvas, a0, b0, a1, b1, x0, y0, x1, y1,
               button = 1, state = no_key_state, event = None):
 
-    #print 'dragBox', a0, b0, a1, b1, x0, y0, x1, y1
+    #print('dragBox', a0, b0, a1, b1, x0, y0, x1, y1)
 
     self.draggedBox = (a0, b0, a1, b1)
 
@@ -2551,15 +2551,15 @@ class WindowFrame(Frame, WindowDraw):
 
     # TBD: not sure if below is good enough
     panel = axisRegion.axisPanel
-    #print 'changedViewRegion', panel.label, axisRegion.region, panel.spectrumWindow.name, self.windowPane.name
+    #print('changedViewRegion', panel.label, axisRegion.region, panel.spectrumWindow.name, self.windowPane.name)
     if panel.spectrumWindowPane == self.windowPane:
       world_region = self.getWorldRegion()
-      #print 'changedViewRegion0', self.windowPane.name, axisRegion.region
+      #print('changedViewRegion0', self.windowPane.name, axisRegion.region)
       view_region = Util.checkSwapRegion(axisRegion.region, panel.axisUnit)
-      #print 'changedViewRegion1', self.windowPane.name, view_region, axisRegion.region
+      #print('changedViewRegion1', self.windowPane.name, view_region, axisRegion.region)
       axisRegions = panel.sortedAxisRegions()
       n = axisRegions.index(axisRegion)
-      #print 'changedViewRegion2', self.windowPane.name, n, panel.label
+      #print('changedViewRegion2', self.windowPane.name, n, panel.label)
       if (panel.label == 'x'):
         Util.fitViewInWorld(view_region, world_region.x_region)
         #self.scrolled_window.setXviewRegion(view_region, n)
@@ -2601,7 +2601,7 @@ class WindowFrame(Frame, WindowDraw):
         #self.scrolled_window.canvases[0][col].config(width=size)
         #self.after_idle(self.scrolled_window.oneColWeights)
         #self.after_idle(self.scrolled_window.gridAll)
-        #print 'changedAxisSize1', panel.sortedAxisRegions().index(axisRegion), w, ww, size, w+size-ww
+        #print('changedAxisSize1', panel.sortedAxisRegions().index(axisRegion), w, ww, size, w+size-ww)
       elif (label == 'y'):
         row = panel.sortedAxisRegions().index(axisRegion)
         hh = self.scrolled_window.canvases[row][0].winfo_height()
@@ -2614,7 +2614,7 @@ class WindowFrame(Frame, WindowDraw):
         #self.scrolled_window.canvases[row][0].config(height=size)
         #self.after_idle(self.scrolled_window.oneRowWeights)
         #self.after_idle(self.scrolled_window.gridAll)
-        #print 'changedAxisSize2', panel.sortedAxisRegions().index(axisRegion), h, hh, size, h+size-hh
+        #print('changedAxisSize2', panel.sortedAxisRegions().index(axisRegion), h, hh, size, h+size-hh)
       #self.drawAll()
 
   def changedOrthogonalRegion(self, axisRegion):
@@ -2651,7 +2651,7 @@ class WindowFrame(Frame, WindowDraw):
   def changedAxisRegion(self, axisRegion):
 
     axisPanel = axisRegion.axisPanel
-    #print 'WindowPopup.changedAxisRegion', axisPanel.label, axisRegion.region, axisPanel.sortedAxisRegions().index(axisRegion)
+    #print('WindowPopup.changedAxisRegion', axisPanel.label, axisRegion.region, axisPanel.sortedAxisRegions().index(axisRegion))
 
     if axisPanel.spectrumWindowPane != self.windowPane:
       return
@@ -2682,7 +2682,7 @@ class WindowFrame(Frame, WindowDraw):
 
     if panel.spectrumWindowPane is self.windowPane:
       if panel.label in ('x', 'y'):
-        #print 'changedPanel', panel.label
+        #print('changedPanel', panel.label)
         if panel.label == 'x':
           self.scrolled_window.setIsShownXScrollbar(panel.isVisible)
         else: # panel.label == 'y'
@@ -2896,7 +2896,7 @@ class WindowFrame(Frame, WindowDraw):
       view_region = Region1D(v0, v1)
 
       min_thickness = self.minAxisPanelThickness(axisPanel)
-      #print 'createRegionSelector', label, world_region, view_region
+      #print('createRegionSelector', label, world_region, view_region)
       axisPanel.region_selector = RegionSelector(self, label=label,
           callback=callback, text_decimals=axisType.numDecimals,
           world_region=world_region, view_region=view_region,
@@ -3111,7 +3111,7 @@ class WindowFrame(Frame, WindowDraw):
   def setupWidgetHandler(self, widget, isCanvas = True):
 
     if not hasattr(widget, 'handler'):
-      #print 'setupWidgetHandler'
+      #print('setupWidgetHandler')
       widget.handler = self.handlerClass and self.handlerClass(widget, *self.handlerArgs)
       if (isCanvas):
         (j, i) = self.scrolled_window.getCanvasRowCol(widget)
@@ -3153,7 +3153,7 @@ class WindowFrame(Frame, WindowDraw):
 
     # force C world clean-up
 
-    #print 'deleteHandlers start'
+    #print('deleteHandlers start')
     #for j in range(self.scrolled_window.nrows):
     #  for i in range(self.scrolled_window.ncols):
     #    canvas = self.scrolled_window.canvases[j][i]
@@ -3164,12 +3164,12 @@ class WindowFrame(Frame, WindowDraw):
 
     for j in range(self.scrolled_window.nrows):
       if j >= len(self.scrolled_window.canvases):
-        print "Cleanup called on non-existent canvases"
+        print("Cleanup called on non-existent canvases")
         continue
 
       for i in range(self.scrolled_window.ncols):
         if i >= len(self.scrolled_window.canvases[j]):
-          print "Cleanup called on non-existent canvases"
+          print("Cleanup called on non-existent canvases")
           continue
 
         canvas = self.scrolled_window.canvases[j][i]
@@ -3198,7 +3198,7 @@ class WindowFrame(Frame, WindowDraw):
         pass
       slice.handler = None
 
-    #print 'deleteHandlers end'
+    #print('deleteHandlers end')
 
   def setHandlersRow(self, row=-1):
   
@@ -3236,7 +3236,7 @@ class WindowFrame(Frame, WindowDraw):
     yRegions = findFirstAxisPanel(label='y').sortedAxisRegions()
     canvases = scrolledWindow.canvases
     
-    #print 'setHandlersCol', col
+    #print('setHandlersCol', col)
     for j in range(scrolledWindow.nrows):
       canvas = canvases[j][col]
       if not hasattr(canvas, 'handler'):
@@ -3271,7 +3271,7 @@ class WindowFrame(Frame, WindowDraw):
     setupWidgetHandler =  self.setupWidgetHandler
     canvases = scrolledWindow.canvases
     
-    #print 'setHandlerBackground', self.windowPane.name, color
+    #print('setHandlerBackground', self.windowPane.name, color)
 
     self.scrolled_window.setBackground(self.windowPopup.analysisProfile.bgColor)
 
@@ -3402,8 +3402,8 @@ class WindowFrame(Frame, WindowDraw):
     canvas.xmax_extent = abs(x1-x0)
     canvas.ymax_extent = abs(y1-y0)
 
-    #print 'setWorldRegion0', canvas.parent.world_region.x_region, canvas.xmax_extent
-    #print 'setWorldRegion1', canvas.parent.world_region.y_region, canvas.ymax_extent
+    #print('setWorldRegion0', canvas.parent.world_region.x_region, canvas.xmax_extent)
+    #print('setWorldRegion1', canvas.parent.world_region.y_region, canvas.ymax_extent)
 
   def checkAspectRatio(self, canvas):
 
@@ -3422,7 +3422,7 @@ class WindowFrame(Frame, WindowDraw):
 
     (x0, x1) = canvas.xview_region
     (y0, y1) = canvas.yview_region
-    #print 'checkAspectRatio0', x0, x1, y0, y1, w, h, r
+    #print('checkAspectRatio0', x0, x1, y0, y1, w, h, r)
 
     (row, col) = self.scrolled_window.getCanvasRowCol(canvas)
     xRegions = windowPane.findFirstAxisPanel(label='x').sortedAxisRegions()
@@ -3433,7 +3433,7 @@ class WindowFrame(Frame, WindowDraw):
     if xgroup is not None and ygroup is not None: # ignore aspect ratio
       return False
 
-    #print 'WindowPopup.checkAspectRatio0', row, col, x0, x1, y0, y1, xgroup, ygroup, self.scrolled_window.nrows, self.scrolled_window.ncols
+    #print('WindowPopup.checkAspectRatio0', row, col, x0, x1, y0, y1, xgroup, ygroup, self.scrolled_window.nrows, self.scrolled_window.ncols)
 
     if window.stripAxis == 'y': # self.((not ygroup) and (self.scrolled_window.ncols == 1)): # resize y direction
 
@@ -3444,10 +3444,10 @@ class WindowFrame(Frame, WindowDraw):
       if (yy0 == y0) and (yy1 == y1):
         return False
 
-      #print 'checkAspectRatio1', yy0, yy1, row, col
+      #print('checkAspectRatio1', yy0, yy1, row, col)
       canvas.yview_region.set(yy0, yy1)
       axisRegion = yRegions[row]
-      #print 'WindowPopup.checkAspectRatio1', (min(yy0, yy1), max(yy0, yy1))
+      #print('WindowPopup.checkAspectRatio1', (min(yy0, yy1), max(yy0, yy1)))
       axisRegion.region = (min(yy0, yy1), max(yy0, yy1))
 
     else: # resize x direction
@@ -3459,10 +3459,10 @@ class WindowFrame(Frame, WindowDraw):
       if (xx0 == x0) and (xx1 == x1):
         return False
 
-      #print 'checkAspectRatio2', xx0, xx1, row, col
+      #print('checkAspectRatio2', xx0, xx1, row, col)
       canvas.xview_region.set(xx0, xx1)
       axisRegion = xRegions[col]
-      #print 'WindowPopup.checkAspectRatio2', (min(xx0, xx1), max(xx0, xx1))
+      #print('WindowPopup.checkAspectRatio2', (min(xx0, xx1), max(xx0, xx1)))
       axisRegion.region = (min(xx0, xx1), max(xx0, xx1))
 
     self.setMaxExtent(canvas)
@@ -3477,7 +3477,7 @@ class WindowFrame(Frame, WindowDraw):
     if self is not event.widget:
       return
       
-    #print 'focusIn', self.windowPane.name
+    #print('focusIn', self.windowPane.name)
     #self.scrolled_window.oneWeights()
 
   def resize(self, event):
@@ -3485,14 +3485,14 @@ class WindowFrame(Frame, WindowDraw):
     if self.waitResize:
       return
 
-    #print 'in resize', self.windowPane.name
+    #print('in resize', self.windowPane.name)
     canvas = event.widget
     width  = event.width
     height = event.height
     findFirstAxisPanel  = self.windowPane.findFirstAxisPanel
     
     (row, col) = self.scrolled_window.getCanvasRowCol(canvas)
-    #print 'resize', row, col, width, height, canvas.winfo_width(), canvas.winfo_height()
+    #print('resize', row, col, width, height, canvas.winfo_width(), canvas.winfo_height())
     findFirstAxisPanel(label='x').sortedAxisRegions()[col].size = width
     findFirstAxisPanel(label='y').sortedAxisRegions()[row].size = height
 
@@ -3513,9 +3513,9 @@ class WindowFrame(Frame, WindowDraw):
 
   def expose(self, event):
 
-    #print 'in expose', self.windowPane.name
-    #print 'in expose', self.windowPane.name, event.x, event.y, event.width, event.height
-    #print '***', event.state, event.num, '***'
+    #print('in expose', self.windowPane.name)
+    #print('in expose', self.windowPane.name, event.x, event.y, event.width, event.height)
+    #print('***', event.state, event.num, '***')
 
     if not self.waitDraw:
       canvas = event.widget
@@ -3947,7 +3947,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def sliceResize(self, event):
 
-    #print 'in sliceResize'
+    #print('in sliceResize')
     slice = event.widget
     width = event.width
     height = event.height
@@ -3961,7 +3961,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def sliceExpose(self, event):
 
-    #print 'in sliceExpose'
+    #print('in sliceExpose')
     slice = event.widget
     self.drawSlice(slice)
 
@@ -3990,35 +3990,35 @@ class WindowFrame(Frame, WindowDraw):
 
   def viewSet(self, canvas, xview_region, yview_region):
 
-    #print 'viewSet1', self.windowPane.name, xview_region[0], xview_region[1], yview_region[0], yview_region[1]
+    #print('viewSet1', self.windowPane.name, xview_region[0], xview_region[1], yview_region[0], yview_region[1])
 
     # first time viewSet called setHandlers has not yet been called so xview, yview not set
     if (hasattr(canvas, 'xview')):
 
-      #print 'viewSet2', self.windowPane.name
+      #print('viewSet2', self.windowPane.name)
       axisUnit = canvas.xview.axisPanel.axisType.findFirstAxisUnit(unit='ppm')
       canvas.xview.region = Util.checkSwapRegion(xview_region, axisUnit)
-      #print 'viewSet3', canvas.xview.region[0], canvas.xview.region[1]
+      #print('viewSet3', canvas.xview.region[0], canvas.xview.region[1])
 
       axisUnit = canvas.yview.axisPanel.axisType.findFirstAxisUnit(unit='ppm')
       canvas.yview.region = Util.checkSwapRegion(yview_region, axisUnit)
-      #print 'viewSet4', canvas.yview.region[0], canvas.yview.region[1]
+      #print('viewSet4', canvas.yview.region[0], canvas.yview.region[1])
 
     else:
 
       pass # TBD: anything one should do?
-      #print 'viewSet5', self.windowPane.name
+      #print('viewSet5', self.windowPane.name)
 
-    #print 'viewSet6', self.windowPane.name
+    #print('viewSet6', self.windowPane.name)
     # TBD: is this needed, and when?
     #self.drawCanvas(canvas)
-    #print 'viewSet7', self.windowPane.name
+    #print('viewSet7', self.windowPane.name)
 
   def doCreateHorizontalRuler(self, canvas, x, y, doSidebands=False):
 
     (a, b, x, y) = self.calcWorldCoord(canvas, x, y)
     createRuler(b, self.windowPane.findFirstAxisPanel(label='y').panelType)
-    #print 'doCreateHorizontalRuler', len(self.windowPane.root.rulers)
+    #print('doCreateHorizontalRuler', len(self.windowPane.root.rulers))
 
     if doSidebands and not self.hasValueAxis:
       # extra sideband rulers
@@ -4445,13 +4445,13 @@ class WindowFrame(Frame, WindowDraw):
   # get any events to the normal window, they all go to the RegionSelector
   def modifyKeyEvent(self, event):
 
-    #print 'modifyKeyEvent1', self.winfo_rootx(), self.winfo_rooty()
-    #print 'modifyKeyEvent2', event.x, event.y
+    #print('modifyKeyEvent1', self.winfo_rootx(), self.winfo_rooty())
+    #print('modifyKeyEvent2', event.x, event.y)
 
     x = self.winfo_rootx() + event.x
     y = self.winfo_rooty() + event.y
 
-    #print 'modifyKeyEvent3', x, y
+    #print('modifyKeyEvent3', x, y)
 
     canvases = self.scrolled_window.canvases
 
@@ -4463,7 +4463,7 @@ class WindowFrame(Frame, WindowDraw):
     else:
       for col in range(ncols-1):
         canvas = canvases[0][col+1]
-        #print 'modifyKeyEvent: in x loop:', col, x, canvas.winfo_rootx()
+        #print('modifyKeyEvent: in x loop:', col, x, canvas.winfo_rootx())
         if x < canvas.winfo_rootx():
           canvas = canvases[0][col]
           x = x - canvas.winfo_rootx()
@@ -4480,7 +4480,7 @@ class WindowFrame(Frame, WindowDraw):
     else:
       for row in range(nrows-1, 0, -1):
         canvas = canvases[row-1][0]
-        #print 'modifyKeyEvent: in y loop:', col, y, canvas.winfo_rooty()
+        #print('modifyKeyEvent: in y loop:', col, y, canvas.winfo_rooty())
         if y < canvas.winfo_rooty():
           canvas = canvases[row][0]
           y = y - canvas.winfo_rooty()
@@ -4489,9 +4489,9 @@ class WindowFrame(Frame, WindowDraw):
         canvas = canvases[0][0]
         y = y - canvas.winfo_rooty()
 
-    #print 'modifyKeyEvent4', canvas.winfo_rootx(), canvas.winfo_rooty()
-    #print 'modifyKeyEvent5', x, y
-    #print 'modifyKeyEvent6', row, col
+    #print('modifyKeyEvent4', canvas.winfo_rootx(), canvas.winfo_rooty())
+    #print('modifyKeyEvent5', x, y)
+    #print('modifyKeyEvent6', row, col)
 
     event.widget = canvases[row][col]
     event.x = x
@@ -4546,12 +4546,12 @@ class WindowFrame(Frame, WindowDraw):
         keysym = self.keysym + keysym
         self.keysym = None
 
-    #print 'keypress1', keysym
+    #print('keypress1', keysym)
     spectrum = self.topPopup.toggleSpectrum(self.windowPane.spectrumWindow, shortcut=keysym)
-    #print 'keypress1A', spectrum
+    #print('keypress1A', spectrum)
     if not spectrum: # this means was not spectrum shortcut, so try other macros
       macro = self.windowPopup.analysisProfile.findFirstMacro(shortcut=keysym)
-      #print 'keypress2', macro
+      #print('keypress2', macro)
       if macro:
         self.setCurrentObjects(event)
         Util.runMacro(macro, self.topPopup.argumentServer)
@@ -4563,7 +4563,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def sliceKeypress(self, event):
 
-    #print 'sliceKeypress', event.keysym
+    #print('sliceKeypress', event.keysym)
     if event.keysym == 'Home':
       self.changeSliceRange(0.5, event.widget)
     elif event.keysym == 'End':
@@ -4613,11 +4613,11 @@ class WindowFrame(Frame, WindowDraw):
                    worldPointRanges, spectrumPointRanges, row, components=None):
 
     #if (self.windowPane.name == 'w'):
-    #  print 'entering drawViewTile', self.windowPane.name
+    #  print('entering drawViewTile', self.windowPane.name)
 
     if canvas.doubleBuffer:
 
-      #print 'drawViewTile double', self.windowPane.name
+      #print('drawViewTile double', self.windowPane.name)
 
       if not isWindowsOS():
         t = time.time()
@@ -4630,28 +4630,28 @@ class WindowFrame(Frame, WindowDraw):
 
     else:
 
-      #print 'drawViewTile single', self.windowPane.name
+      #print('drawViewTile single', self.windowPane.name)
 
       # exceptions caught here because called with after_idle
       try:
-        #print 'drawViewTile0', self.windowPane.name
+        #print('drawViewTile0', self.windowPane.name)
         self.drawViewTileReal(handler, view, contourLevels, contourStyle,
                               worldPointRanges, spectrumPointRanges, row)
-        #print 'drawViewTile1', self.windowPane.name
-      except Implementation.ApiError, e:
-        print 'Drawing canvas tile error:', e.error_msg
-      except self.handlerExc, e:
-        print 'Drawing canvas tile handler error:', e
-      except ContourFile.error, e:
-        print 'Drawing canvas tile ContourFile error:', e
-      except SliceFile.error, e:
-        print 'Drawing canvas tile SliceFile error:', e
-      except PeakList.error, e:
-        print 'Drawing canvas tile PeakList error:', e
-      except WinPeakList.error, e:
-        print 'Drawing canvas tile WinPeakList error:', e
+        #print('drawViewTile1', self.windowPane.name)
+      except Implementation.ApiError as e:
+        print('Drawing canvas tile error:', e.error_msg)
+      except self.handlerExc as e:
+        print('Drawing canvas tile handler error:', e)
+      except ContourFile.error as e:
+        print('Drawing canvas tile ContourFile error:', e)
+      except SliceFile.error as e:
+        print('Drawing canvas tile SliceFile error:', e)
+      except PeakList.error as e:
+        print('Drawing canvas tile PeakList error:', e)
+      except WinPeakList.error as e:
+        print('Drawing canvas tile WinPeakList error:', e)
       except:
-        #print 'Unknown canvas tile error'
+        #print('Unknown canvas tile error')
         pass
 
   # overrides WindowDraw version
@@ -4682,10 +4682,10 @@ class WindowFrame(Frame, WindowDraw):
     if not hasattr(canvas, 'drawCount'):
       canvas.drawCount = 0
 
-    #print 'drawCanvas1', self.windowPane.name, canvas.drawCount
+    #print('drawCanvas1', self.windowPane.name, canvas.drawCount)
     canvas.drawCount = canvas.drawCount + 1
     self.after_idle(lambda: self.drawCanvasReal(canvas, row, col))
-    #print 'drawCanvas2', self.windowPane.name
+    #print('drawCanvas2', self.windowPane.name)
 
   ##def getCanvasState(self, canvas, row, col):
   ##
@@ -4698,13 +4698,13 @@ class WindowFrame(Frame, WindowDraw):
   # overrides WindowDraw version
   def drawCanvasReal(self, canvas, row, col):
 
-    #print 'drawCanvasReal0', self.windowPane.name
+    #print('drawCanvasReal0', self.windowPane.name)
 
     canvas.drawCount = canvas.drawCount - 1
-    #print 'drawCanvasReal1', self.windowPane.name, canvas.drawCount
+    #print('drawCanvasReal1', self.windowPane.name, canvas.drawCount)
     if canvas.drawCount:
       return # only draw when there is only one request remaining
-    #print 'drawCanvasReal2', self.windowPane.name
+    #print('drawCanvasReal2', self.windowPane.name)
 
     if not hasattr(canvas, 'canvas_width'):
       #canvas.beingDrawn = False
@@ -4717,7 +4717,7 @@ class WindowFrame(Frame, WindowDraw):
     if self.waitDraw: # In the middle of processing another draw
       return
 
-    #print 'drawCanvasReal3', self.windowPane.name, canvas.canvas_width, canvas.canvas_height
+    #print('drawCanvasReal3', self.windowPane.name, canvas.canvas_width, canvas.canvas_height)
 
     ## optimisation: do not draw again if state is the same
     #state = self.getCanvasState(canvas, row, col)
@@ -4735,7 +4735,7 @@ class WindowFrame(Frame, WindowDraw):
     if row != rr or col != cc:
       return
 
-    #print 'drawCanvasReal4', self.windowPane.name, canvas.canvas_width, canvas.canvas_height
+    #print('drawCanvasReal4', self.windowPane.name, canvas.canvas_width, canvas.canvas_height)
 
     self.setupWidgetHandler(canvas, isCanvas=True)
 
@@ -4767,7 +4767,7 @@ class WindowFrame(Frame, WindowDraw):
 
     except WindowTimeoutException:
 
-      #print 'drawCanvasReal: about to single buffer doCanvas', self.windowPane.name
+      #print('drawCanvasReal: about to single buffer doCanvas', self.windowPane.name)
       canvas.doubleBuffer = False
       handler.setIsDoubleBuffer(0)
 
@@ -4779,38 +4779,38 @@ class WindowFrame(Frame, WindowDraw):
       self.doCanvas(handler, canvas, row, col)
       handler.flush()
 
-    except Implementation.ApiError, e:
-      print 'Drawing real canvas error:', e.error_msg
+    except Implementation.ApiError as e:
+      print('Drawing real canvas error:', e.error_msg)
       #canvas.beingDrawn = False
 
-    except self.handlerExc, e:
-      print 'Drawing real canvas handler error:', e
+    except self.handlerExc as e:
+      print('Drawing real canvas handler error:', e)
 
-    except ContourFile.error, e:
-      print 'Drawing real canvas ContourFile error:', e
+    except ContourFile.error as e:
+      print('Drawing real canvas ContourFile error:', e)
 
-    except SliceFile.error, e:
-      print 'Drawing real canvas SliceFile error:', e
+    except SliceFile.error as e:
+      print('Drawing real canvas SliceFile error:', e)
 
-    except ContourLevels.error, e:
-      print 'Drawing real canvas ContourLevels error:', e
+    except ContourLevels.error as e:
+      print('Drawing real canvas ContourLevels error:', e)
 
-    except ContourStyle.error, e:
-      print 'Drawing real canvas ContourStyle error:', e
+    except ContourStyle.error as e:
+      print('Drawing real canvas ContourStyle error:', e)
 
-    except PeakList.error, e:
-      print 'Drawing real canvas PeakList error:', e
+    except PeakList.error as e:
+      print('Drawing real canvas PeakList error:', e)
 
-    except WinPeakList.error, e:
-      print 'Drawing real canvas WinPeakList error:', e
+    except WinPeakList.error as e:
+      print('Drawing real canvas WinPeakList error:', e)
 
     except:
       #canvas.beingDrawn = False
-      #print 'Unknown drawing real canvas error'
+      #print('Unknown drawing real canvas error')
       raise
       pass
 
-    #print 'drawCanvas2', self.windowPane.name
+    #print('drawCanvas2', self.windowPane.name)
 
   # overrides WindowDraw version
   def drawRow(self, row):
@@ -4818,7 +4818,7 @@ class WindowFrame(Frame, WindowDraw):
     if self.windowPane.isDeleted:
       return
 
-    #print 'WindowPopup: drawRow1'
+    #print('WindowPopup: drawRow1')
 
     ncols = self.getNCols()
     canvases = self.scrolled_window.canvases
@@ -4826,7 +4826,7 @@ class WindowFrame(Frame, WindowDraw):
       canvas = canvases[row][i]
       self.drawCanvas(canvas, row, i)
 
-    #print 'WindowPopup: drawRow2'
+    #print('WindowPopup: drawRow2')
 
   # overrides WindowDraw version
   def drawCol(self, col):
@@ -4862,27 +4862,27 @@ class WindowFrame(Frame, WindowDraw):
         self.drawRow(j)
 
       self.drawAllSlices()
-    except Implementation.ApiError, e:
-      print 'Drawing all error:', e.error_msg
-    except self.handlerExc, e:
-      print 'Drawing all handler error:', e
-    except ContourFile.error, e:
-      print 'Drawing all ContourFile error:', e
-    except SliceFile.error, e:
-      print 'Drawing all SliceFile error:', e
-    except PeakList.error, e:
-      print 'Drawing all PeakList error:', e
-    except WinPeakList.error, e:
-      print 'Drawing all WinPeakList error:', e
-    except ContourLevels.error, e:
-      print 'Drawing all ContourLevels error:', e
-    except ContourStyle.error, e:
-      print 'Drawing all ContourStyle error:', e
+    except Implementation.ApiError as e:
+      print('Drawing all error:', e.error_msg)
+    except self.handlerExc as e:
+      print('Drawing all handler error:', e)
+    except ContourFile.error as e:
+      print('Drawing all ContourFile error:', e)
+    except SliceFile.error as e:
+      print('Drawing all SliceFile error:', e)
+    except PeakList.error as e:
+      print('Drawing all PeakList error:', e)
+    except WinPeakList.error as e:
+      print('Drawing all WinPeakList error:', e)
+    except ContourLevels.error as e:
+      print('Drawing all ContourLevels error:', e)
+    except ContourStyle.error as e:
+      print('Drawing all ContourStyle error:', e)
     except:
-      #print 'Unknown drawing all error'
+      #print('Unknown drawing all error')
       pass
 
-    #print 'WindowPopup: drawAll2'
+    #print('WindowPopup: drawAll2')
     self.waitPeak = False
     self.waitDraw = False
 
@@ -4894,13 +4894,13 @@ class WindowFrame(Frame, WindowDraw):
 
     analysisProject = view.topObject
 
-    #print 'drawViewSliceA', view.analysisSpectrum.dataSource.name
+    #print('drawViewSliceA', view.analysisSpectrum.dataSource.name)
     label = slice.label
     sliceFile = view.sliceFile.get(label)
     if (not sliceFile):
       return
 
-    #print 'drawViewSliceB', view.analysisSpectrum.dataSource.name
+    #print('drawViewSliceB', view.analysisSpectrum.dataSource.name)
     handler = slice.handler
     if not handler:
       return
@@ -4923,12 +4923,12 @@ class WindowFrame(Frame, WindowDraw):
     else:
       handler.setColor(hexToRgb(color))
 
-    #print 'drawViewSliceC', view.analysisSpectrum.dataSource.name
+    #print('drawViewSliceC', view.analysisSpectrum.dataSource.name)
     position = analysisSpectrum.dataSource.numDim * [0]
 
     for axisMapping in view.axisMappings:
       axisPanel = self.windowPane.findFirstAxisPanel(label=axisMapping.label)
-      #print 'drawViewSliceC1', self.windowPane.name, axisPanel, label, hasattr(axisPanel, 'pointLocation') and axisPanel.pointLocation
+      #print('drawViewSliceC1', self.windowPane.name, axisPanel, label, hasattr(axisPanel, 'pointLocation') and axisPanel.pointLocation)
       if (axisPanel.label == label): # position irrelevant for this dim
         continue
       if (not hasattr(axisPanel, 'pointLocation')):
@@ -4968,7 +4968,7 @@ class WindowFrame(Frame, WindowDraw):
         if p >= dataDim.numPoints:
           return
 
-    #print 'drawViewSlice1', label, position, view.analysisSpectrum.dataSource.name
+    #print('drawViewSlice1', label, position, view.analysisSpectrum.dataSource.name)
 
     slicePanel = self.windowPane.findFirstSlicePanel(label=label)
     y0 = 0.0
@@ -4982,7 +4982,7 @@ class WindowFrame(Frame, WindowDraw):
     axisMapping = view.findFirstAxisMapping(label=label)
     dataDim = axisMapping.analysisDataDim.dataDim
     axisPanel = self.windowPane.findFirstAxisPanel(label=label)
-    #print 'drawViewSlice1A', slice.view_region, dataDim.dim
+    #print('drawViewSlice1A', slice.view_region, dataDim.dim)
     (t0, t1) = Util.convertRegion(slice.view_region, axisPanel.axisUnit, dataDim)
     if (t0 > t1):
       (t0, t1) = (t1, t0)
@@ -5004,7 +5004,7 @@ class WindowFrame(Frame, WindowDraw):
     n = dataDim.numPointsOrig
     tile0 = int(math.floor(max(t0, minFreqPts) / n))
     tile1 = int(math.floor(min(t1, maxFreqPts) / n))
-    #print 'drawViewSlice2', label, t0, t1, n, tile0, tile1
+    #print('drawViewSlice2', label, t0, t1, n, tile0, tile1)
 
     for tile in range(tile0, tile1+1):
       o = tile * n
@@ -5016,10 +5016,10 @@ class WindowFrame(Frame, WindowDraw):
         s1 = t1
       else:
         s1 = (tile+1) * n
-      #print 'drawViewSlice3', label, tile, s0, s1, t0, t1
+      #print('drawViewSlice3', label, tile, s0, s1, t0, t1)
       s0 = max(s0, minFreqPts)
       s1 = min(s1, maxFreqPts)
-      #print 'drawViewSlice4', label, tile, s0, s1, t0, t1
+      #print('drawViewSlice4', label, tile, s0, s1, t0, t1)
       if (s1 <= s0):
         continue
 
@@ -5033,20 +5033,20 @@ class WindowFrame(Frame, WindowDraw):
       if first >= last:
         continue
 
-      #print 'drawViewSlice5', label, x0, y0, x1, y1, a0, b0, a1, b1
+      #print('drawViewSlice5', label, x0, y0, x1, y1, a0, b0, a1, b1)
       if (slice.orient == Tkinter.HORIZONTAL):
         handler.mapRanges(x0, y0, x1, y1, a0, b0, a1, b1)
       else:
         # note b1, b0 swap, due to wanting positive values to point left, not right
         handler.mapRanges(y0, x0, y1, x1, b1, a0, b0, a1)
-      #print 'drawViewSlice6', self.windowPane.name, label, first, last, position
+      #print('drawViewSlice6', self.windowPane.name, label, first, last, position)
       sliceFile.draw(handler, first, last, position)
-      #print 'drawViewSlice7', label
+      #print('drawViewSlice7', label)
 
   def doSlice(self, slice):
 
     for view in self.getSpectrumViews():
-      #print 'doSlice', view.analysisSpectrum.dataSource.name, view.isSliceVisible
+      #print('doSlice', view.analysisSpectrum.dataSource.name, view.isSliceVisible)
       if view.isSliceVisible:
         if self.hasValueAxis:
           self.drawViewSlicePeaks(slice, view, slice.winfo_height())
@@ -5081,7 +5081,7 @@ class WindowFrame(Frame, WindowDraw):
     if not hasattr(slice, 'view_region'):
       return
 
-    #print 'drawSliceReal', slice.slice_width, slice.slice_height
+    #print('drawSliceReal', slice.slice_width, slice.slice_height)
     self.setupWidgetHandler(slice, isCanvas=False)
 
     try:
@@ -5100,17 +5100,17 @@ class WindowFrame(Frame, WindowDraw):
       handler.endBack()
       handler.swapBuffers()
 
-    except Implementation.ApiError, e:
-      print 'Drawing slice error:', e.error_msg
+    except Implementation.ApiError as e:
+      print('Drawing slice error:', e.error_msg)
 
-    except self.handlerExc, e:
-      print 'Drawing slice handler error:', e
+    except self.handlerExc as e:
+      print('Drawing slice handler error:', e)
 
-    except SliceFile.error, e:
-      print 'Drawing slice SliceFile error:', e
+    except SliceFile.error as e:
+      print('Drawing slice SliceFile error:', e)
 
     except:
-      #print 'Unknown drawing slice error'
+      #print('Unknown drawing slice error')
       pass
 
     try:
@@ -5258,7 +5258,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def addRow(self, row=-1, centerPositionDict = None):
 
-    #print 'addRow', row
+    #print('addRow', row)
     if centerPositionDict is None:
       centerPositionDict = {}
 
@@ -5304,7 +5304,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def deleteRow(self, row=-1):
 
-    #print 'deleteRow'
+    #print('deleteRow')
     self.update_idletasks()
     N = len(self.windowPane.findFirstAxisPanel(label='y').axisRegions)
     if N > 1:
@@ -5435,7 +5435,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def addCol(self, col=-1, centerPositionDict=None):
 
-    #print 'addCol1', col
+    #print('addCol1', col)
     if (centerPositionDict is None):
       centerPositionDict = {}
 
@@ -5451,7 +5451,7 @@ class WindowFrame(Frame, WindowDraw):
     (r0, r1) = canvas.xview_region
     if r0 > r1:
       (r0, r1) = (r1, r0)
-    #print 'WindowPopup.addCol', (r0, r1)
+    #print('WindowPopup.addCol', (r0, r1))
     Util.addAxisPanelRegion(self.windowPane.findFirstAxisPanel(label='x'), region=(r0, r1),
                  size=canvas.winfo_width())
 
@@ -5486,7 +5486,7 @@ class WindowFrame(Frame, WindowDraw):
 
   def deleteCol(self, col = -1):
 
-    #print 'deleteCol', col
+    #print('deleteCol', col)
     self.update_idletasks() # see if this helps crashing stop
     #self.scrolled_window.oneWeights()
     N = len(self.windowPane.findFirstAxisPanel(label='x').axisRegions)

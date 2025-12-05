@@ -40,7 +40,7 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
       (pathName,baseName) = os.path.split(distanceConstraintFile)
       self.formatObjectDict[formatName].readDistanceConstraints(distanceConstraintFile, constraintListName = baseName, nmrConstraintStore = nmrConstraintStore, minimalPrompts = 1, **keywds)
   
-      print "  Read %s file in %s format..." % (distanceConstraintFile,formatName)
+      print("  Read %s file in %s format..." % (distanceConstraintFile,formatName))
   
                 
   def createSwapCheckedNmrConstraints(self,origNmrConstraintStore,
@@ -129,16 +129,16 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
     
     """
 
-    print "\n### Resetting aromatic assignments ###\n"
+    print("\n### Resetting aromatic assignments ###\n")
     
     if not structureEnsemble:
-      print "  Error no structureEnsemble available - aborting"
+      print("  Error no structureEnsemble available - aborting")
       return
       
     models = structureEnsemble.sortedModels()
 
     if not models:
-      print "  Error no structureEnsemble models available for structure ensemble - aborting"
+      print("  Error no structureEnsemble models available for structure ensemble - aborting")
       return
     
     refMolStructure = models[0]
@@ -176,12 +176,12 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
                       otherAtomSet.sortedResonanceSets()[0].delete()
                       for otherResonance in otherResonances:
                         resonanceSet.addResonance(otherResonance)
-                        print "  Warning: moved aromatic resonance %s to joined resonanceSet..." % getResNameText(otherResonance)
+                        print("  Warning: moved aromatic resonance %s to joined resonanceSet..." % getResNameText(otherResonance))
 
 
                     atomSet.addAtom(otherAromProton)
                     otherAtomSet.delete()
-                    print "  Warning: made joined atomSet for atoms '%s' and '%s'..." % (getAtomNameText(aromProton),getAtomNameText(otherAromProton))
+                    print("  Warning: made joined atomSet for atoms '%s' and '%s'..." % (getAtomNameText(aromProton),getAtomNameText(otherAromProton)))
                     break
 
                   else:
@@ -189,7 +189,7 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
 
                 else:
                   atomSet.addAtom(otherAromProton)
-                  print "  Warning: added atom '%s' to joined atomSet..." % (getAtomNameText(otherAromProton))
+                  print("  Warning: added atom '%s' to joined atomSet..." % (getAtomNameText(otherAromProton)))
 
 
   def swapCheck(self,nmrConstraintStore,structureEnsemble,numSwapCheckRuns,deassignAll=False):
@@ -204,7 +204,7 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
    
     """
 
-    print "\n### Checking stereo swaps and deassignment ###"
+    print("\n### Checking stereo swaps and deassignment ###")
 
     swapCheck = StereoAssignmentSwapCheck(nmrConstraintStore,structureEnsemble,verbose = True)
 
@@ -269,7 +269,7 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
     elif pseudo == 'Generic':
       pseudoCorrections = getPseudoCorrections(fixedResonances)
     else:
-      print "  ERROR: Unrecognized pseudo correction system '%s' - aborting."
+      print("  ERROR: Unrecognized pseudo correction system '%s' - aborting.")
       return
     
     #
@@ -355,10 +355,10 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
         
         """           
         if dcl.serial == 9 and constraint.serial in [6,7,8,9]:
-          print "  ", constraint.serial
-          #print "    ",constraint.sortedItems()
-          #print "    ", distPerStruc
-          #print "    ", ["%s.%d.%s-%s.%d.%s" % (atomComb[0].residue.ccpCode,atomComb[0].residue.seqId,atomComb[0].name,atomComb[1].residue.ccpCode,atomComb[1].residue.seqId,atomComb[1].name)  for atomComb in atomCombs]
+          print("  ", constraint.serial)
+          #print("    ",constraint.sortedItems())
+          #print("    ", distPerStruc)
+          #print("    ", ["%s.%d.%s-%s.%d.%s" % (atomComb[0].residue.ccpCode,atomComb[0].residue.seqId,atomComb[0].name,atomComb[1].residue.ccpCode,atomComb[1].residue.seqId,atomComb[1].name)  for atomComb in atomCombs])
         """           
 
         for item in constraint.sortedItems():
@@ -370,8 +370,8 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
             
             """           
             if dcl.serial == 9 and constraint.serial in [6,7,8,9]:
-              print "    ", residue, atomList
-              print "    ", otherResidue,otherAtomList
+              print("    ", residue, atomList)
+              print("    ", otherResidue,otherAtomList)
             """           
 
             # Set the atom type
@@ -470,7 +470,7 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
           
         """           
         if dcl.serial == 9 and constraint.serial in [6,7,8,9]:
-          print "  ", avgDist
+          print("  ", avgDist)
           print
         """           
 
@@ -713,7 +713,7 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
     elif pseudo == 'Generic':
       pseudoCorrections = getPseudoCorrections(fixedResonances)
     else:
-      print "  ERROR: Unrecognized pseudo correction system '%s' - aborting."
+      print("  ERROR: Unrecognized pseudo correction system '%s' - aborting.")
       return
         
     self.setAssignedAtomsAndResidues(fixedResonances) # From ResonanceCoordinateHandler class!
@@ -743,7 +743,7 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
             constraint.targetValue = constraint.targetValue - pseudoCorrection
             numberCorrections += 1
               
-      print "Distance constraint list %d: corrected %d constraints (out of %d)" % (dcl.serial,numberCorrections,len(dclConstraints))
+      print("Distance constraint list %d: corrected %d constraints (out of %d)" % (dcl.serial,numberCorrections,len(dclConstraints)))
              
     if saveResults:
       nmrConstraintStore.root.saveModified()
@@ -822,18 +822,18 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
       if (not checkForSets or not useAtomSetName) and atomNames and atomNames.count(atomNames[0]) == len(atomNames):
         useAtomSetName = atomNames[0]
 
-      #print "    %d" % i, chemAtomSets, deepChemAtomSets, atomNames
+      #print("    %d" % i, chemAtomSets, deepChemAtomSets, atomNames)
 
       atomsForPseudoCorrection.append(useAtomSetName)
 
-    #print "  ",atomsForPseudoCorrection
+    #print("  ",atomsForPseudoCorrection)
 
     if residueList and len(residueList) == residueList.count(residueList[0]):
       intraResidue = True
-      #print "  intrares, %s" % residueList[0].ccpCode
+      #print("  intrares, %s" % residueList[0].ccpCode)
     else:
       intraResidue = False
-      #print "  interres, %s-%s" % (residueList[0].ccpCode,residueList[-1].ccpCode)
+      #print("  interres, %s-%s" % (residueList[0].ccpCode,residueList[-1].ccpCode))
 
     #
     # Now check if have to apply correction...

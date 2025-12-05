@@ -77,7 +77,7 @@ class MardigrasDistanceConstraintFile(MardigrasGenericFile):
 
     if verbose == 1:
     
-      print "Reading %s distance constraint list %s" % (self.format,self.name)
+      print("Reading %s distance constraint list %s" % (self.format,self.name))
     
     fin = open(self.name, 'rU')
 
@@ -118,7 +118,7 @@ class MardigrasDistanceConstraintFile(MardigrasGenericFile):
 
     if verbose == 1:
  
-      print "Writing %s distance constraint list %s" % (self.format,self.name)
+      print("Writing %s distance constraint list %s" % (self.format,self.name))
     
     
     fout = open(self.name,'w')

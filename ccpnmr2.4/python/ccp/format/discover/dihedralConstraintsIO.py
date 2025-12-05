@@ -84,7 +84,7 @@ class DiscoverDihedralConstraintFile(DiscoverGenericFile):
 
     if verbose == 1:
     
-      print "Reading %s distance constraint list %s" % (self.format,self.name)
+      print("Reading %s distance constraint list %s" % (self.format,self.name))
     
     fin = open(self.name, 'rU')
      

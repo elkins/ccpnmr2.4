@@ -86,7 +86,7 @@ def filterClouds(clouds, atomTypes=None):
     
     cloudsList.append(orderCloud)
       
-  print "Generating mean and aligning"
+  print("Generating mean and aligning")
   
   (meanCloud,cloudsList) = alignToMeanCloud(cloudsList)
   #minToMeanRmsd          = getMeanPairRmsd(meanCloud,[cloudsList[0],])

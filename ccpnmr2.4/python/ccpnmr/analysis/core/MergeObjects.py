@@ -181,7 +181,7 @@ def mergeObjects(sourceObj,targetObj):
       
     if o is None or o.hicard != o.locard:
       #
-      #print "C3", linkName
+      #print("C3", linkName)
       #
       # NB this does NOT break API
       #
@@ -227,7 +227,7 @@ def mergeObjects(sourceObj,targetObj):
             removefunc(attrObj)
           except ApiError:
             pass
-            #print 'Failed to remove %s for %s' % (linkName,sourceObj.className)
+            #print('Failed to remove %s for %s' % (linkName,sourceObj.className))
           
           
           try:
@@ -236,7 +236,7 @@ def mergeObjects(sourceObj,targetObj):
             addfunc(attrObj)
           except ApiError:
             pass
-            #print 'Failed to add %s for %s' % (linkName,targetObj.className)
+            #print('Failed to add %s for %s' % (linkName,targetObj.className))
             break
 
     elif o.hicard == 1 and o.locard == 1:
@@ -259,7 +259,7 @@ def mergeObjects(sourceObj,targetObj):
       
     else:
       #
-      #print "C4", linkNam
+      #print("C4", linkNam)
       #
       # NB this does NOT break API
       #
@@ -303,7 +303,7 @@ def mergeObjects(sourceObj,targetObj):
         #print linkName, a.locard, a.hicard, o.locard, o.hicard
       
         if a.hicard == 1:
-          #print "C1", linkName
+          #print("C1", linkName)
 
           if  getattr(targetObj,linkName) is None:
 
@@ -357,7 +357,7 @@ def mergeObjects(sourceObj,targetObj):
           # unlikely ever to arise.
           
           #
-          #print "C2", linkName
+          #print("C2", linkName)
           # set up
           keepList = list(getattr(targetObj, linkName))
           ll = list(getattr(sourceObj, linkName))
@@ -463,9 +463,9 @@ def mergeObjects(sourceObj,targetObj):
             oo.__dict__['topObject'] = topObj
       
   targetObj.checkValid()
-  #print "S1", sourceObj
+  #print("S1", sourceObj)
   sourceObj.delete()
-  #print "S2", sourceObj
-  #print "T1", targetObj
+  #print("S2", sourceObj)
+  #print("T1", targetObj)
   return targetObj
    

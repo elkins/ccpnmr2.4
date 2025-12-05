@@ -107,7 +107,7 @@ class MolmolCoordinateFile(MolmolGenericFile):
       elif self.patt['pdbHeader'].search(line):
       
         if line.find('MOLMOL') < 0:
-          print "  Warning: probably invalid molmol file!"
+          print("  Warning: probably invalid molmol file!")
       
       elif self.patt['pdbCompound'].search(line):
       
@@ -160,7 +160,7 @@ class MolmolCoordinateFile(MolmolGenericFile):
   def write(self,verbose = 0):
 
     if verbose == 1:
-      print "Writing %s coordinate file %s" % (self.format,self.name)
+      print("Writing %s coordinate file %s" % (self.format,self.name))
 
     fout = open(self.name,'w')
 

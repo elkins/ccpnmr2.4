@@ -324,7 +324,7 @@ class Scrollbar(Frame):
       s1 = s1 + w
       limit = h/3
  
-    #print 'updateBubble1', s0, s1, w, h, b
+    #print('updateBubble1', s0, s1, w, h, b)
  
     c = self.canvas
     coords = c.coords
@@ -429,7 +429,7 @@ class Scrollbar(Frame):
     # TBD: no guarantee for now that text fits inside canvas
  
     (t0, t1) = self.text_func()
-    #print 'updateText', t0, t1
+    #print('updateText', t0, t1)
     self.canvas.itemconfig(self.text0, text=t0)
     self.canvas.itemconfig(self.text1, text=t1)
  
@@ -460,7 +460,7 @@ class Scrollbar(Frame):
 
   def buttonPressMove(self, event):
  
-    #print 'buttonPressMove1', event.state
+    #print('buttonPressMove1', event.state)
 
     s = self.getLocation(event)
     d = self.getLength()
@@ -501,7 +501,7 @@ class Scrollbar(Frame):
       self.delay = self.repeatdelay
       self.moveFraction()
  
-    #print 'buttonPressMove2', self.mode
+    #print('buttonPressMove2', self.mode)
 
   def buttonMotionMove(self, event):
  
@@ -510,7 +510,7 @@ class Scrollbar(Frame):
 
   def buttonReleaseMove(self, event):
  
-    #print 'buttonReleaseMove', event.state, self.mode
+    #print('buttonReleaseMove', event.state, self.mode)
 
     self.continueMove = False
 
@@ -527,7 +527,7 @@ class Scrollbar(Frame):
       return
 
     d = self.fraction * (self.hi - self.lo)
-    #print 'moveFraction', self.lo, self.hi, self.fraction, self.lo+d, self.hi+d
+    #print('moveFraction', self.lo, self.hi, self.fraction, self.lo+d, self.hi+d)
     self.set(self.lo+d, self.hi+d, do_callback=True)
 
     if (self.continueMove): # should be True
@@ -552,10 +552,10 @@ class Scrollbar(Frame):
  
   def buttonPressResize(self, event):
  
-    #print 'buttonPressResize', event.state
+    #print('buttonPressResize', event.state)
 
     s = self.getLocation(event)
-    #print 'buttonPressResize', event.x, event.y, s, self.lo, self.hi
+    #print('buttonPressResize', event.x, event.y, s, self.lo, self.hi)
     d = self.getLength()
     r = float(s) / d
  
@@ -584,7 +584,7 @@ class Scrollbar(Frame):
       d = 0.25*(hi-lo)
     else:
       d = 0.5*(hi-lo)
-    #print 'resize', event.x, event.y, self.mode, s, ds, lo, hi, r, d
+    #print('resize', event.x, event.y, self.mode, s, ds, lo, hi, r, d)
     # protect against hi < lo
     if (self.mode == 0):
       if (d < min_delta and r > 0):
@@ -604,7 +604,7 @@ class Scrollbar(Frame):
  
     self.start = s
     self.set(lo, hi, do_callback=True)
-    #print 'resize2', lo, hi
+    #print('resize2', lo, hi)
 
   def get(self):
 
@@ -614,7 +614,7 @@ class Scrollbar(Frame):
 
     assert lo < hi and (hi-lo) <= 1.0, 'lo = %s, hi = %s' % (lo, hi)
 
-    #print 'set1', lo, hi, self.lo, self.hi
+    #print('set1', lo, hi, self.lo, self.hi)
 
     if (lo < 0):
       hi = hi - lo
@@ -623,7 +623,7 @@ class Scrollbar(Frame):
       lo = lo - hi + 1.0
       hi = 1.0
 
-    #print 'set2', lo, hi, self.lo, self.hi
+    #print('set2', lo, hi, self.lo, self.hi)
 
     if ((abs(lo - self.lo) < min_delta) and \
         (abs(hi - self.hi) < min_delta)):
@@ -637,7 +637,7 @@ class Scrollbar(Frame):
           or ((hi - lo) > (self.hi - self.lo + min_delta))):
         a = 0.5 * (lo + hi)
         b = 0.5 * self.min_thickness
-        #print 'set3', lo, hi, self.min_thickness, a-b, a+b
+        #print('set3', lo, hi, self.min_thickness, a-b, a+b)
         lo = a - b
         hi = a + b
         if (lo < 0):
@@ -649,7 +649,7 @@ class Scrollbar(Frame):
       else:
         return
  
-    #print 'set4', lo, hi
+    #print('set4', lo, hi)
     self.lo = lo
     self.hi = hi
 
@@ -683,7 +683,7 @@ if __name__ == '__main__':
   s = None
 
   def callback(lo, hi):
-    print 'callback', lo, hi
+    print('callback', lo, hi)
  
   def getText():
 

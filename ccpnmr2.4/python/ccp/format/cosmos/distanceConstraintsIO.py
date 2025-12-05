@@ -78,7 +78,7 @@ class CosmosDistanceConstraintFile(CosmosGenericFile):
 
     if verbose == 1:
  
-      print "Writing %s distance constraint list %s" % (self.format,self.name)
+      print("Writing %s distance constraint list %s" % (self.format,self.name))
     
 
     #

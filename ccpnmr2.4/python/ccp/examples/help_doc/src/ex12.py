@@ -35,7 +35,7 @@ def saveProject(project, name = 'test', subDir = 'data'):
 # Sub routine to print out details of the repositories.
 def printReposUrls(project):
 
-    print '\nUrls:'
+    print('\nUrls:')
 
     for repos in project.sortedRepositories():
         print repos.name, repos.url.path

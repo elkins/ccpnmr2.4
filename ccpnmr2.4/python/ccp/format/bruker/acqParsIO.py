@@ -331,7 +331,7 @@ class BrukerAcqParData(BrukerGenericFile,GenericAcqParData):
       #  if refRatio is not None:
       #    bf2 = self.baseFreq[0] * refRatio
       #    xx = 1.0e6*(sf/bf2 -1.0)
-      #    print '###1', baseFreq, bf2, xx, xx + 0.5*swhz/bf2 - self.refppm[ii]
+      #    print('###1', baseFreq, bf2, xx, xx + 0.5*swhz/bf2 - self.refppm[ii])
       #
       #print ('###2', ii, acquname, sf, baseFreq, swhz, swppm, self.refppm[ii], 
       #       1.0e6 * (sf / baseFreq - 1.0),  0.5 * swhz / baseFreq)

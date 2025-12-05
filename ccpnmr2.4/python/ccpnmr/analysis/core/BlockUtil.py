@@ -105,8 +105,8 @@ def getBlockFile(spectrum, mem_cache, writeable = False):
                              points, blockSize, dimWrapped, mem_cache,
                              dataStore.nByte, isBigEndian, isPadded,
                              dataStore.headerSize, isInteger, writeable)
-        except BlockFile.error, e:
-          print 'Warning, BlockFile error:', e
+        except BlockFile.error as e:
+          print('Warning, BlockFile error:', e)
           block_file = None
     
     else:
@@ -165,7 +165,7 @@ def getShapeBlockFile(spectrum):
       try:
         block_file = BlockFile.ShapeBlockFile(fileName, ndim,
                              points, blockSize, dimWrapped, shapeFile)
-      except BlockFile.error, e:
-        print 'Warning, BlockFile error:', e
+      except BlockFile.error as e:
+        print('Warning, BlockFile error:', e)
 
   return block_file

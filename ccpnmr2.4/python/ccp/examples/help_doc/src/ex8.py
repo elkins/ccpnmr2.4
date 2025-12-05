@@ -43,15 +43,15 @@ if __name__ == '__main__':
     # Find and print this shiftList in the CCPN data model.
     shiftList = nmrProject.findFirstMeasurementList(className = 'ShiftList')
 
-    print 'ShiftList: [%s]' % shiftList
+    print('ShiftList: [%s]' % shiftList)
 
     # Create a reference NMR experiment. This is based on the 
     # NmrExpPrototype setup.
     refExpType = 'noesy_hsqc_HNH.hhn'  # 'Old' experiment type name.
     refExp = getRefExpFromOldExpType(project, refExpType)
 
-    # Should print 'H_H[N].NOESY'.
-    print 'New experiment type name: [%s]' % refExp.name
+    # Should print('H_H[N].NOESY'.)
+    print('New experiment type name: [%s]' % refExp.name)
 
     # Create a real NMR experiment from this object and link it to the
     # CCPN project.
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     # Find and print this peakList in the CCPN data model.
     peakLists = nmrDataSource.sortedPeakLists()
-    print 'Peaklists: [%s]' % peakLists
+    print('Peaklists: [%s]' % peakLists)
 
     # Run linkResonances.
 
@@ -141,17 +141,17 @@ if __name__ == '__main__':
     allResonances = project.currentNmrProject.sortedResonances()
     numResonances = len(allResonances)
 
-    print '\nNumber of resonances: [%d]' % numResonances
+    print('\nNumber of resonances: [%d]' % numResonances)
 
     # Information about the NMR experiments in this project.
     allExpts = project.currentNmrProject.sortedExperiments()
 
     for nmrExp in allExpts:
-        print 'Experiment: [%d], called [%s], type [%s], with [%d] dims.' % (
+        print('Experiment: [%d], called [%s], type [%s], with [%d] dims.' % ()
             nmrExp.serial, nmrExp.name, nmrExp.experimentType, nmrExp.numDim)
 
         # This line prints a different name as this is a 'reverse' experiment.
-        print 'Reference pathway: [%s]' % (
+        print('Reference pathway: [%s]' % ()
             nmrExp.refExperiment.nmrExpPrototype.name)
 
     # List to save all the residues that are associated with these resonances.
@@ -169,5 +169,5 @@ if __name__ == '__main__':
 
     seqCodes.sort()
 
-    print 'Residue sequence codes connected to resonances:'
+    print('Residue sequence codes connected to resonances:')
     print seqCodes, '\n'

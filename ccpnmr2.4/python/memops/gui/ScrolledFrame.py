@@ -182,10 +182,10 @@ if (__name__ == '__main__'):
   import Util
 
   def config1(event):
-    print 'config1:', frame.winfo_width(), frame.winfo_height()
+    print('config1:', frame.winfo_width(), frame.winfo_height())
 
   def config2(event):
-    print 'config2:', frame2.winfo_width(), frame2.winfo_height()
+    print('config2:', frame2.winfo_width(), frame2.winfo_height())
 
   root = Tkinter.Tk()
 

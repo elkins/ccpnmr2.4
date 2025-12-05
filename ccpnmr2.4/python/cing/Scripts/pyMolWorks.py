@@ -14,7 +14,7 @@ try:
     import pymol #@UnresolvedImport
     from pymol import cmd #@UnresolvedImport
 except:
-    print "Failed to import pymol; python will stack dump next:"
+    print("Failed to import pymol; python will stack dump next:")
 
 # Tell PyMOL we don't want any GUI features.
 __main__.pymol_argv = [ 'pymol', '-Gi' ]
@@ -36,7 +36,7 @@ try:
          pdbCode + '.ent')
     cmd.read_pdbstr(pdbFile.read(), pdbCode)
 except:
-    print "Unexpected error:", sys.exc_info()[0]
+    print("Unexpected error:", sys.exc_info()[0])
 
 time.sleep(5)
 #cmd.quit()

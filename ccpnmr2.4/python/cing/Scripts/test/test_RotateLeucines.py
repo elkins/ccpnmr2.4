@@ -14,8 +14,8 @@ try:
     from cing.PluginCode.yasaraPlugin import yasaraShell #@UnusedImport needed to throw a ImportWarning so that test is handled properly.
     # A bit redundant with above line.
     from cing.Scripts.rotateLeucines import * #@UnusedWildImport Relies on Yasara as well.
-except ImportWarning, extraInfo: # Disable after done debugging; can't use nTdebug yet.
-    print "Got ImportWarning %-10s Skipping unit check %s." % ( YASARA_STR, getCallerFileName() )
+except ImportWarning as extraInfo: # Disable after done debugging; can't use nTdebug yet.
+    print("Got ImportWarning %-10s Skipping unit check %s." % ( YASARA_STR, getCallerFileName() ))
     raise SkipTest(YASARA_STR)
 # end try
 

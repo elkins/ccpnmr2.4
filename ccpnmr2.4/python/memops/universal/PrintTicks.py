@@ -70,7 +70,7 @@ class PrintTicks(Ticks):
 
   def __init__(self, printHandler, plot_size, tick_location, tick_placement, deltaMajor=None, deltaMinor=None, numberDecimals=None, font=None, tickMajor=None, tickMinor=None):
 
-    #print 'PrintTicks', plot_size, tick_location, tick_placement
+    #print('PrintTicks', plot_size, tick_location, tick_placement)
     if not font:
       font = 'Helvetica 10'
 

@@ -141,13 +141,13 @@ def getStructureFromFiles(molSystem, pdbPaths, fileType=None, doWarnings=True):
       dd = None
       if fileType is not None:
         try:
-          print '### trying %s' % fileType
+          print('### trying %s' % fileType)
           dd = _makeStructureDictFromPdb(pdbPath, fileType)
         except:
           pass
    
       if not dd:
-        print '### trying rough'
+        print('### trying rough')
         dd = _makeStructureDictFromRoughPdb(pdbPath)
    
       if dd:
@@ -174,7 +174,7 @@ def getStructureFromFiles(molSystem, pdbPaths, fileType=None, doWarnings=True):
     
     if data:
       if nSkipped:
-        print 'WARNING, %s files skipped' % nSkipped
+        print('WARNING, %s files skipped' % nSkipped)
       return makeStructureEnsemble(data, molSystem, modelNames=modelNames,
                                    doWarnings=doWarnings)
     
@@ -361,7 +361,7 @@ def makeStructureEnsemble(strucDict, molSystem, modelNames=None,
                  % (startPair, endTrunc))
         
         if mismatch:
-          print 'WARNING, Imperfect match: %s non-terminal mismatches' % len(mismatch)
+          print('WARNING, Imperfect match: %s non-terminal mismatches' % len(mismatch))
         
         
     if not msChain:
@@ -538,13 +538,13 @@ def makeStructureEnsemble(strucDict, molSystem, modelNames=None,
           msAtomDict[key] = systemAtom
  
         if (systemAtom is None) or atomCheckDict.get((systemAtom, altLoc)):
-          #print '### failing', atomName
+          #print('### failing', atomName)
           failedAtoms.append('%s %d %s %4s' % 
                              (chCode,seqId,msResidue.ccpCode,atomName) )
           continue
             
         systemAtoms.add(systemAtom)
-        #print '### adding', atomName, systemAtom.name
+        #print('### adding', atomName, systemAtom.name)
         atomCheckDict[(systemAtom, altLoc)] = True
         
         tt = (coordDict.get('recordId'), (chCode,seqId,atomKey), coordResidue,
@@ -586,7 +586,7 @@ def makeStructureEnsemble(strucDict, molSystem, modelNames=None,
               failedAtoms.append('%s %d %s %4s' % 
                                  (chCode,seqId,msResidue.ccpCode,atomName) )
               continue
-            print '### NBNB add extra atom:', (chCode,seqId,atomKey)
+            print('### NBNB add extra atom:', (chCode,seqId,atomKey))
  
             systemAtoms.add(systemAtom)
             atomCheckDict[(systemAtom, altLoc)] = True
@@ -652,7 +652,7 @@ def makeStructureEnsemble(strucDict, molSystem, modelNames=None,
           #  xxx = atomDict[fullKey[2]]
           #  coordDict = xxx
           #except:
-          #  print '###', atomDict.keys(), tt
+          #  print('###', atomDict.keys(), tt)
           
           if coordDict:
             # get data for model

@@ -142,7 +142,7 @@ class Ticks:
     (r0, r1) = self.region
     isTextDrawn = self.isTextDrawn
  
-    #print 'createTicks', w, h, self.minorTicks, self.majorTicks, self.majorFormat
+    #print('createTicks', w, h, self.minorTicks, self.majorTicks, self.majorFormat)
  
     # 30 Mar 2010: complete hack to get PDF output to look ok
     isPdf = False
@@ -304,14 +304,14 @@ class Ticks:
  
       nticks = self.numberTicks(s0, s1, w, deltaMajor)
       d = deltaMajor
-      #print 'findTicks0', nticks, deltaMajor, t
+      #print('findTicks0', nticks, deltaMajor, t)
       while 1:
         if t == 2:
           d = (2 * d) / 5
         else:
           d = d / 2
         nticks = self.numberTicks(s0, s1, w, d)
-        #print 'findTicks1', nticks, deltaMajor, d, t
+        #print('findTicks1', nticks, deltaMajor, d, t)
         if nticks > self.maxMajor:
           break
         if t == 0:
@@ -337,7 +337,7 @@ class Ticks:
         numberDecimals = max(self.minDecimalPlaces, -n)
       self.majorFormat = '%%.%df' % numberDecimals
  
-    #print 'findTicks2', self.majorTicks, nticks, deltaMajor, t
+    #print('findTicks2', self.majorTicks, nticks, deltaMajor, t)
 
     deltaMinor = self.deltaMinor
     if deltaMinor is None and self.deltaMajor is None:
@@ -398,18 +398,18 @@ if (__name__ == '__main__'):
 
     def drawLine(self, x0, y0, x1, y1):
 
-      print 'drawLine', x0, y0, x1, y1
+      print('drawLine', x0, y0, x1, y1)
 
     def drawText(self, text, x, y, a, b):
 
-      print 'drawText', text, x, y, a, b
+      print('drawText', text, x, y, a, b)
 
   t = TestTicks(width = 200.0, height = 20.0, isHorizontal = True,
                 region = (4.6, 12.3), doRuleLines = False, haveYInversion = False)
 
-  print 'minorTicks', t.minorTicks
-  print 'majorTicks', t.majorTicks
-  print 'majorFormat', t.majorFormat
-  print 'minorLines', t.minorLines
-  print 'majorLines', t.majorLines
-  print 'majorTexts', t.majorTexts
+  print('minorTicks', t.minorTicks)
+  print('majorTicks', t.majorTicks)
+  print('majorFormat', t.majorFormat)
+  print('minorLines', t.minorLines)
+  print('majorLines', t.majorLines)
+  print('majorTexts', t.majorTexts)

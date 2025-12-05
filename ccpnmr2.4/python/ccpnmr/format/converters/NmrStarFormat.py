@@ -148,11 +148,11 @@ class NmrStarFormat(DataFormat):
     self.setCcpnMolTypes()
     
     if self.verbose == 1:
-      print "Reading sequence from %s file %s" % (self.formatLabel,self.fileName)
+      print("Reading sequence from %s file %s" % (self.formatLabel,self.fileName))
 
   def setMoleculeInfo(self,molecule,createMoleculeInfo, newMolecule = True):
 
-    #print 'CREATEMOL: [%s]' % createMoleculeInfo[1][0][0].dbLinks
+    #print('CREATEMOL: [%s]' % createMoleculeInfo[1][0][0].dbLinks)
     
     sequence = createMoleculeInfo[1][0][0]
 
@@ -218,7 +218,7 @@ class NmrStarFormat(DataFormat):
       
       # Can sometimes be empty - problem in NMR-STAR file, ignore
       if not dbName:
-        print "  Warning: sequence DB link without name in original file."
+        print("  Warning: sequence DB link without name in original file.")
         dbName = 'unknown'
       
       db = self.project.findFirstDatabase(name = dbName)
@@ -280,7 +280,7 @@ class NmrStarFormat(DataFormat):
 
   def setMolSystemInfo(self):
 
-    #print 'DICT: [%s] [%s]' % (dir(self.molSystem), dir(self.sequenceFile) )
+    #print('DICT: [%s] [%s]' % (dir(self.molSystem), dir(self.sequenceFile) ))
 
     if self.sequenceFile.details:
       self.molSystem.details = self.sequenceFile.details
@@ -350,7 +350,7 @@ class NmrStarFormat(DataFormat):
       if measurementFiles:
  
         if self.verbose == 1:
-          print "Reading %s list(s) from %s file %s" % (self.measurementType,self.formatLabel,self.fileName)
+          print("Reading %s list(s) from %s file %s" % (self.measurementType,self.formatLabel,self.fileName))
 
         if len(measurementFiles) > 1:
           if sfnum >= len(measurementFiles):
@@ -401,7 +401,7 @@ class NmrStarFormat(DataFormat):
       self.measurementFile = self.MeasurementFileClass(self.fileName,self.nmrStarFile)
      
       if self.verbose == 1:
-        print "Writing %ss to %s file %s" % (self.measurementType,self.formatLabel,self.fileName)
+        print("Writing %ss to %s file %s" % (self.measurementType,self.formatLabel,self.fileName))
   
     except:
 
@@ -423,7 +423,7 @@ class NmrStarFormat(DataFormat):
       if self.nmrStarFile.constraintFiles:
  
         if self.verbose == 1:
-          print "Reading %s constraint list(s) from %s file %s" % (self.constraintType,self.formatLabel,self.fileName)
+          print("Reading %s constraint list(s) from %s file %s" % (self.constraintType,self.formatLabel,self.fileName))
 
         if len(self.nmrStarFile.constraintFiles) > 1:
           if sfnum >= len(self.nmrStarFile.constraintFiles):
@@ -462,7 +462,7 @@ class NmrStarFormat(DataFormat):
       self.generalIO.NmrStarConstraintMember = getattr(self.constraintsIO,"%s%sConstraintMember" % (self.formatLabel,self.constraintApiCode))
      
       if self.verbose == 1:
-        print "Writing %s constraints to %s file %s" % (self.constraintType,self.formatLabel,self.fileName)
+        print("Writing %s constraints to %s file %s" % (self.constraintType,self.formatLabel,self.fileName))
   
     except:
       self.messageReporter.showWarning("Warning"," No write%sConstraints available for %s..." % (self.constraintApiCode,self.formatLabel),self.guiParent)
@@ -475,7 +475,7 @@ class NmrStarFormat(DataFormat):
     self.coordinateFile.read()
         
     if self.verbose == 1:
-      print "Reading coordinates from %s file %s" % (self.formatLabel,self.fileName)
+      print("Reading coordinates from %s file %s" % (self.formatLabel,self.fileName))
       
   def getCoordinateSeqCode(self,coordinate):
     
@@ -501,14 +501,14 @@ class NmrStarFormat(DataFormat):
   def createCoordinateFile(self):
   
     if self.verbose == 1:
-      print "Writing coordinates to %s file %s" % (self.formatLabel,self.fileName)
+      print("Writing coordinates to %s file %s" % (self.formatLabel,self.fileName))
   
     self.coordinateFile = self.coordinatesIO.NmrStarCoordinateFile(self.fileName,self.file)
 
   def getFullProject(self,fileName,entry = None, molSystem = None, strucGen = None, components = [], title = 'None', details = 'None', version = '2.1.1', **keywds):
   
     if self.verbose == 1:
-      print "Reading %s project from file %s" % (self.formatLabel,fileName)
+      print("Reading %s project from file %s" % (self.formatLabel,fileName))
     
     # Little hack - should come from readProject
     if not self.version:
@@ -522,7 +522,7 @@ class NmrStarFormat(DataFormat):
 
     if not status:
       if self.verbose:
-        print "Invalid NMR-STAR project file, cannot read, aborting."
+        print("Invalid NMR-STAR project file, cannot read, aborting.")
       return False
     
     #
@@ -1124,7 +1124,7 @@ class NmrStarFormat(DataFormat):
   def createFullProject(self,fileName, headerComment = '', peakKeyWdList = None):
   
     if self.verbose == 1:
-      print "Writing %s project to file %s" % (self.formatLabel,fileName)
+      print("Writing %s project to file %s" % (self.formatLabel,fileName))
    
     #
     # Writing ONLY version 3.0!!
@@ -1182,7 +1182,7 @@ class NmrStarFormat(DataFormat):
   def createCoordinatesSf(self):
   
     if not hasattr(self,'coordinateFile') or not self.coordinateFile:
-      print "  Error: cannot create coordinate saveframe (no file object created)"
+      print("  Error: cannot create coordinate saveframe (no file object created)")
       return
   
     sfName = 'conformer_family_coord_set'
@@ -1241,7 +1241,7 @@ class NmrStarFormat(DataFormat):
             break
 
         if tempChain:
-          print "  Error: label not found for chain %s!!!" % (chain.code)
+          print("  Error: label not found for chain %s!!!" % (chain.code))
 
         chainLabel = coordinate.chainCode
         moleculeNames = self.chainLabelMoleculeNames[chainLabel]
@@ -1254,7 +1254,7 @@ class NmrStarFormat(DataFormat):
             break
 
         if tempMoleculeNames:
-          print "  Error: label not found for molecules %s!!!" % (str(tempMoleculeNames))
+          print("  Error: label not found for molecules %s!!!" % (str(tempMoleculeNames)))
 
         #
         # Now get the chemComp based on the sequence code
@@ -1272,7 +1272,7 @@ class NmrStarFormat(DataFormat):
             break
 
         if chemCompCode:
-          print "  Error: label not found for molecule %s, seqCode %d!!!" % (moleculeID,coordinate.seqCode)
+          print("  Error: label not found for molecule %s, seqCode %d!!!" % (moleculeID,coordinate.seqCode))
 
 
         self.setTableTag('Label_atom_ID',coordinate.atomName)
@@ -1773,7 +1773,7 @@ class NmrStarFormat(DataFormat):
       if not constraint.nodes or not constraint.nodes[0].Id:
         
         if not constraint.errors:
-          print "  nmrStar write error: removed constraint %d in list %d" % (constraint.Id,constraintListID)
+          print("  nmrStar write error: removed constraint %d in list %d" % (constraint.Id,constraintListID))
         
         continue
       
@@ -1855,7 +1855,7 @@ class NmrStarFormat(DataFormat):
             nmrStarLabel = member.nmrStarLabel
             
           else:
-            print "  Error: constraint %d has missing original name" % (constraintIDs[constraint.Id])
+            print("  Error: constraint %d has missing original name" % (constraintIDs[constraint.Id]))
           
           # TODO: additional setting of original stuff here?
           
@@ -1941,7 +1941,7 @@ class NmrStarFormat(DataFormat):
           break
 
       if tempChain:
-        print "  Error: label not found for chain %s!!!" % (chain.code)
+        print("  Error: label not found for chain %s!!!" % (chain.code))
 
     else:
       chainID = ''
@@ -1962,7 +1962,7 @@ class NmrStarFormat(DataFormat):
           break
 
       if tempMoleculeNames:
-        print "  Error: label not found for molecules %s!!!" % (str(tempMoleculeNames))
+        print("  Error: label not found for molecules %s!!!" % (str(tempMoleculeNames)))
 
     else:
 
@@ -1995,7 +1995,7 @@ class NmrStarFormat(DataFormat):
           break
 
       if chemCompCode:
-        print "  Error: label not found for molecule %s, seqCode %d!!!" % (moleculeID,seqCode)
+        print("  Error: label not found for molecule %s, seqCode %d!!!" % (moleculeID,seqCode))
         compId = compIndex = ''
     
     return (compID, compIndex)
@@ -2059,7 +2059,7 @@ class NmrStarFormat(DataFormat):
       if not constraint.nodes:
         
         if not constraint.errors:
-          print "  nmrStar write error: removed constraint %d in list %d" % (constraint.Id,constraintListID)
+          print("  nmrStar write error: removed constraint %d in list %d" % (constraint.Id,constraintListID))
         
         continue
 
@@ -2116,7 +2116,7 @@ class NmrStarFormat(DataFormat):
               
             except:
             
-              print "  Error: constraint %d has missing original name" % (constraint.Id)
+              print("  Error: constraint %d has missing original name" % (constraint.Id))
           
           else:
             
@@ -2237,7 +2237,7 @@ class NmrStarFormat(DataFormat):
       if not constraint.nodes:
         
         if not constraint.errors:
-          print "  nmrStar write error: removed constraint %d in list %d" % (constraint.Id,constraintListID)
+          print("  nmrStar write error: removed constraint %d in list %d" % (constraint.Id,constraintListID))
         
         continue
 
@@ -2300,7 +2300,7 @@ class NmrStarFormat(DataFormat):
               
             except:
             
-              print "  Error: constraint %d has missing original name" % (constraint.Id)
+              print("  Error: constraint %d has missing original name" % (constraint.Id))
           
           tableTags['Auth_segment_code_%d' % (i+1)] = nmrStarCode
           tableTags['Auth_seq_ID_%d' % (i+1)] = str(nmrStarSeqID) + string.strip(seqInsertCode)
@@ -2384,7 +2384,7 @@ class NmrStarFormat(DataFormat):
       
     else:
       
-      print "  Warning: no original data for saveframe %s" % (sfName)
+      print("  Warning: no original data for saveframe %s" % (sfName))
       
       title = sfName + '_' + str(constraintListID)
       self.setupSaveFrame(sfName,title)
@@ -2439,7 +2439,7 @@ class NmrStarFormat(DataFormat):
     molecule = self.project.newMolecule(name = molName)
     self.convertCount[self.mainCode][1]['molecule(s)'] += 1
 
-    #print 'CREATE: [%s]' % createMoleculeInfo
+    #print('CREATE: [%s]' % createMoleculeInfo)
 
     if hasattr(self.sequenceFile,'commonName'):
       molecule.longName = self.sequenceFile.commonName
@@ -2644,7 +2644,7 @@ class NmrStarFormat(DataFormat):
       
       self.measurementListKeywds['coherenceType'] = ccpnCoherenceType
 
-      print "  Warning: ignoring element symbols for T1 list! Are %s" % elementSymbols
+      print("  Warning: ignoring element symbols for T1 list! Are %s" % elementSymbols)
       
     if self.specFreq:
       self.measurementListKeywds['sf'] = self.specFreq
@@ -2752,7 +2752,7 @@ class NmrStarFormat(DataFormat):
     #
     
     if not self.rawConstraint.nodes:
-      print "  Error: no nodes for constraint!"
+      print("  Error: no nodes for constraint!")
       return 0
 
     if len(self.rawConstraint.nodes) > 1:
@@ -2766,12 +2766,12 @@ class NmrStarFormat(DataFormat):
       #downNode = firstNode.downId
       
       if logicOperator != 'OR':
-        print "  Currently handling only 'OR' noded nmrStar distance constraints..."
+        print("  Currently handling only 'OR' noded nmrStar distance constraints...")
         return 0
       
       for node in self.rawConstraint.nodes[1:]:
         if node.downId != None:
-          print "  Currently handling only simple 'OR' relationships..."
+          print("  Currently handling only simple 'OR' relationships...")
           return 0
           
       self.rawConstraint.items = self.rawConstraint.nodes[1:]
@@ -2819,7 +2819,7 @@ class NmrStarFormat(DataFormat):
         
       
       if len(memberDict) != self.constraintFile.constraintElements:
-        print "  Warning can only handle exactly 2 member Ids for one node - ignored node"
+        print("  Warning can only handle exactly 2 member Ids for one node - ignored node")
         continue
       
       
@@ -3046,7 +3046,7 @@ class NmrStarFormat(DataFormat):
     nmrStarLabels = self.item.findAllApplicationData(application = self.format,keyword = 'origResLabel')
     
     if nmrStarNames and len(nmrStarNames) != 2:
-      print "  Error: constraint %d has invalid number of names %s" % (self.rawConstraint.Id,str(nmrStarNames))
+      print("  Error: constraint %d has invalid number of names %s" % (self.rawConstraint.Id,str(nmrStarNames)))
       return
       
     for i in range(0,2):
@@ -3232,7 +3232,7 @@ class NmrStarFormat(DataFormat):
       # original member was listed (e.g. DYANA format)
       #
     
-      print "  Error: rdc constraint %d has invalid number of names %s" % (self.rawConstraint.Id,str(nmrStarNames))
+      print("  Error: rdc constraint %d has invalid number of names %s" % (self.rawConstraint.Id,str(nmrStarNames)))
 
     for i in range(0,self.constraintResNum):
             
@@ -3278,7 +3278,7 @@ class NmrStarFormat(DataFormat):
       
       if delete:
         del self.constraintFile.constraints[-1]
-        print "  Error: no multiple items allowed for rdc constraint %d - deleted." % self.constraint.serial
+        print("  Error: no multiple items allowed for rdc constraint %d - deleted." % self.constraint.serial)
 
       return False
       
@@ -3607,7 +3607,7 @@ class NmrStarFormat(DataFormat):
 
     for instrument in self.instrumentFile.instruments:
 
-      #print 'INSTR: [%s]' % (instrument)
+      #print('INSTR: [%s]' % (instrument))
 
       manufacturer = self.project.currentAffiliationStore.findFirstOrganisation(name = instrument.manufacturer.capitalize())
 
@@ -3719,7 +3719,7 @@ class NmrStarFormat(DataFormat):
       newSoft = self.project.currentMethodStore.findFirstSoftware(**keywds)
 
       if newSoft:
-        print "  Warning: software %s already exists! Cannot create again." % software.name
+        print("  Warning: software %s already exists! Cannot create again." % software.name)
       else:
         newSoft = self.project.currentMethodStore.newSoftware(**keywds)
 
@@ -3748,7 +3748,7 @@ class NmrStarFormat(DataFormat):
       newMethod = self.project.currentMethodStore.findFirstMethod(**keywds)
 
       if newMethod:
-        print "  Warning: method %s already exists! Cannot create again." % method.details
+        print("  Warning: method %s already exists! Cannot create again." % method.details)
       else:
         newMethod = self.project.currentMethodStore.newMethod(**keywds)
 
@@ -3822,7 +3822,7 @@ class NmrStarFormat(DataFormat):
     if not self.starIdToCcpnObject.has_key(foreignIdTagName):
       self.starIdToCcpnObject[foreignIdTagName] = []
 
-      #print 'ID: [%s]' % str(foreignIdTagName)
+      #print('ID: [%s]' % str(foreignIdTagName))
 
       self.ccpnClassToStarId['Experiment'] = foreignIdTagName
 
@@ -3872,7 +3872,7 @@ class NmrStarFormat(DataFormat):
 
               keywds['value'] = True
 
-              #print 'Adding App data'
+              #print('Adding App data')
 
               appData = Implementation.AppDataBoolean(**keywds)
               instrument.addApplicationData(appData)
@@ -3912,7 +3912,7 @@ class NmrStarFormat(DataFormat):
 
       appData = instrument.findFirstApplicationData(**keywds)
 
-      #print 'IN APP DATA: [%s] [%s]' % (instrument, appData)
+      #print('IN APP DATA: [%s] [%s]' % (instrument, appData))
 
       if appData:
         specFlag = False
@@ -3946,7 +3946,7 @@ class NmrStarFormat(DataFormat):
 
     bmrbLabelName = resLabPatt.sub(']', bmrbLabelName)
 
-    #print 'SPEC: [%s] [%s]' % (bmrbLabelName, specificResidue)
+    #print('SPEC: [%s] [%s]' % (bmrbLabelName, specificResidue))
 
     if bmrbLabelName.count(';'):
       labels = bmrbLabelName.split(';')
@@ -3959,7 +3959,7 @@ class NmrStarFormat(DataFormat):
     for label in labels:
       label = label.strip('[] \t')
 
-      #print 'LABEL: [%s]' % label
+      #print('LABEL: [%s]' % label)
 
       if label == 'natural abundance':
         return None # pass ???
@@ -3991,7 +3991,7 @@ class NmrStarFormat(DataFormat):
                      'H': 'hydrogen'}
 
     if mass != isotopeMasses[atomType]:
-      print '  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType])
+      print('  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType]))
       return
 
     if not percent:
@@ -4000,7 +4000,7 @@ class NmrStarFormat(DataFormat):
       weight = float(percent[:-1])/100.0
 
     if weight < 0 and weight > 1:
-      print '  Warning: degree of isotope labelling not in the correct range (0-100%)'
+      print('  Warning: degree of isotope labelling not in the correct range (0-100%)')
       return
 
     uniformAtomLabel2 = None
@@ -4022,7 +4022,7 @@ class NmrStarFormat(DataFormat):
                      'H': 'hydrogen'}
 
     if mass != isotopeMasses[atomType]:
-      print '  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType])
+      print('  Warning: labelled %s isotope does not have mass of %s' % (isotopeNuclei[atomType], isotopeMasses[atomType]))
       return
 
     if not percent:
@@ -4031,7 +4031,7 @@ class NmrStarFormat(DataFormat):
       weight = float(percent[:-1])/100.0
 
     if weight < 0 and weight > 1:
-      print '  Warning: degree of isotope labelling not in the correct range (0-100%)'
+      print('  Warning: degree of isotope labelling not in the correct range (0-100%)')
       return
 
     specAtomLabel2 = None
@@ -4059,7 +4059,7 @@ class NmrStarFormat(DataFormat):
     if bmrbLabelName in schemeNameDict:
       resLabelFrac = resLabel.newResLabelFraction(schemeName=schemeNameDict[bmrbLabelName])
 
-      #print 'RES: [%s] [%s] [%s] [%s]' % (resLabel, resLabelFrac, resLabelFrac.schemeName, resLabelFrac.getLabelingScheme() )
+      #print('RES: [%s] [%s] [%s] [%s]' % (resLabel, resLabelFrac, resLabelFrac.schemeName, resLabelFrac.getLabelingScheme() ))
 
     else:
       uniformLabels = None
@@ -4081,7 +4081,7 @@ class NmrStarFormat(DataFormat):
 
             ccpCode = nucTlcDict[molRes.ccpCode]
 
-          #print "DATA: [%s] [%s] [%s] [%s] [%s] [%s] [%s] [%s]" % (uniform, percent, mass, atomType, specificResidue, molRes, ccpCode, specificAtom)
+          #print("DATA: [%s] [%s] [%s] [%s] [%s] [%s] [%s] [%s]" % (uniform, percent, mass, atomType, specificResidue, molRes, ccpCode, specificAtom))
 
           if specificResidue is not None and specificResidue != ccpCode:
             continue
@@ -4098,7 +4098,7 @@ class NmrStarFormat(DataFormat):
           else:
             continue
 
-      #print 'RES2: [%s] [%s] [%s]' % (resLabel, uniformLabels[0], uniformLabels[1])
+      #print('RES2: [%s] [%s] [%s]' % (resLabel, uniformLabels[0], uniformLabels[1]))
 
 
   def readSamples(self):
@@ -4120,7 +4120,7 @@ class NmrStarFormat(DataFormat):
 
     for sample in self.sampleFile.samples:
 
-      #print 'SAMPLE: [%s]' % sample.name
+      #print('SAMPLE: [%s]' % sample.name)
 
       newSam = self.project.currentSampleStore.newSample(name = sample.name,
                                                          sampleCategories = [self.sampleCategory],
@@ -4152,7 +4152,7 @@ class NmrStarFormat(DataFormat):
 
       for sampleComponent in self.sampleFile.sampleComponents:
 
-        #print 'SAM COMP: [%s]' % sampleComponent.name
+        #print('SAM COMP: [%s]' % sampleComponent.name)
 
         molecule = None
 
@@ -4168,7 +4168,7 @@ class NmrStarFormat(DataFormat):
 
         self.count += 1
 
-        #print 'COUNT: [%s]' % self.count
+        #print('COUNT: [%s]' % self.count)
 
         newRefComp = self.project.currentRefSampleComponentStore.findFirstComponent(name = sampleComponent.name) # + ':' + sample.name
 
@@ -4190,7 +4190,7 @@ class NmrStarFormat(DataFormat):
           if not newLabMol:
             newLabMol = self.project.newLabeledMolecule(name=newRefComp.name)
 
-          #print 'REF NAME: [%s]' % newRefComp.name
+          #print('REF NAME: [%s]' % newRefComp.name)
 
           molLabel = newLabMol.newMolLabel()
 
@@ -4243,7 +4243,7 @@ class NmrStarFormat(DataFormat):
           displayUnit = 'mg/mls'
 
         elif concentrationUnit == 'x':
-          print "  Warning: cannot handle unit 'x' for sample concentration - ignoring info."
+          print("  Warning: cannot handle unit 'x' for sample concentration - ignoring info.")
           continue
 
         sampComp = newSam.newSampleComponent(refComponent       = newRefComp,
@@ -4296,8 +4296,8 @@ class NmrStarFormat(DataFormat):
                                                               error     = sampleCondition.error,
                                                               unit      = sampleCondition.units)
 
-        #print 'SCD: [%s] [%s] [%s] [%s]' % (samCondSet.condition,samCondSet.value,samCondSet.error,samCondSet.unit)
-        #print 'SCD2: [%s] [%s] [%s] [%s]' % (sampleCondition.type,sampleCondition.value,sampleCondition.error,sampleCondition.units)
+        #print('SCD: [%s] [%s] [%s] [%s]' % (samCondSet.condition,samCondSet.value,samCondSet.error,samCondSet.unit))
+        #print('SCD2: [%s] [%s] [%s] [%s]' % (sampleCondition.type,sampleCondition.value,sampleCondition.error,sampleCondition.units))
 
 
   def readChemShiftRefs(self):
@@ -4800,7 +4800,7 @@ class NmrStarFormat(DataFormat):
         
         if not tableInfo:
 
-          print "  Warning: no reference data for saveframe %s, table %s" % (saveFrameName,tableName)
+          print("  Warning: no reference data for saveframe %s, table %s" % (saveFrameName,tableName))
           continue
 
         index = 1

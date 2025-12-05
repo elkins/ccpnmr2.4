@@ -152,7 +152,7 @@ if __name__ == '__main__':
   root = Tkinter.Tk()
   
   def click():
-    print "Clicked"
+    print("Clicked")
     root.destroy()
   
   #b = Button(root, text='+ - + -\n- + - +\n+ - + -\n- + - +', command=click)

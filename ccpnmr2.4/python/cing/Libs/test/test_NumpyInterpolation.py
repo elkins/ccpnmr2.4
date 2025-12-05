@@ -83,7 +83,7 @@ class AllChecks(TestCase):
                     [ 170.0, 170.0, 510.0],
                     ]
         for testTuple in testList:
-#            print 'testing', testTuple
+#            print('testing', testTuple)
             qr, qc, resultExpected = testTuple
             tx = ogrid[ qr:qr:1j, qc:qc:1j ]
             interpolatedValueSection = interpn_linear( z, tx, bins )

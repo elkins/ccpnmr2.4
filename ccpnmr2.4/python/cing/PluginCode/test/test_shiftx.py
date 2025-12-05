@@ -13,8 +13,8 @@ import unittest
 # Import using optional plugins.
 try:
     from cing.PluginCode.shiftx import runShiftx #@UnusedImport needed to throw a ImportWarning so that the test is handled properly.
-except ImportWarning, extraInfo: # Disable after done debugging; can't use nTdebug yet.
-    print "Got ImportWarning %-10s Skipping unit check %s." % ( SHIFTX_STR, getCallerFileName() )
+except ImportWarning as extraInfo: # Disable after done debugging; can't use nTdebug yet.
+    print("Got ImportWarning %-10s Skipping unit check %s." % ( SHIFTX_STR, getCallerFileName() ))
     raise SkipTest(SHIFTX_STR)
 # end try
 

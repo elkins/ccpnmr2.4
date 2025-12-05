@@ -739,6 +739,6 @@ if __name__ == '__main__':
     # RAsmus - just checking log files;
     m = CasdNmrCing(max_entries_todo=500, max_time_to_wait=12000)
     ltried, ldone, lcrashed = m.getCingEntriesTriedAndDone()
-    print 'TRIED:', ltried
-    print 'DONE :', ldone
-    print 'CRASH:', lcrashed
+    print('TRIED:', ltried)
+    print('DONE :', ldone)
+    print('CRASH:', lcrashed)

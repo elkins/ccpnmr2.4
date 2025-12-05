@@ -94,11 +94,11 @@ def runMars(shiftList, chain, fragSize=5,
 
   
   if not shiftList:
-    print 'MARS cannot run - no shift list selected'
+    print('MARS cannot run - no shift list selected')
     return
     
   if not chain:
-    print 'MARS cannot run - no chain selected'
+    print('MARS cannot run - no chain selected')
     return
     
   marsDir, configFile = writeMarsInput(shiftList, chain, fragSize,
@@ -245,7 +245,7 @@ def writeMarsInput(shiftList, chain, fragSize=5, cutoffCO=0.25, cutoffCA=0.2,
       assignedChains = set(x.chain for x in assignedResidues)
       if chain not in assignedChains:
         # spin system is assigned to a different chain. Skip it
-        #print '### skipping', spinSystem, assignedChains
+        #print('### skipping', spinSystem, assignedChains)
         continue
     
     resonanceDict = resonanceDicts[spinSystem] = {}
@@ -260,7 +260,7 @@ def writeMarsInput(shiftList, chain, fragSize=5, cutoffCO=0.25, cutoffCA=0.2,
     
     prevInSeq = findConnectedSpinSystems(spinSystem, -1)
     
-   # print '###', 'H' in resonanceDict and 'N' in resonanceDict, spinSystem.serial, assignedResidues, prevInSeq
+   # print('###', 'H' in resonanceDict and 'N' in resonanceDict, spinSystem.serial, assignedResidues, prevInSeq)
     
     if ((useAssignment and assignedResidues)
         or (useConnections and prevInSeq)
@@ -283,7 +283,7 @@ def writeMarsInput(shiftList, chain, fragSize=5, cutoffCO=0.25, cutoffCA=0.2,
                  if x not in prevSpinSystems]
     if prevInSeq:
       if len(prevInSeq) > 1:
-        print 'WARNING, spin system %s has more than one i-1 pseudo-neighbour'
+        print('WARNING, spin system %s has more than one i-1 pseudo-neighbour')
       prevSpinSystem = prevInSeq[0]
     
       for resonance in prevSpinSystem.resonances:
@@ -361,7 +361,7 @@ def writeMarsInput(shiftList, chain, fragSize=5, cutoffCO=0.25, cutoffCA=0.2,
                  if x in prevSpinSystems]
       if prevInSeq:
         if len(prevInSeq) > 1:
-          print 'WARNING, spin system %s has more than one i-1 pseudo-neighbour'
+          print('WARNING, spin system %s has more than one i-1 pseudo-neighbour')
         prevSpinSystem = prevInSeq[0]
       
         line = '%d\t%d\n' % (spinSystem.serial, prevSpinSystem.serial)

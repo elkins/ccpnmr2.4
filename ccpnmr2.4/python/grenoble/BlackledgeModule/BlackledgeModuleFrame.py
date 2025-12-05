@@ -76,7 +76,7 @@ class BlackledgeModuleFrame(Frame):
       self.nmrProject               = (project.currentNmrProject 
                                       or project.newNmrProject(name='BLACKLEDGE_MODULE'))
     except:
-      print '&&& Running MODULE popup from outside CCPN Analysis - debug only - no NmrCalc'
+      print('&&& Running MODULE popup from outside CCPN Analysis - debug only - no NmrCalc')
       self.nmrProject               = None
 
     if self.nmrProject:

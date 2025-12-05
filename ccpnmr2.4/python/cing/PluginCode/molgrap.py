@@ -145,7 +145,7 @@ class Molgrap(NTdict):
             nTerror("Molgrap.run: no corrected pov ray file generated for: " + entry_code)
             return True
 
-#        print "DEBUG: Doing render/convert", entry_code
+#        print("DEBUG: Doing render/convert", entry_code)
 
         status = self._render_convert_pov_file(
             pov_file_name = pov_cor_file_name,
@@ -261,7 +261,7 @@ class Molgrap(NTdict):
 
         output_text = open(file_name_in, 'r').read()
         for i in range(len(org)):
-            #print "DEBUG: Doing replace of: org[i]"
+            #print("DEBUG: Doing replace of: org[i]")
             output_text = output_text.replace(org[i], new[i])
         open(file_name_out, 'w').write(output_text)
 

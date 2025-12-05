@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
           print member.seqCode, member.atomName,
 
-        print "|",
+        print("|",)
 
       print
     

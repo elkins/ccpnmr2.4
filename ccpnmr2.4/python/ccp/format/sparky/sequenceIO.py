@@ -74,7 +74,7 @@ class SparkySequenceFile(SparkyGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading sparky sequence file %s" % self.name
+      print("Reading sparky sequence file %s" % self.name)
 
     self.sequences.append(SparkySequence())
 
@@ -142,7 +142,7 @@ class SparkySequenceFile(SparkyGenericFile):
     
     if len(lineErrors) > min(5,validLines * 0.5):
       self.sequences = []
-      print "  Bad %s format lines:%s" % (self.format,self.newline)
+      print("  Bad %s format lines:%s" % (self.format,self.newline))
       for lineError in lineErrors:
         print lineError
 
@@ -150,10 +150,10 @@ class SparkySequenceFile(SparkyGenericFile):
   def write(self,verbose = 0):
 
     if verbose == 1:
-      print "Writing sparky sequence file %s" % self.name
+      print("Writing sparky sequence file %s" % self.name)
 
     if len(self.sequences) > 1:
-      print "Warning: multiple sequences - writing to same file."        
+      print("Warning: multiple sequences - writing to same file."        )
 
     fout = open(self.name,'w')
 

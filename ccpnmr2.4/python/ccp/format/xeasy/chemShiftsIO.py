@@ -77,7 +77,7 @@ class XEasyChemShiftFile(XEasyGenericFile):
   def read(self,verbose=False,readAll=False):
 
     if verbose == 1:
-      print "Reading xeasy chemical shift list %s" % self.name
+      print("Reading xeasy chemical shift list %s" % self.name)
 
     fin = open(self.name, 'rU')
 
@@ -127,7 +127,7 @@ class XEasyChemShiftFile(XEasyGenericFile):
   def write(self,verbose = 0):
 
     if verbose == 1:
-      print "Writing xeasy chemical shift list %s" % self.name
+      print("Writing xeasy chemical shift list %s" % self.name)
 
 
     fout = open(self.name,'w')

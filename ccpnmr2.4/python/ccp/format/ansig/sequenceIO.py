@@ -73,7 +73,7 @@ class AnsigSequenceFile(AnsigGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading ansig sequence file %s" % self.name
+      print("Reading ansig sequence file %s" % self.name)
     
     self.sequences.append(AnsigSequence())
     
@@ -125,7 +125,7 @@ class AnsigSequenceFile(AnsigGenericFile):
     
     if len(lineErrors) > min(5,validLines * 0.5):
       self.sequences = []
-      print "  Bad %s format lines:%s" % (self.format,self.newline)
+      print("  Bad %s format lines:%s" % (self.format,self.newline))
       for lineError in lineErrors:
         print lineError
 
@@ -133,10 +133,10 @@ class AnsigSequenceFile(AnsigGenericFile):
   def write(self,verbose = 0):
   
     if verbose == 1:
-      print "Writing ansig sequence file %s" % self.name
+      print("Writing ansig sequence file %s" % self.name)
 
     if len(self.sequences) > 1:
-      print "Warning: multiple sequences - writing to same file."
+      print("Warning: multiple sequences - writing to same file.")
       
     fout = open(self.name,'w')
   

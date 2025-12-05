@@ -76,7 +76,7 @@ class CnsRdcConstraintFile(CnsGenericFile):
   def read(self,verbose = False):
 
     if verbose:
-      print "Reading cns rdc constraint list %s" % self.name
+      print("Reading cns rdc constraint list %s" % self.name)
       
     #
     # Sometimes there is no reference to the RDC reference coordinate system, in this case reset the constraintElements
@@ -110,7 +110,7 @@ class CnsRdcConstraintFile(CnsGenericFile):
     # ...
 
     if verbose == 1:
-      print "Writing cns rdc constraint list %s" % self.name
+      print("Writing cns rdc constraint list %s" % self.name)
 
     fout = open(self.name,'w')
 

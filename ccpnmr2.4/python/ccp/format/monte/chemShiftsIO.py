@@ -107,7 +107,7 @@ class MonteChemShiftFile(MonteGenericFile):
     """
 
     if verbose == 1:
-      print "Reading %s chemical shift list %s" % (self.format,self.name)
+      print("Reading %s chemical shift list %s" % (self.format,self.name))
 
     fin = open(self.name, 'rU')
 
@@ -254,11 +254,11 @@ class MonteChemShiftFile(MonteGenericFile):
     # TODO TODO set up for writing spin system info for input!!
     #
     
-    print "NOT WORKING YET"
+    print("NOT WORKING YET")
     return
 
     if verbose == 1:
-      print "Writing %s chemical shift list %s" % (self.format,self.name)
+      print("Writing %s chemical shift list %s" % (self.format,self.name))
 
 
     fout = open(self.name,'w')

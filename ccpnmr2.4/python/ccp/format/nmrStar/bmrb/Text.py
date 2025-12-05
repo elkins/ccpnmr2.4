@@ -240,8 +240,8 @@ def pattern_unquoted_find(text, pattern, pos=0):
         if squoted or dquoted:
 ##            if squoted and dquoted:
 ##                ## Should not be possible to occur, delete when confident
-##                print "ERROR: code error, mixing of quote styles in line:"
-##                print "ERROR: [%s]" % line
+##                print("ERROR: code error, mixing of quote styles in line:")
+##                print("ERROR: [%s]" % line)
 ##                return None
             if verbosity > 1:
                 print('WARNING: (2) found pattern: [%s] preceded by: [%s]' % (pattern.pattern, line))
@@ -260,8 +260,8 @@ value for the first non white space char.
 In case of error the position value of None will signal failure.
 """
 def tag_value_quoted_parse( text, pos ):
-##    print 'text: [%s]' % text
-##    print 'pos:  [%s]' % pos
+##    print('text: [%s]' % text)
+##    print('pos:  [%s]' % pos)
     if text[ pos ] == '"':
         match_d_quote = pattern_d_quote.search( text, pos+1)
         if not match_d_quote:
@@ -269,8 +269,8 @@ def tag_value_quoted_parse( text, pos ):
             print("ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ])
             return None, None
     ##            if verbosity >= 9:
-    ##                print "pos, span():", pos, match_d_quote.span()
-    ##                print 'Found Q tag value: [%s]' % text[ pos+1:match_d_quote.start() ]
+    ##                print("pos, span():", pos, match_d_quote.span())
+    ##                print('Found Q tag value: [%s]' % text[ pos+1:match_d_quote.start() ])
         return text[ pos+1:match_d_quote.start() ], match_d_quote.end()
 
     if text[ pos ] == "'":
@@ -281,8 +281,8 @@ def tag_value_quoted_parse( text, pos ):
             return None, None
         value = text[ pos+1:match_s_quote.start() ]
     ##            if verbosity >= 9:
-    ##                print "pos, span():", pos, match_s_quote.span()
-    ##                print 'Found Q tag value: [%s]' % value
+    ##                print("pos, span():", pos, match_s_quote.span())
+    ##                print('Found Q tag value: [%s]' % value)
         return value, match_s_quote.end()
 
     ## Remove check for speed if you want
@@ -293,17 +293,17 @@ def tag_value_quoted_parse( text, pos ):
             print("ERROR: No matching semicolon found for semicolon char at offset:", 0)
             print("ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ])
             return None, None
-    ##            print "pos, span():", pos, match_e_semicolon.span()
+    ##            print("pos, span():", pos, match_e_semicolon.span())
         ## Include the first eol and the eol before the semicolon
         value = text[ pos+1:match_e_semicolon.start()+eol_string_length ]
         ## Expansion relatively cheap here and harmless if unique string as defined in
         ## eol_string is indeed unique
-        ## print 'Found Q (semicolon) tag value: unexpanded [%s]' % value
-        ## print '-----------'
+        ## print('Found Q (semicolon) tag value: unexpanded [%s]' % value)
+        ## print('-----------')
         ## print text[ match_e_semicolon.start()+eol_string_length : match_e_semicolon.start()+eol_string_length + 20]
-        ## print '-----------'
+        ## print('-----------')
         value = semicolon_block_expand( value )
-        ## print 'Found Q (semicolon) tag value: expanded   [%s]' % value
+        ## print('Found Q (semicolon) tag value: expanded   [%s]' % value)
         
         return value, match_e_semicolon.end() 
 
@@ -386,9 +386,9 @@ def semicolon_block_collapse( text ):
         raise
 
       # FOR TESTING
-      #print "@@@@"
+      #print("@@@@")
       #print text[startpos:endpos]
-      #print "@@@@"
+      #print("@@@@")
     
       text_replace = re.sub("\n", eol_string,text[startpos:endpos])
 
@@ -491,10 +491,10 @@ def comments_strip( text ):
 #    verbosity = 9
     text, _count = pattern_comment_begin.subn( '', text )
 #    if verbosity >= 9:
-#        print 'Done [%s] subs with comment at beginning of line' % count
+#        print('Done [%s] subs with comment at beginning of line' % count)
     text, _count = pattern_comment_middle.subn( '\g<1>', text )
 #    if verbosity >= 9:
-#        print 'Done [%s] subs with comment not at beginning of line' % count
+#        print('Done [%s] subs with comment not at beginning of line' % count)
     return text
     
 def nmrView_compress( text ):

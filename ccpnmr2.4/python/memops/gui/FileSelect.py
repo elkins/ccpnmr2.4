@@ -536,7 +536,7 @@ class FileSelect(Frame):
       else:
         directory = dirsep
       entries = self.getFilterFiles(directory)
-    except OSError, e:
+    except OSError as e:
       showError('OS Error', str(e))
       if self.prev_directory:
         self.directory = None
@@ -749,10 +749,10 @@ class FileSelect(Frame):
 if __name__ == '__main__':
 
   def f(file):
-    print 'double_callback', file
+    print('double_callback', file)
 
   def g(directory):
-    print 'change_dir_callback', directory
+    print('change_dir_callback', directory)
 
   root = Tkinter.Tk()
 

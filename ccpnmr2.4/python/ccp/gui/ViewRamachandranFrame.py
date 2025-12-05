@@ -743,7 +743,7 @@ class ViewRamachandranFrame(ScrolledCanvas):
             phiPsiList.append((phi, psi))
 
     if (len(newSelect) <= 0):
-      print "No estimation in selected quadrant!"
+      print("No estimation in selected quadrant!")
       return
     
     # 2. calculate crude mean and sd

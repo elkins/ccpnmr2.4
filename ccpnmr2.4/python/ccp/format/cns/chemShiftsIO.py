@@ -77,7 +77,7 @@ class CnsChemShiftFile(CnsGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s chemical shift list %s" % (self.format,self.name)
+      print("Reading %s chemical shift list %s" % (self.format,self.name))
 
     fin = open(self.name, 'rU')
     lines = fin.readlines()
@@ -115,7 +115,7 @@ class CnsChemShiftFile(CnsGenericFile):
     fileReadOk = True
     
     if len(errorMessages) > numLines * 0.1:
-      print "  Error: file not valid - too many errors."
+      print("  Error: file not valid - too many errors.")
       fileReadOk = False
     else:
       for errorMessage in errorMessages:
@@ -126,7 +126,7 @@ class CnsChemShiftFile(CnsGenericFile):
   def write(self,verbose = 0):
 
     if verbose == 1:
-      print "Writing %s chemical shift list %s" % (self.format,self.name)
+      print("Writing %s chemical shift list %s" % (self.format,self.name))
 
 
     fout = open(self.name,'w')

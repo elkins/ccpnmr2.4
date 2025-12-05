@@ -205,7 +205,7 @@ class ButtonScrollbar(Frame):
    
   def extendSelection(self, event):
 
-    #print "extend", event.x, event.y
+    #print("extend", event.x, event.y)
 
     if self.callback:
       self.callback(self.getSelected())
@@ -325,7 +325,7 @@ class ButtonScrollbar(Frame):
 if __name__ == '__main__':
  
   def callback(selected):
-    print 'callback', selected
+    print('callback', selected)
 
   root = Tkinter.Tk()
   root.grid_rowconfigure(0, weight=1)

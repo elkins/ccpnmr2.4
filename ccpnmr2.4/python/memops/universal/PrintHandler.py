@@ -131,7 +131,7 @@ class PrintHandler:
   def mapRanges(self, x0, y0, x1, y1, a0, b0, a1, b1):
 
     (x0, y0, x1, y1, a0, b0, a1, b1) = [ float(z) for z in (x0, y0, x1, y1, a0, b0, a1, b1) ]
-    #print 'mapRanges0', x0, y0, x1, y1, a0, b0, a1, b1
+    #print('mapRanges0', x0, y0, x1, y1, a0, b0, a1, b1)
 
     s = self.xSize
     u = self.outputHandler.width
@@ -139,7 +139,7 @@ class PrintHandler:
     r = (a1 - a0) / (s*(x1 - x0))
     c0 = a0 - r * (x + x0*s)
     c1 = a0 + r * (u - x - x0*s)
-    #print 'mapRanges1', s, u, x, r
+    #print('mapRanges1', s, u, x, r)
 
     t = self.ySize
     v = self.outputHandler.height
@@ -148,8 +148,8 @@ class PrintHandler:
     d0 = b0 - r * (y + y0*t)
     d1 = b0 + r * (v - y - y0*t)
 
-    #print 'mapRanges2', t, v, y, r
-    #print 'mapRanges3', c0, d0, c1, d1
+    #print('mapRanges2', t, v, y, r)
+    #print('mapRanges3', c0, d0, c1, d1)
     self.outputHandler.newRange(c0, d0, c1, d1)
     self.outputHandler.clipRange(a0, b0, a1, b1)
     if (self.cHandler):

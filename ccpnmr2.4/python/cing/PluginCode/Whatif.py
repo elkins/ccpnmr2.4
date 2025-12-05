@@ -775,7 +775,7 @@ Name   :    0 ; A    ;   40 ; THR  ; _    ; HG21 ; _
             try:
                 a = string.split('-')
                 t = [convention,a[0].strip(),int(a[1]), None]
-                if len(a) == 4: # Is there an atom name too?#                print '>', a
+                if len(a) == 4: # Is there an atom name too?#                print('>', a)
                     try:
                         _i = int(a[3])    # @TODO this is a whatif bug and should not be possible
                     except:

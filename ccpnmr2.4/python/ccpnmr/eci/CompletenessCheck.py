@@ -150,7 +150,7 @@ def getCcpnObject(ccpnMap, startObject):
       findObject = reduce(lambda obj, attrOrFunc: getAttrOrFunc(obj,attrOrFunc),ccpnObjectStrings[1:],startObject)
 
     except:
-      print "  Cannot get CCPN object for link %s, starting object %s" % (ccpnObjectStrings, startObject)
+      print("  Cannot get CCPN object for link %s, starting object %s" % (ccpnObjectStrings, startObject))
       raise
       findObject = []
 
@@ -173,7 +173,7 @@ def getCcpnMapValue(ccpnMap, startObject):
       ccpnMapValue = getFunc(getCcpnObject(ccpnVarName, startObject) )
 
     except:
-      print "  Cannot CCPN map value for %s, function %s" % (ccpnVarName,getFunc)
+      print("  Cannot CCPN map value for %s, function %s" % (ccpnVarName,getFunc))
       raise
 
   elif ccpnMap == None:
@@ -278,14 +278,14 @@ def getSfCcpnMapValues(ccpnMap, sfKey, tagName):
 
   elif topMap in ('shiftList',):
 
-    #print 'SF: [%s] [%s]' % (topMap, ccpnMap)
+    #print('SF: [%s] [%s]' % (topMap, ccpnMap))
     return False
 
   else:
     startObject = ccpnVar[topMap]
     ccpnValue = getCcpnMapValue(ccpnMap, startObject)
     sfCcpnMapDict[sfKey][tagName].add(ccpnValue)
-    #print 'ELSE SF: [%s] [%s] [%s]' % (topMap, ccpnMap, ccpnValue)
+    #print('ELSE SF: [%s] [%s] [%s]' % (topMap, ccpnMap, ccpnValue))
 
   return True
 
@@ -302,7 +302,7 @@ def getTableCcpnMapValues(ccpnMap, sfKey, tableName, tagName):
   topMap = ccpnObjectStrings[0]
   endMap = '.'.join(ccpnObjectStrings)
 
-  #print 'TOP: [%s] END: [%s]' % (topMap, endMap)
+  #print('TOP: [%s] END: [%s]' % (topMap, endMap))
 
   if not sfKey in tableCcpnMapDict:
     tableCcpnMapDict[sfKey] = {}
@@ -319,7 +319,7 @@ def getTableCcpnMapValues(ccpnMap, sfKey, tableName, tagName):
       tableCcpnMapDict[sfKey][tableName][tagName].add(ccpnValue)
 
     if 'personInGroups' in ccpnObjDict and not ccpnObjDict['personInGroups'][0]:
-      #print 'LIST OF TAGS: [%s]' % starDict['entry_information']['tables']['Contact_person']['tagNames'] # Minus name attrs.
+      #print('LIST OF TAGS: [%s]' % starDict['entry_information']['tables']['Contact_person']['tagNames'] # Minus name attrs.)
       if tagName in ('Email_address', 'Address_1', 'City', 'State_province', 'Country', 'Postal_code', 'Phone_number', 'Organization_type', 'Role'):
         del(tableCcpnMapDict[sfKey][tableName][tagName])
 
@@ -366,7 +366,7 @@ def getTableCcpnMapValues(ccpnMap, sfKey, tableName, tagName):
 
       # TODO: vectorType still needs to be set in the CCPN project.
 
-      #print 'DATA: [%s] [%s] [%s] [%s] [%s] [%s] [%s]' % (sfKey, tableName, tagName, startObject, ccpnMap, ccpnValue, prodMethod)
+      #print('DATA: [%s] [%s] [%s] [%s] [%s] [%s] [%s]' % (sfKey, tableName, tagName, startObject, ccpnMap, ccpnValue, prodMethod))
 
     # TODO: this needs testing
 
@@ -422,14 +422,14 @@ def getTableCcpnMapValues(ccpnMap, sfKey, tableName, tagName):
 
   elif topMap in ('keyword', 'chemShiftRef', 'measurementByIndividualAtom'):
 
-    #print 'TABLE: [%s] [%s]' % (topMap, ccpnMap)
+    #print('TABLE: [%s] [%s]' % (topMap, ccpnMap))
     return False
 
   else:
     startObject = ccpnVar[topMap]
     ccpnValue = getCcpnMapValue(ccpnMap, startObject)
     tableCcpnMapDict[sfKey][tableName][tagName].add(ccpnValue)
-    #print 'ELSE TABLE: [%s] [%s] [%s]' % (topMap, ccpnMap, ccpnValue)
+    #print('ELSE TABLE: [%s] [%s] [%s]' % (topMap, ccpnMap, ccpnValue))
 
   return True
 
@@ -445,7 +445,7 @@ def setCcpnVar(nmrEntry):
 
   ccpnVar['chains'] = getCcpnObject('molSystem.chains', nmrEntry.molSystem)
 
-  #print 'CCPNVAR: [%s]' % ccpnVar
+  #print('CCPNVAR: [%s]' % ccpnVar)
 
 def checkSfTags(sfKey):
 
@@ -467,7 +467,7 @@ def checkSfTags(sfKey):
 
       sfTagDict[sfKey].append(tagName)
 
-  #print 'SF TAG DICT: [%s] [%s]' % (sfKey, sfTagDict)
+  #print('SF TAG DICT: [%s] [%s]' % (sfKey, sfTagDict))
 
   return sfTagDict
 
@@ -490,7 +490,7 @@ def checkMappingSfTags(sfTagDict):
           if ccpnMapValue:
             sfMappingDict[sfKey][tagName] = tagMapping
 
-          #print 'SF TAG: [%s] [%s] [%s] [%s]' % (sfKey, tagName, tagMapping, ccpnMapValue)
+          #print('SF TAG: [%s] [%s] [%s] [%s]' % (sfKey, tagName, tagMapping, ccpnMapValue))
 
       elif 'CONDITIONAL' in ccpn2StarDict[sfKey]['tags']:
         for key1 in ccpn2StarDict[sfKey]['tags']['CONDITIONAL']:
@@ -504,11 +504,11 @@ def checkMappingSfTags(sfTagDict):
                 if ccpnMapValue:
                   sfMappingDict[sfKey][tagName] = tagMapping
 
-                #print 'COND SF TAG: [%s] [%s] [%s] [%s]' % (sfKey, tagName, tagMapping, ccpnMapValue)
+                #print('COND SF TAG: [%s] [%s] [%s] [%s]' % (sfKey, tagName, tagMapping, ccpnMapValue))
 
       elif (tagName + '=LOCAL') in ccpn2StarDict[sfKey]['tags']:
         pass
-        #print 'SF LOCAL TAG: [%s] [%s] [%s]' % (
+        #print('SF LOCAL TAG: [%s] [%s] [%s]' % ()
         #  sfKey, tagName, ccpn2StarDict[sfKey]['tags'][tagName + '=LOCAL'])
 
       # Always set 'Sf_framecode' in NmrStarExport - so no mapping in ccpn2StarDict.
@@ -518,7 +518,7 @@ def checkMappingSfTags(sfTagDict):
 
       else:
         pass # TODO: add me
-        #print 'NO SF TAG: [%s] [%s]' % (sfKey, tagName)
+        #print('NO SF TAG: [%s] [%s]' % (sfKey, tagName))
 
   return sfMappingDict
 
@@ -542,7 +542,7 @@ def checkTableTags(sfKey, tableName):
 
       tableTagDict[sfKey][tableName].append(tagName)
 
-  #print 'TABLE TAG DICT: [%s] [%s] [%s]' % (sfKey, tableName, tableTagDict)
+  #print('TABLE TAG DICT: [%s] [%s] [%s]' % (sfKey, tableName, tableTagDict))
 
   return tableTagDict
 
@@ -560,7 +560,7 @@ def checkMappingTableTags(tableTagDict):
 
       if tableName not in ccpn2StarDict[sfKey]['tables']:
         # TODO: add me
-        #print 'NO TABLE: [%s] [%s]' % (sfKey, tableName)
+        #print('NO TABLE: [%s] [%s]' % (sfKey, tableName))
         continue
 
       for tagName in tableTagDict[sfKey][tableName]:
@@ -573,16 +573,16 @@ def checkMappingTableTags(tableTagDict):
             if ccpnMapValue:
               tableMappingDict[sfKey][tableName][tagName] = tagMapping
 
-            #print 'TABLE TAG: [%s] [%s] [%s] [%s] [%s]' % (sfKey, tagName, tableName, tagMapping, ccpnMapValue)
+            #print('TABLE TAG: [%s] [%s] [%s] [%s] [%s]' % (sfKey, tagName, tableName, tagMapping, ccpnMapValue))
 
         elif (tagName + '=LOCAL') in ccpn2StarDict[sfKey]['tables'][tableName]['tags']:
           pass
-          #print 'TABLE LOCAL TAG: [%s] [%s] [%s]' % (
+          #print('TABLE LOCAL TAG: [%s] [%s] [%s]' % ()
           #  sfKey, tagName, ccpn2StarDict[sfKey]['tables'][tableName]['tags'][tagName + '=LOCAL'])
 
         else:
           pass # TODO: add me
-          #print 'NO TABLE TAG: [%s] [%s] [%s]' % (sfKey, tableName, tagName)
+          #print('NO TABLE TAG: [%s] [%s] [%s]' % (sfKey, tableName, tagName))
 
   return tableMappingDict
 
@@ -645,10 +645,10 @@ def checkCcpnObjects(nmrEntry, submissionType):
 
     ccpnObjs = getattr(nmrEntry, ccpnLink)
 
-    #print 'CCPN OBJ: [%s] [%s]' % (ccpnLink, ccpnObjs)
+    #print('CCPN OBJ: [%s] [%s]' % (ccpnLink, ccpnObjs))
 
     if not ccpnObjs:
-      #print 'No CCPN objects for %s' % ccpnLink
+      #print('No CCPN objects for %s' % ccpnLink)
       ccpnObjDict[ccpnLink] = (False, CCPN_OBJ_NAME_DICT_SHORT[ccpnLink], CCPN_OBJ_NAME_DICT_LONG[ccpnLink])
 
     else:
@@ -856,13 +856,13 @@ def checkNmrEntryCompleteness(nmrEntry, textReport=False, submissionType='PDB'):
   ccpn2Star.nmrEntry = nmrEntry
   ccpn2Star.authors = list(nmrEntry.authors)
 
-  #print 'DICTS: [%s] [%s]' % (starDict, ccpn2StarDict)
+  #print('DICTS: [%s] [%s]' % (starDict, ccpn2StarDict))
  
   ccpnObjDict = checkCcpnObjects(nmrEntry, submissionType)
 
   setCcpnVar(nmrEntry)
 
-  #print 'CCPN OBJ DICT: [%s]' % ccpnObjDict
+  #print('CCPN OBJ DICT: [%s]' % ccpnObjDict)
 
   finalInfoDict = {}
 
@@ -872,7 +872,7 @@ def checkNmrEntryCompleteness(nmrEntry, textReport=False, submissionType='PDB'):
   greenColour  = '#B0FFB0'
 
   for ccpnObj in ccpnObjDict.keys():
-    #print 'OBJ: [%s] [%s]' % (ccpnObj, ccpnObjDict[ccpnObj])
+    #print('OBJ: [%s] [%s]' % (ccpnObj, ccpnObjDict[ccpnObj]))
 
     if ccpnObj == 'otherCitations':
       continue
@@ -881,10 +881,10 @@ def checkNmrEntryCompleteness(nmrEntry, textReport=False, submissionType='PDB'):
       continue
 
     if not ccpnObjDict[ccpnObj][0]:
-      #print 'MISSING OBJ: [%s]' % ccpnObj
+      #print('MISSING OBJ: [%s]' % ccpnObj)
       finalInfoDict[ccpnObj] = (ccpnObjDict[ccpnObj][1], 'No "' + ccpnObjDict[ccpnObj][2] + '" set/selected', redColour, False, 'Object', 0, ccpnObj, None, None)
     else:
-      #print 'PRESENT OBJ: [%s]' % ccpnObj
+      #print('PRESENT OBJ: [%s]' % ccpnObj)
       finalInfoDict[ccpnObj] = (ccpnObjDict[ccpnObj][1], '"' + ccpnObjDict[ccpnObj][2] + '" done', greenColour, True, 'Object', 3, ccpnObj, None, None)
 
 
@@ -992,20 +992,20 @@ def checkNmrEntryCompleteness(nmrEntry, textReport=False, submissionType='PDB'):
     if sfKey in starSf2CcpnDict:
       ccpnObj = starSf2CcpnDict[sfKey]
 
-      #print 'SF KEY: [%s] [%s] [%s]' % (sfKey, ccpnObj, ccpnObjDict[ccpnObj])
+      #print('SF KEY: [%s] [%s] [%s]' % (sfKey, ccpnObj, ccpnObjDict[ccpnObj]))
 
       # If no CCPN object, then we don't need to check for missing attributes.
       # Need to tell people to make a new CCPN object first.
 
       if ccpnObj in ccpnObjDict and not ccpnObjDict[ccpnObj][0]:
-        #print 'NO SF CCPN OBJ: [%s] [%s]' % (sfKey, ccpnObj)
+        #print('NO SF CCPN OBJ: [%s] [%s]' % (sfKey, ccpnObj))
         continue
 
     sfTagDict = checkSfTags(sfKey)
     sfMappingDict = checkMappingSfTags(sfTagDict)
 
     # TODO: add me
-    #print 'MAPPING SF DICT: [%s] [%s]' % (sfKey, sfMappingDict)
+    #print('MAPPING SF DICT: [%s] [%s]' % (sfKey, sfMappingDict))
 
     if sfKey not in starDict or not 'tableNames' in starDict[sfKey]:
       continue
@@ -1017,31 +1017,31 @@ def checkNmrEntryCompleteness(nmrEntry, textReport=False, submissionType='PDB'):
       if tableName in starTable2CcpnDict:
         ccpnObj = starTable2CcpnDict[tableName]
 
-        #print 'TABLE KEY: [%s] [%s] [%s] [%s]' % (sfKey, tableName, ccpnObj, ccpnObjDict[ccpnObj])
+        #print('TABLE KEY: [%s] [%s] [%s] [%s]' % (sfKey, tableName, ccpnObj, ccpnObjDict[ccpnObj]))
 
         # Again if no CCPN object...
 
         if ccpnObj in ccpnObjDict and not ccpnObjDict[ccpnObj][0]:
           if ccpnObj == 'contactPersons':
             if 'personInGroups' in ccpnObjDict and not ccpnObjDict['personInGroups'][0]:
-              #print 'NO TABLE CCPN OBJ: [%s] [%s/personInGroups]' % (sfKey, tableName, ccpnObj)
+              #print('NO TABLE CCPN OBJ: [%s] [%s/personInGroups]' % (sfKey, tableName, ccpnObj))
               continue
           else:
-            #print 'NO TABLE CCPN OBJ: [%s] [%s]' % (sfKey, tableName, ccpnObj)
+            #print('NO TABLE CCPN OBJ: [%s] [%s]' % (sfKey, tableName, ccpnObj))
             continue
 
       tableTagDict = checkTableTags(sfKey, tableName)
       tableMappingDict = checkMappingTableTags(tableTagDict)
 
       # TODO: add me
-      #print 'MAPPING TABLE DICT: [%s] [%s] [%s]' % (sfKey, tableName, tableMappingDict)
+      #print('MAPPING TABLE DICT: [%s] [%s] [%s]' % (sfKey, tableName, tableMappingDict))
 
   for sfKey in sfCcpnMapDict:
     for tagName in sfCcpnMapDict[sfKey]:
       ccpnData = sfCcpnMapDict[sfKey][tagName]
       starInfo = starDict[sfKey]['tags'][tagName][3].strip()
 
-      #print 'SF DATA: [%s] [%s] [%s] [%s]' % (sfKey, tagName, ccpnData, starInfo)
+      #print('SF DATA: [%s] [%s] [%s] [%s]' % (sfKey, tagName, ccpnData, starInfo))
 
       emptyFlag = True
 
@@ -1065,7 +1065,7 @@ def checkNmrEntryCompleteness(nmrEntry, textReport=False, submissionType='PDB'):
         ccpnData = tableCcpnMapDict[sfKey][tableName][tagName]
         starInfo = starDict[sfKey]['tables'][tableName]['tags'][tagName][3].strip()
 
-        #print 'TABLE DATA1: [%s] [%s] [%s] [%s] [%s]' % (sfKey, tableName, tagName, ccpnData, starInfo)
+        #print('TABLE DATA1: [%s] [%s] [%s] [%s] [%s]' % (sfKey, tableName, tagName, ccpnData, starInfo))
 
         emptyFlag = True
 

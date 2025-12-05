@@ -76,7 +76,7 @@ class CnsDistanceConstraintFile(CnsGenericFile):
   def checkLinePattern(self,line):
 
     if self.patt[self.format + 'ChemShiftFormat'].search(line):
-      print "  Can only read assigned distance restraint lists"
+      print("  Can only read assigned distance restraint lists")
       return None
   
     return 1
@@ -84,7 +84,7 @@ class CnsDistanceConstraintFile(CnsGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading cns distance constraint list %s" % self.name
+      print("Reading cns distance constraint list %s" % self.name)
 
     return self.readGeneric(CnsDistanceConstraint)
 
@@ -221,7 +221,7 @@ class CnsDistanceConstraintFile(CnsGenericFile):
 
   def printWriteText(self):
   
-    print "Writing cns distance constraint list %s" % self.name
+    print("Writing cns distance constraint list %s" % self.name)
 
 class CnsDistanceConstraint:
 

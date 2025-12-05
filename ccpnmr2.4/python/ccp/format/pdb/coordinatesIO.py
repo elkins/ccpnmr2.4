@@ -80,7 +80,7 @@ class PdbCoordinateFile(PdbFile):
     refCoord = self.modelCoordinates[modelNum][-1]
     resName = refCoord.resName
     
-    print "  Warning: fixing problems associated with %s atom %s..." % (resName,fixProblemAtom)
+    print("  Warning: fixing problems associated with %s atom %s..." % (resName,fixProblemAtom))
 
     coordFixIndex = self.coordFixDict[resName][0].index(fixProblemAtom)
     curFixDict = self.coordFixDict[resName][1][coordFixIndex]
@@ -92,7 +92,7 @@ class PdbCoordinateFile(PdbFile):
       tempPdbCoord = self.modelCoordinates[modelNum][i]
       if tempPdbCoord.seqCode == seqCode and tempPdbCoord.chainId == chainId:
         if tempPdbCoord.atomName in curFixDict:
-          #print "Fixed %s to %s for %s,%d!" % (tempPdbCoord.atomName,curFixDict[tempPdbCoord.atomName],tempPdbCoord.resName,tempPdbCoord.seqCode)
+          #print("Fixed %s to %s for %s,%d!" % (tempPdbCoord.atomName,curFixDict[tempPdbCoord.atomName],tempPdbCoord.resName,tempPdbCoord.seqCode))
           tempPdbCoord.atomName = curFixDict[tempPdbCoord.atomName]
       else:
         break
@@ -250,7 +250,7 @@ class PdbCoordinateFile(PdbFile):
     
     for modelNum in self.modelCoordinates.keys():
       if not self.modelCoordinates[modelNum]:
-        print "  Warning: model %s has no coordinates - removed." % modelNum
+        print("  Warning: model %s has no coordinates - removed." % modelNum)
         del(self.modelCoordinates[modelNum])
     
     #
@@ -304,7 +304,7 @@ class PdbCoordinateFile(PdbFile):
           badAtomCoord = False
           for j in range(0,2):
             if not atomCoord[j]:
-              print "  Error: no coordinate for linkBond atom %s.%s.%s.%s%s." % (atomInfo[j][0],atomInfo[j][1],atomInfo[j][2],atomInfo[j][3],atomInfo[j][4])
+              print("  Error: no coordinate for linkBond atom %s.%s.%s.%s%s." % (atomInfo[j][0],atomInfo[j][1],atomInfo[j][2],atomInfo[j][3],atomInfo[j][4]))
               badAtomCoord = True
               
           if badAtomCoord:
@@ -332,7 +332,7 @@ class PdbCoordinateFile(PdbFile):
     #
 
     if verbose == 1:
-      print "Writing PDB coordinate file %s" % self.name
+      print("Writing PDB coordinate file %s" % self.name)
 
     fout = open(self.name,'w')
 
@@ -433,7 +433,7 @@ SCALE3      0.000000  0.000000  1.000000        0.00000      \n""")
     indent = "    "
 
     for chain in self.chains:
-      print "  Chain: " + chain.chainId
+      print("  Chain: " + chain.chainId)
       print indent + "MolId,name: %s,%s" % (chain.molId,chain.molName)
       print indent + "MolSynonyms: %s" % (chain.synonyms)
       print indent + "ecNums, fragment: %s,%s" % (chain.ecNums,chain.fragment)
@@ -443,7 +443,7 @@ SCALE3      0.000000  0.000000  1.000000        0.00000      \n""")
       #print chain.resNames
 
     for hetGroup in self.hetGroups:
-      print "  Hetgroup: " + hetGroup.Id
+      print("  Hetgroup: " + hetGroup.Id)
       print indent + "chainId,seqNum: %s,%s" % (hetGroup.chainId,hetGroup.seqNum)
       print indent + "iCode, numHetAtoms: %s,%s" % (hetGroup.iCode,hetGroup.numHetAtoms)
       print indent + "description, chemicalName: %s,%s" % (hetGroup.description,hetGroup.chemicalName)
@@ -458,7 +458,7 @@ SCALE3      0.000000  0.000000  1.000000        0.00000      \n""")
       coordinate = self.serialToCoord[serial]
 
     if not coordinate and verbose:
-      print "Error: Serial %s not found" % serial
+      print("Error: Serial %s not found" % serial)
   
     return coordinate
 
@@ -497,11 +497,11 @@ class PdbCoordinate:
   def setBond(self, bondType, bondedCoordinate):
   
     if bondType not in bondTypes:
-      print "Error: Unrecognized bond type %s." % bondType
+      print("Error: Unrecognized bond type %s." % bondType)
       return
   
     if not bondedCoordinate:
-      print "Error: %s bond cannot be created (coordinate for one partner not found)" % bondType
+      print("Error: %s bond cannot be created (coordinate for one partner not found)" % bondType)
       return
       
     for tBondType in self.bonds.keys():

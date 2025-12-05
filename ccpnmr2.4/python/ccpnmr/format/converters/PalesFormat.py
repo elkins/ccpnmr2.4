@@ -166,7 +166,7 @@ class PalesFormat(DataFormat):
          seqStrings.append(chain.molecule.seqString)
     
     if len(seqStrings) > 1:
-      print "Warning: multiple sequences present, picking first one"
+      print("Warning: multiple sequences present, picking first one")
     
-    print 'in', self
+    print('in', self)
     self.writeKeywds['oneLetterSequence'] = seqStrings[0]

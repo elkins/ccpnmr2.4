@@ -87,7 +87,7 @@ def shiftx(structure, atomType=None):
     for coordChain in structure.sortedCoordChains():
       chain = coordChain.chain
   
-      print 'CCPN SHIFTX executing for chain %s' % chain.code
+      print('CCPN SHIFTX executing for chain %s' % chain.code)
   
       cmd = '%s 1%s %s %s' % (exeFile, chain.code, pdbFile, outFile)
   
@@ -135,7 +135,7 @@ def shiftx(structure, atomType=None):
   
 
   for chain in chainDict:
-    print 'CCPN SHIFTX filling shift list for chain %s' % chain.code
+    print('CCPN SHIFTX filling shift list for chain %s' % chain.code)
     shiftData = chainDict[chain]
 
     if shiftData:
@@ -193,6 +193,6 @@ def shiftx(structure, atomType=None):
           else:  
   	    shift = shiftList.newShift(value=ppm, resonance=resonance)
   
-  print 'CCPN SHIFTX done'
+  print('CCPN SHIFTX done')
 
   return shiftList

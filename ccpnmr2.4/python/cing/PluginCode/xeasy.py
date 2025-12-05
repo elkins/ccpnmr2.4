@@ -30,13 +30,13 @@ class Xeasy( NTdict ):
     def __init__( self, seqFile, protFile, convention)   :
         NTdict.__init__( self )
 
-        #print '>', seqFile, protFile
+        #print('>', seqFile, protFile)
         # parse the seqFile
         self.seq = {}
         resNum = 1
         self.resCount = 0
         for f in AwkLike( seqFile, commentString='#' ):
-            #print '>>', f.dollar[0]
+            #print('>>', f.dollar[0])
             if (not f.isEmpty() and not f.isComment( '#')):
                 if ( f.dollar[1] in CYANA_NON_RESIDUES         # skip the bloody CYANA non-residue stuff
                    ):
@@ -178,7 +178,7 @@ class Xeasy( NTdict ):
 
         resonance id is zero for unassigned.
         """
-        #print '>>', molecule, peakFile
+        #print('>>', molecule, peakFile)
 
         self.map2molecule( molecule )
 
@@ -550,7 +550,7 @@ def export2Xeasy( project, tmp=None ):
     idx = 1
     for pl in project.peaks:
         if (pl.status == 'keep'):
-            #print '>', pl, idx
+            #print('>', pl, idx)
             # add xeasyIndex to peak, go in steps of 10000 for succesive
             # peaklists
             for peak in pl:
@@ -578,6 +578,6 @@ saves    = []
 restores = []
 exports  = [(export2Xeasy, None)]
 
-#print '>>at the end'
+#print('>>at the end')
 
 

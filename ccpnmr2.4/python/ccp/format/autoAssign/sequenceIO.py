@@ -77,7 +77,7 @@ class AutoAssignSequenceFile(AutoAssignGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading autoAssign sequence file %s" % self.name
+      print("Reading autoAssign sequence file %s" % self.name)
 
     molName = None
 
@@ -123,7 +123,7 @@ class AutoAssignSequenceFile(AutoAssignGenericFile):
   def readFromShifts(self,shiftFile, verbose = 0):
   
     if verbose == 1:
-      print "Extracting %s sequence from chemical shift file %s" % (self.format,shiftFile.name)
+      print("Extracting %s sequence from chemical shift file %s" % (self.format,shiftFile.name))
 
     (pathname,shiftFileName) = os.path.split(shiftFile.name)
     self.sequences.append(AutoAssignSequence(molName = shiftFileName))

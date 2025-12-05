@@ -159,7 +159,7 @@ def loadProjDefinitionFile(argServer, inputFileName=None, exptName=None):
   baseDir, paths = uniIo.suggestFileLocations(fileNames, startDir=startDir)
   
   if baseDir is None:
-    print 'WARNING, described files not found. Aborting'
+    print('WARNING, described files not found. Aborting')
   
   fileNames = [os.path.join(baseDir, path) for path in paths]
  
@@ -205,7 +205,7 @@ def loadProjDefinitionFile(argServer, inputFileName=None, exptName=None):
   
   # set up internal Analysis data
   open_spectra.parent.finishInitSpectrum(refSpec)
-  print 'finished opening spectrum', refExp.name, refSpec.name
+  print('finished opening spectrum', refExp.name, refSpec.name)
 
   refDataStore = refSpec.dataStore
   preferDataUrls = [refDataStore.dataUrl]
@@ -266,7 +266,7 @@ def loadProjDefinitionFile(argServer, inputFileName=None, exptName=None):
     # set up internal Analysis data
     open_spectra.parent.visibleSpectra[newSpectrum] = False
     open_spectra.parent.finishInitSpectrum(newSpectrum)
-    print 'finished opening spectrum', refExp.name, newSpectrum.name
+    print('finished opening spectrum', refExp.name, newSpectrum.name)
   
   print
-  print 'Projection spectra loaded into experiment', refExp.name
+  print('Projection spectra loaded into experiment', refExp.name)

@@ -109,23 +109,23 @@ class MarvinFormat(DataFormat):
 
   def thisPeakValid(self):
 
-    #print 'assignList', self.rawPeak.assignList
-    #print 'probabilities', self.rawPeak.probabilities
-    #print 'labels', self.rawPeak.label
+    #print('assignList', self.rawPeak.assignList)
+    #print('probabilities', self.rawPeak.probabilities)
+    #print('labels', self.rawPeak.label)
 
     # filter out invalid data with the current assignment probability cutoff
     validList = [prob >= self.probabilityCutoff for prob in self.rawPeak.probabilities]
-    #print 'validList', validList
+    #print('validList', validList)
 
-    print 'thisPeakValid, rawPeak.num', self.rawPeak.num
-    #print 'thisPeakValid, rawPeak.assignList', self.rawPeak.assignList
+    print('thisPeakValid, rawPeak.num', self.rawPeak.num)
+    #print('thisPeakValid, rawPeak.assignList', self.rawPeak.assignList)
     self.rawPeak.assignList  = self.filterByValid(self.rawPeak.assignList, validList)
     self.rawPeak.label  = self.filterByValid(self.rawPeak.label, validList)
     self.rawPeak.probabilities  = self.filterByValid(self.rawPeak.probabilities, validList)
-    #print 'thisPeakValid, rawPeak.assignList after', self.rawPeak.assignList
-    #print 'assignList', self.rawPeak.assignList
-    #print 'probabilities', self.rawPeak.probabilities
-    #print 'labels', self.rawPeak.label
+    #print('thisPeakValid, rawPeak.assignList after', self.rawPeak.assignList)
+    #print('assignList', self.rawPeak.assignList)
+    #print('probabilities', self.rawPeak.probabilities)
+    #print('labels', self.rawPeak.label)
 
     isValid = False
 
@@ -173,9 +173,9 @@ class MarvinFormat(DataFormat):
       #print atomName
       atomNameLength = len(atomName)
       while atomName[-1] == '*':
-          #print 'pre',atomName
+          #print('pre',atomName)
           atomName = atomName[:-1]
-          #print 'post',atomName
+          #print('post',atomName)
       #print atomName
 
       for chemAtom in chemComp.chemAtoms:
@@ -189,10 +189,10 @@ class MarvinFormat(DataFormat):
       (chain,seqId,codedAtomName)=assign.split('.')
       (typeCode,resType,atomName)=codedAtomName.split(':')
       #print ''
-      #print 'assign:',assign
+      #print('assign:',assign)
       targetChemComp =  self.project.findFirstChemComp(ccpCode = resType)
 
-      #print 'target chemc comp:', targetChemComp
+      #print('target chemc comp:', targetChemComp)
       #for chemAtom in targetChemComp.chemAtoms:
       #    print chemAtom
 
@@ -201,22 +201,22 @@ class MarvinFormat(DataFormat):
       if targetChemComp != None:
           targetAtom = None
           if typeCode == 'HEAVY':
-              #print 'looking for heavy for %s %s %s %s' % (chain,resType,seqId,atomName)
+              #print('looking for heavy for %s %s %s %s' % (chain,resType,seqId,atomName))
 
               targetAtom = self.findFirstChemAtomWildCard(targetChemComp, atomName)
               #targetChemComp.findFirstChemAtom(name=atomName)
-              #print '\tfound target atom: ', targetAtom
-              #print 'targetAtom:', targetAtom,targetAtom.chemBonds,targetAtom.chemBonds[0].chemAtoms
+              #print('\tfound target atom: ', targetAtom)
+              #print('targetAtom:', targetAtom,targetAtom.chemBonds,targetAtom.chemBonds[0].chemAtoms)
 
               targetBondAtoms = None
               if targetAtom != None:
                   targetBondAtoms = list(targetAtom.findFirstChemBond().chemAtoms)
-                  #print 'bond atoms:', targetBondAtoms,targetAtom
+                  #print('bond atoms:', targetBondAtoms,targetAtom)
                   if targetAtom in targetBondAtoms:
                       targetBondAtoms.remove(targetAtom)
-              #print 'heavy bonds atom:', targetBondAtoms,targetBondAtoms.__class__.__name__
+              #print('heavy bonds atom:', targetBondAtoms,targetBondAtoms.__class__.__name__)
                   resultAssign = '.'.join((chain,seqId,targetBondAtoms[0].name),)
-                  #print '\tNote: converted %s to %s'  % (assign,resultAssign)
+                  #print('\tNote: converted %s to %s'  % (assign,resultAssign))
 
           else:
               resultAssign =  '.'.join((chain,seqId,atomName),)
@@ -251,7 +251,7 @@ class MarvinFormat(DataFormat):
           newAssign =  '.'.join((chain,seqId,newCodedAtomName),)
 
       #if assign != newAssign:
-          #print '\tNote: changed %s %s %s %s to %s' % (chain,resType,seqId,atomName,newAtomName)
+          #print('\tNote: changed %s %s %s %s to %s' % (chain,resType,seqId,atomName,newAtomName))
       return newAssign
 
   def getPeakResNames(self):
@@ -269,7 +269,7 @@ class MarvinFormat(DataFormat):
           msg = msg % (`self.rawPeakDimIndex`,`assign[self.rawPeakDimIndex]`)
           raise self.FormatConverterError(msg)
 
-      #print 'renamed assign: ', renamedAssign
+      #print('renamed assign: ', renamedAssign)
       heavySwappedAssign = self.convertLightToHeavy(renamedAssign)
       if heavySwappedAssign == None:
           msg = "Error: couldn't convert assignment %s (%s) to it's  heavy parent!\n stopping..."
@@ -353,7 +353,7 @@ class MarvinFormat(DataFormat):
             if len(target_peak.sortedPeakContribs()) > 0:
                 #peakName = "%s:%d[%d]" % (target_peak.peakList.dataSource.name,target_peak.peakList.serial, target_peak.serial)
 
-                print 'Warning: replacing assignments for peak %s' % peakName
+                print('Warning: replacing assignments for peak %s' % peakName)
                 for peakContrib in target_peak.sortedPeakContribs():
                     peakContrib.delete()
         ###print self.rawPeak
@@ -362,7 +362,7 @@ class MarvinFormat(DataFormat):
 
     if newPeak:
 
-      print 'Warning: ignored  marvin peak assignmnet %s no corresponding analysis peak found' % self.rawPeak.num
+      print('Warning: ignored  marvin peak assignmnet %s no corresponding analysis peak found' % self.rawPeak.num)
 
       #note I have guarded all the other peak reading routines so they ignore peaks of type None
       # it think this shlould work but I may need some more work elsewhere
@@ -378,7 +378,7 @@ class MarvinFormat(DataFormat):
   ### can be removed when removeDuplicateAssignments is implimented
   def setPeaks(self):
     if self.removeDuplicateAssignments:
-      print 'Warning: removal of duplicate assignments is selected but is not implimented!'
+      print('Warning: removal of duplicate assignments is selected but is not implimented!')
 
     DataFormat.setPeaks(self)
 
@@ -398,7 +398,7 @@ class MarvinFormat(DataFormat):
   def findResonances(self,resName):
       (chainCode,seqCode,spinSystemId,seqInsertCode,atomName) = getNameInfo(resName)
 
-      #print '\tsearch for resonance', (chainCode,seqCode,spinSystemId,seqInsertCode,atomName)
+      #print('\tsearch for resonance', (chainCode,seqCode,spinSystemId,seqInsertCode,atomName))
       resonance = None
 
       targetMolSystem =  None
@@ -426,9 +426,9 @@ class MarvinFormat(DataFormat):
       #print atomName
       atomNameLength = len(atomName)
       while atomName[-1] == '*':
-          #print 'pre',atomName
+          #print('pre',atomName)
           atomName = atomName[:-1]
-          #print 'post',atomName
+          #print('post',atomName)
       #print atomName
 
       if targetResidue != None:
@@ -449,12 +449,12 @@ class MarvinFormat(DataFormat):
       if len(targetResonances) > 1:
           selectName = '.'.join((chainCode,`seqCode`,atomName),)
           resonanceIds = [`resonance.serial` for resonance in targetResonances]
-          print 'Warning: found more than one resonance for peak (%s) %s' % (selectName,self.rawPeak.num)
-          print '         resonances are: ', ','.join(resonanceIds)
+          print('Warning: found more than one resonance for peak (%s) %s' % (selectName,self.rawPeak.num))
+          print('         resonances are: ', ','.join(resonanceIds))
 
 
       #if targetResonances == None:
-      #    print '**** Oh bugger!!'
+      #    print('**** Oh bugger!!')
       #    sys.exit()
       return list(targetResonances)
 
@@ -590,7 +590,7 @@ class MarvinFormat(DataFormat):
 
           appDataKeyPair = self.getAppDataKey()
           if  appDataKeyPair != None:
-              #print 'using app data %s' % appDataKeyPair
+              #print('using app data %s' % appDataKeyPair)
               self.origPeakNumberDict = {}
               for peak in self.peakList.sortedPeaks():
                   application = appDataKeyPair[self.APPDATA_APPLICATION]

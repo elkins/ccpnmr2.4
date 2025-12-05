@@ -152,7 +152,7 @@ if __name__ == '__main__':
 
   def getValue():
 
-    print 'index = %s, value = %s' % (entry_scale.get(), entry_scale.getValue())
+    print('index = %s, value = %s' % (entry_scale.get(), entry_scale.getValue()))
 
   root = Tkinter.Tk()
 

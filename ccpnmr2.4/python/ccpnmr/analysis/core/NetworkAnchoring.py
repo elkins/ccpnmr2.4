@@ -127,7 +127,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
       progressBar.update_idletasks()
       
     else:
-      print 'Get existing NOE network for %s:%s:%d - %d peaks' % info
+      print('Get existing NOE network for %s:%s:%d - %d peaks' % info)
 
     if len(hDims) != 2:
       continue
@@ -195,7 +195,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
     progressBar.update_idletasks()
     
   else:  
-    print 'Getting covalent network - %d resonances' % len(nmrProject.resonances)
+    print('Getting covalent network - %d resonances' % len(nmrProject.resonances))
 
   neighbours = {}
   chemAtomToAtom = {}
@@ -291,7 +291,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
                   covalent[resonance2][resonance] = True
                   c += 1
                  
-  #print 'Atom pair network connections %d' % c
+  #print('Atom pair network connections %d' % c)
   
   c = 0
   for ss in nmrProject.resonanceGroups:
@@ -319,7 +319,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
             covalent[r2][r1] = True
             c += 1
 
-  #print 'Anonymous intra residue connections %d' % c
+  #print('Anonymous intra residue connections %d' % c)
   
   done = {}
   iter = 0
@@ -340,7 +340,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
       progressBar.open()
       progressBar.update_idletasks()
     else:
-      print 'Anchoring iteration %d' % iter
+      print('Anchoring iteration %d' % iter)
     
     closeResonancesDict = {}    
     
@@ -356,7 +356,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
       meanIntensity = getMeanPeakIntensity(peakList.peaks, intensityType=intensityType)
 
       info = (spectrum.experiment.name, spectrum.name, peakList.serial, len(peakList.peaks))
-      #print '  Using %s:%s:%d - %d peaks' % info
+      #print('  Using %s:%s:%d - %d peaks' % info)
       if len(hDims) != 2:
         continue
  
@@ -438,7 +438,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
                 
         peakIntensity = peak.findFirstPeakIntensity(intensityType=intensityType)
         if not peakIntensity:
-          print 'Peak missing intensity', peak
+          print('Peak missing intensity', peak)
           continue
        
         else:  
@@ -579,7 +579,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
           network[bestPair[1]][bestPair[0]]  = [intensity2, peak]
           done[peak]= True
      
-    #print '  Assigned:', nAssign
+    #print('  Assigned:', nAssign)
     dataSets.append(data)
   
 
@@ -615,7 +615,7 @@ def networkAnchorAssign(peakLists, intensityType='height', strictness=2, thresho
       if covalent.get(resonance1):
         if covalent[resonance1].get(resonance2):
           # J connected are close so what do we do...? 
-          #print "Skip", makeResonanceGuiName(resonance1), makeResonanceGuiName(resonance2)
+          #print("Skip", makeResonanceGuiName(resonance1), makeResonanceGuiName(resonance2))
           continue
     
       fixedResonance2 = getFixedResonance(constraintSet,resonance2)
@@ -757,12 +757,12 @@ def assignCloseSingleShiftMatches(peakList):
   bondedDims = getBondedDimsDict(spectrum)
 
   info = (experiment.name, spectrum.name, peakList.serial, len(peakList.peaks))
-  print 'Assigning obvious shift matches for %s:%s:%d - %d peaks' %  info
+  print('Assigning obvious shift matches for %s:%s:%d - %d peaks' %  info)
   
   c = 0
   for peak in peakList.peaks:
     if c and (c%100 == 0):
-      print '   %d' % (c,)
+      print('   %d' % (c,))
     c += 1
     
     peakDims = peak.sortedPeakDims()
@@ -833,7 +833,7 @@ def getCloseSingleShiftMatches(peakList, network, covalent,
     progressBar.open()
     progressBar.update_idletasks()
   else:
-    print 'Determining unique shift matches for %s:%s:%d - %d peaks' %  info
+    print('Determining unique shift matches for %s:%s:%d - %d peaks' %  info)
   
   for peak in peakList.peaks:
 

@@ -290,7 +290,7 @@ class MolDef( NTtree ):
 
     def isValidAtomName( self, resName, atmName, convention = INTERNAL ):
         """return True if resName, atmName is a valid for convention, False otherwise"""
-    #  print '>>', resName, atomName
+    #  print('>>', resName, atomName)
 
         if not resName:
 #            nTdebug('MolDef.isValidAtomName: undefined residue name')
@@ -419,7 +419,7 @@ class ResidueDef( NTtree ):
         #end if
 
         atmDef = AtomDef( name, **kwds )
-        #print '>>',self, name, atmDef
+        #print('>>',self, name, atmDef)
         if self.has_key(name):
             oldAtmDef = self[name]
             if not oldAtmDef.canBeModified:
@@ -433,7 +433,7 @@ class ResidueDef( NTtree ):
         self.atoms = self._children #GWV: fixes a bug, but do not know why!
         atmDef.residueDef = self
         atmDef.postProcess()
-        #print '..', self.atoms
+        #print('..', self.atoms)
         return atmDef
     #end def
 
@@ -529,7 +529,7 @@ class ResidueDef( NTtree ):
 
     def isValidAtomName( self, atmName, convention = INTERNAL ):
         """return True if resName, atmName is a valid for convention, False otherwise"""
-    #  print '>>', resName, atomName
+    #  print('>>', resName, atomName)
 
         if not self.residueDict.has_key(convention):
             nTerror('ResidueDef.isValidAtomName: convention %s not defined within CING', convention)
@@ -866,7 +866,7 @@ def hasPseudoAtom( atmDef ):
 
 class AtomDef( NTtree ):
     def __init__( self, name, **kwds ):
-        #print '>>', args, kwds
+        #print('>>', args, kwds)
         NTtree.__init__( self,
                            __CLASS__   = 'AtomDef' ,
                            convention  = INTERNAL,
@@ -1102,7 +1102,7 @@ class AtomDef( NTtree ):
                     top2.append( (resId,atm.translate(convention)) )
                 #end if
             #end for
-            #print 'top2', top2
+            #print('top2', top2)
         #end if
         fprintf( stream, "\t\t%s = %s\n", 'topology', repr(top2) )
 
@@ -1177,7 +1177,7 @@ class DihedralDef( NTtree ):
                     atms.append( (resId,atm.translate(convention)) )
                 #end if
             #end for
-            #print 'atms', atms
+            #print('atms', atms)
         #end if
         fprintf( stream, "\t\t%s = %s\n", 'atoms', repr(atms) )
 
@@ -1208,7 +1208,7 @@ def importNameDefs( tableFile, name)   :
     mol = MolDef( name = 'mol' )
     obj = mol # object point to 'active' object (i.e. mol, residue, dihedral or atom); attributes get appended to obj.
     for r in AwkLike( tableFile ):
-#            print '>',r.dollar[0]
+#            print('>',r.dollar[0])
         if r.isComment() or r.isEmpty():
             pass
         elif r.dollar[1] == 'RESIDUE':
@@ -1299,7 +1299,7 @@ def saveToSML( rDefList, rootPath, convention=INTERNAL ):
     """
     Save ResidueDefs of rDefList as SML files in rootPath; optionally translate to convention
     """
-    #print '>>', rootPath
+    #print('>>', rootPath)
     fileList = NTlist()
     for rdef in rDefList:
         fname = rdef.translate(convention) +'.sml'

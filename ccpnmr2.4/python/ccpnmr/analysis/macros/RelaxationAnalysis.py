@@ -630,7 +630,7 @@ class RelaxationAnalysisPopup(BasePopup):
       score, s2, te0, tm0, rex, t1t, t2t, noet = ensemble[0]
  
       data = (s2, te0*1e12, tm0*1e9, rex, t1, t1t, t2, t2t, noe or 0.0, noet,  score, i)
-      print 'Mean A S2:%5.3f Te:%5.1f Tm:%5.3f Rex:%5.3f T1:%5.3f %5.3f T2:%5.3f %5.3f NOE:%5.3f %5.3f %e %6d' % data
+      print('Mean A S2:%5.3f Te:%5.1f Tm:%5.3f Rex:%5.3f T1:%5.3f %5.3f T2:%5.3f %5.3f NOE:%5.3f %5.3f %e %6d' % data)
       
       rexCheck = 999 # 1.40 * t1/t2
        
@@ -644,7 +644,7 @@ class RelaxationAnalysisPopup(BasePopup):
           continue
          
         residue = residues[j]
-        print '%3d%s' %  (residue.seqCode, residue.ccpCode),
+        print('%3d%s' %  (residue.seqCode, residue.ccpCode),)
         
         i, ensemble = self.fitT1T2(t1, t2, noe, sf, tmFix=tm0, teFix=None, s2Fix=None,
                                    tmMin=tm0*0.1, tmMax=tm0*5, teMin=te0/100, teMax=te0*20,
@@ -665,7 +665,7 @@ class RelaxationAnalysisPopup(BasePopup):
         rexBest[j] = rex
  
         data = (s2, te*1e12, tm*1e9, rex, t1, t1t, t2, t2t, noe or 0.0, noet, score, i)
-        print 'S2:%5.3f Te:%5.1f Tm:%5.3f Rex:%5.3f T1:%5.3f %5.3f T2:%5.3f %5.3f NOE:%5.3f %5.3f %e %6d' % data
+        print('S2:%5.3f Te:%5.1f Tm:%5.3f Rex:%5.3f T1:%5.3f %5.3f T2:%5.3f %5.3f NOE:%5.3f %5.3f %e %6d' % data)
 
       dataSet1 = []
       dataSet2 = []

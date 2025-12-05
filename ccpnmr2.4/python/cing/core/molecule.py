@@ -1670,7 +1670,7 @@ class Molecule( NTtree, ResidueList ):
         """Static method to restore molecule from SML file path: 0.75< version <= 0.90
            returns Molecule instance or None on error
         """
-        #print '*** Opening using Molecule.openMol_094'
+        #print('*** Opening using Molecule.openMol_094')
 
         if (not os.path.exists( path )):
             nTerror('Molecule.open: smlFile "%s" not found\n', path)
@@ -2649,7 +2649,7 @@ Return an Molecule instance or None on error
                             ...
                            >
         """
-        #print '>', path, convention
+        #print('>', path, convention)
         molecule = Molecule( name=name, **kwds )
 
         sequenceS = ''
@@ -3236,7 +3236,7 @@ Return an Molecule instance or None on error
                 res.rmsd.included = True
                 self.rmsd.backboneCount += res.rmsd.backboneCount
                 self.rmsd.heavyAtomsCount += res.rmsd.heavyAtomsCount
-                #print '>>',res.rmsd.bbtemp
+                #print('>>',res.rmsd.bbtemp)
             else:
                 res.rmsd.included = False
             #end if
@@ -3740,7 +3740,7 @@ class RmsdResult( NTdict ):
 #
 #        # restore the tree structure
 #        for child in result._children:
-##           print '>child>', repr(child)
+##           print('>child>', repr(child))
 #            result[child.name] = child
 #            child._parent = result
 #        return result
@@ -4245,7 +4245,7 @@ Chain class: defines chain properties and methods
 #
 #        # restore the tree structure and references
 #        for res in result._children:
-##           print '>child>', repr(child)
+##           print('>child>', repr(child))
 #            result[res.name] = res
 #            result[res.shortName] = res
 #            result[res.resNum] = res
@@ -4278,7 +4278,7 @@ Residue class: Defines residue properties
     def __init__( self, resName, resNum, convention=INTERNAL, Nterminal=False, Cterminal=False, **kwds ): # pylint: disable=C0103
 #        resNum is the author supplied number. This is called the seqCode in CCPN. It's key in CING.
 #        seqId in CCPN is 'Identifier corresponding to the molResidue identifier (self.molResidue.serial)' It's key in CCPN.
-        #print '>',resName, resNum
+        #print('>',resName, resNum)
         NTtree.__init__(self, __CLASS__ = 'Residue',
                               name=resName + str(resNum),    # Only a temporarily name, will be formalised after
                                                              # this init
@@ -4460,7 +4460,7 @@ Residue class: Defines residue properties
         newRes._parent[newRes.name]      = newRes
         newRes._parent[newRes.resNum]    = newRes
         newRes._parent[newRes.shortName] = newRes
-#        print '.>',newRes.shortName, newRes._parent
+#        print('.>',newRes.shortName, newRes._parent)
 
         resonanceCount = len(molecule.resonanceSources)
         # Move like atoms from self, create new atoms if needed
@@ -4567,7 +4567,7 @@ Residue class: Defines residue properties
 
                 if dihed.atoms == None:
                     continue
-#               print '>>',dihed.format()
+#               print('>>',dihed.format())
 
                 missingCoordinates = False
                 for a in dihed.atoms:
@@ -5573,11 +5573,11 @@ Atom class: Defines object for storing atom properties
             rdef = database.NTdb.getResidueDefByName( resName, convention = convention )
             db = None
             if rdef and rdef.canBeModified:
-                #print '****', rdef, atomName
+                #print('****', rdef, atomName)
 #                nTdebug("Atom.__init__: adding non-standard '%s' to database %s", atomName, rdef)
                 db=rdef.appendAtomDef( atomName, **patches )
             #end if
-            #print '***', db
+            #print('***', db)
             if db:
                 self.db = db
             else:
@@ -7095,7 +7095,7 @@ def disulfideScore( cys1, cys2 ):
         chi3 = chi3SS( db )
         if (dg >= 1.63 and dg <= 2.72) or (chi3 >= 27.0 and chi3 <= 153.0):
             score[2] += 1
-        #print '>', da, db, dg, chi3, score
+        #print('>', da, db, dg, chi3, score)
     #end for
 
     score[3] = score.sum() / (3. * mc)

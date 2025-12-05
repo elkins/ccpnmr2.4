@@ -830,7 +830,7 @@ class CalcDistConstraintsPopup(BasePopup):
     
       resonances = spectrum.topObject.sortedResonances()
       
-      print "making ADCs"
+      print("making ADCs")
       adcList    = makeNoeAdcs(resonances, spectrum,
                                self.constraintSet
                                ,allowedAtomTypes=['H',])

@@ -79,7 +79,7 @@ class PippSequenceFile(PippGenericFile):
     #
 
     if verbose == 1:
-      print "Reading %s sequence file %s" % (self.format,self.name)
+      print("Reading %s sequence file %s" % (self.format,self.name))
 
     self.sequences.append(PippSequence())
 
@@ -119,14 +119,14 @@ class PippSequenceFile(PippGenericFile):
     
     if len(lineErrors) > min(5,validLines * 0.5):
       self.sequences = []
-      print "  Bad %s format lines:%s" % (self.format,self.newline)
+      print("  Bad %s format lines:%s" % (self.format,self.newline))
       for lineError in lineErrors:
         print lineError
 
   def readFromShifts(self,shiftFile, verbose = 0):
   
     if verbose == 1:
-      print "Extracting %s sequence from chemical shift file %s" % (self.format,shiftFile.name)
+      print("Extracting %s sequence from chemical shift file %s" % (self.format,shiftFile.name))
 
     seqCode = ""
     seqInsertCode = defaultSeqInsertCode

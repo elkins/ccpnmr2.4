@@ -220,7 +220,7 @@ class EditContourFilesPopup(BasePopup):
       # just change url path since (hopefully) nobody else is using it
       try:
         url.path = path
-      except Implementation.ApiError, e:
+      except Implementation.ApiError as e:
         showError('Setting url path', e.error_msg, parent=self)
 
   def getPath(self, storedContour):
@@ -239,7 +239,7 @@ class EditContourFilesPopup(BasePopup):
 
     try:
       storedContour.path = path
-    except Implementation.ApiError, e:
+    except Implementation.ApiError as e:
       showError('Setting stored contour path', e.error_msg, parent=self)
 """
 
@@ -313,7 +313,7 @@ class EditContourFilesPopup(BasePopup):
           try:
             os.remove(path)
           except:
-            print 'Warning: could not remove %s' % path
+            print('Warning: could not remove %s' % path)
       for storedContour in storedContours:
         storedContour.delete()
 

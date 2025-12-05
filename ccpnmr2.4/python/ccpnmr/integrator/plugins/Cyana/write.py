@@ -79,7 +79,7 @@ def write(nmrCalcRun, targetDir):
 
   # write properties file
   propFile = uniIo.joinPath(targetDir, intIo.propFileName)
-  print 'About to write', propFile
+  print('About to write', propFile)
   open(propFile,'w').write(json.dumps(jsonDict, sort_keys=True,
                                       indent=intIo.propIndent))
 
@@ -225,34 +225,34 @@ if __name__ == '__main__':
   '%s+%s' % (NmrCalcStore.guid, Run.serial)
   """
 
-  print '### Cyana.write:', len (sys.argv), sys.argv[1:]
+  print('### Cyana.write:', len (sys.argv), sys.argv[1:])
 
   if len(sys.argv) >= 3:
 
-    print '### Cyana.write nArgs >= 3:'
+    print('### Cyana.write nArgs >= 3:')
 
     # set up input
     junk, projectDir, nmrCalcRunId = sys.argv[:3]
 
-    print '### Cyana.write got data :', projectDir, nmrCalcRunId
+    print('### Cyana.write got data :', projectDir, nmrCalcRunId)
 
     if len(sys.argv) >= 4:
-      print '### Cyana.write nArgs >= 4:'
+      print('### Cyana.write nArgs >= 4:')
       targetDir = sys.argv[3]
     else:
-      print '### Cyana.write targetDir is None'
+      print('### Cyana.write targetDir is None')
       targetDir=None
 
-    #print '### Cyana.write about to run prepareStdWmsRun'
-    #print '###', pluginName, projectDir, nmrCalcRunId, targetDir
+    #print('### Cyana.write about to run prepareStdWmsRun')
+    #print('###', pluginName, projectDir, nmrCalcRunId, targetDir)
     #intIo.prepareStdWmsRun(pluginName, projectDir, nmrCalcRunId, targetDir)
-    #print '### Cyana.write finished prepareStdWmsRun'
+    #print('### Cyana.write finished prepareStdWmsRun')
 
     # NB necessary.
     # As side effect prints message that passes newCalcId to WMS Java
     nmrCalcRun = intIo.getNmrCalcRun(projectDir, nmrCalcRunId, pluginName)
 
   else:
-    print "Usage: write projectDir NmrCalcRun.IDstring targetDir(optional)"
+    print("Usage: write projectDir NmrCalcRun.IDstring targetDir(optional)")
 
 

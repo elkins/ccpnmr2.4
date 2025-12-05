@@ -30,7 +30,7 @@ class RPF():
             head, tail = os.path.split(ccpnFolder)
             print head, tail
             baseNameList = tail.split('.')
-            print "baseNameList %s" % baseNameList
+            print("baseNameList %s" % baseNameList)
             baseName = baseNameList[0]
             ccpnFolder = os.path.join(head, baseName)
 

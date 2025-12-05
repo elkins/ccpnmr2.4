@@ -306,7 +306,7 @@ def _criticizeResidue( residue, valSets ):
     # WHATIF
     #print residue, residue.has_key(WHATIF_STR), residue.hasProperties('protein')
     if residue.has_key(WHATIF_STR) and residue.hasProperties('protein'):
-        #print '>', residue, residue.rogScore
+        #print('>', residue, residue.rogScore)
         for key in ['BBCCHK', 'C12CHK', 'RAMCHK']:
 #            nTdebug('Now criticizing %s, whatif key %s', residue, key )
 
@@ -318,7 +318,7 @@ def _criticizeResidue( residue, valSets ):
 
             actualValue        = getDeepByKeys(residue, WHATIF_STR, key, VALUE_LIST_STR) #TODO remove this valueList stuff
             if actualValue == None:
-                #print '>>', residue,key
+                #print('>>', residue,key)
                 continue
             if isinstance(actualValue, NTlist):
                 actualValue = actualValue.average()[0]
@@ -354,7 +354,7 @@ def _criticizeResidue( residue, valSets ):
 
             actualValue        = getDeepByKeys(residue,'procheck', key )
             if actualValue == None:
-                #print '>>', residue,key
+                #print('>>', residue,key)
                 continue
             if isinstance(actualValue, NTlist):
                 actualValue = actualValue.average()[0]
@@ -418,7 +418,7 @@ def _criticizeResidue( residue, valSets ):
     # end for
 
     if residue.has_key(CHK_STR) and residue.hasProperties('protein'):
-#        print '>', residue, residue.rogScore
+#        print('>', residue, residue.rogScore)
         for key in [RAMACHANDRAN_CHK_STR, CHI1CHI2_CHK_STR, D1D2_CHK_STR]: # TODO: disable those not needed.
 #        for key in [D1D2_CHK_STR]: # TODO: disable those not needed.
 #            nTdebug('Now criticizing %s, whatif key %s', residue, key )
@@ -1144,7 +1144,7 @@ Arbitrarily set the criteria for ion-pair (r,theta) to be within
 
         c2a = residue2['CA'].coordinates[model].e
 
-        #print '>>', c1, c2
+        #print('>>', c1, c2)
         r = c2-c1
         rl = r.length()
         theta = 180.0 - (c1-c1a).angle(c2-c2a)
@@ -1159,7 +1159,7 @@ Arbitrarily set the criteria for ion-pair (r,theta) to be within
                 d = (atm1.coordinates[model].e-atm2.coordinates[model].e).length()
                 if d < 4.0:
                     count += 1
-                #print '>', atm1,atm2,d,count
+                #print('>', atm1,atm2,d,count)
 
         criterium2 = count>0
         if   criterium1 and criterium2:

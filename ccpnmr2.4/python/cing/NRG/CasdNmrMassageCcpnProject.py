@@ -246,7 +246,7 @@ def printCingUrls(programHoH):
                     continue
             entryCode = target + labId
             ch23 = entryCode[1:3]
-            print "http://nmr.cmbi.ru.nl/CASD-NMR-CING/data/%s/%s/%s.cing" % (
+            print("http://nmr.cmbi.ru.nl/CASD-NMR-CING/data/%s/%s/%s.cing" % ()
                     ch23, entryCode, entryCode                )
 
 

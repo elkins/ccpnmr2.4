@@ -370,13 +370,13 @@ class CreateContourFilePopup(BasePopup):
 
   def getRegionMin(self, spectrumCondition, dim):
    
-    #print 'getRegionMin'
+    #print('getRegionMin')
     (condition, region) = spectrumCondition
     self.regionEntry.set(region[dim][0])
 
   def setRegionMin(self, spectrumCondition, dim):
    
-    #print 'setRegionMin'
+    #print('setRegionMin')
 
     (condition, region) = spectrumCondition
     (r0, r1) = region[dim]
@@ -387,13 +387,13 @@ class CreateContourFilePopup(BasePopup):
 
   def getRegionMax(self, spectrumCondition, dim):
    
-    #print 'getRegionMax'
+    #print('getRegionMax')
     (condition, region) = spectrumCondition
     self.regionEntry.set(region[dim][1])
 
   def setRegionMax(self, spectrumCondition, dim):
 
-    #print 'setRegionMax'
+    #print('setRegionMax')
     (condition, region) = spectrumCondition
     (r0, r1) = region[dim]
     r = self.regionEntry.get()
@@ -415,13 +415,13 @@ class CreateContourFilePopup(BasePopup):
   """ not needed for now
   def getCondition(self, spectrumCondition):
    
-    #print 'getCondition'
+    #print('getCondition')
     (condition, region) = spectrumCondition
     self.conditionMenu.set(condition)
 
   def setCondition(self, spectrumCondition):
 
-    #print 'setCondition'
+    #print('setCondition')
     spectrumCondition[0] = self.conditionMenu.get()
     self.setSpectrumConditions()
 
@@ -601,14 +601,14 @@ class CreateContourFilePopup(BasePopup):
     for i in range(ndim):
       try:
         (firstInt[i], lastInt[i]) = self.convertToPoints(spectrum, i, region[i])
-      except Exception, e:
+      except Exception as e:
         showError('Invalid region', str(e), parent=self)
 
     try:
-      #print 'about to saveSpectrumContours', fullPath, xdim, ydim, levels, firstInt, lastInt
+      #print('about to saveSpectrumContours', fullPath, xdim, ydim, levels, firstInt, lastInt)
       saveSpectrumContours(spectrum, fullPath, xdim, ydim, levels, firstInt, lastInt,
                          mem_cache=self.parent.mem_cache)
-    except Exception, e:
+    except Exception as e:
       showError('Save error', str(e), parent=self)
       return
 

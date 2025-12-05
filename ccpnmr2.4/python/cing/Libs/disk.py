@@ -328,7 +328,7 @@ def chmod(path,mods):
         try:
             os.chmod(path,mods)
         except:
-            print "Could not change permissions for ",path
+            print("Could not change permissions for ",path)
 
 # DELETE AN ENTIRE DIRECTORY INCLUDING ALL THE FILES
 # ==================================================
@@ -393,7 +393,7 @@ def updatedir(srcpath,dstdir,contentchecked=1,recursive=0,obsoleted=0,mod=None,e
 # ZIP A FILE
 # ==========
 def zip(filename):
-    print "Deflating",filename
+    print("Deflating",filename)
     zipfilename=filename+".zip"
     zip=zipfile.ZipFile(zipfilename,"w",zipfile.ZIP_DEFLATED)
     zip.write(filename,os.path.basename(filename))
@@ -724,7 +724,7 @@ def mkdirs(dst):
 
     try:
         os.mkdir(dst, 0777)
-    except OSError, e:
+    except OSError as e:
         # be happy if someone already created the path
         if e.errno != EEXIST:
             raise
@@ -732,7 +732,7 @@ def mkdirs(dst):
 def removeEmptyFiles( theDir ):
     for fn in glob(theDir):
         if os.path.getsize(fn) == 0:
-            print "Removing empty file."
+            print("Removing empty file.")
             os.unlink(fn)
 
 def getNewestFileFromList( fnList ):
@@ -742,13 +742,13 @@ def getNewestFileFromList( fnList ):
     """
     # thanks to http://www.daniweb.com/code/snippet216688.html for the example.
     if not fnList:
-        print "WARNING: In getNewestFileFromList got no valid input: %s" % fnList
+        print("WARNING: In getNewestFileFromList got no valid input: %s" % fnList)
         return False
 
     date_file_list = []
     for fileName in fnList:
         if not os.path.exists(fileName):
-            print "WARNING: Skipping missing fileName %s" % fileName
+            print("WARNING: Skipping missing fileName %s" % fileName)
             continue
         # retrieves the stats for the current fileName as a tuple
         # (mode, ino, dev, nlink, uid, gid, size, atime, mtime, ctime)

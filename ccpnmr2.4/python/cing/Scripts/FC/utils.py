@@ -33,7 +33,7 @@ def reportDifference(ccpnProject, fn):
 def printSequenceFromCcpnProject(ccpnProject):
     molSystem = ccpnProject.findFirstMolSystem()
     firstChain = molSystem.findFirstChain()
-#    print 'Code [%s], name [%s]' % (firstChain.code, firstChain.molecule.name)
+#    print('Code [%s], name [%s]' % (firstChain.code, firstChain.molecule.name))
 
     fastaString = ''
 
@@ -155,15 +155,15 @@ def fcProcessEntry( entry_code, ccpnTgzFile, outputCcpnTgzFile, functionToRun='s
         allowPopups = True
         minimalPrompts = False
 
-    print 'entry_code                                                                                    ', entry_code
-#    print 'bmrb_id                                                                                       ', bmrb_id
-    print 'allowPopups                                                                                   ', allowPopups
-    print 'isInteractive                                                                                 ', isInteractive
-    print 'minimalPrompts                                                                                ', minimalPrompts
-    print 'verbose                                                                                       ', verbose
-    print 'doSwapCheck                                                                                   ', doSwapCheck
-    print 'doSaveProject                                                                                 ', doSaveProject
-    print 'doExport                                                                                      ', doExport
+    print('entry_code                                                                                    ', entry_code)
+#    print('bmrb_id                                                                                       ', bmrb_id)
+    print('allowPopups                                                                                   ', allowPopups)
+    print('isInteractive                                                                                 ', isInteractive)
+    print('minimalPrompts                                                                                ', minimalPrompts)
+    print('verbose                                                                                       ', verbose)
+    print('doSwapCheck                                                                                   ', doSwapCheck)
+    print('doSaveProject                                                                                 ', doSaveProject)
+    print('doExport                                                                                      ', doExport)
 
     guiRoot = None
     if allowPopups:

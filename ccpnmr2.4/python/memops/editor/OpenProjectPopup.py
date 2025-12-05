@@ -182,17 +182,17 @@ class OpenProjectPopup(BasePopup):
 
     try:
       self.project = self.load_project(path)
-    except ApiError, e:
+    except ApiError as e:
       showError('Loading project', e.error_msg, self)
       self.enableOk()
       return False
 
-    except IOError, e:
+    except IOError as e:
       showError('Loading project', str(e), self)
       self.enableOk()
       return False
 
-    except Exception, e:
+    except Exception as e:
       showError('Loading project', str(e), self)
       self.enableOk()
       return False

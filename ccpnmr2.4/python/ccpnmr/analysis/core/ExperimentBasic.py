@@ -1603,7 +1603,7 @@ def calculateNoiseInBox(dataSource, boxMin, boxMax):
   noise = numpy.std(values, ddof=1)
 
   dataSource.noiseLevel = noise
-  print 'Set noise level for spectrum %s:%s to %f' % (dataSource.experiment.name, dataSource.name, noise)
+  print('Set noise level for spectrum %s:%s to %f' % (dataSource.experiment.name, dataSource.name, noise))
 
 def getMinMaxValues(dataSource):
   """
@@ -2255,13 +2255,13 @@ def isDataBigEndian(fileName, numberType='float', fileHeaderSize=0,
   """
 
   if nbytes != 4:  # TBD: not sure what else to do here right now
-    print 'WARNING: isDataBigEndian() returning True for nbytes != 4 right now'
+    print('WARNING: isDataBigEndian() returning True for nbytes != 4 right now')
     return True
 
   try:
     fp = open(fileName, 'rb')
   except:
-    print 'WARNING: file "%s" does not exist, isDataBigEndian() returning True' % fileName
+    print('WARNING: file "%s" does not exist, isDataBigEndian() returning True' % fileName)
     return True
 
   s = fp.read(fileHeaderSize)
@@ -2292,7 +2292,7 @@ def isDataBigEndian(fileName, numberType='float', fileHeaderSize=0,
 
   fp.close()
   if not x:
-    print 'WARNING: file "%s" seems to be mostly 0, isDataBigEndian() returning True' % fileName
+    print('WARNING: file "%s" seems to be mostly 0, isDataBigEndian() returning True' % fileName)
     return True
 
   knt = 0

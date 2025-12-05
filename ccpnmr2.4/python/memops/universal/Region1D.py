@@ -74,7 +74,7 @@ class Region1D:
   def fitInMaxRegion(self, t0, t1, max_region):
 
     (r0, r1) = max_region
-    #print 'fitInMaxRegion1', t0, t1, r0, r1
+    #print('fitInMaxRegion1', t0, t1, r0, r1)
 
     if (r0 < r1):
       #t0 = max(t0, r0)
@@ -97,7 +97,7 @@ class Region1D:
         t0 = min(t0+r1-t1, r0)
         t1 = r1
 
-    #print 'fitInMaxRegion2', t0, t1, r0, r1
+    #print('fitInMaxRegion2', t0, t1, r0, r1)
     return (t0, t1)
 
   def translateFraction(self, f, max_region = None):
@@ -135,13 +135,13 @@ class Region1D:
 
     u = 0.5 * (self.t0 + self.t1)
     v = 0.5 * scale * (- self.t0 + self.t1)
-    #print 'zoom1', v, scale, self.t0, self.t1
+    #print('zoom1', v, scale, self.t0, self.t1)
     if (max_extent):
       if (v > 0):
         v = min(v, 0.5*max_extent)
       else:
         v = max(v, -0.5*max_extent)
-      #print 'zoom2', v, max_extent
+      #print('zoom2', v, max_extent)
 
     t0 = u - v
     t1 = u + v
@@ -156,7 +156,7 @@ class Region1D:
                      other_region = None, other_max_region = None,
                      other_max_extent = None):
 
-    #print 'resizeFraction', f, resize_type, self.t0, self.t1
+    #print('resizeFraction', f, resize_type, self.t0, self.t1)
 
     if (f == 0.0):
       return
@@ -202,9 +202,9 @@ class Region1D:
     elif (n == 1):
       return self.t1
 
-    raise IndexError, 'list index out of range'
+    raise IndexError('list index out of range'
 
-  def __setitem__(self, key, value):
+  def __setitem__(self).with_traceback(key), value):
 
     try:
       n = int(key)

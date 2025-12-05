@@ -180,7 +180,7 @@ class BrukerPseudoPopup(BasePopup):
       values = self.valueEntry.get()
       try:
         params.setSampledDim(self.dim, values)
-      except ApiError, e:
+      except ApiError as e:
         showError('Set Sampled Dim', e.error_msg, parent=self)
         return
     else:

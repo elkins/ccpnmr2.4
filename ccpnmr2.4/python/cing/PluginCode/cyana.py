@@ -131,7 +131,7 @@ def importAco( project, acoFile ):
         upper  = line.float(5)
         if res and angle in res.db:
             atoms = translateTopology( res, res.db[angle].atoms )
-#            print '>', atoms, res, res.db[angle]
+#            print('>', atoms, res, res.db[angle])
             if None in atoms:
                 if errorCount <= maxErrorCount:
                     nTerror("Failed to decode all atoms from line:"+ line.dollar[0])
@@ -248,7 +248,7 @@ def importUpl( project, uplFile, convention, lower = 0.0 ):
     return a DistanceRestraintList or None on error
     """
     
-    #print 'Convention: ' + convention
+    #print('Convention: ' + convention)
     
     maxErrorCount = 50
     errorCount = 0
@@ -610,7 +610,7 @@ def cyana2cing( project, cyanaDirectory, convention=CYANA2, copy2sources=True, u
     sources.removeDuplicates()
     if copy2sources:
         for f in sources:
-            #print '>>', f, sourceDir
+            #print('>>', f, sourceDir)
             shutil.copy( f, sourceDir )
         #end for
     #end if

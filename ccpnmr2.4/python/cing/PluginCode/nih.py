@@ -492,7 +492,7 @@ NIHheaderDefinitionString = """
 NIHheaderDefs = NTdict()
 for l in AwkLikeS( NIHheaderDefinitionString, minNF = 3 ):
     if (l.dollar[1] == '#define'):
-        #print '>>', l.dollar[0]
+        #print('>>', l.dollar[0])
         if l.NF > 5: 
             comment = ' '.join(l.dollar[5:l.NF])
         else: comment = None
@@ -1136,7 +1136,7 @@ DATA ATOMNAMES HA CA CB C N HN
                         continue
                     #end if
 
-                    #print '>', seqString[resId:resId+1]
+                    #print('>', seqString[resId:resId+1])
                     table.addRow( RESID=resId+1, RESNAME=seqString[resId:resId+1], ATOMNAME=atomName, SHIFT=shift)
                     atmCount += 1
                 #end for
@@ -1269,7 +1269,7 @@ class SMLTalosPlusResultHandler( SMLhandler ):
         fprintf( stream, "%s\n", self.startTag )
 #       Can add attributes here; update endHandler if needed
         for a in tPlus.keys():
-            #print ">>", a
+            #print(">>", a)
             if a == 'residue':
                 fprintf( stream, '%s = %r\n', a, tPlus[a].nameTuple(SMLsaveFormat) ) # encode the residue
             else:
@@ -1303,7 +1303,7 @@ def _importTalosPlus( project, predFile, ssFile=None ):
 
     for row in table:
 
-        #print '>', row, row.residue
+        #print('>', row, row.residue)
         talosPlus = TalosPlusResult(
                                     residue = row.residue,
                                     phi = NTvalue( row.PHI, row.DPHI, '%6.1f +- %4.1f'),

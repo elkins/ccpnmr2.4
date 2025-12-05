@@ -541,7 +541,7 @@ def getBoundResonances(resonance, recalculate=False, contribs=None, doWarning=Fa
             for resonance2 in resonanceSet2.resonances:
               if resonance2 is resonance: # should not happen
                 if resonance not in funnyResonances:
-                  print 'WARNING: in getBoundResonances(): resonance %d tried to be linked to itself' % resonance.serial
+                  print('WARNING: in getBoundResonances(): resonance %d tried to be linked to itself' % resonance.serial)
                   funnyResonances.add(resonance)
               elif usePaired:
                 pairResonances.add(resonance2)
@@ -1255,7 +1255,7 @@ def initResonance(resonance, doMerge=True):
   if resonance.isDeleted:
     return
   
-  #print 'initResonance', makeResonanceGuiName(resonance)
+  #print('initResonance', makeResonanceGuiName(resonance))
   resonanceSet = resonance.resonanceSet
   
   if resonance.name == 'r%d' % resonance.serial:
@@ -3040,10 +3040,10 @@ def setQuickShiftList(shift):
     # remove old key
     try:
       quickShiftDict[oldKey].remove(shift)
-    except ValueError, e:
-      print 'Warning: Quick shift index value failure', e
-    except KeyError, e:
-      print 'Warning: Quick shift index key failure', e
+    except ValueError as e:
+      print('Warning: Quick shift index value failure', e)
+    except KeyError as e:
+      print('Warning: Quick shift index key failure', e)
 
   if quickShiftDict.get(key) is None:
     quickShiftDict[key] = []
@@ -3881,7 +3881,7 @@ def assignResonanceResidue(resonance, residue):
   """
 
 
-  #print 'assignResonanceResidue', makeResonanceGuiName(resonance), residue.seqId
+  #print('assignResonanceResidue', makeResonanceGuiName(resonance), residue.seqId)
   if residue:
     # we could be setting the residue to None
     if not setAssignmentMolSystem(residue, resonance=resonance):
@@ -4016,7 +4016,7 @@ def assignSpinSystemResidue(spinSystem,residue=None, warnMerge=False):
     resonanceProb.delete()
 
   if residue:
-    #print 'assignSpinSystemResidue', residue.seqId
+    #print('assignSpinSystemResidue', residue.seqId)
     nmrProject  = spinSystem.nmrProject
     molResidue  = residue.molResidue
     ccpCode     = molResidue.ccpCode
@@ -4362,7 +4362,7 @@ def makeSeqSpinSystemLink(spinSystemA, spinSystemB, delta=1):
     idB = '%d %s' % (residueB.seqCode, residueB.ccpCode)
     residueC = residueB.chain.findFirstResidue(seqId = residueB.seqId - delta)
     if not residueC:
-      print 'Impossible spin system link attempted: %s to i - %d' % (idB,delta)
+      print('Impossible spin system link attempted: %s to i - %d' % (idB,delta))
     else:
       assignSpinSystemResidue(spinSystemA, residueC, warnMerge=False) 
     

@@ -82,7 +82,7 @@ class PalesRdcConstraintFile(PalesGenericFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s rdc constraint list %s" % (self.format,self.name)
+      print("Reading %s rdc constraint list %s" % (self.format,self.name))
 
     rdcId = 0
     chainCode = self.defaultMolCode
@@ -137,7 +137,7 @@ class PalesRdcConstraintFile(PalesGenericFile):
     # ...
 
     if verbose == 1:
-      print "Writing %s rdc constraint list %s" % (self.format,self.name)
+      print("Writing %s rdc constraint list %s" % (self.format,self.name))
 
     fout = open(self.name,'w')
 
@@ -257,7 +257,7 @@ if __name__ == "__main__":
 
           print member.seqCode, member.resLabel, member.atomName,
 
-        print "|",
+        print("|",)
 
       print
     

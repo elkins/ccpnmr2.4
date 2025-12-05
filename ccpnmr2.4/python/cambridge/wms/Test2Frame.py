@@ -173,7 +173,7 @@ class Test2Frame(Frame):
 
     self.task_id = self.basePopup.currentTask
 
-    print 'trying to render task with serial ', self.task_id 
+    print('trying to render task with serial ', self.task_id )
 
     if self.task_id == None:
 
@@ -204,7 +204,7 @@ class Test2Frame(Frame):
       wsstr_out1 = WSString(response1._return)
       hm_tv = wsstr_out1.getStructHM()
 
-      print 'RESULT ', hm_tv
+      print('RESULT ', hm_tv)
 
  
       self.task_rep_title.set('Task: ' + self.task_id)
@@ -293,7 +293,7 @@ class Test2Frame(Frame):
 
   def submit(self):
 
-    print 'either passing to server or running locally'
+    print('either passing to server or running locally')
 
     # get a port proxy instance
     # this should probably belong to the repository directly

@@ -59,7 +59,7 @@ and contains original contributions embedded in the framework
 """
 
 try:
-  import cStringIO as StringIO
+  import io as StringIO
 except ImportError:
   import io as StringIO
 #import sets

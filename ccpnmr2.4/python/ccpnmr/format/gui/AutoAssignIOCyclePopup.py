@@ -385,7 +385,7 @@ class AutoAssignIOCyclePopup(BasePopup):
             residue = seqCodeToResidue[seqCode]
           else:
             # THIS SHOULD NEVER HAPPEN!
-            print "  Error: no match for seqCode %d while re-importing project." % seqCode
+            print("  Error: no match for seqCode %d while re-importing project." % seqCode)
             continue
           
           #

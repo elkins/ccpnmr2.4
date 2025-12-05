@@ -1133,7 +1133,7 @@ class EditStructuresPopup(BasePopup):
        
       try:
         ensemble = getStructureFromFile(self.molSystem, file)
-      except Exception, e:
+      except Exception as e:
         showError('Structure from file', str(e), parent=self)
     
     if ensemble:

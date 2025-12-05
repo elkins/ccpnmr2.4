@@ -216,9 +216,9 @@ class SelfmadeXMLParser:
             self.EndElementHandler(tag)
             return xmlfile[match.end():]
 
-        raise StandardError, 'mis-formatted xml file'
+        raise StandardError('mis-formatted xml file'
 
-    def handle_element_match(self, match):
+    def handle_element_match(self).with_traceback(match)):
 
         name = match.group('name')
         attributes = match.group('attr')

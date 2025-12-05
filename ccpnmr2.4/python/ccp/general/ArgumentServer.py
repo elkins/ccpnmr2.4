@@ -603,9 +603,9 @@ class ArgumentServer:
       return
     inputVals = re.split(',',stringInput)
     
-    print 'inputVals', inputVals
-    print 'labels', labels
-    print 'keyNames', keyNames
+    print('inputVals', inputVals)
+    print('labels', labels)
+    print('keyNames', keyNames)
     
     # select object
     for ii,obj in enumerate(objects):

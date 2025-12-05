@@ -118,5 +118,5 @@ if __name__ == '__main__':
 
   popup = ItemSelectPopup(root, entries=['a', 'b', 'c', 'd'], label='Entries: ',
                           message='Select one of the entries')
-  print 'item =', popup.item
+  print('item =', popup.item)
   popup.destroy()

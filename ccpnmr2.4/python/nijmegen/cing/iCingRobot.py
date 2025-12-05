@@ -7,10 +7,10 @@ import httplib, mimetypes, mimetools
 
 try:
   import urllib2
-except ImportError, err:
-  print "* Warning * Cannot import Python module urllib2."
-  print " - Please check your SSL libraries."
-  print " - Submission to to the iCing server will not work."
+except ImportError as err:
+  print("* Warning * Cannot import Python module urllib2.")
+  print(" - Please check your SSL libraries.")
+  print(" - Submission to to the iCing server will not work.")
   print err
 
 from memops.gui.MessageReporter import showWarning, showYesNo
@@ -58,10 +58,10 @@ def ccpnCingSubmitMacro(argServer, url="https://nmr.le.ac.uk/"):
             
             entryId = iCingProjectName(credentials, iCingUrl).get(RESPONSE_RESULT)
             urls = getResultUrls(credentials, entryId, url)
-            print "Base URL", urls[0]
-            print "Results URL:", urls[1]
-            print "Log URL:", urls[2]
-            print "Zip URL:", urls[3]
+            print("Base URL", urls[0])
+            print("Results URL:", urls[1])
+            print("Log URL:", urls[2])
+            print("Zip URL:", urls[3])
              
             print iCingRun(credentials, iCingUrl)
             
@@ -76,7 +76,7 @@ def ccpnCingSubmitMacro(argServer, url="https://nmr.le.ac.uk/"):
               if status2 != status:
                 break
             
-            print "Done"
+            print("Done")
             #print iCingLog(credentials, url)
 
             zipFileName = argServer.getFile()
@@ -203,10 +203,10 @@ def iCingFetch(credentials, url, iCingUrl, zipFileName):
     entryId = response.get(RESPONSE_RESULT)
     baseUrl, resultUrl, logUrl, zipUrl = getResultUrls(credentials, entryId, url)
     
-    #print "Base URL", baseUrl
-    #print "Results URL:", resultUrl
-    #print "Log URL:", logUrl
-    #print "Zip URL:", zipUrl
+    #print("Base URL", baseUrl)
+    #print("Results URL:", resultUrl)
+    #print("Log URL:", logUrl)
+    #print("Zip URL:", zipUrl)
     
     response = urlOpen(logUrl)
     if response:
@@ -325,7 +325,7 @@ def urlOpen(request):
     try:
         response = urllib2.urlopen(request)
 
-    except urllib2.URLError, e:
+    except urllib2.URLError as e:
         if hasattr(e, 'reason'):
             if isinstance(request, urllib2.Request):
               url = request.get_full_url()
@@ -392,7 +392,7 @@ def _processResponse(text):
         key , value = data
         dataDict[key] = value
       else:
-        print "Trouble",  pair
+        print("Trouble",  pair)
             
     
     return dataDict

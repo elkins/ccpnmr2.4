@@ -69,11 +69,11 @@ except ImportError:
 try:
   import ccpnmr.c.ContourStyle as ContourStyle
   import ccpnmr.c.ContourLevels as ContourLevels
-except Exception, e:
-  print 'Error, the WindowDraw module will not work, something is wrong with the C code.'
+except Exception as e:
+  print('Error, the WindowDraw module will not work, something is wrong with the C code.')
   ContourStyle = ContourLevels = None
-  print 'Exception:', e
-  print 'Will continue without Analysis window drawing functionality'
+  print('Exception:', e)
+  print('Will continue without Analysis window drawing functionality')
 
 no_peak_text = 'No peak text'
 
@@ -281,7 +281,7 @@ class WindowDraw:
         d = 0.5 * (r1 - r0)
         region = (p-d, p+d)
 
-        # print 'mid1 gotoXStripPosition', col, label, position
+        # print('mid1 gotoXStripPosition', col, label, position)
         if label in ('x', 'y'):
           axisRegion.region = region
           # above automatically updates scrollbar
@@ -291,7 +291,7 @@ class WindowDraw:
           # above directly updates scrollbar and indirectly sets axisRegion.region
           # should not be updating widgets in WindowDraw!
           axisRegion.region = region
-        # print 'mid2 gotoXStripPosition', col, label, position
+        # print('mid2 gotoXStripPosition', col, label, position)
 
     if doLift:
       self.lift()
@@ -352,7 +352,7 @@ class WindowDraw:
         d = 0.5 * (r1 - r0)
         region = (p-d, p+d)
 
-        #print 'mid1 gotoYStripPosition', row, label
+        #print('mid1 gotoYStripPosition', row, label)
         if (label in ('x', 'y')):
           axisRegion.region = region
           # above automatically updates scrollbar
@@ -362,7 +362,7 @@ class WindowDraw:
           # above directly updates scrollbar and indirectly sets axisRegion.region
           # should not be updating widgets in WindowDraw!
           axisRegion.region = region
-        #print 'mid2 gotoYStripPosition', row, label
+        #print('mid2 gotoYStripPosition', row, label)
 
     if doLift:
       self.lift()
@@ -527,7 +527,7 @@ class WindowDraw:
         axisRegion = axisRegions[n]
       position_region[axisPanel.label] = axisRegion.region
 
-    #print 'findPositionRegion', a, b, n, position_region
+    #print('findPositionRegion', a, b, n, position_region)
 
     return position_region
 
@@ -567,7 +567,7 @@ class WindowDraw:
       # this can happen if region not set up correctly
       return None
     
-    #print 'findNearbyPeak', self.windowPane.name, xdim, ydim, xscale, yscale, first, last
+    #print('findNearbyPeak', self.windowPane.name, xdim, ydim, xscale, yscale, first, last)
     allow_aliasing = getDimWrapped(peakList.dataSource)
 
     #peakInd = peakList.cPeakList.nearestPeak(xdim, ydim, xscale, yscale, first, last, allow_aliasing)
@@ -619,7 +619,7 @@ class WindowDraw:
     (t0, t1) = checkSwapRegion(axisType.region, axisType.findFirstAxisUnit(unit='ppm'))
     yregion = Region1D(t0, t1)
 
-    #print 'getWorldRegion', xregion, yregion
+    #print('getWorldRegion', xregion, yregion)
 
     return Region2D(xregion, yregion)
 
@@ -639,7 +639,7 @@ class WindowDraw:
       region = regions[n]
       axisRegion = panel.sortedAxisRegions()[n]
       (t0, t1) = checkSwapRegion(region, panel.axisUnit)
-      #print 'setViewRegions', region, t0, t1
+      #print('setViewRegions', region, t0, t1)
       axisRegion.region = (t0, t1)
 
   def getXviewRegions(self, worldRegion):
@@ -682,7 +682,7 @@ class WindowDraw:
     dataDim = axisMapping.analysisDataDim.dataDim
     axisPanel = self.windowPane.findFirstAxisPanel(label=axisMapping.label)
 
-    #print 'determineDimRange', view.analysisSpectrum.dataSource.name, axisMapping.label
+    #print('determineDimRange', view.analysisSpectrum.dataSource.name, axisMapping.label)
     if not axisRegion:
       if axisMapping.label == 'x':
         n = col
@@ -697,7 +697,7 @@ class WindowDraw:
 
     view_region = getAxisRegionRegion(axisRegion)
     axisType = axisPanel.axisType
-    #print 'determineDimRange0', axisPanel.label, dataDim.dim, view_region
+    #print('determineDimRange0', axisPanel.label, dataDim.dim, view_region)
 
     if axisType.isSampled:
       npoints = dataDim.numPoints
@@ -721,7 +721,7 @@ class WindowDraw:
       world_region[0] = max(world_region[0], minAliasedFreq)
       world_region[1] = min(world_region[1], maxAliasedFreq)
 
-      #print 'determineDimRange1', axisPanel.label, dataDim.dim, view_region, world_region
+      #print('determineDimRange1', axisPanel.label, dataDim.dim, view_region, world_region)
 
       if self.hasValueAxis and axisPanel.label == 'x':
         offset = getXAxisOffset(view)
@@ -730,7 +730,7 @@ class WindowDraw:
       view_region = convertRegion(view_region, axisPanel.axisUnit, dataDim)
       world_region = convertRegion(world_region, axisType.findFirstAxisUnit(unit='ppm'), dataDim)
       
-      #print 'determineDimRange2', axisPanel.label, gdataDim.dim, view_region, world_region
+      #print('determineDimRange2', axisPanel.label, gdataDim.dim, view_region, world_region)
 
     axisMapping.view_region = view_region
     axisMapping.world_region = world_region
@@ -741,7 +741,7 @@ class WindowDraw:
     axisMapping.tile1 = int(r1+1) / npoints
     axisMapping.ntiles = axisMapping.tile1 - axisMapping.tile0 + 1
 
-    #print 'determineDimRange3', axisPanel.label, dataDim.dim, r0, r1, \
+    #print('determineDimRange3', axisPanel.label, dataDim.dim, r0, r1, \)
     #         npoints, axisMapping.tile0, axisMapping.tile1, axisMapping.ntiles
 
   def determineTileRange(self, axisMapping, tile):
@@ -784,7 +784,7 @@ class WindowDraw:
     worldPointRange = (wp, wq)
     spectrumPointRange = (sp, sq)
 
-    #print 'determineTileRange', (sp, sq), (wp, wq)
+    #print('determineTileRange', (sp, sq), (wp, wq))
 
     return (worldPointRange, spectrumPointRange)
 
@@ -870,7 +870,7 @@ class WindowDraw:
   def drawViewTileReal(self, handler, view, contourLevels, contourStyle,
                        worldPointRanges, spectrumPointRanges, row, components=None):
 
-    #print 'drawViewTileReal0'
+    #print('drawViewTileReal0')
 
     t = self.setupRanges(handler, view, worldPointRanges, spectrumPointRanges, row)
     if t is None:
@@ -904,8 +904,8 @@ class WindowDraw:
     for n in range(ndim):
       lastInt[n] = min(lastInt[n], spectrum.sortedDataDims()[n].numPoints)
 
-    #print 'drawViewTileReal1', self.windowPane.name, firstInt, lastInt
-    #print 'drawViewTileReal2', self.windowPane.name, firstFloat, lastFloat
+    #print('drawViewTileReal1', self.windowPane.name, firstInt, lastInt)
+    #print('drawViewTileReal2', self.windowPane.name, firstFloat, lastFloat)
 
     for n in range(ndim):
       if firstInt[n] >= lastInt[n]:
@@ -958,8 +958,8 @@ class WindowDraw:
                         center, thickness, tile,
                         drawMethod, intensityMax, volumeMax, xpix, ypix):
 
-    #print 'drawViewTilePeaks0', self.windowPane.name, center, thickness, tile
-    #print 'drawViewTilePeaks1', self.windowPane.name, xscale, yscale, xdim, ydim
+    #print('drawViewTilePeaks0', self.windowPane.name, center, thickness, tile)
+    #print('drawViewTilePeaks1', self.windowPane.name, xscale, yscale, xdim, ydim)
     t = self.setupRanges(handler, view, worldPointRanges, spectrumPointRanges, row, pad=True)
     if t is None:
       return
@@ -981,7 +981,7 @@ class WindowDraw:
     setupCWinPeakList = parent.setupCWinPeakList
     
     for winPeakList in view.windowPeakLists:
-      #print 'drawViewTilePeaks2:', winPeakList.analysisPeakList.peakList.serial, firstFloat, lastFloat, center, thickness
+      #print('drawViewTilePeaks2:', winPeakList.analysisPeakList.peakList.serial, firstFloat, lastFloat, center, thickness)
       if not hasattr(winPeakList, 'cWinPeakList'):
         # should not be here but looks like timing can sometimes
         # cause draw to happen before winPeakList is setup
@@ -1013,11 +1013,11 @@ class WindowDraw:
         if hasattr(winPeakList, 'printFont'):
           winPeakList.cWinPeakList.setIsSymbolDrawn(winPeakList.isSymbolDrawn)
           winPeakList.cWinPeakList.setIsTextDrawn(winPeakList.isAnnotationDrawn)
-      #print 'drawViewTilePeaks3'
+      #print('drawViewTilePeaks3')
 
   def calcPeakScale(self, axisPanel, axisMapping, size, fromUnit, toUnit='point'):
 
-    #print 'calcPeakScale', axisPanel.label, size, fromUnit
+    #print('calcPeakScale', axisPanel.label, size, fromUnit)
 
     dataDimRef = ExperimentBasic.getPrimaryDataDimRef(axisMapping.analysisDataDim.dataDim)
     p = convertPosition(size, dataDimRef, fromUnit=fromUnit, toUnit=toUnit, relative=True)
@@ -1115,7 +1115,7 @@ class WindowDraw:
 
   def drawView(self, handler, object, view, row, col):
 
-    #print 'drawViewA', self.windowPane.name
+    #print('drawViewA', self.windowPane.name)
 
     # What is below doing? TJS  (if both of these are not set then nothing can draw)
     if not self.hasValueAxis and \
@@ -1166,7 +1166,7 @@ class WindowDraw:
       contourLevels = ContourLevels.ContourLevels(levels)
 
       # TBD: switch positive and negative if isAliased
-      #print 'drawViewB', self.windowPane.name
+      #print('drawViewB', self.windowPane.name)
       
       posColors = analysisSpectrum.posColors
       negColors = analysisSpectrum.negColors
@@ -1209,9 +1209,9 @@ class WindowDraw:
         self.determineDimRange(view, axisMapping, row, col, axisRegion)
         ntiles_array[dim] = axisMapping.ntiles
 
-      #print 'drawViewC', self.windowPane.name, ntiles_array
+      #print('drawViewC', self.windowPane.name, ntiles_array)
       (ntiles, cum_tiles) = cumulativeProductArray(ntiles_array)
-      #print 'drawViewD', self.windowPane.name, ntiles, cum_tiles
+      #print('drawViewD', self.windowPane.name, ntiles, cum_tiles)
     
       drawViewTile = self.drawViewTile
       analysisSpectrum = view.analysisSpectrum
@@ -1219,7 +1219,7 @@ class WindowDraw:
         worldPointRanges = ndim * [0]
         spectrumPointRanges = ndim * [0]
         tile_array = arrayOfIndex(tile, cum_tiles)
-        #print 'drawView0', self.windowPane.name, tile, tile_array
+        #print('drawView0', self.windowPane.name, tile, tile_array)
       
         for analysisDataDim in analysisSpectrum.analysisDataDims:
           dataDim = analysisDataDim.dataDim
@@ -1230,10 +1230,10 @@ class WindowDraw:
             break # this tile no good
           
           (worldPointRanges[dim], spectrumPointRanges[dim]) = result
-          #print 'drawViewA0', self.windowPane.name, dim, worldPointRanges[dim], spectrumPointRanges[dim]
+          #print('drawViewA0', self.windowPane.name, dim, worldPointRanges[dim], spectrumPointRanges[dim])
         
         else: # all dims ok so this tile good
-          #print 'drawView2: about to draw tile:',  self.windowPane.name, str(tile_array)
+          #print('drawView2: about to draw tile:',  self.windowPane.name, str(tile_array))
           # TBD: below a kludge, see if can do better
           if (not object or \
               (hasattr(object, 'doubleBuffer') and object.doubleBuffer)):
@@ -1244,8 +1244,8 @@ class WindowDraw:
                             worldPointRanges=worldPointRanges, spectrumPointRanges=spectrumPointRanges: \
                             drawViewTile(handler, object, view, contourLevels, contourStyle,
                                          worldPointRanges, spectrumPointRanges, row, components))
-      #print 'drawView3', self.windowPane.name
-    #print 'drawView4', self.windowPane.name
+      #print('drawView3', self.windowPane.name)
+    #print('drawView4', self.windowPane.name)
 
   def findFundamentalRegion(self, view, label, r0, r1):
 
@@ -1396,7 +1396,7 @@ class WindowDraw:
         worldPointRanges = ndim * [0]
         spectrumPointRanges = ndim * [0]
         tile_array = arrayOfIndex(tile, cum_tiles)
-        #print 'drawViewPeaks0', self.windowPane.name, tile, tile_array
+        #print('drawViewPeaks0', self.windowPane.name, tile, tile_array)
       
         for analysisDataDim in analysisSpectrum.analysisDataDims:
           dataDim = analysisDataDim.dataDim
@@ -1432,12 +1432,12 @@ class WindowDraw:
 
     if axisLabel == 'x':
       x = float(object.position - x0) / (x1 - x0)
-      #print 'drawMarkDimRuler x', x0, x1, x
+      #print('drawMarkDimRuler x', x0, x1, x)
       handler.drawDashLine(x, 0, x, 1, dashLength, gapLength)
       
     elif axisLabel == 'y':
       y = float(object.position - y0) / (y1 - y0)
-      #print 'drawMarkDimRuler y', y0, y1, y
+      #print('drawMarkDimRuler y', y0, y1, y)
       handler.drawDashLine(0, y, 1, y, dashLength, gapLength)
 
   def drawMark(self, handler, mark, x0, x1, y0, y1):
@@ -1527,7 +1527,7 @@ class WindowDraw:
 
     yy0 = float(x0 - y0) / (y1 - y0)
     yy1 = float(x1 - y0) / (y1 - y0)
-    #print 'drawDiagonal', x0, x1, y0, y1, yy0, yy1
+    #print('drawDiagonal', x0, x1, y0, y1, yy0, yy1)
     if isDashed:
       handler.drawDashLine(0, yy0, 1, yy1, 2, 2)
     else:
@@ -1542,7 +1542,7 @@ class WindowDraw:
     handler.setColor(hexToRgb(color))
 
     y = -float(y0) / (y1-y0)
-    #print 'drawZeroLine', y0, y1, y
+    #print('drawZeroLine', y0, y1, y)
     handler.drawLine(0, y, 1, y)
 
   def drawLowestContourLine(self, handler, view, y0, y1, haveHigh, haveLow):
@@ -1672,19 +1672,19 @@ class WindowDraw:
     allViews.sort(self.compareViewOrder)
     allViews.reverse()
 
-    #print 'doCanvas1'
+    #print('doCanvas1')
     for view in allViews:
       #if (view.analysisSpectrum.dataSource.numDim >= 2):
       self.drawView(handler, object, view, row, col)
 
-    #print 'doCanvas2'
+    #print('doCanvas2')
     for view in allViews:
       #if (view.analysisSpectrum.dataSource.numDim >= 2):
       self.drawViewPeaks(handler, view, row, col)
 
     ###self.drawPeakClusters(handler, row, col)
 
-    #print 'doCanvas3'
+    #print('doCanvas3')
     xPanel = windowPane.findFirstAxisPanel(label='x')
     yPanel = windowPane.findFirstAxisPanel(label='y')
     (x0, x1) = self.findAxisRegion(xPanel, col)
@@ -1698,7 +1698,7 @@ class WindowDraw:
           if self.isViewVisible(view) and analysisSpectrum.useBoundingBox:
             self.drawViewBox(handler, view, x0, x1, y0, y1)
 
-    #print 'doCanvas4'
+    #print('doCanvas4')
     self.drawMarks(handler, x0, x1, y0, y1)
     self.drawRulers(handler, x0, x1, y0, y1)
 
@@ -1710,7 +1710,7 @@ class WindowDraw:
 
     xaxisType = xPanel.axisType
     yaxisType = yPanel.axisType
-    #print 'doCanvas5'
+    #print('doCanvas5')
     if xaxisType == yaxisType:
       self.drawDiagonal(handler, x0, x1, y0, y1, color)
 
@@ -1741,7 +1741,7 @@ class WindowDraw:
       elif xaxisType.measurementType == 'Shift' and yaxisType.measurementType == 'MQShift':
         self.drawDiagonal(handler, 2*x0, 2*x1, y0, y1, color)
 
-    #print 'doCanvas6'
+    #print('doCanvas6')
     if self.hasValueAxis and window.isZeroLineShown:
       self.drawZeroLine(handler, y0, y1, color)
 
@@ -1754,7 +1754,7 @@ class WindowDraw:
         for view in allViews:
           if view.isSliceVisible and view.isContourLineVisible:
             self.drawLowestContourLine(handler, view, y0, y1, haveHigh, haveLow)
-    #print 'doCanvas7'
+    #print('doCanvas7')
 
     strip = -1
     if window.stripAxis == 'x':
@@ -1782,13 +1782,13 @@ class WindowDraw:
   def drawRow(self, handlers, object, row):
 
     ncols = self.getNCols()
-    #print 'WindowDraw: drawRow1', handlers, row, ncols
+    #print('WindowDraw: drawRow1', handlers, row, ncols)
     drawCanvas = self.drawCanvas
     
     for i in range(ncols):
       drawCanvas(handlers[row][i], object, row, i)
 
-    #print 'WindowDraw: drawRow2'
+    #print('WindowDraw: drawRow2')
 
   def drawCol(self, handlers, object, col):
 

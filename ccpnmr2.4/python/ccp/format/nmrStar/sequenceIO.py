@@ -272,7 +272,7 @@ class NmrStarSequenceFile(NmrStarGenericFile):
               sequenceElementData[0][0].setBond(bondType,sequenceElementData[0][1],sequenceElementData[1][0],sequenceElementData[1][1])
               sequenceElementData[1][0].setBond(bondType,sequenceElementData[1][1],sequenceElementData[0][0],sequenceElementData[0][1])
             else:
-              print "  Warning: could not set bond information from NMR-STAR file, information missing."
+              print("  Warning: could not set bond information from NMR-STAR file, information missing.")
 
         
         tableName = '_Assembly_db_link'
@@ -374,7 +374,7 @@ class NmrStarSequence:
     self.details = details
     self.role = role
 
-    #print 'DATA: [%s] [%s] [%s]' % (physState, confIsomer, chemExchState)
+    #print('DATA: [%s] [%s] [%s]' % (physState, confIsomer, chemExchState))
     self.physState = physState
     self.confIsomer = confIsomer
     self.chemExchState = chemExchState
@@ -563,7 +563,7 @@ class NmrStarSequence:
 
               resettingSeqCodes = True
               self.elements[-1].seqCode = self.parent.origSeqCodeBySeqId[residueKey]
-              #print "RESET ORIG for %s to %d" % (residueKey,self.elements[-1].seqCode)
+              #print("RESET ORIG for %s to %d" % (residueKey,self.elements[-1].seqCode))
             
               # Also try and reset previous sequence codes based on coordinate section
               # This is to prevent overlapping sequence codes, and makes code work better in general.
@@ -574,14 +574,14 @@ class NmrStarSequence:
                 prevResidueKey = (residueKey[0],residueKey[1] - i)                
                 if not self.parent.origSeqCodeBySeqId.has_key(prevResidueKey):
                   self.elements[-(i+1)].seqCode = self.elements[-1].seqCode - i
-                  #print "RESET RANGE", i, residueKey[1]-i, self.elements[-(i+1)].seqCode
+                  #print("RESET RANGE", i, residueKey[1]-i, self.elements[-(i+1)].seqCode)
                 else:
                   break
           
             elif resettingSeqCodes:          
               prevSeqCode = self.elements[-2].seqCode
               self.elements[-1].seqCode = prevSeqCode + 1
-              #print "RESET PREV", (prevSeqCode + 1)
+              #print("RESET PREV", (prevSeqCode + 1))
           
             if curSeqInsertCode:
               self.elements[-1].insertionCode = curSeqInsertCode
@@ -604,7 +604,7 @@ class NmrStarSequence:
             self.elements[-1].residueType = ccpMapping[2][0] # This is usually not there!
     
     """
-    print "SEQUENCE"  
+    print("SEQUENCE"  )
     for seqEl in self.elements:
       print seqEl.seqCode,
       if hasattr(seqEl, 'insertionCode'):
@@ -689,7 +689,7 @@ class NmrStarSequenceElement:
     
     if not (bondedSeqEl,bondedAtomName) in self.bonds[bondType][atomName]:
       self.bonds[bondType][atomName].append((bondedSeqEl,bondedAtomName))
-      print "  Found %s bond from %s.%s - %s.%s" % (bondType,self.seqCode,atomName,bondedSeqEl.seqCode,bondedAtomName)
+      print("  Found %s bond from %s.%s - %s.%s" % (bondType,self.seqCode,atomName,bondedSeqEl.seqCode,bondedAtomName))
 
 # TODO - move these to projectIO or generalIO - it complained earlier due to circular references I think?
 

@@ -118,7 +118,7 @@ parser.add_option("-v", "--verbosity", type='int',
 (options, args) = parser.parse_args()
 
 if options.verbosity >= 0 and options.verbosity <= 9:
-#        print "In main, setting verbosity to:", options.verbosity
+#        print("In main, setting verbosity to:", options.verbosity)
     cing.verbosity = options.verbosity
 else:
     nTerror("set verbosity is outside range [0-9] at: " + options.verbosity)
@@ -169,7 +169,7 @@ if False:
     fitted = closestToMean.zap('fitCoordinates')
     for m in closestToMean[1:]:
         r = m.superpose(closestToMean[0])
-        #print '>', r
+        #print('>', r)
     # Export'
     for p in pTree:
         p.molecule.toPDBfile( pTree.path(p.name+'.pdb'), model=p.molecule.rmsd.closestToMean)

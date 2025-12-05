@@ -225,7 +225,7 @@ if (__name__ == '__main__'):
   s = showMulti('Multiple Choice', 'Select one of the following:',
                 ['Option 1','Option 2','Option 3','Cancel'],
                 [1,2,3,None])
-  print "Multi:", s
+  print("Multi:", s)
  
   showError('title', 'error message')
   s = showOkCancel('title', 'ok message')

@@ -137,13 +137,13 @@ if __name__ == '__main__':
   from memops.gui.Button import Button
 
   def get_me():
-    print 'get_me:', c.getSelected()
+    print('get_me:', c.getSelected())
 
   def toggle_me():
     c.toggle()
 
   def my_callback(selected):
-    print 'my_callback:', selected
+    print('my_callback:', selected)
 
   root = Tkinter.Tk()
 

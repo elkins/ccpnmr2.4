@@ -172,7 +172,7 @@ class FormatConversion(object):
       validCcpnProjectName = returnMemopsWord(ccpnProjectName)
       
       if not validCcpnProjectName == ccpnProjectName:
-        print "  Warning: Project name changed from '%s' to '%s' for CCPN validity" % (ccpnProjectName,validCcpnProjectName)
+        print("  Warning: Project name changed from '%s' to '%s' for CCPN validity" % (ccpnProjectName,validCcpnProjectName))
       
       self.ccpnProject = Implementation.MemopsRoot(name = validCcpnProjectName)
     
@@ -353,9 +353,9 @@ class FormatConversion(object):
     (exportFormats, ccpnObjects) = getValidExportFormats(self.ccpnProject) 
     
     if not exportFormats.has_key(formatName):
-      print "   Warning: no information for %s. Aborting." % formatName
+      print("   Warning: no information for %s. Aborting." % formatName)
     elif informationType not in exportFormats[formatName]:
-      print "   Warning: no information to export %s for %s. Aborting." % (informationType,formatName)
+      print("   Warning: no information to export %s for %s. Aborting." % (informationType,formatName))
     else:
       
       ccpnObjectsLoop = []
@@ -382,9 +382,9 @@ class FormatConversion(object):
         objectAddKeywordName = 'constraintList'
         
       elif informationType == 'project':
-        print "  Error: cannot export project data in exportAllObjects."
+        print("  Error: cannot export project data in exportAllObjects.")
       else:
-        print "  Error: unknown information type %s for exportAllObjects." % informationType
+        print("  Error: unknown information type %s for exportAllObjects." % informationType)
       
       #
       # Now do the export.
@@ -741,7 +741,7 @@ class FormatConversion(object):
           else:
             continue
             
-          #print "    ", atomSite.isotopeCode, atomSite.name, atomSite.minShift, atomSite.maxShift
+          #print("    ", atomSite.isotopeCode, atomSite.name, atomSite.minShift, atomSite.maxShift)
           
           #
           # Set minShift and maxShift, if given - continue if so (is prime reference)
@@ -787,7 +787,7 @@ class FormatConversion(object):
                 expTransferAtomSites = expTransfer.sortedAtomSites()
                 otherAtomSite = expTransferAtomSites[not expTransferAtomSites.index(atomSite)]
 
-                #print "       linked to: %s %s via %s" % (otherAtomSite.isotopeCode,otherAtomSite.name,expTransfer.transferType)
+                #print("       linked to: %s %s via %s" % (otherAtomSite.isotopeCode,otherAtomSite.name,expTransfer.transferType))
                 
                 if ppmRangeInfo.has_key(otherAtomSite.isotopeCode):
                   setByTransfer = True
@@ -882,7 +882,7 @@ class FormatConversion(object):
           dataChanged = True
         else:
           # TODO what should happen here? 
-          print "ERROR - two unique matches!"
+          print("ERROR - two unique matches!")
           uniqueMatches = {}
           break
       
@@ -1104,7 +1104,7 @@ class FormatConversion(object):
         if self.informationType != 'coordinates' or type(self.fileName) == type(''):
           self.fileName = None  
         
-        print "  Warning: using preparsed file to read %s information..." % self.informationType
+        print("  Warning: using preparsed file to read %s information..." % self.informationType)
     
     #
     # Set single filename, or multiple ones if not string (assuming tuple or list)
@@ -1135,7 +1135,7 @@ class FormatConversion(object):
     
     for keyword in self.addKeywords.keys():
       if keywords.has_key(keyword):
-        print "Warning: overwriting default keyword '%s' by set value!" % keyword
+        print("Warning: overwriting default keyword '%s' by set value!" % keyword)
       keywords[keyword] = self.addKeywords[keyword]
       
     #
@@ -1515,7 +1515,7 @@ class FormatConversion(object):
         
         if len(chains):
           if len(chains) > 1:
-            print "  Warning: multiple chains available - picking first one only."
+            print("  Warning: multiple chains available - picking first one only.")
           chain = chains.pop()
         else:
           raise FormatConversionError("No chain available - cannot export project.")
@@ -1566,7 +1566,7 @@ class FormatConversion(object):
         
         if len(entries):
           if len(entries) > 1:
-            print "  Warning: multiple entries available - picking first one only."
+            print("  Warning: multiple entries available - picking first one only.")
           entry = entries.pop()
         else:
           raise FormatConversionError("No entry available - cannot export project.")
@@ -1758,12 +1758,12 @@ class FormatConversion(object):
 
     for i in range(len(self.numResonancesLinked['linked'])):
       if self.numResonancesLinked['origUnlinked'][i]:
-        print "Linked %d resonances for %s." % (self.numResonancesLinked['linked'][i],self.numResonancesLinked['info'][i]),
+        print("Linked %d resonances for %s." % (self.numResonancesLinked['linked'][i],self.numResonancesLinked['info'][i]),)
         if self.numResonancesLinked['unlinked'][i]:
-          print " Unable to link %d resonances." % self.numResonancesLinked['unlinked'][i]
+          print(" Unable to link %d resonances." % self.numResonancesLinked['unlinked'][i])
           self.allResonancesLinked = False
         else:
-          print " All resonances now linked."
+          print(" All resonances now linked.")
 
   def setForceChainMappings(self,keywds,resonances):
 

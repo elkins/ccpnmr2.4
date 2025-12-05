@@ -872,7 +872,7 @@ if __name__ == '__main__':
 
   def doubleClick(node):
     data = (node.isOpen, node.label, node.object, len(node.children))
-    print 'Callback on node -  open:%s label:%s, object:%s, children:%d' % data
+    print('Callback on node -  open:%s label:%s, object:%s, children:%d' % data)
 
   
   def openDir(node):

@@ -79,13 +79,13 @@ def askData(func_type, prompt, initial_value, min_value = None, max_value = None
         try:
           answer = int(answer)
         except:
-          print 'Not an integer, please try again.'
+          print('Not an integer, please try again.')
           done = 0
       elif (func_type == 'float'):
         try:
           answer = float(answer)
         except:
-          print 'Not a floating point value, please try again.'
+          print('Not a floating point value, please try again.')
           done = 0
     else:
       answer = None

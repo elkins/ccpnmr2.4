@@ -234,13 +234,13 @@ def check_matplotlib():
 
 def check_ccpn():
     'ccpnmr is an opional python package.'
-#    print '\nCCPN distribution:',
+#    print('\nCCPN distribution:',)
     missing = []
     gotRequiredCcpnModules = False
     try:
         import ccpnmr #@UnusedImport @UnresolvedImport # pylint: disable=W0612
         gotRequiredCcpnModules = True
-#        print 'ok.'
+#        print('ok.')
     except:
         missing.append('ccpnmr')
 #        print
@@ -254,7 +254,7 @@ def check_ccpn():
 #
 #    try:
 #        import ccpnmr.analysis #@UnusedImport @Reimport @UnresolvedImport
-#        print 'Anaysis: ok.'
+#        print('Anaysis: ok.')
 #    except:
 #        missing.append('ccpnmr.analysis')
 
@@ -273,51 +273,51 @@ def check_ccpn():
 # can't find it. Did Alan meant to check for things like: from matplotlib.numerix import nan # is in python 2.6 ?
 #def check_numarray():
 #
-#    print 'Numarray module   ',
+#    print('Numarray module   ',)
 #    result = 0
 #    try:
 #        import numarray #@UnusedImport
-#        print 'ok.'
+#        print('ok.')
 #        result = 1
 #    except:
-#        print 'could not import Numarray module.'
+#        print('could not import Numarray module.')
 #
 #    return result
 
 # See above.
 #def check_numpy():
 #
-#    print 'Numpy module   ',
+#    print('Numpy module   ',)
 #    result = 0
 #    try:
 #        import numpy #@UnusedImport
-#        print 'ok.'
+#        print('ok.')
 #        result = 1
 #    except:
-#        print 'could not import Numpy module.'
+#        print('could not import Numpy module.')
 #
 #    return result
 
 def check_cython():
     'Mandatory cython python package'
-#    print 'Cython module   ',
+#    print('Cython module   ',)
     result = 0
     try:
         import Cython.Distutils #@UnusedImport @UnresolvedImport # pylint: disable=W0612
-#        print 'ok.'
+#        print('ok.')
         result = 1
-#        print "Great you have Cython! Please try to compile CING's Cython libs running:"
-#        print 'cd %s/python/cing/Libs/cython; python compile.py build_ext --inplace; cd -' % cingRoot
+#        print("Great you have Cython! Please try to compile CING's Cython libs running:")
+#        print('cd %s/python/cing/Libs/cython; python compile.py build_ext --inplace; cd -' % cingRoot)
 
         # JFD disabled this until we get it to work on our Macs.
 #        os.chdir(os.path.join(cingRoot,'python/cing/Libs/cython'))
 #        out = call(['python', 'compile.py','build_ext', '--inplace'])
 #        if out:
-#            print '==> Failed to compile CING Cython libs.'
-#            print '    Good chance it will run by hand, try running:\n%s' % cmd
-#            print '    If your using Mac, see "https://bugs.launchpad.net/cython/+bug/179097"'
+#            print('==> Failed to compile CING Cython libs.')
+#            print('    Good chance it will run by hand, try running:\n%s' % cmd)
+#            print('    If your using Mac, see "https://bugs.launchpad.net/cython/+bug/179097"')
     except:
-#        print 'failed to import Cython module.'
+#        print('failed to import Cython module.')
         pass
 
     if not result:
@@ -330,15 +330,15 @@ def check_cython():
 # JFD This one is even disabled in the test since some time now.
 #def check_profiler():
 #
-#    print 'Profiler module   ',
+#    print('Profiler module   ',)
 #    result = 0
 #    try:
 #        import profile #@UnusedImport
-#        print 'ok.'
+#        print('ok.')
 #        result = 1
 #    except:
-#        print 'could not import Profiler module.'
-#        print "it's not essencial but used with 'cing --test'."
+#        print('could not import Profiler module.')
+#        print("it's not essencial but used with 'cing --test'.")
 #    return result
 
 

@@ -7,7 +7,7 @@ from pdbe.software.violationStatistics import ViolationStatistics
 class ReadDistanceConstraints:
 
   #os.environ['PYTHONPATH'] = '.:' + os.getcwd() + '/ccpn/python'
-  #print 'ENVIRONMENT: [%s]' % os.environ.get('PYTHONPATH', '')
+  #print('ENVIRONMENT: [%s]' % os.environ.get('PYTHONPATH', ''))
 
   def __init__(self, mr):
 
@@ -112,11 +112,11 @@ class ReadDistanceConstraints:
           secondAtoms = self.getAtoms(secondRes)
 
           #if dc.serial == 9:
-            #print 'ITEM: [%s]' % item
-            #print 'RES: [%s] --- [%s]' % (firstRes, secondRes)
-            #print 'APP: [%s] *** [%s]' % (firstRes.applicationData,
+            #print('ITEM: [%s]' % item)
+            #print('RES: [%s] --- [%s]' % (firstRes, secondRes))
+            #print('APP: [%s] *** [%s]' % (firstRes.applicationData,)
             #                              secondRes.applicationData)
-            #print 'ATOMS: [%s] +++ [%s]' % (firstAtoms, secondAtoms)
+            #print('ATOMS: [%s] +++ [%s]' % (firstAtoms, secondAtoms))
 
           # Contact range (intra, sequential, medium range (i->i+4 and less), long range)
 

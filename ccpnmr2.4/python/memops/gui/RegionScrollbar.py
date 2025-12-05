@@ -149,13 +149,13 @@ class RegionScrollbar(Scrollbar):
 
   def set(self, lo, hi, do_callback = False):
 
-    #print 'set1', lo, hi
+    #print('set1', lo, hi)
     Scrollbar.set(self, lo, hi, do_callback=False)
-    #print 'set2', self.lo, self.hi
+    #print('set2', self.lo, self.hi)
     (w0, w1) = self.world_region
     v0 = w0 + self.lo*(w1-w0)
     v1 = w0 + self.hi*(w1-w0)
-    #print 'set3', v0, v1
+    #print('set3', v0, v1)
     self.view_region.set(v0, v1)
     # updateText repeats what Scrollbar.set does but needs to because region updated after set
     self.updateText()
@@ -178,7 +178,7 @@ class RegionScrollbar(Scrollbar):
 if __name__ == '__main__':
  
   def callback(view_region):
-    print 'callback', view_region
+    print('callback', view_region)
 
   root = Tkinter.Tk()
  
@@ -194,9 +194,9 @@ if __name__ == '__main__':
     (w0, w1) = r.world_region
     w0 = w0 - 1
     w1 = w1 + 1
-    print 'update_world_region1', w0, w1
+    print('update_world_region1', w0, w1)
     wr = Region1D(w0, w1)
-    print 'update_world_region2', wr
+    print('update_world_region2', wr)
     r.setWorldRegion(wr)
 
   b = Tkinter.Button(root, text='update world', command=update_world_region)

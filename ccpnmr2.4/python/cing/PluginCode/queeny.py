@@ -281,14 +281,14 @@ class Queeny( Odict ):
                 #nTdebug('DistanceRestraint.calculateAverage: %s.realAtoms() None (%s)', atm2, self)
                 continue
             for a1 in atms1:
-                #print '>>>', a1.format()
+                #print('>>>', a1.format())
 
                 if len(a1.coordinates) != modelCount:
                     return None
                 #end if
 
                 for a2 in atms2:
-                    #print '>>', atm1, a1, atm2, a2
+                    #print('>>', atm1, a1, atm2, a2)
                     if len(a2.coordinates) != modelCount:
                         return None
                     #end if
@@ -326,7 +326,7 @@ class Queeny( Odict ):
         #end for
 
         nkeys = len(self)
-        #print '>', nkeys
+        #print('>', nkeys)
 #        count = 0
         for drl in self.project.distances:
             for dr in drl:
@@ -374,7 +374,7 @@ class Queeny( Odict ):
 #        nTdebug('Queeny.initRestraints: %d restraints added (# elements = %d)', count, len(self))
 
         self.setNeighbors(nkeys) # update the neighbors for newly added
-        #print '>>',len(self)
+        #print('>>',len(self))
     #end def
 
     def initFlagged(self):
@@ -387,11 +387,11 @@ class Queeny( Odict ):
         """Triangulate the distance (atm1, atm3) from upper and lower bounds
         atm1-atm2 and atm2-atm3
         """
-        #print '>>', atm1, atm2, atm3
+        #print('>>', atm1, atm2, atm3)
         if atm1==atm3 or atm1==atm2 or atm2==atm3:
             return
 
-        #print '>', atm1, atm2, atm3
+        #print('>', atm1, atm2, atm3)
         if self.has_key((atm1.atomIndex,atm3.atomIndex)):
             dme13 = self[(atm1.atomIndex,atm3.atomIndex)]
             if dme13.flagged:

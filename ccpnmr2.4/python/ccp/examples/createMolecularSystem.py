@@ -160,7 +160,7 @@ if __name__ == '__main__':
   
   for residue in chainA.residues:
     print residue.ccpCode, residue.seqCode
-    print "  ",
+    print("  ",)
     for atom in residue.sortedAtoms():
       print atom.name,
     print

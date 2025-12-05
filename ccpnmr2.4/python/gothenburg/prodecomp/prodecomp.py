@@ -361,7 +361,7 @@ def prodecomp(Pmx, defs, intl, cmps, rglf, itrs):
             
             # output time for each iteration
             elapsed_time = time.time()-start_time
-            print 'iteration', it, '->', elapsed_time, 'seconds'
+            print('iteration', it, '->', elapsed_time, 'seconds')
             # clean the memory
             M3, MTM, MTP = [[],[],[]]      
     

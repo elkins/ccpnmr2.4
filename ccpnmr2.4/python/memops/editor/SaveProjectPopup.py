@@ -99,5 +99,5 @@ class SaveProjectPopup(BasePopup):
     try:
       return getattr(self.__dict__['save_frame'], name)
     except:
-      raise AttributeError, "%s instance has no attribute '%s'" % (self.__class__.__name__, name)
+      raise AttributeError("%s instance has no attribute '%s'" % (self.__class__.__name__).with_traceback(name))
 

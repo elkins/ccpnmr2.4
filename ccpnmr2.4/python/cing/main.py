@@ -165,7 +165,7 @@ def pformat( obj ):
 # JURGEN: do NOT touch this routine! Only for interactive usage
 #
 #%%^$&*$($()
-#    print '>>', obj
+#    print('>>', obj)
     if hasattr(obj,'format'):
         print(obj.format())
     else:
@@ -180,7 +180,7 @@ def pformatall( obj, *args, **kwds ):
 # JURGEN: do NOT touch this routine! Only for interactive usage
 #
 #%%^$&*$($()
-#    print '>>', obj
+#    print('>>', obj)
     if hasattr(obj,'formatAll'):
         print(obj.formatAll(*args, **kwds))
     else:
@@ -190,7 +190,7 @@ def pformatall( obj, *args, **kwds ):
 
 def format(obj): # pylint: disable=W0622
     """Returns the formatted object representation"""
-#    print '>>', obj
+#    print('>>', obj)
     if hasattr(obj, 'format'):
         return obj.format()
     return  "%s" % obj

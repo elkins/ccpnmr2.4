@@ -211,7 +211,7 @@ class ScrolledDensityMatrix(ScrolledCanvas):
     y = self.canvas.canvasy(event.y)
     item = self.canvas.find('closest',x,y)
     if self.canvasDict.get(item) and (self.canvasDict[item][0] == 'box'):
-      print ">", self.canvasDict[item][2], self.canvasDict[item][1]
+      print(">", self.canvasDict[item][2], self.canvasDict[item][1])
   
   def mouseDoubleClick(self, event):
     
@@ -219,7 +219,7 @@ class ScrolledDensityMatrix(ScrolledCanvas):
     y = self.canvas.canvasy(event.y)
     item = self.canvas.find('closest',x,y)
     if self.canvasDict.get(item) and (self.canvasDict[item][0] == 'box'):
-      print ">", self.canvasDict[item][2], self.canvasDict[item][1]
+      print(">", self.canvasDict[item][2], self.canvasDict[item][1])
     
   def draw(self):
    
@@ -587,7 +587,7 @@ class ScrolledDensityMatrix(ScrolledCanvas):
   
   def callback(self):
   
-    print "Callback", self
+    print("Callback", self)
 
   def deleteBox(self,i,j):
   

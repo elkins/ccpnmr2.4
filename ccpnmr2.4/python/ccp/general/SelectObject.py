@@ -226,7 +226,7 @@ class SelectObjectPopup(BasePopup):
     self.doUnregisters()
     try:
       self.parent.argumentVar.set(1)
-    except AttributeError, e:
+    except AttributeError as e:
       pass
       
     BasePopup.destroy(self)

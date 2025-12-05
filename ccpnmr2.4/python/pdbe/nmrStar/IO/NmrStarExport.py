@@ -48,7 +48,7 @@ class NmrStarExport:
     if not nmrStarVersion:
       nmrStarVersion = getLatestNmrStarVersion()
     
-    print "  Using CCPN version %s, NMR-STAR version %s." % (ccpnVersion,nmrStarVersion)
+    print("  Using CCPN version %s, NMR-STAR version %s." % (ccpnVersion,nmrStarVersion))
     
     self.nmrEntry = nmrEntry
     self.ccpn2NmrStar = getCcpn2NmrStar(ccpnVersion,nmrStarVersion,exportClass = self)
@@ -401,7 +401,7 @@ class NmrStarExport:
     # Loop over all ccpn objects on saveframe level...
     #
 
-    #print 'NAME: [%s] [%s] [%s]' % (saveFrameName, ccpnMap, ccpnLoopInfo)
+    #print('NAME: [%s] [%s] [%s]' % (saveFrameName, ccpnMap, ccpnLoopInfo))
 
     if len(ccpnLoopInfo) > 0:
       self.loopStarLevelObjects('saveFrame',saveFrameName,ccpnLoopInfo,self.writeStarSfDict,self.nmrStarSfDict)
@@ -626,7 +626,7 @@ class NmrStarExport:
                     elif nmrLinkedObject.fixedResonances:
                       printSFFlag = True
 
-        #print 'FLAG: [%s] [%s]' % (printSFFlag, nmrStarElementDict)
+        #print('FLAG: [%s] [%s]' % (printSFFlag, nmrStarElementDict))
 
         if level == 'saveFrame':
 
@@ -771,7 +771,7 @@ class NmrStarExport:
         matchKeyName = (starElementName,) + fullItemKey
         currentCcpnLoopInfo = ccpnLoopInfo
 
-        #print 'MAT KEY: [' + str(matchKeyName) + ']'
+        #print('MAT KEY: [' + str(matchKeyName) + ']')
       
       else:
       
@@ -865,7 +865,7 @@ class NmrStarExport:
         #
         
         if not matchFound:
-          #print 'OBJ: [%s] [%s] [%s]' % (ccpnObject, value, matchKeyName)
+          #print('OBJ: [%s] [%s] [%s]' % (ccpnObject, value, matchKeyName))
           if fullItemKey and fullItemKey[0] != keyName:
             parentCcpnVarKey = parentCcpnLoopInfo[-1][0]
             parentDictInfo = {parentCcpnVarKey: self.ccpnVar[parentCcpnVarKey]}
@@ -877,9 +877,9 @@ class NmrStarExport:
 
         else:
           pass
-          #print 'OBJ FOUND: [%s] [%s] [%s]' % (ccpnObject, value, matchKeyName)
+          #print('OBJ FOUND: [%s] [%s] [%s]' % (ccpnObject, value, matchKeyName))
 
-        #print 'VAR: [%s] [%s] [%s]' % (ccpnVarKey, matchKeyName, value)    
+        #print('VAR: [%s] [%s] [%s]' % (ccpnVarKey, matchKeyName, value)    )
 
     #
     # For custom code, sometimes have to map the relevant objects - is done here
@@ -945,7 +945,7 @@ class NmrStarExport:
           ccpnLoopInfo[2] += 1
           parentDictInfo = self.starKeys[matchKeyName][0][constraintItem][-1]
           self.starKeys[matchKeyName][0][constraintItem] = (ccpnLoopInfo[2],parentDictInfo)
-          #print "changed %s value %d" % (matchKeyName,ccpnLoopInfo[2])
+          #print("changed %s value %d" % (matchKeyName,ccpnLoopInfo[2]))
 
 
   def setupCurrentIDs(self,ccpnMap,ccpn2Star):
@@ -1043,7 +1043,7 @@ class NmrStarExport:
     for tagName in tagNames:
 
       #if tagName not in nmrStarElementDict['tags']:
-      #  print 'TAGS: [%s]' % nmrStarElementDict['tags']
+      #  print('TAGS: [%s]' % nmrStarElementDict['tags'])
 
       (default,returnFunc,foreignTag,obligatory) = nmrStarElementDict['tags'][tagName]
       starTagName = starElementName + self.nmrStarFile.tagSep + tagName
@@ -1061,7 +1061,7 @@ class NmrStarExport:
 
         value = self.getForeignValue(foreignTag, tagName, writeTags, starElementName, starTagName)
 
-        #print 'FOR: [%s] [%s] [%s] [%s] [%s] [%s]' % (value, foreignTag, tagName, writeTags, starElementName, starTagName)
+        #print('FOR: [%s] [%s] [%s] [%s] [%s] [%s]' % (value, foreignTag, tagName, writeTags, starElementName, starTagName))
 
       elif tagName in nmrStarElementDict['sourcePrimaryKeys'] and starTagName not in self.ignorePrimaryKeys:
 
@@ -1153,7 +1153,7 @@ class NmrStarExport:
 
         starElement.setTag(self.nmrStarFile.tagStart + starTagName, value)
 
-        #print 'SETTING: [%s] [%s] [%s]' % (starElement, starTagName, value)
+        #print('SETTING: [%s] [%s] [%s]' % (starElement, starTagName, value))
 
 
   def setupStarTagInfo(self,writeStarElementDict,nmrStarElementDict):
@@ -1416,9 +1416,9 @@ class NmrStarExport:
             atomType = atoms[0].chemAtom.elementSymbol
     
       if not atomName:
-        print "  Error: no single atom name found for resonance %d" % (resonanceToAtom.resonance.serial)
+        print("  Error: no single atom name found for resonance %d" % (resonanceToAtom.resonance.serial))
       if not atomType:
-        print "  Error: no single atom element type found for resonance %d" % (resonanceToAtom.resonance.serial)
+        print("  Error: no single atom element type found for resonance %d" % (resonanceToAtom.resonance.serial))
 
     self.setSimplePresetValue(presetValues,'Atom_ID' + starCode,atomName)
 
@@ -1668,12 +1668,12 @@ class NmrStarExport:
             for j in range(len(origAssignApplData) ):
               if origAssignApplData[j].value == resonanceName:
                 origAssignApplDataMatch = origAssignApplData.pop(j)
-                #print 'RES NAME: [' + str(resonanceName) + '] [' + str(origAssignApplDataMatch) + ']'
+                #print('RES NAME: [' + str(resonanceName) + '] [' + str(origAssignApplDataMatch) + ']')
                 break
 
           origAssignApplData = [origAssignApplDataMatch]
 
-          #print 'Res Ind: [' + str(ccpnMap) + ']; Ind: [' + str(resonanceIndex) + ']; Len: [' + str(len(origResLabelApplData) ) + '] [' + str(origResLabelApplData) + '] [' + str(origDataItems) + ']'
+          #print('Res Ind: [' + str(ccpnMap) + ']; Ind: [' + str(resonanceIndex) + ']; Len: [' + str(len(origResLabelApplData) ) + '] [' + str(origResLabelApplData) + '] [' + str(origDataItems) + ']')
 
           if origResLabelApplData is not None and resonanceIndex < len(origResLabelApplData):
             origResLabelApplData = [origResLabelApplData[resonanceIndex] ]
@@ -1709,7 +1709,7 @@ class NmrStarExport:
         
         if origAssignApplData or origSeqCodeApplData:
 
-          #print 'ORIG: [' + str(origAssignApplData) + ']'
+          #print('ORIG: [' + str(origAssignApplData) + ']')
         
           if ccpnObjectClassName == 'Resonance':
             resonanceList = [ccpnObject]                 # Direct resonance match
@@ -1760,7 +1760,7 @@ class NmrStarExport:
                     if origResLabelApplData != None and j < len(origResLabelApplData):
                       origResLabelApplDataMatch = origResLabelApplData.pop(j)
                     
-                    #print 'RES NAME: [' + str(resonanceName) + '] [' + str(origAssignApplDataValue) + ']'
+                    #print('RES NAME: [' + str(resonanceName) + '] [' + str(origAssignApplDataValue) + ']')
                     break
                 
                 # Added Wim 19/10/2009
@@ -1780,7 +1780,7 @@ class NmrStarExport:
               if atomName == 'XXX':
                 atomName = None
 
-            #print 'Res Ind2: [' + str(ccpnMap) + ']; Ind2: [' + str(i) + ']; Len2: [' + str(len(origResLabelApplData) ) + '] [' + str(origResLabelApplData) + '] [' + str(origDataItems) + ']'
+            #print('Res Ind2: [' + str(ccpnMap) + ']; Ind2: [' + str(i) + ']; Len2: [' + str(len(origResLabelApplData) ) + '] [' + str(origResLabelApplData) + '] [' + str(origDataItems) + ']')
 
             if origResLabelApplDataMatch:
               resLabel = origResLabelApplDataMatch.value
@@ -1790,7 +1790,7 @@ class NmrStarExport:
             if resLabel == 'None':
               resLabel = None
 
-            #print 'CHAIN: [' + str(chainCode) + '] [' + str(seqCode) + '] [' + str(atomName) + '] [' + str(resLabel) + ']'
+            #print('CHAIN: [' + str(chainCode) + '] [' + str(seqCode) + '] [' + str(atomName) + '] [' + str(resLabel) + ']')
             #print
 
             origAssignValueList.append( (chainCode,seqCode,atomName,resLabel) )
@@ -1822,7 +1822,7 @@ class NmrStarExport:
 
           (chainCode,seqCode,atomName,resLabel) = origAssignValueList[i]
 
-          #print 'BEFORE SET: [' + str(origAssignValueList[i]) + '] _' + starCode
+          #print('BEFORE SET: [' + str(origAssignValueList[i]) + '] _' + starCode)
           
           # Will now not overwrite if set already (Wim 19/10/2009)
 
@@ -2108,7 +2108,7 @@ class NmrStarExport:
     else:
       self.setMessage("  Error: in '%s', foreign tag %s has not been set." % (starElementName,starTagName) )
 
-    #print 'VALUE: [' + str(foreignTag) + '] [' + str(tagName) + '] [' + str(writeTags) + '] [' + str(starElementName) + '] [' + str(starTagName) + '] [' + str(value) + ']'
+    #print('VALUE: [' + str(foreignTag) + '] [' + str(tagName) + '] [' + str(writeTags) + '] [' + str(starElementName) + '] [' + str(starTagName) + '] [' + str(value) + ']')
 
     return value
 
@@ -2153,7 +2153,7 @@ class NmrStarExport:
       else:
         startObject = self.ccpnVar[ccpnObjectStrings[0] ]
 
-        #print 'START: [%s] [%s]' % (ccpnMap, startObject)
+        #print('START: [%s] [%s]' % (ccpnMap, startObject))
 
         if len(ccpnObjectStrings) > 1:
           try:
@@ -2180,7 +2180,7 @@ class NmrStarExport:
       try:
         ccpnMapValue = getFunc(self.getCcpnObject(ccpnVarName) )
       except:
-        print "  Cannot CCPN map value for %s, function %s" % (ccpnVarName,getFunc)
+        print("  Cannot CCPN map value for %s, function %s" % (ccpnVarName,getFunc))
         raise
         
     elif ccpnMap == None:
@@ -2211,7 +2211,7 @@ class NmrStarExport:
 
     appDataDict = self.getAppDataForSaveFrame(ccpnObject, saveFrameName)
 
-    #print 'APP: [%s]' % appDataDict
+    #print('APP: [%s]' % appDataDict)
 
     #appDataDict = {}
 
@@ -2323,7 +2323,7 @@ class NmrStarExport:
       if tmpSfTag:
         saveFrameTagValues = eval(tmpSfTag)
 
-      #print '[' + sfTempId + '] [' + str(saveFrameTitle) + '] [' + str(saveFrameTagNames) + '] [' + str(saveFrameTagValues) + ']'
+      #print('[' + sfTempId + '] [' + str(saveFrameTitle) + '] [' + str(saveFrameTagNames) + '] [' + str(saveFrameTagValues) + ']')
 
       saveFrameTagNames2  = [None] * maxPos
       saveFrameTagValues2 = [None] * maxPos
@@ -2354,7 +2354,7 @@ class NmrStarExport:
       if not otherKey in AppDataDict[mainKey]:
         AppDataDict[mainKey][otherKey] = {}
 
-      #print 'KEYS: [' + mainKey + '] [' + otherKey +']'
+      #print('KEYS: [' + mainKey + '] [' + otherKey +']')
 
       AppDataDict[mainKey][otherKey]['title'] = saveFrameTitle
       AppDataDict[mainKey][otherKey]['tagNames'] = saveFrameTagNames2
@@ -2362,7 +2362,7 @@ class NmrStarExport:
       
       saveFrameTableNamesAppData = self.getAppDataValueSfLevelList(searchSaveFrameName,'','tables', verbose = 0)
 
-      #print '[' + sfTempId + '] [' + str(saveFrameTableNames) + ']'
+      #print('[' + sfTempId + '] [' + str(saveFrameTableNames) + ']')
 
       if not saveFrameTableNamesAppData:
         continue
@@ -2390,7 +2390,7 @@ class NmrStarExport:
   
             AppDataDict[mainKey][otherKey]['tableNames'].append(actualSaveFrameTableName)
   
-            #print 'TABLE1: [%s] [%s]' % (saveFrameTableName, sorted(self.nmrStarDict.sfDict[saveFrameName]['tables'].keys() ) )
+            #print('TABLE1: [%s] [%s]' % (saveFrameTableName, sorted(self.nmrStarDict.sfDict[saveFrameName]['tables'].keys() ) ))
   
             if not self.nmrStarDict.sfDict[mainKey]['tables'].has_key(actualSaveFrameTableName[1:]):
               continue
@@ -2410,7 +2410,7 @@ class NmrStarExport:
   
             saveFrameTableTagNames2 = [None] * maxTablePos
   
-            #print 'TABLE: [' + str(saveFrameTableTagNames) + ']'
+            #print('TABLE: [' + str(saveFrameTableTagNames) + ']')
   
             for tTagName in mainExtraTableKeys:
               pos = mainExtraTableKeys[tTagName][0]
@@ -2530,7 +2530,7 @@ class NmrStarExport:
       
       # Necessary to distinguish between local and global verbosity!
       if verbose and self.verbose:
-        print "  Error: no %s appData for ccpn object %s!" % (keyword,self.curAppDataCcpnObject)
+        print("  Error: no %s appData for ccpn object %s!" % (keyword,self.curAppDataCcpnObject))
 
     return value
 
@@ -2545,7 +2545,7 @@ class NmrStarExport:
       
       # Necessary to distinguish between local and global verbosity!
       if verbose and self.verbose:
-        print "  Error: no %s appDataList for ccpn object %s!" % (keyword,self.curAppDataCcpnObject)
+        print("  Error: no %s appDataList for ccpn object %s!" % (keyword,self.curAppDataCcpnObject))
 
     return value
 

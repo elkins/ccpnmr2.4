@@ -45,7 +45,7 @@ def importFromPDB(molecule, pdbFile, convention = IUPAC, nmodels = None, allowNo
         return None
     savedVerbosity = cing.verbosity
     if verbosity != None:
-#        print 'cing.verbosity = %s' % verbosity
+#        print('cing.verbosity = %s' % verbosity)
         cing.verbosity = verbosity
     parser = pdbParser(pdbFile, convention = convention)
     if not parser:
@@ -273,7 +273,7 @@ class pdbParser:
         for ch in self.tree:
             chain = mol.addChain(name = ch.name)
             for res in ch:
-#                print '>', ch, res, res.skip, res.db
+#                print('>', ch, res, res.skip, res.db)
                 if not res.skip and res.db != None:
                     residue = chain.addResidue(res.db.name, res.resNum)
                     if residue == None:
@@ -452,32 +452,32 @@ class MatchGame:
         #end if
         elif res.resName[0:3] == 'ASP':
             if 'HD2' in res:
-                #print 'ASPH'
+                #print('ASPH')
                 res.db = NTdb.getResidueDefByName('ASP', convention = CYANA)
             else:
                 # Default deprot; this also assures most common for X-ray without protons
-                #print 'ASP'
+                #print('ASP')
                 res.db = NTdb.getResidueDefByName('ASP-', convention = CYANA)
             #end if
         elif res.resName[0:3] == 'GLU':
             if 'HE2' in res:
-                #print 'GLUH'
+                #print('GLUH')
                 res.db = NTdb.getResidueDefByName('GLU', convention = CYANA)
             else:
                 # Default deprot; this also assures most common for X-ray without protons
-                #print 'GLU'
+                #print('GLU')
                 res.db = NTdb.getResidueDefByName('GLU-', convention = CYANA)
             #end if
         elif res.resName[0:3] == 'HIS':
             if 'HD1' in res and 'HE2' in res:
-                #print 'HISH'
+                #print('HISH')
                 res.db = NTdb.getResidueDefByName('HIS+', convention = CYANA)
             elif not 'HD1' in res and 'HE2' in res:
                 # print HISE
                 res.db = NTdb.getResidueDefByName('HIST', convention = CYANA)
             else:
                 # Default HD1
-                #print 'HIS'
+                #print('HIS')
                 res.db = NTdb.getResidueDefByName('HIS', convention = CYANA)
             #end if
         elif res.resName[0:3] == 'LYS':
@@ -558,7 +558,7 @@ class MatchGame:
                     atm.name, self.convention)
             return None
         #end if
-        #print '>',atm,res
+        #print('>',atm,res)
 
         if res.skip:
             atm.skip = True
@@ -589,7 +589,7 @@ class MatchGame:
         if atm.db:
             return atm.db
 
-        #print '>============>', atm, aName, self.convention, res.db.format()
+        #print('>============>', atm, aName, self.convention, res.db.format())
 
         # JFD adds hacks these debilitating simple variations if nothing is found so far
         # GWV does not like this at all and therefore hides it behind an option

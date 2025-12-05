@@ -11,8 +11,8 @@ def equalIgnoringWhiteSpace( a, b):
     pattern   = re.compile("\s+" )
     a = re.sub(pattern, ' ',a)
     b = re.sub(pattern, ' ',b)
-#    print "a["+a+"]"
-#    print "b["+b+"]"
+#    print("a["+a+"]")
+#    print("b["+b+"]")
     return a == b
 
 def dos2unix(text):

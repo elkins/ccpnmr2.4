@@ -294,7 +294,7 @@ class NmrStarDistanceConstraintFile(NmrStarConstraintFile):
           Id = nodeMembersTableTags[tableTagNames['constraintID']][i]
   
           if not findConstraint.has_key(Id):
-            print "  Error in nmrStar file: constraint %s is not defined but is referenced." % Id
+            print("  Error in nmrStar file: constraint %s is not defined but is referenced." % Id)
   
           else:
             treeNodeId = nodeMembersTableTags[tableTagNames['nodeID']][i]
@@ -350,7 +350,7 @@ class NmrStarDistanceConstraintFile(NmrStarConstraintFile):
           Id = distanceTableTags[tableTagNames['constraintID']][i]
   
           if not findConstraint.has_key(Id):
-            print "  Error in nmrStar file: constraint %s is not defined but is referenced." % Id
+            print("  Error in nmrStar file: constraint %s is not defined but is referenced." % Id)
   
           else:
             treeNodeId = distanceTableTags[tableTagNames['nodeID']][i]
@@ -395,7 +395,7 @@ class NmrStarDistanceConstraint(GenericConstraint):
       if treeNodeId == node.Id:
         return node
         
-    print "  TreenodeID %d not found!" % treeNodeId
+    print("  TreenodeID %d not found!" % treeNodeId)
     
     return None
 
@@ -529,7 +529,7 @@ if __name__ == "__main__":
           mlist = []
           for member in node.members:
             mlist.append([member.Id,member.seqCode,member.atomName])
-          print "   " + str(mlist)
+          print("   " + str(mlist))
           """
     
           """

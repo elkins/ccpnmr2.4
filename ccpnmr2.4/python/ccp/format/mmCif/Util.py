@@ -13,25 +13,25 @@ class DataDictionary_mmCIF( ContentHandler, ErrorHandler ):
     self.dataContent = {}
     
   def comment( self, line, text ) :
-    #print "Comment:", text, "in line", line
+    #print("Comment:", text, "in line", line)
     return False
   def startData( self, line, name ) :
-    #print "Start data block", name, "in line", line
+    #print("Start data block", name, "in line", line)
     return False
   def endData( self, line, name ) :
-    #print "End data block", name, "in line", line
+    #print("End data block", name, "in line", line)
     pass
   def startSaveFrame( self, line, name ) :
-    #print "Start saveframe", name, "in line", line
+    #print("Start saveframe", name, "in line", line)
     return False
   def endSaveFrame( self, line, name ) :
-    #print "End saveframe", name, "in line", line
+    #print("End saveframe", name, "in line", line)
     return False
   def startLoop( self, line ) :
-    #print "Start loop in line", line
+    #print("Start loop in line", line)
     return False
   def endLoop( self, line ) :
-    #print "End loop in line", line
+    #print("End loop in line", line)
     return False
     
   def data( self, tag, tagline, val, valline, delim, inloop ):
@@ -52,7 +52,7 @@ class DataDictionary_mmCIF( ContentHandler, ErrorHandler ):
     return False
 
   def error( self, line, msg ) :
-    print "mmCIF parse error in line", line, ":", msg
+    print("mmCIF parse error in line", line, ":", msg)
     return True
     
   def getPdbCode(self):
@@ -125,7 +125,7 @@ class DataDictionary_mmCIF( ContentHandler, ErrorHandler ):
             if entityId == curEntityId:
               seqCode = returnInt(self.dataContent[mainName]['num'][j])
               resLabel = self.dataContent[mainName]['mon_id'][j]
-              print  "     ", seqCode, resLabel
+              print("     ", seqCode, resLabel)
           """
 
         mainName = '_pdbx_nonpoly_scheme'

@@ -130,7 +130,7 @@ class UpdateAgent:
     if self.isGraphical:
       showWarning(title, message)
     else:
-      print 'CcpNmr UpdateAgent  - %s %s' % (title, message)
+      print('CcpNmr UpdateAgent  - %s %s' % (title, message))
   
   def testWriteAccess(self):
   
@@ -217,8 +217,8 @@ class UpdateAgent:
     compileDir = os.path.join(self.installRoot, 'c')
     try:
       os.chdir(compileDir)
-    except Exception, e:
-      print 'Error trying to cd into directory to compile C code; skipping, release will not be up-to-date:', e
+    except Exception as e:
+      print('Error trying to cd into directory to compile C code; skipping, release will not be up-to-date:', e)
       return
 
     cmds = []
@@ -240,8 +240,8 @@ class UpdateAgent:
       pythonDir = os.path.join(self.installRoot, 'python')
       try:
         os.chdir(pythonDir)
-      except Exception, e:
-        print 'Error trying to cd into directory to make links for C code; skipping, release may not be up-to-date:', e
+      except Exception as e:
+        print('Error trying to cd into directory to make links for C code; skipping, release may not be up-to-date:', e)
         return
 
       try:
@@ -296,7 +296,7 @@ class UpdateAgent:
           self.isGraphical = False
           self.installNewUpdates()
           for fileUpdate in self.server.getSelectedUpdates():
-            print 'Updated %s in %s' % (fileUpdate.fileName, fileUpdate.filePath)
+            print('Updated %s in %s' % (fileUpdate.fileName, fileUpdate.filePath))
           self.isGraphical = wasGraphical
         
         if hasattr(self, 'parent'):
@@ -400,12 +400,12 @@ class UpdateServer:
     try:
       # 18 Aug 08: TEMP: TBD: remove Temp when Jenny password protects directory
       self.callHttpScript(passwd, 'uploadFileTemp', data)
-    except Exception, e:
+    except Exception as e:
       self.parent.warningMessage('Server', 'Server exception: %s' % str(e))
 
   def deleteFile(self, passwd, serverFile):
 
-    print 'deleteFile', serverFile
+    print('deleteFile', serverFile)
 
   def callHttpScript(self, passwd, script, data):
 
@@ -568,12 +568,12 @@ class FileUpdate:
     try:
       if path.isfile(self.installedFile):
         copyfile( self.installedFile, self.installedFile+'__old' )
-      print 'installing', self.installedFile
+      print('installing', self.installedFile)
       dirname = os.path.dirname(self.installedFile)
       if not os.path.exists(dirname):
         os.makedirs(dirname)
       copyfile( self.tempFile,self.installedFile )
-    except Exception, e:
+    except Exception as e:
       self.server.parent.warningMessage('Copy Fail','Could not update file %s: %s' % (self.installedFile, e))
       return
   
@@ -676,7 +676,7 @@ class ReleaseUpdate:
       if showOkCancel('Query','Can CCPN log your IP address for its statistics? No other information will be taken'):
         self.logDownload()
     else:
-      print 'CCPN is logging your IP address for its statistics. No other information will be taken'
+      print('CCPN is logging your IP address for its statistics. No other information will be taken')
       self.logDownload()
   
   def logDownload(self):
@@ -788,14 +788,14 @@ class ReleaseUpdate:
       renameDir = '%s_%s_%d' % (self.installDir, self.currentVersion, n)
       n = n + 1
 
-    print 'About to rename %s to %s' % (self.installDir, renameDir)
+    print('About to rename %s to %s' % (self.installDir, renameDir))
     os.rename(self.installDir, renameDir)
 
   def moveNewRelease(self):
 
     os.chdir(self.baseDir)
     dd = os.path.join(self.releaseDir, self.ccpnmrTopDir, self.ccpnmrCodeDir)
-    print 'About to rename %s to %s' % (dd, self.installDir)
+    print('About to rename %s to %s' % (dd, self.installDir))
     os.rename(dd, self.installDir)
 
   def compileAllPyCode(self):
@@ -816,11 +816,11 @@ class ReleaseUpdate:
       renameDir = '%s_%s_%d' % (baseDir, self.currentVersion, n)
       n = n + 1
 
-    print 'About to rename %s to %s' % (baseDir, renameDir)
+    print('About to rename %s to %s' % (baseDir, renameDir))
     os.rename(baseDir, renameDir)
 
     dd = os.path.join(renameDir, self.releaseDir, self.ccpnmrTopDir)
-    print 'About to rename %s to %s' % (dd, baseDir)
+    print('About to rename %s to %s' % (dd, baseDir))
     os.rename(dd, baseDir)
         
   def runConfigScript(self):

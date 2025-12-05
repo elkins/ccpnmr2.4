@@ -522,7 +522,7 @@ def plotHistogramOverall():
             offset = 0.5
             xticks(arange(offset, n), tickList)
             yticks(arange(offset, n), tickList)
-#            print 'just before call to set_ticks_position'
+#            print('just before call to set_ticks_position')
     #        axis.xaxis.set_ticks_position('top')
     #        axis.xaxis.set_label_position('top')
         #    axis.yaxis.set_ticks_position('both')

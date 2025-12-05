@@ -1158,7 +1158,7 @@ ECI allows you to easily add an "Entry" object to your CCPN project. An "Entry" 
     self.mainButtons.grid(row=i, column=0, columnspan=2, sticky='ew')
     self.mainButtons.buttons[0].config(bg=NICE_GREEN)
 
-    #print 'COUNT: [%s]' % i
+    #print('COUNT: [%s]' % i)
 
     i = 0
 
@@ -4941,7 +4941,7 @@ ECI allows you to easily add an "Entry" object to your CCPN project. An "Entry" 
 
       self.accNum = 'TmpAcc'
 
-      #print 'DB: [%s]' % db.name
+      #print('DB: [%s]' % db.name)
 
       dbRef = db.findFirstEntry(name=self.accNum)
 
@@ -4960,7 +4960,7 @@ ECI allows you to easily add an "Entry" object to your CCPN project. An "Entry" 
       if not dbRef.code:
         dbRef.code = self.accNum
 
-      #print 'DBREF: [%s]' % dbRef.name
+      #print('DBREF: [%s]' % dbRef.name)
 
       self.accNum = dbRef.name
 
@@ -5017,7 +5017,7 @@ ECI allows you to easily add an "Entry" object to your CCPN project. An "Entry" 
 
       self.accNum = dbRef.name
 
-      #print 'DBS: [%s] [%s]' % (db.name, self.accNum)
+      #print('DBS: [%s] [%s]' % (db.name, self.accNum))
 
       self.align.__dict__['dbRef'] = dbRef
       #self.align.dbRef.delete()
@@ -5526,7 +5526,7 @@ ECI allows you to easily add an "Entry" object to your CCPN project. An "Entry" 
     #                                      productionMethod=prodMethod):
     #    prodMethods.append(prodMethod)
 
-    #print "METH: [%s] [%s]" % (prodMethods, cProdMethod)
+    #print("METH: [%s] [%s]" % (prodMethods, cProdMethod))
     
     index = prodMethods.index(cProdMethod)
     names = prodMethods[:] + ['<Other>',]
@@ -6855,7 +6855,7 @@ ECI allows you to easily add an "Entry" object to your CCPN project. An "Entry" 
         bmrbLabelName = askString('Input', msg, parent=self) or ''
         bmrbLabelName.strip()
 
-      #print 'LABEL: [%s]' % sampCompIsotope
+      #print('LABEL: [%s]' % sampCompIsotope)
 
       if bmrbLabelName and bmrbLabelName != currentBmrbLabelName:
 

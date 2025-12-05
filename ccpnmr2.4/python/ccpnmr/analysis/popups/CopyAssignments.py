@@ -1165,7 +1165,7 @@ class CopyAssignmentsPopup(BasePopup):
       scaleFactors = self.getScaleFactorDict()
       dimMapping = self.getDimMapping()
 
-      #print "dimMapping A ", dimMapping
+      #print("dimMapping A ", dimMapping)
       #print self.sourcePeakList, self.targetPeakList, threshold, scaleFactors
 
       for peak in self.sourcePeakList.peaks:
@@ -1229,7 +1229,7 @@ class CopyAssignmentsPopup(BasePopup):
     if self.sourcePeak and self.sourcePeak in self.sourcePeakMatrix.objectList:
       scaleFactors = self.getScaleFactorDict()
       dimMapping = self.getDimMapping()
-      #print "dimMapping B ", dimMapping
+      #print("dimMapping B ", dimMapping)
       #print self.sourcePeakList, self.targetPeakList, threshold, scaleFactors
       matches = findShiftDistPeakMatches(self.sourcePeak, self.targetPeakList,
                                          threshold, scaleFactors, dimMapping=dimMapping,

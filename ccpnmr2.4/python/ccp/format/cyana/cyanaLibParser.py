@@ -172,7 +172,7 @@ class CyanaLibrary:
               
             if not atomFound:
               
-              print "  No match for atom serial %s, angle %s (%s)" % (atomSerial,angle.name,cyanaRefInfo.name)
+              print("  No match for atom serial %s, angle %s (%s)" % (atomSerial,angle.name,cyanaRefInfo.name))
 
   def setAtomPosition(self):
   
@@ -207,7 +207,7 @@ class CyanaLibrary:
                 
               else:
                 pass
-                #print "No location can be set for ", cyanaRefInfo.name, cyanaRefInfo.atoms[j].name
+                #print("No location can be set for ", cyanaRefInfo.name, cyanaRefInfo.atoms[j].name)
 
   def getAtomOrderDict(self,verbose = 0):
   
@@ -236,7 +236,7 @@ class CyanaLibrary:
       resNames.sort()
       for resName in resNames:
         print resName
-        print "   ",atomOrderDict[resName]
+        print("   ",atomOrderDict[resName])
         print
         
     return atomOrderDict
@@ -249,22 +249,22 @@ class CyanaLibrary:
     
       for cyanaRefInfo in self.refInfo[refInfo]:
       
-        print "  ",cyanaRefInfo.name
+        print("  ",cyanaRefInfo.name)
       
         if cyanaRefInfo.angles:
           
           print
-          print "    Angles:"
+          print("    Angles:")
 
           for angle in cyanaRefInfo.angles:
             
-            print "      ",angle.name,angle.atomNames
+            print("      ",angle.name,angle.atomNames)
         
       
         if cyanaRefInfo.atoms:
           
           print
-          print "    Atoms:"
+          print("    Atoms:")
           
           text =  "      "
 

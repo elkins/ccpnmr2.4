@@ -202,7 +202,7 @@ class FilterCloudsPopup(BasePopup):
           self.rmsds.pop(i)
           self.names.pop(i)
           self.clouds.pop(i)
-          #print 'Cloud %s is bad' % (cloud)
+          #print('Cloud %s is bad' % (cloud))
 
       self.updateAfter()
  
@@ -237,7 +237,7 @@ class FilterCloudsPopup(BasePopup):
       print len(atomCoordList)
       print len(resonances), len(resonances2)
 
-      print "Generating Mean"
+      print("Generating Mean")
       cloudsList = []
       for cloud in self.clouds:
         orderCloud = []
@@ -250,23 +250,23 @@ class FilterCloudsPopup(BasePopup):
 
       weights = [1.0 for x in atomCoordList]
       centerCoords(atomCoordList)
-      print "init cen", getMeanCoords(atomCoordList)
-      print "mean cen", getMeanCoords(meanCloud)
+      print("init cen", getMeanCoords(atomCoordList))
+      print("mean cen", getMeanCoords(meanCloud))
       
-      print "Print aligning struct clouds to mean", len(meanCloud), len(atomCoordList), len(weights)
+      print("Print aligning struct clouds to mean", len(meanCloud), len(atomCoordList), len(weights))
       atomCoordsList, error, rotMat = alignCoordinates(meanCloud,atomCoordList,weights)    
 
-      print "  Rotation", rotMat
+      print("  Rotation", rotMat)
       writeTypedPdbCloud(atomCoordList, pdbFileName, resonances2)
       
-      print "Getting centres"
+      print("Getting centres")
       oldCentre = getMeanCoords(atomCoordList0)
       newCentre = getMeanCoords(atomCoordList)
       delta     = [newCentre[i]-oldCentre[i] for i in range(len(oldCentre))]
       
-      print "  New centre", newCentre
-      print "  Old centre", oldCentre
-      print "  Delta", delta
+      print("  New centre", newCentre)
+      print("  Old centre", oldCentre)
+      print("  Delta", delta)
       
       #inverseRot = inverseMatrix(rotMat)
 

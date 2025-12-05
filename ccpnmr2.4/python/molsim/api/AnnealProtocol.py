@@ -58,7 +58,7 @@ and contains original contributions embedded in the framework
 ===========================REFERENCE END===============================
 """
 
-import cStringIO
+import io
 #import sets
 import traceback
 import types
@@ -157,7 +157,7 @@ general terms.
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in molsim.AnnealProtocol.AnnealProtocol.__init__"
+        print("ERROR in molsim.AnnealProtocol.AnnealProtocol.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -205,10 +205,10 @@ general terms.
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -2581,7 +2581,7 @@ class AnnealProtocolStore(memops.api.Implementation.TopObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in molsim.AnnealProtocol.AnnealProtocolStore.__init__"
+        print("ERROR in molsim.AnnealProtocol.AnnealProtocolStore.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -2636,10 +2636,10 @@ class AnnealProtocolStore(memops.api.Implementation.TopObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -3870,7 +3870,7 @@ class AnnealStage(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in molsim.AnnealProtocol.AnnealStage.__init__"
+        print("ERROR in molsim.AnnealProtocol.AnnealStage.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -3916,10 +3916,10 @@ class AnnealStage(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -5910,7 +5910,7 @@ refPotentialTerms
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in molsim.AnnealProtocol.EnergyTerm.__init__"
+        print("ERROR in molsim.AnnealProtocol.EnergyTerm.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -5956,10 +5956,10 @@ refPotentialTerms
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -7789,7 +7789,7 @@ class PotentialScale(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in molsim.AnnealProtocol.PotentialScale.__init__"
+        print("ERROR in molsim.AnnealProtocol.PotentialScale.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -7832,10 +7832,10 @@ class PotentialScale(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -9336,7 +9336,7 @@ interpretation generally requires reference to the application.
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in molsim.AnnealProtocol.RefPotentialTerm.__init__"
+        print("ERROR in molsim.AnnealProtocol.RefPotentialTerm.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -9382,10 +9382,10 @@ interpretation generally requires reference to the application.
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -10898,7 +10898,7 @@ class RefTermParameter(memops.api.Implementation.DataObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in molsim.AnnealProtocol.RefTermParameter.__init__"
+        print("ERROR in molsim.AnnealProtocol.RefTermParameter.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -10933,10 +10933,10 @@ class RefTermParameter(memops.api.Implementation.DataObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object. 
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 

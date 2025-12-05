@@ -379,9 +379,9 @@ class MidgePopup(BasePopup):
  
         allowedAtomTypes= adcDict[self.adcAtomTypes]
  
-        print "Making ADCs"
+        print("Making ADCs")
         self.antiDistConstraintList = makeNoeAdcs(resonances[:],self.noesyPeakList.dataSource,constraintHead,allowedAtomTypes=allowedAtomTypes)
-        print "Done ADCs"
+        print("Done ADCs")
  
     
       if self.structure:

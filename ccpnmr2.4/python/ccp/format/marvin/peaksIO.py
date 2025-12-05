@@ -38,7 +38,7 @@ class MarvinPeakFile(MarvinGenericFile):
 
   def read(self,verbose = 0):
     if verbose == 1:
-      print "Reading %s peak list %s" % (self.format,self.name)
+      print("Reading %s peak list %s" % (self.format,self.name))
 
 
 

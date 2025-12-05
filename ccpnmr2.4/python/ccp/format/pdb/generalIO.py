@@ -494,7 +494,7 @@ class PdbFile(PdbGenericFile):
           dbSeqEnd = line[62:67]
           dbinsEnd = line[67]
 
-          #print 'PDB: [' + pdbCode + '] [' + chainId + '] [' + seqBegin + '] [' + insertBegin + '] [' + seqEnd + '] [' + insertEnd + '] [' + dataBase + '] [' + dbAccession + '] [' + dbIdCode + '] [' + dbSeqBegin + '] [' + idbnsBeg + '] [' + dbSeqEnd + '] [' + dbinsEnd + ']'
+          #print('PDB: [' + pdbCode + '] [' + chainId + '] [' + seqBegin + '] [' + insertBegin + '] [' + seqEnd + '] [' + insertEnd + '] [' + dataBase + '] [' + dbAccession + '] [' + dbIdCode + '] [' + dbSeqBegin + '] [' + idbnsBeg + '] [' + dbSeqEnd + '] [' + dbinsEnd + ']')
 
           self.setDbRef(pdbCode,chainId,seqBegin,insertBegin,seqEnd,insertEnd,dataBase,dbAccession,dbIdCode,dbSeqBegin,idbnsBeg,dbSeqEnd,dbinsEnd)
 
@@ -620,7 +620,7 @@ class PdbFile(PdbGenericFile):
                 if len(self.sourceInfo) == molId - 1:
                   self.sourceInfo.append({})
 
-                #print 'INFO: [%s] [%s]' % (self.sourceInfo[molId-1][self.oldSearchText], infoText)
+                #print('INFO: [%s] [%s]' % (self.sourceInfo[molId-1][self.oldSearchText], infoText))
 
                 if self.sourceInfo[molId-1][self.oldSearchText][-1] in ('-', '.', '(', ')', '/', '\\', '%'):
                   self.sourceInfo[molId-1][self.oldSearchText] += '' + infoText
@@ -989,7 +989,7 @@ class PdbFile(PdbGenericFile):
 
 #    for key in self.remarks.keys():
 #      self.remarks[key] += self.newline
-#      print 'KEY: [%s]' % self.remarks[key]
+#      print('KEY: [%s]' % self.remarks[key])
 
             
   def handleJournalInfo(self,infoDict,infoType,otherText):

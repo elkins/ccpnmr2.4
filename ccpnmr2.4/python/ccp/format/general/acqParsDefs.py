@@ -150,7 +150,7 @@ class GenericAcqParData(FormatFile):
         specRefs[nucleus] = SpectrometerReference(specFreq,baseFreq)
 
       else:
-        #print "  Warning: no value for acquisition parameter data %s..." % str(refs)
+        #print("  Warning: no value for acquisition parameter data %s..." % str(refs))
         pass
 
     #

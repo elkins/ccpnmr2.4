@@ -96,7 +96,7 @@ class ToggleLabel(Frame):
     try:
       return getattr(self.__dict__['arrow'], name)
     except:
-      raise AttributeError, "%s instance has no attribute '%s'" % (self.__class__.__name__, name)
+      raise AttributeError("%s instance has no attribute '%s'" % (self.__class__.__name__).with_traceback(name))
 
 if (__name__ == '__main__'):
  

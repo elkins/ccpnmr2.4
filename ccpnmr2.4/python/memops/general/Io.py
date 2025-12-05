@@ -714,10 +714,10 @@ def loadProject(path, projectName=None, showWarning=None, askFile=None,
       not isGeneralDataOk(project)):
     # if not all loaded (shell) TopObjects can be found, try again
     project = None
-    ###print "\nSome files unfindable - has project moved?."
+    ###print("\nSome files unfindable - has project moved?.")
   
   if project is None:
-    ###print "Re-trying, skipping cached TopObjects:"
+    ###print("Re-trying, skipping cached TopObjects:")
     project = XmlIO.loadProject(path, projectName, partialLoad=True)
 
   warningMessages = []
