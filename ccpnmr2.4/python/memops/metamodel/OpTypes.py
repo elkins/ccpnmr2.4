@@ -6,8 +6,9 @@ from memops.universal import Util as uniUtil
 from memops.metamodel import ImpConstants
 from memops.general import Constants as genConstants
 
-True = not 0
-False = not True
+# Python 3: True and False are built-in keywords
+# True = not 0
+# False = not True
 
 
 # input for operations
@@ -512,7 +513,7 @@ def getTarget(metaOp, opData=None):
     infoDict = operationData.get(opType)
   if infoDict is None:
     raise MemopsError("%s: operation has unrecognised opType %s"
-                      % (metaOp,`opType`))
+                      % (metaOp,repr(opType)))
   targetTag = infoDict['targetTag']
   prefix = infoDict.get('name')
   if prefix is None:

@@ -54,10 +54,11 @@ software development. Bioinformatics 21, 1678-1684.
 """
 
 # corresponding python type
+# Python 3: str is the type (basestring and StringType don't exist)
 try:
   PythonType = basestring
-except:
-  from types import StringType as PythonType
+except NameError:
+  PythonType = str
 
 # Python types acceptable as input instead of main type
 compatibleTypes = ()

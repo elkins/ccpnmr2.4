@@ -322,7 +322,7 @@ class PdbFile(PdbGenericFile):
                 if chainId != self.defaultMolCode and len(self.chains) == 1 and self.chains[0].chainId == self.defaultMolCode and not self.chains[0].resNames:
                 
                   # Use existing chain in case a NULL one is available...
-                  print "Warning: replacing NULL chain by chain Id '%s' in pdb file %s." % (chainId,self.name)
+                  print("Warning: replacing NULL chain by chain Id '%s' in pdb file %s." % (chainId,self.name))
                   
                   chain = self.chains[0]
                   chain.chainId = chainId
@@ -330,7 +330,7 @@ class PdbFile(PdbGenericFile):
                   molId = chain.molId
 
                 else:        
-                  print "Error: unknown chain Id '%s' in pdb file %s. Created from scratch." % (chainId,self.name)
+                  print("Error: unknown chain Id '%s' in pdb file %s. Created from scratch." % (chainId,self.name))
                   self.chains.append(PdbPolymer(self,chainId,molId,molName))
                   chain = self.chains[-1]
                   
@@ -375,7 +375,7 @@ class PdbFile(PdbGenericFile):
           if not chainId.strip():
             for chain in self.chains:
               if hetId in chain.resNames:
-                print "  Warning: matching HET group to SEQRES chain ID..."
+                print("  Warning: matching HET group to SEQRES chain ID...")
                 chainId = chain.chainId
 
           self.hetGroups.append(PdbHetGroup(hetId,chainId,seqNum,iCode,numHetAtoms,description))
@@ -399,7 +399,7 @@ class PdbFile(PdbGenericFile):
               found = 1
 
           if found == 0:
-            print "Warning: PDB code %s, added hetero group '%s', formula %s from FORMUL line." % (self.code,hetId,formula)
+            print("Warning: PDB code %s, added hetero group '%s', formula %s from FORMUL line." % (self.code,hetId,formula))
             
             # in this case have to parse the HETATOM lines to find the correct chainId,seqNum,iCode,numHetAtoms
             hetIdsFound = []
@@ -780,7 +780,7 @@ class PdbFile(PdbGenericFile):
               if self.helixCodes.has_key(helixClassId):
                 specificInfo['class'] = self.helixCodes[helixClassId]
               else:
-                print "  Warning: no helix class found for identifier '%s'!" % str(helixClassId)
+                print("  Warning: no helix class found for identifier '%s'!" % str(helixClassId))
                 specificInfo['class'] = None
               specificInfo['comment'] = line[40:70].strip()
               specificInfo['length'] = returnInt(line[71:76])
@@ -841,7 +841,7 @@ class PdbFile(PdbGenericFile):
               
               
             else:
-              print "  Warning: unknown secondary structure type %s! Ignored" % secStrucType
+              print("  Warning: unknown secondary structure type %s! Ignored" % secStrucType)
             
             #
             # Now set the information for later reference...
@@ -878,7 +878,7 @@ class PdbFile(PdbGenericFile):
               #searchTuple = ('ORGANISM_SCIENTIFIC','ORGANISM_COMMON','EXPRESSION_SYSTEM','EXPRESSION_SYSTEM_STRAIN') + tuple(self.sourceVarInfo.keys())
 
               if not self.molIdToChains.has_key(molId):
-                print "  Error: no molIdToChains defined for MOL_ID %s" % str(molId)
+                print("  Error: no molIdToChains defined for MOL_ID %s" % str(molId))
 
               else:
                 if not hasattr(self, 'oldSearchText'):
@@ -985,7 +985,7 @@ class PdbFile(PdbGenericFile):
 
 
     else:
-      print "Error: %s is not a file originating from PDB. Cannot be read." % self.name
+      print("Error: %s is not a file originating from PDB. Cannot be read." % self.name)
 
 #    for key in self.remarks.keys():
 #      self.remarks[key] += self.newline

@@ -133,7 +133,7 @@ class Mol2GenericFile(FormatFile):
   def readGeneric(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s file %s" % (self.format,self.name)
+      print("Reading %s file %s" % (self.format,self.name))
       
     #
     # Read all information...

@@ -230,8 +230,8 @@ def getChemCompOrCoordXmlFile(repository,fileSearchString,fileSearchPath,classNa
         saveFilePath = uniIo.joinPath(savePath,fileName)
         shutil.copy(filePath,saveFilePath)
         result = saveFilePath
-    
-        print "  %s file %s copied to %s..." % (className,fileName,savePath)
+
+        print("  %s file %s copied to %s..." % (className,fileName,savePath))
       
       else:
         result = filePath
@@ -349,7 +349,7 @@ def findCcpForgeDownloadLink(dirData,fileType,ccpCode,ccpForgeDownloadUrl):
   Works by ccpCode only, assuming that info comes from right directory!
   """
 
-  fileHtmlPatt = re.compile("a name=\"([^\"]+)\"\s+href\=\"([^\"]+)\"\s+title=\"")
+  fileHtmlPatt = re.compile(r"a name=\"([^\"]+)\"\s+href\=\"([^\"]+)\"\s+title=\"")
   
   urlLocation = chemCompXmlFile = None
 
@@ -424,33 +424,33 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
             fout = open(chemCompFile,'w')
             fout.write(data)
             fout.close()
-  
-            print ("Downloaded %s %s%s, %s from server %s, written to file %s!"
+
+            print("Downloaded %s %s%s, %s from server %s, written to file %s!"
                    % (fileType,sourceText,molType,ccpCode,ccpForgeDownloadUrl,chemCompFile))
             result = chemCompFile
-  
-          except IOError, e:
+
+          except IOError as e:
             showError("Cannot write file", 
                       "Cannot write %s XML file %s%s, %s: %s" 
                       % (fileType,sourceText,molType,ccpCode,str(e)))
   
-        except IOError, e:
-          showError("Cannot read file", "Cannot read %s %s%s, %s: %s" 
+        except IOError as e:
+          showError("Cannot read file", "Cannot read %s %s%s, %s: %s"
                     % (fileType,sourceText,molType,ccpCode,str(e)))
-      
-        
+
+
       else:
-        showError("Cannot find file", "Cannot find %s XML file %s%s, %s." 
+        showError("Cannot find file", "Cannot find %s XML file %s%s, %s."
                   % (fileType,sourceText,molType,ccpCode))
-      
-    except IOError, e:
+
+    except IOError as e:
       showError("Cannot read directory", 
                 "Cannot read directory information for %s%s, %s: %s" 
                 % (sourceText,molType,ccpCode,str(e)))
 
-  except IOError, e:
-    showError("No connection", 
-              "Cannot connect to download server %s, or file does not exist...: %s " 
+  except IOError as e:
+    showError("No connection",
+              "Cannot connect to download server %s, or file does not exist...: %s "
               % (ccpForgeDownloadUrl,str(e)))
   #
   return result

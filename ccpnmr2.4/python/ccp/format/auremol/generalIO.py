@@ -120,7 +120,7 @@ class AuremolGenericFile(AuremolFile):
   def read(self,verbose = 0):
 
     if verbose == 1:
-      print "Reading %s molecular information file %s" % (self.format,self.name)
+      print("Reading %s molecular information file %s" % (self.format,self.name))
 
     #
     # Read info and other info
@@ -174,7 +174,7 @@ class AuremolGenericFile(AuremolFile):
           
         elif cols[0][:4] == 'END_':
         
-          print "Warning: double END code %s" % cols[0]
+          print("Warning: double END code %s" % cols[0])
         
         else:
         
@@ -394,7 +394,7 @@ if __name__ == "__main__":
     print compound.label, compound.compFile
     
     for cs in compound.shifts:
-      print "%s: %.3f| " % (cs.atomKey, cs.value),
+      print("%s: %.3f| " % (cs.atomKey, cs.value),)
     print
   
   for par in auremolFile.parameters.keys():

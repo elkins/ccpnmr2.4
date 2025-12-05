@@ -122,7 +122,7 @@ class VarianAcqParData(GenericAcqParData):  # TODO: subclass necessary?!
     if mainPars.has_key('nt'):
       self.numScans = returnInt(mainPars['nt'].values[0])
     else:
-      print "No num scans for %s" % (self.fileDir)
+      print("No num scans for %s" % (self.fileDir))
       self.numScans = 0
 
     #
@@ -205,7 +205,7 @@ class VarianAcqParData(GenericAcqParData):  # TODO: subclass necessary?!
         if mainPars.has_key(refsPhase[po][i]):
           self.freqDimRefs[-1].phase[po] = mainPars[refsPhase[po][i]].values[0]
         else:
-          print "  ERROR: %s has no phase for %d (dim %d)" % (self.fileDir,po,i)
+          print("  ERROR: %s has no phase for %d (dim %d)" % (self.fileDir,po,i))
 
 class VarianAcqParFile(VarianGenericFile):
 
@@ -218,8 +218,8 @@ class VarianAcqParFile(VarianGenericFile):
   def read(self,verbose = 0, expname = 'unknown'):
 
     if verbose == 1:
-    
-      print "Reading Varian acquisition parameters file %s" % self.name
+
+      print("Reading Varian acquisition parameters file %s" % self.name)
 
     # For reading: Varian parameter stored format is made up of 3 OR MORE lines!
     # See VarianPar class definition for more detailed info.
@@ -232,9 +232,9 @@ class VarianAcqParFile(VarianGenericFile):
       if not (self.patt['emptyline'].search(line) or self.patt['hash'].search(line)):
         cols = line.split()
         if len(cols) != 11:
-          print "  ERROR: %s Varian procpar has wrong number of fields on following line:" % expname + self.newline + line
+          print("  ERROR: %s Varian procpar has wrong number of fields on following line:" % expname + self.newline + line)
         elif self.parameters.has_key(cols[0]):
-          print ("Reoccuring parameter name: %s" % cols[0]) + self.newline
+          print("Reoccuring parameter name: %s" % cols[0] + self.newline)
         else:
           parname = cols[0]
           self.parameters[parname]=VarianAcqPar(parname,cols[1],cols[2],cols[3],cols[4],cols[5],cols[6],cols[7],cols[8],cols[9])
@@ -264,7 +264,7 @@ class VarianAcqParFile(VarianGenericFile):
 
           else:
             # Case undefined data type
-            print "  ERROR: %s Varian procpar has undefined basic data type. Check parameter %s." % (expname,parname)
+            print("  ERROR: %s Varian procpar has undefined basic data type. Check parameter %s." % (expname,parname))
 
           # Read enumerations (LAST LINE)
           line = fin.readline()
@@ -368,7 +368,7 @@ class VarianAcqPar:
     #                           other quoted by " on subseq. lines, one per line
     
     if value_len != len(values):
-      print "  ERROR: %s Varian procpar: given value_len does not match number of values (%s)" % (expname,self.name)
+      print("  ERROR: %s Varian procpar: given value_len does not match number of values (%s)" % (expname,self.name))
       self.value_len = len(values)
     else:
       # Number of values for this parameter
@@ -388,7 +388,7 @@ class VarianAcqPar:
     
     if enum_len > 0:
       if enum_len != len(enums):
-        print "  ERROR: %s Varian procpar: given enum_len does not match number of enums (%s)" % (expname,self.name)
+        print("  ERROR: %s Varian procpar: given enum_len does not match number of enums (%s)" % (expname,self.name))
         self.enum_len = len(enums)
       # Enumeration
       self.enums = enums
@@ -398,6 +398,6 @@ class VarianAcqPar:
       self.help = parHelp[self.name]
     else:
       if verbose > 1:
-        print "Parameter %s: no help string found." % self.name
+        print("Parameter %s: no help string found." % self.name)
       self.help = ''
     

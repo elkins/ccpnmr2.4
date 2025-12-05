@@ -35,7 +35,7 @@ def getDataFromHttp(urlLocation):
     r1.close()
   else:
     data = None
-    print "URL %s returned code %d" % (urlLocation, code)
+    print("URL %s returned code %d" % (urlLocation, code))
 
   return data
 
@@ -63,7 +63,7 @@ def getReferenceTextFileFromHttp(urlLocation,localFilePath, refText = "", isGzip
   
   if os.path.exists(stampedLocalFilePath):
 
-    print "Using up-to-date local %s file..." % refText
+    print("Using up-to-date local %s file..." % refText)
   
   else:
     
@@ -110,7 +110,7 @@ def getReferenceTextFileFromHttp(urlLocation,localFilePath, refText = "", isGzip
       else:
         addText = ''
         
-      print "Downloaded up-to-date file for %s, saved locally%s..." % (refText,addText)
+      print("Downloaded up-to-date file for %s, saved locally%s..." % (refText,addText))
       
       # Unpack
       if isGzipped:
@@ -121,10 +121,10 @@ def getReferenceTextFileFromHttp(urlLocation,localFilePath, refText = "", isGzip
       if lastStampedLocalFilePath:
         stampedLocalFilePath = lastStampedLocalFilePath
         lastDayStamp = localFile[len(baseName):]
-        print "Download failed for %s, using file stamped on day %s" % (refText,lastDayStamp)
+        print("Download failed for %s, using file stamped on day %s" % (refText,lastDayStamp))
       
       else:
-        print "Error: could not get reference data for %s!" % refText
+        print("Error: could not get reference data for %s!" % refText)
         return None
 
   #
@@ -166,7 +166,7 @@ def post_multipart(host, selector, fields, files):
   """
   # TODO replace by urllib2!?!? See http://docs.python.org/library/urllib2.html
   import urllib2
-  print url
+  print(url)
   request = urllib2.Request(url)
   request.add_header('content-type', content_type)
   request.add_header('content-length', str(len(body)))
@@ -269,7 +269,7 @@ class MultipartPostHandler(urllib2.BaseHandler):
                          v_vars.append((key, value))
             except TypeError:
                 systype, value, traceback = sys.exc_info()
-                raise TypeError, "not a valid non-string sequence or mapping object", traceback
+                raise TypeError("not a valid non-string sequence or mapping object").with_traceback(traceback)
 
             if len(v_files) == 0:
                 data = urllib.urlencode(v_vars, doseq)
@@ -279,7 +279,7 @@ class MultipartPostHandler(urllib2.BaseHandler):
                 contenttype = 'multipart/form-data; boundary=%s' % boundary
                 if(request.has_header('Content-Type')
                    and request.get_header('Content-Type').find('multipart/form-data') != 0):
-                    print "Replacing %s with %s" % (request.get_header('content-type'), 'multipart/form-data')
+                    print("Replacing %s with %s" % (request.get_header('content-type'), 'multipart/form-data'))
                 request.add_unredirected_header('Content-Type', contenttype)
 
             request.add_data(data)

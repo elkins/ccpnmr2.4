@@ -96,10 +96,10 @@ class WorkFlow:
       
       if tmpCcpnProject:
         if not overwrite:
-          print ("  Warning: using existing project!")
+          print("  Warning: using existing project!")
           self.ccpnProject = tmpCcpnProject
         else:
-          print ("  Warning: overwriting existing project!")
+          print("  Warning: overwriting existing project!")
           shutil.rmtree(self.identifier)
       
       if not self.ccpnProject:
@@ -159,11 +159,11 @@ class WorkFlow:
     # So in here combine the components from Cing.py, Fc.py, ...
     #
   
-    print "Please define the data stream for the workflow in a subclass component of WorkFlow!"
+    print("Please define the data stream for the workflow in a subclass component of WorkFlow!")
   
   def getResults(self):
   
-    print "Get results not defined yet"
+    print("Get results not defined yet")
 
 
   #
@@ -185,7 +185,7 @@ class WorkFlow:
         parentText='nmrConstraintStore'
         
       print
-      print "Warning: %d (out of %d) resonances not linked in %s." % (unlinkedRes,len(resonanceList),parentText)
+      print("Warning: %d (out of %d) resonances not linked in %s." % (unlinkedRes,len(resonanceList),parentText))
       print
   
   #
@@ -251,7 +251,7 @@ class WorkFlow:
     os.remove(tarFileName)
     """
     
-    print "  Created .tgz archive %s for CCPN project %s." % (tgzFileName,self.ccpnProject.name)
+    print("  Created .tgz archive %s for CCPN project %s." % (tgzFileName,self.ccpnProject.name))
 
     return tgzFileName
 
@@ -278,7 +278,7 @@ class WorkFlow:
     if excludeFiles:
       extraArgs = extraArgs + ['--exclude'] + excludeFiles
       
-    print ' '.join(['tar','xvfz',tgzFileName] + extraArgs)
+    print(' '.join(['tar','xvfz',tgzFileName] + extraArgs))
     process = Popen(['tar','xvfz',tgzFileName] + extraArgs, stdin=PIPE, stdout=PIPE, close_fds=True)
     (pipe, stdin) = (process.stdout, process.stdin)
 
@@ -352,7 +352,7 @@ class WorkFlow:
     
     if self.verbose:
       (selectionList,selectionDict) = createSelection([ccpnObject])
-      print "  Tagging %s object %s" % (ccpnObject.className,selectionList[0])
+      print("  Tagging %s object %s" % (ccpnObject.className,selectionList[0]))
       
   def tagAll(self,softwareName):
   

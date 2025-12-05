@@ -138,7 +138,8 @@ def isArray(x):
   """ Returns true if x is tuple or list, false otherwise.
   """
 
-  if (type(x) in (types.TupleType, types.ListType)):
+  # Python 3: types.TupleType/ListType -> tuple/list
+  if (type(x) in (tuple, list)):
     return True
   else:
     return False
@@ -645,11 +646,12 @@ def semideepcopy(dd, doneDict=None):
     doneDict[key] = result
  
     for kk,val in dd.items():
- 
-      if type(val) == types.DictType:
+
+      # Python 3: types.DictType/ListType -> dict/list
+      if type(val) == dict:
         result[kk] = semideepcopy(val, doneDict)
- 
-      elif type(val) == types.ListType:
+
+      elif type(val) == list:
         key2 = id(val)
         newval = doneDict.get(key2)
         if newval is None:

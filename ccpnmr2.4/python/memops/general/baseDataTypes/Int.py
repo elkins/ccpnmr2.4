@@ -53,12 +53,13 @@ software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 """
 
-import types
 # corresponding python type
-PythonType = types.IntType
+# Python 3: int is the type (IntType/LongType unified as int)
+PythonType = int
 
 # Python types acceptable as input instead of main type
-compatibleTypes = (types.LongType,)
+# Python 3: int and long are unified, so no compatible types needed
+compatibleTypes = ()
 
 # Special isValid function
 # None

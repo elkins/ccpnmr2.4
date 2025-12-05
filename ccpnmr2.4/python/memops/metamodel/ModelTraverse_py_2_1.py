@@ -17,8 +17,8 @@ MemopsError = MetaModel.MemopsError
 from memops.metamodel import ImpConstants
 from memops.metamodel.ModelPortal import ModelPortal
 
-True = not 0
-False = not True
+# True = not 0
+# False = not True
   
 mandatoryAttributes = ('modelPortal',)
 

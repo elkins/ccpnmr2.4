@@ -214,14 +214,14 @@ def writeLog(message):
 
 def doPrint(message):
 
-  print message
+  print(message)
   writeLog(message)
 
 def getInput(prompt, doLower = 1, default = None):
  
   s = ''
   while (not s):
-    s = raw_input(prompt + ' ')
+    s = input(prompt + ' ')
     s = s.strip()
     if (not s and default is not None):
         s = default
@@ -1329,7 +1329,7 @@ def createProgram(program, script, softwareDict, useExport, shell):
     script = replaceTopDir(script)
     fp.write('%s $*\n' % script)
     fp.close()
-    os.chmod(program_version, 0755)
+    os.chmod(program_version, 0o755)  # Python 3: octal literal
 
     # link programX --> programX.Y
 
@@ -1707,7 +1707,7 @@ def main(log_file = None):
         codeDict['lib'] = tix_lib_dir
       else:
         codeDict['directory'] = codeDict['lib'] = ''
-        print 'Do not have Tix so will not be able to use Aria in extendNmr script'
+        print('Do not have Tix so will not be able to use Aria in extendNmr script')
 
   # Python
 
@@ -1920,7 +1920,7 @@ def main(log_file = None):
 
     s = getInput('Install latest updates (from server) (y or n)?')
     if s[0] == 'y':
-      print 'Getting latest updates from server'
+      print('Getting latest updates from server')
       runProgram(updateAuto_program)
 
     s = getInput('Run Analysis (as test) (y or n)?')
@@ -1932,7 +1932,7 @@ def main(log_file = None):
     """ TBD: comment out for now until done properly
     s = getInput('Install latest updates (from server) (y or n)?')
     if s[0] == 'y':
-      print 'Getting latest updates from server'
+      print('Getting latest updates from server')
       runProgram(updateAuto_program)
 """
 
@@ -1955,8 +1955,8 @@ if __name__ == '__main__':
     distribution = sys.argv[1].lower()
     
   if distribution not in distributions:
-    print 'Error: require one argument: distribution'
-    print 'where distribution = one of %s' % str(distributions)
+    print('Error: require one argument: distribution')
+    print('where distribution = one of %s' % str(distributions))
     sys.exit(1)
 
   program_name = program_names[distribution]
@@ -1967,5 +1967,5 @@ if __name__ == '__main__':
     n = n + 1
     log_file = 'log_%s_%d.txt' % (program_name, n)
     
-  print 'Messages will be logged in "%s"' % log_file
+  print('Messages will be logged in "%s"' % log_file)
   main(log_file)

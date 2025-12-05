@@ -53,12 +53,13 @@ software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 """
 
-import types
 # corresponding python type
-PythonType = types.LongType
+# Python 3: int is the type (LongType/IntType unified as int)
+PythonType = int
 
 # Python types acceptable as input instead of main type
-compatibleTypes = (types.IntType,)
+# Python 3: int and long are unified, so no compatible types needed
+compatibleTypes = ()
 
 # Special isValid function
 # None
@@ -67,7 +68,9 @@ compatibleTypes = (types.IntType,)
 toString  = str
 
 # conversion from string
-fromString = long
+# Python 3: int replaces long
+fromString = int
 
-# casting/creation function.    
-create = long
+# casting/creation function.
+# Python 3: int replaces long
+create = int

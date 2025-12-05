@@ -54,9 +54,10 @@ software development. Bioinformatics 21, 1678-1684.
 """
 
 # corresponding python type
-from types import IntType as PythonType
+# Python 3: int is the type (IntType doesn't exist)
+PythonType = int
 
-from memops.general.Constants import True, False
+# True and False are built-in keywords in Python 3
 from memops.general.Constants import trueString, falseString
 
 # Python types acceptable as input instead of main type

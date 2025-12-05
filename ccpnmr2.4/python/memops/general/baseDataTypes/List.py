@@ -53,12 +53,12 @@ software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 """
 
-import types
 # corresponding python type
-PythonType = types.ListType
+# Python 3: list/tuple are the types (types.ListType/TupleType don't exist)
+PythonType = list
 
 # Python types acceptable as input instead of main type
-compatibleTypes = (types.TupleType,)
+compatibleTypes = (tuple,)
 
 # Special isValid function
 # None

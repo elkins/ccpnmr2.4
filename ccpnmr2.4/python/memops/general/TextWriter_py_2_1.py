@@ -15,8 +15,6 @@ from memops.universal import Io as uniIo
 
 from memops.general import Util as genUtil
 
-True = not 0
-False = not True
 
 mandatoryAttributes = ('language', 'startComment', 'endComment',
  'startMultilineComment', 'endMultilineComment',
@@ -228,7 +226,7 @@ class TextWriter_py_2_1:
       try:
         os.mkdir(dirName)
       except:
-        print 'Current directory =', os.getcwd()
+        print('Current directory =', os.getcwd())
         raise
 
   ###########################################################################

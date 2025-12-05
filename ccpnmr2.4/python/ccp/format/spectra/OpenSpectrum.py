@@ -62,7 +62,7 @@ if __name__ == '__main__':
   from memops.api.Implementation import MemopsRoot
 
   if len(sys.argv) != 2:
-    print 'Need to specify file'
+    print('Need to specify file')
     sys.exit()
 
   fileName = sys.argv[1]

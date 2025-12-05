@@ -127,12 +127,13 @@ javaTypeCode_enumeration = ['java.lang.Integer','java.lang.Long',
 ]
 javaTypeCode_enumeration.sort()
 
-# names of java simple data types. 
+# names of java simple data types.
 # NB the simpleType for strings is the empty string
 javaSimpleTypeCode_enumeration = [
  'int','long','float','double','boolean', None
 ]
-javaSimpleTypeCode_enumeration.sort()
+# Python 3: Can't compare None with str, use key function
+javaSimpleTypeCode_enumeration.sort(key=lambda x: (x is None, x))
 
 # names of xml data types.
 xmlTypeCode_enumeration = [

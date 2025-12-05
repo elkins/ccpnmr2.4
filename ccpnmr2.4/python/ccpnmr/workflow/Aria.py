@@ -83,15 +83,15 @@ class AriaWorkFlow(WorkFlow):
           break
 
         """
-        print run.inputConstraintStore
-        print run.inputMeasurementLists
-        print run.inputPeakLists
-        print run.inputStructures
-        print run.molSystem
-        print run.outputConstraintStore
-        print run.outputEnsemble
-        print run.outputMeasurementLists
-        print run.outputPeakLists
+        print(run.inputConstraintStore)
+        print(run.inputMeasurementLists)
+        print(run.inputPeakLists)
+        print(run.inputStructures)
+        print(run.molSystem)
+        print(run.outputConstraintStore)
+        print(run.outputEnsemble)
+        print(run.outputMeasurementLists)
+        print(run.outputPeakLists)
         """
     
 
@@ -301,7 +301,7 @@ if __name__ == '__main__':
   while (status not in ('Finished','Failed')):
   
     infoDict = aria.getStatusPageInfo()
-    print aria.uniqueIdentifier, infoDict[aria.uniqueIdentifier]
+    print(aria.uniqueIdentifier, infoDict[aria.uniqueIdentifier])
     
     status = infoDict[aria.uniqueIdentifier]['status']
     

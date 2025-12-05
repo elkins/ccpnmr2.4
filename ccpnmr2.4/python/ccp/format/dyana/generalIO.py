@@ -328,7 +328,7 @@ class DyanaGenericDistanceConstraintFile(DyanaGenericFile):
 
       if len(constraint.items) > 1 and self.noAmbiguous:
 
-        print "  Warning: old DYANA can't handle ambiguous restraints - left out items:"
+        print("  Warning: old DYANA can't handle ambiguous restraints - left out items:")
 
         for i in range(1,len(constraint.items)):
           print "    ",i,

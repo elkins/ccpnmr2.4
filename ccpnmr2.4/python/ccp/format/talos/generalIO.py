@@ -110,7 +110,7 @@ class TalosGenericFile(FormatFile):
             if refVarCode not in cols:
               if refDatum[4]:
                 print cols, refVarCode, refDatum
-                print "  Error: can't read %s file - headers don't match." % self.format
+                print("  Error: can't read %s file - headers don't match." % self.format)
                 return False
               else:
                 continue
@@ -144,7 +144,7 @@ class TalosGenericFile(FormatFile):
 
           else:
 
-            print "  Warning: unparsed %s line:\n%s" % (self.format,line)
+            print("  Warning: unparsed %s line:\n%s" % (self.format,line))
 
       line = fin.readline()
 

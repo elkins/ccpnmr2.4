@@ -83,7 +83,7 @@ class XeasyParams(ExternalParams):
       raise IOError('The file %s does not look like an XEASY param file because the first line does not start "%s"' % (self.paramFile, firstLine))
 
     if line[-1] != '1':
-      print 'Warning: this XEASY param file is version != 1 so might not be interpreted correctly'
+      print('Warning: this XEASY param file is version != 1 so might not be interpreted correctly')
 
     lines = fp.readlines()
     fp.close()
@@ -120,7 +120,7 @@ if __name__ == '__main__':
 
   import sys
   if len(sys.argv) != 2:
-    print 'Error: correct syntax: <script> <XEASY_file>'
+    print('Error: correct syntax: <script> <XEASY_file>')
     sys.exit(1)
 
   xeasy_file = sys.argv[1]

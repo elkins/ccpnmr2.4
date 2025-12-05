@@ -120,7 +120,7 @@ def createTopObjectFallback(topObject):
   backupLocation = location + '.bak'
   if not checkFileAtPath(location) and checkFileAtPath(backupLocation):
     # current file no good and current backup good so do not do backup
-    print 'File at location "%s" not complete so not backing up' % location
+    print('File at location "%s" not complete so not backing up' % location)
     return
 
   # copy rather than move because will need that much disk space in any case
@@ -487,7 +487,7 @@ def renameProject(project, newProjectName):
     return
   
   else:
-    print '### renaming', project.name, newProjectName
+    print('### renaming', project.name, newProjectName)
   
     project.override = True # TBD: for now name is frozen so change this way
     try:

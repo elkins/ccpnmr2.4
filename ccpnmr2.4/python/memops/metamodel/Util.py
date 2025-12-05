@@ -60,12 +60,13 @@ software development. Bioinformatics 21, 1678-1684.
 ######################################################################
 # hack for Python 2.1 compatibility                                                        #
 ######################################################################
-try:
-  junk = True
-  junk = False
-except:
-  True = 1
-  False = 0
+# Python 3: True and False are built-in keywords
+# try:
+#   junk = True
+#   junk = False
+# except:
+#   True = 1
+#   False = 0
 
 import time
 strftime = time.strftime
@@ -204,7 +205,7 @@ def parseCardinality(cardString):
         result.append(int(tag))
       except:
         raise MemopsError("inValid content in cardinality string %s"
-         % `cardString`
+         % repr(cardString)
         )
   
   #
@@ -219,7 +220,7 @@ def parseCardinality(cardString):
     
   else:
     raise MemopsError("inValid cardinality string %s"
-     % `cardString`
+     % repr(cardString)
     )
 
 
@@ -241,12 +242,12 @@ class SimpleGuidGenerator:
       if char in self.operator:
         raise MemopsError(
          "operator %s contains disallowed character %s"
-         % (`self.operator`,`char`)
+         % (repr(self.operator),repr(char))
         )
       if char in self.organisation:
         raise MemopsError(
          "organisation %s contains disallowed character %s"
-         % (`self.organisation`,`char`)
+         % (repr(self.organisation),repr(char))
         )
   
   def newGuid(self):
@@ -333,7 +334,7 @@ def getFuncname(op, inClass=None):
     inClass = op.container
   
   if not op.__class__.__name__ == 'MetaOperation':
-    raise MemopsError("Illegal parameter for getFuncname : %s" % `op`)
+    raise MemopsError("Illegal parameter for getFuncname : %s" % repr(op))
   
   if op.opSubType is not None:
     op = getOperation(op.target, op.opType, inClass)

@@ -53,12 +53,13 @@ software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 """
 
-import types
 # corresponding python type
-PythonType = types.FloatType
+# Python 3: float is the type (types.FloatType doesn't exist)
+PythonType = float
 
 # Python types acceptable as input instead of main type
-compatibleTypes = (types.IntType,types.LongType)
+# Python 3: int (unified from IntType/LongType) is compatible with float
+compatibleTypes = (int,)
 
 # Special isValid function
 # None

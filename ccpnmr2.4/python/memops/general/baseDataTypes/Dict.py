@@ -53,9 +53,9 @@ software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 """
 
-import types
 # corresponding python type
-PythonType = types.DictType
+# Python 3: dict is the type (types.DictType doesn't exist)
+PythonType = dict
 
 # Python types acceptable as input instead of main type
 compatibleTypes = ()

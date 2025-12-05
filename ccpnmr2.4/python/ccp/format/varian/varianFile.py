@@ -3,8 +3,8 @@ import re
 
 # Varian uses convention H1, C13, etc.
 # CCPN uses convention 1H, 13C, etc.
-nucVarianRe = re.compile('^([A-Z]+)(\d+)$')
-nucCcpnRe = re.compile('^(\d+)([A-Z]+)$')
+nucVarianRe = re.compile(r'^([A-Z]+)(\d+)$')
+nucCcpnRe = re.compile(r'^(\d+)([A-Z]+)$')
 
 def varian2ccpn(varianNuc):
 
@@ -26,7 +26,7 @@ def getInt(field, msg, line, n):
 
   try:
     value = int(field)
-  except ValueError, e:
+  except ValueError as e:
     raise IOError('line number %d: field "%s" = %s is not an integer:\n  %s' % (n, msg, field, line))
 
   return value
@@ -35,7 +35,7 @@ def getFloat(field, msg, line, n):
 
   try:
     value = float(field)
-  except ValueError, e:
+  except ValueError as e:
     raise IOError('line number %d: field "%s" = %s is not a real number:\n  %s' % (n, msg, field, line))
 
   return value
@@ -452,7 +452,7 @@ if __name__ == '__main__':
 
   import sys
   if len(sys.argv) not in (3, 4):
-    print 'must specify Varian procpar and data files and optionally block'
+    print('must specify Varian procpar and data files and optionally block')
     sys.exit()
 
   if len(sys.argv) == 4:

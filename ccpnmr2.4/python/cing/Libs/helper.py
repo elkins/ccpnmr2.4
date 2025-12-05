@@ -32,15 +32,15 @@ def _nTgetoutput( cmd ):
 # end def
 def _nTerror(msg):
     'Convenience method'
-    print "ERROR:",msg
+    print("ERROR:", msg)
 # end def
 def _nTwarning(msg):
     'Convenience method'
-    print "WARNING:",msg
+    print("WARNING:", msg)
 # end def
 def _nTmessage(msg):
     'Convenience method'
-    print msg
+    print(msg)
 # end def
 #-----------------------------------------------------------------------------------
 

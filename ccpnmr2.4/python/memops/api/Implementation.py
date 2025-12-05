@@ -58,7 +58,10 @@ and contains original contributions embedded in the framework
 ===========================REFERENCE END===============================
 """
 
-import cStringIO
+try:
+  import cStringIO as StringIO
+except ImportError:
+  import io as StringIO
 #import sets
 import traceback
 import types
@@ -67,7 +70,7 @@ import operator
 # special function for fast whitespace checking.
 # used in DataType Word and Token handcode
 import re
-containsWhitespace = re.compile('\s').search
+containsWhitespace = re.compile(r'\s').search
 containsNonAlphanumeric = re.compile('[^a-zA-Z0-9_]').search
  
 from memops.general import Implementation as implementation
@@ -398,7 +401,7 @@ class Url(MemopsDataTypeObject):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.Url.__init__"
+      print("ERROR in memops.Implementation.Url.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -1332,7 +1335,7 @@ class SymmTracelessMatrix(MemopsDataTypeObject):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.SymmTracelessMatrix.__init__"
+      print("ERROR in memops.Implementation.SymmTracelessMatrix.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -1925,7 +1928,7 @@ class AppDataDouble(ApplicationData):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.AppDataDouble.__init__"
+      print("ERROR in memops.Implementation.AppDataDouble.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -2266,7 +2269,7 @@ class AppDataFloat(ApplicationData):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.AppDataFloat.__init__"
+      print("ERROR in memops.Implementation.AppDataFloat.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -2607,7 +2610,7 @@ class AppDataLong(ApplicationData):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.AppDataLong.__init__"
+      print("ERROR in memops.Implementation.AppDataLong.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -2936,7 +2939,7 @@ class AppDataInt(ApplicationData):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.AppDataInt.__init__"
+      print("ERROR in memops.Implementation.AppDataInt.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -3265,7 +3268,7 @@ class AppDataBoolean(ApplicationData):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.AppDataBoolean.__init__"
+      print("ERROR in memops.Implementation.AppDataBoolean.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -3586,7 +3589,7 @@ class AppDataString(ApplicationData):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      print "ERROR in memops.Implementation.AppDataString.__init__"
+      print("ERROR in memops.Implementation.AppDataString.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -5743,7 +5746,7 @@ Implementations
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in memops.Implementation.MemopsRoot.__init__"
+        print("ERROR in memops.Implementation.MemopsRoot.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -24239,7 +24242,7 @@ class PackageLocator(ImplementationObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in memops.Implementation.PackageLocator.__init__"
+        print("ERROR in memops.Implementation.PackageLocator.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -24274,10 +24277,10 @@ class PackageLocator(ImplementationObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object.
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
@@ -25207,7 +25210,7 @@ class Repository(ImplementationObject):
             func(self, value)
         del dataDict['inConstructor']
       except:
-        print "ERROR in memops.Implementation.Repository.__init__"
+        print("ERROR in memops.Implementation.Repository.__init__")
         del dataDict['inConstructor']
         raise
 
@@ -25242,10 +25245,10 @@ class Repository(ImplementationObject):
         self.delete()
         del dataDict['inConstructor']
       except:
-        print '''WARNING Error in clean-up of incorrectly created object. 
-        Data may be left in an illegal state'''
+        print('''WARNING Error in clean-up of incorrectly created object.
+        Data may be left in an illegal state''')
         del dataDict['inConstructor']
-      raise exc_info[0], exc_info[1], exc_info[2]
+      raise exc_info[1].with_traceback(exc_info[2])
 
     # doNotifies
 
