@@ -84,6 +84,42 @@ This living document outlines a **pragmatic, staged strategy** for modernizing t
 **Secondary Goal:** Reduce dependency on C compilation where feasible
 **Non-Goal:** Complete architectural rewrite or GUI modernization (beyond scope)
 
+### Why Python 3 Modernization Enables Performance
+
+Python 3 provides mature performance optimization tools that can match or exceed C code performance:
+
+**Performance Technologies Available in Python 3:**
+- **Numba JIT Compiler:** Just-in-time compilation to machine code, often matching C speed
+  - Particularly effective for numerical algorithms (contouring, peak detection)
+  - Zero code changes required in many cases (just add `@numba.jit` decorator)
+  - LLVM-based compilation produces highly optimized machine code
+
+- **Cython:** Python → C compilation for performance-critical sections
+  - Can achieve C-level performance with type annotations
+  - Seamless integration with existing Python code
+  - Already in use for some converted modules
+
+- **NumPy Vectorization:** Optimized array operations in C/Fortran
+  - Modern NumPy is highly optimized and maintained
+  - Better memory management than manual C code in many cases
+  - GPU acceleration possible via CuPy (future option)
+
+- **Modern CPython Optimizations:** Python 3.11+ includes significant speedups
+  - 25% faster than Python 3.10 on average
+  - Specialized bytecode interpreter
+  - Better memory allocation
+
+**Why This Wasn't Possible in Python 2:**
+- Python 2 lacks mature JIT compilation (Numba requires Python 3.6+)
+- Many performance libraries have dropped Python 2 support
+- Python 3's better memory management enables optimization techniques
+- Active development and optimization only happening in Python 3
+
+**Implication for Performance Concerns:**
+The research team's concern about contouring performance on large 3D/4D spectra can be addressed using these Python 3 technologies. In some cases, Numba-optimized Python code can actually outperform equivalent C code due to LLVM's advanced optimizations.
+
+**This makes Python 3 modernization not just necessary (OS support), but potentially beneficial (performance opportunities).**
+
 ---
 
 ## Guiding Principles (Updated)
