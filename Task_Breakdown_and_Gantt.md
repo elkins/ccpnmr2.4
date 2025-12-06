@@ -645,7 +645,7 @@ docs/user-guide-python3
 ```
 
 ### Merge Strategy
-- Merge to `analysis-phase` branch
+- Merge to `development` branch
 - Stream 1: Sequential merges (order matters)
 - Stream 2: Independent merges (no conflicts)
 - Stream 3: Sequential within stream

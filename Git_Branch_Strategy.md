@@ -7,7 +7,7 @@ This document defines the branch structure, naming conventions, and merge strate
 ## Branch Structure
 
 ```
-analysis-phase (main development branch)
+development (main development branch)
 │
 ├── Stream 1: Python 2→3 Completion
 │   ├── fix/standarderror-exceptions
@@ -76,7 +76,7 @@ validation/scientific-results         # Task 4.3
 
 **Stream 1: Python 2→3 Completion**
 ```
-analysis-phase
+development
     ↑
     └── fix/standarderror-exceptions (Task 1.1)
             ↑
@@ -86,9 +86,9 @@ analysis-phase
 ```
 
 **Merge Order:**
-1. `fix/standarderror-exceptions` → `analysis-phase`
-2. `validate/python3-imports` → `analysis-phase`
-3. `test/python3-smoke-tests` → `analysis-phase`
+1. `fix/standarderror-exceptions` → `development`
+2. `validate/python3-imports` → `development`
+3. `test/python3-smoke-tests` → `development`
 
 **Why Sequential:** Each task depends on the previous completing successfully.
 
@@ -96,7 +96,7 @@ analysis-phase
 
 **Stream 3: Performance (Critical Path)**
 ```
-analysis-phase
+development
     ↑
     └── perf/testing-infrastructure (Task 3.1)
             ↑
@@ -108,10 +108,10 @@ analysis-phase
 ```
 
 **Merge Order:**
-1. `perf/testing-infrastructure` → `analysis-phase`
-2. `perf/contour-profiling` → `analysis-phase`
-3. `perf/contour-optimization` → `analysis-phase`
-4. `perf/general-optimization` → `analysis-phase` (can merge anytime after 3.1)
+1. `perf/testing-infrastructure` → `development`
+2. `perf/contour-profiling` → `development`
+3. `perf/contour-optimization` → `development`
+4. `perf/general-optimization` → `development` (can merge anytime after 3.1)
 
 **Why Sequential:** Each performance task builds on infrastructure from previous.
 
@@ -124,7 +124,7 @@ analysis-phase
 All these branches are **completely independent** and can be merged in any order:
 
 ```
-analysis-phase
+development
     ↑
     ├── convert/list-to-python           (Task 2.1) - Can merge anytime
     ├── convert/diag-dbl-numpy           (Task 2.2) - Can merge anytime
@@ -148,7 +148,7 @@ analysis-phase
 **Stream 4: Validation (Mostly Sequential)**
 
 ```
-analysis-phase
+development
     ↑
     └── validation/prepare-datasets (Task 4.1)
             ↑
@@ -160,10 +160,10 @@ analysis-phase
 ```
 
 **Merge Order:**
-1. `validation/prepare-datasets` → `analysis-phase`
-2. `validation/comparison-framework` → `analysis-phase`
-3. `validation/scientific-results` → `analysis-phase`
-4. `docs/user-guide-python3` → `analysis-phase`
+1. `validation/prepare-datasets` → `development`
+2. `validation/comparison-framework` → `development`
+3. `validation/scientific-results` → `development`
+4. `docs/user-guide-python3` → `development`
 
 **Why Sequential:** Each validation task needs outputs from previous task.
 
@@ -173,65 +173,65 @@ analysis-phase
 
 ### Create All Stream 1 Branches
 ```bash
-git checkout analysis-phase
-git pull origin analysis-phase
+git checkout development
+git pull origin development
 
 # Task 1.1
 git checkout -b fix/standarderror-exceptions
 git push -u origin fix/standarderror-exceptions
 
 # Task 1.2 (create from main, but don't start work until 1.1 merged)
-git checkout analysis-phase
+git checkout development
 git checkout -b validate/python3-imports
 git push -u origin validate/python3-imports
 
 # Task 1.3
-git checkout analysis-phase
+git checkout development
 git checkout -b test/python3-smoke-tests
 git push -u origin test/python3-smoke-tests
 ```
 
 ### Create All Stream 2 Branches (Can all be created now)
 ```bash
-git checkout analysis-phase
+git checkout development
 
 for module in list-to-python diag-dbl-numpy eigenvalue-numpy hash-list-python gamma-scipy fit1d-scipy cpmg-scipy; do
     git checkout -b convert/$module
     git push -u origin convert/$module
-    git checkout analysis-phase
+    git checkout development
 done
 ```
 
 ### Create All Stream 3 Branches
 ```bash
-git checkout analysis-phase
+git checkout development
 
 for task in testing-infrastructure contour-profiling contour-optimization general-optimization; do
     git checkout -b perf/$task
     git push -u origin perf/$task
-    git checkout analysis-phase
+    git checkout development
 done
 ```
 
 ### Create All Stream 4 Branches
 ```bash
-git checkout analysis-phase
+git checkout development
 
 git checkout -b validation/prepare-datasets
 git push -u origin validation/prepare-datasets
-git checkout analysis-phase
+git checkout development
 
 git checkout -b validation/comparison-framework
 git push -u origin validation/comparison-framework
-git checkout analysis-phase
+git checkout development
 
 git checkout -b validation/scientific-results
 git push -u origin validation/scientific-results
-git checkout analysis-phase
+git checkout development
 
 git checkout -b docs/user-guide-python3
 git push -u origin docs/user-guide-python3
-git checkout analysis-phase
+git checkout development
 ```
 
 ---
@@ -251,20 +251,20 @@ git checkout analysis-phase
 
 2. **Update feature branch with latest main** (if needed)
    ```bash
-   git checkout analysis-phase
-   git pull origin analysis-phase
+   git checkout development
+   git pull origin development
    git checkout fix/standarderror-exceptions
-   git merge analysis-phase
+   git merge development
    # Resolve any conflicts
    git push origin fix/standarderror-exceptions
    ```
 
 3. **Merge to main branch**
    ```bash
-   git checkout analysis-phase
-   git pull origin analysis-phase
+   git checkout development
+   git pull origin development
    git merge --no-ff fix/standarderror-exceptions
-   git push origin analysis-phase
+   git push origin development
    ```
 
 4. **Delete merged branch** (optional, keeps repo clean)
@@ -338,9 +338,9 @@ If conflicts occur, priority order:
 ```bash
 Week 1:
 - Work on fix/standarderror-exceptions (Task 1.1)
-- Merge to analysis-phase
+- Merge to development
 - Work on validate/python3-imports (Task 1.2)
-- Merge to analysis-phase
+- Merge to development
 
 Week 2:
 - Work on test/python3-smoke-tests (Task 1.3)
@@ -403,7 +403,7 @@ git checkout perf/contour-optimization
 # Remote contributor workflow:
 git clone https://github.com/elkins/ccpnmr2.4.git
 cd ccpnmr2.4
-git checkout analysis-phase
+git checkout development
 git checkout -b convert/hash-list-python
 
 # ... work on conversion ...
@@ -488,7 +488,7 @@ git push origin --delete fix/standarderror-exceptions
 If Task 3.3 (contour optimization) causes problems:
 
 ```bash
-git checkout analysis-phase
+git checkout development
 git log --oneline --graph
 
 # Find the merge commit
@@ -496,7 +496,7 @@ git log --oneline --graph
 
 # Revert the entire merge
 git revert -m 1 ghi789
-git push origin analysis-phase
+git push origin development
 ```
 
 ### Scenario 2: Hotfix Needed During Development
@@ -504,18 +504,18 @@ git push origin analysis-phase
 Critical bug found while branches are in progress:
 
 ```bash
-git checkout analysis-phase
+git checkout development
 git checkout -b hotfix/critical-bug-description
 # ... fix the bug ...
 git commit -m "Hotfix: Fix critical bug in ..."
-git checkout analysis-phase
+git checkout development
 git merge hotfix/critical-bug-description
-git push origin analysis-phase
+git push origin development
 
 # Update all active branches
 for branch in fix/standarderror-exceptions convert/list-to-python; do
     git checkout $branch
-    git merge analysis-phase
+    git merge development
     git push origin $branch
 done
 ```
@@ -527,12 +527,12 @@ Developer A and Developer B both modify `contour.py`:
 ```bash
 # Developer B's branch
 git checkout perf/contour-optimization
-git merge analysis-phase
+git merge development
 # CONFLICT in ccpnmr2.4/python/ccpnmr/analysis/contour.py
 
 # Resolve manually
 git add ccpnmr2.4/python/ccpnmr/analysis/contour.py
-git commit -m "Merge analysis-phase and resolve conflicts"
+git commit -m "Merge development and resolve conflicts"
 git push origin perf/contour-optimization
 ```
 
@@ -554,12 +554,12 @@ git branch -a -v
 
 ### Check Branch Status Against Main
 ```bash
-# Commits in branch not in analysis-phase
+# Commits in branch not in development
 git checkout convert/list-to-python
-git log analysis-phase..HEAD --oneline
+git log development..HEAD --oneline
 
-# Commits in analysis-phase not in branch
-git log HEAD..analysis-phase --oneline
+# Commits in development not in branch
+git log HEAD..development --oneline
 ```
 
 ### Visual Branch Graph
@@ -640,18 +640,18 @@ echo "Stream 2: C→Python Conversions"
 
 ### Create Branch for Task
 ```bash
-git checkout analysis-phase
-git pull origin analysis-phase
+git checkout development
+git pull origin development
 git checkout -b <type>/<scope>-<description>
 git push -u origin <type>/<scope>-<description>
 ```
 
 ### Merge Branch to Main
 ```bash
-git checkout analysis-phase
-git pull origin analysis-phase
+git checkout development
+git pull origin development
 git merge --no-ff <branch-name>
-git push origin analysis-phase
+git push origin development
 ```
 
 ### Delete Merged Branch
@@ -663,7 +663,7 @@ git push origin --delete <branch-name>
 ### Update Branch from Main
 ```bash
 git checkout <branch-name>
-git merge analysis-phase
+git merge development
 git push origin <branch-name>
 ```
 
