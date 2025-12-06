@@ -44,19 +44,19 @@
 **Concerns:** Realistic timelines, scope control, ROI, resource allocation
 
 **Assessment:**
-- **Original scope was underestimated**: 58,354 lines of C code + 1.6M lines Python + extensive GUI
+- **Scope is now understood**: 58,354 lines of C code + 1.6M lines Python + extensive GUI
 - **Progress is real but incomplete**: 47% of C code converted, but this represents "easy" modules
 - **Resource reality**: Single developer + research team validation ≠ full-time software engineering team
 - **ROI is mixed**:
   - ✅ Core scientific functionality (file I/O, data processing) is working
-  - ⚠️ GUI modernization requires 10x more effort than initially estimated
+  - ⚠️ GUI modernization would require significantly more effort
   - ✅ Python 3 compatibility enables continued use on modern systems
 
 **Recommendations:**
-- **Redefine success criteria** (see Phase 2 Scope Reduction below)
+- **Define success criteria clearly** (see Minimum Viable Modernization below)
 - Focus on "core library" vs "full application" modernization
 - Acknowledge GUI modernization as separate multi-year project
-- Define "minimum viable modernization" more narrowly
+- Define "minimum viable modernization" scope
 
 ### 3. Research Science Team Perspective
 **Concerns:** NMR functionality, publication continuity, learning curve, stability
@@ -157,7 +157,7 @@ The research team's concern about contouring performance on large 3D/4D spectra 
 - ✅ Validated approach: Varian 3D reader works in Python 3
 - ✅ Identified scope reality: GUI modernization is separate multi-year project
 
-**Key Learning:** Original scope assumption was 10x too small for GUI modernization.
+**Key Learning:** GUI modernization requires significantly more effort than core library modernization.
 
 ---
 
@@ -512,6 +512,10 @@ These resources are not required for MVM but would be needed for broader initiat
 
 **Note:** These are the first level-of-effort estimates for this project, based on analysis of work completed so far. These estimates have not yet been presented to stakeholders.
 
+**For detailed week-by-week breakdown with specific tasks, see:** [Task_Breakdown_and_Gantt.md](Task_Breakdown_and_Gantt.md)
+
+The Gantt chart breaks this high-level timeline into 18 specific tasks with effort estimates, dependencies, and parallelization opportunities. With optimal team allocation (3-4 developers), the timeline to production rollout can be compressed to 4-6 weeks.
+
 ### Q1 2025 (Complete)
 - ✅ Phase 1: Assessment, proof of concept, test infrastructure
 - ✅ Python 2→3 conversion: 95% complete
@@ -585,29 +589,38 @@ These resources are not required for MVM but would be needed for broader initiat
 
 ## Next Steps (Immediate Actions)
 
-### Week 1-2
+**For detailed task breakdown, dependencies, and Gantt chart, see:** [Task_Breakdown_and_Gantt.md](Task_Breakdown_and_Gantt.md)
+
+The companion Gantt chart document provides:
+- 18 specific tasks with clear entry/exit criteria
+- Dependency graph showing what can be parallelized
+- Branch naming conventions for team coordination
+- 4 independent work streams that can run in parallel
+- Resource allocation matrix
+- Risk assessment for each task
+
+### High-Level Immediate Actions
+
+### Week 1-2 (5 tasks can start immediately)
 1. ✅ Update this planning document (COMPLETE)
-2. 🎯 Fix remaining 2 Python syntax issues (StandardError)
-3. 🎯 Run comprehensive smoke test (100% core library)
-4. 🎯 Present revised plan to research team leader
-5. 🎯 Get stakeholder approval for MVM scope
+2. 🎯 **Task 1.1:** Fix StandardError issues (2-4h) - See Gantt doc
+3. 🎯 **Task 1.2:** Import validation (4-6h) - See Gantt doc
+4. 🎯 **Task 4.1:** Prepare validation datasets (4-6h) - See Gantt doc
+5. 🎯 **Tasks 2.1-2.3:** Convert 3 C modules in parallel (4-7h total) - See Gantt doc
+6. 🎯 Present revised plan to research team leader
+7. 🎯 Get stakeholder approval for MVM scope
 
-### Month 1
-1. 🎯 Identify ≥3 production datasets for validation
-2. 🎯 Create validation scripts and documentation
-3. 🎯 Convert next priority C modules (file I/O, data processing)
-4. 🎯 Benchmark critical workflows (baseline performance)
+### Week 2-4 (Critical path begins)
+1. 🎯 **Task 1.3:** Smoke tests (8-12h)
+2. 🎯 **Task 3.1:** Performance infrastructure (8-12h) - **Critical path**
+3. 🎯 **Task 3.2:** Profile contouring (15-20h) - **Critical path**
+4. 🎯 **Tasks 2.4-2.7:** Convert 4 more C modules in parallel
+5. 🎯 **Task 4.2:** Validation framework (8-12h)
 
-### Month 2-3
-1. 🎯 Research team validation begins
-2. 🎯 Address validation feedback
-3. 🎯 Continue C→Python conversion toward 80% target
-4. 📚 Write user documentation
-
-### Month 4-6
-1. 🎯 Complete critical C module conversions
-2. 🎯 Performance optimization if needed
-3. 🎯 Staged rollout preparation
+### Week 4-6 (Performance optimization - CRITICAL)
+1. 🎯 **Task 3.3:** Optimize contouring with Numba (15-25h) - **Critical path**
+2. 🎯 **Task 4.3:** Execute scientific validation (12-16h) - **Critical path**
+3. 🎯 **Task 4.4:** User documentation (10-15h)
 4. 🎯 Final validation round
 
 ---
