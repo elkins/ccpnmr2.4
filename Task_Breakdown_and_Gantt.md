@@ -13,6 +13,8 @@
 
 **Timeline to Rollout:** 4-6 weeks with 3-4 developers + QA + research team
 
+**Branch Structure:** All 18 task branches have been created and pushed to GitHub. See [Git_Branch_Strategy.md](Git_Branch_Strategy.md) for detailed branching strategy, merge workflows, and conflict prevention.
+
 ---
 
 ## Work Stream Organization
@@ -126,22 +128,24 @@ Week 7+ (Staged Rollout - Success!)
 
 ## Task Quick Reference
 
+**All branches created and ready!** Simply checkout the branch for your task and start working. See [Git_Branch_Strategy.md](Git_Branch_Strategy.md) for merge workflows.
+
 ### 🚀 Can Start TODAY (No Blockers):
-1. **Task 1.1:** Fix StandardError (2-4h)
-2. **Task 2.1:** Convert list.c (2-3h)
-3. **Task 2.2:** Convert diag_dbl.c (1-2h)
-4. **Task 2.3:** Convert eigenvalue.c (1-2h)
-5. **Task 4.1:** Prepare datasets (4-6h)
+1. **Task 1.1:** Fix StandardError (2-4h) - Branch: `fix/standarderror-exceptions`
+2. **Task 2.1:** Convert list.c (2-3h) - Branch: `convert/list-to-python`
+3. **Task 2.2:** Convert diag_dbl.c (1-2h) - Branch: `convert/diag-dbl-numpy`
+4. **Task 2.3:** Convert eigenvalue.c (1-2h) - Branch: `convert/eigenvalue-numpy`
+5. **Task 4.1:** Prepare datasets (4-6h) - Branch: `validation/prepare-datasets`
 
 ### 🟡 Can Start After Day 1 (Task 1.1 complete):
-6. **Task 1.2:** Import validation (4-6h)
-7. **Task 2.4:** Convert hash_list.c (2-3h)
-8. **Task 2.5:** Convert gamma.c (2-3h)
+6. **Task 1.2:** Import validation (4-6h) - Branch: `validate/python3-imports`
+7. **Task 2.4:** Convert hash_list.c (2-3h) - Branch: `convert/hash-list-python`
+8. **Task 2.5:** Convert gamma.c (2-3h) - Branch: `convert/gamma-scipy`
 
 ### 🔴 Critical Path (Must Complete for Rollout):
-- **Task 3.2:** Profile contouring (15-20h) - Week 3-4
-- **Task 3.3:** Optimize contouring (15-25h) - Week 4-6
-- **Task 4.3:** Scientific validation (12-16h) - Week 3-4
+- **Task 3.2:** Profile contouring (15-20h) - Week 3-4 - Branch: `perf/contour-profiling`
+- **Task 3.3:** Optimize contouring (15-25h) - Week 4-6 - Branch: `perf/contour-optimization`
+- **Task 4.3:** Scientific validation (12-16h) - Week 3-4 - Branch: `validation/scientific-results`
 
 ---
 

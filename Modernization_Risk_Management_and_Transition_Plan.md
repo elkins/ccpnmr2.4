@@ -591,12 +591,13 @@ The Gantt chart breaks this high-level timeline into 18 specific tasks with effo
 
 **For detailed task breakdown, dependencies, and Gantt chart, see:** [Task_Breakdown_and_Gantt.md](Task_Breakdown_and_Gantt.md)
 
-The companion Gantt chart document provides:
-- 18 specific tasks with clear entry/exit criteria
-- Dependency graph showing what can be parallelized
-- Branch naming conventions for team coordination
+**For git branch strategy and merge workflows, see:** [Git_Branch_Strategy.md](Git_Branch_Strategy.md)
+
+The companion documents provide:
+- **Gantt Chart:** 18 specific tasks with clear entry/exit criteria, dependency graph, resource allocation
+- **Branch Strategy:** All 18 task branches created and pushed to GitHub, merge workflows, conflict prevention
 - 4 independent work streams that can run in parallel
-- Resource allocation matrix
+- Branch naming conventions for team coordination
 - Risk assessment for each task
 
 ### High-Level Immediate Actions
