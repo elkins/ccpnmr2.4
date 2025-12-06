@@ -365,11 +365,14 @@ These are assumptions that could easily be made without deep analysis, but turn 
    - Clear documentation on switching versions
 
 ### Not in MVM Scope (Explicitly Deferred)
-- ❌ Complete C code removal (hybrid architecture acceptable)
+- ❌ Complete C code removal (hybrid architecture acceptable - some C modules may remain)
 - ❌ GUI modernization (separate multi-year project)
-- ❌ Architectural refactoring (preserve working code)
-- ❌ API redesign (maintain compatibility)
-- ❌ Performance optimization beyond parity (nice-to-have, not required)
+- ❌ Architectural refactoring (preserve working code where possible)
+- ❌ API redesign (maintain compatibility with existing code)
+- ❌ Performance optimization **beyond** parity (exceeding C speed is nice-to-have, not required)
+
+**Note:** Performance **parity** (matching C implementation speed) **IS** in scope and required.
+Only performance **exceeding** C implementation is not required.
 
 ---
 
