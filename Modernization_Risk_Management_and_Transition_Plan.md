@@ -12,7 +12,13 @@
 - ✅ Core algorithms validated: Kabsch alignment, contour generation, peak detection
 - ✅ Stakeholder alignment: All agree GUI modernization is out of scope (separate future project)
 
-**Critical Insight:** This document provides the first comprehensive scope analysis and timeline estimates for stakeholder review.
+**Critical User Concern:**
+⚠️ **Research team reports concern about contouring performance on large 3D/4D spectra**
+- Phase 3 (Performance Profiling & Optimization) added as **CRITICAL blocking concern**
+- Must validate Python implementation meets performance needs before production rollout
+- Hybrid fallback option available if pure Python cannot meet requirements
+
+**Document Purpose:** This provides the first comprehensive scope analysis, timeline estimates, and performance validation plan for stakeholder review.
 
 ---
 
@@ -158,8 +164,49 @@ This living document outlines a **pragmatic, staged strategy** for modernizing t
 
 ---
 
-### Phase 3: Validation & Documentation 🔄 ONGOING
-**Timeline:** Parallel with Phase 2
+### Phase 3: Performance Profiling & Optimization (CRITICAL)
+**Timeline:** Parallel with Phase 2, before Phase 4 rollout
+**Scope:** Ensure Python implementation meets performance requirements for large spectra
+
+**Critical User Concern:**
+⚠️ **Research team reports concern that contouring may be too slow with very large 3D/4D spectra**
+
+This is a **blocking concern** that must be addressed before production rollout.
+
+**Objectives:**
+1. **Profile contouring performance** on real-world large datasets (3D/4D spectra)
+2. **Establish baseline**: Measure C implementation performance as target
+3. **Measure Python implementation**: Identify bottlenecks and performance gaps
+4. **Optimize critical paths**: Apply Numba JIT, Cython, or algorithmic improvements
+5. **Validate performance**: Demonstrate acceptable performance on production-scale data
+
+**Specific Focus Areas:**
+- **Contouring algorithms**: Marching squares/cubes for 3D/4D data
+- **Memory efficiency**: Large datasets may exceed available RAM
+- **I/O performance**: Reading large spectrum files (Varian, Bruker, NMRPipe)
+- **Peak detection**: Performance on datasets with thousands of peaks
+- **Rendering**: Display update performance for interactive use
+
+**Success Criteria:**
+- ✅ Python implementation ≥90% speed of C implementation for contouring
+- ✅ Successfully processes production 4D spectra in reasonable time
+- ✅ Memory usage within acceptable limits (no crashes on large datasets)
+- ✅ Research team confirms performance is acceptable for their workflows
+- ✅ Documented performance characteristics and any known limitations
+
+**Risk Mitigation:**
+- If performance targets cannot be met with pure Python:
+  - Option 1: Keep C implementation for contouring (hybrid approach)
+  - Option 2: Use Cython for performance-critical sections
+  - Option 3: Implement progressive rendering or caching strategies
+  - Option 4: Defer rollout until optimization complete
+
+**Status:** Not yet started - requires production datasets from research team
+
+---
+
+### Phase 4: Validation & Documentation 🔄 ONGOING
+**Timeline:** Parallel with Phase 2 & 3
 **Scope:** Ensure research users can validate scientific correctness
 
 **Current Status:**
@@ -180,9 +227,14 @@ This living document outlines a **pragmatic, staged strategy** for modernizing t
 
 ---
 
-### Phase 4: Staged Rollout (NOT YET STARTED)
-**Timeline:** 3-6 months after Phase 2 & 3 complete
+### Phase 5: Staged Rollout (NOT YET STARTED)
+**Timeline:** 3-6 months after Phase 2, 3, & 4 complete
 **Scope:** Enable research team to use modernized version for non-critical work
+
+**Prerequisites:**
+- ✅ Phase 3 performance validation complete (contouring acceptable)
+- ✅ Phase 4 scientific validation complete (results correct)
+- ✅ No blocking performance or correctness issues
 
 **Approach:**
 - Dual installation: Legacy Python 2 + Modern Python 3 side-by-side
@@ -193,12 +245,13 @@ This living document outlines a **pragmatic, staged strategy** for modernizing t
 **Success Criteria:**
 - ≥50% of new research projects use Python 3 version
 - Zero data loss or corruption events
+- No user complaints about contouring or analysis performance
 - Research team reports no blocking issues
 - Clear escalation path for problems
 
 ---
 
-### Phase 5: GUI Modernization (OUT OF SCOPE - Separate Future Project)
+### Phase 6: GUI Modernization (OUT OF SCOPE - Separate Future Project)
 **Status:** **Explicitly out of scope for current MVM effort**
 **Stakeholder Agreement:** All stakeholders acknowledge and agree that GUI modernization must be a completely separate project
 
@@ -257,10 +310,12 @@ These are assumptions that could easily be made without deep analysis, but turn 
    - Contour generation
    - Basic data analysis
 
-3. ⚠️ **Performance validation** (infrastructure exists, needs production validation)
-   - Benchmarks show ≥90% of C performance
+3. ⚠️ **Performance validation** (CRITICAL - Phase 3)
+   - **Contouring on large 3D/4D spectra acceptable** (research team concern)
+   - Benchmarks show ≥90% of C performance for critical operations
+   - Memory usage acceptable for production datasets
    - No blocking performance regressions
-   - Critical workflows complete in reasonable time
+   - Research team confirms performance meets their needs
 
 4. 📚 **Documentation for research users** (in progress)
    - What works in Python 3 version
@@ -289,10 +344,12 @@ These are assumptions that could easily be made without deep analysis, but turn 
 | Risk | Impact | Probability | Mitigation | Status |
 |------|--------|-------------|------------|--------|
 | Scientific correctness errors | HIGH | LOW | 800+ tests, side-by-side validation | ✅ Mitigated |
-| Performance regression | MEDIUM | MEDIUM | Benchmarking, profiling, accept 90% threshold | 🔄 Monitoring |
+| **Contouring performance on large 3D/4D spectra** | **HIGH** | **MEDIUM-HIGH** | **Phase 3: Profiling & optimization, hybrid fallback option** | **⚠️ CRITICAL - Must address** |
+| Performance regression (general) | MEDIUM | MEDIUM | Benchmarking, profiling, accept 90% threshold | 🔄 Monitoring |
 | Python 3 compatibility issues | MEDIUM | LOW | 95% converted, remaining issues isolated | ✅ Nearly mitigated |
 | C extension build failures | LOW | HIGH | Pure Python alternatives exist | ✅ Mitigated |
-| GUI instability | HIGH | HIGH | Accept legacy GUI or defer modernization | ⚠️ Needs decision |
+| Memory issues with large datasets | MEDIUM | MEDIUM | Profile memory usage, implement streaming/caching | 🔄 Monitoring |
+| GUI instability | HIGH | HIGH | Accept legacy GUI or defer modernization | ⚠️ Out of scope |
 
 ### Project Management Risks
 
@@ -412,27 +469,36 @@ These resources are not required for MVM but would be needed for broader initiat
 ### Q2 2025 (Current)
 - 🔄 Phase 2A: Complete Python 2→3 syntax (remaining 5%)
 - 🔄 Phase 2B: C→Python conversion (47% → 80%)
-- 🔄 Phase 3: Research team validation begins
+- 🔄 Phase 4: Scientific validation begins
 
 ### Q3 2025 (Estimated)
 - 🎯 Phase 2B: Complete critical C modules (80% target)
-- 🎯 Phase 3: Full validation with production datasets
+- ⚠️ **Phase 3: Performance profiling & optimization (CRITICAL)**
+  - Profile contouring on large 3D/4D spectra
+  - Identify and optimize bottlenecks
+  - Validate performance acceptable to research team
+- 🎯 Phase 4: Full validation with production datasets
 - 📚 Documentation: User guides, validation procedures
 
 ### Q4 2025 (Estimated)
-- 🎯 Phase 3: Address validation feedback
-- 🎯 Phase 4: Staged rollout begins
-- 🎯 Performance optimization if needed
+- 🎯 Phase 3: Complete performance optimization (if needed)
+- 🎯 Phase 4: Address validation feedback
+- 🎯 Phase 5: Staged rollout preparation
 
 ### Q1 2026 (Estimated)
-- 🎯 Phase 4: Full rollout to research team
+- 🎯 Phase 5: Staged rollout to research team
 - 🎯 Monitor adoption, stability, performance
-- 🎯 MVM declared complete (or timeline adjusted)
+- 🎯 Address any performance issues discovered in production use
+
+### Q2 2026 (Estimated)
+- 🎯 Phase 5: Full rollout complete
+- 🎯 MVM declared complete (or timeline adjusted based on performance work)
+- 📚 Final documentation and handoff
 
 ### Future (Out of Scope for MVM)
-- ⏸️ Phase 5: GUI modernization (explicitly out of scope - separate future project)
+- ⏸️ Phase 6: GUI modernization (explicitly out of scope - separate future project)
 - ⏸️ Additional C module conversion (if determined necessary)
-- ⏸️ Performance optimization beyond MVM requirements
+- ⏸️ Further performance optimization beyond MVM requirements
 
 **Total Estimated Timeline:** 12-15 months from project start to MVM complete.
 **Status:** These estimates are provided for planning purposes and will be reviewed with stakeholders.
