@@ -81,33 +81,42 @@
 This living document outlines a **pragmatic, staged strategy** for modernizing the CCPNMR codebase to ensure continued usability on modern systems while acknowledging resource constraints and research priorities.
 
 **Primary Goal:** Enable NMR research on Python 3 with modern OS support
-**Secondary Goal:** Reduce dependency on C compilation where feasible
+**Secondary Goal:** Eliminate C compilation requirements (using JIT technologies like Numba)
+**Tertiary Goal:** Reduce remaining C dependencies where feasible (hybrid fallback acceptable)
 **Non-Goal:** Complete architectural rewrite or GUI modernization (beyond scope)
 
 ### Why Python 3 Modernization Enables Performance
 
-Python 3 provides mature performance optimization tools that can match or exceed C code performance:
+Python 3 provides mature performance optimization tools that can match or exceed C code performance **without requiring C compilation**.
 
-**Performance Technologies Available in Python 3:**
-- **Numba JIT Compiler:** Just-in-time compilation to machine code, often matching C speed
-  - Particularly effective for numerical algorithms (contouring, peak detection)
-  - Zero code changes required in many cases (just add `@numba.jit` decorator)
+**Performance Technologies Available in Python 3 (No Compilation Required):**
+
+- **Numba JIT Compiler (PRIMARY APPROACH):** Just-in-time compilation to machine code
+  - Often matches or exceeds C speed for numerical algorithms
+  - **No C compiler required** - compiles at runtime via LLVM
+  - Particularly effective for contouring, peak detection algorithms
+  - Zero code changes in many cases (just add `@numba.jit` decorator)
   - LLVM-based compilation produces highly optimized machine code
+  - **This is the primary technology for meeting performance requirements**
 
-- **Cython:** Python → C compilation for performance-critical sections
-  - Can achieve C-level performance with type annotations
-  - Seamless integration with existing Python code
-  - Already in use for some converted modules
-
-- **NumPy Vectorization:** Optimized array operations in C/Fortran
+- **NumPy Vectorization:** Optimized array operations (pre-compiled C/Fortran)
   - Modern NumPy is highly optimized and maintained
-  - Better memory management than manual C code in many cases
+  - Better memory management than manual C code
+  - **No compilation step required** - uses pre-built binaries
   - GPU acceleration possible via CuPy (future option)
 
 - **Modern CPython Optimizations:** Python 3.11+ includes significant speedups
   - 25% faster than Python 3.10 on average
   - Specialized bytecode interpreter
   - Better memory allocation
+  - **No additional tools required**
+
+**Technologies Requiring Compilation (Lower Priority):**
+
+- **Cython:** Python → C compilation for extreme performance needs
+  - **Requires C compiler** - conflicts with goal of removing compilation
+  - Only considered as fallback if Numba insufficient
+  - May be used for some legacy modules already converted
 
 **Why This Wasn't Possible in Python 2:**
 - Python 2 lacks mature JIT compilation (Numba requires Python 3.6+)
@@ -116,9 +125,9 @@ Python 3 provides mature performance optimization tools that can match or exceed
 - Active development and optimization only happening in Python 3
 
 **Implication for Performance Concerns:**
-The research team's concern about contouring performance on large 3D/4D spectra can be addressed using these Python 3 technologies. In some cases, Numba-optimized Python code can actually outperform equivalent C code due to LLVM's advanced optimizations.
+The research team's concern about contouring performance on large 3D/4D spectra can be addressed using Numba JIT compilation. In some cases, Numba-optimized Python code can actually outperform equivalent C code due to LLVM's advanced optimizations - and without requiring users to have a C compiler installed.
 
-**This makes Python 3 modernization not just necessary (OS support), but potentially beneficial (performance opportunities).**
+**This makes Python 3 modernization not just necessary (OS support), but potentially beneficial (performance opportunities + simplified deployment).**
 
 ---
 
@@ -232,10 +241,11 @@ This is a **blocking concern** that must be addressed before production rollout.
 
 **Risk Mitigation:**
 - If performance targets cannot be met with pure Python:
-  - Option 1: Keep C implementation for contouring (hybrid approach)
-  - Option 2: Use Cython for performance-critical sections
-  - Option 3: Implement progressive rendering or caching strategies
-  - Option 4: Defer rollout until optimization complete
+  - Option 1: Optimize with Numba JIT (preferred - no compilation required)
+  - Option 2: Implement progressive rendering or caching strategies
+  - Option 3: Keep C implementation for contouring (hybrid approach)
+  - Option 4: Use Cython for critical sections (requires compilation - least preferred)
+  - Option 5: Defer rollout until optimization complete
 
 **Status:** Not yet started - requires production datasets from research team
 
@@ -345,6 +355,7 @@ These are assumptions that could easily be made without deep analysis, but turn 
    - Peak detection and fitting
    - Contour generation
    - Basic data analysis
+   - **No C compilation required for installation** (Numba JIT at runtime)
 
 3. ⚠️ **Performance validation** (CRITICAL - Phase 3)
    - **Contouring on large 3D/4D spectra acceptable** (research team concern)
