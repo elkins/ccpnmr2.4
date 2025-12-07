@@ -23,6 +23,7 @@ CCPNMR is not just another codebase; it's **critical research infrastructure** f
 - ✅ Python 2→3 syntax conversion: 1,784 files modernized (100% of modified files)
 - ✅ C→Python conversion: 27,206 lines converted (~47% of 58,354 C lines)
 - ✅ Test infrastructure: 800+ tests with 99.9% pass rate
+- ✅ Test coverage: 89% of python_impl modules (17/19 have comprehensive tests)
 - ✅ Varian 3D spectrum reader: Fully functional in Python 3
 - ✅ Core algorithms validated: Kabsch alignment, contour generation, peak detection
 - ✅ Stakeholder alignment: All agree GUI modernization is out of scope (separate future project)
@@ -99,10 +100,11 @@ This modernization project has several characteristics that make it exceptionall
 
 1. **Well-Defined, Systematic Work**: Python 2→3 syntax conversion and C→Python translation follow clear patterns that AI can reliably execute
 2. **Comprehensive Test Suite**: 800+ existing tests provide immediate validation that AI changes preserve correctness
-3. **Documentation-Heavy**: Planning, architecture decisions, and developer coordination benefit from AI's document generation capabilities
-4. **Pattern Recognition**: Converting 7 similar C modules (list, hash_table, etc.) to NumPy/SciPy wrappers is pattern-based work AI excels at
-5. **Large Codebase Analysis**: 1.6M lines of Python + 58K lines of C requires systematic analysis AI can perform quickly
-6. **Research Context Understanding**: AI can bridge software engineering practices with scientific domain knowledge (NMR spectroscopy, protein structures)
+3. **High Test Coverage**: 89% of modules have tests (17/19), enabling confident AI-assisted refactoring
+4. **Documentation-Heavy**: Planning, architecture decisions, and developer coordination benefit from AI's document generation capabilities
+5. **Pattern Recognition**: Converting 7 similar C modules (list, hash_table, etc.) to NumPy/SciPy wrappers is pattern-based work AI excels at
+6. **Large Codebase Analysis**: 1.6M lines of Python + 58K lines of C requires systematic analysis AI can perform quickly
+7. **Research Context Understanding**: AI can bridge software engineering practices with scientific domain knowledge (NMR spectroscopy, protein structures)
 
 ### Evidence-Based Productivity Comparison
 
@@ -757,9 +759,12 @@ The Gantt chart breaks this high-level timeline into 18 specific tasks with effo
 
 **For git branch strategy and merge workflows, see:** [Git_Branch_Strategy.md](Git_Branch_Strategy.md)
 
+**For test coverage improvement plan, see:** [Test_Coverage_Improvement_Plan.md](Test_Coverage_Improvement_Plan.md)
+
 The companion documents provide:
 - **Gantt Chart:** 18 specific tasks with clear entry/exit criteria, dependency graph, resource allocation
 - **Branch Strategy:** All 18 task branches created and pushed to GitHub, merge workflows, conflict prevention
+- **Test Coverage Plan:** Strategy to achieve 90%+ coverage, missing test identification, CI/CD integration
 - 4 independent work streams that can run in parallel
 - Branch naming conventions for team coordination
 - Risk assessment for each task
