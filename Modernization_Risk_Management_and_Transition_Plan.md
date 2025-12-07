@@ -168,34 +168,43 @@ This modernization project has several characteristics that make it exceptionall
 ### Cost-Benefit Analysis for Claude Grant
 
 #### Traditional Approach Costs (Estimated)
-Assuming developer rate: $75-150/hour (typical academic/research developer)
+**Hiring professional contractor:** Assuming developer rate: $75-150/hour (typical academic/research contractor with NMR domain knowledge)
 
 - **Planning & Documentation**: 160-200 hours × $100/hr = $16,000-20,000
 - **Implementation**: 800-1,200 hours × $100/hr = $80,000-120,000
 - **Testing & Validation**: 160-200 hours × $100/hr = $16,000-20,000
 - **Total Traditional Cost**: $112,000-160,000
 
-#### Claude-Assisted Approach Costs (Estimated)
-Assuming Claude Pro at $20/month or Claude for Work at ~$30/user/month
+**Current volunteer approach:** Volunteer developer time (no direct cost, but opportunity cost and extended timeline)
 
-- **Claude Subscription**: $30/month × 3 months = $90
-- **Developer Time** (reduced by 66-75%):
-  - 200-400 hours × $100/hr = $20,000-40,000
-- **Total Claude-Assisted Cost**: $20,090-40,090
+#### Claude-Assisted Volunteer Approach
+**Current approach:** Volunteer developer + Claude subscription
 
-**Cost Savings**: $71,910-119,910 (64-75% reduction)
+- **Claude Subscription**: $30/month × 3 months = $90 (or $360/year)
+- **Volunteer developer time**: No direct cost (contributed)
+- **Total Direct Cost to Project**: $90-360
+
+**Value Delivered:**
+- **Productivity multiplier**: 4-6x faster than volunteer working solo
+- **Timeline**: Compressed from 6-9 months (solo) to 1.75-2.75 months (with Claude)
+- **Quality**: Professional-grade planning, documentation, and implementation
+- **Equivalent market value**: $20,000-40,000 in contractor costs avoided
+
+**Net Benefit**: Claude enables volunteer effort to achieve outcomes equivalent to hiring a professional contractor, at $90-360 cost vs $112,000-160,000 contractor cost.
 
 #### ROI for Claude Grant Application
 
 If requesting Claude grant/funding:
 - **Claude Annual Cost**: ~$360 (Pro) or ~$720 (Team/Work)
-- **Labor Cost Savings**: $71,910-119,910
-- **ROI**: 199x - 333x return on investment
+- **Alternative Cost (hiring contractor)**: $112,000-160,000
+- **Value Multiplier**: Claude enables volunteer to deliver contractor-equivalent work
+- **Effective ROI**: 311x - 444x return on investment
 - **Intangible Benefits**:
-  - Faster time to rollout (research continuity)
+  - Faster time to rollout (research continuity): 66-75% timeline reduction
   - Higher quality documentation (knowledge preservation)
-  - Reduced risk of developer burnout
-  - Enables solo developer to accomplish team-sized project
+  - Enables volunteer to accomplish professional-grade project
+  - Preserves critical research infrastructure at minimal cost
+  - No recruitment/hiring overhead or delay
 
 ### Why Claude Specifically?
 
@@ -230,15 +239,19 @@ If requesting Claude grant/funding:
 
 **Justification for Claude Grant:**
 
-"The CCPNMR modernization project is preserving critical research infrastructure used by thousands of researchers worldwide (30-40% of PDB NMR structures). Based on evidence from initial collaboration:
+"The CCPNMR modernization project is preserving critical research infrastructure used by thousands of researchers worldwide (30-40% of PDB NMR structures). The project is led by a volunteer developer (CS background, formerly Programmer/Analyst at Protein NMR Spectroscopy Lab) who is contributing time without compensation. Claude enables this volunteer effort to achieve professional contractor-quality results.
 
+**Evidence from initial collaboration:**
 - **Productivity**: 4-6x faster development (4 hours vs 17-26 hours measured in recent session)
-- **Timeline**: 66-75% faster project completion (7-11 weeks vs 24-36 weeks)
-- **Cost Savings**: $71,910-119,910 in labor costs (64-75% reduction)
-- **ROI**: 199x-333x return on $360-720 annual Claude subscription
-- **Enables**: Solo developer to accomplish team-sized project while maintaining research quality
+- **Timeline**: 66-75% faster completion (7-11 weeks vs 24-36 weeks solo volunteer timeline)
+- **Cost Comparison**: $360/year Claude subscription vs $112,000-160,000 to hire professional contractor
+- **Effective ROI**: 311x-444x return on investment
+- **Enables**: Volunteer developer to accomplish professional-grade project that would otherwise require hiring expensive contractor or remaining incomplete
 
-The combination of Claude's 200K context window, code understanding, and systematic execution is uniquely suited to this modernization effort. Traditional automation tools cannot provide the contextual understanding and document generation capabilities demonstrated in this project."
+**Unique Value Proposition:**
+Claude enables the NMR research community to preserve essential infrastructure at minimal cost ($360/year vs $112K-160K contractor). The combination of Claude's 200K context window, code understanding, and systematic execution is uniquely suited to this modernization effort. Traditional automation tools cannot provide the contextual understanding and document generation capabilities demonstrated in this project.
+
+**Without Claude grant:** Project would either require $112K-160K in contractor costs or take 6-9 months of volunteer time with lower quality outcomes. Claude makes preservation of this critical research infrastructure financially feasible for the community."
 
 ---
 
@@ -620,7 +633,11 @@ Only performance **exceeding** C implementation is not required.
 ## Resource Assessment
 
 ### Current Resources (Available)
-- 1 developer (intermittent, research context)
+- **1 volunteer developer** (CS background, formerly Programmer/Analyst at Protein NMR Spectroscopy Lab)
+  - Technical background: Computer Science (bachelor's degree)
+  - Domain experience: Previous work in NMR spectroscopy research environment
+  - Role: Software development and modernization (not research scientist)
+  - Availability: Intermittent volunteer basis
 - Research team (validation, testing, feedback)
 - Existing test infrastructure
 - Documentation started
