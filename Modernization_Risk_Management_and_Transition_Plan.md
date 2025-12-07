@@ -2,6 +2,21 @@
 
 ## Executive Summary
 
+### Why This Matters: CCPNMR as Research Infrastructure
+
+CCPNMR is not just another codebase; it's **critical research infrastructure** for the global NMR spectroscopy community:
+
+- **Citation Impact:** Cited in 1,000+ scientific publications; foundational paper (Vranken et al., 2005) has 1,800+ citations
+- **Scientific Impact:** Used in 30-40% of all NMR protein structures deposited in the Protein Data Bank (PDB)
+- **Research Enablement:** Enables researchers worldwide to determine 3D protein structures via NMR spectroscopy
+- **Community Support:** Managed by the Collaborative Computing Project for NMR (ccpn.ac.uk), supporting thousands of academic researchers globally
+
+**This modernization effort ensures this essential research infrastructure continues to function on modern operating systems and computing environments.**
+
+---
+
+### Current Status
+
 **Status (December 2025):** Major milestones achieved in Python 2→3 modernization and C→Python conversion. The project has validated the technical approach and provides first-time level-of-effort estimates.
 
 **Key Accomplishments:**
