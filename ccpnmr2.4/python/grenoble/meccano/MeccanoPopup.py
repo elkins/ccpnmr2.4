@@ -1099,7 +1099,8 @@ class MeccanoPopup(BasePopup):
         self.run.inputConstraintStore = constraintSet
     
       self.constraintSet = constraintSet
-      self.updateConstraintLists()    
+      self.updateConstraintLists()
+        
     
     self.constraintSetPulldown.setup(texts=names, objects=constraintSets, index=index)
 

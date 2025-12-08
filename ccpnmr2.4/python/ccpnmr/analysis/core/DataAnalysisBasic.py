@@ -138,12 +138,12 @@ class DataFitting:
           return False
       except Exception as e:
         #showWarning('Function fit failure', e, parent=self.guiParent)
-        print e
+        print(e)
         raise
        
     else:
       #showWarning('Function fit failure',error, parent=self.guiParent)
-      print error
+      print(error)
       raise Exception(error)
 
     return False

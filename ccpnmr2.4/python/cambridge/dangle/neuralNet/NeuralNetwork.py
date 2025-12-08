@@ -99,8 +99,7 @@ class NN:
         self.missingInput = {}
         
         if len(inputs) != self.nInput-1:
-            print len(inputs), self.nInput-1
-            raise ValueError('wrong number of inputs'
+            print(len(inputs), self.nInput-1)            raise ValueError('wrong number of inputs'
 
         # input activations
         for i in range(self.nInput-1):
@@ -212,12 +211,10 @@ class NN:
     def weights(self):
         print('Input weights:')
         for i in range(self.nInput):
-            print self.weightsInput[i]
-        print
-        print('Output weights:')
+            print(self.weightsInput[i])        print()
+            print('Output weights:')
         for j in range(self.nHidden):
-            print self.weightsOutput[j]
-
+            print(self.weightsOutput[j])
     def train(self, patterns, iterations=10, N=0.5, M=0.1):
 
       #self.monteCarloTrain(patterns)
@@ -303,4 +300,4 @@ def demo():
 if __name__ == '__main__':
     t1 = time.time()
     demo()
-    print time.time() - t1
+    print(time.time() - t1)

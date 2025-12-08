@@ -1340,7 +1340,8 @@ def makeGuiName(name, elementSymbol):
     raise Exception("Atom name %s does not start with element symbol %s"
                     % (name, elementSymbol))
    
-  return elementSymbol + name[len(elementSymbol):].lower()  
+  return elementSymbol + name[len(elementSymbol):].lower()
+  
 
 
 
@@ -1417,7 +1418,8 @@ def greekSortAtomNames(dataList, molType=PROTEIN_MOLTYPE):
     else:
       sortName = x
     
-    sortName = sortName.upper()  
+    sortName = sortName.upper()
+    
     sortName = sub('(.+\')', 'zzz@\\1', sortName)
     sortName = sub('^(\d)','zz@\\1', sortName)
     sortName = sub('N(\S*)','\'\'@N\\1',sortName)
@@ -1429,7 +1431,8 @@ def greekSortAtomNames(dataList, molType=PROTEIN_MOLTYPE):
     sortName = sub('F', 'v', sortName)
     sortName = sub('C', 'w', sortName)
     sortName = sub('W', 'z', sortName)
-    sortName = sortName.upper()  
+    sortName = sortName.upper()
+    
     
     if molType == PROTEIN_MOLTYPE:
       sortName = sub('Hn', 'H1n', sortName)

@@ -982,7 +982,8 @@ class EditStructuresPopup(BasePopup):
       
     if self.model is not model:
       self.model = model
-      self.updateCoords()  
+      self.updateCoords()
+      
 
     self.modelPulldown.setup(texts,models,index)
 

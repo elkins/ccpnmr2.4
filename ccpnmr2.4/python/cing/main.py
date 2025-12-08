@@ -112,7 +112,8 @@ Some simple script examples:
 --------------------------------------------------------------------------------
 
 == merging several prot files ==
-project.initResonances()      # removes all resonances from the project
+project.initResonances()
+    # removes all resonances from the project
 project.importXeasy( 'N15.seq', 'N15.prot', 'CYANA' )
 project.importXeasy( 'C15.seq', 'C15.prot', 'CYANA' )
 project.importXeasy( 'aro.seq', 'aro.prot', 'CYANA' )

@@ -40,7 +40,7 @@ Development of a Software Pipeline. Proteins 59, 687 - 696.
 
 """
 from math import log
-import cPickle
+import pickle as cPickle
 
 from ccpnmr.analysis.popups.BasePopup import BasePopup
 from ccpnmr.analysis.core.ExperimentBasic import getOnebondExpDimRefs, getSpectrumIsotopes

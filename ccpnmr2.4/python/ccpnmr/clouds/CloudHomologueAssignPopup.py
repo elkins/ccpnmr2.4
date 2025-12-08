@@ -147,7 +147,8 @@ class CloudHomologueAssignPopup(BasePopup):
     if self.assignment and self.scores:
       self.assignButton.enable()
     else:
-      self.assignButton.disable()  
+      self.assignButton.disable()
+      
 
   def run(self):
   

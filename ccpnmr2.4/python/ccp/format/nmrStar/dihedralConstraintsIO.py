@@ -377,11 +377,9 @@ if __name__ == "__main__":
       #print constraintFile.comments
       for constraint in constraintFile.constraints:
 
-        print constraint.Id, constraint.name, constraint.lowerAngle, constraint.upperAngle
-
+        print(constraint.Id, constraint.name, constraint.lowerAngle, constraint.upperAngle)
         if constraint.errors:
-          print constraint.errors
-
+          print(constraint.errors)
         for item in constraint.nodes:
           mlist = []
           for member in item.members:

@@ -572,7 +572,8 @@ class DangleFrame(Frame):
       progressBar.increment()
       if (line == '\n'):
         continue
-      array     = line.split()   # keep everything as string
+      array     = line.split()
+       # keep everything as string
       resNum    = int(array[0])
       resName   = array[1]
       numIsland = int(array[2])

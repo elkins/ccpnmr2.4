@@ -2021,7 +2021,8 @@ class ScrolledWindow(Frame):
     for c in cs:                                
       if hasattr(c, 'handler'):                 
         del c.handler                           
-      c.destroy()                               
+      c.destroy()
+                                   
 
     if (row == -1):
       seprow = -1
@@ -2030,21 +2031,25 @@ class ScrolledWindow(Frame):
       
     s = self.yseparators[seprow]                
     del self.yseparators[seprow]                
-    s.destroy()                                 
+    s.destroy()
+                                   
  
     s = self.yscrollbars[row]                   
     del self.yscrollbars[row]                   
-    s.destroy()                                 
+    s.destroy()
+                                   
 
     c = self.yticks[row]                        
     del self.yticks[row]                        
-    c.destroy()                                 
+    c.destroy()
+                                   
  
     c = self.yslices[row]                       
     del self.yslices[row]                       
     if hasattr(c, 'handler'):                   
       del c.handler                             
-    c.destroy()                                 
+    c.destroy()
+                                   
  
     self.nrows = self.nrows - 1                 
  
@@ -2245,8 +2250,7 @@ if (__name__ == '__main__'):
       c = s.canvases[0][i]
       w = c.winfo_width()
       ws.append(w)
-    print ws
-        
+    print(ws)        
   def printHeights():
 
     hs = []
@@ -2254,8 +2258,7 @@ if (__name__ == '__main__'):
       c = s.canvases[j][0]
       h = c.winfo_height()
       hs.append(h)
-    print hs
-
+    print(hs)
   def change(dx):
     w0 = s.canvases[0][0].winfo_width()
     w1 = s.canvases[0][1].winfo_width()

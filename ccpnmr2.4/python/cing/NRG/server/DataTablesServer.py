@@ -150,7 +150,7 @@ class DataTablesServer:
             traceBackString = format_exc()
             if traceBackString == None:
                 traceBackString = 'No traceback error string available.'
-            print traceBackString
+            print(traceBackString)
             return
         # end try
         self.resultData = None
@@ -176,8 +176,7 @@ class DataTablesServer:
 #            self.cgi['iDisplayLength'] = -1 # All filtered rows please
             self.runQueries(usePaging=False)
 #            log( "self.resultData: %s\n" % str(self.resultData) )
-            print toCsv( self.resultData )            
-            return
+            print(toCsv( self.resultData ))            return
         # end def            
     # end def
     
@@ -222,7 +221,7 @@ class DataTablesServer:
         dbValue = self.cgi['database'].value
         if dbValue != 'pdb':
             log("ERROR: got a cgi database parameter but the value was not pdb but: %s\n" % str(dbValue))
-            print basicRedirectHtml % '../../NRG-CING/HTML/index.html'
+            print(basicRedirectHtml % '../../NRG-CING/HTML/index.html')
             return
         # end def
         pdb_id = ''
@@ -233,7 +232,7 @@ class DataTablesServer:
             old_string = r"<!-- INSERT MAIN HERE -->"
             new_string = invalidPdbHtmlMain % pdb_id
             file_content = string.replace(file_content, old_string, new_string )
-            print file_content
+            print(file_content)
             return
         # end def
         pdb_id = pdb_id.lower()
@@ -242,14 +241,14 @@ class DataTablesServer:
             old_string = r"<!-- INSERT MAIN HERE -->"
             new_string = absentPdbHtmlMain % { "pdb_id": pdb_id }
             file_content = string.replace(file_content, old_string, new_string )
-            print file_content
+            print(file_content)
             return
         # end def
         # All well here.
         ch23 = pdb_id[1:3]
         # Superfast redirect without inbetween page.
         refTag = "../../NRG-CING/data/" + ch23 + "/"+pdb_id+"/"+pdb_id+".cing/" + pdb_id + "/HTML/index.html"
-        print basicRedirectHtml % refTag
+        print(basicRedirectHtml % refTag)
         return
     # end def
         
@@ -339,8 +338,8 @@ class DataTablesServer:
         # end for
         output = output[:-1]
         output += '] }'        
-        print output
-    # end def
+        print(output)
+        # end def
         
     def isPresentInDb( self, dbValue ):
         'Check for existence in RDB.'

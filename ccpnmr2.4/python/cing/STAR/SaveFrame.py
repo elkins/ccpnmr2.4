@@ -47,12 +47,13 @@ class SaveFrame (Lister):
                     print("ERROR: integrity check failed for tagtable")
                     return 1
         if self.verbosity >= 9:
-            print('Checked integrity of SaveFrame(%2s tagtables, recurs.=%s)  : OK [%s]' % ()
+            print('Checked integrity of SaveFrame(%2s tagtables, recurs.=%s)
+            : OK [%s]' % ()
                 len(self.tagtables), recursive, self.title )
 
     def getSaveFrameCategory(self)   :
         """
-        Or print Warning and return None
+        Or print(Warning and return None)
         """
         possibleTagNamesSFCategory = [ '_Saveframe_category',  # 2.1
                                        '.Sf_category' ]        # 3

@@ -150,8 +150,7 @@ class NmrPipeConversionFile(NmrPipeGenericFile):
     fout.close()
 
     if verbose == 1:
-      print self.scriptName + " finished..."
-
+      print(self.scriptName + " finished...")
 class NmrPipeConversion:
 
   def __init__(self,parent,index,value):

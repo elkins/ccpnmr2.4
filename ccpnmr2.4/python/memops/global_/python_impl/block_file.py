@@ -221,7 +221,8 @@ class BlockFile:
         
         # Block cache
         self.block_cache: dict = {}  # block tuple -> BlockData
-        self.dirty_blocks: set = set()  # Set of modified block tuples
+        self.dirty_blocks: set = set()
+        # Set of modified block tuples
         self.cache_size = 50  # Maximum blocks to cache
         
     def _init_block_file(self) -> None:

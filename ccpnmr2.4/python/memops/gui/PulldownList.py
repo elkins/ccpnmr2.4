@@ -546,10 +546,7 @@ if __name__ == '__main__':
   def callback(obj):
     global pulldownMenu
     print('callback: object=', obj)
-    print pulldownMenu.getText()
-    print pulldownMenu.getObject()
-    print pulldownMenu.getSelected()
-
+    print(pulldownMenu.getText())    print(pulldownMenu.getObject())    print(pulldownMenu.getSelected())
   gradient = ['#000040','#000080','#0000A0','#0000FF',
               '#0040FF','#0080FF','#00A0FF','#00C0FF',
               '#00E0FF','#00FFFF','#40FFFF','#80FFFF',

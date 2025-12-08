@@ -348,7 +348,8 @@ def _getLinearChemCompData(project, molType, ccpCode, linking):
     if linkEnd:
       otherLinkCodes.append(linkEnd.linkCode)
       chemCompVar = chemComp.findFirstChemCompVar(isDefaultVar=True) or \
-                    chemComp.findFirstChemCompVar()            
+                    chemComp.findFirstChemCompVar()
+                              
                 
   if chemCompVar is None:
     raise ApiError("No ChemCompVar found for %s:%s linking %s" % (molType, ccpCode, linking))
@@ -453,7 +454,8 @@ def setMolResidueChemCompVar(molResidue,chemCompVar):
       link = linkEnd.molResLink
       if link:
         link.delete()
-      linkEnd.delete()  
+      linkEnd.delete()
+      
   
   for (linkCodeA,linkEndB) in links:
     linkEndA = molResidue.findFirstMolResLinkEnd(linkCode=linkCodeA)

@@ -255,16 +255,23 @@ class CyanaParser(dict):
     def __init__(self):
         dict.__init__(self)                   # dict contains all sequence and atom tuples as keys and points to its instances;
                                               # i.e. can be used as a lookup for validity
-        self.sequence       = ntu.NTlist()    # list of SequenceRecord instances
-        self.atoms          = ntu.NTlist()    # list of AtomRecord instances
+        self.sequence       = ntu.NTlist()
+          # list of SequenceRecord instances
+        self.atoms          = ntu.NTlist()
+          # list of AtomRecord instances
         self.convention     = None            # CYANA or CYANA2 (3) convention
-        self.resonances     = ntu.NTlist()    # list of Resonance instances
-        self.peakLists      = ntu.NTlist()    # list of PeakList instances
-        self.distanceRestraintLists = ntu.NTlist()    # list of DistanceRestraintList instances
-        self.dihedralRestraintLists = ntu.NTlist()    # list of DistanceRestraintList instances
+        self.resonances     = ntu.NTlist()
+          # list of Resonance instances
+        self.peakLists      = ntu.NTlist()
+          # list of PeakList instances
+        self.distanceRestraintLists = ntu.NTlist()
+          # list of DistanceRestraintList instances
+        self.dihedralRestraintLists = ntu.NTlist()
+          # list of DistanceRestraintList instances
         self.chemicalShiftRestraints = ntu.NTlist()
         self.violationLists = ntu.NTlist()
-        self.rdcRestraintLists = ntu.NTlist()    # list of RDCRestraintList instances
+        self.rdcRestraintLists = ntu.NTlist()
+          # list of RDCRestraintList instances
         self.pdbRecords     = None            # PDB records as returned by PYMMLib
         self.modelCount     = 0               # number od models in the pdb file
         self.molecule       = None            # MoleculeRecord instance
@@ -702,8 +709,7 @@ class CyanaParser(dict):
                 #end if
             #end if
         #end while
-        print len(result),'>>', result
-        return result
+        print(len(result),'>>', result)        return result
     #end def
 
     def parseXpkFile( self, xpkFile)   :
@@ -806,8 +812,7 @@ problem resides in the multiple assignments that alters format
                 error = False
                 cur = 2 # skip two fields
                 for _i in range(X_AXIS, dimension):
-                    print _i
-#                     aIndex = line.int( cur )
+                    print(_i)#                     aIndex = line.int( cur )
 #                     if aIndex == None:
                 #        return None
                 #    cur += 1

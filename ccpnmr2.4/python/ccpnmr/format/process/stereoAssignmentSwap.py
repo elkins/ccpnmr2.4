@@ -362,10 +362,9 @@ class StereoAssignmentSwapCheck:
       print("Error: no constraint lists or no structures available! Aborting...")
       return
 
-    print
+    print()
     print("Checking swap status and cleaning prochiral groups in constraint lists...")
-    print
-
+    print()
     #
     # Make this self attribute, just in case
     #
@@ -412,8 +411,8 @@ class StereoAssignmentSwapCheck:
       infoStrings.append(infoString)
     infoStrings.sort()
     for infoString in infoStrings:
-      print infoString
-    """
+      print(infoString)
+      """
 
     #
     # Set the factor for calculating violations
@@ -664,9 +663,8 @@ class StereoAssignmentSwapCheck:
 
     for infoType in infoTypes:
       for line in self.infoText[infoType]:
-        print line
-      print
-
+        print(line)
+        print()
   def resetConstraintItems(self,constraintItems,prochiralResonances,prochiralKey,violationCode,fractionViolated,basedOnOtherConstraint=None,verbose=True):
     
     deassign = True
@@ -1028,10 +1026,9 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
     # Initialise resonance and 'triplet' information
     #
 
-    print
+    print()
     print("Checking swap status and cleaning prochiral groups in constraint lists...")
-    print
-
+    print()
     (self.resAtomDict,self.resAtomSetDict) = createResonanceAtomAndAtomSetDict(self.distanceConstraintLists[0].parent.fixedResonances)
     if self.verbose:
       print("Made resAtomDict, resAtomSetDict")
@@ -1186,8 +1183,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
             print("pck: ", pck)
             for at in self.triplets[pck].keys():
               print("  at, self.triplets[pck][at]: ",at, self.triplets[pck][at])
-            print
-
+            print()
     #
     # Now calculate the total 'energy' for each constraint, and track whether there are any serious violations
     #
@@ -1219,8 +1215,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
       for prochiralKey in prochiralPriority[priorityKey]:
         tripletIdx += 1
         if debug:
-          print prochiralKey
-
+          print(prochiralKey)
         (prochiralViolationInfo,allConstraintItems) = self.checkProchiralKeyConstraints(prochiralKey,debug)
 
         # Find max violation of original assignment
@@ -1324,10 +1319,9 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
           #
           
           if debug:
-            print
+            print()
             print("SWAPPING", prochiralResonances)
-            print
-
+            print()
           if len(prochiralResonances) == 2:
 
             resSet1 = prochiralResonances[0].resonanceSet
@@ -1394,8 +1388,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
       for prochiralKey in prochiralPriority[priorityKey]:
 
         if debug:
-          print prochiralKey
-
+          print(prochiralKey)
         (prochiralViolationInfo,allConstraintItems) = self.checkProchiralKeyConstraints(prochiralKey,debug=debug)
 
         #
@@ -1492,8 +1485,7 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
     
     if outputType == 'custom':
     
-      print """# Columns below (* means new):
-#   1 chainCode
+      print("""# Columns below (* means new):)#   1 chainCode
 #   2 seqId
 #   3 ccpCode
 #   4 chemAtomSetName
@@ -1519,8 +1511,8 @@ class StereoAssignmentCleanup(StereoAssignmentSwapCheck):
 
     for finalId in finalIds:
       if outputType == 'custom':
-        print finalList[finalId]
-      else:
+        print(finalList[finalId])
+        else:
         meat += str( finalList[finalId] ) + '\n'
 
     
@@ -1734,8 +1726,8 @@ Description of the tags in the table below:
       #  debug = False
 
       if debug:
-        print constraint
-      lowerLimit = constraint.lowerLimit
+        print(constraint)
+        lowerLimit = constraint.lowerLimit
       upperLimit = constraint.upperLimit
 
       if self.method == 'SUM_AVERAGING':
@@ -1833,7 +1825,7 @@ Description of the tags in the table below:
                 tmpAtomLists.append(addAtomList)
                 atomListsAdded += 1
               else:
-                print prochiralKey, atomTuples, tmpAtomLists[0]
+                print(prochiralKey, atomTuples, tmpAtomLists[0])
                 sys.exit() #@UndefinedVariable
                               
           # end for
@@ -1842,7 +1834,7 @@ Description of the tags in the table below:
             continue
 
           if debug:
-            print prochiralKey, atomListsAdded
+            print(prochiralKey, atomListsAdded)
             print("  AL", atomLists)
             print("  OAL", otherAtomLists)
 
@@ -1950,8 +1942,8 @@ Description of the tags in the table below:
           # end for violationCode
           if debug:
             print("  ", prochiralViolationInfo)
-            print
-          # end if debug
+            print()
+            # end if debug
         # at indent 9 end for over swapTypes
       # at indent 7 end if self.method
     # at indent 5 end for constraint

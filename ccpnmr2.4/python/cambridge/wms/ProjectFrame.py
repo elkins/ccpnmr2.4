@@ -379,7 +379,8 @@ class ProjectFrame(Frame):
       
       print('PROJECT -> TASK ', taskSerial)
 
-      self.basePopup.currentTask = taskSerial.__str__()    
+      self.basePopup.currentTask = taskSerial.__str__()
+        
 
       # FIXME
 

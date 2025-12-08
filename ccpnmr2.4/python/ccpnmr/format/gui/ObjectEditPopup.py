@@ -1244,8 +1244,8 @@ class PersonEditPopup(ObjectEditPopup):
     authorCitations 	ccp.api.Citation.Citation 	0..* 	Citations where Person is author  
     editorCitations 	ccp.api.Citation.Citation 	0..* 	Citations where Person is editor  
     targets 	ccp.api.Target.Target 	0..* 	Targets created by Person.  
-    expBlueprints 	ccp.api.ExpBlueprint.ExpBlueprint 	0..* 	ExpBlueprints owned by a Person.  
-    createdProtocols 	ccp.api.Protocol.Protocol 	0..* 	Protocols created by Person.  
+    expBlueprints 	ccp.api.ExpBlueprint.ExpBlueprint(0..* 	ExpBlueprints owned by a Person.)
+    createdProtocols 	ccp.api.Protocol.Protocol 	0..* 	Protocols created by Person.
     editedProtocols 	ccp.api.Protocol.Protocol 	0..* 	Protocols last modified by Person.  
     createdExps 	ccp.api.Experiment.Experiment 	0..* 	Experiments created by Person  
     editedExps 	ccp.api.Experiment.Experiment 	0..* 	Experiments last modified by Person  

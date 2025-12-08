@@ -193,12 +193,9 @@ Continuing...
       try:
         execfile(startupFile)
       except Exception as e:
-        print startupExecError % (traceback.format_exc(), startupFile)
-        print e
-	sys.exit()
+        print(startupExecError % (traceback.format_exc(), startupFile))        print(e)	sys.exit()
     else:
-      print missingStartupFileError % startupFile
-
+      print(missingStartupFileError % startupFile)
   argv = sys.argv[:]
 
   max_size = getOptArg(argv, flag='-m', defaultValue=128, conversionFunc=int, validArg='integer')

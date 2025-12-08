@@ -578,7 +578,8 @@ def launchDangle(filename=None):
   if project:
     top.initProject(project)
     
-  root.mainloop()  
+  root.mainloop()
+  
   
   
   

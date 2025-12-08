@@ -148,6 +148,5 @@ if __name__ == "__main__":
     for seq in charmmFile.sequences:
       print("Chain: '%s'" % seq.chainCode)
       for seqel in seq.elements:
-        print seqel.seqCode, "'%s'" % seqel.seqInsertCode, seqel.code3Letter
-        print seqel.atomNames
-    
+        print(seqel.seqCode, "'%s'" % seqel.seqInsertCode, seqel.code3Letter)
+        print(seqel.atomNames)

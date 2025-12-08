@@ -12804,8 +12804,8 @@ so is lysozyme.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint in relatedExpBlueprints:
-      topObject = relatedExpBlueprint.__dict__.get('topObject')
+    for relatedExpBlueprint(in relatedExpBlueprints:)
+    topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     specificLabelGroups = dataDict.get('specificLabelGroups').values()
@@ -12858,9 +12858,7 @@ so is lysozyme.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):
-      if (not (relatedExpBlueprint in objsToBeDeleted)):
-        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')
@@ -20805,8 +20803,8 @@ cleave nucleic acide sequences at certain positions.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint in relatedExpBlueprints:
-      topObject = relatedExpBlueprint.__dict__.get('topObject')
+    for relatedExpBlueprint(in relatedExpBlueprints:)
+    topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     specificLabelGroups = dataDict.get('specificLabelGroups').values()
@@ -20859,9 +20857,7 @@ cleave nucleic acide sequences at certain positions.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):
-      if (not (relatedExpBlueprint in objsToBeDeleted)):
-        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')
@@ -20886,8 +20882,7 @@ cleave nucleic acide sequences at certain positions.
 
   addRefMolCompFeature = MolComponent.addRefMolCompFeature
 
-  addRelatedExpBlueprint = MolComponent.addRelatedExpBlueprint
-
+  addRelatedExpBlueprint(= MolComponent.addRelatedExpBlueprint)
   addSynonym = AbstractComponent.addSynonym
   
   def checkAllValid(self, complete=False):
@@ -21717,8 +21712,7 @@ cleave nucleic acide sequences at certain positions.
 
   findFirstRefMolCompFeature = MolComponent.findFirstRefMolCompFeature
 
-  findFirstRelatedExpBlueprint = MolComponent.findFirstRelatedExpBlueprint
-
+  findFirstRelatedExpBlueprint(= MolComponent.findFirstRelatedExpBlueprint)
   findFirstSpecificLabelGroup = MolComponent.findFirstSpecificLabelGroup
   
   def get(self, name):
@@ -21904,8 +21898,7 @@ cleave nucleic acide sequences at certain positions.
 
   removeRefMolCompFeature = MolComponent.removeRefMolCompFeature
 
-  removeRelatedExpBlueprint = MolComponent.removeRelatedExpBlueprint
-
+  removeRelatedExpBlueprint(= MolComponent.removeRelatedExpBlueprint)
   removeSynonym = AbstractComponent.removeSynonym
   
   def set(self, name, value):
@@ -22623,8 +22616,8 @@ such as a PCR-primer used to amplify nucleic acid fragments.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint in relatedExpBlueprints:
-      topObject = relatedExpBlueprint.__dict__.get('topObject')
+    for relatedExpBlueprint(in relatedExpBlueprints:)
+    topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     specificLabelGroups = dataDict.get('specificLabelGroups').values()
@@ -22677,9 +22670,7 @@ such as a PCR-primer used to amplify nucleic acid fragments.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):
-      if (not (relatedExpBlueprint in objsToBeDeleted)):
-        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')
@@ -22704,8 +22695,7 @@ such as a PCR-primer used to amplify nucleic acid fragments.
 
   addRefMolCompFeature = MolComponent.addRefMolCompFeature
 
-  addRelatedExpBlueprint = MolComponent.addRelatedExpBlueprint
-
+  addRelatedExpBlueprint(= MolComponent.addRelatedExpBlueprint)
   addSynonym = AbstractComponent.addSynonym
   
   def checkAllValid(self, complete=False):
@@ -23517,8 +23507,7 @@ such as a PCR-primer used to amplify nucleic acid fragments.
 
   findFirstRefMolCompFeature = MolComponent.findFirstRefMolCompFeature
 
-  findFirstRelatedExpBlueprint = MolComponent.findFirstRelatedExpBlueprint
-
+  findFirstRelatedExpBlueprint(= MolComponent.findFirstRelatedExpBlueprint)
   findFirstSpecificLabelGroup = MolComponent.findFirstSpecificLabelGroup
   
   def get(self, name):
@@ -23696,8 +23685,7 @@ such as a PCR-primer used to amplify nucleic acid fragments.
 
   removeRefMolCompFeature = MolComponent.removeRefMolCompFeature
 
-  removeRelatedExpBlueprint = MolComponent.removeRelatedExpBlueprint
-
+  removeRelatedExpBlueprint(= MolComponent.removeRelatedExpBlueprint)
   removeSynonym = AbstractComponent.removeSynonym
   
   def set(self, name, value):
@@ -24345,8 +24333,8 @@ about a construct such as an expression vector plasmid.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint in relatedExpBlueprints:
-      topObject = relatedExpBlueprint.__dict__.get('topObject')
+    for relatedExpBlueprint(in relatedExpBlueprints:)
+    topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     specificLabelGroups = dataDict.get('specificLabelGroups').values()
@@ -24399,9 +24387,7 @@ about a construct such as an expression vector plasmid.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):
-      if (not (relatedExpBlueprint in objsToBeDeleted)):
-        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')
@@ -24426,8 +24412,7 @@ about a construct such as an expression vector plasmid.
 
   addRefMolCompFeature = MolComponent.addRefMolCompFeature
 
-  addRelatedExpBlueprint = MolComponent.addRelatedExpBlueprint
-
+  addRelatedExpBlueprint(= MolComponent.addRelatedExpBlueprint)
   addSynonym = AbstractComponent.addSynonym
   
   def checkAllValid(self, complete=False):
@@ -25280,8 +25265,7 @@ about a construct such as an expression vector plasmid.
 
   findFirstRefMolCompFeature = MolComponent.findFirstRefMolCompFeature
 
-  findFirstRelatedExpBlueprint = MolComponent.findFirstRelatedExpBlueprint
-
+  findFirstRelatedExpBlueprint(= MolComponent.findFirstRelatedExpBlueprint)
   findFirstSpecificLabelGroup = MolComponent.findFirstSpecificLabelGroup
   
   def get(self, name):
@@ -25483,8 +25467,7 @@ about a construct such as an expression vector plasmid.
 
   removeRefMolCompFeature = MolComponent.removeRefMolCompFeature
 
-  removeRelatedExpBlueprint = MolComponent.removeRelatedExpBlueprint
-
+  removeRelatedExpBlueprint(= MolComponent.removeRelatedExpBlueprint)
   removeSynonym = AbstractComponent.removeSynonym
   
   def set(self, name, value):

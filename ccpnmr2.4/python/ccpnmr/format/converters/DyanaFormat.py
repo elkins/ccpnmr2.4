@@ -300,7 +300,8 @@ class DyanaFormat(DataFormat):
     
     if not self.moleculeTorsions.has_key(molecule):
       if self.verbose:
-        print("  Error: unknown molecule '%s'!" % (molecule.name)    )
+        print("  Error: unknown molecule '%s'!" % (molecule.name)
+        )
       return
     
     #

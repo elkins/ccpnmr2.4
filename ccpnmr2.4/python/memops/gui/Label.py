@@ -108,8 +108,7 @@ if (__name__ == '__main__'):
 
     count = count + 1
     label.set(msg + ' ' + str(count))
-    print label.get()
-
+    print(label.get())
   root = Tkinter.Tk()
  
   label = Label(root, text='hello world')

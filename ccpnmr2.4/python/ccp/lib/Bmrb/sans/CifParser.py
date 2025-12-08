@@ -31,8 +31,7 @@ class parser :
             sys.exit( 1 )
         while True :
             tok = self._lex.yylex()
-            if self._verbose : print tok, self._lex.getText()
-            if tok == STARLexer.ERROR :
+            if self._verbose : print(tok, self._lex.getText())            if tok == STARLexer.ERROR :
                 self._eh.fatalError( self._lex.getLine(), self._lex.getText() )
                 return
             elif tok == STARLexer.WARNING :

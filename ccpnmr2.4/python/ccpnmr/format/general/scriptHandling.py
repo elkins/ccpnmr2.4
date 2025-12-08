@@ -152,7 +152,8 @@ class ScriptHandler:
       # Use nargs=2 for multiple arguments with option!
     
     # All set, get the information from sys.argv    
-    (self.options, self.args) = self.optionParser.parse_args()    
+    (self.options, self.args) = self.optionParser.parse_args()
+      
       
   def handleOptions(self):
   

@@ -176,8 +176,7 @@ def makeRandomAtomCoords(natoms):
   return atomCoordList
 
 def makeDynamicsProtocol(noe_force_const=25,noe_exponent=2 ,noe_soft_exponent=1,noe_r_switch=0.5,
-                         noe_asymptote=1,beta=10,rmin=2.25,drzap=2,nprint = 3000):
-
+                         noe_asymptote=1,beta=10,rmin=2.25,drzap=2,nprint(= 3000):)
   noeForceField  = DistForce(noe_force_const,noe_exponent,noe_soft_exponent,noe_r_switch,noe_asymptote)
   dynamicsEngine = Dynamics(beta=beta, rmin=rmin, drzap=drzap, elapsed_time=0, nprint=nprint)
   

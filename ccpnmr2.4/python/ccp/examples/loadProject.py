@@ -88,9 +88,8 @@ if __name__ == "__main__":
   # can print the information in there.
   #
   for mol in ccpnProject.molecules:
-    print mol.name
-    print mol.sortedMolResidues()
-    
+    print(mol.name)
+    print(mol.sortedMolResidues())
   print("List of molSystem objects:", ccpnProject.sortedMolSystems())
   for molSys in ccpnProject.sortedMolSystems():
     print("MolSystem name:", molSys.name)

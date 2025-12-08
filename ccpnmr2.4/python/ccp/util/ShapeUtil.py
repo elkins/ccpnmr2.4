@@ -23,8 +23,7 @@ def getShapeFile(spectrum):
   fileName = getDataSourceFileName(spectrum)
   if not fileName or not os.path.exists(fileName):
     msg = 'Warning: spectrum (%s, %s): data file %s not accessible'
-    print msg % (spectrum.experiment.name, spectrum.name, fileName)
-    return None
+    print(msg % (spectrum.experiment.name, spectrum.name, fileName))    return None
 
 
   try:

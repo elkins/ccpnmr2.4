@@ -156,7 +156,7 @@ class PalesFormat(DataFormat):
         for fixedResonance in item.resonances:
           if fixedResonance.resonanceSet:
             refAtom = fixedResonance.resonanceSet.findFirstAtomSet().findFirstAtom()
-	    if refAtom.residue.chain not in chains:
+      if refAtom.residue.chain not in chains:
               chains.append(refAtom.residue.chain)
     
     seqStrings = []

@@ -42,8 +42,7 @@ if __name__ == '__main__':
   
   for chemAtomOrSet in chemAtomOrSets:
 
-    print chemAtomOrSet.name
-    
+    print(chemAtomOrSet.name)    
     chemAtomSysNames = []
     i = -1
     

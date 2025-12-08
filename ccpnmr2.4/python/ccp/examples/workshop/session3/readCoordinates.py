@@ -25,7 +25,8 @@ def main(root, directory = None):
   print('molSystems %d' % len(root.molSystems))
 
   molSystem = root.findFirstMolSystem()
-  print('chains %d' % len(molSystem.chains)  )
+  print('chains %d' % len(molSystem.chains)
+  )
 
   for chain in molSystem.sortedChains():
     n = 0

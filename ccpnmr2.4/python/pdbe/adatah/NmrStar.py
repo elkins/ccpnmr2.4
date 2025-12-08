@@ -442,9 +442,8 @@ class NmrStarHandler:
 
             print("          - %s  <-> %d.%s" % (residueInfo,resLabelInfo[1],resLabelInfo[0].capitalize()))
 
-          print
-        print
-        
+          print()
+          print()
         # Also ignore residues that do not match.
         if residueList:
           self.presets['linkResonances']['keywds']['ignoreResidues'] = residueList
@@ -455,8 +454,7 @@ class NmrStarHandler:
     else:
       print("\n*** Automatic chain mapping did not work ***\n")
       print("DEBUG INFO:")
-      print resLabelList
-      
+      print(resLabelList)      
       returnValue = False
       
     return returnValue

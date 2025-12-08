@@ -707,7 +707,8 @@ class FollowShiftChangesPopup(BasePopup):
           file.write(line)
           file.write('\n')
         
-        file.close()  
+        file.close()
+        
 
   def calculateAllFits(self):
   
@@ -959,7 +960,7 @@ class FollowShiftChangesPopup(BasePopup):
         dataFitting = functionFitData(dataFitting)
       except Exception as e:
         ###showWarning('Function fit failure', e, parent=self)
-        print e
+        print(e)
         return 1.0e20  # arbitrary large number
 
       fitError = dataFitting.fitError
@@ -1595,7 +1596,8 @@ class FollowShiftChangesPopup(BasePopup):
      midButtons[1].disable()
      midButtons[3].disable()
      for i in range(4):
-       botButtons[i].disable()  
+       botButtons[i].disable()
+       
   
 
   def update(self):
@@ -1859,7 +1861,8 @@ class FollowShiftChangesPopup(BasePopup):
       self.updateDataListInfo()
       self.updateAfter()
     
-    self.updatePeakLists()    
+    self.updatePeakLists()
+      
     self.expSeriesPulldown.setup(names, expSeriesList, index)
 
   def destroy(self):

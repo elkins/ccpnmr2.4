@@ -105,17 +105,15 @@ if __name__ == "__main__":
     constraintFile.read(verbose = 1)
   
     for constraint in constraintFile.constraints:
-      print constraint.Id,
-
-      print constraint.upperDist,
+      print(constraint.Id,)
+      print(constraint.upperDist,)
       #print constraint.peakNum, constraint.peakVol, constraint.ppms
       for item in constraint.items:
         for member in item.members:
-          print member.seqCode, member.atomName,
-        print("|",)
+          print(member.seqCode, member.atomName,)
+          print("|",)
 
-      print
-
+      print()
     constraintFile.name = 'local/hbonds.testout'
 
     constraintFile.write(verbose = 1)

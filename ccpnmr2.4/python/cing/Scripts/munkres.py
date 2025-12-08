@@ -70,8 +70,7 @@ and calculate the smallest cost of the combinations::
             cost += matrix[row][col]
         minval = min(cost, minval)
 
-    print minval
-
+    print(minval)
 While this approach works fine for small matrices, it does not scale. It
 executes in O(*n*!) time: Calculating the permutations for an *n*\ x\ *n*
 matrix requires *n*! operations. For a 12x12 matrix, that's 479,001,600
@@ -711,16 +710,14 @@ def print_matrix(matrix, msg=None):
 
     :Parameters:
         matrix : list of lists
-            Matrix to print
-
+            Matrix to print()
         msg : str
-            Optional message to print before displaying the matrix
-    """
+            Optional message to print(before displaying the matrix)
+            """
     import math
 
     if msg is not None:
-        print msg
-
+        print(msg)
     # Calculate the appropriate format width.
     width = 0
     for row in matrix:

@@ -2158,7 +2158,7 @@ def fitPeaks(peaks, fitMethod, updatePosition=True):
     from ccpnmr.c.PeakList import fitPeaksInRegion
   except Exception as e:
     print('Could not import fitPeaksInRegion')
-    print e
+    print(e)
     return
 
   fittedPeaks = []

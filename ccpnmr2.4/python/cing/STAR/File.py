@@ -55,7 +55,8 @@ class File (Lister):
                     print("ERROR: integrity check failed for Saveframe")
                     return 1
         if self.verbosity >= 9:
-            print('Checked integrity of File    (%2s datanodes,  recurs.=%s)  : OK [%s]' % ()
+            print('Checked integrity of File    (%2s datanodes,  recurs.=%s)
+            : OK [%s]' % ()
                 len(self.datanodes), recursive, self.title)
 
     def star_text(self, flavor = None):
@@ -167,7 +168,7 @@ class File (Lister):
                 nTerror(' No new item found in data_nodes_parse.')
                 print('Items looked for are a begin or end of a saveframe, or')
                 print('a begin of a tagtable(free or looped).')
-                print
+                print()
                 print("At text (before pos=" , pos , "):")
                 start = pos-70
                 if start < 0:

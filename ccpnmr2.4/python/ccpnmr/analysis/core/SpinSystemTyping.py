@@ -190,8 +190,7 @@ def getSpinSystemTypes(residues, spinSystems, preserveAssign, isotopes=('1H','13
     p, cc = ensemble[j]
     seq = ''.join([olc.get(cc[ss]) or '?' for ss in spinSystems])
     
-    print p, seq
-    
+    print(p, seq)    
     for ss in spinSystems:   
       ccpCode = cc[ss]
       typeScores[ss][ccpCode] = typeScores[ss].get(ccpCode, 0) + 1
@@ -240,7 +239,8 @@ def searchPosterior(spinSystems, cc0, graph=None, numSteps=100000, numBest=20,
     i += 1
     num = 1  
       
-    ensemble.sort()  
+    ensemble.sort()
+    
     p0, cc0 = ensemble[0]
       
     cc = getNewClassifications(cc0, num)
@@ -298,12 +298,8 @@ def searchPosterior(spinSystems, cc0, graph=None, numSteps=100000, numBest=20,
           else:
             correct += '-'
  
-        print i, p0
-        print scores
-        print current
-        print correct
-        print known
-
+        print(i, p0)        print(scores)        print(current)        print(correct)
+        print(known)
     else:
       k = randint(1,numBest-1)
       p, cc = ensemble[k]
@@ -336,12 +332,8 @@ def searchPosterior(spinSystems, cc0, graph=None, numSteps=100000, numBest=20,
       else:
         correct += '-'
 
-    print i, pBest
-    print scores
-    print current
-    print correct
-    print known
-  
+    print(i, pBest)    print(scores)    print(current)    print(correct)
+    print(known)
   return ensemble
 
 def getSpinSystemShifts(ss, shiftList, isotopes):

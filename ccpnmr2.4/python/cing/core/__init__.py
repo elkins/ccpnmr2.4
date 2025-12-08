@@ -48,8 +48,10 @@ CCPN API linkage:
   ccpnProject :: (memops.Implementation.Project)
   ccpnMolecule = ccpnProject.molSystems[0]   :: (ccp.molecule.MolSystem.MolSystem)
   ccpnChain   in ccpnMolecule.sortedChains() :: (ccp.molecule.MolSystem.Chain)
-  ccpnResidue in ccpnChain.sortedResidues()  :: (ccp.molecule.MolSystem.Residue)
-  ccpnAtom    in ccpnResidue.sortedAtoms()   :: (ccp.molecule.MolSystem.Atom)
+  ccpnResidue in ccpnChain.sortedResidues()
+  :: (ccp.molecule.MolSystem.Residue)
+  ccpnAtom    in ccpnResidue.sortedAtoms()
+   :: (ccp.molecule.MolSystem.Atom)
 
 -------------------------------------------------------------------------------
 Mapping between the CING data model, NMR-STAR and CCPN:

@@ -98,8 +98,7 @@ def testNameParsing(dirPath):
         else:
           ss = '    - '
           
-        print ss, dd['fname'], dd.get('usenames'), dd.get('prefixes'), dd.get('unused')
-          
+        print(ss, dd['fname'], dd.get('usenames'), dd.get('prefixes'), dd.get('unused'))          
   for xmap in unused:
     print('\nUNUSED', xmap.get('namesStartWith'), xmap.get('hasnames'), xmap.get('hasprefixes') )
     print('      ', [(x.get('name'), x.get('isReversed')) for x in xmap['expPrototypes']])
@@ -317,8 +316,7 @@ class ParseBrukerExpNames:
     getAminoAcids = False
 
     print("%s:" % brukerExpName)
-    print
-
+    print()
     #
     # First get main components, by largest string first
     #
@@ -426,7 +424,7 @@ class ParseBrukerExpNames:
     #
     
     if len(brukerExpName) != brukerExpName.count('*'):
-      print
+      print()
       print("  Remaining unparsed name: %s" % brukerExpName)
 
-    print 
+    print()

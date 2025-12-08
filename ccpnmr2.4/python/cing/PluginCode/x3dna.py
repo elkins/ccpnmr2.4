@@ -208,7 +208,8 @@ class X3dna(NTdict):
         #    project.x3dnaStatus.baseName     = baseName
         self.project.x3dnaStatus.path = root
         self.project.x3dnaStatus.contentFile = contentFile
-        self.project.x3dnaStatus.chains = NTlist()    # list of (chainNames, outputFile) tuples to be parsed
+        self.project.x3dnaStatus.chains = NTlist()
+          # list of (chainNames, outputFile) tuples to be parsed
         self.project.x3dnaStatus.keysformat()
 
         # The input file for is a pdb file

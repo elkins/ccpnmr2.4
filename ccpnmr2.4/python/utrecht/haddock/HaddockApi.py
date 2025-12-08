@@ -229,7 +229,8 @@ class HaddockProject(object):
                                         airUpperDistanceLimit=self.airUpperDistanceLimit,
                                         debug=self.debug))
         
-        if not len(self.runs): self.newHaddockRun()                            
+        if not len(self.runs): self.newHaddockRun()
+                                  
     
     def __initStoredPartners(self):
         
@@ -487,7 +488,8 @@ class HaddockPartner(object):
                 self.hPartner = partner
                 if self.debug: print("NOTE: Made new haddock partner:%s, code:%s" % (self.hPartner.molSystem.name,code))
 
-                self.setAutoHistidinePstate()            # Set pState to True by default
+                self.setAutoHistidinePstate()
+                          # Set pState to True by default
             
                 ensembles = self.getHaddockEnsemble()
                 for ensemble in ensembles:                        # Set the default Haddock ensemble to all

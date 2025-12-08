@@ -226,7 +226,8 @@ class MidgePopup(BasePopup):
     
     self.getPeaks()
     self.getResonances()
-    self.update()    
+    self.update()
+      
     
     self.geometry('600x400')
 

@@ -161,7 +161,8 @@ class PseudoRotation( SVDfit ):
 
         Plist.cAverage()
         Plist.limit(Plist.cav-180.0,Plist.cav+180.0) # Center around circular average,
-        Plist.average()                              # to calculate sd in this step
+        Plist.average()
+                                    # to calculate sd in this step
         Plist.limit(0.0,360.0)                       # and rescale to 0,360 range
         tauMlist.average()
 

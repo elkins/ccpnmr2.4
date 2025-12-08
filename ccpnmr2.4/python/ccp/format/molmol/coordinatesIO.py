@@ -259,10 +259,8 @@ if __name__ == "__main__":
   for mc in molmolFile.modelCoordinates:
   
     for coo in molmolFile.modelCoordinates[mc]:
-      print coo.serial, coo.resName
-      
+      print(coo.serial, coo.resName)      
   for chain in molmolFile.chains:
-    print chain.chainId
-
+    print(chain.chainId)
   molmolFile.name = 'local/test.coord'  
   molmolFile.write()

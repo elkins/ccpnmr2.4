@@ -194,7 +194,8 @@ class HcloudsMdPopup(BasePopup):
     self.bottomButtons = createDismissHelpButtonList(guiFrame,expands=0,help_url=None)
     self.bottomButtons.grid(row=row, column=0, sticky=Tkinter.EW)
     
-    self.update()    
+    self.update()
+      
 
     for func in ('__init__', 'delete', 'setName'):
       for clazz in ('ccp.nmr.NmrConstraint.DistanceConstraintList',):
@@ -581,8 +582,10 @@ class HcloudsMdPopup(BasePopup):
 
   def update(self):
     
-    self.updateConstraintSets()    
-    self.updateConstraintLists()    
+    self.updateConstraintSets()
+      
+    self.updateConstraintLists()
+      
  
     if (self.constrLists != [None] * 4) and self.coolingScheme:
       self.mdButtons.buttons[0].enable()

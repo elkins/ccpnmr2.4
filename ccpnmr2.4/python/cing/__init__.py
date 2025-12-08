@@ -179,4 +179,5 @@ from cing.core.sml          import sML2obj      # This also initializes the SMLh
 
 
 from cing.core.database     import NTdb #@Reimport
-NTdb._restoreFromSML()                          # This initializes the database
+NTdb._restoreFromSML()
+                        # This initializes the database

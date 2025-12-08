@@ -2,8 +2,7 @@
 
 """This module provides entry, saveframe, and loop objects. Use python's built in help function for documentation.
 
-There are two variables you can set to control our behavior. Setting bmrb.verbose to True will print some of what is going on to the terminal. Setting raise_parse_warnings to true will raise an exception if the parser encounters something problematic. Normally warnings are suppressed.
-
+There are two variables you can set to control our behavior. Setting bmrb.verbose to True will print(some of what is going on to the terminal. Setting raise_parse_warnings to true will raise an exception if the parser encounters something problematic. Normally warnings are suppressed.)
 Some errors will be detected and exceptions raised, but this does not implement a full validator (at least at present).
 
 Call directly (rather than importing) to run a self-test.
@@ -21,7 +20,7 @@ import bmrb
 import copy
 import gzip
 import shutil
-import urllib2
+import urllib.request as urllib2
 import itertools
 from cStringIO import StringIO
 
@@ -56,16 +55,14 @@ def diff(entry1,entry2):
     if len(diffs) == 0:
         print("Identical entries.")
     for difference in diffs:
-        print difference
-
+        print(difference)
 def validate(entry,schema=None):
     """Prints a validation report of an entry."""
     validation = entry.validate(schema)
     if len(validation) == 0:
         print("No problems found during validation.")
     for err in validation:
-        print err
-
+        print(err)
 def __cleanValue__(value):
     """Automatically quotes the value in the appropriate way. Don't quote values you send to this method or they will show up in another set of quotes as part of the actual data. E.g.:
 
@@ -75,8 +72,7 @@ def __cleanValue__(value):
 
     __cleanValue__("e. coli") returns "'e. coli'"
 
-    In fact, you probably will never have to call this method directly. (All print calls automatically use it.)
-    """
+    In fact, you probably will never have to call this method directly. (All print(calls automatically use it.))    """
 
     # NBNB None/True/False handling added by Rasmus Fogh 20141007
     if value is None:
@@ -528,8 +524,7 @@ class entry:
 
     def printTree(self):
         """Prints a summary, tree style, of the frames and loops in the entry."""
-        print repr(self)
-        for pos,frame in enumerate(self):
+        print(repr(self))        for pos,frame in enumerate(self):
             print("\t[" + str(pos) + "] " + repr(frame))
             for pos2,loop in enumerate(frame):
                 print("\t\t[" + str(pos2) + "] " + repr(loop))
@@ -911,8 +906,7 @@ class saveframe:
 
     def printTree(self):
         """Prints a summary, tree style, of the loops in the saveframe."""
-        print repr(self)
-        for pos,loop in enumerate(self):
+        print(repr(self))        for pos,loop in enumerate(self):
             print("\t[" + str(pos) + "] " + repr(loop))
 
     def validate(self,validation_schema=None):
@@ -1035,8 +1029,7 @@ class loop:
             if len(self.data) == 0:
                 return "\n   loop_\n\n   stop_\n"
             else:
-                raise ValueError("Impossible to print data if there are no associated tags. Loop: " + str(self.category))
-
+                raise ValueError("Impossible to print(data if there are no associated tags. Loop: " + str(self.category)))
         # Make sure that if there is data, it is the same width as the column tags
         if len(self.data) > 0:
             for row in self.data:
@@ -1250,8 +1243,7 @@ class loop:
 
     def printTree(self):
         """Prints a summary, tree style, of the loop."""
-        print repr(self)
-
+        print(repr(self))
     def renumberRows(self, index_tag, start_value=1, maintain_ordering=False):
         """Renumber a given column incrementally. Set start_value to initial value if 1 is not acceptable. Set maintain_ordering to preserve sequence with offset. E.g. 2,3,3,5 would become 1,2,2,4."""
 
@@ -1416,10 +1408,8 @@ if __name__ == '__main__':
 
     def printError(e,x,ent_str):
         if len(e.args) == 1:
-            print str(x)+": ",str(e)
-        else:
-            print str(x)+": ",str(e.args[0]),"on line",(e.args[1]-1)
-            splitted = ent_str.split("\n")
+            print(str(x)+": ",str(e))        else:
+            print(str(x)+": ",str(e.args[0]),"on line",(e.args[1]-1))            splitted = ent_str.split("\n")
             with open("/tmp/"+str(x),"w") as tmp:
                 tmp.write(ent_str)
             for x in range(e.args[1]-5,e.args[1]+2):
@@ -1456,8 +1446,7 @@ if __name__ == '__main__':
         try:
             reent = entry.fromString(ent_str)
             if ent_str != str(reent):
-                print str(x)+": Inconsisent output when re-parsed."
-                errors += 1
+                print(str(x)+": Inconsisent output when re-parsed.")                errors += 1
         except Exception as e:
             printError(e,x,ent_str)
             errors += 1
@@ -1476,14 +1465,12 @@ if __name__ == '__main__':
             compare.wait()
             results = compare.stdout.read()
             if not "NO DIFFERENCES REPORTED" in results:
-                print str(x)+": Output inconsistent with original: " + results.strip()
-                open("/tmp/" + str(x),"wb").write(str(ent_str))
+                print(str(x)+": Output inconsistent with original: " + results.strip())                open("/tmp/" + str(x),"wb").write(str(ent_str))
                 errors += 1
 
         comp = ent.compare(reent)
         if len(comp) > 0:
-            print str(x)+": Internal entry comparator detects difference(s):"
-            diff(ent,reent)
+            print(str(x)+": Internal entry comparator detects difference(s):")            diff(ent,reent)
 
     if errors == 0:
         print("If you didn't see any errors, than everything is working!")

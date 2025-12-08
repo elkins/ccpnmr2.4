@@ -1108,10 +1108,10 @@ class ChemCompEditPopup(CcpnAttributeEditPopup):
       # TODO CHANGE THIS
       #refUrl = getUrl(self.ccpnObject.root,'localTest',os.path.join(os.getcwd(),'local'))
       #self.ccpnObject.chemCompHead.contentStorage.url = refUrl
-      print
+      print()
       print(" WARNING NOT WORKING!")
-      print
-    
+      print()
+        
     self.popups = {}
     
     BasePopup.__init__(self, parent=parent, title='Edit chemComp (%s, %s) window' % (chemComp.molType,chemComp.ccpCode), **kw)
@@ -1170,7 +1170,8 @@ class ChemCompEditPopup(CcpnAttributeEditPopup):
     buttons = ButtonList(self, texts=texts, commands=commands, spacers = 15)
     buttons.grid(row=row, column=0)
 
-    self.updateTables()    
+    self.updateTables()
+      
   
   def setSysNameList(self):
     

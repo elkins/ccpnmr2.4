@@ -464,8 +464,7 @@ if __name__ == '__main__':
   from memops.gui.CheckButton  import CheckButton
 
   def fn(values):
-    print values
-
+    print(values)
   root = Tkinter.Tk()
   mw = MultiWidget(root, CheckButton, callback=fn, minRows=0,
                    options=['One','Two','Three'], values=[1,0,1],

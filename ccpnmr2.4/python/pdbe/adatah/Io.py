@@ -241,7 +241,7 @@ Code below from http://peerit.blogspot.com/2007/07/multipartposthandler-doesnt-w
 # 7/26/07 Slightly modified by Brian Schneider  
 
 import urllib
-import urllib2
+import urllib.request as urllib2
 import mimetools, mimetypes
 from cStringIO import StringIO
 

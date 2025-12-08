@@ -148,9 +148,8 @@ if __name__ == "__main__":
     constraintFile.read(verbose = 1)
     
     for constraint in constraintFile.constraints:
-      print constraint.Id,
-      print constraint.upperAngle, constraint.lowerAngle
+      print(constraint.Id,)      print(constraint.upperAngle, constraint.lowerAngle)
       for constraintItem in constraint.items:
         for constraintMember in constraintItem.members:
-          print constraintMember.chainCode, constraintMember.seqCode, constraintMember.atomName,
-        print
+          print(constraintMember.chainCode, constraintMember.seqCode, constraintMember.atomName,)
+          print()

@@ -300,7 +300,8 @@ class UtilityButtonList(ButtonList):
       self.popup.close()
       
     else:
-      self.destroy()  
+      self.destroy()
+      
   
       
 if __name__ == '__main__':

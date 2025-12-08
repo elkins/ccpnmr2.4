@@ -39,7 +39,8 @@ def do_cmd( cmd, bufferedOutput = True ):
     else:
         p = Popen(cmd, shell=True, stdout=PIPE)
         pipe = p.stdout
-        line = p.stdout.readline()        
+        line = p.stdout.readline()
+              
         while line:
             nTmessageNoEOL( line )
             line = p.stdout.readline()
@@ -164,7 +165,7 @@ class ForkOff:
                      type(func) == types.MethodType ) :
                 nTerror("given function not of types:")
                 nTmessage("(Function, BuiltinFunctionType, or MethodType) for job:")
-                print job
+                print(job)
                 nTmessage("In stead type is : %s", type(func))
                 return []
 

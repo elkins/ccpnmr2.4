@@ -179,12 +179,11 @@ try:
   
 except:
   HAVE_NUMPY = False
-  print ''
+  print('')
   print('WARNING: Python NumPy module not installed or accessible.')
   print('NumPy is required for CcpNmr automatic assignment and')
   print('peak separator routines.')
-  print ''
-
+  print('')
 
 from ccpnmr.update.UpdatePopup import UpdatePopup
 
@@ -2199,7 +2198,7 @@ class AnalysisPopup(BasePopup, Analysis):
     yy = self.argumentServer.askYesNo("Import Calculation Results")
     print('calcData',calculationData)
     if yy:
-      print calculationData
+      print(calculationData)
       self.importCyanaData(calculationData=calculationData)
 
 
@@ -2286,7 +2285,7 @@ class AnalysisPopup(BasePopup, Analysis):
       from grenoble.meccano.MeccanoPopup import MeccanoPopup
     except Exception as e:
       showWarning('Meccano exception', str(e), parent=self)
-      print e
+      print(e)
       return
       
     self.openPopup('meccano', MeccanoPopup)

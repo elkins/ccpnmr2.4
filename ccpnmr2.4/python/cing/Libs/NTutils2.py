@@ -197,7 +197,8 @@ def switchOutput( showOutput, doStdOut=True, doStdErr=False):
 class MsgHoL(NTdict):
     def __init__(self):
         NTdict.__init__(self)
-        self[ ERROR_ID ] =  NTlist()        
+        self[ ERROR_ID ] =  NTlist()
+              
         self[ WARNING_ID ] =  NTlist()
         self[ MESSAGE_ID ] =  NTlist()
         self[ DEBUG_ID ] =  NTlist()
@@ -591,7 +592,8 @@ def lenRecursive(obj, max_depth = 5):
     count = 0    
     eList = obj
     if isinstance(obj, dict):
-        eList = obj.values()        
+        eList = obj.values()
+              
     for element in eList:
         if element == None:
             count += 1

@@ -222,5 +222,5 @@ if (__name__ == '__main__'):
 
   p = OpenProjectPopup(r, transient=True, modal=True)
   if (p.project):
-    print p.project.name
-  p.destroy()
+    print(p.project.name)
+    p.destroy()

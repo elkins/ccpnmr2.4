@@ -337,7 +337,8 @@ if __name__ == '__main__':
 #                from pdbe.analysis.external.stride.Util import StrideInfo #@UnresolvedImport
 #            ImportError: No module named external.stride.Util          
         import Tkinter
-        root = Tkinter.Tk()        
+        root = Tkinter.Tk()
+              
         ccpnDir = entryCode
         vascoReferenceCheck = VascoReferenceCheck(guiParent=root)
         vascoReferenceCheck.checkProject(ccpnDir=ccpnDir)

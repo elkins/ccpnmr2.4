@@ -179,7 +179,8 @@ class UpdatePopup(BasePopup, UpdateAgent):
   def install(self):
   
     if self.server:
-      self.installUpdates()    
+      self.installUpdates()
+        
       self.updateFiles()
 
   def selectAll(self):

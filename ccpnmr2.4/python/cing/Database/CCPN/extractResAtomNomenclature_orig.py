@@ -77,10 +77,8 @@ resData.sort()
 
 for t, chemCompVar in resData:
   atomTexts = atomData.get(chemCompVar, [])
-  print t
-
+  print(t)
   for a in atomTexts:
-    print a
-
+    print(a)
   print('ENDRES')
 

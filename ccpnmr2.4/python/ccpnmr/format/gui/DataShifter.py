@@ -730,8 +730,8 @@ def createInProject(ccpnObject,toProject,copyOrder,createdObjectDict,toProjectRe
               # TODO: add items from nonMatchingLinkValues if there is a match!?!
               setattr(toCcpnObject,linkName,toLinkValue)
               if verbose:
-                print linkName, toLinkValue
-            del(postponedLinkDict[fromCcpnObject][linkName])
+                print(linkName, toLinkValue)
+                del(postponedLinkDict[fromCcpnObject][linkName])
 
       if not postponedLinkDict[fromCcpnObject]:
         del(postponedLinkDict[fromCcpnObject])
@@ -1156,8 +1156,7 @@ def mapObject(ccpnObject,toProject,createdObjectDict,linkName,metaInfo,dialogInf
   keyNames = metaClass.keyNames
   
   if debug:
-    print metaClass.name
-  
+    print(metaClass.name)  
   #
   # Check if keyNames fit with metaInfo that was passed in (root out serials and such)
   #
@@ -1203,9 +1202,8 @@ def mapObject(ccpnObject,toProject,createdObjectDict,linkName,metaInfo,dialogInf
       fromData.append((keyName,linkedData))
   
   if debug:
-    print keyNames
-    print fromData
-  
+    print(keyNames)
+    print(fromData)
   #
   # Get the relevant parent object in toProject
   #
@@ -1597,9 +1595,7 @@ def copyObject(ccpnObject,toProject,createdObjectDict,postponedLinkDict,metaInfo
         
         if not newObject:
           print("  ERROR: copyObjects could not create or map new %s..." % ccpnObject.className)
-          print newParent
-          print keywds
-          print ccpnObject
+          print(newParent)          print(keywds)          print(ccpnObject)
           raise
 
       if not createdObjectDict.has_key(metaClass.name):
@@ -1609,8 +1605,7 @@ def copyObject(ccpnObject,toProject,createdObjectDict,postponedLinkDict,metaInfo
 
     else:
       print("  ERROR: copyObjects could not create new %s... parent missing in other project." % ccpnObject.className)
-      print objectParent
-    
+      print(objectParent)    
   return newObject
 
 ############
@@ -1832,18 +1827,16 @@ class DataShifter(BasePopup):
           project.saveModified()
         except:
           showError("Project could not be saved","The project could not be saved. Sorry - try again from scratch.")
-          print traceback.format_exception_only(sys.exc_type,sys.exc_value)
-      except:
+          print(traceback.format_exception_only(sys.exc_type,sys.exc_value))      except:
         showError("Project not valid","The project is not valid and will not be saved. Sorry - try again from scratch.")
-        print traceback.format_exception_only(sys.exc_type,sys.exc_value)
-   
+        print(traceback.format_exception_only(sys.exc_type,sys.exc_value))   
   def doTest(self,projectId):
   
     project = getattr(self,projectId)
     
     if project:
       for repository in project.repositories:
-        print repository.name, repository.url
+        print(repository.name, repository.url)
         for packageLocator in repository.sortedStored():
           print("     ", packageLocator.targetName)
           
@@ -1905,8 +1898,7 @@ class DataShifter(BasePopup):
         
       except:
         raise
-        print traceback.format_exception_only(sys.exc_type,sys.exc_value)
-        showError("Could not copy","Copying resulted in a '%s'. See shell for details." % sys.exc_info()[0])
+        print(traceback.format_exception_only(sys.exc_type,sys.exc_value))        showError("Could not copy","Copying resulted in a '%s'. See shell for details." % sys.exc_info()[0])
    
       self.updateProjectWidgets(toProjectId)
 

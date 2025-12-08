@@ -1267,8 +1267,7 @@ def initResonance(resonance, doMerge=True):
     element    = atom.chemAtom.elementSymbol
     if resonance.isotopeCode[-len(element):] != element:
       msg = 'Resonance %d isotope-assignment mismatch: Resetting isotope' 
-      print msg % resonance.serial
-      
+      print(msg % resonance.serial)      
       resonance.isotopeCode = DEFAULT_ISOTOPES.get(element, 'unknown')
       getBoundResonances(resonance, recalculate=True, contribs=None)   
       
@@ -2728,8 +2727,7 @@ def assignResToDim(peakDim, resonance=None, contrib=None,
       if resonance.isotopeCode != 'unknown':
         msg = 'Attempt to link %s resonance to %s dimension'
         #raise Exception(msg % (resonance.isotopeCode, isotopeCode))
-        print msg % (resonance.isotopeCode, isotopeCode)
-        return
+        print(msg % (resonance.isotopeCode, isotopeCode))        return
 
     #resonance.isotopeCode = isotopeCode
     for checkContrib in peakDim.peakDimContribs:

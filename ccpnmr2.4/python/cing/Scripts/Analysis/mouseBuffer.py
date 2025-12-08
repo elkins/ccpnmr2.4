@@ -24,9 +24,7 @@ firstPeak = Peak()
 peakI = PeakIntensity()
 
 firstPeak = lastPeakList.findFirstPeak()
-print firstPeak
-
+print(firstPeak)
 peakI = firstPeak.peakIntensities
-print peakI
-
-print firstPeak.details
+print(peakI)
+print(firstPeak.details)

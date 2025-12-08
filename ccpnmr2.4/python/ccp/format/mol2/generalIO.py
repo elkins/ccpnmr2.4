@@ -153,7 +153,8 @@ class Mol2GenericFile(FormatFile):
       triposTagSearch = self.patt[self.format + 'TriposTag'].search(line)
       
       if triposTagSearch:
-        triposSection = triposTagSearch.group(1).strip()      
+        triposSection = triposTagSearch.group(1).strip()
+            
         sectionLine = 0
         if not self.infoDict.has_key(triposSection):
           self.infoDict[triposSection] = {}

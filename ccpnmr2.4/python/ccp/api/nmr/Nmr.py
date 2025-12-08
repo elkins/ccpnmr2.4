@@ -59308,8 +59308,8 @@ decayRate.
   applicationData = memops.api.Implementation.DataObject.applicationData
   
   boxWidth = property(getBoxWidth, setBoxWidth, None,
-  r"""The full width of the peak footprint in points, i.e. the width of the 
-  area that should be considered for integration, fitting, etc. It is not 
+  r"""The full width of the peak footprint(in points, i.e. the width of the)
+  area that should be considered for integration, fitting, etc. It is not
   a very precise definition, but this is an input parameter rather than an 
   output parameter.
   """)
@@ -59344,7 +59344,7 @@ decayRate.
   are better described by one of the alternatives :
   positionError - 
   standard deviation of measured position
-  boxWidth - footprint width of 
+  boxWidth - footprint(width of)
   peak for integration limits etc.
   decayRate - fitted decay rate (in Hz)
   """)

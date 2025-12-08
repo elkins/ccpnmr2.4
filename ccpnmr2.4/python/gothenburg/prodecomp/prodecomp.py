@@ -118,7 +118,8 @@ def prodecomp(Pmx, defs, intl, cmps, rglf, itrs):
                 it = it + 1           
                 QQ = where(logical_and((z <= tol),P))[1]
                 f = x.flatten(1)[QQ]/(x.flatten(1)[QQ] - z[QQ])            
-                alpha = f.min()            
+                alpha = f.min()
+                          
                 x = x+alpha*(z-x)            
                 ij = where(logical_and((abs(x) < tol),(P!=0)))[1]            
                 put (Z, ij, ij.T+1)            
@@ -135,7 +136,8 @@ def prodecomp(Pmx, defs, intl, cmps, rglf, itrs):
                 put(z,PP,var3)
                 put(z,ZZ,zeros((nzz[1],nzz[0]))) 
                 
-            x = z.copy()        
+            x = z.copy()
+                  
             w = Xty-dot(XtX,asmatrix(x).T)
         
         # comes as row
@@ -244,7 +246,8 @@ def prodecomp(Pmx, defs, intl, cmps, rglf, itrs):
                                         M2 = midmatrix(ff,asmatrix([1,defs[j-1,jj-1]]))                                    
                                         for jjj in range(1,comps+1):
                                             inff = dot(M2[:,:,jjj-1],f[:,jj-1,jjj-1])
-                                            ff[:,0,jjj-1] = inff.copy()                                    
+                                            ff[:,0,jjj-1] = inff.copy()
+                                                                              
                                             
                             rn3 = range(1,int(comps/branches[i-1]+1))
                             [m1,m2,m3] = ff.shape
@@ -311,7 +314,8 @@ def prodecomp(Pmx, defs, intl, cmps, rglf, itrs):
                 for jjj in range(1,int(branches[i-1]+1)):
                     slc = range(jjj,int(comps+jjj-branches[i-1]+1),int(branches[i-1]))
                     islc = [s-1 for s in slc]                 
-                    f[:,i-1,islc] = ffff.copy()            
+                    f[:,i-1,islc] = ffff.copy()
+                              
                 
             P = []
             M1 = []
@@ -326,7 +330,8 @@ def prodecomp(Pmx, defs, intl, cmps, rglf, itrs):
                             M2 = midmatrix(ff,asmatrix([1,defs[j-1,jj-1]]))
                             for jjj in range(1,comps+1):
                                 inff2 = dot(M2[:,:,jjj-1],f[:,jj-1,jjj-1])
-                                ff[:,0,jjj-1] = inff2.copy()                        
+                                ff[:,0,jjj-1] = inff2.copy()
+                                                      
                 
 
                     rn3 = range(1,int(comps/branches[n]+1))

@@ -478,7 +478,8 @@ class PeakTableFrame(Frame):
 
 
     if not molSystems:
-      molSystems = self.analysisApp.project.sortedMolSystems()  
+      molSystems = self.analysisApp.project.sortedMolSystems()
+      
     
     structures = []  
     for molSystem in molSystems:

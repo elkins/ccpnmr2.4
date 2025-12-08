@@ -5,8 +5,7 @@
 from cing import cingDirTestsData
 from cing.Libs.NTutils import * #@UnusedWildImport
 import mimetools
-import urllib2
-
+import urllib.request as urllib2
 FORM_ACCESS_KEY = "AccessKey"
 FORM_USER_ID = "UserId"
 FORM_UPLOAD_FILE_BASE = "UploadFile"
@@ -233,24 +232,19 @@ def iCingRobot():
 
     if doRun:
         data = credentials + [(FORM_ACTION,FORM_ACTION_RUN),]
-        print  sendRequest(rpcUrl, data, files)
-
+        print(sendRequest(rpcUrl, data, files))
     if doStatus:
         data = credentials + [(FORM_ACTION,FORM_ACTION_STATUS),]
-        print  sendRequest(rpcUrl, data, files)
-
+        print(sendRequest(rpcUrl, data, files))
     if doLog:
         data = credentials + [(FORM_ACTION,FORM_ACTION_LOG),]
-        print  sendRequest(rpcUrl, data, files)
-
+        print(sendRequest(rpcUrl, data, files))
     if doPname:
         data = credentials + [(FORM_ACTION,FORM_ACTION_PROJECT_NAME),]
-        print  sendRequest(rpcUrl, data, files)
-
+        print(sendRequest(rpcUrl, data, files))
     if doPurge:
         data = credentials + [(FORM_ACTION,FORM_ACTION_PURGE),]
-        print  sendRequest(rpcUrl, data, files)
-
+        print(sendRequest(rpcUrl, data, files))
 if __name__ == "__main__":
     cing.verbosity = verbosityDebug
     iCingRobot()

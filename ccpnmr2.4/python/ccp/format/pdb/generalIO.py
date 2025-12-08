@@ -1162,20 +1162,15 @@ if __name__ == "__main__":
 
     pdbFile.readHeader(verbose = 1)
     
-    print pdbFile.headerVars
-    print pdbFile.remarks
-    
-    print pdbFile.chains
-    
+    print(pdbFile.headerVars)
+    print(pdbFile.remarks)
+    print(pdbFile.chains)    
     for chain in pdbFile.chains:
-      print chain.chainId, chain.molId, chain.headerVars
-      
-    print pdbFile.hetGroups
-
+      print(chain.chainId, chain.molId, chain.headerVars)      
+    print(pdbFile.hetGroups)
     for hetGroup in pdbFile.hetGroups:
       alist = dir(hetGroup)
       for attr in alist:
         if attr in ['__init__','__doc__','__module__','addChemicalName','addFormula','addSynonym']:
           continue
-        print attr, getattr(hetGroup,attr)
-    
+        print(attr, getattr(hetGroup,attr))    

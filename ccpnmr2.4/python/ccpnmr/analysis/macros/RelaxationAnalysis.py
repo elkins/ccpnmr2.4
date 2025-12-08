@@ -592,8 +592,7 @@ class RelaxationAnalysisPopup(BasePopup):
       teBest = [0.0] * n
       rexBest = [0.0] * n
       
-      print ''
-      
+      print('')      
       for residue in residues:
         t1,t2, noe = t1t2Points.get(residue, (None, None, None))
         t1Values.append(t1)

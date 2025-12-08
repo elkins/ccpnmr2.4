@@ -160,7 +160,6 @@ if __name__ == "__main__":
     sequenceFile.read(verbose = 1)
     
     for seq in sequenceFile.sequences:
-      print seq.molName
+      print(seq.molName)
       for seqel in seq.elements:
-        print seqel.seqCode, seqel.code1Letter
-    
+        print(seqel.seqCode, seqel.code1Letter)    

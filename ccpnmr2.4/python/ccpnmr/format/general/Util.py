@@ -157,7 +157,8 @@ def getFormatConverterInfoDict():
     formatObject.IOkeywords = copy.deepcopy(formatObject.IOkeywords)
         
     functionNames = formatObject.IOkeywords.keys()
-    functionNames.sort()    
+    functionNames.sort()
+      
     
     subClasses = formatObject.IOkeywords['subClasses']
     functionNames.pop(functionNames.index('subClasses'))
@@ -468,7 +469,8 @@ def getValidExportFormats(project):
   # Now set the information
   #
   
-  (fcInfo,subClassedFunctions) = getFormatConverterInfoDict()  
+  (fcInfo,subClassedFunctions) = getFormatConverterInfoDict()
+  
   
   exportFormats = {}
   

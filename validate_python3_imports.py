@@ -81,15 +81,21 @@ class ImportValidator:
         skip_patterns = [
             # GUI modules (out of scope)
             '.gui.',
+            '.editor.',  # memops.editor.* modules use Tkinter
             'Tkinter',
             'tkinter',
             '.tk',
             'EditWindow',
             'PopupWindow',
+            '.frames.',  # ccpnmr.analysis.frames.* - GUI components
+            '.popups.',  # GUI popup modules
             # Platform-specific modules that may not be available
             '.WinPeakList',
             # Modules that require external dependencies not in core
             '.molsim',  # May require special MD packages
+            # Example/workshop code (not core library)
+            '.examples.',
+            '.workshop.',
         ]
 
         for pattern in skip_patterns:

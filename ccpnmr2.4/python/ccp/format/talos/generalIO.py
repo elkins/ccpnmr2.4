@@ -109,7 +109,7 @@ class TalosGenericFile(FormatFile):
             # Bail out if obligatory header columns not present
             if refVarCode not in cols:
               if refDatum[4]:
-                print cols, refVarCode, refDatum
+                print(cols, refVarCode, refDatum)
                 print("  Error: can't read %s file - headers don't match." % self.format)
                 return False
               else:

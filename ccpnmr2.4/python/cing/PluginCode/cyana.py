@@ -418,7 +418,8 @@ def autoDetectCyanaConvention(pdbFile):
     'Returns None on error or CYANA or CYANA2'
 #    tmpProjectName = getRandomKey(size=10)
 #    switchOutput(False) # disable standard out.
-    countMap = CountMap()    
+    countMap = CountMap()
+      
     countMap['HN'] = 0 # CYANA 1
     countMap['H'] = 0
     pdbRecords = PyMMLib.PDBFile(pdbFile)
@@ -674,7 +675,8 @@ def initCyana(project, cyanaFolder, modelCount = None, convention=None, coordina
                 # end if            
             # end if            
         # end for
-        tar.close()        
+        tar.close()
+              
         if not cyanaRootDirectory:
             # in python 2.6 tarfile class doesn't append '/' in root dir anymore
             # sorting by length and taking the shortest, likely the root dir.

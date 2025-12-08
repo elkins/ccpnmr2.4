@@ -204,7 +204,7 @@ def getGlobalMap(oldVersionStr=None):
     import ccp.xml.lims.Protocol
     ccp.xml.lims.Protocol.makeMapping(versionMapping)
 
-    import ccp.xml.lims.ExpBlueprint
+    import ccp.xml.lims.ExpBlueprint()
     ccp.xml.lims.ExpBlueprint.makeMapping(versionMapping)
 
     import ccp.xml.nmr.Nmr

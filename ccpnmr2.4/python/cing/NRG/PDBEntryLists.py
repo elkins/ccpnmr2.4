@@ -12,8 +12,7 @@ from cing.Libs.NTutils import * #@UnusedWildImport
 from cing.NRG.nrgCingRdb import getPdbIdList
 from cing.NRG.settings import matchBmrbPdbDir
 import urllib
-import urllib2
-
+import urllib.request as urllib2
 urlDB2 = "http://restraintsgrid.bmrb.wisc.edu/servlet_data/viavia/mr_mysql_backup/"
 #urlDB2 = "http://restraintsgrid.bmrb.wisc.edu/servlet_data/viavia/mr_mysql_backupAn_2009-08-03/"
 #urlDB2 = "http://nmr.cmbi.ru.nl/~jd/viavia/mr_mysql_backup/"

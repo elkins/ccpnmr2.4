@@ -78,8 +78,7 @@ def tesMars(argServer):
   chain = p.findFirstMolSystem().findFirstChain()
   shiftList = p.currentNmrProject.findFirstMeasurementList(className='ShiftList', serial=2)
 
-  print runMars(shiftList, chain)
-  
+  print(runMars(shiftList, chain))  
 def runMars(shiftList, chain, fragSize=5,
             cutoffCO=0.25, cutoffCA=0.2,
             cutoffCB=0.5, cutoffHA=0.25,

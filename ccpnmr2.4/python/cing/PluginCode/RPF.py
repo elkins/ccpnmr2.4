@@ -28,7 +28,7 @@ class RPF():
         ccpnFolder = self.project.ccpnFolder
         if ccpnFolder.endswith(".tgz") or ccpnFolder.endswith(".tar.gz"):
             head, tail = os.path.split(ccpnFolder)
-            print head, tail
+            print(head, tail)
             baseNameList = tail.split('.')
             print("baseNameList %s" % baseNameList)
             baseName = baseNameList[0]

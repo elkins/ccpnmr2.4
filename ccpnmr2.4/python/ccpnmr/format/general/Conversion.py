@@ -807,7 +807,8 @@ class FormatConversion(object):
       else:
         acqString = ""
         
-      atomIds.sort()      
+      atomIds.sort()
+          
       dimensionInfoString = "%s%s" % (",".join(atomIds),acqString)
 
       refExpDimInfo[refExpDim.dim] = dimensionInfoString
@@ -1045,7 +1046,8 @@ class FormatConversion(object):
         (fileRead,fileInformation) = self.preparseFile(informationType,formatName,filePath)
         
         if testMode:
-          self.endSilent()   
+          self.endSilent()
+           
           print(informationType, formatName, fileRead, fileInformation)
         
         if fileRead:
@@ -1774,7 +1776,8 @@ class FormatConversion(object):
   
       sequenceComparison.createFormatFileChainInformation()
 
-      forceChainMappings = sequenceComparison.compareFormatFileToCcpnInfo()        
+      forceChainMappings = sequenceComparison.compareFormatFileToCcpnInfo()
+            
       if forceChainMappings:
         keywds['forceChainMappings'] = forceChainMappings
         print(forceChainMappings)

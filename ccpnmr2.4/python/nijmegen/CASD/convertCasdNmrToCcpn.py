@@ -321,7 +321,8 @@ class ConvertCasdNmrToCcpn(ScriptHandler,FcWorkFlow):
       # in the sequence first!!
       if informationType not in ('sequence','coordinates'):
       
-        molSystem = self.ccpnProject.findFirstMolSystem()        
+        molSystem = self.ccpnProject.findFirstMolSystem()
+              
         if not molSystem:
           raise self.ConvertCasdNmrError("No molecular system available - make sure to import sequence or coordinates first.")
 
@@ -346,7 +347,8 @@ class ConvertCasdNmrToCcpn(ScriptHandler,FcWorkFlow):
 
   def closeLogFiles(self):
   
-    self.logFileHandle.close()    
+    self.logFileHandle.close()
+      
     
     sys.stdout = sys.__stdout__
     

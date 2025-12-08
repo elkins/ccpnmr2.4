@@ -204,8 +204,7 @@ try:
 
       for pdbCode in pdbCodes:
 
-        print pdbCode
-
+        print(pdbCode)
         downloadTgz = False
 
         (date,pdbCodeDirectory,downloadUrl) = newNrgCingPdbCodes[pdbCode]
@@ -258,4 +257,4 @@ if __name__ == '__main__':
 
   cd = getCingSummaryTextInfo("summary.txt")
   
-  print cd
+  print(cd)

@@ -150,8 +150,7 @@ class AzaraProcessingScriptFile(AzaraGenericFile):
     fout.close()
 
     if verbose == 1:
-      print self.scriptName + " finished..."
-
+      print(self.scriptName + " finished...")
 class AzaraProcessingScript:
 
   def __init__(self,parent,index,value):

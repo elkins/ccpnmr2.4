@@ -159,6 +159,6 @@ if __name__ == "__main__":
   
     for seq in sequenceFile.sequences:
       for el in seq.elements:
-        print el.seqCode, el.code3Letter
-      for ss in seq.spinSystems:
-        print ss.code
+        print(el.seqCode, el.code3Letter)
+        for ss in seq.spinSystems:
+        print(ss.code)

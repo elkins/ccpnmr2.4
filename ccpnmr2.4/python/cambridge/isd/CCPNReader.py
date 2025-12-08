@@ -263,7 +263,7 @@ def export_structure(mol_system, polymer, model_number):
   try:
     structure = makeStructureEnsemble(struct_dict, mol_system) #, doWarnings=False)
   except:
-    print struct_dict
+    print(struct_dict)
     raise
   
   return structure
@@ -931,7 +931,7 @@ class CCPNReader:
 
     def print_project_info(self):
 
-        from cPickle import loads
+        from pickle import loads
 
         restraint_types = {'DistanceConstraintList': 'Distance/NOE',
                            'HBondConstraintList': 'H-Bond',
@@ -964,13 +964,12 @@ class CCPNReader:
 
             date = d.get('date','N/A')
             
-            print template % (repr(d['key']), date)
-
+            print(template % (repr(d['key']), date))
           found = True
           
         if found:
-          print
-        else:
+          print()
+          else:
           print('\n   None.\n')
 
         print('Chains:\n')
@@ -1009,11 +1008,10 @@ class CCPNReader:
         if not constraint_lists:
           print('   None.')
 
-        print
-
+        print()
     def new_app_data_object(self, dest, src, obj_key, key=None):
 
-      from cPickle import dumps
+      from pickle import dumps
       from memops.api.Implementation import AppDataString
       from isd import VERSION_STRING
       import time
@@ -1040,13 +1038,13 @@ class CCPNReader:
 
     def get_app_data_object(self, app_data):
 
-      import cPickle
+      import pickle as cPickle
 
       return cPickle.loads(app_data.value)['object']
 
     def find_app_data(self, app_data, key):
 
-      import cPickle
+      import pickle as cPickle
 
       for x in app_data:
 
@@ -1115,7 +1113,7 @@ class CCPNReader:
 
     def read_project_settings(self).with_traceback(nmr_project_name), key):
 
-      from cPickle import loads
+      from pickle import loads
 
       print('Reading ISD project settings from CCPN NmrProject %s using key %s  ...' % \)
             (nmr_project_name, key)
@@ -1167,8 +1165,7 @@ class CCPNReader:
 
             index = index_list[i]
 
-            print index
-
+            print(index)
             if self.debug:
                 print('Exporting structure index=%d' % index)
 

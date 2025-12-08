@@ -214,9 +214,8 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
     for swapCheckRun in range(numSwapCheckRuns):
       swapCheck.checkSwapsAndClean(violationCodes=violationCodes, deassignAll=deassignAll)
 
-    print
-    print
-
+    print()
+    print()
   # TODO: is reasonably independent, could be ripped out and put somewhere else... is that useful though?
   def recalibrateConstraints(self,
                              nmrConstraintStore,
@@ -471,8 +470,8 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
         """           
         if dcl.serial == 9 and constraint.serial in [6,7,8,9]:
           print("  ", avgDist)
-          print
-        """           
+          print()
+          """
 
         #
         # Now set the information
@@ -542,12 +541,10 @@ class ConstraintsHandler(ResonanceCoordinateHandler):
       upperCorr = getCorrelation(distances,upperDistances, correlationMethod = correlationMethod)    
 
       """           
-      print distances[0], distances[-1], upperDistances[0], upperDistances[-1]
+      print(distances[0], distances[-1], upperDistances[0], upperDistances[-1])
       if dcl.serial == 9:
-        print
-        print distances
-        print
-      """  
+        print()        print(distances)        print()
+        """
                
       fout.write("    All upper distances, as is:  %.4f.\n" % upperCorr)
       

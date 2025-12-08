@@ -1630,7 +1630,7 @@ def createNewDescriptors(chemComp,newDict,removeAtomNames,renameAtoms,saveChemCo
   linkCodeTexts = ccvBaseList.keys()
   linkCodeTexts.sort()
 
-  print
+  print()
   print("Creating ccv with linking, descriptor based on original:")
   for lct in linkCodeTexts:
     linkDict = ccvBaseList[lct][0]['linking']

@@ -290,7 +290,5 @@ if __name__ == "__main__":
 
     projectFile.read(verbose = 1)
     
-    print projectFile.directories
-    print projectFile.files
-    print projectFile.spectraFile.spectra
-    print projectFile.spectraFile.binaryFormat
+    print(projectFile.directories)    print(projectFile.files)    print(projectFile.spectraFile.spectra)
+    print(projectFile.spectraFile.binaryFormat)

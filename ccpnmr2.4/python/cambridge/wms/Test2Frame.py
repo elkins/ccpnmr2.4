@@ -316,7 +316,7 @@ class Test2Frame(Frame):
     response = self.port.record(request)
 
     # now need to redraw task-related frames
-    print self.basePopup.__dict__
+    print(self.basePopup.__dict__)
     if self.basePopup.frameShortcuts.has_key('Tasks'):
       self.basePopup.frameShortcuts['Tasks'].drawFrame()
     

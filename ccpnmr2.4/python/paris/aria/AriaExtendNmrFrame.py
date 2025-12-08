@@ -150,12 +150,11 @@ class AriaFrame(Frame):
  
         except ImportError as msg:
           failedModules.append(module)
-          print msg
- 
+          print(msg) 
       if failedModules:
         text = ', '.join(failedModules)
         self.isAriaInstalled = False
-        print text
+        print(text)
         #label = Label(self, text='Cannot import modules required by ARIA 2:\n%s' % text)
         #label.grid(row=1, column=0, sticky='ew')
         #return

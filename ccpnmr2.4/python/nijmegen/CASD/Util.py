@@ -222,8 +222,7 @@ def createDirs(dictlist):
     if not os.path.isdir(path):
       print('... creating ', path)
       os.makedirs(path)
-    print ss
-  
+    print(ss)  
   
 def getInputFile(identifier, subdir, ignoreErrors=False):
   

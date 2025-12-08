@@ -542,7 +542,7 @@ class ResidueDef( NTtree ):
         """return AtomDef instance for atmName if atmName is a valid for convention
            or None otherwise.
 
-           Do NOT print an error here because for optimal use the code is called
+           Do NOT print(an error here because for optimal use the code is called)
            many times in cases where no defs are available; e.g.
            pdbParser#_matchAtom2Cing
         """

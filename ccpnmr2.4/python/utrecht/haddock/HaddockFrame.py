@@ -424,7 +424,8 @@ class HaddockFrame(Frame):
               self.hProject = ccpnProject.newHaddockProject(name='Default',workingDir='.')
               self.hProject.newRun()
               
-          self.run = self.hProject.findFirstRun()      
+          self.run = self.hProject.findFirstRun()
+              
 
     def destroy(self):
   
@@ -526,7 +527,8 @@ class HaddockFrame(Frame):
 
         if constraintSet is not self.constraintSet:
             self.constraintSet = constraintSet
-            self.updateRestraintTerms()  
+            self.updateRestraintTerms()
+            
 
     def updateConstraintSets(self):
   
@@ -981,7 +983,8 @@ class HaddockFrame(Frame):
 
             for hChain in hChains:
                 hResidues = [(r.residue.seqCode,r) for r in hChain.residues]
-                hResidues.sort()           
+                hResidues.sort()
+                         
          
                 for seqCode, hResidue in hResidues:
 
@@ -1018,7 +1021,8 @@ class HaddockFrame(Frame):
         self.residueMatrix.update(colorMatrix=colorMatrix,
                                   objectList=objectList,
                                   textMatrix=textMatrix) 
-        self.updateSemiFlexModePulldown()     #Update the semiflexibility mode ('manual' or 'automatic')
+        self.updateSemiFlexModePulldown()
+           #Update the semiflexibility mode ('manual' or 'automatic')
 
     def updateRestraintTerms(self):
 
@@ -1081,7 +1085,8 @@ class HaddockFrame(Frame):
 
                 energyTerm = self.run.newHaddockEnergyTerm(code=termType,termId=termId)
 
-                self.updateAllAfter()                
+                self.updateAllAfter()
+                              
                 
         else: showWarning('Warning','No active run. Set this first.',parent=self)
 
@@ -1672,7 +1677,8 @@ class HaddockFrame(Frame):
                 setPartnerChains(self.molPartner,chains)
             else:
                 pass    
-        self.molPartnerMatrix.keyPressEscape()  
+        self.molPartnerMatrix.keyPressEscape()
+        
         self.updateAllAfter()
         
     def setModel(self, obj, name=None):
@@ -1751,7 +1757,8 @@ class HaddockFrame(Frame):
                 self.chainSelect.set(values=values,options=names)   
         else:
             showWarning('Warning','Set Mol System or ensemble first',parent=self)
-            self.molPartnerMatrix.keyPressEscape()        
+            self.molPartnerMatrix.keyPressEscape()
+                  
             
     def getModel(self, partner):
 

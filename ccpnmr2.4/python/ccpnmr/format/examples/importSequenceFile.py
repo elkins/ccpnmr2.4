@@ -140,7 +140,7 @@ if __name__ == "__main__":
   # Testing to see if all is there...
   #
   
-  print
+  print()
   print("Project object:", ccpnProject)
   print("List of MolSystem objects:", ccpnProject.sortedMolSystems())
   print("List of Molecule objects:", ccpnProject.sortedMolecules())
@@ -149,7 +149,7 @@ if __name__ == "__main__":
   mol = ccpnProject.findFirstMolecule()
 
   print("MolType of first molecule:", mol.molType)
-  print
+  print()
   
   #
   # Save the project

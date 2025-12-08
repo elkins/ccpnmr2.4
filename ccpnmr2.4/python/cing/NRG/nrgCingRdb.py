@@ -1569,7 +1569,7 @@ e.pdb_id = s1.pdb_id;
         result = m.execute(s).fetchall()
         nTdebug("ROG per entry calculated for number of entry rog scores: %s (roughly 3 times the number of entries)" % len(result))
         for row in result:
-            print row
+            print(row)
             k = row[0]
             if not perEntryRog.has_key(k):
                 perEntryRog[k] = nTfill(0.0, 3)
@@ -1611,8 +1611,8 @@ e.pdb_id = s1.pdb_id;
                     if value < 40.: # For debugging.
                         continue
                     # end if
-                    print row, value
-                # end for
+                    print(row, value)
+                    # end for
             # end for
         # end for
     # end def

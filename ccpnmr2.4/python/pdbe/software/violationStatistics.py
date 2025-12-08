@@ -1660,7 +1660,8 @@ class ViolationStatistics(ResonanceCoordinateHandler,ContactOccurrenceHandler):
         self.writePlot(graphInfo['fileNames'][infoTag],self.xValues,graphInfo['data'][infoTag],title,"Models (0 is ensemble)",infoTag)
     
     mainPage.closeMainTable()
-    mainPage.finishHtml()    
+    mainPage.finishHtml()
+      
 
   def createDetailsPage(self,htmlDetailsDir,htmlPageName,infoDict):
 
@@ -1791,7 +1792,8 @@ class ViolationStatistics(ResonanceCoordinateHandler,ContactOccurrenceHandler):
             self.writePlot(graphInfo['fileNames'][infoTag],range(1,len(valuesList)+1),graphInfo['data'][infoTag],title,mainInfoTypeText,infoTag,lab = (int(len(valuesList)/10),10,2))
 
     htmlPage.closeMainTable()
-    htmlPage.finishHtml()    
+    htmlPage.finishHtml()
+      
 
   def createModelTopPage(self,htmlDetailsDir,htmlPageName,modelNames):
 
@@ -1820,7 +1822,8 @@ class ViolationStatistics(ResonanceCoordinateHandler,ContactOccurrenceHandler):
       htmlPage.closeMainTableRow()
 
     htmlPage.closeMainTable()
-    htmlPage.finishHtml()    
+    htmlPage.finishHtml()
+      
   
 
   def createConstraintListPage(self,htmlDetailsDir,htmlPageName,dclKey):
@@ -1954,7 +1957,8 @@ class ViolationStatistics(ResonanceCoordinateHandler,ContactOccurrenceHandler):
         htmlPage.closeMainTableRow()
 
     htmlPage.closeMainTable()
-    htmlPage.finishHtml()    
+    htmlPage.finishHtml()
+      
 
   def writePlot(self,fileName,xValues,yValues,main,xlab,ylab, lab = None):
 

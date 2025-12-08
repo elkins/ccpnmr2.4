@@ -129,8 +129,7 @@ if __name__ == '__main__':
   print("\n--> Retrieve all partner %s residues:" % h.code)
   residues = h.getPartnerResidues()
   for residue in residues:
-      print residue.residue.seqId, residue.residue.ccpCode
-
+      print(residue.residue.seqId, residue.residue.ccpCode)
   print("\n--> Set partner semi-flexibility mode")
   h.semiFlexMode = 'manual'
 

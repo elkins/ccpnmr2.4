@@ -34,7 +34,8 @@ def printatom(atm):
     if atm.isStereoAssigned():
         ss = '(stereo)'
     else:
-        ss = '()      '
+        ss = '()
+            '
     #end if
     return sprintf('%-12s %10.3f  %s', atm.cName(1), atm.resonances().value, ss)
 #end def

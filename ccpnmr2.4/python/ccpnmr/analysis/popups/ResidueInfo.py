@@ -239,7 +239,8 @@ class ResidueInfoPopup(BasePopup):
     
     codes = []
     codesTemp = dict.keys()
-    codesTemp.sort()   
+    codesTemp.sort()
+     
     for code in codesTemp:
       codes.append( code )
   

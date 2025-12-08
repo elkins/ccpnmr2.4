@@ -87,7 +87,8 @@ class SaveFrame (Lister):
                     print("ERROR: integrity check failed for tagtable")
                     return 1
         if self.verbosity >= 9:
-            print('Checked integrity of SaveFrame(%2s tagtables, recurs.=%s)  : OK [%s]' % (
+            print('Checked integrity of SaveFrame(%2s tagtables, recurs.=%s)
+            : OK [%s]' % (
                 len(self.tagtables), recursive, self.title))
 
         

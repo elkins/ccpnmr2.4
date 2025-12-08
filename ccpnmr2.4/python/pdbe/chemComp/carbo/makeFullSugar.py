@@ -169,12 +169,10 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
     
   """
   for cch in project.chemCompHeads:
-    print cch.molType, cch.ccpCode
+    print(cch.molType, cch.ccpCode)
     for ccv in cch.chemComp.chemCompVars:
-      print ccv.descriptor
-      print ccv.chemAtoms
-    print
-  """
+      print(ccv.descriptor)      print(ccv.chemAtoms)    print()
+      """
   
   refChemComp = chemComps[0] # Should be the a form  
   
@@ -201,10 +199,8 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
   # Start creating/modifying...
   #
   
-  print
-  print drawBox("Creating sugar information")
-  print
-          
+  print()
+  print(drawBox("Creating sugar information"))  print()
   #
   # Set the base Glyco CT code, this is always x-, except for -o only forms (aldehydes)
   #  
@@ -214,7 +210,7 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
   refGlycoCtCode = "RES\n1b:%s" % baseGlycoCtCode
   
   print("Setting GlycoCT code to:\n\n%s\n" % refGlycoCtCode)
-  print
+  print()
   
   project.override = True
   try:
@@ -354,10 +350,8 @@ def makeFullSugar(carboBaseName,coordSystem,baseGlycoCtCode,testMode, replace = 
   
   for priorityKey in priorityKeys:
     if priorityKeys.count(priorityKey) > 1:
-      print priorityKey
-  
-  print priorityList
-
+      print(priorityKey)  
+  print(priorityList)
   sys.exit()
   """
   #

@@ -724,7 +724,8 @@ def launchApplication(projectDir=None):
   if project:
     top.initProject(project)
     
-  root.mainloop()  
+  root.mainloop()
+  
 
 if __name__ == '__main__':
 

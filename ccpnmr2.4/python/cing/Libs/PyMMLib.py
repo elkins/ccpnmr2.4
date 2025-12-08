@@ -102,7 +102,7 @@ class PDBRecord( NTdict ):
                 assert type(s) == StringType
             except AssertionError:
                 print("### s",str(type(s)), str(s), ftype, field)
-                print ln
+                print(ln)
                 raise
 
             ## check for maximum length

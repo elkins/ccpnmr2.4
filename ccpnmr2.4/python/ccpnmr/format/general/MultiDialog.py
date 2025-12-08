@@ -114,8 +114,7 @@ class MultiDialog:
     
     nonGuiClass = NonGuiClass()
     
-    print kw['selectionText']
-    
+    print(kw['selectionText'])    
     nonGuiClass.file = self.screenList.getString()
 
     return nonGuiClass
@@ -140,8 +139,7 @@ class MultiDialog:
     for argKey in ['title','text']:
     
       if kw.has_key(argKey):
-        print kw[argKey]
-      
+        print(kw[argKey])      
     if kw.has_key('dismissText'):
       dismissText = kw['dismissText']
     else:
@@ -183,8 +181,7 @@ class MultiDialog:
     for argKey in ['title','text']:
     
       if kw.has_key(argKey):
-        print kw[argKey]
-      
+        print(kw[argKey])      
     if kw.has_key('dismissText'):
       dismissText = kw['dismissText']
     else:
@@ -227,8 +224,7 @@ class MultiDialog:
     for argKey in ['title','topText']:
     
       if kw.has_key(argKey):
-        print kw[argKey]
-      
+        print(kw[argKey])      
     if kw.has_key('dismissText'):
       dismissText = kw['dismissText']
     else:
@@ -1080,8 +1076,7 @@ class MultiDialog:
     
     if kw.has_key('headerLines'):
       for headerLine in kw['headerLines']:
-        print headerLine
-
+        print(headerLine)
     print("Residue type '%s', atom '%s'." % (seqLabel,atomName))
           
     print("Pick the relevant atom match for this coordinate atom:")
@@ -1111,7 +1106,7 @@ class MultiDialog:
     
       nonGuiClass.chemAtomOrSets = None
 
-    print
+    print()
     print("Propagate this mapping to:")
     
     propagate = self.screenList.pickStringListItem(self.propagateList)
@@ -1279,7 +1274,7 @@ class MultiDialog:
     
       nonGuiClass.chemAtomOrSets = None
 
-    print
+    print()
     print("Propagate this mapping to:")
     
     propagate = self.screenList.pickStringListItem(self.propagateList)
@@ -1461,8 +1456,8 @@ class MultiDialog:
     print("Residue type '%s', resonance '%s'." % (self.ccpCode,resName))
     
     print("Pick already existing resonances to link to %s:" % self.infoText)
-    print
-    
+    print()
+      
     if multi:
       selectedResNames = self.screenList.pickStringListMulti(self.resonanceList)
     else:
@@ -1550,13 +1545,13 @@ class MultiDialog:
     
     nonGuiClass = NonGuiClass()
     
-    print title
+    print(title)
     print("Residue type '%s'." % self.ccpCode)
     
     print("Which of the following resonances should be grouped?")
     print("(remaining ones will also be combined)")
-    print
-    
+    print()
+      
     selectedResNames = self.screenList.pickStringListMulti(self.resonanceNameList)
  
     resNameGroups = []
@@ -1682,12 +1677,11 @@ class MultiDialog:
     
     nonGuiClass = NonGuiClass()
     
-    print
+    print()
     print("Residue '%s-%d'" % (self.nmrRes.molResidue.ccpCode,self.nmrRes.seqCode))
     
-    print self.message
-    print
-    
+    print(self.message)
+    print()
     selectedOption = self.screenList.pickStringListItem(self.optionList)
     
     nonGuiClass.singleResonanceStatus = self.optionList.index(selectedOption)
@@ -1731,9 +1725,8 @@ class MultiDialog:
     
     nonGuiClass = NonGuiClass()
     
-    print self.topMessage
-    print self.question
-    
+    print(self.topMessage)
+    print(self.question)
     selectedMeasurement = self.screenList.pickStringListItem(self.measurementValueList)
     
     nonGuiClass.selection = self.measurementValueDict[selectedMeasurement]
@@ -2114,11 +2107,9 @@ class ScreenList:
   
   def printColumnString(self,i,string):
   
-    print self.format % string,
-    
+    print(self.format % string,)    
     if self.numCols and (i+1)/self.numCols == float(i+1) / self.numCols:
-      print
-
+      print()
   def pickChoice(self,choiceList, dismissText = None):
   
     choice = ''
@@ -2133,8 +2124,7 @@ class ScreenList:
     
     while (choice not in choiceList):
     
-      print choiceText,
-  
+      print(choiceText,)  
       choice = raw_input()
 
       if str(returnInt(choice)) == choice:
@@ -2183,14 +2173,14 @@ class ScreenList:
       
     self.screenSetup(maxStringLen + 4)
 
-    print
-  
+    print()
+    
     for i in range(len(stringList)):
       
       self.printColumnString(i,str(i) + ': ' + stringList[i])
 
-    print;print
-    
+    print;print()
+      
     choice = self.pickChoice(range(len(stringList)), dismissText = dismissText)
   
     if choice != None:
@@ -2214,15 +2204,15 @@ class ScreenList:
       
     self.screenSetup(maxStringLen + 4)
 
-    print
+    print()
     print("(choose -1 to end multi selection)")
   
     for i in range(0,len(stringList)):
       
       self.printColumnString(i,str(i) + ': ' + stringList[i])
 
-    print;print
-    
+    print;print()
+      
     choiceList = []
     
     while (1):
@@ -2232,7 +2222,7 @@ class ScreenList:
         choiceString = stringList[choice]
         if choiceList.count(choiceString) == 0:
           print("  Added %s." % choiceString)
-          print
+          print()
           choiceList.append(choiceString)
       else:
         break
@@ -2256,14 +2246,14 @@ class ScreenList:
       
     self.screenSetup(maxStringLen)
 
-    print
-  
+    print()
+    
     for i in range(0,len(valueList)):
       
       self.printColumnString(i,str(valueList[i]))
 
-    print;print
-    
+    print;print()
+      
     choice = self.pickChoice(valueList)
   
     return choice

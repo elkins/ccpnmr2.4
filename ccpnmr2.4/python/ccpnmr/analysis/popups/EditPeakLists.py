@@ -703,7 +703,8 @@ class EditPeakListsPopup(BasePopup):
     
     if scheme is not self.labellingScheme:
       self.labellingScheme = scheme
-      self.updateAfter()  
+      self.updateAfter()
+      
     
     self.labellingSchemePulldownA.setup(names, schemes, index)     
     self.labellingSchemePulldownB.setup(names, schemes, index)     

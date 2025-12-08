@@ -1048,13 +1048,15 @@ class EditMoleculesPopup(BasePopup):
     if chain is not self.chain:
       self.chain = chain
       self.updateFragments()
-      self.updateButtons()  
+      self.updateButtons()
+      
   
   def selectFragment(self, fragment, row, col):
   
     if fragment is not self.fragment:
       self.fragment = fragment
-      self.updateButtons()  
+      self.updateButtons()
+      
       
   #
   
@@ -1062,7 +1064,8 @@ class EditMoleculesPopup(BasePopup):
 
     if molSystem is not self.molSystem:
       self.molSystem = molSystem
-      self.updateButtons()  
+      self.updateButtons()
+      
   
   #
   
@@ -1490,9 +1493,12 @@ class EditMoleculesPopup(BasePopup):
       buttons[2].enable()
     
     else:
-      buttons[0].disable()  
-      buttons[1].disable()  
-      buttons[2].disable()  
+      buttons[0].disable()
+      
+      buttons[1].disable()
+      
+      buttons[2].disable()
+      
     
     if self.moleculeC:
       buttons[5].enable()
@@ -1505,7 +1511,8 @@ class EditMoleculesPopup(BasePopup):
     if self.molSystem:
       buttons[1].enable()
     else:
-      buttons[1].disable()  
+      buttons[1].disable()
+      
     
     
     buttons = self.molResidueButtons.buttons
@@ -1556,11 +1563,16 @@ class EditMoleculesPopup(BasePopup):
       buttons[5].enable()
     
     else:
-      buttons[0].disable()  
-      buttons[2].disable()  
-      buttons[3].disable()  
-      buttons[4].disable()  
-      buttons[5].disable()  
+      buttons[0].disable()
+      
+      buttons[2].disable()
+      
+      buttons[3].disable()
+      
+      buttons[4].disable()
+      
+      buttons[5].disable()
+      
          
 
   def updateTab(self, i):
@@ -3119,7 +3131,8 @@ class EditMoleculesPopup(BasePopup):
       if text == '':
         seq = []
       else:
-        seq = text.split()  
+        seq = text.split()
+        
         
     isValid, self.inputSeq = self.checkSeq(seq, self.polymerMolType, checkChemComps=checkChemComps)
     

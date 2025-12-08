@@ -361,7 +361,8 @@ class ViewNoeMatrix(BasePopup):
 
     if constraintSet is not self.constraintSet: 
       self.constraintSet = constraintSet
-      self.updateConstraintLists()   
+      self.updateConstraintLists()
+       
 
   def updateConstraintSets(self, *opt):
     

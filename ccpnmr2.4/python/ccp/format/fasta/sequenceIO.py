@@ -136,8 +136,7 @@ class FastaSequenceFile(FastaGenericFile):
     elif lineErrors:
       print("  Bad fasta format lines:%s" % self.newline)
       for lineError in lineErrors:
-        print lineError
-      
+        print(lineError)      
     return fileReadOk
 
   def write(self,columnLength = 60, verbose = 0):
@@ -206,10 +205,9 @@ if __name__ == "__main__":
     sequenceFile.read(verbose = 1)
 
     for seq in sequenceFile.sequences:
-      print seq.molName
+      print(seq.molName)
       for seqEl in seq.elements:
-        print seqEl.seqCode, seqEl.code1Letter
-
+        print(seqEl.seqCode, seqEl.code1Letter)
     sequenceFile.name = 'local/seq.testout'
 
     sequenceFile.write(verbose = 1)

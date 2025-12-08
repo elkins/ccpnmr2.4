@@ -263,7 +263,7 @@ class Entry( NTdict ):
         if fix:
             rog = NTlist( 0, 0, 0 ) # Counts for red, orange, green.
             for resname, rogScore in self.cingSummary.CING_residueROG:
-                print resname, rogScore
+                print(resname, rogScore)
                 if rogScore.isRed():
                     rog[0] += 1
                 elif rogScore.isOrange():
@@ -272,8 +272,8 @@ class Entry( NTdict ):
                     rog[2] += 1
             #end for
             total = reduce(lambda x, y: x+y+0.0, rog) # total expressed as a float because of 0.0
-            print rog, total
-            for i, _x in enumerate(rog): 
+            print(rog, total)
+            for i, _x in enumerate(rog):
                 rog[i] = rog[i]*100.0/total
             self.cingSummary.cing_red    = round(rog[0],1)
             self.cingSummary.cing_orange = round(rog[1],1)
@@ -472,16 +472,14 @@ methods:    %s
     #end def
     
     def printAll(self, target=None):
-        print self.format()
-        if target == None:
+        print(self.format())        if target == None:
             targets = self.targets
         else:
             targets = [target]
         for t in targets:
             print("===============", t, "===============")
             for entry in self.byTarget[t]:
-                print entry.format()
-    #end def
+                print(entry.format())    #end def
     
     def calculatePairWiseRmsd( self, entry1, entry2, ranges ):
         """Calculate pairwise rmsd between mol1 and mol2
@@ -705,8 +703,7 @@ header = """
 #======================================================================================================
 """ % (cingVersion)
 
-print header
-
+print(header)
 init = False
 if init:
     results=parseEntryInfo()
@@ -716,8 +713,7 @@ else:
     print('==> Restoring results')
     results = ResultsList.restore()
 
-print results.format()
-
+print(results.format())
 t=-1
 if t>=0:
     target = results.targets[t]

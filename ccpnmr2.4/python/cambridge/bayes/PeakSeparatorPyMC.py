@@ -125,8 +125,7 @@ def PeakSeparatorPyMC( params ):
 
   params.ClibKeys.sort()
   for key in params.ClibKeys:
-    print key, params.__dict__[key]
-
+    print(key, params.__dict__[key])
   # These are all stochastic methods (height, sigma and mean position)
   # hyper-prior
   h  =  pymc.Uniform('h',        lower=params.minHeight,   upper=params.maxHeight,   size=nsignals )

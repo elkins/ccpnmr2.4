@@ -147,8 +147,8 @@ if __name__ == "__main__":
         # for test    fin, col, colN, colI, m, mpar, PeakFunc, n, thresh    
         result = peak2comp('pk1assign.tab', 5, 6, 17, 2.5, 10., 'G', 2., 0.1)
         for line in result:
-          print line
-        #f = open('ftest','w')
+          print(line)
+          #f = open('ftest','w')
         #f.writelines(result)
         #f.close()
 

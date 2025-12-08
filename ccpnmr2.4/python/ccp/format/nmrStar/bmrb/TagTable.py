@@ -36,8 +36,7 @@ Revision 1.7  2004/12/15 17:57:20  tjs23
 TJS: Updated licenses.
 
 Revision 1.6  2003/10/03 11:42:56  wfv20
-Removed loose print statement
-
+Removed loose print(statement)
 Revision 1.5  2003/09/25 12:12:49  wfv20
 Adapted for better handling of quotes
 

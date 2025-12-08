@@ -118,7 +118,8 @@ class BacusPopup(BasePopup):
     self.bottomButtons = createDismissHelpButtonList(guiParent,texts=texts,commands=commands,expands=0,help_url=None)
     self.bottomButtons.grid(row=row, column=0, sticky=Tkinter.EW)
     
-    self.update()    
+    self.update()
+      
   
   
   def chooseExecutable(self):

@@ -312,7 +312,7 @@ class CnsDistanceConstraint:
             try:
               ppms.append(curCols[1])
             except:
-              print curCols
+              print(curCols)
               raise
   
         self.setOtherData(weight,peakNum,peakVol,ppms)

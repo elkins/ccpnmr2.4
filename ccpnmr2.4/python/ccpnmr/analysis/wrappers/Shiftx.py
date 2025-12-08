@@ -124,14 +124,14 @@ def shiftx(structure, atomType=None):
    
             if seqCode not in shiftData:
               shiftData[seqCode] = shiftDict = {}
-	    else:
-	      shiftDict = shiftData[seqCode]  
+      else:
+        shiftDict = shiftData[seqCode]  
    
             for i, atomName in enumerate(atomNames):
               if atomName not in shiftDict:
                 shiftDict[atomName] = []
-	      
-	      shiftDict[atomName].append(float(data[i+2]))
+        
+        shiftDict[atomName].append(float(data[i+2]))
   
 
   for chain in chainDict:
@@ -140,58 +140,58 @@ def shiftx(structure, atomType=None):
 
     if shiftData:
       if not shiftList:
-  	msCode = structure.molSystem.code
-  	eId = structure.ensembleId
-  	details = 'SHIFTX prediction for %s ensemble %d' % (msCode, eId)
-  	shiftList = nmrProject.newShiftList(name='SHIFTX',
-  					    details=details,
-  					    isSimulated=True) 
+    msCode = structure.molSystem.code
+    eId = structure.ensembleId
+    details = 'SHIFTX prediction for %s ensemble %d' % (msCode, eId)
+    shiftList = nmrProject.newShiftList(name='SHIFTX',
+                details=details,
+                isSimulated=True) 
       
       for residue in chain.sortedResidues():
-  	shiftDict = shiftData.get(residue.seqCode)
-  	
-  	if not shiftDict:
-  	  continue
+    shiftDict = shiftData.get(residue.seqCode)
+    
+    if not shiftDict:
+      continue
       
-  	getAtom = residue.findFirstAtom     
+    getAtom = residue.findFirstAtom     
       
-  	for atomName in shiftDict:
-  	  atom = getAtom(name=atomName)
-  	  if not atom:
-  	    # Gly HA -> HA2, Ala HB - HB2, Val HG1 - HG12
-  	    atom = getAtom(name=atomName+'2')
-  	  
-  	  if not atom:
-  	    continue
+    for atomName in shiftDict:
+      atom = getAtom(name=atomName)
+      if not atom:
+        # Gly HA -> HA2, Ala HB - HB2, Val HG1 - HG12
+        atom = getAtom(name=atomName+'2')
+      
+      if not atom:
+        continue
   
-  	  ppms = shiftDict[atomName]
-  	  ppm = sum(ppms)/float(len(ppms))
+      ppms = shiftDict[atomName]
+      ppm = sum(ppms)/float(len(ppms))
           
-  	  if ppm == 0.0: # Could actually be a real value...
-  	    continue
+      if ppm == 0.0: # Could actually be a real value...
+        continue
   
-  	  atomSet = atom.atomSet
-  	  if not atomSet:
-  	    makeResidueAtomSets(residue)
-  	    atomSet = atom.atomSet
+      atomSet = atom.atomSet
+      if not atomSet:
+        makeResidueAtomSets(residue)
+        atomSet = atom.atomSet
   
-  	  resonance = None
-  	
+      resonance = None
+    
           for resonanceSet in atomSet.resonanceSets:
-  	    resonances = list(resonanceSet.resonances)
-  	    
-  	    if len(resonances) == 1:
-  	      resonance = resonances[0]
-  	    
-  	  if not resonance:
-  	    isotopeCode = DEFAULT_ISOTOPES[atom.chemAtom.chemElement.symbol]
-  	    resonance = nmrProject.newResonance(isotopeCode=isotopeCode)
-  	    assignAtomsToRes([atomSet,], resonance)
+        resonances = list(resonanceSet.resonances)
+        
+        if len(resonances) == 1:
+          resonance = resonances[0]
+        
+      if not resonance:
+        isotopeCode = DEFAULT_ISOTOPES[atom.chemAtom.chemElement.symbol]
+        resonance = nmrProject.newResonance(isotopeCode=isotopeCode)
+        assignAtomsToRes([atomSet,], resonance)
   
-  	  if shiftList.findFirstMeasurement(resonance=resonance):
-            print residue.seqCode, residue.ccpCode, atom.name
-          else:  
-  	    shift = shiftList.newShift(value=ppm, resonance=resonance)
+      if shiftList.findFirstMeasurement(resonance=resonance):
+            print(residue.seqCode, residue.ccpCode, atom.name)
+            else:
+        shift = shiftList.newShift(value=ppm, resonance=resonance)
   
   print('CCPN SHIFTX done')
 

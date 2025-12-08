@@ -185,7 +185,8 @@ class CloudThreaderPopup(BasePopup):
     if self.assignment and self.scores:
       self.assignButton.enable()
     else:
-      self.assignButton.disable()  
+      self.assignButton.disable()
+      
 
   def run(self):
   
@@ -273,7 +274,7 @@ class CloudThreaderPopup(BasePopup):
     if self.molSystem:
       for chain in self.molSystem.chains:
         chains.append( [chain.code, chain] )
-	
+  
     return chains
 
 
@@ -307,7 +308,7 @@ class CloudThreaderPopup(BasePopup):
 
     BasePopup.destroy(self)
 
-import cPickle
+import pickle as cPickle
 from os.path import exists, isfile, isdir
 from os import listdir, path
 from math import sqrt, log, exp
@@ -445,11 +446,11 @@ def searchPosterior(project, residues, spinSystems, clouds, known=None, nSteps=1
       r = random()
      
       if delta and delta < r:
-	success = 1
+  success = 1
          
     if success: 
       p0 = p
-      print p0
+      print(p0)
       assignment0 = assignment
       
       if p > pB:
@@ -498,14 +499,10 @@ def searchPosterior(project, residues, spinSystems, clouds, known=None, nSteps=1
             foundCodes += '-'
             typed += '-'
 
-        print i, p, p0
+        print(i, p, p0)
         print('Found: %d' % found)
-        print scores
-        print foundCodes
-        print typed
-        print sequence
-        print assign
-    
+        print(scores)        print(foundCodes)        print(typed)        print(sequence)
+        print(assign)
     if progressBar and (i % q == 0):
       progressBar.increment()
     
@@ -655,8 +652,8 @@ def getResidueLikelihood(residue1, spinSystem1, assignment, clouds, interDistrib
         else:
           q = floor
 
- 	p2 += log(q)
- 	N2 += 1
+  p2 += log(q)
+  N2 += 1
                     
     if N2 and p2 > -9.9:
       p2 /= float(N2)
@@ -669,10 +666,8 @@ def getResidueLikelihood(residue1, spinSystem1, assignment, clouds, interDistrib
   if N == 0:
     if v:
       print("barf")
-      print r2
-      print coords1
-      print coords2
-      
+      print(r2)      print(coords1)
+      print(coords2)
     
     residue1.likelihood = -10.0
     return -10.0
@@ -681,10 +676,8 @@ def getResidueLikelihood(residue1, spinSystem1, assignment, clouds, interDistrib
   
   if v:
     print("ok", out)
-    print r2
-    print coords1
-    print coords2
-  
+    print(r2)    print(coords1)
+    print(coords2)
     
   
   residue1.likelihood = out 
@@ -1139,18 +1132,16 @@ def fitSideChain(shifts, residue, clouds, distrib, useAssignNames=False):
         print(' ',)
         if atomName in ('HA','HA1','HA2'):
           resonance.setName(atomName)
-          print atomName, 
-        
+          print(atomName,)        
         else:
           if (cloudScore + typeScore) > -7.0:
             resonance.setName(atomName)
-            print atomName, 
-          else:
-            print ''
+            print(atomName,)
+            else:
+            print('')
             break
               
-        print ''
-         
+        print('')         
         """
         atomNames4 = []
         if resonance.resonanceSet:
@@ -1166,8 +1157,7 @@ def fitSideChain(shifts, residue, clouds, distrib, useAssignNames=False):
             if atom4.chemAtom.elementSymbol == 'H':
               if not atom4.chemAtom.waterExchangeable:
                 print('     %3.3f %5.5s %.3f' % (shift.value, atom4.atomSet.name, atomScores[shift][atom4.atomSet.name] or -1000.0),)
-                print check[shift].get(atom4.atomSet.name)
-        """  
+                print(check[shift].get(atom4.atomSet.name))        """  
   return bestM
 
 def getAtomCloudScores(mapping, ccpCode, clouds, distrib, atomNames=None):
@@ -1223,13 +1213,10 @@ def getAtomCloudScores(mapping, ccpCode, clouds, distrib, atomNames=None):
                 count += 1.0
               """else:
                 print('  %3.3s' % atomName1, '%3.3s' % atomName2,)
-                print makeResonanceGuiName(shift1.resonance),
-                print makeResonanceGuiName(shift2.resonance),
-                print('%.3f' % log(val or 1.0), '%.3f' % dist)
+                print(makeResonanceGuiName(shift1.resonance),)                print(makeResonanceGuiName(shift2.resonance),)                print('%.3f' % log(val or 1.0), '%.3f' % dist)
                 kk = distrib[atomName1][atomName2].keys()
                 kk.sort
-                print kk
-              
+                print(kk)              
                 #score += -10.0"""
 
   if count:
@@ -1294,13 +1281,10 @@ def getAtomCloudScores2(mapping, ccpCode, clouds, distrib, atomName, atomNames=N
                 count += 1.0
               """else:
                 print('  %3.3s' % atomName1, '%3.3s' % atomName2,)
-                print makeResonanceGuiName(shift1.resonance),
-                print makeResonanceGuiName(shift2.resonance),
-                print('%.3f' % log(val or 1.0), '%.3f' % dist)
+                print(makeResonanceGuiName(shift1.resonance),)                print(makeResonanceGuiName(shift2.resonance),)                print('%.3f' % log(val or 1.0), '%.3f' % dist)
                 kk = distrib[atomName1][atomName2].keys()
                 kk.sort
-                print kk
-              
+                print(kk)              
                 #score += -10.0"""
 
   if count:

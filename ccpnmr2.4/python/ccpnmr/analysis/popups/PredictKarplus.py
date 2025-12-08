@@ -335,7 +335,8 @@ class PredictKarplusPopup(BasePopup):
       self.coefficients[self.coefficient][atomNames] = value
       #print self.coefficient, atomNames,  value
       
-    self.updateCoefficients()  
+    self.updateCoefficients()
+    
   
   def getJCoupling(self, object, index):
   

@@ -19,7 +19,8 @@ class ProjectListMember():
         self.project = None
         self.objectPath = None
         self.projectList = None
-        self.rogScore = ROGscore()        
+        self.rogScore = ROGscore()
+              
     # end def
     
     def decriticize(self):

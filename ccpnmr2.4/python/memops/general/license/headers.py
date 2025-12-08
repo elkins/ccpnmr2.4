@@ -146,8 +146,7 @@ def setLicenses(
     )
  
     if mode == 'test':
-      print showTestInfo()
-  
+      print(showTestInfo())  
   finally:
     sys.path[0] = firstLookupDir
 
@@ -231,7 +230,8 @@ def doSetLicenses(curDir, licenseDir, infoModule, level, warnSkippedFiles, mode)
     dirs = [x for x in includeDirs if x in dirs]
   
   files.sort()
-  dirs.sort()  
+  dirs.sort()
+  
   
   # Process files
   for ii in infoRange:

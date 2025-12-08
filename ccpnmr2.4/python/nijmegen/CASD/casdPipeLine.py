@@ -52,11 +52,9 @@ def restraintOverview(entryNames, extractDir=None):
         convertType = checkRestraintTypes(checkDir, entryName)
       
       elif ll:
-        print entryName, 'ERROR, multifiles', ll
-      
+        print(entryName, 'ERROR, multifiles', ll)      
       else:
-        print entryName, 'NONE'
-
+        print(entryName, 'NONE')
 def checkRestraintTypes(restraintDir, entryName=None):
   """ count restraints of differnet types and return restraint reader type
   """
@@ -88,8 +86,7 @@ def checkRestraintTypes(restraintDir, entryName=None):
   for tt in reversed(sorted(ll)):
     ss += "%s %s; " % (tt[1], tt[2])
   
-  print ss 
-
+  print(ss)
 
 def makeOverview(resultData, fieldOrder):
   """ make list-of-lists of results data, sorted.

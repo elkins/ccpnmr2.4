@@ -47,8 +47,8 @@ if __name__ == '__main__':
     print('  Atoms: ',)
 
     for atom in res.sortedAtoms():
-      print atom.name,
-    print('\n')
+      print(atom.name,)
+      print('\n')
 
   # Hack to find the currentElementStore.
 

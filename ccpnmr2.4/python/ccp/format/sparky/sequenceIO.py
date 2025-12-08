@@ -144,8 +144,7 @@ class SparkySequenceFile(SparkyGenericFile):
       self.sequences = []
       print("  Bad %s format lines:%s" % (self.format,self.newline))
       for lineError in lineErrors:
-        print lineError
-
+        print(lineError)
 
   def write(self,verbose = 0):
 

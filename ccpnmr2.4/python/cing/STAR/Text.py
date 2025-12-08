@@ -281,7 +281,7 @@ def tag_value_quoted_parse( text, pos ):
         return value, match_e_semicolon.end()
 
     print("ERROR: Position in text:", pos)
-    print """ERROR: should contain a ', ", or a ; but was not found:"""
+    print("""ERROR: should contain a ', ", or a ; but was not found:""")
     print("ERROR: Next 70 chars are: [%s]" % text[ pos:pos+70 ])
     return None, None
 

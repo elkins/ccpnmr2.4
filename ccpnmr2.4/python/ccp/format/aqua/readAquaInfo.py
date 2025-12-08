@@ -189,8 +189,7 @@ if __name__ == "__main__":
   chemCompCodeList.sort()
 
   for chemCompCode in chemCompCodeList:
-    print chemCompCode
-
+    print(chemCompCode)
     atomNameList = chemCompCodes[chemCompCode].keys()
     atomNameList.sort()
 

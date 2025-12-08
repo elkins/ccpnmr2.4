@@ -57,8 +57,7 @@ def testCcpnPsipred(argServer):
 
   ssDict = psipredCcpn(chain)
   
-  print ssDict
-  
+  print(ssDict)  
 def psipredCcpn(chain, smooth=1, alphaBias=1.0, betaBias=1.0):
   """Descrn: Get the secondary structure predictions for the residues
              of a chain. Option to adjust degree of smoothing.

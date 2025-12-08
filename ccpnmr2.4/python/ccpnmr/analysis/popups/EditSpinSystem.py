@@ -1382,7 +1382,8 @@ class EditSpinSystemPopup(BasePopup):
           
       seqSegments.sort()
       self.seqSegments = [x[1] for x in seqSegments]
-      self.update()   
+      self.update()
+       
     
     self.refreshSeqSeg = False
     

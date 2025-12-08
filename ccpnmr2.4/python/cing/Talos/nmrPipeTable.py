@@ -66,7 +66,8 @@ class NmrPipeTable( NTdict ):
     element (row-0, INDEX) indexed as
         tab[0].INDEX   or tab[0]['INDEX']
 
-    tab = NmrPipeTable()                # Empty table
+    tab = NmrPipeTable()
+                  # Empty table
     tab = NmrPipeTable( 'tabFile' )     # table from tabFile
 
     METHODS:
@@ -103,7 +104,8 @@ class NmrPipeTable( NTdict ):
 
         self.setdefault('noneIndicator', '-') # character to identify the None value
 
-        self.columnDefs = NTlist()          # list of column definitions, implemented
+        self.columnDefs = NTlist()
+                # list of column definitions, implemented
                                             # as NTdict
         self.rows       = NTlist()
         self.nrows      = 0
@@ -305,11 +307,8 @@ class NmrPipeTable( NTdict ):
 if __name__ == '__main__':
 
     tab = NmrPipeTable( 'test.tab' )
-    print tab[0]
-    print tab[0].get('PSI')
-    print tab[0].keys()
-    print tab[0].values()
-#    for c in tab[0]:
+    print(tab[0])
+    print(tab[0].get('PSI'))    print(tab[0].keys())    print(tab[0].values())#    for c in tab[0]:
 #        print c
     tab.addRow( PHI=10, PSI=13)
     tab.write()

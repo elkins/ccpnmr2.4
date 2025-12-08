@@ -179,10 +179,14 @@ class PdbCing(Lister):
         self.entry_list_pdb = NTlist()
 
         # From disk.
-        self.entry_list_tried = NTlist()      # .cing directory and .log file present so it was tried to start but might not have finished
-        self.entry_list_crashed = NTlist()    # has a stack trace
-        self.entry_list_stopped = NTlist()    # was stopped by time out or by user or by system (any other type of stop but stack trace)
-        self.entry_list_done = NTlist()       # finished to completion of the cing run.
+        self.entry_list_tried = NTlist()
+            # .cing directory and .log file present so it was tried to start but might not have finished
+        self.entry_list_crashed = NTlist()
+          # has a stack trace
+        self.entry_list_stopped = NTlist()
+          # was stopped by time out or by user or by system (any other type of stop but stack trace)
+        self.entry_list_done = NTlist()
+             # finished to completion of the cing run.
         self.entry_list_todo = NTlist()
         self.timeTakenDict = NTdict()
         self.entry_list_obsolete = NTlist()

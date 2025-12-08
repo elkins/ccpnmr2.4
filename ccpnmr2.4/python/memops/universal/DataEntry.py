@@ -132,6 +132,4 @@ dataEntry = DataEntry()
 
 if (__name__ == '__main__'):
 
-  print dataEntry.askString('ask string title', 'ask string prompt')
-  print dataEntry.askInteger('ask integer title', 'ask integer prompt')
-  print dataEntry.askFloat('ask float title', 'ask float prompt')
+  print(dataEntry.askString('ask string title', 'ask string prompt'))  print(dataEntry.askInteger('ask integer title', 'ask integer prompt'))  print(dataEntry.askFloat('ask float title', 'ask float prompt'))

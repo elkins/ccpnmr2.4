@@ -6,9 +6,7 @@ From http://pymolwiki.org/index.php/Launching_From_a_Script
 import __main__
 import sys
 import time
-import urllib2
-
-
+import urllib.request as urllib2
 try:
     # Importing the PyMOL module will create the window.
     import pymol #@UnresolvedImport

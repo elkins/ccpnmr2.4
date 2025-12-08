@@ -243,8 +243,8 @@ class TasksFrame(Frame):
 
   def goto_task_tab(self, obj, row, col):
 
-    print obj
-    self.basePopup.currentTask =  obj['serial'].__str__()   
+    print(obj)
+    self.basePopup.currentTask =  obj['serial'].__str__()
 
     # This is really awkward because we actually have to go to the
     # correct tab. We have some horrible hacks here. Need a dictionary

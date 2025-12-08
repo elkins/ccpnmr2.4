@@ -202,8 +202,7 @@ class DyanaSequenceFile(DyanaGenericFile):
       fileReadOk = False
     else:
       for lineError in lineErrors:
-        print lineError
-    
+        print(lineError)    
     return fileReadOk
 
   def readFromCoordinates(self,coordinateFile, verbose = 0):

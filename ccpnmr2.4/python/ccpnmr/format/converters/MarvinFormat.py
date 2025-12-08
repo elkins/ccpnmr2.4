@@ -143,8 +143,7 @@ class MarvinFormat(DataFormat):
 
   def filterByValid(self,elementArray,truthArray):
       if len(truthArray) != len(elementArray):
-          print elementArray
-          print truthArray
+          print(elementArray)          print(truthArray)
           raise self.FormatConverterError('internal error the length of the truth array and element array dont agree!')
 
       result  = []
@@ -610,5 +609,4 @@ class MarvinFormat(DataFormat):
                       peakExperiment=peak.peakList.dataSource.experiment.name
                       peakId = '%s:%s[%s].%d' % (peakExperiment,peakDataSource,peakPeakList,peakSerial)
                       msg  = 'Warning: using application data %s but peak %s doesn\'t have integer appdata'
-                      print  msg % (self.appDataKey,peakId)
-      DataFormat.setPeaks(self)
+                      print(msg % (self.appDataKey,peakId))      DataFormat.setPeaks(self)

@@ -28,7 +28,7 @@ def postQuery(sql_query, saveCsvFile = None, base_url='http://service.pdbj.org/m
         # cheap scan.
         if resultTxt.count(STACKTRACE_COMPONENT, 0, STACKTRACE_LENGHT_MIN):
             print("ERROR: Found stack trace:")
-            print resultTxt
+            print(resultTxt)
             return
     if saveCsvFile:
         writeTextToFile( saveCsvFile, resultTxt)

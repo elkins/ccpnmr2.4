@@ -482,12 +482,12 @@ class linkResonances(TopShared):
         
     'verbose':                   (True,  False,"""                            
         True:  Print out all detailed information.
-        False: Do not print out detailed information.
+        False: Do not print(out detailed information.)
         """),
         
     'verboseCopy':                (False,  False,"""                            
         True:  Print out detailed information for resonance copying.
-        False: Do not print out detailed information for resonance copying.
+        False: Do not print(out detailed information for resonance copying.)
         """),
 
     #
@@ -660,18 +660,14 @@ class linkResonances(TopShared):
     # Print message...
     #
     
-    print
-    print drawBox("Starting linkResonances")
-    print
-
+    print()
+    print(drawBox("Starting linkResonances"))    print()
     #
     # Print message...
     #
     
-    print
-    print drawBox("Stage 1: Determining input format and setting up reference data",indent = "  ")
-    print
-    
+    print()
+    print(drawBox("Stage 1: Determining input format and setting up reference data",indent = "  "))    print()
     #
     # Set molSystem: handling only one at a time!
     #
@@ -712,10 +708,8 @@ class linkResonances(TopShared):
     # Print message...
     #
     
-    print
-    print drawBox("Stage 2: Determining chain/residue mapping between format data and CCPN data",indent = "  ")
-    print
-
+    print()
+    print(drawBox("Stage 2: Determining chain/residue mapping between format data and CCPN data",indent = "  "))    print()
     #
     # Determine the links between the chains reported for the resonances and the
     # actual chains present in the molSystem
@@ -729,10 +723,8 @@ class linkResonances(TopShared):
     # Print message...
     #
    
-    print
-    print drawBox("Stage 3: Determining atom naming system and creating mapping",indent = "  ")
-    print
-
+    print()
+    print(drawBox("Stage 3: Determining atom naming system and creating mapping",indent = "  "))    print()
     #
     # Set up resonance groups for resonances without any atom name
     #
@@ -774,10 +766,8 @@ class linkResonances(TopShared):
     # Print message...
     #
    
-    print
-    print drawBox("Stage 4: Assigning resonances (created from format data) to atoms (CCPN data)",indent = "  ")
-    print
-
+    print()
+    print(drawBox("Stage 4: Assigning resonances (created from format data) to atoms (CCPN data)",indent = "  "))    print()
     #
     # Link resonances to atoms
     #
@@ -1410,8 +1400,7 @@ class linkResonances(TopShared):
 
         if self.verbose:
           print("  Naming system %s selected" % namingSystemName)
-          print
-
+          print()
       else:
         self.status = False
 
@@ -2045,8 +2034,8 @@ class linkResonances(TopShared):
         if self.nmrRes:
           print(" - ccpCode %s" % self.nmrRes.ccpCode)
         else:
-          print
-        
+          print()
+                
       #
       # If no chemAtomSysName or following chemAtom match found,
       # then let user link to relevant atom(s)
@@ -2333,8 +2322,7 @@ class linkResonances(TopShared):
     set = 0
     for atomToResName in self.atomToResNameList:
       
-      print set,len(atomToResName.nmrAtoms)
-      
+      print(set,len(atomToResName.nmrAtoms))      
       for resName in atomToResName.resNameList:
         
         print("   ",resName,)
@@ -2344,10 +2332,9 @@ class linkResonances(TopShared):
         if chemAtomSets:
           for chemAtomSet in chemAtomSets:
         
-            print chemAtomSet.name,
-          
-        print
-      
+            print(chemAtomSet.name,)          
+        print()
+            
             
       set += 1
     """
@@ -2434,10 +2421,8 @@ class linkResonances(TopShared):
           printResidueInfo = True
           
         if printResidueInfo:
-          print
-          print drawBox("Assignments for residue %d, chain '%s' (%s, code %s)" % (self.nmrRes.seqId,self.nmrRes.chain.code,self.nmrRes.ccpCode,self.nmrRes.seqCode), indent = "  ")
-          print
-              
+          print()
+          print(drawBox("Assignments for residue %d, chain '%s' (%s, code %s)" % (self.nmrRes.seqId,self.nmrRes.chain.code,self.nmrRes.ccpCode,self.nmrRes.seqCode), indent = "  "))          print()
       #
       # Check if any resonance matches the current self.atomsFound
       #
@@ -3483,14 +3468,11 @@ class linkResonances(TopShared):
 
               outText[i] = outText[i][:-1] + "' atom(s)"
 
-          print
-
+          print()
           for i in range(0,len(outText)):
             if len(resonances) > i or len(atomSets) > i:
-              print outText[i]
-
-          print
-
+              print(outText[i])
+          print()
     self.numResonancesLinked += len(allLinkedResonances)
  
   def getOrCreateAtomSet(self,atomName,nmrAtomGroup):
@@ -5090,8 +5072,7 @@ class linkResonances(TopShared):
 
       if self.verbose:
         print("      Merging shift values %.3f and %.3f for resonance %s." % (shiftValue,otherShiftValue,toResName))
-        print
-
+        print()
       newShiftValue = (otherShiftValue + shiftValue) / 2
     
     #

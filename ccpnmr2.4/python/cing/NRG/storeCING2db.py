@@ -204,14 +204,16 @@ def doStoreCING2db( entry_code, archive_id, project = None):
         
     chothia_class = molecule.chothiaClassInt()
     chothia_class_str = chothiaId2DbStr(chothia_class) # Difference than string representation in CING api. 
-    molTypeCountList = molecule.getMolTypeCountList()    
+    molTypeCountList = molecule.getMolTypeCountList()
+      
     p_protein_count = molTypeCountList[ mapMoltypeToInt[PROTEIN_STR] ]
     p_dna_count     = molTypeCountList[ mapMoltypeToInt[DNA_STR] ]
     p_rna_count     = molTypeCountList[ mapMoltypeToInt[RNA_STR] ]
     p_water_count   = molTypeCountList[ mapMoltypeToInt[WATER_STR] ]
     p_other_count   = molTypeCountList[ mapMoltypeToInt[OTHER_STR] ]
 
-    molTypeResidueCountList = molecule.getMolTypeResidueCountList()    
+    molTypeResidueCountList = molecule.getMolTypeResidueCountList()
+      
     p_res_protein_count = molTypeResidueCountList[ mapMoltypeToInt[PROTEIN_STR] ]
     p_res_dna_count     = molTypeResidueCountList[ mapMoltypeToInt[DNA_STR] ]
     p_res_rna_count     = molTypeResidueCountList[ mapMoltypeToInt[RNA_STR] ]
@@ -578,7 +580,8 @@ def doStoreCING2db( entry_code, archive_id, project = None):
             numberR = residue.resNum
             sel_1R = molecule.rangesContainsResidue(residue)            
             is_commonR = residue.isCommon()
-            is_terminR  = residue.isNterminal() or residue.isCterminal()            
+            is_terminR  = residue.isNterminal() or residue.isCterminal()
+                      
             is_present_R = residue.hasCoordinates()
             dssp_id = getDsspSecStructConsensusId(residue)
             dssp_percent_list = getDsspPercentList(residue)

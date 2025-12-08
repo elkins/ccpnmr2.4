@@ -117,7 +117,8 @@ class dnaRnaRestraints:
         
         outfile = open(join(self.projectRoot,'dna-rna_restraints.def'),'w')
         outfile.write(self.fileString)
-        outfile.close()    
+        outfile.close()
+          
 
     def __writeBPplanarity(self):
 

@@ -194,8 +194,7 @@ class FilterCloudsPopup(BasePopup):
  
       sd = sqrt(sd)
  
-      print meanRmsd, '+/-', sd
- 
+      print(meanRmsd, '+/-', sd) 
       for i in range(len(self.clouds),0,-1):
         rmsd = self.rmsds[i]
         if abs(rmsd - meanRmsd) > (sdTolerance*sd):
@@ -234,9 +233,7 @@ class FilterCloudsPopup(BasePopup):
           
           C +=1
     
-      print len(atomCoordList)
-      print len(resonances), len(resonances2)
-
+      print(len(atomCoordList))      print(len(resonances), len(resonances2))
       print("Generating Mean")
       cloudsList = []
       for cloud in self.clouds:

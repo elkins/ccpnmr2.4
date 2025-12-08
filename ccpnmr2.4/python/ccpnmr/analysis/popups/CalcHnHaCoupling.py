@@ -934,7 +934,8 @@ class CalcHnHaCouplingPopup(BasePopup):
  
     if constraintsPopup:
       constraintsPopup.update(constraintList)
-      constraintsPopup.turnOnNotifiers()  
+      constraintsPopup.turnOnNotifiers()
+      
     else:
       self.guiParent.browseConstraints(constraintList)
             

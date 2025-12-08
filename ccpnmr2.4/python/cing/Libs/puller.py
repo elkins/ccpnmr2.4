@@ -41,8 +41,7 @@ def pull_data(from_db, to_db, tables):
 
 def print_usage():
     myName = sys.argv[0]
-    print """
-Usage: %s -f source_server -t destination_server table [table ...]
+    print(""")Usage: %s -f source_server -t destination_server table [table ...]
     -f, -t = driver://user[:password]@host[:port]/database
 
 Example: %s -f oracle://someuser:PaSsWd@db1/TSH1 \\
@@ -53,7 +52,8 @@ Example: %s -f oracle://someuser:PaSsWd@db1/TSH1 \\
     """ % (myName, myName, myName)
 
 def quick_mapper(table):
-    base = declarative_base()    
+    base = declarative_base()
+      
     # pylint: disable=R0903
     class GenericMapper(base): # pylint: disable=W0232
         __table__ = table

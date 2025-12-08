@@ -92,8 +92,7 @@ def checkAriaInstallation():
 
     except ImportError as errMsg:
       failedModules.append(module)
-      print errMsg
-
+      print(errMsg)
   if failedModules:
     text = ', '.join(failedModules)
     raise Exception(FAIL + 'Cannot import modules required by ARIA 2:\n%s' % text)
@@ -447,8 +446,8 @@ if __name__ == '__main__':
   nArgs = len(cmdArgs)
 
   if nArgs < 2:
-    print """
-      CcpnToAriaXml requires at least two command line arguments:
+    print(""")
+    CcpnToAriaXml requires at least two command line arguments:
         CCPN project directory
         Output ARIA XML file name
 

@@ -45,7 +45,7 @@ for line in AwkLike(sourceFile, commentString = '#'):
                 nTwarning('line %d %s: IUPAC nomenclature CING database "%s" vrs CCPN database "%s"',  line.NR, resdef,
                           resdef.translate(IUPAC), iupacName)
             #end if
-            print ''
+            print('')
             # Add to nameDict
             resdef.nameDict[CCPN] = ccpnName
         else:
@@ -55,9 +55,8 @@ for line in AwkLike(sourceFile, commentString = '#'):
 
     elif d[1] == 'ENDRES':
         resdef = None
-        print ''
-        print ''
-
+        print('')
+        print('')
     elif d[1] == 'ATOM' and resdef != None:
         ccpnName = d[13]
 
@@ -117,11 +116,9 @@ for line in AwkLike(sourceFile, commentString = '#'):
 # Check all residueDefs and atomDefs
 for res in NTdb.allResidueDefs():
     print('====================================')
-    print res, 'CCPN:', res.translate(CCPN)
-
+    print(res, 'CCPN:', res.translate(CCPN))
     for atm in res.allAtomDefs():
-        print atm, 'CCPN:', atm.translate(CCPN)
-
+        print(atm, 'CCPN:', atm.translate(CCPN))
 f = open('database.txt','w')
 NTdb.exportDef( stream = f )
 f.close()

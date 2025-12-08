@@ -93,7 +93,7 @@ class PrintWindowPopup(BasePopup):
   The one window that is being printed out is specified at the top.
   There are four tabs.  The first one, Options, is the most important.
   In particular, it is used to specify the File name.  At its simplest
-  to print out a window you just need to specify the File name, and
+  to print(out a window you just need to specify the File name, and)
   then click "Save Print File".  But it is likely you will at the very
   least want to change some of the settings in the Options tab.
 

@@ -626,7 +626,8 @@ class AutoBackbonePopup(BasePopup):
 
     self.notifiers(self.registerNotify)  
   
-    self.activateMars()  
+    self.activateMars()
+    
 
   def changeShiftList(self, shiftList):
   
@@ -754,13 +755,14 @@ class AutoBackbonePopup(BasePopup):
    
     else:
       self.assignments[residue] = None
-				
+        
   def clearSelected(self):
         
     for residue in self.assignmentMatrix.currentObjects:
       self.setChosenAssignment(residue, None)
       
-    self.updatePredictionsAfter()  
+    self.updatePredictionsAfter()
+    
    
   def setAboveThreshold(self):
     
@@ -778,7 +780,8 @@ class AutoBackbonePopup(BasePopup):
       if spinSystem and score > threshold:
         self.setChosenAssignment(residue, spinSystem)
       
-    self.updatePredictionsAfter()  
+    self.updatePredictionsAfter()
+    
            
   def getPredictionAttr(self, method=None):
   
@@ -808,7 +811,8 @@ class AutoBackbonePopup(BasePopup):
 
     spinSystem = self.assignPulldown.getObject()
     self.setChosenAssignment(self.residue, spinSystem)
-    self.updatePredictionsAfter()  
+    self.updatePredictionsAfter()
+    
  
  
   def getResidueSpinSystems(self, residue):
@@ -827,7 +831,7 @@ class AutoBackbonePopup(BasePopup):
       for spinSystemB in residue.resonanceGroups:
         if spinSystemB in spinSystems:
           spinSystem = spinSystemB
-	  break
+    break
 
       if not spinSystem:
         spinSystem = self.assignments.get(residue)
@@ -1025,20 +1029,20 @@ class AutoBackbonePopup(BasePopup):
       if pSpinSystem and pResidue and (pSpinSystem.residue is not pResidue):
         assignSpinSystemResidue(pSpinSystem, pResidue)
 
-     	for ss in pResidue.resonanceGroups:
-	  if ss is not pSpinSystem:
-	    self.mergeResonances(pSpinSystem, ss)
-     	    mergeSpinSystems(pSpinSystem, ss)
+      for ss in pResidue.resonanceGroups:
+    if ss is not pSpinSystem:
+      self.mergeResonances(pSpinSystem, ss)
+          mergeSpinSystems(pSpinSystem, ss)
 
       pSpinSystem = None
       if nResidue:
-     	for ss in nResidue.resonanceGroups:
-     	  pSpinSystem = findConnectedSpinSystem(ss)
-     	  break
+      for ss in nResidue.resonanceGroups:
+        pSpinSystem = findConnectedSpinSystem(ss)
+        break
 
       if pSpinSystem:
-     	self.mergeResonances(pSpinSystem, spinSystem)
-     	mergeSpinSystems(pSpinSystem, spinSystem)
+      self.mergeResonances(pSpinSystem, spinSystem)
+      mergeSpinSystems(pSpinSystem, spinSystem)
 
     self.notifiers(self.registerNotify)  
     self.updatePredictionsAfter()
@@ -1052,21 +1056,21 @@ class AutoBackbonePopup(BasePopup):
       
       if len(assignNames) == 1: # No ambiguity
         atomType = assignNames[0]
-	typeDict[atomType] = typeDict.get(atomType, []) + [resonance,]
+  typeDict[atomType] = typeDict.get(atomType, []) + [resonance,]
 
     for resonance in ss2.resonances:
       assignNames = resonance.assignNames
       
       if len(assignNames) == 1: # No ambiguity
         atomType = assignNames[0]
-	typeDict[atomType] = typeDict.get(atomType, []) + [resonance,]
+  typeDict[atomType] = typeDict.get(atomType, []) + [resonance,]
 
     for atomType in typeDict.keys():
       resonances = typeDict[atomType]
       
       while len(resonances) > 1:
         resonance1 = resonances[0]
-	resonance2 = resonances.pop()
+  resonance2 = resonances.pop()
         mergeResonances(resonance1, resonance2)
 
   def updateComparison(self, obj=None):
@@ -1367,7 +1371,8 @@ class AutoBackbonePopup(BasePopup):
     if chain is not self.chain:
       self.chain = chain
       self.assigments = {}
-      self.updatePredictionsAfter()  
+      self.updatePredictionsAfter()
+      
               
     self.chainPulldown.setup(names,chains,index)
   
@@ -1432,7 +1437,8 @@ class AutoBackbonePopup(BasePopup):
     if chain is not self.chain:
       self.assignments = {}
       self.chain = chain
-      self.updatePredictionsAfter()  
+      self.updatePredictionsAfter()
+      
       self.updateIterations()
    
   def setDefaultPeakLists(self):
@@ -1809,10 +1815,10 @@ class AutoBackbonePopup(BasePopup):
     if obj:
       if obj.className == 'DataSource':
         refExperiment = obj.experiment.refExperiment
-	if not refExperiment:
-	  return
-	
-	if refExperiment not in self.allowedRefExps:
+  if not refExperiment:
+    return
+  
+  if refExperiment not in self.allowedRefExps:
           return
  
       elif obj.className == 'Experiment':
