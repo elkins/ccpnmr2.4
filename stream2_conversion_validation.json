@@ -1,0 +1,146 @@
+{
+  "timestamp": "2025-12-07T22:09:39.727819",
+  "modules": {
+    "list": {
+      "task": "2.1",
+      "target": "Python",
+      "effort_estimate": "2-3h",
+      "c_exists": true,
+      "python_exists": true,
+      "test_exists": true,
+      "numba_exists": false,
+      "python_importable": true,
+      "c_importable": false,
+      "test_result": {
+        "status": "error",
+        "message": "Could not parse test output",
+        "output": "iforge3/lib/python3.12/importlib/resources/__init__.py\", line 3, in <module>\n    from ._common import (\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/resources/_common.py\", line 3, in <module>\n    import tempfile\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/tempfile.py\", line 45, in <module>\n    from random import Random as _Random\nImportError: cannot import name 'Random' from 'random' (/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/c/python_impl/random.py)\n"
+      },
+      "conversion_status": "INCOMPLETE (test errors)"
+    },
+    "diag_dbl": {
+      "task": "2.2",
+      "target": "NumPy",
+      "effort_estimate": "1-2h",
+      "c_exists": true,
+      "python_exists": true,
+      "test_exists": true,
+      "numba_exists": false,
+      "python_importable": true,
+      "c_importable": false,
+      "test_result": {
+        "status": "error",
+        "message": "Could not parse test output",
+        "output": "iforge3/lib/python3.12/importlib/resources/__init__.py\", line 3, in <module>\n    from ._common import (\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/resources/_common.py\", line 3, in <module>\n    import tempfile\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/tempfile.py\", line 45, in <module>\n    from random import Random as _Random\nImportError: cannot import name 'Random' from 'random' (/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/c/python_impl/random.py)\n"
+      },
+      "conversion_status": "INCOMPLETE (test errors)"
+    },
+    "eigenvalue": {
+      "task": "2.3",
+      "target": "NumPy",
+      "effort_estimate": "1-2h",
+      "c_exists": true,
+      "python_exists": true,
+      "test_exists": true,
+      "numba_exists": false,
+      "python_importable": true,
+      "c_importable": false,
+      "test_result": {
+        "status": "error",
+        "message": "Could not parse test output",
+        "output": "iforge3/lib/python3.12/importlib/resources/__init__.py\", line 3, in <module>\n    from ._common import (\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/resources/_common.py\", line 3, in <module>\n    import tempfile\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/tempfile.py\", line 45, in <module>\n    from random import Random as _Random\nImportError: cannot import name 'Random' from 'random' (/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/c/python_impl/random.py)\n"
+      },
+      "conversion_status": "INCOMPLETE (test errors)"
+    },
+    "hash_list": {
+      "task": "2.4",
+      "target": "Python",
+      "effort_estimate": "2-3h",
+      "c_exists": true,
+      "python_exists": true,
+      "test_exists": true,
+      "numba_exists": false,
+      "python_importable": true,
+      "c_importable": false,
+      "test_result": {
+        "status": "error",
+        "message": "Could not parse test output",
+        "output": "iforge3/lib/python3.12/importlib/resources/__init__.py\", line 3, in <module>\n    from ._common import (\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/resources/_common.py\", line 3, in <module>\n    import tempfile\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/tempfile.py\", line 45, in <module>\n    from random import Random as _Random\nImportError: cannot import name 'Random' from 'random' (/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/c/python_impl/random.py)\n"
+      },
+      "conversion_status": "INCOMPLETE (test errors)"
+    },
+    "gamma": {
+      "task": "2.5",
+      "target": "SciPy",
+      "effort_estimate": "2-3h",
+      "c_exists": true,
+      "python_exists": true,
+      "test_exists": true,
+      "numba_exists": false,
+      "python_importable": true,
+      "c_importable": false,
+      "test_result": {
+        "status": "error",
+        "message": "Could not parse test output",
+        "output": "iforge3/lib/python3.12/importlib/resources/__init__.py\", line 3, in <module>\n    from ._common import (\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/resources/_common.py\", line 3, in <module>\n    import tempfile\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/tempfile.py\", line 45, in <module>\n    from random import Random as _Random\nImportError: cannot import name 'Random' from 'random' (/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/c/python_impl/random.py)\n"
+      },
+      "conversion_status": "INCOMPLETE (test errors)"
+    },
+    "fit1d": {
+      "task": "2.6",
+      "target": "NumPy",
+      "effort_estimate": "4-6h",
+      "c_exists": true,
+      "python_exists": true,
+      "test_exists": true,
+      "numba_exists": false,
+      "python_importable": true,
+      "c_importable": false,
+      "test_result": {
+        "status": "error",
+        "message": "Could not parse test output",
+        "output": "iforge3/lib/python3.12/importlib/resources/__init__.py\", line 3, in <module>\n    from ._common import (\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/resources/_common.py\", line 3, in <module>\n    import tempfile\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/tempfile.py\", line 45, in <module>\n    from random import Random as _Random\nImportError: cannot import name 'Random' from 'random' (/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/c/python_impl/random.py)\n"
+      },
+      "conversion_status": "INCOMPLETE (test errors)"
+    },
+    "cpmg": {
+      "task": "2.7",
+      "target": "NumPy",
+      "effort_estimate": "4-6h",
+      "c_exists": true,
+      "python_exists": true,
+      "test_exists": true,
+      "numba_exists": false,
+      "python_importable": true,
+      "c_importable": false,
+      "test_result": {
+        "status": "error",
+        "message": "Could not parse test output",
+        "output": "iforge3/lib/python3.12/importlib/resources/__init__.py\", line 3, in <module>\n    from ._common import (\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/resources/_common.py\", line 3, in <module>\n    import tempfile\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/tempfile.py\", line 45, in <module>\n    from random import Random as _Random\nImportError: cannot import name 'Random' from 'random' (/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/c/python_impl/random.py)\n"
+      },
+      "conversion_status": "INCOMPLETE (test errors)"
+    }
+  },
+  "summary": {
+    "total_modules": 7,
+    "complete": 0,
+    "incomplete": 7,
+    "not_started": 0,
+    "completion_percentage": 0.0,
+    "with_tests": 7,
+    "tests_passing": 0,
+    "with_numba_optimization": 0
+  },
+  "recommendations": [
+    {
+      "priority": "MEDIUM",
+      "action": "Consider Numba optimization for: diag_dbl, eigenvalue, gamma, fit1d, cpmg",
+      "effort": "1-2 hours per module"
+    },
+    {
+      "priority": "INFO",
+      "action": "Stream 2 is 0.0% complete",
+      "effort": "See task-specific estimates above"
+    }
+  ]
+}
