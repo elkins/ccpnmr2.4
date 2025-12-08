@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-12-07T19:54:25.816698",
+  "implementations": {
+    "2D_HSQC_1024x512": {
+      "pure_python": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour' has no attribute 'calculate_contours'"
+      },
+      "numba": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_numba' has no attribute 'calculate_contours'"
+      },
+      "cython": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_cython' has no attribute 'calculate_contours'"
+      }
+    },
+    "3D_HNCO_slice_512x512": {
+      "pure_python": {
+        "status": "error",
+        "error": "Another profiling tool is already active"
+      },
+      "numba": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_numba' has no attribute 'calculate_contours'"
+      },
+      "cython": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_cython' has no attribute 'calculate_contours'"
+      }
+    },
+    "4D_NOESY_slice_256x256": {
+      "pure_python": {
+        "status": "error",
+        "error": "Another profiling tool is already active"
+      },
+      "numba": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_numba' has no attribute 'calculate_contours'"
+      },
+      "cython": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_cython' has no attribute 'calculate_contours'"
+      }
+    },
+    "Small_test_64x64": {
+      "pure_python": {
+        "status": "error",
+        "error": "Another profiling tool is already active"
+      },
+      "numba": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_numba' has no attribute 'calculate_contours'"
+      },
+      "cython": {
+        "status": "error",
+        "error": "module 'ccpnmr.analysis.python_impl.contour_cython' has no attribute 'calculate_contours'"
+      }
+    }
+  },
+  "bottlenecks": [],
+  "recommendations": [
+    {
+      "general": true,
+      "recommendation": "Cache contours for frequently viewed regions",
+      "priority": "HIGH"
+    },
+    {
+      "general": true,
+      "recommendation": "Use C extension for production (if available)",
+      "priority": "HIGH"
+    },
+    {
+      "general": true,
+      "recommendation": "Pre-compute contours for common zoom levels",
+      "priority": "MEDIUM"
+    }
+  ],
+  "summary": {}
+}
