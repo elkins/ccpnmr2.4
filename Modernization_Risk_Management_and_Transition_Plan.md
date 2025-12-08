@@ -296,14 +296,14 @@ Anthropic offers several grant programs that could support this modernization ef
 
 This project is an **ideal fit** for the AI for Science Program:
 
-✅ **Critical Research Infrastructure:** CCPNMR cited in 1,000+ publications, used for 30-40% of PDB NMR structures
-✅ **High Scientific Impact:** Enables protein structure determination for thousands of researchers globally
-✅ **Clear AI Acceleration:** Evidence-based 4-6x productivity multiplier (4 hours vs 17-26 hours measured)
-✅ **Technical Feasibility:** 800+ tests (99.9% pass rate), working Python 3 implementation, comprehensive planning
-✅ **Institutional Connection:** Project serves research infrastructure managed by ccpn.ac.uk (Collaborative Computing Project for NMR)
-✅ **Measurable Outcomes:** Clear milestones, validation framework, staged rollout plan
-✅ **Computational Chemistry/Bioinformatics:** NMR spectroscopy is core technique for structural biology
-✅ **Cost-Effectiveness:** $20,000 API credits enables $112K-160K value delivery (311x-444x ROI)
+- ✅ **Critical Research Infrastructure:** CCPNMR cited in 1,000+ publications, used for 30-40% of PDB NMR structures
+- ✅ **High Scientific Impact:** Enables protein structure determination for thousands of researchers globally
+- ✅ **Clear AI Acceleration:** Evidence-based 4-6x productivity multiplier (4 hours vs 17-26 hours measured)
+- ✅ **Technical Feasibility:** 800+ tests (99.9% pass rate), working Python 3 implementation, comprehensive planning
+- ✅ **Institutional Connection:** Project serves research infrastructure managed by ccpn.ac.uk (Collaborative Computing Project for NMR)
+- ✅ **Measurable Outcomes:** Clear milestones, validation framework, staged rollout plan
+- ✅ **Computational Chemistry/Bioinformatics:** NMR spectroscopy is core technique for structural biology
+- ✅ **Cost-Effectiveness:** $20,000 API credits enables $112K-160K value delivery (311x-444x ROI)
 
 **Application Strategy:**
 
