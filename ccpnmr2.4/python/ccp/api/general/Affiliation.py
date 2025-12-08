@@ -100,7 +100,7 @@ class AffiliationStore(memops.api.Implementation.TopObject):
     dataDict['memopsRoot'] = parent
     from memops.api.Implementation import MemopsRoot as importedType
     if (not isinstance(parent, importedType)):
-      raise ApiError("""%s.__init__:
+        raise ApiError("""%s.__init__:
        value is not of class memops.Implementation.MemopsRoot""" % self.qualifiedName
        + ": %s" % (parent,)
       )
@@ -1379,7 +1379,7 @@ class Group(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     dataDict['organisation'] = parent
     if (not isinstance(parent, Organisation)):
-      raise ApiError("""%s.__init__:
+        raise ApiError("""%s.__init__:
        value is not of class ccp.general.Affiliation.Organisation""" % self.qualifiedName
        + ": %s" % (parent,)
       )
@@ -1587,7 +1587,7 @@ class Group(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Experiment import Experiment as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addExperiment:
+        raise ApiError("""%s.addExperiment:
        value is not of class ccp.lims.Experiment.Experiment""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -1696,7 +1696,7 @@ class Group(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.nmr.NmrEntry import Entry as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addNmrEntry:
+        raise ApiError("""%s.addNmrEntry:
        value is not of class ccp.nmr.NmrEntry.Entry""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -2686,7 +2686,7 @@ class Group(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Experiment import Experiment as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeExperiment:
+        raise ApiError("""%s.removeExperiment:
        value is not of class ccp.lims.Experiment.Experiment""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -2770,7 +2770,7 @@ class Group(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.nmr.NmrEntry import Entry as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeNmrEntry:
+        raise ApiError("""%s.removeNmrEntry:
        value is not of class ccp.nmr.NmrEntry.Entry""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -3550,7 +3550,7 @@ class Organisation(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     dataDict['affiliationStore'] = parent
     if (not isinstance(parent, AffiliationStore)):
-      raise ApiError("""%s.__init__:
+        raise ApiError("""%s.__init__:
        value is not of class ccp.general.Affiliation.AffiliationStore""" % self.qualifiedName
        + ": %s" % (parent,)
       )
@@ -5833,7 +5833,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     dataDict['affiliationStore'] = parent
     if (not isinstance(parent, AffiliationStore)):
-      raise ApiError("""%s.__init__:
+        raise ApiError("""%s.__init__:
        value is not of class ccp.general.Affiliation.AffiliationStore""" % self.qualifiedName
        + ": %s" % (parent,)
       )
@@ -6227,7 +6227,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.general.Citation import Citation as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addAuthorCitation:
+        raise ApiError("""%s.addAuthorCitation:
        value is not of class ccp.general.Citation.Citation""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -6320,7 +6320,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.nmr.NmrEntry import Entry as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addAuthoredEntry:
+        raise ApiError("""%s.addAuthoredEntry:
        value is not of class ccp.nmr.NmrEntry.Entry""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -6413,7 +6413,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.nmr.NmrEntry import Entry as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addContactEntry:
+        raise ApiError("""%s.addContactEntry:
        value is not of class ccp.nmr.NmrEntry.Entry""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -6506,7 +6506,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Experiment import Experiment as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addCreatedExp:
+        raise ApiError("""%s.addCreatedExp:
        value is not of class ccp.lims.Experiment.Experiment""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -6615,7 +6615,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Protocol import Protocol as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addCreatedProtocol:
+        raise ApiError("""%s.addCreatedProtocol:
        value is not of class ccp.lims.Protocol.Protocol""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -6724,7 +6724,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Experiment import Experiment as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addEditedExp:
+        raise ApiError("""%s.addEditedExp:
        value is not of class ccp.lims.Experiment.Experiment""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -6833,7 +6833,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Protocol import Protocol as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addEditedProtocol:
+        raise ApiError("""%s.addEditedProtocol:
        value is not of class ccp.lims.Protocol.Protocol""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -6942,7 +6942,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.general.Citation import Citation as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addEditorCitation:
+        raise ApiError("""%s.addEditorCitation:
        value is not of class ccp.general.Citation.Citation""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -7033,8 +7033,9 @@ class Person(memops.api.Implementation.DataObject):
     Add for ccp.general.Affiliation.Person.expBlueprints
     """
     dataDict = self.__dict__
-    from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
-    if (not isinstance(value, importedType)):)      raise ApiError("""%s.addExpBlueprint:
+    from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
+    if (not isinstance(value, importedType)):
+        raise ApiError("""%s.addExpBlueprint:
        value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -7220,7 +7221,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Target import Target as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addTarget:
+        raise ApiError("""%s.addTarget:
        value is not of class ccp.lims.Target.Target""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -7329,7 +7330,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from memops.api.AccessControl import User as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addUser:
+        raise ApiError("""%s.addUser:
        value is not of class memops.AccessControl.User""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -8066,8 +8067,9 @@ class Person(memops.api.Implementation.DataObject):
 
       values = dataDict.get('expBlueprints')
       for value in values:
-        from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
-        if (not isinstance(value, importedType)):)          raise ApiError("""%s.checkValid: expBlueprints:
+        from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
+        if (not isinstance(value, importedType)):
+          raise ApiError("""%s.checkValid: expBlueprints:
            value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
            + ": %s" % (value,)
           )
@@ -10404,7 +10406,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.general.Citation import Citation as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeAuthorCitation:
+        raise ApiError("""%s.removeAuthorCitation:
        value is not of class ccp.general.Citation.Citation""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -10489,7 +10491,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.nmr.NmrEntry import Entry as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeAuthoredEntry:
+        raise ApiError("""%s.removeAuthoredEntry:
        value is not of class ccp.nmr.NmrEntry.Entry""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -10574,7 +10576,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.nmr.NmrEntry import Entry as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeContactEntry:
+        raise ApiError("""%s.removeContactEntry:
        value is not of class ccp.nmr.NmrEntry.Entry""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -10659,7 +10661,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Experiment import Experiment as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeCreatedExp:
+        raise ApiError("""%s.removeCreatedExp:
        value is not of class ccp.lims.Experiment.Experiment""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -10743,7 +10745,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Protocol import Protocol as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeCreatedProtocol:
+        raise ApiError("""%s.removeCreatedProtocol:
        value is not of class ccp.lims.Protocol.Protocol""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -10827,7 +10829,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Experiment import Experiment as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeEditedExp:
+        raise ApiError("""%s.removeEditedExp:
        value is not of class ccp.lims.Experiment.Experiment""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -10911,7 +10913,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Protocol import Protocol as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeEditedProtocol:
+        raise ApiError("""%s.removeEditedProtocol:
        value is not of class ccp.lims.Protocol.Protocol""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -10995,7 +10997,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.general.Citation import Citation as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeEditorCitation:
+        raise ApiError("""%s.removeEditorCitation:
        value is not of class ccp.general.Citation.Citation""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -11078,8 +11080,9 @@ class Person(memops.api.Implementation.DataObject):
     Remove for ccp.general.Affiliation.Person.expBlueprints
     """
     dataDict = self.__dict__
-    from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
-    if (not isinstance(value, importedType)):)      raise ApiError("""%s.removeExpBlueprint:
+    from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
+    if (not isinstance(value, importedType)):
+        raise ApiError("""%s.removeExpBlueprint:
        value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -11246,7 +11249,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from ccp.api.lims.Target import Target as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeTarget:
+        raise ApiError("""%s.removeTarget:
        value is not of class ccp.lims.Target.Target""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -11330,7 +11333,7 @@ class Person(memops.api.Implementation.DataObject):
     dataDict = self.__dict__
     from memops.api.AccessControl import User as importedType
     if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeUser:
+        raise ApiError("""%s.removeUser:
        value is not of class memops.AccessControl.User""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -12623,8 +12626,9 @@ class Person(memops.api.Implementation.DataObject):
       )
 
     for value in values:
-      from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
-      if (not isinstance(value, importedType)):)        raise ApiError("""%s.setExpBlueprints:
+      from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
+      if (not isinstance(value, importedType)):
+        raise ApiError("""%s.setExpBlueprints:
          value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
          + ": %s" % (value,)
         )
@@ -13842,7 +13846,7 @@ information.
     dataDict = self.__dict__
     dataDict['person'] = parent
     if (not isinstance(parent, Person)):
-      raise ApiError("""%s.__init__:
+        raise ApiError("""%s.__init__:
        value is not of class ccp.general.Affiliation.Person""" % self.qualifiedName
        + ": %s" % (parent,)
       )
@@ -15100,7 +15104,7 @@ information.
     """
     dataDict = self.__dict__
     if (not isinstance(value, Group)):
-      raise ApiError("""%s.setGroup:
+        raise ApiError("""%s.setGroup:
        value is not of class ccp.general.Affiliation.Group""" % self.qualifiedName
        + ": %s" % (value,)
       )

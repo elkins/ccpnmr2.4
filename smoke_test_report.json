@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-12-07T19:34:10.887573",
+  "timestamp": "2025-12-07T19:38:16.735647",
   "total_tests": 24,
-  "passed": 23,
-  "failed": 1,
+  "passed": 22,
+  "failed": 2,
   "skipped": 0,
-  "pass_rate": 0.9583333333333334,
+  "pass_rate": 0.9166666666666666,
   "test_results": [
     {
       "name": "Import memops.api.Implementation",
@@ -26,10 +26,9 @@
     },
     {
       "name": "Import memops.general.Application",
-      "status": "FAIL",
+      "status": "PASS",
       "critical": true,
-      "category": "import",
-      "error": "AttributeError: module 'types' has no attribute 'BooleanType'"
+      "category": "import"
     },
     {
       "name": "Import memops.format.xml.XmlIO",
@@ -39,15 +38,17 @@
     },
     {
       "name": "Import ccp.api.nmr.Nmr",
-      "status": "PASS",
+      "status": "FAIL",
       "critical": true,
-      "category": "import"
+      "category": "import",
+      "error": "IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)"
     },
     {
       "name": "Import ccp.api.nmr.NmrConstraint",
-      "status": "PASS",
+      "status": "FAIL",
       "critical": true,
-      "category": "import"
+      "category": "import",
+      "error": "IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)"
     },
     {
       "name": "Import memops.c.python_impl.fit",
@@ -154,9 +155,14 @@
   ],
   "failures": [
     {
-      "test": "Import memops.general.Application",
-      "error": "AttributeError: module 'types' has no attribute 'BooleanType'",
-      "traceback": "Traceback (most recent call last):\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/smoke_test_suite.py\", line 333, in _run_import_test\n    importlib.import_module(module_name)\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/Application.py\", line 61, in <module>\n    classMapping[types.BooleanType] = ApiImp.AppDataBoolean\n                 ^^^^^^^^^^^^^^^^^\nAttributeError: module 'types' has no attribute 'BooleanType'\n"
+      "test": "Import ccp.api.nmr.Nmr",
+      "error": "IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)",
+      "traceback": "Traceback (most recent call last):\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/./smoke_test_suite.py\", line 333, in _run_import_test\n    importlib.import_module(module_name)\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/nmr/Nmr.py\", line 87, in <module>\n    import ccp.api.lims.Sample\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/Sample.py\", line 85, in <module>\n    import ccp.api.lims.RefSampleComponent\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py\", line 12808\n    topObject = relatedExpBlueprint.__dict__.get('topObject')\n    ^^^^^^^^^\nIndentationError: expected an indented block after 'for' statement on line 12807\n"
+    },
+    {
+      "test": "Import ccp.api.nmr.NmrConstraint",
+      "error": "IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)",
+      "traceback": "Traceback (most recent call last):\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/./smoke_test_suite.py\", line 333, in _run_import_test\n    importlib.import_module(module_name)\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/nmr/NmrConstraint.py\", line 87, in <module>\n    import ccp.api.nmr.Nmr\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/nmr/Nmr.py\", line 87, in <module>\n    import ccp.api.lims.Sample\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/Sample.py\", line 85, in <module>\n    import ccp.api.lims.RefSampleComponent\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py\", line 12808\n    topObject = relatedExpBlueprint.__dict__.get('topObject')\n    ^^^^^^^^^\nIndentationError: expected an indented block after 'for' statement on line 12807\n"
     }
   ],
   "skipped_tests": []
