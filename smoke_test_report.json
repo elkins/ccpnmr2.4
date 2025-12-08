@@ -1,0 +1,163 @@
+{
+  "timestamp": "2025-12-07T19:34:10.887573",
+  "total_tests": 24,
+  "passed": 23,
+  "failed": 1,
+  "skipped": 0,
+  "pass_rate": 0.9583333333333334,
+  "test_results": [
+    {
+      "name": "Import memops.api.Implementation",
+      "status": "PASS",
+      "critical": true,
+      "category": "import"
+    },
+    {
+      "name": "Import memops.api.AccessControl",
+      "status": "PASS",
+      "critical": true,
+      "category": "import"
+    },
+    {
+      "name": "Import memops.general.Io",
+      "status": "PASS",
+      "critical": true,
+      "category": "import"
+    },
+    {
+      "name": "Import memops.general.Application",
+      "status": "FAIL",
+      "critical": true,
+      "category": "import",
+      "error": "AttributeError: module 'types' has no attribute 'BooleanType'"
+    },
+    {
+      "name": "Import memops.format.xml.XmlIO",
+      "status": "PASS",
+      "critical": true,
+      "category": "import"
+    },
+    {
+      "name": "Import ccp.api.nmr.Nmr",
+      "status": "PASS",
+      "critical": true,
+      "category": "import"
+    },
+    {
+      "name": "Import ccp.api.nmr.NmrConstraint",
+      "status": "PASS",
+      "critical": true,
+      "category": "import"
+    },
+    {
+      "name": "Import memops.c.python_impl.fit",
+      "status": "PASS",
+      "description": "Data processing module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.fit1d",
+      "status": "PASS",
+      "description": "Data processing module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.gamma",
+      "status": "PASS",
+      "description": "Data processing module import",
+      "category": "functional"
+    },
+    {
+      "name": "fit1d: Basic curve fitting",
+      "status": "PASS",
+      "description": "Test basic 1D curve fitting",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.fit",
+      "status": "PASS",
+      "description": "Fitting module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.gauss_jordan",
+      "status": "PASS",
+      "description": "Fitting module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.linalg",
+      "status": "PASS",
+      "description": "Fitting module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.diag_dbl",
+      "status": "PASS",
+      "description": "Numeric module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.eigenvalue",
+      "status": "PASS",
+      "description": "Numeric module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.gauss_jordan",
+      "status": "PASS",
+      "description": "Numeric module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.geometry",
+      "status": "PASS",
+      "description": "Numeric module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.hash_list",
+      "status": "PASS",
+      "description": "Numeric module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.linalg",
+      "status": "PASS",
+      "description": "Numeric module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import memops.c.python_impl.line_fit",
+      "status": "PASS",
+      "description": "Numeric module import",
+      "category": "functional"
+    },
+    {
+      "name": "diag_dbl: Matrix diagonalization",
+      "status": "PASS",
+      "description": "Test basic matrix diagonalization",
+      "category": "functional"
+    },
+    {
+      "name": "Import ccp.format.general.Util",
+      "status": "PASS",
+      "description": "Format converter module import",
+      "category": "functional"
+    },
+    {
+      "name": "Import ccp.format.general.Constants",
+      "status": "PASS",
+      "description": "Format converter module import",
+      "category": "functional"
+    }
+  ],
+  "failures": [
+    {
+      "test": "Import memops.general.Application",
+      "error": "AttributeError: module 'types' has no attribute 'BooleanType'",
+      "traceback": "Traceback (most recent call last):\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/smoke_test_suite.py\", line 333, in _run_import_test\n    importlib.import_module(module_name)\n  File \"/Users/georgeelkins/miniforge3/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/Application.py\", line 61, in <module>\n    classMapping[types.BooleanType] = ApiImp.AppDataBoolean\n                 ^^^^^^^^^^^^^^^^^\nAttributeError: module 'types' has no attribute 'BooleanType'\n"
+    }
+  ],
+  "skipped_tests": []
+}
