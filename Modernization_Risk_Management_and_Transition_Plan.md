@@ -210,35 +210,35 @@ This modernization project has several characteristics that make it exceptionall
 ### Cost-Benefit Analysis for Claude Grant
 
 #### Traditional Approach Costs (Estimated)
-**Hiring professional contractor:** Assuming developer rate: $75-150/hour (typical academic/research contractor with NMR domain knowledge)
+**Hiring professional contractor:** Assuming developer rate: £57-114/hour ($75-150/hour) (typical academic/research contractor with NMR domain knowledge)
 
-- **Planning & Documentation**: 160-200 hours × $100/hr = $16,000-20,000
-- **Implementation**: 800-1,200 hours × $100/hr = $80,000-120,000
-- **Testing & Validation**: 160-200 hours × $100/hr = $16,000-20,000
-- **Total Traditional Cost**: $112,000-160,000
+- **Planning & Documentation**: 160-200 hours × £76/hr = £12,160-15,200 ($16,000-20,000)
+- **Implementation**: 800-1,200 hours × £76/hr = £60,800-91,200 ($80,000-120,000)
+- **Testing & Validation**: 160-200 hours × £76/hr = £12,160-15,200 ($16,000-20,000)
+- **Total Traditional Cost**: £85,120-121,600 ($112,000-160,000)
 
 **Current volunteer approach:** Volunteer developer time (no direct cost, but opportunity cost and extended timeline)
 
 #### Claude-Assisted Volunteer Approach
 **Current approach:** Volunteer developer + Claude subscription
 
-- **Claude Subscription**: $30/month × 3 months = $90 (or $360/year)
+- **Claude Subscription**: £23/month × 3 months = £69 ($90) or £274/year ($360/year)
 - **Volunteer developer time**: No direct cost (contributed)
-- **Total Direct Cost to Project**: $90-360
+- **Total Direct Cost to Project**: £69-274 ($90-360)
 
 **Value Delivered:**
 - **Productivity multiplier**: 4-6x faster than volunteer working solo
 - **Timeline**: Compressed from 6-9 months (solo) to 1.75-2.75 months (with Claude)
 - **Quality**: Professional-grade planning, documentation, and implementation
-- **Equivalent market value**: $20,000-40,000 in contractor costs avoided
+- **Equivalent market value**: £15,200-30,400 ($20,000-40,000) in contractor costs avoided
 
-**Net Benefit**: Claude enables volunteer effort to achieve outcomes equivalent to hiring a professional contractor, at $90-360 cost vs $112,000-160,000 contractor cost.
+**Net Benefit**: Claude enables volunteer effort to achieve outcomes equivalent to hiring a professional contractor, at £69-274 ($90-360) cost vs £85,120-121,600 ($112,000-160,000) contractor cost.
 
 #### ROI for Claude Grant Application
 
 If requesting Claude grant/funding:
-- **Claude Annual Cost**: ~$360 (Pro) or ~$720 (Team/Work)
-- **Alternative Cost (hiring contractor)**: $112,000-160,000
+- **Claude Annual Cost**: ~£274 ($360) (Pro) or ~£547 ($720) (Team/Work)
+- **Alternative Cost (hiring contractor)**: £85,120-121,600 ($112,000-160,000)
 - **Value Multiplier**: Claude enables volunteer to deliver contractor-equivalent work
 - **Effective ROI**: 311x - 444x return on investment
 - **Intangible Benefits**:
@@ -284,8 +284,9 @@ Anthropic offers several grant programs that could support this modernization ef
 #### 1. AI for Science Program (Primary Recommendation)
 
 **Program Overview:**
-- **Award Amount:** Up to **$20,000 in API credits** for 6-month periods
+- **Award Amount:** Up to **£15,200 ($20,000) in API credits** for 6-month periods
 - **Target:** Researchers attached to research institutions working on high-impact scientific projects
+- **International Eligibility:** ✅ UK researchers are eligible (program open to researchers worldwide, excluding US-restricted countries)
 - **Focus Areas:** Biology, life sciences, chemistry, medicine, environmental science, physics, computer science, earth sciences
 - **Application Schedule:** Applications reviewed on **first Monday of each month**
 - **Application Link:** [AI for Science Program Application Form](https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform?usp=header)
@@ -315,7 +316,7 @@ This project is an **ideal fit** for the AI for Science Program:
 - ✅ **Institutional Connection:** Project serves research infrastructure managed by ccpn.ac.uk (Collaborative Computing Project for NMR)
 - ✅ **Measurable Outcomes:** Clear milestones, validation framework, staged rollout plan
 - ✅ **Computational Chemistry/Bioinformatics:** NMR spectroscopy is core technique for structural biology
-- ✅ **Cost-Effectiveness:** $20,000 API credits enables $112K-160K value delivery (311x-444x ROI)
+- ✅ **Cost-Effectiveness:** £15,200 ($20,000) API credits enables £85K-122K ($112K-160K) value delivery (311x-444x ROI)
 
 **Application Strategy:**
 
@@ -344,7 +345,7 @@ The application should emphasize:
 #### 3. Economic Futures Program (Not Applicable)
 
 **Program Overview:**
-- **Award:** Rapid grants up to $50,000
+- **Award:** Rapid grants up to £38,000 ($50,000)
 - **Target:** Empirical research on AI's economic impacts
 - **Focus:** Policy development and economic analysis
 
@@ -358,7 +359,7 @@ The application should emphasize:
 
 "The CCPNMR modernization project preserves critical research infrastructure that enables protein structure determination via NMR spectroscopy for thousands of researchers worldwide. CCPNMR is cited in over 1,000 scientific publications and was used to generate 30-40% of all NMR protein structures in the Protein Data Bank.
 
-**The Challenge:** Python 2 end-of-life (2020) threatens this infrastructure. Modernization requires converting 1,784 Python files and 58,354 lines of C code to Python 3—estimated at $112,000-160,000 contractor cost or 6-9 months volunteer solo effort.
+**The Challenge:** Python 2 end-of-life (2020) threatens this infrastructure. Modernization requires converting 1,784 Python files and 58,354 lines of C code to Python 3—estimated at £85,120-121,600 ($112,000-160,000) contractor cost or 6-9 months volunteer solo effort.
 
 **The Innovation:** This project demonstrates a novel volunteer + Claude AI collaboration model that achieves professional contractor-quality results at minimal cost. The volunteer developer (CS background, formerly Programmer/Analyst at Protein NMR Spectroscopy Lab) contributes unpaid time, while Claude API access enables systematic, rigorous implementation.
 
@@ -389,7 +390,7 @@ The application should emphasize:
 - Staged rollout minimizes risk to production research
 
 **API Credit Usage:**
-With $20,000 API credits supporting 7-11 week development timeline, this project delivers infrastructure preservation equivalent to $112,000-160,000 contractor value—representing **561%-800% return on investment** for the research community.
+With £15,200 ($20,000) API credits supporting 7-11 week development timeline, this project delivers infrastructure preservation equivalent to £85,120-121,600 ($112,000-160,000) contractor value—representing **561%-800% return on investment** for the research community.
 
 **Why This Matters:** CCPNMR is not just software; it's the foundation for thousands of researchers determining protein structures that advance drug discovery, disease understanding, and basic biological research. Python 2 end-of-life means modernization is not optional—it's essential for preserving this critical scientific infrastructure. The volunteer + Claude API model makes preservation financially feasible for the community.
 
@@ -400,25 +401,25 @@ With $20,000 API credits supporting 7-11 week development timeline, this project
 ### Cost-Benefit Analysis with API Credits
 
 #### Traditional Approach
-- **Hire contractor:** $112,000-160,000 (estimated 800-1,200 hours at $100-150/hour)
+- **Hire contractor:** £85,120-121,600 ($112,000-160,000) (estimated 800-1,200 hours at £76-114/hour / $100-150/hour)
 - **Timeline:** 12-18 weeks
 - **Risk:** Finding contractor with both NMR domain knowledge and Python expertise
 
 #### Volunteer Solo Approach
-- **Direct cost:** $0 (volunteer time)
+- **Direct cost:** £0 ($0) (volunteer time)
 - **Timeline:** 24-36 weeks
 - **Opportunity cost:** 6-9 months volunteer time
 - **Risk:** Lower quality, incomplete documentation, potential burnout
 
 #### Volunteer + Claude API Credits (Proposed)
-- **API Credits:** $20,000 (via AI for Science Program)
+- **API Credits:** £15,200 ($20,000) (via AI for Science Program - ✅ UK researchers eligible)
 - **Timeline:** 7-11 weeks
 - **Volunteer time:** ~200-300 hours (vs 600-900 hours solo)
 - **Output quality:** Professional contractor-equivalent
-- **Return on Investment:** 561%-800% (delivers $112K-160K value for $20K credits)
+- **Return on Investment:** 561%-800% (delivers £85K-122K / $112K-160K value for £15K / $20K credits)
 - **Risk:** Minimal—comprehensive testing, validation framework, staged rollout
 
-**Key Insight:** API credits enable volunteer to deliver contractor-quality results in 1/3 the solo timeline. The research community gets critical infrastructure preservation for $20K investment vs $112K-160K contractor cost—while supporting innovative volunteer + AI collaboration model.
+**Key Insight:** API credits enable volunteer to deliver contractor-quality results in 1/3 the solo timeline. The research community gets critical infrastructure preservation for £15K ($20K) investment vs £85K-122K ($112K-160K) contractor cost—while supporting innovative volunteer + AI collaboration model.
 
 ---
 
@@ -444,7 +445,7 @@ With $20,000 API credits supporting 7-11 week development timeline, this project
 - Final validation and documentation
 
 **Contingency Plan (if not approved):**
-- Continue with Claude Pro subscription ($20-30/month)
+- Continue with Claude Pro subscription (£15-23/month / $20-30/month)
 - Extended timeline: 12-15 weeks vs 7-11 weeks with API credits
 - Reduced parallel development (fewer concurrent tasks)
 - Same quality standards maintained
@@ -557,13 +558,13 @@ This volunteer-led modernization effort presents an unusual but compelling oppor
 - ✅ No C compiler required (Numba JIT compilation at runtime)
 - ✅ Potentially faster performance (Numba can exceed C speed)
 - ✅ Easier to install, maintain, and extend
-- ✅ **Total cost: $360/year Claude subscription** (vs $112K-160K contractor)
+- ✅ **Total cost: £274/year ($360/year) Claude subscription** (vs £85K-122K / $112K-160K contractor)
 
 **Alternative approaches:**
-1. **Hire contractor:** $112,000-160,000 (if funding available)
+1. **Hire contractor:** £85,120-121,600 ($112,000-160,000) (if funding available)
 2. **Do nothing:** Critical infrastructure becomes unusable on modern systems
 3. **Port to new software:** Years of effort, loss of institutional knowledge, retraining costs
-4. **Accept volunteer help:** $360/year, 7-11 weeks to completion, professional-grade results
+4. **Accept volunteer help:** £274/year ($360/year), 7-11 weeks to completion, professional-grade results
 
 **Bottom Line:** This is preservation of critical research infrastructure at minimal cost. CCPNMR is cited in 1,000+ publications and used for 30-40% of PDB NMR structures. Letting it become unusable due to Python 2 end-of-life would be significant loss to the community.
 
@@ -614,11 +615,11 @@ Research team benefits from volunteer's time + Claude's capabilities. Volunteer 
 **Fallback Options:**
 1. **No change to current workflow** - legacy Python 2 version continues working
 2. **Partial success is valuable** - even 50% of work completed improves situation
-3. **No sunk costs** - only $360 Claude subscription vs $112K-160K contractor
+3. **No sunk costs** - only £274 ($360) Claude subscription vs £85K-122K ($112K-160K) contractor
 4. **No commitment required** - research team can evaluate at any milestone
 5. **Staged rollout** - test Python 3 version on non-critical work first
 
-**Risk is asymmetric:** Downside is limited ($360 + validation time), upside is preserving critical infrastructure for the global community.
+**Risk is asymmetric:** Downside is limited (£274 / $360 + validation time), upside is preserving critical infrastructure for the global community.
 
 ### What Success Looks Like
 
@@ -649,13 +650,13 @@ Research team benefits from volunteer's time + Claude's capabilities. Volunteer 
 3. **All documentation** (planning, user guides, troubleshooting)
 4. **All coordination with AI assistance** (no research team involvement)
 5. **Continued maintenance** of Python 3 version after completion
-6. **No cost to project** (volunteer time + $360 Claude subscription)
+6. **No cost to project** (volunteer time + £274 / $360 Claude subscription)
 
 ### Bottom Line for Research Team
 
 **This is a low-risk, high-value opportunity:**
 
-- ✅ Preserves critical research infrastructure ($112K-160K value for $360 cost)
+- ✅ Preserves critical research infrastructure (£85K-122K / $112K-160K value for £274 / $360 cost)
 - ✅ Minimal time investment from research team (~5-10 hours validation)
 - ✅ No disruption to current research (legacy version remains available)
 - ✅ Professional-quality results (evidence-based from work completed)
