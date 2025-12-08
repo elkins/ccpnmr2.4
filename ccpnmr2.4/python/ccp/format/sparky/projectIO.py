@@ -486,7 +486,8 @@ class SparkyProjectFile(SparkyGenericFile):
             fout.write(' fit')
             fout.write(self.newline)
           
-          volumeMethod = peak.getVolumeMethodCode()          
+          volumeMethod = peak.getVolumeMethodCode()
+                  
           if volumeMethod and peak.volume != None:         
             fout.write('integral %e %s' % (peak.volume,volumeMethod) + self.newline)
           

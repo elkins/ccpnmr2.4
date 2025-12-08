@@ -131,7 +131,8 @@ class ArgumentServer:
   def objectSelectionPopup(self,objects,key=None,labels=None,objectName=None,
                            refClassName=None):
   
-    self.parent.argumentVar = Tkinter.IntVar()    
+    self.parent.argumentVar = Tkinter.IntVar()
+      
     self.parent.argumentObject = None   
     if self.popup:
       self.popup.update(objects, key=key, labels=labels, objectName=objectName,

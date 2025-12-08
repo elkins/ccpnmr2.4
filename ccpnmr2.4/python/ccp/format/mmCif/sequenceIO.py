@@ -321,8 +321,7 @@ class MMCIFSequenceFile(MMCIFFile):
           if self.seqElDict.has_key(seqKey):
             seqEl = (self.seqElDict[seqKey],atomName)
           else:
-            print seqKey, self.seqElDict.keys()
-            print("  Error: could not find sequence element for '%s.%s.%s' to set bond..." % (cifChainCode,cifSeqId,atomName))
+            print(seqKey, self.seqElDict.keys())            print("  Error: could not find sequence element for '%s.%s.%s' to set bond..." % (cifChainCode,cifSeqId,atomName))
             seqEl = None
             
           seqEls.append(seqEl)

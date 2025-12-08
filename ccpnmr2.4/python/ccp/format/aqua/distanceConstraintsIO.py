@@ -243,8 +243,7 @@ class AquaDistanceConstraintFile(AquaGenericFile):
             for j in  range(0,2):
               member = constraint.items[i].members[j]
               print ("%3d %-4s %-5s " % (member.seqCode,member.resLabel,member.atomName)),
-            print
-
+            print()
     fout.close()
 
 class AquaDistanceConstraint:

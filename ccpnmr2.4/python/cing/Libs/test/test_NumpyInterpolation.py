@@ -21,10 +21,9 @@ class AllChecks(TestCase):
         # c is the column
         # but when printed the matrix is printed differently?
         z = r + c
-        print z
-#        z = sin( x - y )
+        print(z)#        z = sin( x - y )
         bins = (r,c)
-        print bins
+        print(bins)
         testList = [
                     [ 1.25, 0.0, 1.25], # first the corners
                     [ 1.25, 0.125, 1.375], # first the corners

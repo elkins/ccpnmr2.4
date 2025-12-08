@@ -5341,7 +5341,8 @@ ECI allows you to easily add an "Entry" object to your CCPN project. An "Entry" 
       self.entryMolecule.delete()
       
       if expSource and not (expSource.entryMolecules or expSource.molecules):
-        expSource.delete()      
+        expSource.delete()
+            
     
       self.entryMolecule = None
 

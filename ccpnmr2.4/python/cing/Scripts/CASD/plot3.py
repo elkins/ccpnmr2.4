@@ -355,7 +355,7 @@ def plotAll():
 
     
     for target in results.targets:
-        print target    
+        print(target)
         plotRmsd(target)
         plotRmsdBox(target)
         plotROG(target)

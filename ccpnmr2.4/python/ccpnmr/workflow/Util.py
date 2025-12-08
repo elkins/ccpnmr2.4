@@ -184,10 +184,10 @@ class WorkFlow:
       else:
         parentText='nmrConstraintStore'
         
-      print
+      print()
       print("Warning: %d (out of %d) resonances not linked in %s." % (unlinkedRes,len(resonanceList),parentText))
-      print
-  
+      print()
+      
   #
   # Code to (un)pack CCPN projects into/from .tgz
   #

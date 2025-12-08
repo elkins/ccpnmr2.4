@@ -146,7 +146,8 @@ class CosmosDistanceConstraintFile(CosmosGenericFile):
       fout.write(self.newline)
 
     if not use_fout:
-      fout.close()    
+      fout.close()
+        
 
 class CosmosDistanceConstraint:
 

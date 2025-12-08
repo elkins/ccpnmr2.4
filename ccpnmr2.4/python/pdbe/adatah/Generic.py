@@ -503,7 +503,8 @@ class DataHandler:
       if not nmrConstraintStore:
         nmrConstraintStore = self.nmrProject.findFirstNmrConstraintStore()
       
-      resonances = nmrConstraintStore.sortedFixedResonances()  
+      resonances = nmrConstraintStore.sortedFixedResonances()
+      
 
       keywds['globalStereoAssign'] = True
       keywds['nmrConstraintStore'] = nmrConstraintStore
@@ -654,10 +655,8 @@ class DataHandler:
 
   def drawBoxDelimiter(self,boxText):
 
-    print
-    print drawBox(boxText)
-    print
-
+    print()
+    print(drawBox(boxText))    print()
   def catchError(self,raiseError,timeFlag):
 
     if raiseError:
@@ -676,4 +675,4 @@ class DataHandler:
       ferrors.close()
 
       sys.stdout = self.curStdout
-      print error
+      print(error)

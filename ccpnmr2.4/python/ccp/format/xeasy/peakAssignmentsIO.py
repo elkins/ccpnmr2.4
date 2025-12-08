@@ -319,8 +319,7 @@ class XEasyPeakAssignment:
            
           except:
               print('WARNING: problem with assignment matrix!')
-              print self.peakNum, assignmentMatrix, row, col
-    
+              print(self.peakNum, assignmentMatrix, row, col)    
     #
     # Make a list of allowed combinations...
     #
@@ -426,11 +425,10 @@ if __name__ == "__main__":
     
     assignFile.read(verbose = 1)
 
-    print assignFile.assignmentsDim
+    print(assignFile.assignmentsDim)
     for pa in assignFile.peakAssignments:
       
-      print pa.peakNum, pa.assignments, pa.assignCombinations
-        
+      print(pa.peakNum, pa.assignments, pa.assignCombinations)        
     # Writing tested on 19/03/2002 (Wim) - all OK
     # Have to switch row/col for 3d compared to 2d: hacks included in script
     assignFile.name = outFile

@@ -119,8 +119,7 @@ class CnsChemShiftFile(CnsGenericFile):
       fileReadOk = False
     else:
       for errorMessage in errorMessages:
-        print errorMessage
-    
+        print(errorMessage)    
     return fileReadOk
   
   def write(self,verbose = 0):

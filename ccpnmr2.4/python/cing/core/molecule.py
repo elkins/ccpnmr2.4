@@ -391,8 +391,10 @@ class Molecule( NTtree, ResidueList ):
         self.rogScore         = ROGscore()
         self.ranges           = None         # ranges used for superposition/rmsd calculations. None means all. 'auto' will be converted.
         self.archive_id        = None         # See doc in setArchiveId
-        self.bmrbEntryList    = NTlist()          # List of BMRB entries whose data occurs in this object.
-        self.pdbEntryList     = NTlist()          # List of PDB entries whose data occurs in this object.
+        self.bmrbEntryList    = NTlist()
+                # List of BMRB entries whose data occurs in this object.
+        self.pdbEntryList     = NTlist()
+                # List of PDB entries whose data occurs in this object.
 
 #        self.saveXML('chainCount','residueCount','atomCount')
 
@@ -484,7 +486,7 @@ class Molecule( NTtree, ResidueList ):
         one that can be used without quotes. If the value is a space it is hard to
         pass this to some programs; such as SHIFTX. A space would also be
         making it impossible to CING to use e.g.:
-        print project.molecule.A.GLU77.procheck.CHI1[0]
+        print(project.molecule.A.GLU77.procheck.CHI1[0])
         where A stands for chain id A.
         - The letters A-Z are often used already which will cause name space
         collisions. It is important to choose an id that will most likely not be
@@ -1025,7 +1027,8 @@ class Molecule( NTtree, ResidueList ):
         if bmrbEntryList:
             self.bmrbEntryList = bmrbEntryList
         else:        
-            bmrbEntryList = self.getInvolvedBmrbIdList()            
+            bmrbEntryList = self.getInvolvedBmrbIdList()
+                      
             if bmrbEntryList:
                 self.bmrbEntryList = NTlist()
                 for bmrb_id in bmrbEntryList:
@@ -2319,7 +2322,8 @@ class Molecule( NTtree, ResidueList ):
                 nTerror("Failed (2) to importFromPDB from: " + getCallerName())
                 return True
         # end if
-        self.updateAll()    
+        self.updateAll()
+          
         # rename the molecule if needed
         if self.name != name: # It's fine if the name already matches. Certainly the coordinates are already zipped.        
             self.project.molecules.rename(self.name, name)
@@ -3519,7 +3523,7 @@ Return an Molecule instance or None on error
         a = a*(3.0/n)
 
         w, v = LA.eig(a)
-        print w,v
+        print(w,v)
         return NTlist(*map(math.sqrt, w))
     #end def
 #end class
@@ -3778,19 +3782,25 @@ Chain class: defines chain properties and methods
         _children               : NTlist of children NTtree instances.
 
     Methods:
-        allChains()             : Returns a list containing self.
-        allResidues()           : Returns a list of all residue objects of chain.
-        allAtoms()              : Returns a list of all atom objects of chain.
+        allChains()
+                   : Returns a list containing self.
+        allResidues()
+                 : Returns a list of all residue objects of chain.
+        allAtoms()
+                    : Returns a list of all atom objects of chain.
 
     Methods inherited from NTtree:
         cName( depth )         : Returns name expanded to depth
         addChild( child )       :
         sibling( relativeIndex ) :
-        traverse()              :
+        traverse()
+                    :
 
     Methods inherited from NTdict:
-        format()                : Return a formatted string of with values of selected fields.
-        printAttr()             : Print a list of all attributes and their values.
+        format()
+                      : Return a formatted string of with values of selected fields.
+        printAttr()
+                   : Print a list of all attributes and their values.
 
     all dict methods
     """
@@ -6362,7 +6372,8 @@ coordinates: %s"""  , dots, self, dots
 
     def set( self ):
         """
-        set()                   : Return a NTset instance containing Atom instances:
+        set()
+                         : Return a NTset instance containing Atom instances:
             if   isPseudoAtom():  set contains self and the real atom instances
             elif hasPseudoAtom(): set contains self and pseudoAtom instances
             else:                 set contains self

@@ -69,24 +69,19 @@ class AllChecks(TestCase):
 
         if doRun:
             data = credentials + [(FORM_ACTION,FORM_ACTION_RUN),]
-            print  sendRequest(rpcUrl, data, files)
-
+            print(sendRequest(rpcUrl, data, files))
         if doStatus:
             data = credentials + [(FORM_ACTION,FORM_ACTION_STATUS),]
-            print  sendRequest(rpcUrl, data, files)
-
+            print(sendRequest(rpcUrl, data, files))
         if doLog:
             data = credentials + [(FORM_ACTION,FORM_ACTION_LOG),]
-            print  sendRequest(rpcUrl, data, files)
-
+            print(sendRequest(rpcUrl, data, files))
         if doPname:
             data = credentials + [(FORM_ACTION,FORM_ACTION_PROJECT_NAME),]
-            print  sendRequest(rpcUrl, data, files)
-
+            print(sendRequest(rpcUrl, data, files))
         if doPurge:
             data = credentials + [(FORM_ACTION,FORM_ACTION_PURGE),]
-            print  sendRequest(rpcUrl, data, files)
-
+            print(sendRequest(rpcUrl, data, files))
 if __name__ == "__main__":
     cing.verbosity = verbosityDebug
     unittest.main()

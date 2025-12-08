@@ -328,7 +328,8 @@ class CleanConstraints:
       
       if not constraint.items:
         print("  Deleting constraint %d (no items left)" % constraint.serial)
-        constraint.delete()    
+        constraint.delete()
+          
         constraints.pop(-1)
         constraintRefs.pop(-1)
         

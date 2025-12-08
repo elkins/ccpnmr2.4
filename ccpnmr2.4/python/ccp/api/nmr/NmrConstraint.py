@@ -9740,7 +9740,7 @@ assigned) constraint.
   isDeleted = memops.api.Implementation.MemopsObject.isDeleted
   
   lowerLimit = property(getLowerLimit, setLowerLimit, None,
-  r"""Lower Angle Limit (in degrees). Energy penalty is zero between 
+  r"""Lower Angle Limit in degrees). Energy penalty is zero between 
   upperLimit and lowerLimit.
   """)
 
@@ -9765,7 +9765,7 @@ assigned) constraint.
   """)
   
   upperLimit = property(getUpperLimit, setUpperLimit, None,
-  r"""Upper angle limit (in degrees). Energy penalty is zero between 
+  r"""Upper angle limit in degrees). Energy penalty is zero between 
   upperLimit and lowerLimit.
   """)
 
@@ -29977,7 +29977,7 @@ alternative assignemnts.
   peaks = AbstractConstraint.peaks
   
   resonances = property(getResonances, setResonances, None,
-  r"""Resonances (in order from one end to the other) defining the dihedral 
+  r"""Resonances in order from one end to the other) defining the dihedral 
   angle being constrained
   """)
 

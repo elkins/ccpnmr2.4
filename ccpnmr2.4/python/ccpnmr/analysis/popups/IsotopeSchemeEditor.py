@@ -409,7 +409,8 @@ class IsotopeSchemeEditor(BasePopup):
     tipText = 'Selects which kind of atoms to select from the selected residue isotopomer; to display isotopic incorporation in the below table'
     self.elementPulldown = PulldownList(frame, callback=self.changeChemElement,
                                         grid=(0,1), tipText=tipText)
-    self.updateChemElements()                                    
+    self.updateChemElements()
+                                      
 
     label = Label(frame, text='Water Exchangeable Atoms:', grid=(0,2))
     tipText = 'Sets whether to show atoms considered as being "water exchangeable"; their isotopic labelling will rapidly equilibrate with aqueous solvent'
@@ -768,7 +769,8 @@ class IsotopeSchemeEditor(BasePopup):
     
     self.schemeMatrix.update(textMatrix=textMatrix, objectList=objectList)
     
-    self.updateSchemePulldown()  
+    self.updateSchemePulldown()
+    
     self.updateIsotopomers()
 
   def updateSchemePulldown(self):

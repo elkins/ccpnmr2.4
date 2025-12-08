@@ -161,12 +161,8 @@ class EditSymmetryPopup(BasePopup):
         self.notify(self.registerNotify)
 
         #Temporary report of parameters
-        print self.molSystem
-        print self.molecules
-        print self.symmetrySet
-        print self.symmetryOp
-        print self.symmetryCode
-
+        print(self.molSystem)        print(self.molecules)        print(self.symmetrySet)        print(self.symmetryOp)
+        print(self.symmetryCode)
     def getMolSystem(self, partner):
 
         """Select molecular system from list of molsystems stored in the project"""
@@ -205,7 +201,8 @@ class EditSymmetryPopup(BasePopup):
 
         else:
             showWarning('Warning','Set Mol System or ensemble first',parent=self)
-            self.symmetryMatrix.keyPressEscape()        
+            self.symmetryMatrix.keyPressEscape()
+                  
     
     def getSegLength(self, symmetryOp):
         
@@ -241,7 +238,8 @@ class EditSymmetryPopup(BasePopup):
                 chains = [chains[i] for i in range(len(values)) if values[i]]
                 setPartnerChains(self.molPartner,chains)
 
-        self.symmetryMatrix.keyPressEscape()  
+        self.symmetryMatrix.keyPressEscape()
+        
         self.updateAllAfter()
         
     def setSegLength(self, event):
@@ -255,7 +253,8 @@ class EditSymmetryPopup(BasePopup):
 
     def setSymmCode(self, index, name=None): 
 
-        self.symmetryCode = self.symmCodePulldown.getSelected()    
+        self.symmetryCode = self.symmCodePulldown.getSelected()
+          
 
     def selectSymmetry(self, obj, row, col):
         

@@ -869,7 +869,7 @@ Results are written to %s'''
       args = (len(self.sampler.history['energies'])+1, len(self.sampler[0]),
               len(self.sampler), self.sim.working_path)
 
-      print info % args
+      print(info % args)
       showInfo( 'ISD simulation info', info % args )
 
     else:
@@ -892,7 +892,7 @@ Results are written to %s'''
       args = (len(history['energies'])+1, len(history['states']),
               self.sim.working_path)
 
-      print info % args
+      print(info % args)
       showInfo( 'ISD simulation info', info % args )
 
   def cmdShow(self):
@@ -2610,8 +2610,7 @@ def cleanup(simulation, sampler):
         sleep(t_delta)
         t += t_delta
 
-    print
-
+    print()
     ## halt grid
 
     g = sampler.heatbaths[0].grid
@@ -2624,7 +2623,6 @@ def cleanup(simulation, sampler):
         sleep(t_delta)
         t += t_delta
 
-    print
-
+    print()
     if g.ishalted():
       print('ISD simulation is stopped!')

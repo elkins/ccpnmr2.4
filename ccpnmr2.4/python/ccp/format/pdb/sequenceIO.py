@@ -320,10 +320,8 @@ class PdbSequenceFile(PdbGenericFile):
     for chainId in chainIds:
       print("CHAIN '%s'" % chainId)
       for curChain in chainIdInfo[chainId]:
-        print curChain[0]
-        print curChain[1]
-        print curChain[2]
-    
+        print(curChain[0])        print(curChain[1])
+        print(curChain[2])
     """ 
     
     #
@@ -340,8 +338,7 @@ class PdbSequenceFile(PdbGenericFile):
       
       if not chainIdInfo.has_key(chainId):
         print("  Error: unrecognized %s code '%s' for polymer... ignored." % (self.format,chainId))
-        print chainIdInfo.keys()
-        continue
+        print(chainIdInfo.keys())        continue
 
       self.sequences.append(PdbSequence(molName = pdbChain.molName))
       currentSequence = self.sequences[-1]

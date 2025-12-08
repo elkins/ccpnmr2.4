@@ -199,8 +199,8 @@ class WebCing(CingWorkFlow):
         sys.stdout.flush()
     
     if verbose: 
-      print
-    
+      print()
+        
     #
     # Get the log (bit obsolete as also done in file download)
     #
@@ -226,7 +226,8 @@ class WebCing(CingWorkFlow):
     
     if openBrowser:
       url = os.path.join(self.cingDownload,self.userId,self.accessKey)
-      browser = webbrowser.get()  # get default browser
+      browser = webbrowser.get()
+      # get default browser
       browser.open(url)
   
     #

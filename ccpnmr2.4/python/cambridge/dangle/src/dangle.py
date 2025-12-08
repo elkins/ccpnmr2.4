@@ -76,8 +76,7 @@ class Dangle:
     self.progressBar = progressBar
     
     print('DANGLE (version 1.1)')
-    print DANGLE_CITE
-  
+    print(DANGLE_CITE)  
     # 1. read config file for location of reference information  
     self.reference = Reference(os.path.dirname(location))
     self.reference.outDir  = outputDir or OUTDIR

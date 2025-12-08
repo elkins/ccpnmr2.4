@@ -654,22 +654,22 @@ def _main(filepath, options):
             if options.lines > 0:
                 if options.head:
                     if options.follow:
-                        print >>sys.stderr, 'Cannot follow from top of file.'
+                        print(>>sys.stderr, 'Cannot follow from top of file.')
                         sys.exit(1)
                     lines = tailer.head(options.lines)
                 else:
                     lines = tailer.tail(options.lines)
 
                 for line in lines:
-                    print line
-            elif options.follow:
+                    print(line)
+                    elif options.follow:
                 # Seek to the end so we can follow
                 tailer.seek_end()
 
             if options.follow:
                 for line in tailer.follow(delay=options.sleep):
-                    print line
-        except KeyboardInterrupt:
+                    print(line)
+                    except KeyboardInterrupt:
             # Escape silently
             pass
     finally:

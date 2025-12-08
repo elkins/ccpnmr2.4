@@ -403,7 +403,8 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
 
     try:
       dirData = r1.read()
-      r1.close()      
+      r1.close()
+          
 
       (urlLocation, chemCompXmlFile) = findCcpForgeDownloadLink(dirData,fileType,ccpCode,ccpForgeDownloadUrl)
       

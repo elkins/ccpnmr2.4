@@ -106,17 +106,15 @@ if __name__ == "__main__":
     constraintFile.read(verbose = 1)
   
     for constraint in constraintFile.constraints:
-      print constraint.Id, constraint.origId,
-    
-      print constraint.targetDist, constraint.minusDist, constraint.plusDist,
-    
+      print(constraint.Id, constraint.origId,)    
+      print(constraint.targetDist, constraint.minusDist, constraint.plusDist,)    
       for item in constraint.items:
         for member in item.members:
-          print member.seqCode, member.atomName,
-        print("|",)
+          print(member.seqCode, member.atomName,)
+          print("|",)
       
-      print
-  
+      print()
+      
     constraintFile.name = 'local/hbond.testout'
   
     constraintFile.write(verbose = 1)

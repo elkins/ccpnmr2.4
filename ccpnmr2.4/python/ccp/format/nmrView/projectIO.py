@@ -320,12 +320,9 @@ if __name__ == "__main__":
     nmrViewStarFile.read(verbose = 1)
     
     for peakFile in nmrViewStarFile.peakFiles:
-      print peakFile.specNames
-      print peakFile.numDims
-      print peakFile.peaks[0].ppm
-      print peakFile.peaks[-1].ppm
-    
+      print(peakFile.specNames)      print(peakFile.numDims)      print(peakFile.peaks[0].ppm)
+      print(peakFile.peaks[-1].ppm)
     for sequence in nmrViewStarFile.sequenceFile.sequences:
       for seqEl in sequence.elements:
   
-        print seqEl.seqCode, seqEl.code3Letter
+        print(seqEl.seqCode, seqEl.code3Letter)

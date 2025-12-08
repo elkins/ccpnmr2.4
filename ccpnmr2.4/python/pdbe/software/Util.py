@@ -731,9 +731,8 @@ class ContactOccurrenceHandler:
     self.chainShortInfo = {}
     
     
-    print chainInfo
-    print len(self.assignedResidues)
-    
+    print(chainInfo)
+    print(len(self.assignedResidues))
     for chainCode in chainInfo.keys():
       
       self.chainShortInfo[chainCode] = [None,'alpha_beta']
@@ -772,7 +771,7 @@ class ContactOccurrenceHandler:
         for (ssType,ssCode) in (('alpha','H'),('coil','C'),('beta','E')):
           fractions[ssType] = ssCodes.count(ssCode) * 1.0 / total
         
-        print fractions
+        print(fractions)
         if fractions['alpha'] >= 0.05 and fractions['beta'] >= 0.05:
           protFam = 'alpha_beta'
         elif fractions['beta'] > 0.1:
@@ -894,8 +893,7 @@ class ContactOccurrenceHandler:
       print("ST:", sortType)
       print("SS:", ssCodes, ssCodeIndex)
       print("DIST:", distance, distanceClassIndex)
-      print
-
+      print()
     #
     # Some more initialisation, start to get the occurrence out
     #
@@ -928,9 +926,8 @@ class ContactOccurrenceHandler:
           if atomNameKey2:
             if debugMode:
               print("SKEY2",atomNameKey2, atomNamesList[1])
-              print contactShortDict[residueNames][contactDist][atomNameKey1][atomNameKey2]
-              print self.secStrucKeysInfoDict[chainCodesTuple]['number']
-            
+              print(contactShortDict[residueNames][contactDist][atomNameKey1][atomNameKey2])
+              print(self.secStrucKeysInfoDict[chainCodesTuple]['number'])
             #
             # If no distance given or intermolecular, use the overall occurrence - secondary structure ignored.
             # In case of intermolecular, not enough data to get distance dependence
@@ -963,8 +960,7 @@ class ContactOccurrenceHandler:
                     contactOccurrence = distanceOccurrenceInfo[0] / self.secStrucKeysInfoDict[chainCodesTuple]['number']
 
     if debugMode and contactOccurrence:
-      print residueNames, contactDist, atomNameKey1, atomNameKey2, contactOccurrence
-
+      print(residueNames, contactDist, atomNameKey1, atomNameKey2, contactOccurrence)
     return (contactOccurrence,atomNamesList,averageDist)
   
   def getSsCodes(self,distance,ssCodes,resInfo):

@@ -157,12 +157,11 @@ class Analysis:
   def printCommandLineInfo(self):
     
     version = Copyright.version
-    print self.versionInfo
+    print(self.versionInfo)
     if version.timestamp:
       print('Distribution created %s' % version.timestamp)
     
-    print analysisReference
-
+    print(analysisReference)
   def checkAxisPanels(self):
 
     # check that orthogonal axisPanels have
@@ -1029,8 +1028,7 @@ class Analysis:
       else:
         for residue in chain.residues:
           msg = "Making Atom Sets and Mappings for residue %s %s %d"
-          print msg % (chain.code,residue.ccpCode,residue.seqCode)
-          residueMapping = getMapping(residue, aromaticsEquivalent=aromaticEquiv)
+          print(msg % (chain.code,residue.ccpCode,residue.seqCode))          residueMapping = getMapping(residue, aromaticsEquivalent=aromaticEquiv)
           atomSetMappings.extend( residueMapping.atomSetMappings )
 
       atomSetDict = {}
@@ -1208,8 +1206,7 @@ class Analysis:
       except:
         fileName = getDataSourceFileName(spectrum)
         msg = 'Warning: spectrum "%s": data file "%s" cannot be opened'
-        print msg % (spectrum.name, fileName)
-        self.deleteBlockFile(spectrum)
+        print(msg % (spectrum.name, fileName))        self.deleteBlockFile(spectrum)
 
     if updateContourLevels:
       Util.defaultContourLevels(spectrum,

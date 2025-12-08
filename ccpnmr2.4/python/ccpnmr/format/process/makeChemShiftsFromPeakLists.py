@@ -239,8 +239,7 @@ if __name__ == "__main__":
       if ds.peakLists:
         peakLists.extend(ds.sortedPeakLists())
 
-  print peakLists  
+  print(peakLists)
   shiftList = createChemShifts(peakLists)
-  print shiftList
-  print shiftList.measurements
-  
+  print(shiftList)
+  print(shiftList.measurements)

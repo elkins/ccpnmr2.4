@@ -87,8 +87,7 @@ class ProdecompPopup(BasePopup):
     height = int(self.winfo_screenheight())
     self.geometry('%dx%d+%d+%d' % (width,height,0,0))
 
-    print frame.printOutDocString
-
+    print(frame.printOutDocString)
     self.update_idletasks()
 
 

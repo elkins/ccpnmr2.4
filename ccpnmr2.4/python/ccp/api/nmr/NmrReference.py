@@ -5213,7 +5213,7 @@ the meanValue or the randomCoilValue attribute must be set.
   isDeleted = memops.api.Implementation.MemopsObject.isDeleted
   
   meanValue = property(getMeanValue, setMeanValue, None,
-  r"""Average predicted chemical shift value (in ppm)
+  r"""Average predicted chemical shift value in ppm)
   """)
 
   metaclass = memops.api.Implementation.ComplexDataType.metaclass
@@ -5238,12 +5238,12 @@ the meanValue or the randomCoilValue attribute must be set.
   """)
   
   refPoint = property(getRefPoint, setRefPoint, None,
-  r"""Reference point number (in floating point, first point is 0.0) for 
+  r"""Reference point number in floating point, first point is 0.0) for 
   referencing chemical shift axis of distribution.
   """)
   
   refValue = property(getRefValue, setRefValue, None,
-  r"""Reference value (in ppm) for setting chemical shift axis of 
+  r"""Reference value in ppm) for setting chemical shift axis of 
   distribution.
   """)
   
@@ -5255,7 +5255,7 @@ the meanValue or the randomCoilValue attribute must be set.
   """)
   
   stdDev = property(getStdDev, setStdDev, None,
-  r"""Standard deviation (in ppm) over the chemical shift distribution
+  r"""Standard deviation in ppm) over the chemical shift distribution
   """)
   
   subType = property(getSubType, setSubType, None,

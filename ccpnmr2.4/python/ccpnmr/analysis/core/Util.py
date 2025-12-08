@@ -626,7 +626,8 @@ def getSpectrumNoesResidueRanges(spectrum):
   appData = list(spectrum.findAllApplicationData(application=aName, keyword=keyword))
   values.extend([appDatum.value for appDatum in appData])
   
-  sortedDataDims = spectrum.sortedDataDims()                       
+  sortedDataDims = spectrum.sortedDataDims()
+                       
   for datum in values:
     data = datum.split('%')
     (msCode, chainCode, startVal, endVal) = data[:4]

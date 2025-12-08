@@ -1499,9 +1499,11 @@ class EditSpectrumPopup(BasePopup):
   
     if self.tolSpectrum is not spectrum:
       self.tolSpectrum = spectrum
-      self.updateTolSpectra()  
+      self.updateTolSpectra()
+      
       self.updateTolerances()
-      self.updateSpectrumButtons()  
+      self.updateSpectrumButtons()
+      
       
   def updateTolerancesAfter(self, obj=None):
   
@@ -1775,7 +1777,8 @@ class EditSpectrumPopup(BasePopup):
       
     if spec is not self.refSpectrum:
       self.refSpectrum = spec
-      self.updateReferencing()  
+      self.updateReferencing()
+      
   
     self.refSpecPulldown.setup(names, spectra, index)
     
@@ -1927,7 +1930,8 @@ class EditSpectrumPopup(BasePopup):
     if self.refSpectrum is not spectrum:
       self.refSpectrum = spectrum
       self.updateReferencing()
-      self.updateSpectrumButtons()  
+      self.updateSpectrumButtons()
+      
       
   def selectDataDimRef(self, obj, row, col):
   
@@ -2012,7 +2016,8 @@ class EditSpectrumPopup(BasePopup):
   def toggleReducedDim(self, *null):
   
     self.useReducedDim = not self.useReducedDim
-    self.updateReferencing()  
+    self.updateReferencing()
+    
 
 
   def getDimScaling(self, dataDimRef):
@@ -2381,7 +2386,8 @@ class EditSpectrumPopup(BasePopup):
       
     if spec is not self.fileSpectrum:
       self.fileSpectrum = spec
-      self.updateFileDetails()  
+      self.updateFileDetails()
+      
   
     self.fileSpecPulldown.setup(names, spectra, index)
   
@@ -2486,7 +2492,8 @@ class EditSpectrumPopup(BasePopup):
     if self.fileSpectrum is not spectrum:
       self.fileSpectrum = spectrum
       self.updateFileDetails()
-      self.updateSpectrumButtons()  
+      self.updateSpectrumButtons()
+      
   
   def browseSpecFile(self):
 

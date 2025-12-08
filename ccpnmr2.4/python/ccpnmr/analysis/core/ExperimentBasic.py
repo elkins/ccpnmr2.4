@@ -1537,8 +1537,7 @@ def getNoiseEstimate(dataSource, nsamples=1000, nsubsets=10, fraction=0.1):
   
   if fails:
     msg = "Attempt to access %d non-existent data points in spectrum %s:%s"
-    print msg % (fails, dataSource.experiment.name, dataSource.name)
-
+    print(msg % (fails, dataSource.experiment.name, dataSource.name))
   good = nsamples - fails
   if good == 0:
     return 1.0 # arbitrary
@@ -1651,8 +1650,7 @@ def getMinMaxValues(dataSource):
   
   if fails:
     msg = "Attempt to access %d non-existent data points in spectrum %s:%s"
-    print msg % (fails, dataSource.experiment.name, dataSource.name)
-
+    print(msg % (fails, dataSource.experiment.name, dataSource.name))
   if data:
     minValue = min(data)
     maxValue = max(data)

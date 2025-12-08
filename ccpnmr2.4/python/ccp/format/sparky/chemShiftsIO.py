@@ -237,8 +237,7 @@ class SparkyChemShiftFile(SparkyGenericFile):
                 continue
               else:
                 print("  Reading first %d columns only." % dataColCodesLen)
-                print
-
+                print()
             values = {}
 
             colNum = 0

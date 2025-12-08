@@ -33,7 +33,8 @@ def updateProjectHtml(pdb_id, extraArgListStr):
 
 if __name__ == '__main__':
     # Give it a good header and footer for automated checking later on.
-    starttime = time.time()    
+    starttime = time.time()
+      
     nTmessage( header )
     nTmessage( getStartMessage())
     pdb_id = sys.argv[1]

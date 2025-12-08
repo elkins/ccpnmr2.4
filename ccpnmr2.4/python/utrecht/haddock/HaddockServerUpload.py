@@ -223,5 +223,4 @@ class ServerUpload(object):
         response = res.read()
         
         print("HADDOCK server response:")
-        print response
-
+        print(response)

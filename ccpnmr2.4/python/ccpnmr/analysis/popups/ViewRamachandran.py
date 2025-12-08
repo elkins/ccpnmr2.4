@@ -428,7 +428,8 @@ class ViewRamachandranPopup(BasePopup):
     
     if self.model is not model:
       self.model = model
-      self.updateAfter()   
+      self.updateAfter()
+       
  
   def setModel(self, model):
   

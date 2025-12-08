@@ -25,16 +25,14 @@ def checkChemComp(chemComp,verbose=False):
   
 def printAtomsBonds(chemComp):
 
-  print drawBox("ChemBond information",indent = "  ")
-
+  print(drawBox("ChemBond information",indent = "  "))
   for chemBond in chemComp.sortedChemBonds():
     chemAtomNames = ["%s (%d)" % (chemAtom.name,chemAtom.subType) for chemAtom in chemBond.chemAtoms]
     print("    %-12s-%-12s: %s" % (chemAtomNames[0],chemAtomNames[1],chemBond.bondType))
     
   # Print CCV info
-  print
-  print drawBox("ChemCompVar atom information",indent = "  ")
-  for ccv in chemComp.sortedChemCompVars():
+  print()
+  print(drawBox("ChemCompVar atom information",indent = "  "))  for ccv in chemComp.sortedChemCompVars():
   
     print("  %s, %s" % (ccv.linking,ccv.descriptor))
     
@@ -47,9 +45,9 @@ def printAtomsBonds(chemComp):
         otherChemAtoms.append(chemAtom)
         
     print("    NOT INCLUDED: %s" % ', '.join(["%s (%d)" % (chemAtom.name,chemAtom.subType) for chemAtom in otherChemAtoms]))
-    print
-    
-  print
+    print()
+      
+  print()
   
 def checkAtomBinding(chemComp,verbose=False):
 
@@ -139,10 +137,9 @@ def checkAtomBinding(chemComp,verbose=False):
       print("  %s, %s" % (ccv.linking,ccv.descriptor))
       
       for errorText in errorList:
-        print errorText
-      
-      print
-       
+        print(errorText)      
+      print()
+           
 ###################
 # Main of program #
 ###################
@@ -163,12 +160,11 @@ if __name__ == "__main__":
 
       project = Implementation.MemopsRoot(name = 'tempData')
 
-      print drawBox("ChemComp %s, %s" % (molType, ccpCode))
-
+      print(drawBox("ChemComp %s, %s" % (molType, ccpCode)))
       chemComp = getChemComp(project,molType,ccpCode,download=False,chemCompArchiveDir='lala',copyFile=False)
 
       if chemComp:
         checkChemComp(chemComp,verbose = verbose)
       else:
         print("  ERROR: not available!")
-        print
+        print()

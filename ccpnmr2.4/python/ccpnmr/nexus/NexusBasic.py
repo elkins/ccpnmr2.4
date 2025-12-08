@@ -654,7 +654,8 @@ def linkSpinSystemInterIntraResonances(spinSystem, activeLists, tolerances=None)
     
     # Best match has smallest delta
     if matches:
-      matches.sort()   
+      matches.sort()
+       
       delta, resonance, uniqSpinSystem = matches[0]
       
       prevDelta, peakDimB, ss = matchDict.get(resonance, (None, None, None))

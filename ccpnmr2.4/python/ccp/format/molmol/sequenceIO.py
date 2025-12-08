@@ -155,5 +155,4 @@ if __name__ == "__main__":
     for seq in molmolFile.sequences:
       print("Chain: '%s'" % seq.chainCode)
       for seqel in seq.elements:
-        print seqel.seqCode, seqel.code3Letter
-    
+        print(seqel.seqCode, seqel.code3Letter)    

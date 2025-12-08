@@ -239,7 +239,8 @@ def align_ensemble(coords: np.ndarray, weight: np.ndarray) -> Tuple[np.ndarray, 
     
     Example:
         >>> # Align NMR ensemble of 20 structures
-        >>> coords = load_nmr_ensemble()  # shape (20, 150, 3)
+        >>> coords = load_nmr_ensemble()
+        # shape (20, 150, 3)
         >>> weight = np.ones(150)  # Equal initial weights
         >>> atom_rmsd, ens_rmsd, err = align_ensemble(coords, weight)
         >>> print(f"Average per-atom RMSD: {np.mean(atom_rmsd):.3f} Å")

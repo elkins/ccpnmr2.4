@@ -1,0 +1,224 @@
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+
+======================================================================
+Task 1.2: Comprehensive Import Validation
+======================================================================
+
+Python root: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python
+Python version: 3.12.10 | packaged by conda-forge | (main, Apr 10 2025, 22:19:24) [Clang 18.1.8 ]
+
+
+======================================================================
+Validating namespace: memops
+======================================================================
+
+Discovered 264 modules in memops.*
+
+Model read finished. Duration 0.14277195930480957 
+Model validity check skipped
+✅ memops.api.AccessControl
+✅ memops.api.Implementation
+✅ memops.c.python_impl.benchmark_gauss_jordan
+✅ memops.c.python_impl.benchmark_geometry_sorts
+✅ memops.c.python_impl.benchmark_line_fit
+✅ memops.c.python_impl.benchmark_random
+✅ memops.c.python_impl.color
+✅ memops.c.python_impl.cpmg
+✅ memops.c.python_impl.diag_dbl
+✅ memops.c.python_impl.eigenvalue
+✅ memops.c.python_impl.fit
+✅ memops.c.python_impl.fit1d
+✅ memops.c.python_impl.gamma
+✅ memops.c.python_impl.gauss_jordan
+✅ memops.c.python_impl.gauss_jordan_numba
+✅ memops.c.python_impl.geometry
+✅ memops.c.python_impl.geometry_numba
+✅ memops.c.python_impl.hash_list
+✅ memops.c.python_impl.hash_table
+✅ memops.c.python_impl.int_array
+✅ memops.c.python_impl.linalg
+✅ memops.c.python_impl.linalg_numba
+✅ memops.c.python_impl.line_fit
+✅ memops.c.python_impl.line_fit_numba
+✅ memops.c.python_impl.list
+✅ memops.c.python_impl.mem_cache
+✅ memops.c.python_impl.mem_cache_numba
+✅ memops.c.python_impl.nonlinear_model
+✅ memops.c.python_impl.random
+✅ memops.c.python_impl.random_numba
+✅ memops.c.python_impl.sorts
+✅ memops.c.python_impl.sorts_numba
+✅ memops.c.python_impl.utility
+❌ memops.editor.ApplicationTemplate
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.ArchiveProjectPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.BasePopup
+   Error: SyntaxError: invalid syntax (BasePopup.py, line 56)
+
+❌ memops.editor.ObjectTable
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.ObjectTablePopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.OpenProjectPopup
+   Error: SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)? (OpenProjectPopup.py, line 225)
+
+❌ memops.editor.PopupTemplate
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.PrintPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.SaveProjectFrame
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.SaveProjectPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.UrlViewerFrame
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.Util
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ memops.editor.WebBrowser
+   Error: SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)? (MessageReporter.py, line 232)
+
+❌ memops.editor.WidgetCountPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ memops.editor._licenseInfo
+✅ memops.format.compatibility.Converters
+❌ memops.format.compatibility.downgrade.v_3_0_a1.General
+   Error: TabError: inconsistent use of tabs and spaces in indentation (General.py, line 100)
+
+✅ memops.format.compatibility.downgrade.v_3_0_a1.Major
+✅ memops.format.compatibility.downgrade.v_3_0_a1.MapInfo
+✅ memops.format.compatibility.downgrade.v_3_0_a1.Minor
+✅ memops.format.compatibility.part1.Converters1
+✅ memops.format.compatibility.part2.Converters2
+✅ memops.format.compatibility.upgrade.v_1_1_2.General
+✅ memops.format.compatibility.upgrade.v_1_1_2.Major
+✅ memops.format.compatibility.upgrade.v_1_1_2.MapInfo
+✅ memops.format.compatibility.upgrade.v_1_1_2.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_4.General
+✅ memops.format.compatibility.upgrade.v_2_0_4.Major
+✅ memops.format.compatibility.upgrade.v_2_0_4.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_4.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_5.General
+✅ memops.format.compatibility.upgrade.v_2_0_5.Major
+✅ memops.format.compatibility.upgrade.v_2_0_5.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_5.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_6.General
+✅ memops.format.compatibility.upgrade.v_2_0_6.Major
+✅ memops.format.compatibility.upgrade.v_2_0_6.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_6.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a0.General
+✅ memops.format.compatibility.upgrade.v_2_0_a0.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a0.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a0.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a1.General
+✅ memops.format.compatibility.upgrade.v_2_0_a1.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a1.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a1.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a2.General
+✅ memops.format.compatibility.upgrade.v_2_0_a2.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a2.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a2.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a3.General
+✅ memops.format.compatibility.upgrade.v_2_0_a3.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a3.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a3.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_b1.General
+✅ memops.format.compatibility.upgrade.v_2_0_b1.Major
+✅ memops.format.compatibility.upgrade.v_2_0_b1.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_b1.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_b2.General
+✅ memops.format.compatibility.upgrade.v_2_0_b2.Major
+✅ memops.format.compatibility.upgrade.v_2_0_b2.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_b2.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_b3.General
+✅ memops.format.compatibility.upgrade.v_2_0_b3.Major
+✅ memops.format.compatibility.upgrade.v_2_0_b3.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_b3.Minor
+✅ memops.format.compatibility.upgrade.v_2_1_0.General
+✅ memops.format.compatibility.upgrade.v_2_1_0.Major
+✅ memops.format.compatibility.upgrade.v_2_1_0.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_1_0.Minor
+✅ memops.format.compatibility.upgrade.v_2_1_1.General
+✅ memops.format.compatibility.upgrade.v_2_1_1.Major
+✅ memops.format.compatibility.upgrade.v_2_1_1.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_1_1.Minor
+❌ memops.format.xml.Compatibility
+   Error: TypeError: '<' not supported between instances of 'Version' and 'Version'
+
+✅ memops.format.xml.Util
+✅ memops.format.xml.XmlGen
+✅ memops.format.xml.XmlIO
+✅ memops.format.xml._licenseInfo
+❌ memops.general.Application
+   Error: AttributeError: module 'types' has no attribute 'BooleanType'
+
+✅ memops.general.Constants
+✅ memops.general.Credits
+✅ memops.general.Implementation
+✅ memops.general.Io
+✅ memops.general.TextWriter
+✅ memops.general.TextWriter_py_2_1
+✅ memops.general.Util
+✅ memops.general.Version
+✅ memops.general._licenseInfo
+✅ memops.general.baseDataTypes.Any
+✅ memops.general.baseDataTypes.Boolean
+✅ memops.general.baseDataTypes.DateTime
+✅ memops.general.baseDataTypes.Dict
+✅ memops.general.baseDataTypes.Double
+✅ memops.general.baseDataTypes.Float
+✅ memops.general.baseDataTypes.Int
+✅ memops.general.baseDataTypes.List
+✅ memops.general.baseDataTypes.Long
+✅ memops.general.baseDataTypes.String
+✅ memops.general.baseDataTypes._licenseInfo
+✅ memops.general.license._licenseInfo
+✅ memops.general.license.contacts
+✅ memops.general.license.formats
+❌ memops.general.license.headers
+   Error: SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)? (headers.py, line 149)
+
+✅ memops.general.license.licenses
+✅ memops.general.license.references
+✅ memops.global_.python_impl.block_file
+✅ memops.global_.python_impl.clipping
+✅ memops.global_.python_impl.contourer
+✅ memops.global_.python_impl.line_fit
+✅ memops.global_.python_impl.py_store_file
+✅ memops.global_.python_impl.py_store_handler
+✅ memops.global_.python_impl.store_file
+✅ memops.global_.python_impl.store_handler
+Traceback (most recent call last):
+  File "/Users/georgeelkins/nmr/ccpnmr2.4/validate_python3_imports.py", line 288, in <module>
+    main()
+  File "/Users/georgeelkins/nmr/ccpnmr2.4/validate_python3_imports.py", line 273, in main
+    validator.validate_namespace(namespace)
+  File "/Users/georgeelkins/nmr/ccpnmr2.4/validate_python3_imports.py", line 146, in validate_namespace
+    self.results['skipped'] += 1
+TypeError: 'int' object is not iterable

@@ -121,8 +121,7 @@ class PippSequenceFile(PippGenericFile):
       self.sequences = []
       print("  Bad %s format lines:%s" % (self.format,self.newline))
       for lineError in lineErrors:
-        print lineError
-
+        print(lineError)
   def readFromShifts(self,shiftFile, verbose = 0):
   
     if verbose == 1:

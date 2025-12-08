@@ -391,15 +391,13 @@ if __name__ == "__main__":
 
   for compound in auremolFile.compounds:
   
-    print compound.label, compound.compFile
-    
+    print(compound.label, compound.compFile)    
     for cs in compound.shifts:
       print("%s: %.3f| " % (cs.atomKey, cs.value),)
-    print
-  
+    print()
+    
   for par in auremolFile.parameters.keys():
-    print par, auremolFile.parameters[par].value, auremolFile.parameters[par].unit
-
+    print(par, auremolFile.parameters[par].value, auremolFile.parameters[par].unit)
   """
   file = os.path.join(getTopDirectory(),'../../reference/auremol/csp.comp')
   auremolFile = AuremolCompFile(file)
@@ -408,5 +406,5 @@ if __name__ == "__main__":
 
   for atomInfo in auremolFile.atoms:
   
-    print atomInfo.atomKey, atomInfo.atomName, atomInfo.bondedAtoms
-  """
+    print(atomInfo.atomKey, atomInfo.atomName, atomInfo.bondedAtoms)
+    """

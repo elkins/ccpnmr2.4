@@ -446,7 +446,7 @@ def saveProject(project, newPath = None, newProjectName = None, changeBackup = T
         showWarning('Incomplete save', 'It looks like one or more files did not save completely, see console for list')
       print('It looks like one or more files did not save completely, you should check them:')
       for topObject in badTopObjects:
-        print
+        print()
         print('%s, path:' % topObject)
         print(xmlUtil.getTopObjectPath(topObject))
       return False
@@ -492,7 +492,8 @@ def renameProject(project, newProjectName):
     project.override = True # TBD: for now name is frozen so change this way
     try:
       # below constraint is not checked in setName() if override is True so repeat here
-      isValid = newProjectName.isalnum()  # superfluous but faster in most cases
+      isValid = newProjectName.isalnum()
+      # superfluous but faster in most cases
       if not isValid:
         for cc in newProjectName:
           if cc != '_' and not cc.isalnum():

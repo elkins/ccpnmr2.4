@@ -235,25 +235,24 @@ class CyanaLibrary:
       resNames = atomOrderDict.keys()
       resNames.sort()
       for resName in resNames:
-        print resName
+        print(resName)
         print("   ",atomOrderDict[resName])
-        print
-        
+        print()
+              
     return atomOrderDict
 
   def show(self):
   
     for refInfo in self.refInfo.keys():
     
-      print refInfo
-    
+      print(refInfo)    
       for cyanaRefInfo in self.refInfo[refInfo]:
       
         print("  ",cyanaRefInfo.name)
       
         if cyanaRefInfo.angles:
           
-          print
+          print()
           print("    Angles:")
 
           for angle in cyanaRefInfo.angles:
@@ -263,7 +262,7 @@ class CyanaLibrary:
       
         if cyanaRefInfo.atoms:
           
-          print
+          print()
           print("    Atoms:")
           
           text =  "      "
@@ -272,10 +271,9 @@ class CyanaLibrary:
             
             text += "%s (%s)," % (atom.name,atom.location)
             
-          print text[:-1]
-
-      print
-  
+          print(text[:-1])
+      print()
+      
   def findResLabel(self,resLabel):
     
    for refInfo in self.refInfo.keys():

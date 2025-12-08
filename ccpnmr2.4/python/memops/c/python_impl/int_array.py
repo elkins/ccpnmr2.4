@@ -227,7 +227,8 @@ if __name__ == "__main__":
     data = {arr1: "first", arr3: "third"}
     print(f"\nDict with IntArray keys:")
     print(f"  arr1 -> {data[arr1]}")
-    print(f"  arr2 -> {data[arr2]}")  # Should work (arr2 == arr1)
+    print(f"  arr2 -> {data[arr2]}")
+    # Should work (arr2 == arr1)
     print(f"  arr3 -> {data[arr3]}")
     
     # Test indexing

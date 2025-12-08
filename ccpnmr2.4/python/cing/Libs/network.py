@@ -6,9 +6,7 @@ import commands
 import mimetools
 import mimetypes
 import socket
-import urllib2
-
-
+import urllib.request as urllib2
 #########################################################################################
 # Initial code from http://www.voidspace.org.uk/python/cgi.shtml#upload                                                #
 #########################################################################################

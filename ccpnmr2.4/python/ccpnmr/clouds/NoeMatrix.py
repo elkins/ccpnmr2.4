@@ -702,8 +702,7 @@ def symmetrisePeaks(peaks, symmetryWeights, checkDuplicates=0, verbose=0):
           resonances1 = peakResonances.get(peak1) # peak might not be in our list
           if resonances1 and (resonances1 == resonances0):
             print("Warning: Duplicate assignments for peaks %s and %s" % (peak0,peak1))
-            print resonances1, resonances0
-
+            print(resonances1, resonances0)
   outPeaks = {}
   W        = len(symmetryWeights)
   nSym     = 0
@@ -761,7 +760,8 @@ def symmetrisePeaks(peaks, symmetryWeights, checkDuplicates=0, verbose=0):
           break
            
         if not factorIJ:
-          print("Peak %s at %f,%f does not match symmetry weights matrix" % (peak0, peak0.ppm1, peak0.ppm2)  )
+          print("Peak %s at %f,%f does not match symmetry weights matrix" % (peak0, peak0.ppm1, peak0.ppm2)
+          )
           continue
 
         factorJI = None
@@ -778,7 +778,8 @@ def symmetrisePeaks(peaks, symmetryWeights, checkDuplicates=0, verbose=0):
           break
             
         if not factorJI:
-          print("Peak %s at %f,%f does not match symmetry weights matrix" % (peak1, peak1.ppm1, peak1.ppm2)  )
+          print("Peak %s at %f,%f does not match symmetry weights matrix" % (peak1, peak1.ppm1, peak1.ppm2)
+          )
           continue
             
         

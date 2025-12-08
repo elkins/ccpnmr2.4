@@ -344,7 +344,6 @@ if __name__ == '__main__':
                             objects=obj, selected=None, labels=labels, colors=colors, fonts=None,
                             font=None, sticky='ew', buttonBorderWidth=1, buttonRelief='sunken')
   
-  print ps2.state
-
+  print(ps2.state)
   root.mainloop()
 

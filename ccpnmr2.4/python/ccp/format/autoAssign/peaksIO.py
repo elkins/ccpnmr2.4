@@ -241,8 +241,7 @@ if __name__ == "__main__":
     peakFile.read(verbose = 1)
 
     for rawPeak in peakFile.peaks:
-      print rawPeak.intensity
-
+      print(rawPeak.intensity)
     (path,fileName) = os.path.split(peakFile.name)
     peakFile.name = os.path.join('local',fileName)
     peakFile.write()

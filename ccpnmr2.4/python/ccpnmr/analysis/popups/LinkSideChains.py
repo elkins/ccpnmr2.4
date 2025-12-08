@@ -973,7 +973,8 @@ class LinkSideChainsPopup(BasePopup):
         buttons2[2].enable()
         buttons2[3].enable()
       else:
-        buttons2[2].disable()  
+        buttons2[2].disable()
+        
         buttons2[3].enable()
         
     else:
@@ -1215,7 +1216,8 @@ class LinkSideChainsPopup(BasePopup):
     
       minWater  = self.minWaterEntry.get() or 0.0
       maxWater  = self.maxWaterEntry.get() or 0.0
-      diagTol   = self.diagEntry.get()     or 0.0
+      diagTol   = self.diagEntry.get()
+         or 0.0
       ccpCode   = self.spinSystem.ccpCode
       numDim    = self.spectrum.numDim
       shiftList = self.shiftList
@@ -1880,7 +1882,7 @@ class LinkSideChainsPopup(BasePopup):
           linkScoreMatrix[i][k] = linkScore
 
       
-      print I, J # Check size of problem
+      print(I, J)# Check size of problem
 
       # # # # # # # # # FIND AND SCORE WHOLE SIDE CHAIN ROUTES # # # # # # # # # #
             

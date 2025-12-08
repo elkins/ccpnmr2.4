@@ -862,8 +862,7 @@ class NmrExpPrototypePopup(BasePopup):
         self.nmrExpPrototype.setDetails(text)
       else:
         self.nmrExpPrototype.setDetails(None)
-    print self.nmrExpPrototype.details
- 
+    print(self.nmrExpPrototype.details) 
   def getDetails(self, nmrExpPrototype):
 
     if nmrExpPrototype and nmrExpPrototype.details:
@@ -1076,7 +1075,8 @@ class NmrExpPrototypePopup(BasePopup):
      
   def selectExpMeasurement(self, obj, row, col):
     if obj:
-      self.updateButtons()  
+      self.updateButtons()
+      
   
   def editExpGraphs(self):
     """ 
@@ -1463,7 +1463,8 @@ class ExpGraphFrame(Frame):
   
     obj = self.nmrExpPrototype.newExpGraph()
     self.expGraphMatrix.currentObject = self.expGraph = obj
-    self.updateAfter()     
+    self.updateAfter()
+       
     
   def deleteExpGraph(self):
   
@@ -1772,7 +1773,8 @@ class ExpGraphFrame(Frame):
         for ll in (self.expGraphButtons.buttons,
          self.expStepButtons.buttons, self.expTransferButtons.buttons
         ):
-          ll[ii].disable()     
+          ll[ii].disable()
+             
   
   
   
@@ -2246,7 +2248,8 @@ class RefExperimentFrame(Frame):
       if setEditable != self.experimentEditable:
         self.experimentEditable = setEditable
       self.updateRefExpDimRefAfter()
-      self.updateButtons()  
+      self.updateButtons()
+      
       self.updateRefExpDimRefButtons()
   
   def updateRefExperiment(self):
@@ -2293,7 +2296,8 @@ class RefExperimentFrame(Frame):
     
     # NB this must be called last, 
     # so that the currentObject for the matrices is correctly set
-    self.updateButtons()  
+    self.updateButtons()
+    
     self.updateRefExpDimRefButtons()
   
   

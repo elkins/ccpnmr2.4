@@ -31,10 +31,9 @@ def printResonanceToAtoms(resonance):
       print("        AtomSet '%s' with atoms %s (chain '%s', residue %d)" % (atomSet.name,str([atom.name for atom in atomSet.sortedAtoms()]),residue.chain.code,residue.seqId))
   
   else:
-    print
-    
-  print
-
+    print()
+      
+  print()
 if __name__ == '__main__':
 
   ccpnProject = Implementation.MemopsRoot(name = 'example1a')

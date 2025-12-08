@@ -201,7 +201,8 @@ class CopyAssignmentsPopup(BasePopup):
   def open(self):
   
     BasePopup.open(self)
-    self.updatePeakSource()    
+    self.updatePeakSource()
+      
     self.updateSourceChains()
     self.updateExperimentChains()
  
@@ -441,7 +442,8 @@ class CopyAssignmentsPopup(BasePopup):
                                           grid=(0,0), sticky='e')
 
         
-    self.updatePeakSource()    
+    self.updatePeakSource()
+      
     self.updateSourceChains()
     self.updateExperimentChains()
     
@@ -1133,7 +1135,8 @@ class CopyAssignmentsPopup(BasePopup):
   def getScaleFactorDict(self):
   
     scaleFactorDict = {}
-    scaleFactorDict['1H']  = float(self.scaleEntry1H.get()  or 1.0)
+    scaleFactorDict['1H']  = float(self.scaleEntry1H.get()
+    or 1.0)
     scaleFactorDict['15N'] = float(self.scaleEntry15N.get() or 1.0)
     scaleFactorDict['13C'] = float(self.scaleEntry13C.get() or 1.0)
   

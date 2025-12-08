@@ -284,17 +284,16 @@ if __name__ == "__main__":
     
     """
     for constraint in constraintFile.constraints:
-      print constraint.Id,
-      print constraint.upperDist, constraint.lowerDist, constraint.upperPseudoDist,
-
+      print(constraint.Id,)
+      print(constraint.upperDist, constraint.lowerDist, constraint.upperPseudoDist,)
       #print constraint.peakNum, constraint.peakVol, constraint.ppms
       for item in constraint.items:
         for member in item.members:
-          print member.chainCode,member.seqCode, member.atomName,
-        print("|",)
+          print(member.chainCode,member.seqCode, member.atomName,)
+          print("|",)
       
-      print
-     
+      print()
+         
     constraintFile.name = 'local/testout'
 
     constraintFile.write(verbose = 1)
@@ -314,7 +313,7 @@ if __name__ == "__main__":
       seqnum = i +1
       
       if sequence.has_key(seqnum):
-        print sequence[seqnum]
-      else:
+        print(sequence[seqnum])
+        else:
         print("ALA")
         

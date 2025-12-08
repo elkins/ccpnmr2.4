@@ -512,8 +512,8 @@ def initialiseAmideExpts(argServer,hsqc=None, tocsy=None, noesy=None):
   cluster = {}
   for i in range(len(amides)-1):
     if i and i % 100 == 0: 
-      print i
-    peak1, ppm0, ppm1 = amides[i]
+      print(i)
+      peak1, ppm0, ppm1 = amides[i]
     if cluster.get(peak1) is None:
       cluster[peak1] = [peak1]
   
@@ -622,8 +622,7 @@ def initialiseAmideExpts(argServer,hsqc=None, tocsy=None, noesy=None):
           
           centres.append( [hsqcPeak, aveH, aveN] )
           ss[hsqcPeak] = []
-          print len(cluster3[i]), 
-          
+          print(len(cluster3[i]),)          
   print("Assign 15N HSQC")
   #assignAllNewResonances(peaks=nhsqcPl.peaks)
   #assignSpinSystemPerPeak(peaks=nhsqcPl.peaks)

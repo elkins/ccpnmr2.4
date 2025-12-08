@@ -136,8 +136,7 @@ if __name__ == '__main__':
   for mol in project.sortedMolecules():
     print("  %s" % mol.name)
 
-  print
-
+  print()
   # MolSystem.
 
   print("Molecular system: [%s] [%s]\n" % (molSystem.code, molSystem.name))
@@ -165,6 +164,5 @@ if __name__ == '__main__':
         print("  Atom: [%s] linked to Residue: [%s.%s] Atom: [%s]" % ()
           mrle.linkCode, otherRes.ccpCode, otherRes.seqCode, otherMrle.linkCode)
 
-      print
-
+      print()
   project.saveModified()

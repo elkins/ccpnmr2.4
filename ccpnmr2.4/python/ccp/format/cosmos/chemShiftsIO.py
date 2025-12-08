@@ -135,7 +135,8 @@ class CosmosChemShiftFile(CosmosGenericFile):
     #  fout.write(self.newline)
       
     if not use_fout:
-      fout.close()    
+      fout.close()
+        
 
 class CosmosChemShift:
 

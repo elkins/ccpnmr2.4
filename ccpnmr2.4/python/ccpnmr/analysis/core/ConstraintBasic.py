@@ -2475,7 +2475,8 @@ def makeDistConstraints(peakList, constraintSet=None, intensityType='volume',
       (dist,minDist,maxDist) = getDistMinMax(intensityValue, peakMean, resonances0, resonances1, distanceFunction, normalise=normalise, labelling=labelling)
       error = abs(maxDist - minDist)
 
-      fResonancePairs = set()                                     
+      fResonancePairs = set()
+                                         
       for resonance0, indirect0 in resonances0:
         resonances0 = indirect0 or [resonance0,]
         fixedResonances0 = [getFixedResonance(constraintSet,r) for r in resonances0]

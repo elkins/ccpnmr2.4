@@ -362,8 +362,7 @@ if __name__ == '__main__':
 
   for iter in range(1):
 
-    print iter
-
+    print(iter)
     # Train predict angles
     print('Reading database')
     data = readDatabase('DB_TALOS_186_secStruct_nn')

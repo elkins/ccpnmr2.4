@@ -149,8 +149,7 @@ class FileBrowserFrame(Frame):
         
         if mimeType:
           if not self.icon_dict.get(mimeType):
-            print mimeType
-        
+            print(mimeType)        
           icon = self.icon_dict.get(mimeType) \
                   or self.icon_dict.get(mimeType.split('/')[0]) \
                   or self.icon_dict['none']

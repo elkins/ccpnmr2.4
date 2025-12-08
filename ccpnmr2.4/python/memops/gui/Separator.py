@@ -115,8 +115,7 @@ class Separator(Frame):
 if __name__ == '__main__':
 
   def printEvent(event):
-    print event.x, event.y
-
+    print(event.x, event.y)
   from Label import Label
 
   root = Tkinter.Tk()

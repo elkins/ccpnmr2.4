@@ -115,22 +115,22 @@ def disambiguateNoesyPeaks(noesy2dPeakList,noesy3dPeakList,tocsy3dPeakList,hsqcP
     for resonance in resonances:
       for contrib in resonance.peakDimContribs:
         peak = contrib.peakDim.peak
-	
-	if peak.peakList is noesy3dPeakList:
-	  n3peaks.append(peak) 
-	elif peak.peakList is tocsy3dPeakList:
-	  t3peaks.append(peak)
-	  
+  
+  if peak.peakList is noesy3dPeakList:
+    n3peaks.append(peak) 
+  elif peak.peakList is tocsy3dPeakList:
+    t3peaks.append(peak)
+    
     # get intra list
     for pn in n3peaks:
       match = None
       score = 0
       for pt in t3peaks:
         s = matchPeaks(pt,pn,tolerances)
-	if s and (s>score):
-	  score = s
-	  match = pt
-	  
+  if s and (s>score):
+    score = s
+    match = pt
+    
       if match and match.sortedPeakDims()[1].peakDimContribs:
         assignResToDim(pn.sortedPeakDims()[1],match.sortedPeakDims()[1].findFirstpeakDimContrib().resonance)
         intraPeaks.append(pn)
@@ -142,23 +142,23 @@ def disambiguateNoesyPeaks(noesy2dPeakList,noesy3dPeakList,tocsy3dPeakList,hsqcP
         if peakDim.peakDimContribs and peakDim.findFirstpeakDimContrib().resonance:
           interPeaks.append(pn)
         
-	ppm = getPeakDimPpm(peakDim)
+  ppm = getPeakDimPpm(peakDim)
         position  = peakDim.position + (peakDim.numAliasing*peakDim.dataDimRef.dataDim.numPointsOrig)
-	shifts = findMatchingShifts(peakDim.dataDimRef,position,tolerance=t1)
+  shifts = findMatchingShifts(peakDim.dataDimRef,position,tolerance=t1)
                 
-	if shifts and len(shifts) == 1:
-	  assignResToDim(pn.sortedPeakDims()[1],shifts[0].resonance)
-	  interPeaks.append(pn)
+  if shifts and len(shifts) == 1:
+    assignResToDim(pn.sortedPeakDims()[1],shifts[0].resonance)
+    interPeaks.append(pn)
         else:
- 	  shifts = findMatchingShifts(peakDim.dataDimRef,position,tolerance=t1)
+    shifts = findMatchingShifts(peakDim.dataDimRef,position,tolerance=t1)
           if not shifts:
             pass
             #assignResToDim(peakDim)
-	    #interPeaks.append(pn)
+      #interPeaks.append(pn)
             
           elif len(shifts) == 1:
-	    assignResToDim(peakDim,shifts[0].resonance)
-	    interPeaks.append(pn)
+      assignResToDim(peakDim,shifts[0].resonance)
+      interPeaks.append(pn)
             
             
     peaks3d = intraPeaks
@@ -359,8 +359,7 @@ def optimiseRelaxation(resonances,amat,tmix=60,sf=500,tcor=3,rleak=2,C13=1,N15=1
       nhs.pop(a)
       types.pop(a)
 
-  print len(atoms), len(nhs), len(types), len(amat), len(amatNew)
-
+  print(len(atoms), len(nhs), len(types), len(amat), len(amatNew))
   n = len(resonances) # number of atoms
   rmat  = n * [0]
   for i in range(n):

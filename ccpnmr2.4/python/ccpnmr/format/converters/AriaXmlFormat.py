@@ -255,7 +255,6 @@ if __name__ == '__main__':
 
   ccpnProject = ariaXmlFormat.ccpNmrConv.ccpnProject
   
-  print ccpnProject
-  
+  print(ccpnProject)  
   #To write...
   #ariaXmlFormat.writeXmlFile()

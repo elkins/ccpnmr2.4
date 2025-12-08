@@ -384,7 +384,8 @@ class ViewStructureFrame(ScrolledCanvas):
     if self.cStructure:
       self.cStructure.zoom(2.0+self.zoomStep)
     self.zoomStep /= 0.85
-    self.drawStructure()   
+    self.drawStructure()
+     
   
   def mouseMotion(self, event):
   

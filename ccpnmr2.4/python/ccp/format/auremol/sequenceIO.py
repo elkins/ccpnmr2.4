@@ -255,7 +255,6 @@ if __name__ == "__main__":
     for seq in sequenceFile.sequences:
       for seqel in seq.elements:
         if hasattr(seqel,'code3Letter'):
-          print seqel.seqCode, seqel.code3Letter
-        else:
-          print seqel.seqCode, seqel.code1Letter
-
+          print(seqel.seqCode, seqel.code3Letter)
+          else:
+          print(seqel.seqCode, seqel.code1Letter)

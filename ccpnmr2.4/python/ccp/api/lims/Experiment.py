@@ -82,8 +82,7 @@ import ccp.api.general.Affiliation
 import ccp.api.general.Instrument
 import ccp.api.general.Method
 import ccp.api.lims.Classification
-import ccp.api.lims.ExpBlueprint
-import ccp.api.lims.Protocol
+import ccp.api.lims.ExpBlueprint()import ccp.api.lims.Protocol
 import ccp.api.lims.Sample
 import memops.api.AccessControl
 import memops.api.Implementation
@@ -289,9 +288,7 @@ class Experiment(memops.api.Implementation.DataObject):
       topObject = creator.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
-    expBlueprint = dataDict.get('expBlueprint')
-    if (expBlueprint is not None):
-      topObject = expBlueprint.__dict__.get('topObject')
+    expBlueprint = dataDict.get('expBlueprint'))    if (expBlueprintis not None):)      topObject = expBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     experimentType = dataDict.get('experimentType')
@@ -372,10 +369,7 @@ class Experiment(memops.api.Implementation.DataObject):
       createdExps = creator.__dict__.get('createdExps')
       createdExps.remove(self)
 
-    expBlueprint = dataDict.get('expBlueprint')
-    if ((expBlueprint is not None and not (expBlueprint in objsToBeDeleted))):
-      experiments = expBlueprint.__dict__.get('experiments')
-      experiments.remove(self)
+    expBlueprint = dataDict.get('expBlueprint'))    if ((expBlueprintis not None and not (expBlueprintin objsToBeDeleted))):)      experiments = expBlueprint.__dict__.get('experiments'))      experiments.remove(self)
 
     experimentGroup = dataDict.get('experimentGroup')
     if ((experimentGroup is not None and not (experimentGroup in objsToBeDeleted))):
@@ -1120,9 +1114,8 @@ class Experiment(memops.api.Implementation.DataObject):
 
       value = dataDict.get('expBlueprint')
       if (value is not None):
-        from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
-        if (not isinstance(value, importedType)):
-          raise ApiError("""%s.checkValid: expBlueprint:
+        from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
+        if (not isinstance(value, importedType)):)          raise ApiError("""%s.checkValid: expBlueprint:
            value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
            + ": %s" % (value,)
           )
@@ -1130,7 +1123,7 @@ class Experiment(memops.api.Implementation.DataObject):
         oldSelves = value.__dict__.get('experiments')
         if (not (self in oldSelves)):
           raise ApiError("""%s.checkValid: expBlueprint:
-           non-reciprocal link expBlueprint from object""" % self.qualifiedName
+           non-reciprocal link expBlueprint(from object""" % self.qualifiedName)
            + ": %s" % (self,)
           )
 
@@ -3431,9 +3424,8 @@ class Experiment(memops.api.Implementation.DataObject):
     Set for ccp.lims.Experiment.Experiment.expBlueprint("""
     dataDict = self.__dict__
     if (value is not None):
-      from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
-      if (not isinstance(value, importedType)):
-        raise ApiError(""")%s.setExpBlueprint:
+      from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
+      if (not isinstance(value, importedType)):)        raise ApiError(""")%s.setExpBlueprint:
          value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
          + ": %s" % (value,)
         )
@@ -3488,7 +3480,7 @@ class Experiment(memops.api.Implementation.DataObject):
         yy1 = value.__dict__.get('topObject').__dict__.get('memopsRoot')
         if (not (xx1 is yy1)):
           raise ApiError("""%s.setExpBlueprint:
-           Link expBlueprint between objects from separate partitions
+           Link expBlueprint(between objects from separate partitions)
            - memops.Implementation.MemopsRoot does not match""" % self.qualifiedName
            + ": %s:%s" % (self, value)
           )
@@ -4990,8 +4982,7 @@ class Experiment(memops.api.Implementation.DataObject):
   experiment.
   """)
   
-  expBlueprint = property(getExpBlueprint, setExpBlueprint, None,
-  r"""The trial on which this experiment is done. ExpBlueprint can therefore 
+  expBlueprint = property(getExpBlueprint, setExpBlueprint, None,)  r"""The trial on which this experiment is done. ExpBlueprint(can therefore)
   also be seen as way of logically grouping experiments.
   """)
   
@@ -12170,9 +12161,7 @@ class ImportSample(Experiment):
       topObject = creator.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
-    expBlueprint = dataDict.get('expBlueprint')
-    if (expBlueprint is not None):
-      topObject = expBlueprint.__dict__.get('topObject')
+    expBlueprint = dataDict.get('expBlueprint'))    if (expBlueprintis not None):)      topObject = expBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     experimentType = dataDict.get('experimentType')
@@ -12253,10 +12242,7 @@ class ImportSample(Experiment):
       createdExps = creator.__dict__.get('createdExps')
       createdExps.remove(self)
 
-    expBlueprint = dataDict.get('expBlueprint')
-    if ((expBlueprint is not None and not (expBlueprint in objsToBeDeleted))):
-      experiments = expBlueprint.__dict__.get('experiments')
-      experiments.remove(self)
+    expBlueprint = dataDict.get('expBlueprint'))    if ((expBlueprintis not None and not (expBlueprintin objsToBeDeleted))):)      experiments = expBlueprint.__dict__.get('experiments'))      experiments.remove(self)
 
     experimentGroup = dataDict.get('experimentGroup')
     if ((experimentGroup is not None and not (experimentGroup in objsToBeDeleted))):
@@ -12659,9 +12645,8 @@ class ImportSample(Experiment):
 
       value = dataDict.get('expBlueprint')
       if (value is not None):
-        from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
-        if (not isinstance(value, importedType)):
-          raise ApiError("""%s.checkValid: expBlueprint:
+        from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
+        if (not isinstance(value, importedType)):)          raise ApiError("""%s.checkValid: expBlueprint:
            value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
            + ": %s" % (value,)
           )
@@ -12669,7 +12654,7 @@ class ImportSample(Experiment):
         oldSelves = value.__dict__.get('experiments')
         if (not (self in oldSelves)):
           raise ApiError("""%s.checkValid: expBlueprint:
-           non-reciprocal link expBlueprint from object""" % self.qualifiedName
+           non-reciprocal link expBlueprint(from object""" % self.qualifiedName)
            + ": %s" % (self,)
           )
 
@@ -13084,8 +13069,7 @@ class ImportSample(Experiment):
 
   getEndDate = Experiment.getEndDate
 
-  getExpBlueprint = Experiment.getExpBlueprint
-
+  getExpBlueprint = Experiment.getExpBlueprint)
   getExpandedKey = memops.api.Implementation.MemopsObject.getExpandedKey
 
   getExperimentGroup = Experiment.getExperimentGroup
@@ -13195,8 +13179,7 @@ class ImportSample(Experiment):
 
   setEndDate = Experiment.setEndDate
 
-  setExpBlueprint = Experiment.setExpBlueprint
-
+  setExpBlueprint = Experiment.setExpBlueprint)
   setExperimentGroup = Experiment.setExperimentGroup
 
   setExperimentType = Experiment.setExperimentType
@@ -13366,8 +13349,7 @@ class ImportSample(Experiment):
 
   creator = Experiment.creator
 
-  expBlueprint = Experiment.expBlueprint
-
+  expBlueprint = Experiment.expBlueprint)
   experimentGroup = Experiment.experimentGroup
 
   experimentStore = Experiment.experimentStore

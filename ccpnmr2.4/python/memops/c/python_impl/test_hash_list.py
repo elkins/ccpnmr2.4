@@ -381,7 +381,8 @@ class TestLRUCacheBehavior:
         
         # Add new page (would evict LRU if at capacity)
         if len(hl) >= max_size:
-            hl.remove_last()  # Evict LRU
+            hl.remove_last()
+            # Evict LRU
         hl.insert('page4', 'data4')  # Add as MRU
         
         assert list(hl.keys()) == ['page4', 'page1', 'page2']

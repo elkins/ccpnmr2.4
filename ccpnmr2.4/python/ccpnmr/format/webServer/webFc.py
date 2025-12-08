@@ -60,10 +60,10 @@ class Convert(object):
       regenerateThisPage()
     else:
       for key in keywords.keys():\
-        print key, keywords[key]
-      for arg in args:\
-        print arg
-       #createThisPageFirstTime()
+        print(key, keywords[key])
+        for arg in args:\
+        print(arg)
+        #createThisPageFirstTime()
 
     # now use the keywords to render the updated page
     # 
@@ -190,10 +190,11 @@ if __name__ == '__main__':
   from ccpnmr.format.webServer.Util import passwordFile
   
   if not os.path.exists(passwordFile):
-    import anydbm
+    import dbm as anydbm
     userDb = anydbm.open(passwordFile,'c')
     userDb[''] = ''
-    userDb.close()  
+    userDb.close()
+    
   
   #
   # More configuration, installation specific.

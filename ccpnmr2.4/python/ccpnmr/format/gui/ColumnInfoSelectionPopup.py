@@ -81,8 +81,7 @@ class ColumnInfoSelectionPopup(TemporaryBasePopup):
     
     if not title:
       title = "Column information selection"
-    print title
-    
+    print(title)    
     TemporaryBasePopup.__init__(self,parent = parent, title = title, modal = False, transient=True)
  
   def body(self, master):

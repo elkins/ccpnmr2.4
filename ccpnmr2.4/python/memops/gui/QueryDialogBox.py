@@ -39,7 +39,8 @@ class QueryDialogBox(Tkinter.Toplevel, Base):
     self.drawButtons('OK','Cancel')
     self.entry = self.body(mainFrame)
     
-    self.lift()     # so it is viewable
+    self.lift()
+       # so it is viewable
     self.grab_set() # make modal
      
     self.protocol('WM_WINDOW_DELETE', self.cancel)

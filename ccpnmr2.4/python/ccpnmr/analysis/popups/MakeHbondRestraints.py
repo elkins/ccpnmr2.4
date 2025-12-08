@@ -677,7 +677,8 @@ class MakeHbondRestraintsPopup(BasePopup):
       if len(atomSets) != 1:
         continue
       
-      resonance = resonances.pop()  
+      resonance = resonances.pop()
+      
   
     if not resonance:
       nmrProj = self.nmrProject
@@ -1833,7 +1834,8 @@ class Sheet:
       elif indexA > indexB:
         self.startResidueB, self.endResidueB = self.endResidueB, self.startResidueB
        
-      self._makeHbonds()   
+      self._makeHbonds()
+       
     
   def getStartAtomO(self, residue):
   
@@ -2007,7 +2009,8 @@ class Helix:
   
     if self.register != register:
       self.register = register
-      self._makeHbonds()   
+      self._makeHbonds()
+       
   
   def getStartAtom(self, residue):
   

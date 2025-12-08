@@ -83,8 +83,8 @@ def findAuremolPeaksThreshold(argServer = None, spectrum = None, mode = 1, useAu
     if argServer:
       argServer.messageReporter.showError('No dataStore', errMsg)
     else:
-      print errMsg
-    return None
+      print(errMsg)
+      return None
 
   spectrumPath = dataStore.fullPath
 
@@ -117,8 +117,8 @@ def findAuremolPeaksAdaptive(argServer = None, spectrum = None, mode = 1, number
     if argServer:
       argServer.messageReporter.showError('No dataStore', errMsg)
     else:
-      print errMsg
-    return None
+      print(errMsg)
+      return None
 
   print('Starting findAuremolPeaksAdaptive')
 

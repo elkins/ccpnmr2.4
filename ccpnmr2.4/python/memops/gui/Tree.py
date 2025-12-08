@@ -277,7 +277,8 @@ class Tree(Frame):
       self.yScrollbar.set(start, end)
       self.yScrollbar.place(x=width-size+1,y=1,width=size,height=height)
               
-    self.update_idletasks()    
+    self.update_idletasks()
+      
 
   def _mouseClick(self, event):
 
@@ -581,7 +582,8 @@ class Tree(Frame):
           node2.isOpen = True
         node2.isSelected = True
       
-      self._drawAfter()  
+      self._drawAfter()
+      
     
     
   def setSelected(self, objects, expand=True):
@@ -619,7 +621,8 @@ class Tree(Frame):
       for node2 in nodes:
         node2.iexpand()
       
-      self._drawAfter()  
+      self._drawAfter()
+      
     
   def contract(self, object):
   
@@ -650,7 +653,8 @@ class Tree(Frame):
       for node2 in nodes:
         node2.collapse()
       
-      self._drawAfter()  
+      self._drawAfter()
+      
 
   def update(self, parents, objects, labels=None, icons=None,
              callbacks=None, editWidgets=None):
@@ -854,8 +858,7 @@ if __name__ == '__main__':
         
         if mimeType:
           if not icon_dict.get(mimeType):
-            print mimeType
-        
+            print(mimeType)        
           icon = icon_dict.get(mimeType) \
                   or icon_dict.get(mimeType.split('/')[0]) \
                   or icon_dict['none']

@@ -107,7 +107,8 @@ class ViewResidueFrame(Frame):
           label = '/'.join(['%3.3f' % (shift.value) for shift in shifts])
           cAtom.setAnnotation(chemAtom.name + ' ' + label)
       
-      self.varFrame.drawStructure()     
+      self.varFrame.drawStructure()
+         
       chain = self.residue.chain
       self.label.set('Residue: %d%s ( %s %s )' % (self.residue.seqCode,getResidueCode(self.residue),chain.molSystem.code,chain.code))
         

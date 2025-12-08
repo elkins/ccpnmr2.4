@@ -215,7 +215,7 @@ def getFullEntryNameListForTarget(target, programHoH):
     """
     targetList = programHoH.keys()
     targetList.sort()
-    print targetList
+    print(targetList)
     if target not in targetList:
         nTerror("Failed to find target %s in list %s" % (target, str(targetList)))
         return None
@@ -233,7 +233,7 @@ def getFullEntryNameListForTarget(target, programHoH):
 def printCingUrls(programHoH):
     targetList = programHoH.keys()
     targetList.sort()
-    print targetList
+    print(targetList)
     for target in targetList:
         mapByLab = programHoH[target]
         labList = mapByLab.keys()

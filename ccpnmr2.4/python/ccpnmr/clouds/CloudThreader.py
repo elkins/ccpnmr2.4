@@ -36,7 +36,7 @@ Development of a Software Pipeline. Proteins 59, 687 - 696.
 ===========================REFERENCE END===============================
 
 """
-import cPickle
+import pickle as cPickle
 from os.path import exists, isfile, isdir
 from os import listdir, path
 from math import sqrt, log, exp
@@ -169,7 +169,7 @@ def searchPosterior(project, residues, spinSystems, clouds, nSteps=3000, graph=N
     assignment = swapSpinSystem(typeScores, assignment0, clouds, inter, n, i)  
     p = generatePosterior(typeScores, residues, assignment, clouds, intra, inter, i, preserveAssign)
 
-    print i, n , p, p0
+    print(i, n , p, p0)
     success = 0
     if p > p0:
       success = 1
@@ -181,13 +181,13 @@ def searchPosterior(project, residues, spinSystems, clouds, nSteps=3000, graph=N
       if i > 500:
         e = exp(delta*-5e8)
         if e > r:
-          print e, r
+          print(e, r)
           success = 1
    
       
     if success: 
       p0 = p
-      print p0
+      print(p0)
       assignment0 = assignment
       
       if graph:
@@ -232,14 +232,10 @@ def searchPosterior(project, residues, spinSystems, clouds, nSteps=3000, graph=N
             foundCodes += '-'
             typed += '-'
 
-        print i, p, p0
+        print(i, p, p0)
         print('Found: %d' % found)
-        print scores
-        print foundCodes
-        print typed
-        print sequence
-        print assign
-    
+        print(scores)        print(foundCodes)        print(typed)        print(sequence)
+        print(assign)
     if progressBar and (i % q == 0):
       progressBar.increment()
     
@@ -413,10 +409,8 @@ def getResidueLikelihood(residue1, spinSystem1, assignment, clouds, interDistrib
   if N == 0:
     if v:
       print("barf")
-      print r2
-      print coords1
-      print coords2
-      
+      print(r2)      print(coords1)
+      print(coords2)
     
     residue1.likelihood = -10.0
     return -10.0
@@ -425,10 +419,8 @@ def getResidueLikelihood(residue1, spinSystem1, assignment, clouds, interDistrib
   
   if v:
     print("ok", out)
-    print r2
-    print coords1
-    print coords2
-  
+    print(r2)    print(coords1)
+    print(coords2)
   residue1.likelihood = out 
   return out
 

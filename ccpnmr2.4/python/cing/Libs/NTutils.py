@@ -75,10 +75,14 @@ class NTlist(list, Lister, SMLhandled):
       cAverage(min=0,max=360,radians=0):
                         returns (cav, cv, cn) triple of a numeric list
                         stores cav,cv,cn as attributes of the list
-      min()             Returns minimum value or None on emptylist.
-      max()             Returns maximum value or None on empty list.
-      minItem()         Returns (index,minimumValue) tuple or (None,None) on emptylist.
-      maxItem()         Returns (index,maximumValue) tuple or (None,None) on emptylist.
+      min()
+                 Returns minimum value or None on emptylist.
+      max()
+                 Returns maximum value or None on empty list.
+      minItem()
+             Returns (index,minimumValue) tuple or (None,None) on emptylist.
+      maxItem()
+             Returns (index,maximumValue) tuple or (None,None) on emptylist.
       sum( start=0 )    Return sum of list.
       sumsq( start=0 )  Return squared sum of list.
       limit( min, max): limit between min and max by adding/subtracting
@@ -1275,9 +1279,9 @@ class NTdict(dict):
         Keys can be referenced as in dictionary methods, or as an attribute; e.g.
 
             aap = NTdict( noot=3, mies=4, kees='not awake' )
-            print aap['noot']
+            print(aap['noot'])
             > 3
-            print aap.noot
+            print(aap.noot)
             > 3
 
         Hashing and compare implemented.
@@ -1287,7 +1291,8 @@ class NTdict(dict):
 
             format( format=None )                         Format the object according to format or __FORMAT__ (when
                                                           format == None) attribute.
-            keysformat()                                  Set __FORMAT__ to include all keys.
+            keysformat()
+                                            Set __FORMAT__ to include all keys.
             printAttr( hidden=0 )                         Print all attributes to stream (mainly for debugging purposes).
                                                           Also print('hidden' attributes when hidden!=0.)
 
@@ -1560,7 +1565,7 @@ class NTdict(dict):
 
 #    def printAttr(self, stream=sys.stdout, hidden=0):
     def printAttr(self, hidden=0):
-        """print attributes of structure; mainly fo debugging."""
+        """print(attributes of structure; mainly fo debugging.""")
         msg = sprintf('=== <%s-object (%d)> ===\n', self.__CLASS__, self.__OBJECTID__)
         # append hidden keys if asked for
         keys = self.keys()
@@ -2398,11 +2403,14 @@ class NTparameter(NTtree): # pylint: disable=R0904
 
     Methods:
         set( value )                    Set value of parameter
-        __call__()                      Calling returns value of parameter
+        __call__()
+                            Calling returns value of parameter
         setDefault( recursion = True )  Set parameters to default value
-        allLeaves()                     Return all leaves of parameter tree, i.e.
+        allLeaves()
+                           Return all leaves of parameter tree, i.e.
                                         the 'active' parameters
-        allBranches()                   Return all the branches of parameter tree
+        allBranches()
+                         Return all the branches of parameter tree
 
     Methods inherited form NTtree and NTdict
     """
@@ -3823,7 +3831,7 @@ class EventSkip:
 
 class NTprogressIndicator: # pylint: disable=R0903
     """
-    Iterator class to loop over myList and print dots
+    Iterator class to loop over myList and print(dots)
     """
     def __init__(self, theList, charactersPerLine = 80):
         self._iter = -1
@@ -3887,7 +3895,7 @@ def sprintf(form, *args):
 # end def
 
 def printf(form, *args):
-    """print string according to C's printf routine"""
+    """print(string according to C's printf routine""")
     # JFD: need to take out the sys.stdout dep?
     fprintf(sys.stdout, form, *args)
 # end def

@@ -46,7 +46,7 @@ if __name__ == '__main__':
   #
   
   print("Shiftlist information:")
-  print
+  print()
   
   shiftUnit = shiftList.unit
   
@@ -56,9 +56,8 @@ if __name__ == '__main__':
     if shift:
       print("Resonance %3d: %7.3f %s +/- %4.3f %s     %s" % (resonance.serial,shift.value,shiftUnit,shift.error,shiftUnit,shift.details))
   
-  print
-  print
-  
+  print()
+  print()
   
   #
   # Nmr measurements - J couplings
@@ -81,7 +80,7 @@ if __name__ == '__main__':
   #
   
   print("J coupling list information:")
-  print
+  print()
   
   for jCoupling in jCouplingList.sortedMeasurements():
   

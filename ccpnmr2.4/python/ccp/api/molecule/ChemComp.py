@@ -5935,7 +5935,7 @@ ChemCompVars.
   className = memops.api.Implementation.ComplexDataType.className
   
   distCorr = property(getDistCorr, setDistCorr, None,
-  r"""Distance Restraint Correction (in A) applied when making restraints to 
+  r"""Distance Restraint Correction in A) applied when making restraints to 
   the pseudoatom defined here. 
   """)
   

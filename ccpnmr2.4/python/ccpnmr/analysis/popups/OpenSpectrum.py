@@ -642,7 +642,8 @@ class OpenSpectrumPopup(BasePopup):
       self.currentObject.window = opt.window
     else:
       self.currentObject.window = opt
-    self.update()  
+    self.update()
+    
 
  
   def setShiftList(self, obj=None):
@@ -881,8 +882,8 @@ class OpenSpectrumPopup(BasePopup):
       if self.verifySelect.getSelected():
         incorrect, text = isReferencingIncorrect(spectrum, fixErrors=True)
         if incorrect:
-          print """\nWARNING: Referencing was reset
-         The following problem(s) were found and fixed:
+          print("""\nWARNING: Referencing was reset)
+          The following problem(s) were found and fixed:
 %s\n""" % text
       
       else:

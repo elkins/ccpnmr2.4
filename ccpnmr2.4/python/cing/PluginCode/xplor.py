@@ -148,7 +148,8 @@ def exportDisList2xplor( drl, path)   :
     """Export a distanceRestraintList (DRL) to xplor format:
        return drl or None on error
     """
-    msgHol = MsgHoL()    
+    msgHol = MsgHoL()
+      
     fp = open( path, 'w' )
     if not fp:
         nTerror('exportDisList2xplor: unable to open "%s"\n', path )

@@ -217,7 +217,8 @@ class CnsCoordinateFile(CnsGenericFile):
     if writeString:
       self.coordFileString = fout.string
    
-    fout.close()    
+    fout.close()
+      
 
 class CnsChain:
 
@@ -268,11 +269,9 @@ if __name__ == "__main__":
   for mc in cnsFile.modelCoordinates:
   
     for coo in cnsFile.modelCoordinates[mc]:
-      print coo.serial, coo.resName, coo.chainId
-      
+      print(coo.serial, coo.resName, coo.chainId)      
   for chain in cnsFile.chains:
-    print chain, chain.chainId
-
+    print(chain, chain.chainId)
   cnsFile.name = 'local/test.coord'  
   cnsFile.write()
   

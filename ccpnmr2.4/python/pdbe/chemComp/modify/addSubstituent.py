@@ -322,8 +322,7 @@ def copyBaseToModifiedFile(project,newBaseUnit,origBaseUnit,testMode,repository,
   # Get the template (original) base unit file location
   #
   
-  print origBaseUnit, testMode
-  
+  print(origBaseUnit, testMode)  
   origFilePath = findChemCompOrCoordFilePath(origBaseUnit, testMode = testMode)
 
   #
@@ -586,8 +585,7 @@ def addSubstituentToBaseUnit(baseUnitCcpCode,
       project.override = False
       
     print("Setting base GlycoCT code to:\n\n%s\n" % newBaseGlycoCtCode)
-    print
-
+    print()
   #
   # Set naming system
   #
@@ -621,10 +619,8 @@ def addSubstituentToBaseUnit(baseUnitCcpCode,
     newBondType = substituentInfo[substituent]['bondType']
     newStereochem = substituentInfo[substituent]['stereochem']
     
-    print
-    print drawBox("Creating link between base atom %s to substituent %s" % (baseBindingAtomName,substituent))
-    print
-    
+    print()
+    print(drawBox("Creating link between base atom %s to substituent %s" % (baseBindingAtomName,substituent)))    print()
     #
     # 1. Set the substUnitIndex - this is the identifier that is added to the substituents
     #    when part of the base chemComp. It is taken from whichever number is part of the baseBindingAtomName

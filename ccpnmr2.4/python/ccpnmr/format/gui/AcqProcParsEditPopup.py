@@ -1524,8 +1524,7 @@ class AcqProcParsEditPopup(TemporaryBasePopup):
         for row in range(0,len(parList)):
           rowName = 'row%d' % row
           # Set values in data model
-          print dir(self.objects[parsListKey][dim])
-          value = getattr(self.objects[parsListKey][dim],rowName)
+          print(dir(self.objects[parsListKey][dim]))          value = getattr(self.objects[parsListKey][dim],rowName)
           parList[row][3](dim,value)
 
 

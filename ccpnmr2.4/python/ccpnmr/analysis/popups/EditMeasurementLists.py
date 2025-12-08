@@ -425,7 +425,8 @@ class EditMeasurementListsPopup(BasePopup):
       
     if self.experiment is not experiment:
       self.experiment = experiment
-      self.updateMeasurementListAfter()      
+      self.updateMeasurementListAfter()
+          
      
     self.experimentPulldown.setup(names, experiments, index)     
 

@@ -366,8 +366,7 @@ if __name__ == "__main__":
     for constraintFile in nmrStarFile.constraintFiles:
       for constraint in constraintFile.constraints:
 
-        print constraint.Id, constraint.value, constraint.error, constraint.lowerValue, constraint.upperValue
-
+        print(constraint.Id, constraint.value, constraint.error, constraint.lowerValue, constraint.upperValue)
         for item in constraint.nodes:
           mlist = []
           for member in item.members:

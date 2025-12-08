@@ -706,7 +706,7 @@ def chemShiftRefMacro(argServer):
         boundName = 'None'
       else:
         boundName = '"%s"' % boundName
-	
+  
       print('       "%s":(%s,%s),' % (key2, vals, boundName))
 
     print('   },')
@@ -759,16 +759,16 @@ def buildSdMeanRefDict(project, sourceName='RefDB'):
       
       for bond in chemAtom.chemBonds:
         for chemAtom2 in bond.chemAtoms:
-	  if chemAtom2 is not chemAtom:
-	    if element == 'H':
-	      boundName = chemAtom2.name
-	      break
+    if chemAtom2 is not chemAtom:
+      if element == 'H':
+        boundName = chemAtom2.name
+        break
             elif chemAtom2.elementSymbol == 'H':
-	      boundName = chemAtom2.name
-	      break
+        boundName = chemAtom2.name
+        break
         else:
-	  continue
-	break  
+    continue
+  break  
     
       atomName = chemAtomNmrRef.name
       pMissing = probMissingDict.get(atomName) or \
@@ -776,7 +776,7 @@ def buildSdMeanRefDict(project, sourceName='RefDB'):
     
       value = (chemAtomNmrRef.meanValue,
                chemAtomNmrRef.stdDev,
-	       pMissing, boundName)
+         pMissing, boundName)
       atomDict[atomName] = value
     
     if ccpCode in ('Phe','Ptr','Tyr'):

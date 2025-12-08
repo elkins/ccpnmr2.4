@@ -29,7 +29,7 @@ from cing.core.parameters import htmlDirectories
 from cing.core.parameters import moleculeDirectories
 from cing.core.parameters import plugins
 from glob import glob1
-import cPickle
+import pickle as cPickle
 import shutil
 
 HTML_TAG_PRE = "<PRE>"

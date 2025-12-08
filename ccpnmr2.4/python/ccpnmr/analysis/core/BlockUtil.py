@@ -57,8 +57,7 @@ def getBlockFile(spectrum, mem_cache, writeable = False):
   fileName = getDataSourceFileName(spectrum)
   if (not fileName or (not writeable and not os.path.exists(fileName))):
     msg = 'Warning: spectrum (%s, %s): data file %s not accessible'
-    print msg % (spectrum.experiment.name, spectrum.name, fileName)
-    block_file = None
+    print(msg % (spectrum.experiment.name, spectrum.name, fileName))    block_file = None
 
   else:
 
@@ -132,8 +131,7 @@ def getShapeBlockFile(spectrum):
   if ((not fileName or not os.path.exists(fileName)) and 
       (spectrum.numDim > 1 or not valuesList)):
     msg = 'Warning: spectrum (%s, %s): data file %s not accessible'
-    print msg % (spectrum.experiment.name, spectrum.name, fileName)
-
+    print(msg % (spectrum.experiment.name, spectrum.name, fileName))
   else:
 
     points = [ dataDim.numPoints for dataDim in spectrum.sortedDataDims() ]

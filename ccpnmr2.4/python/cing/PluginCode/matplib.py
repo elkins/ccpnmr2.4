@@ -1880,7 +1880,8 @@ class MultipleLocatorByOffset(MultipleLocator):
 
         try:
             self.verify_intervals() # pylint: disable=E1101
-            vmin, vmax = self.viewInterval.get_bounds()  # pylint: disable=E1101
+            vmin, vmax = self.viewInterval.get_bounds()
+            # pylint: disable=E1101
         except:
             vmin, vmax = self.axis.get_view_interval()
 

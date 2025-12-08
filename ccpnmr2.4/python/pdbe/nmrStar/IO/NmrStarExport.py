@@ -258,8 +258,7 @@ class NmrStarExport:
         else:
           timeString = ""
       
-        print messageKey + "%s" % timeString
-
+        print(messageKey + "%s" % timeString)
   def loopSaveFrameData(self,keyFlag):
   
     #
@@ -2159,7 +2158,7 @@ class NmrStarExport:
           try:
             findObject = reduce(lambda obj, attrOrFunc: self.getAttrOrFunc(obj,attrOrFunc),ccpnObjectStrings[1:],startObject)
           except:
-            print ccpnObjectStrings, startObject
+            print(ccpnObjectStrings, startObject)
             raise
             findObject = []
         else:

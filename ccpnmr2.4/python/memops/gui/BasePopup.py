@@ -529,8 +529,7 @@ if (__name__ == '__main__'):
 
     global popup, root
     popup = TestPopup(root)
-    print popup.result
-
+    print(popup.result)
   def lift():
 
     if (popup):

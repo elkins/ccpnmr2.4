@@ -208,10 +208,8 @@ class SparkyPeakFile(SparkyGenericFile):
 
         if numHeaderCols != len(cols):
           print("  Unrecognized column headers: can't read sparky file... ")
-          print dataColCodes
-          print dataColNum
-          print dataColLengths
-
+          print(dataColCodes)          print(dataColNum)
+          print(dataColLengths)
           return
 
 
@@ -296,8 +294,7 @@ class SparkyPeakFile(SparkyGenericFile):
                 continue
               else:
                 print("  Reading first %d columns only." % dataColCodesLen)
-                print
-
+                print()
             values = {}
 
             colNum = 0

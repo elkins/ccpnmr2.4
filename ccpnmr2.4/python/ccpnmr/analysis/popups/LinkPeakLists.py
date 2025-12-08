@@ -40,7 +40,7 @@ Development of a Software Pipeline. Proteins 59, 687 - 696.
 
 """
 
-import cPickle
+import pickle as cPickle
 
 from ccpnmr.analysis.core.AssignmentAdvanced import pickAssignSpecFromRoot, assignSpecNonRootResonances
 
@@ -412,7 +412,8 @@ class LinkPeakListsPopup(BasePopup):
                                 grid=(0,0), sticky='e')
     
       
-    self.getAppDataOptions()  
+    self.getAppDataOptions()
+    
       
     self.updateRootPeakList()
     self.updateRootWindow()

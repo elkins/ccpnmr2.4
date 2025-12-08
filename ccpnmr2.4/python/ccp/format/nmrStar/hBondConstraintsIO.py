@@ -61,11 +61,11 @@ import os
 
 from memops.universal.Io import getTopDirectory
 
-from distanceConstraintsIO import NmrStarDistanceConstraintFile
-from distanceConstraintsIO import NmrStarFile
-from distanceConstraintsIO import NmrStarDistanceConstraint
-from distanceConstraintsIO import NmrStarDistanceConstraintItem
-from distanceConstraintsIO import NmrStarDistanceConstraintMember
+from .distanceConstraintsIO import NmrStarDistanceConstraintFile
+from .distanceConstraintsIO import NmrStarFile
+from .distanceConstraintsIO import NmrStarDistanceConstraint
+from .distanceConstraintsIO import NmrStarDistanceConstraintItem
+from .distanceConstraintsIO import NmrStarDistanceConstraintMember
 
 #####################
 # Class definitions #
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     for constraintFile in nmrStarFile.constraintFiles:
       for constraint in constraintFile.constraints:
         for node in constraint.nodes:
-          print constraint.Id, node.Id, node.target, node.lowerBound, node.upperBound
+          print(constraint.Id, node.Id, node.target, node.lowerBound, node.upperBound)
           mlist = []
           for member in node.members:
             mlist.append(member.Id)

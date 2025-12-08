@@ -125,7 +125,7 @@ if __name__ == '__main__':
               if doFileChanges:
                 shutil.copy(sourceFile,targetFile)
               
-              print
-            
+              print()
+                        
           else:
             print(" NO %s" % sourceFile)

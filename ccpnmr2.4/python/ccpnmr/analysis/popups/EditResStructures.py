@@ -182,8 +182,7 @@ class EditResStructuresPopup(BasePopup):
  
       sd = sqrt(sd)
  
-      print meanRmsd, '+/-', sd
- 
+      print(meanRmsd, '+/-', sd) 
       n = 0
       for cloud in clouds:
         rmsd = self.cloudRmsdDict.get(cloud)

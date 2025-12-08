@@ -4,7 +4,8 @@
 # Modified from http://tools.cherrypy.org/wiki/AuthenticationAndAccessRestrictions
 #
 
-import os, anydbm, glob
+import os, glob
+import dbm as anydbm
 
 # TODO this should go in Constants.py
 passwordFile = 'data/users.db'

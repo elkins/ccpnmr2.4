@@ -1237,7 +1237,8 @@ class BrowseResonancesPopup(BasePopup):
           msg = '%d resonances not deleted: still assigned to peaks' 
           showWarning('Delete failed', msg % stillAssigned, parent=self)
         
-        self.updateAfter()   
+        self.updateAfter()
+         
 
   def showPeaks(self, resonanceShift=None):
   

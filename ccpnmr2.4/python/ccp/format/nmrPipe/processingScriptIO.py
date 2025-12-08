@@ -187,8 +187,7 @@ class NmrPipeProcessingScriptFile(NmrPipeGenericFile):
     fout.close()
 
     if verbose == 1:
-      print self.scriptName + " finished..."
-
+      print(self.scriptName + " finished...")
   def writefunc(self,func,arg,fout):
     
     fout.write("| nmrPipe -fn %-22s\\" % (func + ' ' + arg) + self.newline)

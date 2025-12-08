@@ -357,15 +357,12 @@ class AlignNeedlemanWunsch:
     
     if verbosity > 1:
 
-      print ''
+      print('')
       print('# Using:  match='+repr(self.match)+'; mismatch='+repr(self.mismatch)+'; gap='+repr(self.gap)              )
-      print self.seq1
-      print self.seq2
+      print(self.seq1)      print(self.seq2)
       print('# We get e.g.:')
-      print self.aseq1
-      print self.aseq2
-      print ''
-      
+      print(self.aseq1)      print(self.aseq2)
+      print('')
     gaps=0
     mms=0
     ms=0
@@ -381,20 +378,14 @@ class AlignNeedlemanWunsch:
           mms+=1
 
     if verbosity > 0:
-      print self.aseq1
-      print self.aseq2
-      print ''
-      print ms,' matches; ',mms,' mismatches; ',gaps,' gaps.' 
+      print(self.aseq1)      print(self.aseq2)      print('')      print(ms,' matches; ',mms,' mismatches; ',gaps,' gaps.')
       print('# With a score of')
-      print self.align[self.rows-2][self.cols-2],'/',min(len(self.seq1),len(self.seq2))
-
+      print(self.align[self.rows-2][self.cols-2],'/',min(len(self.seq1),len(self.seq2)))
       print('Optimal alignment is ',len(self.tracks),' times degenerate:')
-      print ''
+      print('')
       for i in range(len(self.tracks)):
-        print i+1,'.'
-        print baseqs1[i]
-        print baseqs2[i]
-
+        print(i+1,'.')        print(baseqs1[i])
+        print(baseqs2[i])
   def getBestMatchInfo(self,verbosity = 0):
   
     self.make_graph()
@@ -439,10 +430,8 @@ class AlignNeedlemanWunsch:
           mismatches+=1
 
     if verbosity > 0:
-      print self.aseq1
-      print self.aseq2
-      print ''
-    
+      print(self.aseq1)      print(self.aseq2)
+      print('')
     
     if self.align is not None:
       score = self.align[self.rows-2][self.cols-2]
@@ -716,11 +705,11 @@ def duplicateResonances(nmrConstraintStore,format,mappingDict):
   # Loop over the 'new' chain codes...
   #
   
-  print
+  print()
   print("########################## ")
   print("# Duplicating resonances # ")
   print("########################## ")
-  print
+  print()
   
   for i in range(1,len(mappingDict[chain])):
 
@@ -747,8 +736,7 @@ def duplicateResonances(nmrConstraintStore,format,mappingDict):
         newConstrItem = constrItem.__class__(newConstr, upperLimit = 1.0, lowerLimit = 0.0)
         copyAttributeInfo(constrItem,newConstrItem)
       
-      print
-
+      print()
     #
     # ..and the constraints from the relevant constraintItems...
     #
@@ -789,9 +777,8 @@ def duplicateResonances(nmrConstraintStore,format,mappingDict):
  
         copyAttributeInfo(constrItem,newConstrItem)
       
-      print
-
+      print()
   print("###################### ")
   print("# End of duplication # ")
   print("###################### ")
-  print
+  print()

@@ -99,6 +99,7 @@ class TextPipe:
 
 def getHelpUrlDir():
 
-  pythonDir = getPythonDirectory()  
+  pythonDir = getPythonDirectory()
+  
 
   return 'file:' + joinPath(pythonDir,'ccpnmr','format','doc')

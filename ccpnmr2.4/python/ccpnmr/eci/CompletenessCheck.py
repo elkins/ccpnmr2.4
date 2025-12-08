@@ -1132,4 +1132,4 @@ if __name__ == '__main__':
     #print finalInfoList
 
     for row in finalInfoList:
-      print row #[0], row[3:]
+      print(row)#[0], row[3:]

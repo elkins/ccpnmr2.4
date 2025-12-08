@@ -200,8 +200,8 @@ if __name__ == '__main__':
 
     ndim = len(dims)
     if (ndim == 1):
-      print mat
-    elif (ndim == 2):
+      print(mat)
+      elif (ndim == 2):
       for i in range(dims[1]):
         for j in range(dims[0]):
           sys.stdout.write('%5.1f' % mat[i*dims[0]+j])
@@ -231,8 +231,7 @@ if __name__ == '__main__':
   print('values after:')
   printMat(values, boxSize)
   print('integral = ', s)
-  print
-
+  print()
   values = [ \
     2, 3, 1,
     3, 2, 2,
@@ -249,8 +248,7 @@ if __name__ == '__main__':
   print('values after:')
   printMat(values, boxSize)
   print('integral = ', s)
-  print
-
+  print()
   mat1d = [ 1, 2, 3, 2, 1 ]
   center1d = [ 2 ]
   boxSize1d = [ 5 ]
@@ -271,8 +269,7 @@ if __name__ == '__main__':
     print('values after:')
     printMat(mat, dims)
     print('integral = ', s)
-    print
-
+    print()
   values = [ \
     1, 1, 1, 1, 1, 1, 1,
     1, 2, 2, 2, 2, 2, 1,
@@ -295,7 +292,7 @@ if __name__ == '__main__':
   print('values after:')
   printMat(values, boxSize)    
   print('integral = ', s)
-  print
+  print()
   
   print('values before:')
   printMat(values2, boxSize2) 
@@ -303,7 +300,7 @@ if __name__ == '__main__':
   print('values after:')
   printMat(values2, boxSize2)    
   print('integral = ', s)
-  print  
+  print()
     
   values = [ \
     1, 1, 1, 1, 1,
@@ -327,7 +324,7 @@ if __name__ == '__main__':
   print('values after:')
   printMat(values, boxSize)
   print('integral = ', s)
-  print
+  print()
   
   print('values before:')
   printMat(values2, boxSize2) 
@@ -335,7 +332,7 @@ if __name__ == '__main__':
   print('values after:')
   printMat(values2, boxSize2)
   print('integral = ', s2)
-  print  
+  print()
   
   values = [1, 2, 3, 2, 3, 4, 5, 4, 3, 2, 6, 5, 4, 7, 3, 2, 1]
   boxSize = [17]
@@ -346,4 +343,4 @@ if __name__ == '__main__':
   print('values after:')
   printMat(values, boxSize)     
   print('integral = ', s)
-  print
+  print()

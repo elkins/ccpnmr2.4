@@ -30,4 +30,4 @@ post_parameter = urllib.urlencode({'format':output_format, 'q':sql_query.read()}
 result = urllib.urlopen(base_url, post_parameter, proxies=proxy_dict)
 
 # show result
-print result.read()
+print(result.read())

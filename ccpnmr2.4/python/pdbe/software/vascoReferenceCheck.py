@@ -51,8 +51,7 @@ class VascoReferenceCheck:
     
   def checkProject(self,ccpnProject=None,ccpnDir=None,structureEnsembleId=None,shiftListSerial=None):
 
-    print drawBox(" VASCO: calculating rereferencing...")
-
+    print(drawBox(" VASCO: calculating rereferencing..."))
     #
     # Get info from CCPN project
     #
@@ -95,7 +94,8 @@ class VascoReferenceCheck:
     # Get VASCO reref data
     #
     
-    self.getVascoRerefInfo()    
+    self.getVascoRerefInfo()
+      
     
     
   def initProject(self,project=None):
@@ -199,7 +199,8 @@ class VascoReferenceCheck:
     """
     
     self.nmrProject = self.ccpnProject.currentNmrProject
-    nmrResonances = self.nmrProject.sortedResonances()    
+    nmrResonances = self.nmrProject.sortedResonances()
+      
 
     resMapping = {}
 
@@ -351,8 +352,7 @@ class VascoReferenceCheck:
                 try:           
                   heavyAtomNameKey = protonToHeavyAtomDict[ccpCode][atomSetKey]
                 except:
-                  print protonToHeavyAtomDict[ccpCode].keys()
-                  raise
+                  print(protonToHeavyAtomDict[ccpCode].keys())                  raise
             else:
               heavyAtomNameKey = atomNameTuple[0]
 
@@ -523,9 +523,8 @@ class VascoReferenceCheck:
     atomKeys.sort()
     
     for atomKey in atomKeys:
-      print atomKey,
-      print self.rerefInfo[atomKey]
-      
+      print(atomKey,)
+      print(self.rerefInfo[atomKey])
 if __name__ == '__main__':
 
   import Tkinter

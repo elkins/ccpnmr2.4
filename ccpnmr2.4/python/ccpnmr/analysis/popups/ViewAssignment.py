@@ -782,7 +782,8 @@ class ViewAssignmentPopup(BasePopup):
 
   def updateResidueTypeSelection(self):
   
-    ccpCodes = self.getCcpCodes()    
+    ccpCodes = self.getCcpCodes()
+      
     
     colors = []
     for ccpCode in ccpCodes:

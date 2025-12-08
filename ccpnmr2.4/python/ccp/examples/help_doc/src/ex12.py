@@ -38,10 +38,8 @@ def printReposUrls(project):
     print('\nUrls:')
 
     for repos in project.sortedRepositories():
-        print repos.name, repos.url.path
-
-    print
-
+        print(repos.name, repos.url.path)
+    print()
 if __name__ == '__main__':
 
     # This code follows on from ex7.py.

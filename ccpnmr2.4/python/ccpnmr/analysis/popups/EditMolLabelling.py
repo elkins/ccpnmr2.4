@@ -1487,7 +1487,8 @@ class EditMolLabellingPopup(BasePopup):
       if molLabelB:
         self.patternButtons[2].enable()
       else:
-        self.patternButtons[2].disable()  
+        self.patternButtons[2].disable()
+        
  
       if self.molFraction:
         self.patternButtons[0].enable()

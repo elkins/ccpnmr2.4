@@ -378,11 +378,9 @@ if __name__ == "__main__":
     
     for chemComp in molFile.chemComps:
       for atom in chemComp.atoms:
-        print atom.atomType,
-      print
-      for bond in chemComp.bonds:
-        print bond.bondType
-        
+        print(atom.atomType,)      print()
+        for bond in chemComp.bonds:
+        print(bond.bondType)        
     #(path,baseName) = os.path.split(inFile)
     
     #molFile.name = ("local/%s" % baseName)

@@ -86,7 +86,8 @@ class ObjectButton(Tkinter.Button):
       self.toggled = not self.toggled
 
       if (self.command):
-        self.command()        
+        self.command()
+              
 
     if (self.toggled):
       dict = self.toggledDict

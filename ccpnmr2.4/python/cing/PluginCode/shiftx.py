@@ -167,7 +167,8 @@ def runShiftx( project, parseOnly=False, model=None   ):
     project.shiftxStatus.baseName     = baseName
     project.shiftxStatus.path         = root
     project.shiftxStatus.contentFile  = contentFile
-    project.shiftxStatus.chains       = NTlist()    # list of (chainNames, outputFile) tuples to be parsed
+    project.shiftxStatus.chains       = NTlist()
+      # list of (chainNames, outputFile) tuples to be parsed
     project.shiftxStatus.keysformat()
 
 

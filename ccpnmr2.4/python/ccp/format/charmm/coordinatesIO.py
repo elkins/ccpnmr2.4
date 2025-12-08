@@ -229,11 +229,9 @@ if __name__ == "__main__":
   for mc in charmmFile.modelCoordinates:
   
     for coo in charmmFile.modelCoordinates[mc]:
-      print coo.serial, coo.resName, coo.chainId
-      
+      print(coo.serial, coo.resName, coo.chainId)      
   for chain in charmmFile.chains:
-    print chain, chain.chainId
-
+    print(chain, chain.chainId)
   charmmFile.name = 'local/test.coord'  
   charmmFile.write()
   

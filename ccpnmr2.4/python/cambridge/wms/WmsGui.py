@@ -190,7 +190,8 @@ class ApplicationPopup(BasePopup):
     frames = self.tabbedFrame.frames 
 
     # Logos
-    ccpnDir = getTopDirectory()    
+    ccpnDir = getTopDirectory()
+      
     imageDir = os.path.join(ccpnDir,'python','extendNmr','images')    
     imageFile = os.path.join(imageDir,'CcpnLogo.gif')
     self.ccpnLogo = Tkinter.PhotoImage(file=imageFile)
@@ -548,7 +549,7 @@ class ApplicationPopup(BasePopup):
     print('in logout ', self.repList)
     print('#########################')
 
-    print self.tabbedFrame.frames[0].__dict__
+    print(self.tabbedFrame.frames[0].__dict__)
     print('#########################')
 
     if self.frameShortcuts.has_key('Repository'):
@@ -965,7 +966,8 @@ def launchApplication(projectDir=None):
   global top
 
   root = Tkinter.Tk()
-  root.withdraw()  # get rid of the root window Tkinter would otherwise put up
+  root.withdraw()
+  # get rid of the root window Tkinter would otherwise put up
   top  = ApplicationPopup(root) # creates our controlled window (this class in fact)
  
   project = None
@@ -986,7 +988,8 @@ def launchApplication(projectDir=None):
     top.initProject(project)
  
   # waiting for mouse and keyboard commands
-  root.mainloop()  
+  root.mainloop()
+  
 
 if __name__ == '__main__':
 

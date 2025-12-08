@@ -51,7 +51,8 @@ def updateAuto(serverLocation=UPDATE_SERVER_LOCATION,
       if not server.fileUpdates:
         server.getFileUpdates()
       if server.fileUpdates:
-        updateAgent.installNewUpdates()  
+        updateAgent.installNewUpdates()
+        
       else:
         print('No updates')
     

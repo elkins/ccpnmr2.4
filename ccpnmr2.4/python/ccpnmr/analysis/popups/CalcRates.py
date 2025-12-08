@@ -674,7 +674,8 @@ class CalcRatesPopup(BasePopup):
           file.write(line)
           file.write('\n')
         
-        file.close()      
+        file.close()
+            
 
   def getTolerances(self):
   

@@ -276,19 +276,24 @@ class UpdateAdministratorPopup(BasePopup, UpdateAgent):
       buttons[3].enable()
       buttons[4].enable()
     else:
-      buttons[0].disable()  
-      buttons[3].disable()  
-      buttons[4].disable()  
+      buttons[0].disable()
+      
+      buttons[3].disable()
+      
+      buttons[4].disable()
+      
     
     if self.server and self.server.fileUpdates:
       buttons[2].enable()
     else:
-      buttons[2].disable()  
+      buttons[2].disable()
+      
 
     if self.fileUpdate:
       buttons[1].enable()
     else:
-      buttons[1].disable()  
+      buttons[1].disable()
+      
       
   def update(self):
     

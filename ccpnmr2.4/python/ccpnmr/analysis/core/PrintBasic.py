@@ -79,7 +79,8 @@ def setupHandlers(windowPane, outputHandler, aspectRatio):
   yAxisPanel = windowPane.findFirstAxisPanel(label='y')
   y = 0
   yRegions = yAxisPanel.sortedAxisRegions()
-  yRegions.reverse()  # because need to flip y axis
+  yRegions.reverse()
+  # because need to flip y axis
   for yAxisRegion in yRegions:
     (y0, y1) = getAxisRegionRegion(yAxisRegion)
     if not windowPaneHasValueAxis(windowPane) and yAxisPanel.axisUnit.isBackwards:
@@ -192,8 +193,7 @@ def setPrintOption(appObject, key, value):
       setattr(appObject, name, value)
     except ApiError as e:
       if key != 'TickPlacement':
-        print('Warning: print option "%s" not stored in data model as "%s" because of exception: %s' % (key, value, str(e)))
-
+        print('Warning: print(option "%s" not stored in data model as "%s" because of exception: %s' % (key, value, str(e))))
   else:
     appObject.root.application.setValue(appObject, keyword=name, value=value)
 

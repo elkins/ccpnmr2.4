@@ -13548,7 +13548,7 @@ class AnalysisProject(memops.api.Implementation.TopObject):
   """)
   
   printWinFileName = property(getPrintWinFileName, setPrintWinFileName, None,
-  r"""Window file name to print to.
+  r"""Window file name to print(to.)
   """)
   
   printWinInColor = property(getPrintWinInColor, setPrintWinInColor, None,
@@ -13560,7 +13560,7 @@ class AnalysisProject(memops.api.Implementation.TopObject):
   """)
   
   printWinOtherHeight = property(getPrintWinOtherHeight, setPrintWinOtherHeight, None,
-  r"""Paper height for 'other' paper print sizes
+  r"""Paper height for 'other' paper print(sizes)
   """)
   
   printWinOtherUnit = property(getPrintWinOtherUnit, setPrintWinOtherUnit, None,
@@ -13568,7 +13568,7 @@ class AnalysisProject(memops.api.Implementation.TopObject):
   """)
   
   printWinOtherWidth = property(getPrintWinOtherWidth, setPrintWinOtherWidth, None,
-  r"""Paper width for 'other' paper print sizes
+  r"""Paper width for 'other' paper print(sizes)
   """)
   
   printWinOutputFormat = property(getPrintWinOutputFormat, setPrintWinOutputFormat, None,
@@ -13580,7 +13580,7 @@ class AnalysisProject(memops.api.Implementation.TopObject):
   """)
   
   printWinScaling = property(getPrintWinScaling, setPrintWinScaling, None,
-  r"""window print scaling
+  r"""window print(scaling)
   """)
   
   printWinShowsDateTime = property(getPrintWinShowsDateTime, setPrintWinShowsDateTime, None,
@@ -13595,7 +13595,7 @@ class AnalysisProject(memops.api.Implementation.TopObject):
   """)
   
   printWinTickPlacement = property(getPrintWinTickPlacement, setPrintWinTickPlacement, None,
-  r"""Which sides (n, s, e, w) to print ticks on for window printing.
+  r"""Which sides (n, s, e, w) to print(ticks on for window printing.)
   """)
   
   printWinTitle = property(getPrintWinTitle, setPrintWinTitle, None,

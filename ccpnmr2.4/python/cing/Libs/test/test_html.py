@@ -60,7 +60,8 @@ class AllChecks(TestCase):
             t(None, rStr)
             t.nextColumn()
             t('a', rStr + "." + str(2), href='someRefHere')
-            t.nextColumn()  # empty one
+            t.nextColumn()
+            # empty one
             t.nextColumn()
             t(None, rStr + "." + str(4))
 

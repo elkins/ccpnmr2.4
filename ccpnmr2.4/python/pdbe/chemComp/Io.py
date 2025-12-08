@@ -214,12 +214,12 @@ def saveTemporaryChemCompOrCoord(chemCompOrCoord,testMode = True, isFresh = Fals
   sys.stdout = curStdOut
   #sys.stdout = sys.__stdout__
   
-  print
+  print()
   print("  *** CCPN save output ***")
   for text in textPipe.textArea:
     if text.strip():
       print("    %s" % text.strip())
-  print
+  print()
   
   # This was failing horribly in large runs, now fixed (Wim 2010/03/08)
   filePath = glob.glob(os.path.join(tempRepository.url.path,'ccp','molecule',className,"*%s*%s*.xml" % (chemCompOrCoord.molType,getCcpFileString(chemCompOrCoord.ccpCode))))[0]

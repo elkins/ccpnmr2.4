@@ -1334,7 +1334,8 @@ class WindowPopup(BasePopup):
       self.deleteSeparators()
       
     else:
-      self.deleteStrips()            
+      self.deleteStrips()
+                
 
   def deleteSeparators(self):
   

@@ -109,6 +109,5 @@ if __name__ == '__main__':
   for molRes in molecule.sortedMolResidues():
     print('MolResidue: [%s]' % molRes.ccpCode)
 
-  print
-
+  print()
   project.saveModified()

@@ -362,7 +362,7 @@ def reverseDict(vdict):
 # end def
 
 def tablePrint(table, ln):
-    'Just a handy script to print tables while debugging. Length is the number of characters per element in table'
+    'Just a handy script to print(tables while debugging. Length is the number of characters per element in table')
     if not table:
         return 'Empty table'
     # end if    

@@ -5637,7 +5637,7 @@ class NaturalSource(memops.api.Implementation.DataObject):
   isDeleted = memops.api.Implementation.MemopsObject.isDeleted
   
   kingdom = property(getKingdom, setKingdom, None,
-  r"""kingdom to which organism belongs (in theory derivable from genus and 
+  r"""kingdom to which organism belongs in theory derivable from genus and 
   species). 
   """)
 
@@ -5708,7 +5708,7 @@ class NaturalSource(memops.api.Implementation.DataObject):
   """)
   
   superKingdom = property(getSuperKingdom, setSuperKingdom, None,
-  r"""super-kingdom to which organism belongs (in theory derivable from genus 
+  r"""super-kingdom to which organism belongs in theory derivable from genus 
   and species). 
   """)
   

@@ -460,8 +460,7 @@ def assignPeaksAutomatic(argServer, ambiguous=True, peaks=None,
     
     hasMultiple = bool([ll for ll in resonances if len(ll) > 1])
     
-    print ambiguous, hasMultiple, resonances, [ll for ll in resonances if len(ll) > 1]
-    
+    print(ambiguous, hasMultiple, resonances, [ll for ll in resonances if len(ll) > 1])    
     if ambiguous or not hasMultiple:
       for ii,peakDim in enumerate(peak.sortedPeakDims()):
         for resonance in resonances[ii]:

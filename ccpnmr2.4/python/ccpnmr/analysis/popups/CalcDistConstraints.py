@@ -968,7 +968,8 @@ class CalcDistConstraintsPopup(BasePopup):
     
     obj = self.toleranceMatrix.currentObject
     if obj:
-      obj.multiplier = self.tolMultiplierEntry.get()    
+      obj.multiplier = self.tolMultiplierEntry.get()
+        
   
     self.updateTolerances()
 
@@ -1022,7 +1023,8 @@ class CalcDistConstraintsPopup(BasePopup):
         self.chemShiftRange.start = start
         self.chemShiftRange.end = end
 
-    self.updateChemShiftRanges()  
+    self.updateChemShiftRanges()
+    
   
   def getShiftDataDim(self, shiftRange):
     
@@ -1039,7 +1041,8 @@ class CalcDistConstraintsPopup(BasePopup):
     if self.chemShiftRange:
       self.chemShiftRange.start = self.shiftStartEntry.get()
     
-    self.updateChemShiftRanges()  
+    self.updateChemShiftRanges()
+    
   
   def getShiftStart(self, shiftRange):
     
@@ -1052,7 +1055,8 @@ class CalcDistConstraintsPopup(BasePopup):
     if self.chemShiftRange:
       self.chemShiftRange.end = self.shiftEndEntry.get()
     
-    self.updateChemShiftRanges()  
+    self.updateChemShiftRanges()
+    
   
   def getShiftEnd(self, shiftRange):
     

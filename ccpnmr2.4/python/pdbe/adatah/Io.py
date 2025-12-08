@@ -241,9 +241,10 @@ Code below from http://peerit.blogspot.com/2007/07/multipartposthandler-doesnt-w
 # 7/26/07 Slightly modified by Brian Schneider  
 
 import urllib
-import urllib2
-import mimetools, mimetypes
-from cStringIO import StringIO
+import urllib.request as urllib2
+import mimetypes
+import uuid
+from io import StringIO, BytesIO
 
 class Callable:
     def __init__(self, anycallable):
@@ -288,7 +289,7 @@ class MultipartPostHandler(urllib2.BaseHandler):
 
     def multipart_encode(vars, files, boundary = None, buf = None):
         if boundary is None:
-            boundary = mimetools.choose_boundary()
+            boundary = '----------' + str(uuid.uuid4().hex)
         if buf is None:
             buf = StringIO()
         for(key, value) in vars:

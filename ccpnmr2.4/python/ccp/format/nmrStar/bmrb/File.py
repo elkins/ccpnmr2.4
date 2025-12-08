@@ -102,7 +102,8 @@ class File (Lister):
                     print("ERROR: integrity check failed for Saveframe")
                     return 1
         if self.verbosity >= 9:
-            print('Checked integrity of File    (%2s datanodes,  recurs.=%s)  : OK [%s]' % (
+            print('Checked integrity of File    (%2s datanodes,  recurs.=%s)
+            : OK [%s]' % (
                 len(self.datanodes), recursive, self.title))
 
     # Returns the STAR text representation

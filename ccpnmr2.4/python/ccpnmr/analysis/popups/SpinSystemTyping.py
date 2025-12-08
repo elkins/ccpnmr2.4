@@ -572,7 +572,8 @@ class SpinSystemTypeScoresPopup(BasePopup):
     
     if shiftList:
       self.shiftList = shiftList
-      self.updateShiftLists()   
+      self.updateShiftLists()
+       
  
     if self.resonance:
       if not self.spinSystem:

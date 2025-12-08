@@ -38,7 +38,7 @@ Development of a Software Pipeline. Proteins 59, 687 - 696.
 ===========================REFERENCE END===============================
 
 """
-import cPickle
+import pickle as cPickle
 
 from math import sqrt
 
@@ -394,7 +394,8 @@ class LinkNoeResonancesPopup(BasePopup):
 
     self.administerNotifiers(self.registerNotify)
       
-    self.getAppDataOptions()  
+    self.getAppDataOptions()
+    
       
     self.updatePeakLists()
 
@@ -521,7 +522,8 @@ class LinkNoeResonancesPopup(BasePopup):
     else:
       self.windowPanes.append(windowPane)
       
-    self.updateWindows()   
+    self.updateWindows()
+     
 
   def changePeakList(self, peakList):
 
@@ -564,8 +566,10 @@ class LinkNoeResonancesPopup(BasePopup):
       self.peakList = peakList
       self.peak = None
       self.updatePeaksAfter()
-      self.updateAssignmentsAfter()   
-      self.updateTolerances()   
+      self.updateAssignmentsAfter()
+       
+      self.updateTolerances()
+       
       self.updateStructures()
       self.windowPanes = [] # self.getWindows()
       self.updateWindows()
@@ -643,7 +647,8 @@ class LinkNoeResonancesPopup(BasePopup):
             self.tolLabels[j].set(text)
  
           self.tolLabels[j].grid(row=0,column=2*j)
-          self.tolEntries[j].grid_forget()          
+          self.tolEntries[j].grid_forget()
+                  
         
       if len(self.tolLabels) > spectrum.numDim:
         for j in range(spectrum.numDim,len(self.tolLabels)):

@@ -123,7 +123,8 @@ class ArgumentServer(GenArgumentServer):
   
     if not peakDim:
   
-      peak = self.getCurrentPeak()  
+      peak = self.getCurrentPeak()
+      
   
       if not peak:
         self.messageReporter.showWarning('Warning','No peak or peak dim currently selected')

@@ -416,8 +416,7 @@ class UpdateServer:
     req.add_header("Authorization", authheader)
     req.add_data(data)
     uu = urllib2.urlopen(req)
-    print uu.read()
-
+    print(uu.read())
   def getFileUpdates(self):
   
     # Synchronise from server
@@ -536,7 +535,8 @@ class FileUpdate:
 
   def timestamp(self):
   
-    self.date = '%s' % ctime()  
+    self.date = '%s' % ctime()
+    
 
   def getIsUpToDate(self):
   

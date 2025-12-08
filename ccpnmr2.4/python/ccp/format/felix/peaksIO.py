@@ -197,4 +197,4 @@ if __name__ == "__main__":
 
     
     for rawPeak in peakFile.peaks:
-      print rawPeak.column1, rawPeak.column2, rawPeak.column3, rawPeak.column4
+      print(rawPeak.column1, rawPeak.column2, rawPeak.column3, rawPeak.column4)

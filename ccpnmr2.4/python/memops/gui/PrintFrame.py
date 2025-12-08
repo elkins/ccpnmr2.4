@@ -206,8 +206,7 @@ class PrintFrame(Frame):
 
     row = 0
     button = Button(self, text='File:', command=self.findFile,
-                    tipText='Select location to save print file')
-    button.grid(row=row, column=0, sticky='e')
+                    tipText='Select location to save print(file'))    button.grid(row=row, column=0, sticky='e')
     self.file_entry = Entry(self, width=40, text=self.file_name,
                 tipText='Location where file is saved on disk')
     self.file_entry.grid(row=row, column=1, sticky='ew')

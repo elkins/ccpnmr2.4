@@ -202,9 +202,8 @@ class CnsGenericFile(FormatFile):
     while (openBracket):
     
       print("OPEN", elementNum, elementInnerNum, assiLine)
-      print constraintElements
-      print
-
+      print(constraintElements)
+      print()
       #
       # Inside an element
       #
@@ -220,8 +219,7 @@ class CnsGenericFile(FormatFile):
       while (openInnerBracket):
       
         print('OPEN INNER', elementNum, elementInnerNum, assiLine)
-        print
-
+        print()
         assiLine = assiLine[openInnerBracket.end():]
 
         closeBracket = self.patt['bracketClose'].search(assiLine)
@@ -510,8 +508,7 @@ class CnsGenericFile(FormatFile):
       fileReadOk = False
     else:
       for lineError in lineErrors:
-        print lineError
-    
+        print(lineError)    
     return fileReadOk
     
 class CnsConstraintItem:

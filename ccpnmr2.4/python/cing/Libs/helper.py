@@ -8,8 +8,7 @@ import os
 import platform
 import sys
 import time
-import urllib2
-
+import urllib.request as urllib2
 #-----------------------------------------------------------------------------------
 # Synchronize block with cing.Libs.helper.py
 #-----------------------------------------------------------------------------------

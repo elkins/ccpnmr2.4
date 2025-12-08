@@ -499,4 +499,5 @@ class exportParam:
         
         params = file(filename,'w')
         params.write("HaddockRunParameters = %s" % repr(self.HaddockRunParameters))
-        params.close()        
+        params.close()
+              

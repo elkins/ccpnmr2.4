@@ -6,7 +6,7 @@ import os
 import re
 import sys
 import time
-import urllib2
+import urllib.request as urllib2
 from sgmllib import SGMLParser
 
 __author__="Jan Bot"

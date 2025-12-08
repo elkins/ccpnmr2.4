@@ -1,4 +1,4 @@
-import urllib2
+import urllib.request as urllib2
 # For http://www.rcsb.org/pdb/software/static.do?p=/software/webservices/search_nmr.jsp
 
 url = 'http://www.rcsb.org/pdb/rest/search'

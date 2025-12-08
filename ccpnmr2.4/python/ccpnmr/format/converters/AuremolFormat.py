@@ -113,7 +113,7 @@ class AuremolFormat(DataFormat):
       for compound in metaFile.compounds:
         while not os.path.exists(compound.compFile):
           (dirName,fileName) = os.path.split(compound.compFile)
-          print dirName, fileName
+          print(dirName, fileName)
           interaction = self.multiDialog.FileName(self.guiParent,file = 'auremol.comp', component = 'chemComps', selectionText = 'Select file for compound %s' % compound.label, format = self.format)
           compound.compFile = interaction.file
 

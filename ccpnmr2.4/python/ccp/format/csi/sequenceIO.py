@@ -129,8 +129,7 @@ class CsiSequenceFile(CsiGenericFile):
       self.sequences = []
       print("  Bad %s format lines:%s" % (self.format,self.newline))
       for lineError in lineErrors:
-        print lineError
-
+        print(lineError)
     
 CsiSequence = Sequence
 

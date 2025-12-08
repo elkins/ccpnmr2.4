@@ -513,20 +513,20 @@ if __name__ == "__main__":
     for constraintFile in nmrStarFile.constraintFiles:
       """
       for comment in constraintFile.comments:
-        print comment
-    """
+        print(comment)
+        """
 
       for constraint in constraintFile.constraints:
         if constraint.errors:
-          print constraint.errors
-        for node in constraint.nodes:
-          """
-          if hasattr(node,'weight') and node.weight:
-            print node.weight,str(node.weight) # nmrStar 3.0 ONLY!!
-          """
-          if hasattr(node,'target'):
-            print constraint.Id, node.Id, node.target, node.lowerBound, node.upperBound
-          mlist = []
+          print(constraint.errors)
+          for node in constraint.nodes:
+            """
+            if hasattr(node,'weight') and node.weight:
+              print(node.weight,str(node.weight))# nmrStar 3.0 ONLY!!
+            """
+            if hasattr(node,'target'):
+              print(constraint.Id, node.Id, node.target, node.lowerBound, node.upperBound)
+              mlist = []
           for member in node.members:
             mlist.append([member.Id,member.seqCode,member.atomName])
           print("   " + str(mlist))

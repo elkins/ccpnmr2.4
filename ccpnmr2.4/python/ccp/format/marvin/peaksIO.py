@@ -142,7 +142,7 @@ Code by Gary Thompson
 
 import sys
 import re
-from UserDict import DictMixin
+from collections import DictMixin
 # todo: rename values
 
 class Record(object,DictMixin):
@@ -225,15 +225,10 @@ class Marvin_reader(object):
         self.records = [pair[1] for pair in sort_list]
 
         if handler == None:
-            print >> ostream, '! dumping marvin peak records'
-            print >> ostream, '!---------------------------'
-            print >> ostream, ''
-            print >> ostream, '!%d marvin peak records' %  len(self.records)
-            print >> ostream, ''
+            print(>> ostream, '! dumping marvin peak records')            print(>> ostream, '!---------------------------')            print(>> ostream, '')            print(>> ostream, '!%d marvin peak records' %  len(self.records))            print(>> ostream, '')
             for record in self.records:
-                print >> ostream, record
-                print >> ostream, ''
-        else:
+                print(>> ostream, record)                print(>> ostream, '')
+                else:
 
             for record in self.records:
                 handler.handle_peak(record)
@@ -319,22 +314,18 @@ def Dump_assignment(Assignment_handler):
         self.ostream=ostream
 
     def handle_assignment(record):
-        print >> self.ostream, peak_id,from_proton_shift,from_heavy_shift,to_proton_shift,
-
+        print(>> self.ostream, peak_id,from_proton_shift,from_heavy_shift,to_proton_shift,)
         assignment= assignment.values
         (from_assignment,to_assignment) = self.values_to_assignments(assignment)
 
-        print >> self.ostream, from_assignment.shift_id,from_assignment.residue_id,from_assignment.residue_type,from_assignment.atom_name,
-        print >> self.ostream, to_assignment.shift_id,to_assignment.residue_id,to_assignment.residue_type,to_assignment.atom_name,
-        print >> self.ostream, merit
-
+        print(>> self.ostream, from_assignment.shift_id,from_assignment.residue_id,from_assignment.residue_type,from_assignment.atom_name,)        print(>> self.ostream, to_assignment.shift_id,to_assignment.residue_id,to_assignment.residue_type,to_assignment.atom_name,)
+        print(>> self.ostream, merit)
 
 
 
 class Dump_peak_handler(Peak_handler):
     def handle_peak(self,record):
-        print record.dump()
-
+        print(record.dump())
 class Dump_filter(Peak_handler):
     def __init__(self,sub_handler):
         self.sub_handler=sub_handler
@@ -413,11 +404,8 @@ class Print_assignments(Assignment_handler):
 
         if not self.returnValue:
 
-          print >> self.ostream, peak_id,from_proton_shift,from_heavy_shift,to_proton_shift,
-          print >> self.ostream, from_assignment.shift_id,from_assignment.residue_id,from_assignment.residue_type,from_assignment.atom_name,
-          print >> self.ostream, to_assignment.shift_id,to_assignment.residue_id,to_assignment.residue_type,to_assignment.atom_name,
-          print >> self.ostream, probability
-
+          print(>> self.ostream, peak_id,from_proton_shift,from_heavy_shift,to_proton_shift,)          print(>> self.ostream, from_assignment.shift_id,from_assignment.residue_id,from_assignment.residue_type,from_assignment.atom_name,)          print(>> self.ostream, to_assignment.shift_id,to_assignment.residue_id,to_assignment.residue_type,to_assignment.atom_name,)
+          print(>> self.ostream, probability)
         else:
           #print from_assignment.residue_id,to_assignment.residue_id
           return (peak_id,from_proton_shift,from_heavy_shift,to_proton_shift,

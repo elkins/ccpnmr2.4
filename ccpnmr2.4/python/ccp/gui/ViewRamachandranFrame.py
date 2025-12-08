@@ -60,7 +60,7 @@ software development. Bioinformatics 21, 1678-1684.
 """
 import math
 import tkFont
-import cPickle
+import pickle as cPickle
 
 from memops.gui.ScrolledCanvas  import ScrolledCanvas
 from memops.gui.Label           import Label

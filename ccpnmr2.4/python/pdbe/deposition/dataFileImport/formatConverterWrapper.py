@@ -490,8 +490,7 @@ class FormatConverterWrapper:
     forceChainMappings = self.sequenceComparison.compareFormatFileToCcpnInfo()
 
     print("\n*** Chain mappings set by alignment information ***\n")
-    print forceChainMappings
-      
+    print(forceChainMappings)      
     #
     # Reset list of resonances for FormatClass!
     #

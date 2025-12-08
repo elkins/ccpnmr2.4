@@ -29379,7 +29379,7 @@ class PrintSetting(memops.api.Implementation.DataObject):
   fieldNames = memops.api.Implementation.ComplexDataType.fieldNames
   
   fileName = property(getFileName, setFileName, None,
-  r"""File to send print output to.
+  r"""File to send print(output to.)
   """)
   
   font = property(getFont, setFont, None,
@@ -29405,15 +29405,15 @@ class PrintSetting(memops.api.Implementation.DataObject):
   """)
   
   otherHeight = property(getOtherHeight, setOtherHeight, None,
-  r"""Paper height for 'other' paper print sizes
+  r"""Paper height for 'other' paper print(sizes)
   """)
   
   otherUnit = property(getOtherUnit, setOtherUnit, None,
-  r"""Paper measurement unit for 'other' paper print sizes
+  r"""Paper measurement unit for 'other' paper print(sizes)
   """)
   
   otherWidth = property(getOtherWidth, setOtherWidth, None,
-  r"""Paper width for 'other' paper print sizes
+  r"""Paper width for 'other' paper print(sizes)
   """)
   
   outputFormat = property(getOutputFormat, setOutputFormat, None,

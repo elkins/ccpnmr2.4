@@ -739,7 +739,7 @@ def makeAnalysisPopupDoc(top):
 
   for moduleName in sorted(moduleDict.keys()):
     print('working on module %s' % moduleName)
-    print moduleDict[moduleName]
+    print(moduleDict[moduleName])
     for popup in moduleDict[moduleName]:
       ###if not isinstance(popup, WindowPopup):
       makePopupDoc(popup)

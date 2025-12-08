@@ -270,12 +270,10 @@ if __name__ == '__main__':
 
     def start_handler(x, y):
         return
-        print x, y
-
+        print(x, y)
     def end_handler(x):
         return
-        print x
-
+        print(x)
 
     p.StartElementHandler = start_handler
     p.EndElementHandler = end_handler

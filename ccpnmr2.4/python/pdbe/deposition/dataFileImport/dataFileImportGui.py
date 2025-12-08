@@ -252,7 +252,8 @@ def launchDataFileImport():
  
   top.update_idletasks()
   
-  root.mainloop()  
+  root.mainloop()
+  
 
 if __name__ == '__main__':
 

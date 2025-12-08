@@ -1046,7 +1046,7 @@ def adaptNmrCalcRun(nmrCalcRun):
     print('### shiftFormat', shiftFormat)
     shiftFileSuffix = getFileFormatData(shiftFormat, 'shift')['shiftExt']
   xx = nmrCalcRun.findFirstRunParameter(name='peakFormat')
-  print xx
+  print(xx)
   if xx is None:
     peakFormat = None
   else:

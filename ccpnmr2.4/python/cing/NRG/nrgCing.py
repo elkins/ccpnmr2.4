@@ -187,7 +187,8 @@ class NrgCing(Lister):
         self.entry_list_pdb = NTlist()
         self.entry_list_nmr = NTlist()
         self.entry_list_nmr_exp = NTlist()
-        self.entry_list_nrg = NTlist()          # should be the same as self.entry_list_nmr_exp
+        self.entry_list_nrg = NTlist()
+                # should be the same as self.entry_list_nmr_exp
         self.entry_list_nrg_docr = NTlist()
         self.entry_list_nrgcing = NTlist()
         self.entry_list_nmr_redo = NTlist()
@@ -217,14 +218,21 @@ class NrgCing(Lister):
         self.entry_list_store_not_in_db = NTlist()
         self.entry_list_store_done = NTlist()
 
-        self.entry_list_tried = NTlist()      # .cing directory and .log file present so it was tried to start but might not have finished
-        self.entry_list_untried = NTlist()      # all NMR entries except those in the tried list
-        self.entry_list_crashed = NTlist()    # has a stack trace
-        self.entry_list_stopped = NTlist()    # was stopped by time out or by user or by system (any other type of stop but stack trace)
-        self.entry_list_done = NTlist()       # finished to completion of the cing run.
+        self.entry_list_tried = NTlist()
+            # .cing directory and .log file present so it was tried to start but might not have finished
+        self.entry_list_untried = NTlist()
+            # all NMR entries except those in the tried list
+        self.entry_list_crashed = NTlist()
+          # has a stack trace
+        self.entry_list_stopped = NTlist()
+          # was stopped by time out or by user or by system (any other type of stop but stack trace)
+        self.entry_list_done = NTlist()
+             # finished to completion of the cing run.
         self.entry_list_todo = NTlist()
-        self.entry_list_updated = NTlist()    # Entries whos SOURCE has been updated and consequently need updting in derived data here. 
-        self.inputModifiedDict = NTdict()     # This is the most recent of mmCIF, NRG, BMRB CS.
+        self.entry_list_updated = NTlist()
+          # Entries whos SOURCE has been updated and consequently need updting in derived data here. 
+        self.inputModifiedDict = NTdict()
+           # This is the most recent of mmCIF, NRG, BMRB CS.
         self.entry_list_obsolete = NTlist()
         self.entry_list_obsolete_bad = NTlist()
         self.entry_list_missing_prep = NTlist()
@@ -243,7 +251,8 @@ class NrgCing(Lister):
 
         self.map_issue_to_bad_entry_list = NTdict()
         # NRG issue. Bad ccpn docr project
-        self.map_issue_to_bad_entry_list[(PROJECT_ID_NRG, 272)] = '1lcc 1lcd'.split()        
+        self.map_issue_to_bad_entry_list[(PROJECT_ID_NRG, 272)] = '1lcc 1lcd'.split()
+              
         # FC created a CCPN project that fails to read in again.
         self.map_issue_to_bad_entry_list[(PROJECT_ID_CING, 266)] = '134d 177d 1gnc 1lcc 1lcd 1qch 1sae 1sak 1sal 2neo 3sak'.split() 
         # Queeny runs out of 2Gb memory for 2rqf 
@@ -1092,7 +1101,8 @@ class NrgCing(Lister):
             nTcodeerror("Removed and continuing with %d entries" % len(result))
             return
         # end if
-        result = result.sort()    
+        result = result.sort()
+          
         return result 
     # end def
 
@@ -1629,7 +1639,8 @@ class NrgCing(Lister):
 #                nTdebug("-1- Added extra file %s." % dstFile)
                 continue
             # end if
-            file_content = open(srcFile, 'r').read()                    
+            file_content = open(srcFile, 'r').read()
+                              
             old_string = r"<!-- INSERT NEW FOOTER HERE -->"
             file_content = string.replace(file_content, old_string, self.htmlFooter)
             old_string = r"<!-- INSERT GOOGLE ANALYTICS TEMPLATE HERE -->"

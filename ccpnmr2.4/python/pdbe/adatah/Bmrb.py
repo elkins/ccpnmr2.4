@@ -593,8 +593,7 @@ def getBmrbInfo(dataType=None):
       
         valueSearch = valuePatt.search(dataLine)
         if not valueSearch:
-          print dataLine
-          
+          print(dataLine)          
         value = valueSearch.group(1)
         
         if value in ('&nbsp;','&nbsp'):

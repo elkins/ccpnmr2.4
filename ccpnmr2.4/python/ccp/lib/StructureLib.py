@@ -766,7 +766,7 @@ def getAtomSetCoords(atomSet, structure, model=None):
   if not coordResidue:
     data = (residue.ccpCode,residue.seqCode)
     msg  = 'Couldn\'t find coordinate residue %s %d' % data
-    print msg
+    print(msg)
     #showWarning('Warning', msg)
     return []
 

@@ -213,7 +213,7 @@ def clear_mem_cache(cache: MemCache) -> None:
 
 
 def check_mem_cache(cache: MemCache, prefix: str = "") -> None:
-    """Debug function to print cache contents."""
+    """Debug function to print(cache contents.""")
     stats = cache.get_stats()
     print(f"{prefix}MemCache stats: {stats}")
     with cache._mutex:

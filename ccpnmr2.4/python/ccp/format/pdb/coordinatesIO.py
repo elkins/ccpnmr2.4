@@ -235,7 +235,8 @@ class PdbCoordinateFile(PdbFile):
       
       line = fin.readline()
 
-    fin.close()    
+    fin.close()
+      
     
     #
     # Fix remaining problems if any
@@ -428,27 +429,16 @@ SCALE3      0.000000  0.000000  1.000000        0.00000      \n""")
 
   def printChainsAndHetGroups(self):
 
-    print self.code
-
+    print(self.code)
     indent = "    "
 
     for chain in self.chains:
       print("  Chain: " + chain.chainId)
-      print indent + "MolId,name: %s,%s" % (chain.molId,chain.molName)
-      print indent + "MolSynonyms: %s" % (chain.synonyms)
-      print indent + "ecNums, fragment: %s,%s" % (chain.ecNums,chain.fragment)
-      print indent + "engineered, mutation: %s,%s" % (chain.engineered,chain.mutation)
-      print indent + "biologicalUnit, details: %s,%s" % (chain.biologicalUnit,chain.details)
-      print indent + "numRes: %s" % (chain.numRes)
-      #print chain.resNames
+      print(indent + "MolId,name: %s,%s" % (chain.molId,chain.molName))      print(indent + "MolSynonyms: %s" % (chain.synonyms))      print(indent + "ecNums, fragment: %s,%s" % (chain.ecNums,chain.fragment))      print(indent + "engineered, mutation: %s,%s" % (chain.engineered,chain.mutation))      print(indent + "biologicalUnit, details: %s,%s" % (chain.biologicalUnit,chain.details))      print(indent + "numRes: %s" % (chain.numRes))      #print chain.resNames
 
     for hetGroup in self.hetGroups:
       print("  Hetgroup: " + hetGroup.Id)
-      print indent + "chainId,seqNum: %s,%s" % (hetGroup.chainId,hetGroup.seqNum)
-      print indent + "iCode, numHetAtoms: %s,%s" % (hetGroup.iCode,hetGroup.numHetAtoms)
-      print indent + "description, chemicalName: %s,%s" % (hetGroup.description,hetGroup.chemicalName)
-      print indent + "synonyms, formula: %s,%s" % (hetGroup.synonyms,hetGroup.formula)
-
+      print(indent + "chainId,seqNum: %s,%s" % (hetGroup.chainId,hetGroup.seqNum))      print(indent + "iCode, numHetAtoms: %s,%s" % (hetGroup.iCode,hetGroup.numHetAtoms))      print(indent + "description, chemicalName: %s,%s" % (hetGroup.description,hetGroup.chemicalName))      print(indent + "synonyms, formula: %s,%s" % (hetGroup.synonyms,hetGroup.formula))
   def searchCoordinate(self,serial,verbose = 1):
 
     serial = returnInt(serial)

@@ -747,7 +747,8 @@ class ScrolledMatrix(Frame):
 
   def mouseEnter(self, event):
     
-    self.menu.popdownMenu()  
+    self.menu.popdownMenu()
+    
     canvas = self.canvas
     
     if not self.editWidgetItem:
@@ -2138,7 +2139,8 @@ class ScrolledMatrix(Frame):
         self.cornerCanvas.place_forget()
     
     else:
-      self.horizScrollbar.place_forget()    
+      self.horizScrollbar.place_forget()
+        
       self.cornerCanvas.place_forget()
       
       if useVert:

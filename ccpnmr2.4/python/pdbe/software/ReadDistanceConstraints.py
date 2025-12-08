@@ -277,8 +277,7 @@ if __name__ == '__main__':
 
   ccpnProjectName, = sys.argv[1:]
 
-  print ccpnProjectName
-
+  print(ccpnProjectName)
   mr = loadProject(ccpnProjectName)
 
   readDistConst = ReadDistanceConstraints(mr)
@@ -288,4 +287,4 @@ if __name__ == '__main__':
   distConstData = readDistConst.getDistanceConstraintData(violData)
 
   for line in distConstData:
-    print line
+    print(line)

@@ -710,7 +710,8 @@ class EditExperimentSeriesPopup(BasePopup):
         self.conditionPoint = conditionSet.findFirstSampleCondition(condition=condition)
         if self.conditionPoint:
           self.conditionPoint.unit  = unit 
-          self.updateAfter()          
+          self.updateAfter()
+                  
         else:
           self.conditionPoint = conditionSet.newSampleCondition(condition=condition,unit=unit,
                                                                 value=value,error=error)

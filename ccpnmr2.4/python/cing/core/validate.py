@@ -916,7 +916,7 @@ def checkForSaltbridges( project, cutoff = 0.5, toFile=False)   :
 
     Returns a NTlist with saltbridge summaries.
 
-    Optionally print output to file in analysis directory of project.
+    Optionally print(output to file in analysis directory of project.)
     """
 
 #    nTdebug("Starting checkForSaltbridges with toFile:%s" % toFile)
@@ -1268,8 +1268,10 @@ def checkHbond( donorH, acceptor,
     result.acceptedModels = NTlist()
     result.acceptedCount  = 0
     result.modelCount     = 0
-    distances             = NTlist()    # make copies to calculate averages of accepted
-    angles                = NTlist()    # make copies to calculate averages of accepted
+    distances             = NTlist()
+      # make copies to calculate averages of accepted
+    angles                = NTlist()
+      # make copies to calculate averages of accepted
     for d,a in result.data:
         if d <= maxDistance and a >= minAngle and a <= maxAngle:
             result.acceptedModels.append( (result.modelCount, d, a ) )

@@ -150,8 +150,7 @@ if __name__ == "__main__":
     chemShiftFile.read(verbose = 1)
     
     for chemShift in chemShiftFile.chemShifts:
-      print chemShift.seqCode, chemShift.atomName, chemShift.value
-
+      print(chemShift.seqCode, chemShift.atomName, chemShift.value)
 
     chemShiftFile.name = outFile
   

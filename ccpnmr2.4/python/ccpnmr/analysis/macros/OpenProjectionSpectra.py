@@ -268,5 +268,5 @@ def loadProjDefinitionFile(argServer, inputFileName=None, exptName=None):
     open_spectra.parent.finishInitSpectrum(newSpectrum)
     print('finished opening spectrum', refExp.name, newSpectrum.name)
   
-  print
+  print()
   print('Projection spectra loaded into experiment', refExp.name)

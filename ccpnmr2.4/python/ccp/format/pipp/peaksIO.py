@@ -364,4 +364,4 @@ if __name__ == "__main__":
     peakFile.read(verbose = 1)
     
     for rawPeak in peakFile.peaks:
-      print rawPeak.num, rawPeak.assign, rawPeak.intensity
+      print(rawPeak.num, rawPeak.assign, rawPeak.intensity)

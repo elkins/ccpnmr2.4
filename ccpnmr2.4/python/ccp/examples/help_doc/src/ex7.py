@@ -104,4 +104,4 @@ if __name__ == '__main__':
 
             print('  [%s] - [%s]' % (atomList[0], atomList[1]))
 
-        print
+        print()

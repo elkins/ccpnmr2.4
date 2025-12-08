@@ -170,4 +170,4 @@ if __name__ == '__main__':
     seqCodes.sort()
 
     print('Residue sequence codes connected to resonances:')
-    print seqCodes, '\n'
+    print(seqCodes, '\n')

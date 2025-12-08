@@ -132,8 +132,7 @@ class CrossLine(Frame):
 if __name__ == '__main__':
 
   def printEvent(event):
-    print event.x, event.y
-
+    print(event.x, event.y)
   from memops.gui.Label import Label
 
   root = Tkinter.Tk()

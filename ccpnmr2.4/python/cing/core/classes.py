@@ -1046,8 +1046,10 @@ class DistanceRestraintList(RestraintList):
 
         # Duplicate analysis
         self.uniqueDistancesCount = 0       # count of all defined distance restraints
-        self.withoutDuplicates = NTlist()   # list of all restraints without duplicates
-        self.withDuplicates = NTlist()      # list of all restraints with duplicates
+        self.withoutDuplicates = NTlist()
+         # list of all restraints without duplicates
+        self.withDuplicates = NTlist()
+            # list of all restraints with duplicates
     #end def
 
     def criticize(self, project, toFile = True):

@@ -22,7 +22,8 @@ class NoeCompleteness( NTdict ):
         self.project = project
         self.lib = NoeCompletenessAtomLib()
         self.modelCount = self.project.molecule.modelCount
-        self.resList = NTlist()        
+        self.resList = NTlist()
+              
         self.atomList = NTlist() # only observables.
         self.atomHash = NTdict() # hash of atomList
         self.resDistanceHoH = {}  # only up to self.max_dist_expectedOverall
@@ -694,7 +695,8 @@ class NoeCompleteness( NTdict ):
             for atom in res.allAtoms():
                 if not atom.hasCoordinates(allRealAtomCoordinatesNeeded=True):
                     continue
-                parent = atom.getParent()                
+                parent = atom.getParent()
+                              
                 if self.lib.inLib(parent.resName, atom.name):
 #                    nTdebug("Found observable atom: %s" % atom)
                     self.atomList.append(atom)

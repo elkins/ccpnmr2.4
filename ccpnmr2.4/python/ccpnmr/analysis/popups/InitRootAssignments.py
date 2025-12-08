@@ -256,7 +256,8 @@ class InitRootAssignmentsPopup(BasePopup):
     peakA.amideConfirmed = boolean
     peakB.amideConfirmed = boolean
     
-    self.updateAfter()  
+    self.updateAfter()
+    
   
   def confirmAmidePairs(self):  
   
@@ -264,7 +265,8 @@ class InitRootAssignmentsPopup(BasePopup):
       peakA.amideConfirmed = True
       peakB.amideConfirmed = True
     
-    self.updateAfter()  
+    self.updateAfter()
+    
   
   def unconfirmAmidePairs(self):  
   
@@ -272,7 +274,8 @@ class InitRootAssignmentsPopup(BasePopup):
       peakA.amideConfirmed = False
       peakB.amideConfirmed = False
 
-    self.updateAfter()  
+    self.updateAfter()
+    
     
   def updatePeakListsAfter(self, obj):
   

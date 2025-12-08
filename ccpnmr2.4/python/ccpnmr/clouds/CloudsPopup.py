@@ -252,7 +252,8 @@ class CloudsPopup(BasePopup):
     self.bottomButtons = createDismissHelpButtonList(guiFrame,expands=0,help_url=None)
     self.bottomButtons.grid(row=row, column=0, sticky=Tkinter.EW)
     
-    self.setButtonStates()    
+    self.setButtonStates()
+      
     
   def getStructures(self):
   

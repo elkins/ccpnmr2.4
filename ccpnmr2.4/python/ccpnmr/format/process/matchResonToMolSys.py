@@ -177,8 +177,7 @@ def matchResonToMolSys(resonances,molSystem,assignFormat = None,test = False, ma
 
 
   if test:
-    print resResidueDict
-    
+    print(resResidueDict)    
   return matchToMolSys(resChainDict,resResidueDict,molSystem,test = test, matchMode = matchMode)
 
 def matchCoordAtomsToMolSys(coords,molSystem,test = False, matchMode = False):
@@ -273,8 +272,7 @@ def matchToMolSys(resChainDict,resResidueDict,molSystem,test = 0, matchMode = 0)
         resResidueDict[resChainCode][seqCodeKey] = [None,[]]
     
     if test:    
-      print resChainCode
-      print resChainDict[resChainCode]
+      print(resChainCode)      print(resChainDict[resChainCode])
       #for seqCodeKey in resChainDict[resChainCode]:
       #  print seqCodeKey, resResidueDict[resChainCode][seqCodeKey]
 
@@ -349,11 +347,11 @@ def matchToMolSys(resChainDict,resResidueDict,molSystem,test = 0, matchMode = 0)
     
     if test:
       print("CHAIN INFO")
-      print chainCode
+      print(chainCode)
       for residue in residues:
         print("  %s.%d" % (residue.ccpCode,residue.seqId))
-      print
-    
+      print()
+        
     resChainCodes = chainMappingDict[chainCode]
     resChainsMapped = []
     
@@ -367,10 +365,8 @@ def matchToMolSys(resChainDict,resResidueDict,molSystem,test = 0, matchMode = 0)
       if test:
         print("TRYING TO MATCH TO %s" % resChainCode)
         for resResidue in resResidues:
-          print resResidue,
-        print
-        print
-
+          print(resResidue,)        print()
+          print()
       for seqAttr in ('seqId','seqCode'):
 
         if getattr(residues[0],seqAttr) == resResidues[0][0] and residues[0].seqInsertCode == resResidues[0][1] and \
@@ -493,16 +489,15 @@ def matchToMolSys(resChainDict,resResidueDict,molSystem,test = 0, matchMode = 0)
 
 def printMissingInfo(resResidueDict):
   
-  print drawBox("Suggested mappings, based on atom names for original restraint data",indent = "  ")
-  
+  print(drawBox("Suggested mappings, based on atom names for original restraint data",indent = "  "))  
   resChainCodes = resResidueDict.keys()
   resChainCodes.sort()
   
   for resChainCode in resChainCodes:
     
     print("    Original chain code '%s'. Higher scores below are better." % resChainCode)
-    print
-    
+    print()
+      
     resSeqCodes = resResidueDict[resChainCode].keys()
     resSeqCodes.sort()
     
@@ -548,9 +543,9 @@ def printMissingInfo(resResidueDict):
         print("      %-4s%s:" % (str(resSeqCode[0]),resSeqCode[1]),)
         print(', '.join(scoreTexts))
     
-    print
-  
-  print
+    print()
+    
+  print()
   
   return None
 
@@ -580,8 +575,8 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
     print("Molecules: ",)
     for mol in molecules:
       print(" %s (%d)," % (mol.name,len(mol.molResidues)),)
-    print
-    
+    print()
+      
   #
   # Homomultimer
   #
@@ -624,9 +619,8 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
             resChainCodes.pop(resChainCodes.index(rccs[i]))
 
       if test:
-        print resChainGroups
-        print chainMappingDict
-  
+        print(resChainGroups)
+        print(chainMappingDict)
   #
   # Do other routines if not matched...
   #
@@ -712,8 +706,7 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
     
     if test:
       print("ORIGINAL seqDiff info:")
-      print seqDiffs
-    
+      print(seqDiffs)    
     #
     # If there's problems, reset some stuff...
     #
@@ -735,9 +728,8 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
             break
           
     if test:
-      print unmappedCodes
-      print seqDiffs
-
+      print(unmappedCodes)
+      print(seqDiffs)
     # TODO: have a variable that decides whether to set offset if anything left???!
     #       should not set anything if in this else statement...
 
@@ -775,8 +767,7 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
         atomNames = [atom.name for atom in molResidue.chemCompVar.chemAtoms]
 
         if test:
-          print molecule.name, atomNames
-
+          print(molecule.name, atomNames)
         for tempChainCode in tempChainCodes[:]:
           for tempResChainCode in tempResChainCodes:
             if test:
@@ -835,8 +826,8 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
 
           if resId != None and offset != None:
             if test:
-              print tempResChainCode, score, bestScore
-            if score > bestScore:
+              print(tempResChainCode, score, bestScore)
+              if score > bestScore:
               resChainMatches = [tempResChainCode]
               bestScore = score
             elif score == bestScore:
@@ -851,8 +842,7 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
             print("  Best match for CCPN code '%s' to code '%s': %s" % (tempChainCodes[0],tempResChainCode,matchText))
 
         if test:
-          print tempChainCodes[0], resChainMatches
-
+          print(tempChainCodes[0], resChainMatches)
         if len(resChainMatches) == 1:
           setDict(chainMappingDict,tempChainCodes[0],resChainMatches[0])
           unmappedCodes.pop(unmappedCodes.index(tempChainCodes[0]))
@@ -866,19 +856,17 @@ def complexChainMapping(chainDict,resChainDict,resResidueDict,unmappedCodes,resC
   if not chainMappingDict:  
     print(" Cannot map any chains... aborting")
     if test:
-      print resChainCodes
-    returnStatus = False
+      print(resChainCodes)
+      returnStatus = False
     
   elif test:
-    print chainMappingDict
-  
+    print(chainMappingDict)  
   return returnStatus
   
 def matchResidues(resType,residues,atomNames,resResidues,resAtomDict,matchScore = 10,test = 0):
 
   if test:
-    print resType
-
+    print(resType)
   moleculeMap = []
   resonanceMap = []
   
@@ -908,9 +896,8 @@ def matchResidues(resType,residues,atomNames,resResidues,resAtomDict,matchScore 
     resonanceMap.append(mapCode)
   
   if test:  
-    print moleculeMap
-    print resonanceMap
-  
+    print(moleculeMap)
+    print(resonanceMap)
   bestMatch = 0
   bestMatchLen = 0
   bestResStart = None

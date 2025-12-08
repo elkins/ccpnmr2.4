@@ -261,17 +261,12 @@ if __name__ == "__main__":
     projectFile.read(verbose = 1)
     
     for peakFile in projectFile.peakFiles:
-      print peakFile.specNames
-      print peakFile.numDims
-      print peakFile.dimInfo
-      print peakFile.peaks[0].ppm
-      print peakFile.peaks[-1].ppm
-    
+      print(peakFile.specNames)      print(peakFile.numDims)      print(peakFile.dimInfo)      print(peakFile.peaks[0].ppm)
+      print(peakFile.peaks[-1].ppm)
     for sequence in projectFile.sequenceFile.sequences:
       for seqEl in sequence.elements:
   
-        print seqEl.seqCode, seqEl.code1Letter
-    
+        print(seqEl.seqCode, seqEl.code1Letter)    
     projectFile.name = outFile
     
     projectFile.write()

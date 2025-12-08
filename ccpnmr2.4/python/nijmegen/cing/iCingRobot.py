@@ -11,8 +11,7 @@ except ImportError as err:
   print("* Warning * Cannot import Python module urllib2.")
   print(" - Please check your SSL libraries.")
   print(" - Submission to to the iCing server will not work.")
-  print err
-
+  print(err)
 from memops.gui.MessageReporter import showWarning, showYesNo
 
 FORM_ACCESS_KEY = "AccessKey"
@@ -51,9 +50,8 @@ def ccpnCingSubmitMacro(argServer, url="https://nmr.le.ac.uk/"):
         iCingUrl = os.path.join(url, 'icing/serv/iCingServlet')
     
         credentials, results, tarFileName = iCingSetup(project, url=iCingUrl)
-        print credentials
-        print results
-
+        print(credentials)
+        print(results)
         if results:
             
             entryId = iCingProjectName(credentials, iCingUrl).get(RESPONSE_RESULT)
@@ -63,16 +61,14 @@ def ccpnCingSubmitMacro(argServer, url="https://nmr.le.ac.uk/"):
             print("Log URL:", urls[2])
             print("Zip URL:", urls[3])
              
-            print iCingRun(credentials, iCingUrl)
-            
+            print(iCingRun(credentials, iCingUrl))            
             status = iCingStatus(credentials, iCingUrl)
 
-            print status
+            print(status)
             for i in range(100):
               time.sleep(60)
               status2 = iCingStatus(credentials, iCingUrl)
-              print status2
-              
+              print(status2)              
               if status2 != status:
                 break
             
@@ -84,12 +80,11 @@ def ccpnCingSubmitMacro(argServer, url="https://nmr.le.ac.uk/"):
             if zipFileName:
               logText = iCingFetch(credentials, url, iCingUrl, zipFileName)
               argServer.showInfo('Results saved to %s' % zipFileName)
-              print logText
-            else:
+              print(logText)
+              else:
               argServer.showInfo('No file name')
             
-            print iCingPurge(credentials, url)
-            
+            print(iCingPurge(credentials, url))            
             
 def getResultUrls(credentials, entryId, url="https://nmr.le.ac.uk/"):
   
@@ -400,4 +395,4 @@ def _processResponse(text):
 if __name__ == '__main__':
 
   for i in range(80):
-    print getRandomKey()
+    print(getRandomKey())

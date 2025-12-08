@@ -307,8 +307,7 @@ class AnsigPeakFile(AnsigGenericFile):
     line = fin.readline()
 
     # Check line length - different formats available
-    print len(line)
-    if len(line) == 131:
+    print(len(line))    if len(line) == 131:
       formatType = 'short'
     elif len(line) == 143:
       formatType = 'long'

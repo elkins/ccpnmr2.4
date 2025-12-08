@@ -156,8 +156,7 @@ class ReportErrorPopup(BasePopup):
         'pythonVersion' : self.pythonVersion,
         'comment' : userComment }
 
-      print fetchUrl('http://www2.ccpn.ac.uk/cgi-bin/karolis/SubmitBug.py', values, timeout=3)
-      try:
+      print(fetchUrl('http://www2.ccpn.ac.uk/cgi-bin/karolis/SubmitBug.py', values, timeout=3))      try:
         self.close();
       except:
         print('"Always send" option')

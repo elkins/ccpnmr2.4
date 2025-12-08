@@ -507,7 +507,8 @@ class BrowseAtomsPopup(BasePopup):
       
     if labelling is not self.labellingScheme:
       self.labellingScheme = labelling  
-      self.updateAfter()  
+      self.updateAfter()
+      
    
     self.labellingSchemePulldown.setup(names, labellings, index)  
   

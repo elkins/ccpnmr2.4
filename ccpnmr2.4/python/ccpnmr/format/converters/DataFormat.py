@@ -1232,7 +1232,8 @@ class DataFormat(TopShared):
       for self.residue in self.chain.sortedResidues():
     
         self.seqCode = self.getExportSeqCode(self.chainDict[self.chain][1],self.residue)
-        self.setSequenceFileElements()        
+        self.setSequenceFileElements()
+              
           
     #
     # Write file
@@ -1564,7 +1565,8 @@ class DataFormat(TopShared):
     # Set info for chemComp(Coord)s
     #
     
-    self.setChemCompRepositories()    
+    self.setChemCompRepositories()
+      
     self.setChemCompCoordRepositories()
         
     #
@@ -1579,7 +1581,8 @@ class DataFormat(TopShared):
     
     for self.rawChemComp in self.rawChemCompList:
     
-      self.setupChemCompInfo()      
+      self.setupChemCompInfo()
+          
       self.makeChemComp()
 
     #
@@ -1922,7 +1925,8 @@ class DataFormat(TopShared):
     
     self.nameMapping.isOriginalImport = True
     
-    self.setMeasurementFileClass()        
+    self.setMeasurementFileClass()
+          
 
     self.initConvertCount('measurements')
 
@@ -2119,7 +2123,8 @@ class DataFormat(TopShared):
     self.fileName = fileName
     self.writeKeywds = {}
     
-    self.setMeasurementsExportMode()  # Set the export mode, either 'atoms' or 'spinSystems', depending on format.
+    self.setMeasurementsExportMode()
+    # Set the export mode, either 'atoms' or 'spinSystems', depending on format.
 
     #
     # Initial check
@@ -2165,7 +2170,8 @@ class DataFormat(TopShared):
     # Routine to link measurements to resNames
     #
     
-    self.createAtomMeasurements()            
+    self.createAtomMeasurements()
+              
 
     #
     # Allow chain selection
@@ -2185,7 +2191,8 @@ class DataFormat(TopShared):
     
     self.setMeasurementFileClass()
     
-    self.createMeasurementFile()    
+    self.createMeasurementFile()
+      
 
     self.rawMeasurementClass = getattr(self.measurementsIO,self.formatCode)
     self.measurementFileValues = getattr(self.measurementFile,self.formatFileValueKey)
@@ -2600,7 +2607,8 @@ class DataFormat(TopShared):
     # Currently doing latter (is default!)
     #
     
-    self.selectPeakLists()    
+    self.selectPeakLists()
+      
     
     #
     # Handle resonances linked via peakContribs...
@@ -3074,7 +3082,8 @@ class DataFormat(TopShared):
     if hasattr(NmrConstraint,"%sConstraintItem" % self.constraintApiCode):
       self.ApiConstraintItem = getattr(NmrConstraint,"%sConstraintItem" % self.constraintApiCode)
     
-    self.setConstraintFileClass()    
+    self.setConstraintFileClass()
+      
     
     self.initConvertCount('constraints')
 
@@ -4021,10 +4030,10 @@ class DataFormat(TopShared):
     #
     
     if returnStatus and verbose:
-      print
-      print drawBox("FormatConverter: executing %s" % functionName)
-      print
-      
+      print()
+      print(drawBox("FormatConverter: executing %s" % functionName))
+      print()
+          
     return returnStatus
 
   def initConvertCount(self,dataType):
@@ -4121,10 +4130,9 @@ class DataFormat(TopShared):
   def printConvertCountString(self,verbose):
     
     if verbose and self.resetConvertCount == True:
-      print
-      print self.getConvertCountString()
-      print
-
+      print()
+      print(self.getConvertCountString())
+      print()
   def quit(self):
   
     if self.guiParent:
@@ -4902,7 +4910,8 @@ class DataFormat(TopShared):
   
     self.messageReporter.showWarning("Warning"," No readAcqPars available for %s..." % self.formatLabel,self.guiParent)
     self.acqParsData = None
-    self.quit()    
+    self.quit()
+      
 
   #
   # Processing parameters file reading
@@ -6109,7 +6118,7 @@ class DataFormat(TopShared):
           # Now use normal chemComp creation approach, fake initialisation
           #
           
-          print drawBox("Warning: autocreating chemComp %s" % code, indent = "    ")
+          print(drawBox("Warning: autocreating chemComp %s" % code, indent = "    "))
           
           # Track original variables, reset afterward
           allowPopups = self.allowPopups
@@ -6171,12 +6180,14 @@ class DataFormat(TopShared):
             chemComp = self.getChemComp(molType,"Xxx")
             
           if not chemComp:
-            print("  Warning: no %s chemComp %s code %s selected. Will be ignored." % (residueTypeText,codeText,code)      )
+            print("  Warning: no %s chemComp %s code %s selected. Will be ignored." % (residueTypeText,codeText,code)
+            )
             self.addWarning("No CCPN reference compound could be found for molecular type %s, compound %s with code %s." % (residueType,codeText,code))
             continue
 
           else:
-            print("  Warning: No %s chemComp %s code %s selected, replaced by Xxx chemComp to maintain chain sequence numbering." % (residueTypeText,codeText,code)  )
+            print("  Warning: No %s chemComp %s code %s selected, replaced by Xxx chemComp to maintain chain sequence numbering." % (residueTypeText,codeText,code)
+            )
     
         #
         # Keep track of everything...
@@ -6225,7 +6236,7 @@ class DataFormat(TopShared):
 
     for origMolName in origMolNames:
     
-      print origMolName
+      print(origMolName)
       
       for consistentStretch in chemCompDict[origMolName]:
         
@@ -6246,9 +6257,9 @@ class DataFormat(TopShared):
             ccHead = consistentStretch[1][seqIndex][1]
             seqTexts.append(ccHead.ccpCode)
             
-        print string.join(seqTexts,'-')
+        print(string.join(seqTexts,'-'))
     
-    print
+    print()
     """
 
     #
@@ -9927,7 +9938,8 @@ class DataFormat(TopShared):
       
       self.getMeasurementSpinSystemList()
       
-      self.setSpecificSpinSystemInfo()    
+      self.setSpecificSpinSystemInfo()
+        
 
       for self.spinSystem in self.spinSystemList:
 
@@ -10355,7 +10367,7 @@ class DataFormat(TopShared):
       outputLines.sort()
       
       for line in outputLines:
-        print line
+        print(line)
         
   #
   # Constraint specific
@@ -11927,7 +11939,8 @@ Cannot map atom names for export.
       
         if self.resonanceToAtoms.has_key(resonance):
     
-          atomId = self.resonanceToAtoms[resonance][0].getAtomId()        
+          atomId = self.resonanceToAtoms[resonance][0].getAtomId()
+                
           sortKey = (atomId[0].code,atomId[1])
           
         sortKeys.append(sortKey)
@@ -13053,7 +13066,7 @@ Cannot map atom names for export.
       refChainId = self.getChainOrRefChainId(coordinate)
       
       if testMode:
-        print coordSeqCode, refChainId
+        print(coordSeqCode, refChainId)
 
       #
       # If change in chainId, reset variables
@@ -13066,8 +13079,8 @@ Cannot map atom names for export.
         if self.formatChainCodeDict.has_key(oldChainId):
           chainMappings = self.formatChainCodeDict[oldChainId]
           if testMode:
-            print chainMappings
-            print self.formatChainCodeDict
+            print(chainMappings)
+            print(self.formatChainCodeDict)
         else:
           print("  Error: no chain mapping found for chain '%s'." % oldChainId)
           oldChainId = ""
@@ -13093,8 +13106,8 @@ Cannot map atom names for export.
         
         if testMode:
           print("Multiple chains", multipleChains," chainMapping", chainMapping, chain)
-          print chainMapping.firstSeqId, chainMapping.formatFirstSeqCode
-          print chainMapping.parent.formatName, chainMapping.parent.namingSystem
+          print(chainMapping.firstSeqId, chainMapping.formatFirstSeqCode)
+          print(chainMapping.parent.formatName, chainMapping.parent.namingSystem)
         
         # Make sure that code below gets called as well (could be two subsequent chains with seqCode 1!)
         oldSeqCode = ""
@@ -13129,8 +13142,8 @@ Cannot map atom names for export.
             oldSeqCode = ''      
             if testMode:
               print("Invalid chain identification based on seqCodes...")
-              print seqCodes
-              print oldSeqCode, oldInsertionCode
+              print(seqCodes)
+              print(oldSeqCode, oldInsertionCode)
             continue
             
         else:
@@ -13152,8 +13165,8 @@ Cannot map atom names for export.
             oldSeqCode = ''
             if testMode:
               print("Invalid seq code identification based on seqCodes...")
-              print seqCodes
-              print oldSeqCode, oldInsertionCode
+              print(seqCodes)
+              print(oldSeqCode, oldInsertionCode)
             continue
           
         seqId = oldSeqCode + chainMapping.firstSeqId - chainMapping.formatFirstSeqCode
@@ -13205,7 +13218,7 @@ Cannot map atom names for export.
     numAtoms = len(atomsHandled)
     
     if testMode:
-      print numAtoms
+      print(numAtoms)
       
       nsn = namingSystemNames.keys()
       nsn.sort()
@@ -13244,7 +13257,7 @@ Cannot map atom names for export.
         
           if testMode:
             namingSystemNameList.pop(namingSystemNameList.index(namingSystemName))          
-            print namingSystemName, namingSystemHit * 100.0  / numAtoms
+            print(namingSystemName, namingSystemHit * 100.0  / numAtoms)
 
       if not testMode:
         break

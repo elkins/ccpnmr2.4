@@ -653,12 +653,12 @@ def resetNmrConstraintStoreFile(newNmrConstraintStore,newConstraintsFile):
       if strucSearch:
         strucSearch = None
         cfileLines.pop(lineNum)
-        print line,
+        print(line,)
         line = cfileLines[lineNum]
         while not strucSearch:
           line = cfileLines[lineNum]
           strucSearch = strucPatt.search(line)
-          print line,
+          print(line,)
           cfileLines.pop(lineNum)
     """
     

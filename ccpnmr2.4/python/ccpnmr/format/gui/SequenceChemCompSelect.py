@@ -166,7 +166,8 @@ class SequenceChemCompSelect(BasePopup):
     buttons = createDismissHelpButtonList(master, texts=texts, commands=commands, dismiss_text = 'Cancel', help_url=self.help_url)
     buttons.grid(row=row, column=0, columnspan = 3, sticky=Tkinter.EW)
 
-    self.setupSequenceFrame()    
+    self.setupSequenceFrame()
+      
 
   def setupSequenceFrame(self, resetFrame = False, resetStatus = True):
     

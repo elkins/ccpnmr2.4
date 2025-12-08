@@ -218,4 +218,4 @@ if __name__ == "__main__":
 
     
     for rawPeak in peakFile.peaks:
-      print rawPeak.intensity
+      print(rawPeak.intensity)

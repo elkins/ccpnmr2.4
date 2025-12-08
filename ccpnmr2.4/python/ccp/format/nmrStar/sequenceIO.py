@@ -56,7 +56,7 @@ from ccp.format.nmrStar.generalIO import NmrStarFile, NmrStarGenericFile
 
 #from ccp.format.nmrStar.projectIO import MoleculeDbLink
 
-from constants import bmrbCodeToCcpCode
+from .constants import bmrbCodeToCcpCode
 
 from memops.universal.Util import returnInt
 
@@ -606,12 +606,12 @@ class NmrStarSequence:
     """
     print("SEQUENCE"  )
     for seqEl in self.elements:
-      print seqEl.seqCode,
+      print(seqEl.seqCode,)
       if hasattr(seqEl, 'insertionCode'):
-        print seqEl.insertionCode
-      else:
-        print
-    """
+        print(seqEl.insertionCode)
+        else:
+        print()
+        """
 
     #
     # Get molecule database links.

@@ -7033,9 +7033,8 @@ class Person(memops.api.Implementation.DataObject):
     Add for ccp.general.Affiliation.Person.expBlueprints
     """
     dataDict = self.__dict__
-    from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
-    if (not isinstance(value, importedType)):
-      raise ApiError("""%s.addExpBlueprint:
+    from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
+    if (not isinstance(value, importedType)):)      raise ApiError("""%s.addExpBlueprint:
        value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -8067,9 +8066,8 @@ class Person(memops.api.Implementation.DataObject):
 
       values = dataDict.get('expBlueprints')
       for value in values:
-        from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
-        if (not isinstance(value, importedType)):
-          raise ApiError("""%s.checkValid: expBlueprints:
+        from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
+        if (not isinstance(value, importedType)):)          raise ApiError("""%s.checkValid: expBlueprints:
            value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
            + ": %s" % (value,)
           )
@@ -11080,9 +11078,8 @@ class Person(memops.api.Implementation.DataObject):
     Remove for ccp.general.Affiliation.Person.expBlueprints
     """
     dataDict = self.__dict__
-    from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
-    if (not isinstance(value, importedType)):
-      raise ApiError("""%s.removeExpBlueprint:
+    from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
+    if (not isinstance(value, importedType)):)      raise ApiError("""%s.removeExpBlueprint:
        value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
        + ": %s" % (value,)
       )
@@ -12626,9 +12623,8 @@ class Person(memops.api.Implementation.DataObject):
       )
 
     for value in values:
-      from ccp.api.lims.ExpBlueprint import ExpBlueprint as importedType
-      if (not isinstance(value, importedType)):
-        raise ApiError("""%s.setExpBlueprints:
+      from ccp.api.lims.ExpBlueprint(import ExpBlueprint(as importedType)
+      if (not isinstance(value, importedType)):)        raise ApiError("""%s.setExpBlueprints:
          value is not of class ccp.lims.ExpBlueprint.ExpBlueprint""" % self.qualifiedName
          + ": %s" % (value,)
         )

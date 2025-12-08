@@ -199,8 +199,7 @@ if __name__ == '__main__':
 
       print("   (%s) - (%s)" % (atomList[0],atomList[1]))
 
-    print
-
+    print()
   #
   # Finally, note that you can read a CCPN project back in as well... use
   # the following as an example:

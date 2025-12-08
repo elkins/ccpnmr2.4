@@ -85,8 +85,8 @@ if __name__ == '__main__':
         print('  Atoms: ',)
 
         for atom in res.sortedAtoms():
-            print atom.name,
-        print('\n')
+            print(atom.name,)
+            print('\n')
 
     # Check if whole project is valid using a class method. The first line
     # is a hack from earlier APIs, which should not be necessary eventually,

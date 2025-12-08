@@ -128,7 +128,8 @@ class MonteProjectFile(MonteGenericFile):
               colIndex = cols.index('1')
               self.headerCols[colIndex] = atomInfo
             
-            line = fin.readline()                
+            line = fin.readline()
+                          
 
       line = fin.readline()
 

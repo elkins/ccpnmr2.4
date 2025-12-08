@@ -69,7 +69,7 @@ class PrintPopup(BasePopup):
   to a file, in one of the following formats: PostScript (PS),
   Encapsulated PostScript (EPS) or Portable Document Format (PDF).
 
-  At its simplest to print out a window you just need to specify the
+  At its simplest to print(out a window you just need to specify the)
   File name, and then click "Save".  But it is likely you will at the
   very least want to change some of the other settings.
 
