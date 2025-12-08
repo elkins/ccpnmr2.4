@@ -1,0 +1,161 @@
+{
+  "timestamp": "2025-12-07T22:15:59.399098",
+  "workflows": {
+    "file_io_2d_spectrum": {
+      "status": "success",
+      "iterations": 20,
+      "mean_time_ms": 1.0162250517169014,
+      "median_time_ms": 1.0032500140368938,
+      "std_time_ms": 0.26346703853013975,
+      "min_time_ms": 0.7258749683387578,
+      "max_time_ms": 1.7762919887900352,
+      "memory_current_mb": 0.001220703125,
+      "memory_peak_mb": 2.007984161376953
+    },
+    "file_io_3d_spectrum": {
+      "status": "success",
+      "iterations": 10,
+      "mean_time_ms": 1.6660083958413452,
+      "median_time_ms": 1.5403544821310788,
+      "std_time_ms": 0.3869731209867818,
+      "min_time_ms": 1.2579999747686088,
+      "max_time_ms": 2.3014579783193767,
+      "memory_current_mb": 0.00122833251953125,
+      "memory_peak_mb": 4.00738525390625
+    },
+    "file_io_text_peak_list": {
+      "status": "success",
+      "iterations": 50,
+      "mean_time_ms": 0.2591641421895474,
+      "median_time_ms": 0.21670802379958332,
+      "std_time_ms": 0.1451519451155157,
+      "min_time_ms": 0.20712503464892507,
+      "max_time_ms": 1.0394580313004553,
+      "memory_current_mb": 0.0002269744873046875,
+      "memory_peak_mb": 0.09326362609863281
+    },
+    "peak_detection_simple": {
+      "status": "success",
+      "iterations": 10,
+      "mean_time_ms": 17.055845796130598,
+      "median_time_ms": 17.183145973831415,
+      "std_time_ms": 0.31185214768550057,
+      "min_time_ms": 16.46337501006201,
+      "max_time_ms": 17.465957964304835,
+      "memory_current_mb": 0.0,
+      "memory_peak_mb": 0.003082275390625
+    },
+    "peak_detection_scipy": {
+      "status": "success",
+      "iterations": 10,
+      "mean_time_ms": 4.584124992834404,
+      "median_time_ms": 4.580812499625608,
+      "std_time_ms": 0.19627444954920625,
+      "min_time_ms": 4.205459030345082,
+      "max_time_ms": 4.895124991890043,
+      "memory_current_mb": 0.0,
+      "memory_peak_mb": 2.274333953857422
+    },
+    "peak_list_ops": {
+      "status": "success",
+      "iterations": 20,
+      "mean_time_ms": 0.9059667441761121,
+      "median_time_ms": 0.6929590017534792,
+      "std_time_ms": 0.8525934782468004,
+      "min_time_ms": 0.6719579687342048,
+      "max_time_ms": 4.616707970853895,
+      "memory_current_mb": 0.001068115234375,
+      "memory_peak_mb": 0.5792636871337891
+    },
+    "slice_1d_extraction": {
+      "status": "success",
+      "iterations": 100,
+      "mean_time_ms": 0.0027275149477645755,
+      "median_time_ms": 0.0026249908842146397,
+      "std_time_ms": 0.0002512962111115906,
+      "min_time_ms": 0.0024579931050539017,
+      "max_time_ms": 0.003958004526793957,
+      "memory_current_mb": 0.0001068115234375,
+      "memory_peak_mb": 0.002655029296875
+    },
+    "slice_2d_extraction": {
+      "status": "success",
+      "iterations": 50,
+      "mean_time_ms": 0.001407461240887642,
+      "median_time_ms": 0.0013750104699283838,
+      "std_time_ms": 0.00011155168416398927,
+      "min_time_ms": 0.0013329554349184036,
+      "max_time_ms": 0.0019999570213258266,
+      "memory_current_mb": 0.00017547607421875,
+      "memory_peak_mb": 0.00139617919921875
+    },
+    "fft_1d": {
+      "status": "success",
+      "iterations": 100,
+      "mean_time_ms": 0.020357532775960863,
+      "median_time_ms": 0.019416998839005828,
+      "std_time_ms": 0.001521185696290327,
+      "min_time_ms": 0.019041006453335285,
+      "max_time_ms": 0.02662499900907278,
+      "memory_current_mb": 0.0,
+      "memory_peak_mb": 0.07967376708984375
+    },
+    "fft_2d": {
+      "status": "success",
+      "iterations": 20,
+      "mean_time_ms": 0.6893977522850037,
+      "median_time_ms": 0.6737290241289884,
+      "std_time_ms": 0.08691005485209015,
+      "min_time_ms": 0.6219999631866813,
+      "max_time_ms": 1.053249987307936,
+      "memory_current_mb": 0.00051116943359375,
+      "memory_peak_mb": 3.0021286010742188
+    },
+    "baseline_correction": {
+      "status": "success",
+      "iterations": 100,
+      "mean_time_ms": 0.043640017975121737,
+      "median_time_ms": 0.043707957956939936,
+      "std_time_ms": 0.002430187564774931,
+      "min_time_ms": 0.038624973967671394,
+      "max_time_ms": 0.0527920201420784,
+      "memory_current_mb": 5.340576171875e-05,
+      "memory_peak_mb": 0.06241607666015625
+    }
+  },
+  "bottlenecks": [
+    {
+      "workflow": "peak_detection_simple",
+      "mean_time_ms": 17.055845796130598,
+      "memory_peak_mb": 0.003082275390625,
+      "reason": "High execution time"
+    },
+    {
+      "workflow": "peak_detection_scipy",
+      "mean_time_ms": 4.584124992834404,
+      "memory_peak_mb": 2.274333953857422,
+      "reason": "High execution time"
+    },
+    {
+      "workflow": "file_io_3d_spectrum",
+      "mean_time_ms": 1.6660083958413452,
+      "memory_peak_mb": 4.00738525390625,
+      "reason": "High execution time"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "workflow": "peak_detection",
+      "recommendation": "Use SciPy peak detection (3.7x faster than simple method)",
+      "simple_time_ms": 17.055845796130598,
+      "scipy_time_ms": 4.584124992834404
+    },
+    {
+      "priority": "INFO",
+      "workflow": "general",
+      "recommendation": "NumPy operations are well-optimized; focus on algorithmic improvements"
+    }
+  ],
+  "summary": {}
+}
