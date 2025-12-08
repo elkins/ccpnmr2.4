@@ -6113,8 +6113,8 @@ class Person(memops.api.Implementation.DataObject):
 
     expBlueprints = dataDict.get('expBlueprints')
     pass
-    for expBlueprint(in expBlueprints:)
-    topObject = expBlueprint.__dict__.get('topObject')
+    for expBlueprint in expBlueprints:
+      topObject = expBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     personInGroups = dataDict.get('personInGroups').values()
@@ -6194,7 +6194,7 @@ class Person(memops.api.Implementation.DataObject):
         editors = editorCitation.__dict__.get('editors')
         editors.remove(self)
 
-    for expBlueprint(in dataDict.get('expBlueprints'):)      if (not (expBlueprint(in objsToBeDeleted)):)        expBlueprint.__dict__['owner'] = None
+    for expBlueprint in dataDict.get('expBlueprints'):      if (not (expBlueprint(in objsToBeDeleted)):)        expBlueprint.__dict__['owner'] = None
 
     for target in dataDict.get('targets'):
       if (not (target in objsToBeDeleted)):

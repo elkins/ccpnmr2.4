@@ -12804,7 +12804,7 @@ so is lysozyme.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint(in relatedExpBlueprints:)
+    for relatedExpBlueprint in relatedExpBlueprints:
     topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
@@ -12858,7 +12858,7 @@ so is lysozyme.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')
@@ -20803,7 +20803,7 @@ cleave nucleic acide sequences at certain positions.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint(in relatedExpBlueprints:)
+    for relatedExpBlueprint in relatedExpBlueprints:
     topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
@@ -20857,7 +20857,7 @@ cleave nucleic acide sequences at certain positions.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')
@@ -22616,7 +22616,7 @@ such as a PCR-primer used to amplify nucleic acid fragments.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint(in relatedExpBlueprints:)
+    for relatedExpBlueprint in relatedExpBlueprints:
     topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
@@ -22670,7 +22670,7 @@ such as a PCR-primer used to amplify nucleic acid fragments.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')
@@ -24333,7 +24333,7 @@ about a construct such as an expression vector plasmid.
 
     relatedExpBlueprints = dataDict.get('relatedExpBlueprints')
     pass
-    for relatedExpBlueprint(in relatedExpBlueprints:)
+    for relatedExpBlueprint in relatedExpBlueprints:
     topObject = relatedExpBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
@@ -24387,7 +24387,7 @@ about a construct such as an expression vector plasmid.
       if (not (refMolCompFeature in objsToBeDeleted)):
         refMolCompFeature.__dict__['refMolComponent'] = None
 
-    for relatedExpBlueprint(in dataDict.get('relatedExpBlueprints'):)      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
+    for relatedExpBlueprint in dataDict.get('relatedExpBlueprints'):      if (not (relatedExpBlueprint(in objsToBeDeleted)):)        trialMolComponents = relatedExpBlueprint.__dict__.get('trialMolComponents')
         trialMolComponents.remove(self)
 
     refSampleComponentStore = dataDict.get('refSampleComponentStore')

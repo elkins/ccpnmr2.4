@@ -58,10 +58,10 @@ from memops.api import Implementation as ApiImp
 from memops.general import Implementation as GenImp
 
 classMapping = {}
-classMapping[types.BooleanType] = ApiImp.AppDataBoolean
-classMapping[types.IntType] = ApiImp.AppDataInt
-classMapping[types.FloatType] = ApiImp.AppDataFloat
-classMapping[types.StringType] = ApiImp.AppDataString
+classMapping[bool] = ApiImp.AppDataBoolean
+classMapping[int] = ApiImp.AppDataInt
+classMapping[float] = ApiImp.AppDataFloat
+classMapping[str] = ApiImp.AppDataString
 
 allowedNotifyFuncs = set(('addAppData', 'setAppDataValue', 'setAppDataValues'))
 

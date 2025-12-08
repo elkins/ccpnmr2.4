@@ -546,7 +546,7 @@ def getHeader(**parameters):
     strapp(useReferences)
   strapp(referenceStartLine)
   if refs:
-    if type(refs) == types.StringType:
+    if type(refs) == str:
       refs = (refs,)
     for ref in refs:
       ss = references.get(ref)

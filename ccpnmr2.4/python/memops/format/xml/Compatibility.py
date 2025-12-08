@@ -2118,7 +2118,7 @@ def special_conv_1_0_204(project):
         storage.load()
 
     # fix ExpBlueprint.BlueprintComponent
-    for expBlueprint(in project.expBlueprints:)
+    for expBlueprint in project.expBlueprints:
     for blueprintComponent in expBlueprint.blueprintComponents:
         corr = molDict.get(blueprintComponent.molecule)
         if corr is not None:

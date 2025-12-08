@@ -88,7 +88,12 @@ class ImportValidator:
             'EditWindow',
             'PopupWindow',
             '.frames.',  # ccpnmr.analysis.frames.* - GUI components
-            '.popups.',  # GUI popup modules
+            '.popups.',  # ccpnmr.analysis.popups.* - GUI popup modules
+            '.Popup',    # Any class ending in Popup (GUI)
+            'Popup.',    # Any module starting with Popup (GUI)
+            'Gui',       # GUI-related modules
+            '.macros.',  # ccpnmr.analysis.macros - GUI macros
+            '.wrappers.',  # GUI wrappers
             # Platform-specific modules that may not be available
             '.WinPeakList',
             # Modules that require external dependencies not in core
@@ -96,6 +101,10 @@ class ImportValidator:
             # Example/workshop code (not core library)
             '.examples.',
             '.workshop.',
+            # Update system (GUI)
+            'ccpnmr.update.',
+            'ccpnmr.nexus.',  # GUI-based analysis
+            'ccpnmr.eci.',    # GUI-based entry completion
         ]
 
         for pattern in skip_patterns:

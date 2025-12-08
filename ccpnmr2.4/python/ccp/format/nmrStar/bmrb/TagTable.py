@@ -310,7 +310,7 @@ class TagTable (Lister):
             for row_id in rows:
                 for col_id in cols:
                     val_type = type(self.tagvalues[col_id][row_id])
-                    if val_type !=  types.StringType:
+                    if val_type != str:
                         print("ERROR: type %s is not allowed as a value in a tagtable" % val_type)
                         print("ERROR: found for tagtable[%s][%s]" % ( self.tagnames[ col_id ], row_id ))
                         return 1

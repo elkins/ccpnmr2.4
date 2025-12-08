@@ -7877,7 +7877,7 @@ class ExpBlueprintStore(memops.api.Implementation.TopObject):
       topObjectsToCheck.add(topObject)
 
     expBlueprints = dataDict.get('expBlueprints').values()
-    for expBlueprint(in expBlueprints:)
+    for expBlueprint in expBlueprints:
     if (not (expBlueprint(in objsToBeDeleted)):)        objsToBeDeleted.add(expBlueprint)
         objsToBeChecked.append(expBlueprint)
 

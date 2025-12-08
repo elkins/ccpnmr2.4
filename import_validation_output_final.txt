@@ -1,0 +1,2709 @@
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:87: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.pyc$','.+\.pyo$','.+\.jar$','.+\.class$',
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/memops/general/license/headers.py:88: SyntaxWarning: invalid escape sequence '\.'
+  '.+\.o$','.+\.so$', '.+\.exe$', '^\..*'
+
+======================================================================
+Task 1.2: Comprehensive Import Validation
+======================================================================
+
+Python root: /Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python
+Python version: 3.12.10 | packaged by conda-forge | (main, Apr 10 2025, 22:19:24) [Clang 18.1.8 ]
+
+
+======================================================================
+Validating namespace: memops
+======================================================================
+
+Discovered 264 modules in memops.*
+
+Model read finished. Duration 0.15848112106323242 
+Model validity check skipped
+✅ memops.api.AccessControl
+✅ memops.api.Implementation
+✅ memops.c.python_impl.benchmark_gauss_jordan
+✅ memops.c.python_impl.benchmark_geometry_sorts
+✅ memops.c.python_impl.benchmark_line_fit
+✅ memops.c.python_impl.benchmark_random
+✅ memops.c.python_impl.color
+✅ memops.c.python_impl.cpmg
+✅ memops.c.python_impl.diag_dbl
+✅ memops.c.python_impl.eigenvalue
+✅ memops.c.python_impl.fit
+✅ memops.c.python_impl.fit1d
+✅ memops.c.python_impl.gamma
+✅ memops.c.python_impl.gauss_jordan
+✅ memops.c.python_impl.gauss_jordan_numba
+✅ memops.c.python_impl.geometry
+✅ memops.c.python_impl.geometry_numba
+✅ memops.c.python_impl.hash_list
+✅ memops.c.python_impl.hash_table
+✅ memops.c.python_impl.int_array
+✅ memops.c.python_impl.linalg
+✅ memops.c.python_impl.linalg_numba
+✅ memops.c.python_impl.line_fit
+✅ memops.c.python_impl.line_fit_numba
+✅ memops.c.python_impl.list
+✅ memops.c.python_impl.mem_cache
+❌ memops.c.python_impl.mem_cache_numba
+   Error: SyntaxError: unmatched ')' (mem_cache_numba.py, line 216)
+
+✅ memops.c.python_impl.nonlinear_model
+✅ memops.c.python_impl.random
+✅ memops.c.python_impl.random_numba
+✅ memops.c.python_impl.sorts
+✅ memops.c.python_impl.sorts_numba
+✅ memops.c.python_impl.utility
+⏭️  memops.editor.ApplicationTemplate (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.ArchiveProjectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.BasePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.ObjectTable (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.ObjectTablePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.OpenProjectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.PopupTemplate (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.PrintPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.SaveProjectFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.SaveProjectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.UrlViewerFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.Util (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.WebBrowser (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor.WidgetCountPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.editor._licenseInfo (skipped: GUI/platform-specific (out of scope))
+✅ memops.format.compatibility.Converters
+❌ memops.format.compatibility.downgrade.v_3_0_a1.General
+   Error: IndentationError: expected an indented block after 'if' statement on line 99 (General.py, line 100)
+
+✅ memops.format.compatibility.downgrade.v_3_0_a1.Major
+✅ memops.format.compatibility.downgrade.v_3_0_a1.MapInfo
+✅ memops.format.compatibility.downgrade.v_3_0_a1.Minor
+✅ memops.format.compatibility.part1.Converters1
+✅ memops.format.compatibility.part2.Converters2
+✅ memops.format.compatibility.upgrade.v_1_1_2.General
+✅ memops.format.compatibility.upgrade.v_1_1_2.Major
+✅ memops.format.compatibility.upgrade.v_1_1_2.MapInfo
+✅ memops.format.compatibility.upgrade.v_1_1_2.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_4.General
+✅ memops.format.compatibility.upgrade.v_2_0_4.Major
+✅ memops.format.compatibility.upgrade.v_2_0_4.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_4.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_5.General
+✅ memops.format.compatibility.upgrade.v_2_0_5.Major
+✅ memops.format.compatibility.upgrade.v_2_0_5.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_5.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_6.General
+✅ memops.format.compatibility.upgrade.v_2_0_6.Major
+✅ memops.format.compatibility.upgrade.v_2_0_6.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_6.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a0.General
+✅ memops.format.compatibility.upgrade.v_2_0_a0.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a0.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a0.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a1.General
+✅ memops.format.compatibility.upgrade.v_2_0_a1.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a1.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a1.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a2.General
+✅ memops.format.compatibility.upgrade.v_2_0_a2.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a2.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a2.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_a3.General
+✅ memops.format.compatibility.upgrade.v_2_0_a3.Major
+✅ memops.format.compatibility.upgrade.v_2_0_a3.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_a3.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_b1.General
+✅ memops.format.compatibility.upgrade.v_2_0_b1.Major
+✅ memops.format.compatibility.upgrade.v_2_0_b1.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_b1.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_b2.General
+✅ memops.format.compatibility.upgrade.v_2_0_b2.Major
+✅ memops.format.compatibility.upgrade.v_2_0_b2.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_b2.Minor
+✅ memops.format.compatibility.upgrade.v_2_0_b3.General
+✅ memops.format.compatibility.upgrade.v_2_0_b3.Major
+✅ memops.format.compatibility.upgrade.v_2_0_b3.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_0_b3.Minor
+✅ memops.format.compatibility.upgrade.v_2_1_0.General
+✅ memops.format.compatibility.upgrade.v_2_1_0.Major
+✅ memops.format.compatibility.upgrade.v_2_1_0.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_1_0.Minor
+✅ memops.format.compatibility.upgrade.v_2_1_1.General
+✅ memops.format.compatibility.upgrade.v_2_1_1.Major
+✅ memops.format.compatibility.upgrade.v_2_1_1.MapInfo
+✅ memops.format.compatibility.upgrade.v_2_1_1.Minor
+❌ memops.format.xml.Compatibility
+   Error: IndentationError: expected an indented block after 'for' statement on line 2121 (Compatibility.py, line 2122)
+
+✅ memops.format.xml.Util
+✅ memops.format.xml.XmlGen
+✅ memops.format.xml.XmlIO
+✅ memops.format.xml._licenseInfo
+✅ memops.general.Application
+✅ memops.general.Constants
+✅ memops.general.Credits
+✅ memops.general.Implementation
+✅ memops.general.Io
+✅ memops.general.TextWriter
+✅ memops.general.TextWriter_py_2_1
+✅ memops.general.Util
+✅ memops.general.Version
+✅ memops.general._licenseInfo
+✅ memops.general.baseDataTypes.Any
+✅ memops.general.baseDataTypes.Boolean
+✅ memops.general.baseDataTypes.DateTime
+✅ memops.general.baseDataTypes.Dict
+✅ memops.general.baseDataTypes.Double
+✅ memops.general.baseDataTypes.Float
+✅ memops.general.baseDataTypes.Int
+✅ memops.general.baseDataTypes.List
+✅ memops.general.baseDataTypes.Long
+✅ memops.general.baseDataTypes.String
+✅ memops.general.baseDataTypes._licenseInfo
+✅ memops.general.license._licenseInfo
+✅ memops.general.license.contacts
+✅ memops.general.license.formats
+❌ memops.general.license.headers
+   Error: SyntaxError: invalid syntax (headers.py, line 445)
+
+✅ memops.general.license.licenses
+✅ memops.general.license.references
+✅ memops.global_.python_impl.block_file
+✅ memops.global_.python_impl.clipping
+✅ memops.global_.python_impl.contourer
+✅ memops.global_.python_impl.line_fit
+✅ memops.global_.python_impl.py_store_file
+✅ memops.global_.python_impl.py_store_handler
+✅ memops.global_.python_impl.store_file
+✅ memops.global_.python_impl.store_handler
+⏭️  memops.gui.Base (skipped: GUI/platform-specific (out of scope))/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+
+⏭️  memops.gui.BasePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.BooleanPulldownMenu (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Button (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ButtonList (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ButtonScrollbar (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Canvas (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.CheckButton (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.CheckButtons (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Color (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ColorChooser (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.DataEntry (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Documentation (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Entry (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.EntryScale (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.FileSelect (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.FileSelectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.FloatEntry (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.FontList (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.FontMenu (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Frame (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.HelpPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.IntEntry (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ItemSelectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Label (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LabelDivider (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LabelFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LabeledEntries (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LabeledEntry (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LabeledFloatEntry (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LabeledLabel (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LabeledScale (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.LinkChart (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Menu (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.MessageReporter (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.MultiSelectionList (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.MultiWidget (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ObjectsTable (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.PartitionedSelector (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.PrintFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ProgressBar (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.PulldownList (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.PulldownMenu (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.QueryDialogBox (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.RadioButton (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.RadioButtons (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.RegionScrollbar (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.RegionSelector (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Scale (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Scrollbar (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledCanvas (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledDensityMatrix (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledGraph (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledHtml (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledListbox (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledMatrix (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledText (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ScrolledWindow (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Separator (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Spacer (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.TabbedFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.TableExportPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Text (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Ticker (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ToggleArrow (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ToggleButton (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ToggleLabel (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ToolTip (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Tree (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.Util (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.ValueRamp (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui.WebBrowser (skipped: GUI/platform-specific (out of scope))
+⏭️  memops.gui._licenseInfo (skipped: GUI/platform-specific (out of scope))
+✅ memops.math.MathException
+✅ memops.math.fit.FitClass
+✅ memops.math.fit.FitExp
+✅ memops.math.fit.FitExpWithBaseline
+✅ memops.math.fit.FitLinear
+✅ memops.math.fit.FitLogLinear
+✅ memops.math.fit.FitNonlinear
+✅ memops.math.fit.fit
+✅ memops.math.fit.fitClasses
+✅ memops.math.fit.linearFit
+✅ memops.math.fit.logLinearFit
+✅ memops.math.fit.nonlinearFit
+✅ memops.math.gaussJordan
+✅ memops.metamodel.ImpConstants
+✅ memops.metamodel.MetaModel
+✅ memops.metamodel.ModelPortal
+✅ memops.metamodel.ModelTraverse
+✅ memops.metamodel.ModelTraverse_py_2_1
+✅ memops.metamodel.OpTypes
+✅ memops.metamodel.TaggedValues
+✅ memops.metamodel.Util
+✅ memops.metamodel.XmlModelIo
+✅ memops.metamodel._licenseInfo
+✅ memops.universal.BlockData
+✅ memops.universal.Constants
+❌ memops.universal.DataEntry
+   Error: SyntaxError: invalid syntax (DataEntry.py, line 135)
+
+✅ memops.universal.ElementTree
+✅ memops.universal.Geometry
+✅ memops.universal.Io
+✅ memops.universal.MessageReporter
+✅ memops.universal.Output
+✅ memops.universal.Pdf
+✅ memops.universal.PostScript
+✅ memops.universal.PrintHandler
+✅ memops.universal.PrintTicks
+❌ memops.universal.Region1D
+   Error: SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ memops.universal.Region2D
+   Error: SyntaxError: invalid syntax (Region2D.py, line 83)
+
+✅ memops.universal.Ticks
+✅ memops.universal.Url
+✅ memops.universal.Util
+✅ memops.universal._licenseInfo
+✅ memops.xml.AccessControl
+❌ memops.xml.Implementation
+   Error: SyntaxError: invalid syntax (Implementation.py, line 207)
+
+
+======================================================================
+Validating namespace: ccp
+======================================================================
+
+Discovered 406 modules in ccp.*
+
+❌ ccp.api.general.Affiliation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.general.Annotation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.general.Citation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.api.general.DataLocation
+✅ ccp.api.general.DbRef
+❌ ccp.api.general.Instrument
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.api.general.KeywordDefinition
+❌ ccp.api.general.Method
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.api.general.Taxonomy
+✅ ccp.api.general.Template
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/ExpBlueprint.py:72: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/Experiment.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:79: SyntaxWarning: invalid escape sequence '\]'
+  NOT_CHAR_DATA   = re.compile('[^<&]*\]\]>[^<&]*')
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:82: SyntaxWarning: invalid escape sequence '\s'
+  SPACE           = re.compile('\s+')
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:83: SyntaxWarning: invalid escape sequence '\s'
+  OPTIONAL_SPACE  = re.compile('\s*')
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:86: SyntaxWarning: invalid escape sequence '\.'
+  ENCODING_NAME   = re.compile('[A-Za-z]([A-Za-z0-9\._]|\-)*')
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:88: SyntaxWarning: invalid escape sequence '\-'
+  VERSION_NUMBER  = re.compile('([a-zA-Z0-9_.:]|\-)+')
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:102: SyntaxWarning: invalid escape sequence '\.'
+  NAMECHAR = re.compile(LETTER.pattern + '|' + DIGIT.pattern + '|\.|\-|_|:')
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:117: SyntaxWarning: invalid escape sequence '\?'
+  XML_DECLARATION = re.compile('<\?xml' + VERSION_INFO.pattern + \
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:120: SyntaxWarning: invalid escape sequence '\?'
+  OPTIONAL_SPACE.pattern + '\?>')
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:134: SyntaxWarning: invalid escape sequence '\['
+  '(\[' + '(' + MARKUP_DECLARATION.pattern + \
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/aria/xmlparser.py:136: SyntaxWarning: invalid escape sequence '\]'
+  '\]' + OPTIONAL_SPACE.pattern + ')?>')
+✅ ccp.api.lims.Classification
+❌ ccp.api.lims.Crystallization
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.ExpBlueprint
+   Error: SyntaxError: invalid syntax (ExpBlueprint.py, line 304)
+
+❌ ccp.api.lims.Experiment
+   Error: SyntaxError: unmatched ')' (Experiment.py, line 1128)
+
+❌ ccp.api.lims.Holder
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.Location
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.Protocol
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.RefData
+   Error: IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.api.lims.RefSampleComponent
+   Error: IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.api.lims.Sample
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.Target
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.api.molecule.ChemComp
+✅ ccp.api.molecule.ChemCompCharge
+✅ ccp.api.molecule.ChemCompCoord
+✅ ccp.api.molecule.ChemCompLabel
+✅ ccp.api.molecule.ChemElement
+❌ ccp.api.molecule.LabeledMolecule
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.MolStructure
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.MolSystem
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.Molecule
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.api.molecule.Stereochemistry
+❌ ccp.api.molecule.Validation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.Nmr
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.NmrCalc
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.NmrConstraint
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.NmrEntry
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.api.nmr.NmrExpPrototype
+✅ ccp.api.nmr.NmrReference
+❌ ccp.api.nmr.NmrScreen
+   Error: IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+✅ ccp.c.python_impl.atom
+✅ ccp.c.python_impl.atom_numba
+✅ ccp.c.python_impl.bond
+✅ ccp.c.python_impl.bond_numba
+✅ ccp.c.python_impl.struct_util
+✅ ccp.c.python_impl.structure
+⏭️  ccp.examples.createMolecularSystem (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex1 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex10 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex11 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex11b (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex12 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex2 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex3 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex4 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex5 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex6 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex7 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex8 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.help_doc.src.ex9 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.loadProject (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session1.changeRepos (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session1.createSimpleObjects (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session1.makeTopObjects (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session1.navigateObjects (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session2.loadSequence (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session2.makeCarbMolecule (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session2.makeDnaMolSystem (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session2.makeDnaMolecule (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session2.makeMolSystem (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session3.readCoordinates (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session3.structureEnsemble (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session4.nmrExperiment (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session4.peakContrib (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session5.nmrConstraints (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session5.nmrMeasurements (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session5.resonanceToMethyls (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.examples.workshop.session5.resonanceToSingleAtoms (skipped: GUI/platform-specific (out of scope))
+✅ ccp.format._licenseInfo
+✅ ccp.format.amber.coordinatesIO
+✅ ccp.format.amber.dihedralConstraintsIO
+✅ ccp.format.amber.distanceConstraintsIO
+✅ ccp.format.amber.generalIO
+✅ ccp.format.amber.hBondConstraintsIO
+✅ ccp.format.amber.sequenceIO
+✅ ccp.format.ansig.AnsigCrosspeak
+✅ ccp.format.ansig.AnsigParse
+✅ ccp.format.ansig.AnsigProject
+✅ ccp.format.ansig.AnsigSequence
+✅ ccp.format.ansig.AnsigSpectrum
+✅ ccp.format.ansig.generalIO
+❌ ccp.format.ansig.peaksIO
+   Error: SyntaxError: invalid syntax (peaksIO.py, line 310)
+
+❌ ccp.format.ansig.projectIO
+   Error: SyntaxError: invalid syntax (projectIO.py, line 293)
+
+✅ ccp.format.ansig.sequenceIO
+✅ ccp.format.aqua.distanceConstraintsIO
+✅ ccp.format.aqua.generalIO
+✅ ccp.format.aqua.hBondConstraintsIO
+✅ ccp.format.aqua.readAquaInfo
+✅ ccp.format.aria.generalIO
+✅ ccp.format.aria.sequenceIO
+❌ ccp.format.aria.xmlparser
+   Error: SyntaxError: invalid syntax (xmlparser.py, line 221)
+
+❌ ccp.format.aria.xmlreader
+   Error: SyntaxError: invalid syntax (xmlreader.py, line 308)
+
+✅ ccp.format.auremol.chemShiftsIO
+✅ ccp.format.auremol.coordinatesIO
+✅ ccp.format.auremol.generalIO
+✅ ccp.format.auremol.peaksIO
+❌ ccp.format.auremol.sequenceIO
+   Error: SyntaxError: invalid syntax (sequenceIO.py, line 259)
+
+✅ ccp.format.autoAssign.chemShiftsIO
+✅ ccp.format.autoAssign.generalIO
+✅ ccp.format.autoAssign.peaksIO
+❌ ccp.format.autoAssign.projectIO
+   Error: SyntaxError: invalid syntax (projectIO.py, line 264)
+
+✅ ccp.format.autoAssign.sequenceIO
+✅ ccp.format.azara.generalIO
+✅ ccp.format.azara.processingParsIO
+✅ ccp.format.azara.processingScriptIO
+✅ ccp.format.bruker.Constants
+✅ ccp.format.bruker.Util
+✅ ccp.format.bruker.acqParsHelpReader
+✅ ccp.format.bruker.acqParsIO
+✅ ccp.format.bruker.generalIO
+✅ ccp.format.bruker.processingParsIO
+✅ ccp.format.bruker.pulseProgramIO
+✅ ccp.format.ccpNmr.generalIO
+✅ ccp.format.ccpNmr.peaksIO
+✅ ccp.format.charmm.coordinatesIO
+✅ ccp.format.charmm.generalIO
+✅ ccp.format.charmm.sequenceIO
+✅ ccp.format.cns.chemShiftsIO
+✅ ccp.format.cns.coordinatesIO
+✅ ccp.format.cns.csaConstraintsIO
+✅ ccp.format.cns.dihedralConstraintsIO
+✅ ccp.format.cns.distanceConstraintsIO
+✅ ccp.format.cns.generalIO
+✅ ccp.format.cns.hBondConstraintsIO
+✅ ccp.format.cns.jCouplingConstraintsIO
+✅ ccp.format.cns.rdcConstraintsIO
+✅ ccp.format.cns.sequenceIO
+❌ ccp.format.concoord.distanceConstraintsIO
+   Error: SyntaxError: invalid syntax (distanceConstraintsIO.py, line 317)
+
+✅ ccp.format.concoord.generalIO
+✅ ccp.format.cosmos.chemShiftsIO/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/nmrStar/bmrb/File.py:21: SyntaxWarning: invalid escape sequence '\ '
+  Fixed problem that shows up in windows only (\ to continue end of line)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/sparky/peaksIO.py:96: SyntaxWarning: invalid escape sequence '\s'
+  ['freqDimsPpm',1,1,11,'ndim',"(w[1-5]\s*)"],
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/sparky/peaksIO.py:97: SyntaxWarning: invalid escape sequence '\s'
+  ['freqDimsHz',1,1,11,'ndim',"(w[1-5]\s+\(Hz\)\s*)"],
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/sparky/peaksIO.py:96: SyntaxWarning: invalid escape sequence '\s'
+  ['freqDimsPpm',1,1,11,'ndim',"(w[1-5]\s*)"],
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/format/sparky/peaksIO.py:97: SyntaxWarning: invalid escape sequence '\s'
+  ['freqDimsHz',1,1,11,'ndim',"(w[1-5]\s+\(Hz\)\s*)"],
+
+✅ ccp.format.cosmos.coordinatesIO
+✅ ccp.format.cosmos.distanceConstraintsIO
+✅ ccp.format.cosmos.generalIO
+✅ ccp.format.cosmos.projectIO
+✅ ccp.format.csi.chemShiftsIO
+✅ ccp.format.csi.generalIO
+✅ ccp.format.csi.sequenceIO
+✅ ccp.format.cyana.coordinatesIO
+✅ ccp.format.cyana.cyanaLibParser
+✅ ccp.format.cyana.dihedralConstraintsIO
+❌ ccp.format.cyana.distanceConstraintsIO
+   Error: SyntaxError: invalid syntax (distanceConstraintsIO.py, line 105)
+
+✅ ccp.format.cyana.generalIO
+✅ ccp.format.cyana.hBondConstraintsIO
+✅ ccp.format.cyana.peaksIO
+✅ ccp.format.cyana.rdcConstraintsIO
+✅ ccp.format.cyana.sequenceIO
+❌ ccp.format.discover.dihedralConstraintsIO
+   Error: SyntaxError: invalid syntax (dihedralConstraintsIO.py, line 151)
+
+✅ ccp.format.discover.distanceConstraintsIO
+✅ ccp.format.discover.generalIO
+✅ ccp.format.dyana.coordinatesIO
+✅ ccp.format.dyana.dihedralConstraintsIO
+✅ ccp.format.dyana.distanceConstraintsIO
+✅ ccp.format.dyana.generalIO
+✅ ccp.format.dyana.hBondConstraintsIO
+✅ ccp.format.dyana.rdcConstraintsIO
+✅ ccp.format.dyana.sequenceIO
+✅ ccp.format.fasta.generalIO
+✅ ccp.format.fasta.sequenceIO
+✅ ccp.format.felix.generalIO
+✅ ccp.format.felix.peaksIO
+✅ ccp.format.general.Constants
+✅ ccp.format.general.Util
+✅ ccp.format.general.acqParsDefs
+✅ ccp.format.general.formatIO
+✅ ccp.format.gromacs.distanceConstraintsIO
+✅ ccp.format.gromacs.generalIO
+✅ ccp.format.gromos.coordinatesIO
+✅ ccp.format.gromos.generalIO
+✅ ccp.format.gromos.sequenceIO
+✅ ccp.format.mardigras.distanceConstraintsIO
+✅ ccp.format.mardigras.generalIO
+✅ ccp.format.mars.assignmentIO
+✅ ccp.format.mars.chemShiftsIO
+✅ ccp.format.mars.generalIO
+✅ ccp.format.mars.projectIO
+✅ ccp.format.mars.sequenceIO
+✅ ccp.format.marvin.generalIO
+❌ ccp.format.marvin.peaksIO
+   Error: SyntaxError: invalid syntax (peaksIO.py, line 168)
+
+✅ ccp.format.mmCif.Util
+❌ ccp.format.mmCif.coordinatesIO
+   Error: SyntaxError: invalid syntax (sequenceIO.py, line 324)
+
+✅ ccp.format.mmCif.generalIO
+✅ ccp.format.mmCif.sans.CifParser
+✅ ccp.format.mmCif.sans.SansParser
+✅ ccp.format.mmCif.sans.handlers
+✅ ccp.format.mmCif.sans.lexer
+❌ ccp.format.mmCif.sequenceIO
+   Error: SyntaxError: invalid syntax (sequenceIO.py, line 324)
+
+✅ ccp.format.module.generalIO
+✅ ccp.format.module.rdcConstraintsIO
+❌ ccp.format.mol.chemCompsIO
+   Error: SyntaxError: invalid syntax (chemCompsIO.py, line 381)
+
+✅ ccp.format.mol.generalIO
+✅ ccp.format.mol2.chemCompsIO
+✅ ccp.format.mol2.generalIO
+✅ ccp.format.mol2.sequenceIO
+✅ ccp.format.molmol.coordinatesIO
+✅ ccp.format.molmol.generalIO
+✅ ccp.format.molmol.sequenceIO
+✅ ccp.format.monte.chemShiftsIO
+✅ ccp.format.monte.generalIO
+✅ ccp.format.monte.projectIO
+✅ ccp.format.monte.sequenceIO
+✅ ccp.format.nmrDraw.generalIO
+✅ ccp.format.nmrDraw.peaksIO
+✅ ccp.format.nmrPipe.conversionParsIO
+✅ ccp.format.nmrPipe.generalIO
+✅ ccp.format.nmrPipe.processingScriptIO
+❌ ccp.format.nmrStar.bmrb.File
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.bmrb.SaveFrame
+   Error: SyntaxError: unterminated string literal (detected at line 90) (SaveFrame.py, line 90)
+
+✅ ccp.format.nmrStar.bmrb.TagTable
+✅ ccp.format.nmrStar.bmrb.Text
+✅ ccp.format.nmrStar.bmrb.Utils
+❌ ccp.format.nmrStar.chemShiftsIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+✅ ccp.format.nmrStar.constants
+❌ ccp.format.nmrStar.coordinatesIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.csaIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.dihedralConstraintsIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.distanceConstraintsIO
+   Error: IndentationError: expected an indented block after 'for' statement on line 522 (distanceConstraintsIO.py, line 523)
+
+❌ ccp.format.nmrStar.generalIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.hBondConstraintsIO
+   Error: ModuleNotFoundError: No module named 'distanceConstraintsIO'
+
+❌ ccp.format.nmrStar.hExchProtectionIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.hExchRateIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.hetNoeIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.jCouplingIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.orderParamIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.peopleAndCitationsIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.projectIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.rdcConstraintsIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.rdcIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.sequenceIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.t1RelaxIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.t1RhoRelaxIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.t2RelaxIO
+   Error: SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+✅ ccp.format.nmrStar.util
+✅ ccp.format.nmrView.chemShiftsIO
+✅ ccp.format.nmrView.generalIO
+✅ ccp.format.nmrView.peaksIO
+✅ ccp.format.nmrView.processingParsIO
+❌ ccp.format.nmrView.projectIO
+   Error: SyntaxError: invalid syntax (projectIO.py, line 323)
+
+✅ ccp.format.nmrView.sequenceIO
+✅ ccp.format.pales.generalIO
+❌ ccp.format.pales.rdcConstraintsIO
+   Error: IndentationError: unexpected indent (rdcConstraintsIO.py, line 162)
+
+❌ ccp.format.pdb.chemCompsIO
+   Error: SyntaxError: invalid syntax (chemCompsIO.py, line 191)
+
+✅ ccp.format.pdb.cifCodeRedirect
+❌ ccp.format.pdb.coordinatesIO
+   Error: SyntaxError: invalid syntax (coordinatesIO.py, line 437)
+
+✅ ccp.format.pdb.generalIO
+✅ ccp.format.pdb.peopleAndCitationsIO
+❌ ccp.format.pdb.sequenceIO
+   Error: SyntaxError: invalid syntax (sequenceIO.py, line 341)
+
+✅ ccp.format.pipp.chemShiftsIO
+✅ ccp.format.pipp.generalIO
+✅ ccp.format.pipp.peaksIO
+✅ ccp.format.pipp.sequenceIO
+✅ ccp.format.pistachio.chemShiftsIO
+✅ ccp.format.pistachio.generalIO
+✅ ccp.format.pistachio.sequenceIO
+✅ ccp.format.pronto.chemShiftsIO
+✅ ccp.format.pronto.generalIO
+✅ ccp.format.pronto.peaksIO
+❌ ccp.format.pronto.sequenceIO
+   Error: IndentationError: expected an indented block after 'for' statement on line 163 (sequenceIO.py, line 164)
+
+✅ ccp.format.pseudoPdb.coordinatesIO
+✅ ccp.format.pseudoPdb.generalIO
+✅ ccp.format.pseudoPdb.sequenceIO
+✅ ccp.format.shiftx.chemShiftsIO
+✅ ccp.format.shiftx.generalIO
+✅ ccp.format.shiftx.sequenceIO
+✅ ccp.format.shifty.chemShiftsIO
+✅ ccp.format.shifty.generalIO
+✅ ccp.format.shifty.sequenceIO
+✅ ccp.format.sparky.chemShiftsIO
+✅ ccp.format.sparky.generalIO
+❌ ccp.format.sparky.peaksIO
+   Error: SyntaxError: invalid syntax (peaksIO.py, line 211)
+
+❌ ccp.format.sparky.projectIO
+   Error: SyntaxError: invalid syntax (peaksIO.py, line 211)
+
+✅ ccp.format.sparky.sequenceIO
+❌ ccp.format.spectra.OpenSpectrum
+   Error: ImportError: cannot import name 'atoi' from 'string' (/Users/georgeelkins/miniforge3/lib/python3.12/string.py)
+
+✅ ccp.format.spectra.params.AzaraParams
+✅ ccp.format.spectra.params.BrukerParams
+✅ ccp.format.spectra.params.ExternalParams/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/Experiment.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/lims/RefSampleComponent.py:74: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+
+✅ ccp.format.spectra.params.FactorisedParams
+✅ ccp.format.spectra.params.FelixParams
+✅ ccp.format.spectra.params.NmrPipeData
+✅ ccp.format.spectra.params.NmrPipeParams
+❌ ccp.format.spectra.params.NmrViewParams
+   Error: ImportError: cannot import name 'atoi' from 'string' (/Users/georgeelkins/miniforge3/lib/python3.12/string.py)
+
+✅ ccp.format.spectra.params.UcsfParams
+✅ ccp.format.spectra.params.VarianParams
+✅ ccp.format.spectra.params.XeasyData
+✅ ccp.format.spectra.params.XeasyParams
+✅ ccp.format.talos.chemShiftsIO
+✅ ccp.format.talos.dihedralConstraintsIO
+✅ ccp.format.talos.generalIO
+✅ ccp.format.talos.projectIO
+✅ ccp.format.talos.sequenceIO
+✅ ccp.format.targetedAcquisition.chemShiftsIO
+✅ ccp.format.targetedAcquisition.generalIO
+✅ ccp.format.targetedAcquisition.sequenceIO
+✅ ccp.format.varian.acqParsHelpReader
+✅ ccp.format.varian.acqParsIO
+✅ ccp.format.varian.generalIO
+✅ ccp.format.varian.varianFile
+✅ ccp.format.xeasy.chemShiftsIO
+✅ ccp.format.xeasy.generalIO
+❌ ccp.format.xeasy.peakAssignmentsIO
+   Error: SyntaxError: invalid decimal literal (peakAssignmentsIO.py, line 302)
+
+✅ ccp.format.xeasy.peaksIO
+✅ ccp.format.xeasy.sequenceIO
+❌ ccp.general.ArgumentServer
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccp.general.ChemCompOverview
+✅ ccp.general.Command
+✅ ccp.general.Constants
+✅ ccp.general.Copy
+✅ ccp.general.Geometry
+✅ ccp.general.Io
+❌ ccp.general.SelectObject
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccp.general.Util
+✅ ccp.general._licenseInfo
+⏭️  ccp.gui.ChemCompEditor (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.ChemCompFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.DataLocationFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.DataLocationPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.Io (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.NmrExpPrototypeEditor (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.ViewChemCompVarFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.ViewRamachandranFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui.ViewStructureFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccp.gui._licenseInfo (skipped: GUI/platform-specific (out of scope))
+❌ ccp.lib.Bmrb.bmrb
+   Error: SyntaxError: unmatched ')' (bmrb.py, line 1032)
+
+❌ ccp.lib.Bmrb.ciftest
+   Error: SyntaxError: invalid syntax (CifParser.py, line 34)
+
+❌ ccp.lib.Bmrb.ordereddict
+   Error: ImportError: cannot import name 'DictMixin' from 'collections' (/Users/georgeelkins/miniforge3/lib/python3.12/collections/__init__.py)
+
+❌ ccp.lib.Bmrb.sans.CifParser
+   Error: SyntaxError: invalid syntax (CifParser.py, line 34)
+
+✅ ccp.lib.Bmrb.sans.SansParser
+✅ ccp.lib.Bmrb.sans.handlers
+✅ ccp.lib.Bmrb.sans.lexer
+❌ ccp.lib.Bmrb.test
+   Error: SyntaxError: invalid syntax (CifParser.py, line 34)
+
+❌ ccp.lib.Bmrb.testNef
+   Error: SyntaxError: unmatched ')' (bmrb.py, line 1032)
+
+✅ ccp.lib.DataConvertLib
+❌ ccp.lib.MoleculeAlign
+   Error: NameError: name 'unichr' is not defined
+
+❌ ccp.lib.MoleculeModify
+   Error: SyntaxError: invalid syntax (MoleculeModify.py, line 158)
+
+❌ ccp.lib.MoleculeQuery
+   Error: NameError: name 'unichr' is not defined
+
+✅ ccp.lib.NmrExpPrototype
+❌ ccp.lib.StructureIo
+   Error: NameError: name 'unichr' is not defined
+
+❌ ccp.lib.StructureLib
+   Error: NameError: name 'unichr' is not defined
+
+✅ ccp.lib.nmr.Nmr.AbstractDataDim
+✅ ccp.lib.nmr.Nmr.DataSource
+✅ ccp.lib.nmr.Nmr.Experiment
+✅ ccp.math.fit.FitInversionRecovery
+✅ ccp.math.fit.FitKdMonomerDimerFastExchange
+✅ ccp.math.fit.FitKdProteinLigandFastExchange
+✅ ccp.math.fit.FitKdProteinLigandSlowExchange
+✅ ccp.math.fit.fitClasses
+✅ ccp.util.Assignment
+✅ ccp.util.LabeledMolecule
+❌ ccp.util.Molecule
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.util.Nef
+   Error: NameError: name 'unichr' is not defined
+
+✅ ccp.util.NmrCalc
+✅ ccp.util.NmrExpPrototype
+❌ ccp.util.ShapeUtil
+   Error: SyntaxError: invalid syntax (ShapeUtil.py, line 26)
+
+✅ ccp.util.Software
+✅ ccp.util.Spectrum
+✅ ccp.util.Structure
+❌ ccp.util.V2Upgrade
+   Error: ModuleNotFoundError: No module named 'ccpncore'
+
+✅ ccp.util.Validation
+✅ ccp.util._licenseInfo
+❌ ccp.xml.general.Affiliation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.general.Annotation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.general.Citation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.xml.general.DataLocation
+✅ ccp.xml.general.DbRef
+❌ ccp.xml.general.Instrument
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.xml.general.KeywordDefinition
+❌ ccp.xml.general.Method
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.xml.general.Taxonomy
+✅ ccp.xml.general.Template
+✅ ccp.xml.lims.Classification
+❌ ccp.xml.lims.Crystallization
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.ExpBlueprint
+   Error: SyntaxError: invalid syntax (ExpBlueprint.py, line 65)
+
+❌ ccp.xml.lims.Experiment
+   Error: SyntaxError: unmatched ')' (Experiment.py, line 1128)
+
+❌ ccp.xml.lims.Holder
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.Location
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.Protocol
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.RefData
+   Error: IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.xml.lims.RefSampleComponent
+   Error: IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.xml.lims.Sample
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.Target
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.xml.molecule.ChemComp
+✅ ccp.xml.molecule.ChemCompCharge
+✅ ccp.xml.molecule.ChemCompCoord
+✅ ccp.xml.molecule.ChemCompLabel
+✅ ccp.xml.molecule.ChemElement
+❌ ccp.xml.molecule.LabeledMolecule
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.MolStructure
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.MolSystem
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.Molecule
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.xml.molecule.Stereochemistry
+❌ ccp.xml.molecule.Validation
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.Nmr
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.NmrCalc
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.NmrConstraint
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.NmrEntry
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccp.xml.nmr.NmrExpPrototype
+✅ ccp.xml.nmr.NmrReference
+❌ ccp.xml.nmr.NmrScreen
+   Error: IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+
+======================================================================
+Validating namespace: ccpnmr
+======================================================================
+
+Discovered 389 modules in ccpnmr.*
+
+❌ ccpnmr.analysis.Analysis
+   Error: SyntaxError: invalid syntax (Analysis.py, line 1031)
+
+⏭️  ccpnmr.analysis.AnalysisGui (skipped: GUI/platform-specific (out of scope))
+❌ ccpnmr.analysis.AnalysisPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccpnmr.analysis.Citation
+✅ ccpnmr.analysis.Copyright
+✅ ccpnmr.analysis.Version
+✅ ccpnmr.analysis._licenseInfo
+❌ ccpnmr.analysis.core.AssignmentAdvanced
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.AssignmentBasic
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+
+❌ ccpnmr.analysis.core.BlockUtil
+   Error: SyntaxError: invalid syntax (BlockUtil.py, line 60)
+
+❌ ccpnmr.analysis.core.BoxIntegral
+   Error: SyntaxError: invalid syntax (BoxIntegral.py, line 204)
+
+❌ ccpnmr.analysis.core.ChemicalShiftBasic
+   Error: IndentationError: unindent does not match any outer indentation level (ChemicalShiftBasic.py, line 234)
+
+❌ ccpnmr.analysis.core.ChemicalShiftRef
+   Error: IndentationError: expected an indented block after 'for' statement on line 761 (ChemicalShiftRef.py, line 762)
+
+❌ ccpnmr.analysis.core.ConstraintBasic
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.analysis.core.ContourStore
+   Error: SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.CouplingBasic
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.analysis.core.DataAnalysisBasic
+   Error: TabError: inconsistent use of tabs and spaces in indentation (DataAnalysisBasic.py, line 497)
+
+✅ ccpnmr.analysis.core.ErrorHandler
+✅ ccpnmr.analysis.core.ExperimentBasic
+❌ ccpnmr.analysis.core.MarkBasic
+   Error: SyntaxError: invalid syntax (Region1D.py, line 200)
+
+✅ ccpnmr.analysis.core.MergeObjects
+❌ ccpnmr.analysis.core.MoleculeBasic
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.NetworkAnchoring
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.PeakBasic
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+✅ ccpnmr.analysis.core.PeakDrawUtil
+❌ ccpnmr.analysis.core.PeakFindParams
+   Error: SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.PrintBasic
+   Error: SyntaxError: unmatched ')' (PrintBasic.py, line 196)
+
+❌ ccpnmr.analysis.core.QualityControlBasic
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+✅ ccpnmr.analysis.core.Reference
+✅ ccpnmr.analysis.core.Register
+❌ ccpnmr.analysis.core.SpinSystemTyping
+   Error: SyntaxError: invalid syntax (SpinSystemTyping.py, line 301)
+
+❌ ccpnmr.analysis.core.StructureBasic
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+✅ ccpnmr.analysis.core.UnitConverter
+❌ ccpnmr.analysis.core.Util
+   Error: SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.ValidationBasic
+   Error: SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.WindowBasic
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.analysis.core.WindowDraw
+   Error: SyntaxError: invalid syntax (Region1D.py, line 200)
+
+✅ ccpnmr.analysis.doc.makeAllDoc
+❌ ccpnmr.analysis.doc.makeAnalysisDocRst
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccpnmr.analysis.doc.makeCoreLibraryRst
+✅ ccpnmr.analysis.doc.source.conf
+⏭️  ccpnmr.analysis.frames.AxisLabelList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.AxisTypeList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.AxisUnitList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ChainList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ColorList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ColorSchemeList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ExperimentList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ExptSpectrumPeakList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ExptSpectrumRows (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.FontList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.KeysymList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.MeasurementTypeList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.MolSystemList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.NoeDistParamsFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.NoeMatrix (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.PanelTypeList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.PeakListList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.PeakTableFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ReferenceFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ResonanceFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.SetupStructureCalcFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.SpectrumList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.SpectrumViewList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.SymbolList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ViewIsotopomerFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.ViewResidueFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.frames.WindowFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.ArgumentServer (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.AssignmentMacros (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.Command (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.FixProchiralSwaps (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.MakeDecoupledPeakList (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.MultiStructure (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.OpenProjectionSpectra (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.RelaxationAnalysis (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.RenumberChainPartSeqCodes (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.RenumberChainSeqCodes (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.SetBfactorFromShiftDiff (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.T2Macro (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.macros.TutorialMacros (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.AddContourFile (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BackupProject (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BasePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BrowseAtoms (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BrowseConstraints (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BrowsePeakGroups (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BrowseReferenceShifts (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BrowseResonances (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BrowseStrucGen (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.BrukerPseudo (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CalcCouplings (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CalcDistConstraints (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CalcHeteroNoe (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CalcHnHaCoupling (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CalcRates (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CalcShiftDifference (skipped: GUI/platform-specific (out of scope))/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/clouds/CloudThreaderPopup.py:110: SyntaxWarning: invalid escape sequence '\d'
+  self.filenameEntry = Entry(guiFrame,text='nexus15.pdb_\d+')
+
+⏭️  ccpnmr.analysis.popups.ChangeAxisMapping (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ConfirmSeqSpinSystems (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CopyAssignments (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CreateAxis (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CreateAxisType (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CreateAxisUnit (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CreateContourFile (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.CreatePanelType (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditAssignment (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditAxisPanel (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditCalculation (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditContourFiles (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditContourLevels (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditExperiment (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditExperimentSeries (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditFitGraph (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditMarks (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditMeasurementLists (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditMolLabelling (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditMolecules (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditNoeClasses (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditPeak (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditPeakAliasing (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditPeakDrawParams (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditPeakFindParams (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditPeakLists (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditProfiles (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditResStructures (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditSpectrum (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditSpinSystem (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditStructures (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.EditWindow (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.FollowShiftChanges (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.GetCenterCoords (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.InitRootAssignments (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.IsotopeSchemeEditor (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.LinkNoeResonances (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.LinkPeakLists (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.LinkSeqSpinSystems (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.LinkSideChains (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.MakeHbondRestraints (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.NewWindow (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.NmrPipePseudo (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.OpenMacro (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.OpenSpectrum (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.PredictKarplus (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.PrintWindow (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ProjectSummary (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.Register (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ReportError (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ResidueInfo (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.SecStructureGraph (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.SecStructurePredict (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.SequenceShiftPredict (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.SetReference (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.SpinSystemTyping (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.TranslatePeak (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ViewAssignment (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ViewChemicalShifts (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ViewNoeMatrix (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ViewPeakGroups (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ViewQualityReports (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ViewRamachandran (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.ViewStructure (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.popups.WindowPopup (skipped: GUI/platform-specific (out of scope))
+✅ ccpnmr.analysis.python_impl.benchmark_contour
+✅ ccpnmr.analysis.python_impl.contour
+✅ ccpnmr.analysis.python_impl.contour_file
+✅ ccpnmr.analysis.python_impl.contour_levels
+✅ ccpnmr.analysis.python_impl.contour_numba
+✅ ccpnmr.analysis.python_impl.contour_style
+✅ ccpnmr.analysis.python_impl.method
+✅ ccpnmr.analysis.python_impl.peak
+✅ ccpnmr.analysis.python_impl.peak_cluster
+✅ ccpnmr.analysis.python_impl.peak_list
+✅ ccpnmr.analysis.python_impl.peak_numba
+❌ ccpnmr.analysis.python_impl.setup_contour
+   Error: ValueError: 'contour_cython.pyx' doesn't match any files
+
+✅ ccpnmr.analysis.python_impl.slice_file
+✅ ccpnmr.analysis.python_impl.symbol
+✅ ccpnmr.analysis.python_impl.win_peak_list
+⏭️  ccpnmr.analysis.wrappers.CamCoil (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.wrappers.D2D (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.wrappers.Mars (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.wrappers.Psipred (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.analysis.wrappers.Shiftx (skipped: GUI/platform-specific (out of scope))
+❌ ccpnmr.api.Analysis
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.api.AnalysisLayout
+✅ ccpnmr.api.AnalysisProfile
+❌ ccpnmr.api.AnalysisV3
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.api.AnalysisWindow
+❌ ccpnmr.api.NameMapping
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.clouds.BacusPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccpnmr.clouds.CloudBasic
+❌ ccpnmr.clouds.CloudHomologueAssign
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.clouds.CloudHomologueAssignPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.clouds.CloudThreader
+   Error: SyntaxError: invalid syntax (CloudThreader.py, line 237)
+
+❌ ccpnmr.clouds.CloudThreaderPopup
+   Error: IndentationError: expected an indented block after 'if' statement on line 448 (CloudThreaderPopup.py, line 449)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/clouds/FilterCloudsPopup.py:92: SyntaxWarning: invalid escape sequence '\d'
+  self.fileNameEntry = Entry(guiFrame, text='testHistone\d+.pdb', returnCallback=self.loadClouds)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+
+❌ ccpnmr.clouds.Clouds
+   Error: SyntaxError: invalid syntax (Clouds.py, line 59)
+
+❌ ccpnmr.clouds.CloudsPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccpnmr.clouds.FileIO
+❌ ccpnmr.clouds.FilterClouds
+   Error: SyntaxError: invalid syntax (FilterClouds.py, line 538)
+
+❌ ccpnmr.clouds.FilterCloudsPopup
+   Error: SyntaxError: invalid syntax (FilterCloudsPopup.py, line 236)
+
+❌ ccpnmr.clouds.HcloudsMdPopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.clouds.HydrogenDynamics
+   Error: SyntaxError: invalid syntax (HydrogenDynamics.py, line 179)
+
+❌ ccpnmr.clouds.MidgePopup
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccpnmr.clouds.NoeMatrix
+❌ ccpnmr.clouds.NoeRelaxation
+   Error: IndentationError: unexpected indent (NoeRelaxation.py, line 134)
+
+✅ ccpnmr.clouds.PseudoResonances
+❌ ccpnmr.clouds.ResonanceIdentification
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+✅ ccpnmr.clouds._licenseInfo
+⏭️  ccpnmr.eci.AditMandFields (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.CompletenessCheck (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.EciShiftAnalysis (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.EntryCompletionFrame (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.EntryCompletionGui (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.EntryCompletionPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.IsotopeLabeling (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.ReadPdb (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci._licenseInfo (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.makeAditMandDict (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.eci.nmrStarDictNew (skipped: GUI/platform-specific (out of scope))
+✅ ccpnmr.format._licenseInfo
+❌ ccpnmr.format.converters.AmberFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AnsigFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AquaFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AriaFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AriaXmlFormat
+   Error: SyntaxError: invalid syntax (xmlreader.py, line 308)
+
+❌ ccpnmr.format.converters.AuremolFormat
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.AutoAssignFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AzaraFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.BrukerFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CcpNmrFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CharmmFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CnsFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ConcoordFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CosmosFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CsiFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CyanaFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.DataFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.DiscoverFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.DyanaFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.FastaFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.FelixFormat
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.GromacsFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.GromosFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MMCIFFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MardigrasFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MarsFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MarvinFormat
+   Error: SyntaxError: invalid syntax (MarvinFormat.py, line 146)
+
+❌ ccpnmr.format.converters.ModuleFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.Mol2Format
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MolFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MolmolFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MonteFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrDrawFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrPipeFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrStarFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrViewFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PalesFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PdbFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PippFormat
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.PistachioFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ProntoFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PseudoPdbFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ShiftxFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ShiftyFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+
+❌ ccpnmr.format.converters.SparkyFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.TalosFormat
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.TargetedAcquisitionFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.Tool
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.VarianFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.XEasyFormat
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+⏭️  ccpnmr.format.examples.convertCns2Pdb (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.examples.convertNmrView2XEasy (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.examples.createChemCompFromMol2 (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.examples.importCnsConstraints (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.examples.importSequenceFile (skipped: GUI/platform-specific (out of scope))
+✅ ccpnmr.format.general.Constants
+❌ ccpnmr.format.general.Conversion
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.format.general.Io
+❌ ccpnmr.format.general.MultiDialog
+   Error: SyntaxError: invalid syntax. Perhaps you forgot a comma? (MultiDialog.py, line 895)
+
+❌ ccpnmr.format.general.TopShared
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.general.Util
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.format.general.Version
+✅ ccpnmr.format.general.scriptHandling
+✅ ccpnmr.format.general.userInteraction
+⏭️  ccpnmr.format.gui.AcqProcParsEditPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.AtomSelectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.AutoAssignIOCyclePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.AutoAssignProjectInfoPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.BasePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ChainExportPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ChainLinkPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ChemCompAtomBondInfoPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ChemCompInfoPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ChemCompSelectionPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ColumnInfoSelectionPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.CreateShiftListPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.CrossLine (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.DataDimRefSelectByPeakDimPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.DataShifter (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.EntryListPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ExperimentCreatePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.FormatConverter (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.FormatFilePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.GroupChemShiftsPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ImportExportFormatPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.InfoPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.LinkResonancesPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.MultiDialog (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.MultiSelectionListPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.NamingSystemPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ObjectButton (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ObjectEditPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.PeakDimSelectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ProcFilePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ProcParToExpDimPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ProchiralStatusPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ResonanceGroupPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.ResonanceSelectPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.SelectionListPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.SequenceChemCompSelect (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.SequenceLinkPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.SingleResonanceStatusPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.TextOutputPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.WindowFunctionSelect (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.WriteBmrbChemShiftDepPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.format.gui.WriteMappingPopup (skipped: GUI/platform-specific (out of scope))
+❌ ccpnmr.format.process.CleanConstraints
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.format.process.cleanProjectAppData
+✅ ccpnmr.format.process.cleanResonanceAppData
+❌ ccpnmr.format.process.linkResonances
+   Error: SyntaxError: invalid syntax (linkResonances.py, line 664)
+
+❌ ccpnmr.format.process.makeChemShiftSelections
+   Error: SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.process.makeChemShiftsFromPeakLists
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.matchResonToMolSys
+   Error: SyntaxError: invalid syntax (matchResonToMolSys.py, line 275)
+
+❌ ccpnmr.format.process.sequenceCompare
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.stereoAssignmentSwap
+   Error: SyntaxError: '(' was never closed (stereoAssignmentSwap.py, line 1488)
+
+❌ ccpnmr.format.process.writeBmrbChemShiftDeposition
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.writeMappingFile
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.webServer.Util
+   Error: ModuleNotFoundError: No module named 'cherrypy'
+
+❌ ccpnmr.format.webServer.webFc
+   Error: IndentationError: unexpected indent (webFc.py, line 64)
+
+❌ ccpnmr.integrator.core.Io
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+✅ ccpnmr.integrator.core.NmrpipeTableFormat
+❌ ccpnmr.integrator.core.ParameterEditor
+   Error: ModuleNotFoundError: No module named 'Tkinter'
+
+✅ ccpnmr.integrator.core.TabularFormat
+❌ ccpnmr.integrator.core.Util
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.core.jsonToNmrCalc
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.core.projectToJson
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Aria.Util
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+✅ ccpnmr.integrator.plugins.Aria.read/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccpnmr/analysis/core/PeakBasic.py:3759: SyntaxWarning: invalid escape sequence '\d'
+  aName = match('\d+(\D+)',ic).group(1)
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+/Users/georgeelkins/nmr/ccpnmr2.4/ccpnmr2.4/python/ccp/api/general/Affiliation.py:70: SyntaxWarning: invalid escape sequence '\s'
+  containsWhitespace = re.compile('\s').search
+
+❌ ccpnmr.integrator.plugins.Aria.write
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Asdp.Util
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+✅ ccpnmr.integrator.plugins.Asdp.read
+❌ ccpnmr.integrator.plugins.Asdp.write
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cosmos.Io
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.integrator.plugins.Cosmos.run
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cyana.Util
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cyana.read
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cyana.write
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Isd.ReadIsdInput
+   Error: SyntaxError: invalid syntax (ReadIsdInput.py, line 136)
+
+❌ ccpnmr.integrator.plugins.MultiStruc.adapt
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.MultiStruc.merge
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+✅ ccpnmr.integrator.plugins.NmrStar.Io
+❌ ccpnmr.integrator.plugins.Rosetta.Util
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Rosetta.read
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Rosetta.write
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Talos.Io
+   Error: SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+✅ ccpnmr.integrator.plugins.Talos.TalosShiftFormat
+✅ ccpnmr.integrator.plugins.Talos.Util
+❌ ccpnmr.integrator.plugins.Unio.Util
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Unio.read
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Unio.write
+   Error: IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+⏭️  ccpnmr.nexus.AutoBackboneNexus (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.nexus.AutoBackbonePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.nexus.NexusBasic (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.nexus._licenseInfo (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.update.UpdateAdministratorPopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.update.UpdateAgent (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.update.UpdateAuto (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.update.UpdatePopup (skipped: GUI/platform-specific (out of scope))
+⏭️  ccpnmr.update._licenseInfo (skipped: GUI/platform-specific (out of scope))
+❌ ccpnmr.workflow.Aria
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.workflow.Cing
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.workflow.Constants
+❌ ccpnmr.workflow.Fc
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.workflow.Util
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.xml.Analysis
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.xml.AnalysisLayout
+✅ ccpnmr.xml.AnalysisProfile
+❌ ccpnmr.xml.AnalysisV3
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+✅ ccpnmr.xml.AnalysisWindow
+❌ ccpnmr.xml.NameMapping
+   Error: SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+
+======================================================================
+Report saved to: /Users/georgeelkins/nmr/ccpnmr2.4/import_validation_report.json
+======================================================================
+
+
+======================================================================
+IMPORT VALIDATION SUMMARY
+======================================================================
+
+Total modules discovered: 1059
+✅ Successful imports:    473
+❌ Failed imports:        261
+⏭️  Skipped (out of scope): 325
+
+Core library success rate: 44.7%
+
+======================================================================
+FAILED IMPORTS
+======================================================================
+
+❌ memops.c.python_impl.mem_cache_numba
+   SyntaxError: unmatched ')' (mem_cache_numba.py, line 216)
+
+❌ memops.format.compatibility.downgrade.v_3_0_a1.General
+   IndentationError: expected an indented block after 'if' statement on line 99 (General.py, line 100)
+
+❌ memops.format.xml.Compatibility
+   IndentationError: expected an indented block after 'for' statement on line 2121 (Compatibility.py, line 2122)
+
+❌ memops.general.license.headers
+   SyntaxError: invalid syntax (headers.py, line 445)
+
+❌ memops.universal.DataEntry
+   SyntaxError: invalid syntax (DataEntry.py, line 135)
+
+❌ memops.universal.Region1D
+   SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ memops.universal.Region2D
+   SyntaxError: invalid syntax (Region2D.py, line 83)
+
+❌ memops.xml.Implementation
+   SyntaxError: invalid syntax (Implementation.py, line 207)
+
+❌ ccp.api.general.Affiliation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.general.Annotation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.general.Citation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.general.Instrument
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.general.Method
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.Crystallization
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.ExpBlueprint
+   SyntaxError: invalid syntax (ExpBlueprint.py, line 304)
+
+❌ ccp.api.lims.Experiment
+   SyntaxError: unmatched ')' (Experiment.py, line 1128)
+
+❌ ccp.api.lims.Holder
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.Location
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.Protocol
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.RefData
+   IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.api.lims.RefSampleComponent
+   IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.api.lims.Sample
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.lims.Target
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.LabeledMolecule
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.MolStructure
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.MolSystem
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.Molecule
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.molecule.Validation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.Nmr
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.NmrCalc
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.NmrConstraint
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.NmrEntry
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.api.nmr.NmrScreen
+   IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.format.ansig.peaksIO
+   SyntaxError: invalid syntax (peaksIO.py, line 310)
+
+❌ ccp.format.ansig.projectIO
+   SyntaxError: invalid syntax (projectIO.py, line 293)
+
+❌ ccp.format.aria.xmlparser
+   SyntaxError: invalid syntax (xmlparser.py, line 221)
+
+❌ ccp.format.aria.xmlreader
+   SyntaxError: invalid syntax (xmlreader.py, line 308)
+
+❌ ccp.format.auremol.sequenceIO
+   SyntaxError: invalid syntax (sequenceIO.py, line 259)
+
+❌ ccp.format.autoAssign.projectIO
+   SyntaxError: invalid syntax (projectIO.py, line 264)
+
+❌ ccp.format.concoord.distanceConstraintsIO
+   SyntaxError: invalid syntax (distanceConstraintsIO.py, line 317)
+
+❌ ccp.format.cyana.distanceConstraintsIO
+   SyntaxError: invalid syntax (distanceConstraintsIO.py, line 105)
+
+❌ ccp.format.discover.dihedralConstraintsIO
+   SyntaxError: invalid syntax (dihedralConstraintsIO.py, line 151)
+
+❌ ccp.format.marvin.peaksIO
+   SyntaxError: invalid syntax (peaksIO.py, line 168)
+
+❌ ccp.format.mmCif.coordinatesIO
+   SyntaxError: invalid syntax (sequenceIO.py, line 324)
+
+❌ ccp.format.mmCif.sequenceIO
+   SyntaxError: invalid syntax (sequenceIO.py, line 324)
+
+❌ ccp.format.mol.chemCompsIO
+   SyntaxError: invalid syntax (chemCompsIO.py, line 381)
+
+❌ ccp.format.nmrStar.bmrb.File
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.bmrb.SaveFrame
+   SyntaxError: unterminated string literal (detected at line 90) (SaveFrame.py, line 90)
+
+❌ ccp.format.nmrStar.chemShiftsIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.coordinatesIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.csaIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.dihedralConstraintsIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.distanceConstraintsIO
+   IndentationError: expected an indented block after 'for' statement on line 522 (distanceConstraintsIO.py, line 523)
+
+❌ ccp.format.nmrStar.generalIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.hBondConstraintsIO
+   ModuleNotFoundError: No module named 'distanceConstraintsIO'
+
+❌ ccp.format.nmrStar.hExchProtectionIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.hExchRateIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.hetNoeIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.jCouplingIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.orderParamIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.peopleAndCitationsIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.projectIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.rdcConstraintsIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.rdcIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.sequenceIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.t1RelaxIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.t1RhoRelaxIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrStar.t2RelaxIO
+   SyntaxError: unterminated string literal (detected at line 105) (File.py, line 105)
+
+❌ ccp.format.nmrView.projectIO
+   SyntaxError: invalid syntax (projectIO.py, line 323)
+
+❌ ccp.format.pales.rdcConstraintsIO
+   IndentationError: unexpected indent (rdcConstraintsIO.py, line 162)
+
+❌ ccp.format.pdb.chemCompsIO
+   SyntaxError: invalid syntax (chemCompsIO.py, line 191)
+
+❌ ccp.format.pdb.coordinatesIO
+   SyntaxError: invalid syntax (coordinatesIO.py, line 437)
+
+❌ ccp.format.pdb.sequenceIO
+   SyntaxError: invalid syntax (sequenceIO.py, line 341)
+
+❌ ccp.format.pronto.sequenceIO
+   IndentationError: expected an indented block after 'for' statement on line 163 (sequenceIO.py, line 164)
+
+❌ ccp.format.sparky.peaksIO
+   SyntaxError: invalid syntax (peaksIO.py, line 211)
+
+❌ ccp.format.sparky.projectIO
+   SyntaxError: invalid syntax (peaksIO.py, line 211)
+
+❌ ccp.format.spectra.OpenSpectrum
+   ImportError: cannot import name 'atoi' from 'string' (/Users/georgeelkins/miniforge3/lib/python3.12/string.py)
+
+❌ ccp.format.spectra.params.NmrViewParams
+   ImportError: cannot import name 'atoi' from 'string' (/Users/georgeelkins/miniforge3/lib/python3.12/string.py)
+
+❌ ccp.format.xeasy.peakAssignmentsIO
+   SyntaxError: invalid decimal literal (peakAssignmentsIO.py, line 302)
+
+❌ ccp.general.ArgumentServer
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccp.general.SelectObject
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccp.lib.Bmrb.bmrb
+   SyntaxError: unmatched ')' (bmrb.py, line 1032)
+
+❌ ccp.lib.Bmrb.ciftest
+   SyntaxError: invalid syntax (CifParser.py, line 34)
+
+❌ ccp.lib.Bmrb.ordereddict
+   ImportError: cannot import name 'DictMixin' from 'collections' (/Users/georgeelkins/miniforge3/lib/python3.12/collections/__init__.py)
+
+❌ ccp.lib.Bmrb.sans.CifParser
+   SyntaxError: invalid syntax (CifParser.py, line 34)
+
+❌ ccp.lib.Bmrb.test
+   SyntaxError: invalid syntax (CifParser.py, line 34)
+
+❌ ccp.lib.Bmrb.testNef
+   SyntaxError: unmatched ')' (bmrb.py, line 1032)
+
+❌ ccp.lib.MoleculeAlign
+   NameError: name 'unichr' is not defined
+
+❌ ccp.lib.MoleculeModify
+   SyntaxError: invalid syntax (MoleculeModify.py, line 158)
+
+❌ ccp.lib.MoleculeQuery
+   NameError: name 'unichr' is not defined
+
+❌ ccp.lib.StructureIo
+   NameError: name 'unichr' is not defined
+
+❌ ccp.lib.StructureLib
+   NameError: name 'unichr' is not defined
+
+❌ ccp.util.Molecule
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.util.Nef
+   NameError: name 'unichr' is not defined
+
+❌ ccp.util.ShapeUtil
+   SyntaxError: invalid syntax (ShapeUtil.py, line 26)
+
+❌ ccp.util.V2Upgrade
+   ModuleNotFoundError: No module named 'ccpncore'
+
+❌ ccp.xml.general.Affiliation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.general.Annotation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.general.Citation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.general.Instrument
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.general.Method
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.Crystallization
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.ExpBlueprint
+   SyntaxError: invalid syntax (ExpBlueprint.py, line 65)
+
+❌ ccp.xml.lims.Experiment
+   SyntaxError: unmatched ')' (Experiment.py, line 1128)
+
+❌ ccp.xml.lims.Holder
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.Location
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.Protocol
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.RefData
+   IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.xml.lims.RefSampleComponent
+   IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccp.xml.lims.Sample
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.lims.Target
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.LabeledMolecule
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.MolStructure
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.MolSystem
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.Molecule
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.molecule.Validation
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.Nmr
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.NmrCalc
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.NmrConstraint
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.NmrEntry
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccp.xml.nmr.NmrScreen
+   IndentationError: expected an indented block after 'for' statement on line 12807 (RefSampleComponent.py, line 12808)
+
+❌ ccpnmr.analysis.Analysis
+   SyntaxError: invalid syntax (Analysis.py, line 1031)
+
+❌ ccpnmr.analysis.AnalysisPopup
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.analysis.core.AssignmentAdvanced
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.AssignmentBasic
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.BlockUtil
+   SyntaxError: invalid syntax (BlockUtil.py, line 60)
+
+❌ ccpnmr.analysis.core.BoxIntegral
+   SyntaxError: invalid syntax (BoxIntegral.py, line 204)
+
+❌ ccpnmr.analysis.core.ChemicalShiftBasic
+   IndentationError: unindent does not match any outer indentation level (ChemicalShiftBasic.py, line 234)
+
+❌ ccpnmr.analysis.core.ChemicalShiftRef
+   IndentationError: expected an indented block after 'for' statement on line 761 (ChemicalShiftRef.py, line 762)
+
+❌ ccpnmr.analysis.core.ConstraintBasic
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.analysis.core.ContourStore
+   SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.CouplingBasic
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.analysis.core.DataAnalysisBasic
+   TabError: inconsistent use of tabs and spaces in indentation (DataAnalysisBasic.py, line 497)
+
+❌ ccpnmr.analysis.core.MarkBasic
+   SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.MoleculeBasic
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.NetworkAnchoring
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.PeakBasic
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.analysis.core.PeakFindParams
+   SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.PrintBasic
+   SyntaxError: unmatched ')' (PrintBasic.py, line 196)
+
+❌ ccpnmr.analysis.core.QualityControlBasic
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.SpinSystemTyping
+   SyntaxError: invalid syntax (SpinSystemTyping.py, line 301)
+
+❌ ccpnmr.analysis.core.StructureBasic
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.analysis.core.Util
+   SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.ValidationBasic
+   SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.core.WindowBasic
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.analysis.core.WindowDraw
+   SyntaxError: invalid syntax (Region1D.py, line 200)
+
+❌ ccpnmr.analysis.doc.makeAnalysisDocRst
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.analysis.python_impl.setup_contour
+   ValueError: 'contour_cython.pyx' doesn't match any files
+
+❌ ccpnmr.api.Analysis
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.api.AnalysisV3
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.api.NameMapping
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.clouds.BacusPopup
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.clouds.CloudHomologueAssign
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.clouds.CloudHomologueAssignPopup
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.clouds.CloudThreader
+   SyntaxError: invalid syntax (CloudThreader.py, line 237)
+
+❌ ccpnmr.clouds.CloudThreaderPopup
+   IndentationError: expected an indented block after 'if' statement on line 448 (CloudThreaderPopup.py, line 449)
+
+❌ ccpnmr.clouds.Clouds
+   SyntaxError: invalid syntax (Clouds.py, line 59)
+
+❌ ccpnmr.clouds.CloudsPopup
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.clouds.FilterClouds
+   SyntaxError: invalid syntax (FilterClouds.py, line 538)
+
+❌ ccpnmr.clouds.FilterCloudsPopup
+   SyntaxError: invalid syntax (FilterCloudsPopup.py, line 236)
+
+❌ ccpnmr.clouds.HcloudsMdPopup
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.clouds.HydrogenDynamics
+   SyntaxError: invalid syntax (HydrogenDynamics.py, line 179)
+
+❌ ccpnmr.clouds.MidgePopup
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.clouds.NoeRelaxation
+   IndentationError: unexpected indent (NoeRelaxation.py, line 134)
+
+❌ ccpnmr.clouds.ResonanceIdentification
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.format.converters.AmberFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AnsigFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AquaFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AriaFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AriaXmlFormat
+   SyntaxError: invalid syntax (xmlreader.py, line 308)
+
+❌ ccpnmr.format.converters.AuremolFormat
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.AutoAssignFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.AzaraFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.BrukerFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CcpNmrFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CharmmFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CnsFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ConcoordFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CosmosFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CsiFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.CyanaFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.DataFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.DiscoverFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.DyanaFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.FastaFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.FelixFormat
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.GromacsFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.GromosFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MMCIFFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MardigrasFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MarsFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MarvinFormat
+   SyntaxError: invalid syntax (MarvinFormat.py, line 146)
+
+❌ ccpnmr.format.converters.ModuleFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.Mol2Format
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MolFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MolmolFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.MonteFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrDrawFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrPipeFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrStarFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.NmrViewFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PalesFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PdbFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PippFormat
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.PistachioFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ProntoFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.PseudoPdbFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ShiftxFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.ShiftyFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.SparkyFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.TalosFormat
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.TargetedAcquisitionFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.Tool
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.converters.VarianFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.converters.XEasyFormat
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.general.Conversion
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.general.MultiDialog
+   SyntaxError: invalid syntax. Perhaps you forgot a comma? (MultiDialog.py, line 895)
+
+❌ ccpnmr.format.general.TopShared
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.general.Util
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.CleanConstraints
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.linkResonances
+   SyntaxError: invalid syntax (linkResonances.py, line 664)
+
+❌ ccpnmr.format.process.makeChemShiftSelections
+   SyntaxError: unexpected character after line continuation character (DataFormat.py, line 8063)
+
+❌ ccpnmr.format.process.makeChemShiftsFromPeakLists
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.matchResonToMolSys
+   SyntaxError: invalid syntax (matchResonToMolSys.py, line 275)
+
+❌ ccpnmr.format.process.sequenceCompare
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.stereoAssignmentSwap
+   SyntaxError: '(' was never closed (stereoAssignmentSwap.py, line 1488)
+
+❌ ccpnmr.format.process.writeBmrbChemShiftDeposition
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.process.writeMappingFile
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.format.webServer.Util
+   ModuleNotFoundError: No module named 'cherrypy'
+
+❌ ccpnmr.format.webServer.webFc
+   IndentationError: unexpected indent (webFc.py, line 64)
+
+❌ ccpnmr.integrator.core.Io
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.core.ParameterEditor
+   ModuleNotFoundError: No module named 'Tkinter'
+
+❌ ccpnmr.integrator.core.Util
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.core.jsonToNmrCalc
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.core.projectToJson
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Aria.Util
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Aria.write
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Asdp.Util
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Asdp.write
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cosmos.Io
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.integrator.plugins.Cosmos.run
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cyana.Util
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cyana.read
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Cyana.write
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Isd.ReadIsdInput
+   SyntaxError: invalid syntax (ReadIsdInput.py, line 136)
+
+❌ ccpnmr.integrator.plugins.MultiStruc.adapt
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.MultiStruc.merge
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Rosetta.Util
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Rosetta.read
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Rosetta.write
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Talos.Io
+   SyntaxError: invalid syntax (MessageReporter.py, line 232)
+
+❌ ccpnmr.integrator.plugins.Unio.Util
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Unio.read
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.integrator.plugins.Unio.write
+   IndentationError: expected an indented block after 'for' statement on line 3833 (PeakBasic.py, line 3834)
+
+❌ ccpnmr.workflow.Aria
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.workflow.Cing
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.workflow.Fc
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.workflow.Util
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.xml.Analysis
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.xml.AnalysisV3
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+❌ ccpnmr.xml.NameMapping
+   SyntaxError: invalid syntax (Affiliation.py, line 6197)
+
+
+======================================================================
+TASK 1.2 ACCEPTANCE CRITERIA
+======================================================================
+
+❌ Core library imports: 473/734 (261 failures)
+✅ Import validation report generated
+✅ GUI modules excluded (documented as out of scope) - 325 skipped
+
+======================================================================
+❌ TASK 1.2 ACCEPTANCE CRITERIA NOT MET
+======================================================================
+
