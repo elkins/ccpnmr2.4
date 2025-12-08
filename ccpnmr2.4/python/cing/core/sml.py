@@ -384,7 +384,7 @@ class SMLNTdictHandler( SMLhandler ):
         Returns theDict or None on error.
         """
         fprintf( stream, '%s\n', self.startTag )
-        for key,value in theDict.iteritems():
+        for key,value in theDict.items():
             fprintf( stream, '%s = ', key )
             if hasattr(value,'SMLhandler') and value.SMLhandler != None:
                 value.SMLhandler.toSML( value, stream, *args, **kwds )
@@ -419,7 +419,7 @@ class SMLNTvalueHandler( SMLhandler ):
         Returns theDict or None on error.
         """
 #        fprintf( stream, '%s\n', self.startTag )
-#        for key,value in theDict.iteritems():
+#        for key,value in theDict.items():
 #            fprintf( stream, '%s = ', key )
 #            if hasattr(value,'SMLhandler') and value.SMLhandler != None:
 #                value.SMLhandler.toSML( value, stream, *args, **kwds )
@@ -1195,7 +1195,7 @@ class SMLNTListWithAttrHandler( SMLhandler ):
 #        theDict.theList.addList(rl) # TODO: when items DO get saved.
 
         # save it regardless of content.
-        for key,value in theDict.iteritems():
+        for key,value in theDict.items():
             fprintf( fp, '%s = ', key )
             if hasattr(value,'SMLhandler') and value.SMLhandler != None:
                 value.SMLhandler.toSML( value, fp )

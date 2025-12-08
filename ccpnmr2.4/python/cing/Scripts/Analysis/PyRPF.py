@@ -204,7 +204,7 @@ class PyRpfPopup(BasePopup):
     frame.grid(row=0, column=0, sticky='ew')
     frame.grid_columnconfigure(2, weight=1)
 
-    label = Label(frame, text=u'Distance Threshold (\u00C5)')
+    label = Label(frame, text='Distance Threshold (\u00C5)')
     label.grid(row=0,column=0, sticky='w')
     self.distanceEntry = FloatEntry(frame, text=str(DEFAULT_DISTANCE_THRESHOLD), width=8)
     self.distanceEntry.grid(row=0,column=1, sticky='w')

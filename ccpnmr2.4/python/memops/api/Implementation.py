@@ -388,7 +388,7 @@ class Url(MemopsDataTypeObject):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -1322,7 +1322,7 @@ class SymmTracelessMatrix(MemopsDataTypeObject):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -1915,7 +1915,7 @@ class AppDataDouble(ApplicationData):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -2256,7 +2256,7 @@ class AppDataFloat(ApplicationData):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -2597,7 +2597,7 @@ class AppDataLong(ApplicationData):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -2926,7 +2926,7 @@ class AppDataInt(ApplicationData):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -3255,7 +3255,7 @@ class AppDataBoolean(ApplicationData):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -3576,7 +3576,7 @@ class AppDataString(ApplicationData):
     dataDict['inConstructor'] = True
     try:
       
-      for key, value in attrlinks.iteritems():
+      for key, value in attrlinks.items():
         try:
           func = getattr(self.__class__, key).fset
         except:
@@ -5733,7 +5733,7 @@ Implementations
       dataDict['memopsRoot'] = self
       try:
         
-        for key, value in attrlinks.iteritems():
+        for key, value in attrlinks.items():
           try:
             func = getattr(self.__class__, key).fset
           except:
@@ -18250,7 +18250,7 @@ Implementations
           ll.append(repository)
     
     # set activeRepositories
-    for topObject, ll in activeRepositories.iteritems():
+    for topObject, ll in activeRepositories.items():
       topObject.__dict__['activeRepositories'] = ll
     
   def removeFrom(self, repository):
@@ -24229,7 +24229,7 @@ class PackageLocator(ImplementationObject):
       dataDict['inConstructor'] = True
       try:
         
-        for key, value in attrlinks.iteritems():
+        for key, value in attrlinks.items():
           try:
             func = getattr(self.__class__, key).fset
           except:
@@ -25197,7 +25197,7 @@ class Repository(ImplementationObject):
       dataDict['inConstructor'] = True
       try:
         
-        for key, value in attrlinks.iteritems():
+        for key, value in attrlinks.items():
           try:
             func = getattr(self.__class__, key).fset
           except:

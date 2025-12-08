@@ -2135,7 +2135,7 @@ class ScreenList:
     
       print choiceText,
   
-      choice = raw_input()
+      choice = input()
 
       if str(returnInt(choice)) == choice:
         choice = returnInt(choice)
@@ -2152,7 +2152,7 @@ class ScreenList:
     
     while (not choice):
     
-      choice = raw_input()
+      choice = input()
       
       if str(returnInt(choice)) == choice:
         choice = returnInt(choice)
@@ -2164,7 +2164,7 @@ class ScreenList:
 
   def getString(self):
   
-    choice = raw_input()
+    choice = input()
         
     return choice
 

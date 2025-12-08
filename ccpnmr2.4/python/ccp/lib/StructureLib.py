@@ -324,7 +324,7 @@ def alignStructures(structures):
     for coordObjs in coordLists:
       coords = [[0.0,0.0,0.0]] * numAtoms
       
-      for i in xrange(numAtoms):
+      for i in range(numAtoms):
         coordObj = coordObjs[i]
         coords[i] = [coordObj.x, coordObj.y, coordObj.z]
       
@@ -353,7 +353,7 @@ def alignStructures(structures):
   for i, alignVals in enumerate(ensemble):
     coordObjs = allCoords[i]
     
-    for j in xrange(numAtoms):
+    for j in range(numAtoms):
       coordObj = coordObjs[j]
       coordObj.x, coordObj.y, coordObj.z = alignVals[j]
   
@@ -481,7 +481,7 @@ def compareEnsembles(structure1, structure2, compareBackboneOnly=False):
           weights.append(min(14.0,mass))
 
       coords = [[0.0,0.0,0.0]] * numAtoms
-      for i in xrange(numAtoms):
+      for i in range(numAtoms):
         coordObj = coordList[i]
         coords[i] = [coordObj.x, coordObj.y, coordObj.z]
       coordsDict[model] = coords

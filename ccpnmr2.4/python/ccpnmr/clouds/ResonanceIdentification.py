@@ -490,7 +490,7 @@ SPAN modules
 def makeCosyTocyConnections(name=None):
 
   if name is None:
-    name = raw_input('input file name (5 letters): ')[:5]
+    name = input('input file name (5 letters): ')[:5]
   
   resonances = getResonancesFromFile(name)
   

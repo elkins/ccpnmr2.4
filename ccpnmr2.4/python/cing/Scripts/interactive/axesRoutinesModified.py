@@ -88,7 +88,7 @@ def boxplot(self, x, notch=0, sym='b+', vert=1, whis=1.5,
                 elif nc == 1:
                     x = [x.ravel()]
                 else:
-                    x = [x[:,i] for i in xrange(nc)]
+                    x = [x[:,i] for i in range(nc)]
             else:
                 raise ValueError, "input x can have no more than 2 dimensions"
         if not hasattr(x[0], '__len__'):
@@ -240,7 +240,7 @@ def boxplot(self, x, notch=0, sym='b+', vert=1, whis=1.5,
             else:
                 def doplot(*args):
                     shuffled = []
-                    for i in xrange(0, len(args), 3):
+                    for i in range(0, len(args), 3):
                         shuffled.extend([args[i+1], args[i], args[i+2]])
                     return self.plot(*shuffled)
                 def dopatch(xs,ys):

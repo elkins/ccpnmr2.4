@@ -427,7 +427,7 @@ class CalcDistConstraintsPopup(BasePopup):
                                           callback=self.changeStructure)
   
     tipText = 'The maximum allowed distance if filtering restraint possibilities using a structure'
-    label = Label(optFrame, text=u'Max Structure\nDistance (\u00C5): ', grid=(1,4))
+    label = Label(optFrame, text='Max Structure\nDistance (\u00C5): ', grid=(1,4))
     self.maxDistEntry = FloatEntry(optFrame, text='20.0', grid=(1,5), width=8, tipText=tipText)
     
 

@@ -68,8 +68,8 @@ from memops.gui.Color           import scaleColor
 from memops.gui.MessageReporter import showWarning
 from memops.universal.Io        import getTopDirectory, joinPath
 
-UNICODE_PHI = u'\u03A6'
-UNICODE_PSI = u'\u03A8'
+UNICODE_PHI = '\u03A6'
+UNICODE_PSI = '\u03A8'
 
 class ViewRamachandranFrame(ScrolledCanvas):
 

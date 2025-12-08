@@ -1211,7 +1211,7 @@ class loop:
             tags[pos] = __formatTag__(item)
 
         # Map column name to column position in list
-        column_mapping = dict(itertools.izip(reversed(self.columns), reversed(xrange(len(self.columns)))))
+        column_mapping = dict(itertools.izip(reversed(self.columns), reversed(range(len(self.columns)))))
 
         # Make sure their fields are actually present in the entry
         column_ids = []
@@ -1439,7 +1439,7 @@ if __name__ == '__main__':
         use_stardiff = True
         print("External stardiff detected. Will use to verify results.")
 
-    for x in xrange(*myrange):
+    for x in range(*myrange):
         try:
             orig_str = urllib2.urlopen('http://rest.bmrb.wisc.edu/bmrb/NMR-STAR3/' + str(x)).read()
         except urllib2.HTTPError:

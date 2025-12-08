@@ -292,7 +292,7 @@ def classifyRestraints(prl, leu, threshold):
                 violCountBoth = violCountGp + violCountTr
                 nTdebug('violCountGp, violCountTr, violTr, violGp: %8.3f %8.3f %8.3f %8.3f' % (violCountGp, violCountTr, violTr, violGp))
                 if violCountBoth == 0:
-                    nTdebug('Classified to u')                    
+                    nTdebug('Classified to ')                    
                     u.append(ap)
                 elif (violCountTr > (violCountGp + thresholdModelCount) and violTr > violGp): 
                     nTdebug('Classified to t')                    

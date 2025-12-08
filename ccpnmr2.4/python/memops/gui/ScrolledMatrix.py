@@ -81,7 +81,7 @@ datetimeType = type(datetime.today())
 floatType    = type(1.0)
 integerType  = type(1)
 stringType   = type('')
-unicodeType  = type(u'')
+unicodeType  = type('')
 months = (None,'Jan','Feb','Mar','Apr','May','Jun',
           'Jul','Aug','Sep','Oct','Nov','Dec') # Months start at 1
           
@@ -2597,34 +2597,34 @@ if __name__ == '__main__':
   textMatrix = []
   objectList = []
 
-  textMatrix.append([1,'One',1.00,u'\u03B1'])
+  textMatrix.append([1,'One',1.00,'\u03B1'])
   objectList.append(1)
   
-  textMatrix.append([2,'Two',4.00,u'\u03B2'])
+  textMatrix.append([2,'Two',4.00,'\u03B2'])
   objectList.append(2)
   
-  textMatrix.append([3,'Three',9.00, u'\u03B3'])
+  textMatrix.append([3,'Three',9.00, '\u03B3'])
   objectList.append(3)
 
-  textMatrix.append([4,'Four',16.00, u'\u03B4'])
+  textMatrix.append([4,'Four',16.00, '\u03B4'])
   objectList.append(4)
 
-  textMatrix.append([5,'Five',25.00, u'\u03B5'])
+  textMatrix.append([5,'Five',25.00, '\u03B5'])
   objectList.append(5)
 
-  textMatrix.append([6,'Six',36.00,  u'\u03B6'])
+  textMatrix.append([6,'Six',36.00,  '\u03B6'])
   objectList.append(6)
 
-  textMatrix.append([7,'Seven',49.00,u'\u03B7'])
+  textMatrix.append([7,'Seven',49.00,'\u03B7'])
   objectList.append(7)
 
-  textMatrix.append([8,'Eight',64.00,u'\u03B8'])
+  textMatrix.append([8,'Eight',64.00,'\u03B8'])
   objectList.append(8)
 
-  textMatrix.append([9,'Nine',81.00,u'\u03B9'])
+  textMatrix.append([9,'Nine',81.00,'\u03B9'])
   objectList.append(9)
 
-  textMatrix.append([10,'Ten',100.00,u'\u03BA'])
+  textMatrix.append([10,'Ten',100.00,'\u03BA'])
   objectList.append(10)
 
 

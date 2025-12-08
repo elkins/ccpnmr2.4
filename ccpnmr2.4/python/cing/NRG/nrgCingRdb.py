@@ -1850,7 +1850,7 @@ def bin_by(y, x, nbins=None, ymin=None, ymax=None):
     bins[-1] += 1
     indicies = np.digitize(x, bins)
     output = []
-    for i in xrange(1, len(bins)):
+    for i in range(1, len(bins)):
         output.append(y[indicies == i])
     # end for
     # Just return the left edges of the bins

@@ -1346,11 +1346,11 @@ def makeGuiName(name, elementSymbol):
 
 def _getUnicodeGreek():
   """
-   {'a':u'\u03B1','b':u'\u03B2','g':u'\u03B3','d':u'\u03B4','e':u'\u03B5',
-    'z':u'\u03B6','h':u'\u03B7','q':u'\u03B8','i':u'\u03B9','k':u'\u03BA',
-    'l':u'\u03BB','m':u'\u03BC','n':u'\u03BD','x':u'\u03BE','o':u'\u03BF',
-    'p':u'\u03C0','r':u'\u03C1','j':u'\u03C2','s':u'\u03C3','t':u'\u03C4', # j : Other sigma
-    'u':u'\u03C5','f':u'\u03C6','c':u'\u03C7','y':u'\u03C8','w':u'\u03C9'}
+   {'a':'\u03B1','b':'\u03B2','g':'\u03B3','d':'\u03B4','e':'\u03B5',
+    'z':'\u03B6','h':'\u03B7','q':'\u03B8','i':'\u03B9','k':'\u03BA',
+    'l':'\u03BB','m':'\u03BC','n':'\u03BD','x':'\u03BE','o':'\u03BF',
+    'p':'\u03C0','r':'\u03C1','j':'\u03C2','s':'\u03C3','t':'\u03C4', # j : Other sigma
+    '':'\u03C5','f':'\u03C6','c':'\u03C7','y':'\u03C8','w':'\u03C9'}
   """
   dict = {}
   romanLetterOrder = 'ABGDEZHQIKLMNXOPRJSTUFCYW'

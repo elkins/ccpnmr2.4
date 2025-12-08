@@ -256,7 +256,7 @@ class NN:
       
       # N: learning rate
       # M: momentum factor
-      for i in xrange(iterations):
+      for i in range(iterations):
         #error = 0.0
         
         #print i

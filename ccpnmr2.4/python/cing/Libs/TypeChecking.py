@@ -37,7 +37,7 @@ BOOL = 'BOOL'
 TYPES = {type(0.): FLOAT,
          type(0): INT,
          type(''): STRING,
-         type(u''): UNICODE,
+         type(''): UNICODE,
          type({}): DICT,
          type([]): LIST,
          type(()): TUPLE,

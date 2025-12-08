@@ -69,7 +69,7 @@ from memops.universal.Io import getTopDirectory
 GFX_DIR = os.path.join(getTopDirectory(),'python','memops','gui','graphics')
 
 STRING_TYPE   = type('')
-UNICODE_TYPE  = type(u'')
+UNICODE_TYPE  = type('')
 HORIZONTAL = Tkinter.HORIZONTAL
 VERTICAL = Tkinter.VERTICAL
 

@@ -94,7 +94,7 @@ class BrukerParFile(BrukerGenericFile):
       print("Reading Bruker acquisition parameters file %s" % self.name)
     
     # For reading: based on ##
-    # If value between <> or non-numeric characters (except point): is string
+    # If value between != or non-numeric characters (except point): is string
     # If value numeric: float if contains '.'
     #                   integer if no '.'
     #                   (data type doesn't matter for python comparisons (5 == 5.0))

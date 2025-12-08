@@ -367,7 +367,7 @@ def getExcitationProfile(spectrum, nSteps=100, isWatergate=0, weightingFactor=1.
     # 5/11/20 Rasmus added check for baseFreq is None
     O1  = (specFreq - baseFreq) * 1000.0
     O1p = O1/baseFreq
-    d19 = raw_input("Enter d19 in seconds:")
+    d19 = input("Enter d19 in seconds:")
     
     dist_nextnullHz  = 1.0/(2*d19);
     dist_nextnullppm = dist_nextnullHz/baseFreq
@@ -627,7 +627,7 @@ def generateSymmetryWeights(spectrum, nSteps=100, isWatergate=0, weightingFactor
   if isWatergate:
     O1  = (specFreq - baseFreq) * 1000.0
     O1p = O1/baseFreq
-    d19 = raw_input("Enter d19 in seconds:")
+    d19 = input("Enter d19 in seconds:")
 
     dist_nextnullHz=1/(2*d19);
     dist_nextnullppm=dist_nextnullHz/baseFreq

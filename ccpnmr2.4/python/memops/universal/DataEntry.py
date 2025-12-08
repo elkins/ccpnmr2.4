@@ -69,7 +69,7 @@ def askData(func_type, prompt, initial_value, min_value = None, max_value = None
   while (not done):
 
     done = 1 # true for most cases below, so set it here
-    answer = raw_input(prompt)
+    answer = input(prompt)
     answer = answer.strip()
     if (initial_value is not '' and not answer):
       answer = initial_value

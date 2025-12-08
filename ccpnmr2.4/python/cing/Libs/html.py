@@ -1096,7 +1096,7 @@ class HTMLfile:
         self.reset()
         htmlObjects.append( self )
 
-        for key,value in kwds.iteritems():
+        for key,value in kwds.items():
             setattr(self,key,value)
     #end def
 
@@ -1422,7 +1422,7 @@ class HTMLfile:
 
         #print('*****', tag, [args], (kwds))
         openTag = sprintf('<%s',tag)
-        for key,value in kwds.iteritems():
+        for key,value in kwds.items():
             openTag = openTag + sprintf(' %s="%s"', key, value)
         #end for
 

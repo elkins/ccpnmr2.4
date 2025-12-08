@@ -118,8 +118,8 @@ NUCLEIC_HBONDS = {frozenset(['G','C']):({'G':'O6', 'C':'H42'},
                                         {'I':'H1', 'T':'O4' }),
                  }
 
-ALPHA = u'\u03B1'
-PI = u'\u03C0'
+ALPHA = '\u03B1'
+PI = '\u03C0'
 #THREE_TEN = u'3\u2080\u2081'
 THREE_TEN = '3_10'
 

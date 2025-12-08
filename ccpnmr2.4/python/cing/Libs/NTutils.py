@@ -1938,14 +1938,14 @@ class NTdict(dict):
     # end def
 
     def update(self, fromDict):
-        for key, value in fromDict.iteritems():
+        for key, value in fromDict.items():
             self[key] = value
     # end def
 
     def toDict(self):
         'Convert to regular dictionary.'
         result = {}
-        for key, value in self.iteritems():
+        for key, value in self.items():
             result[ key ] = value
         return result
     # end def
@@ -2432,7 +2432,7 @@ class NTparameter(NTtree): # pylint: disable=R0904
     def update(self, fromDict):
         """Update preserves/establises the linked structure
         """
-        for key, value in fromDict.iteritems():
+        for key, value in fromDict.items():
 #            print('>>', repr(self), type(self), repr(value), type(value))
             if (type(self) == type(value) and not self.has_key(key)):
                 self.addChild2(value)
@@ -3445,7 +3445,7 @@ def nTtoXML(obj, depth=0, stream=sys.stdout, indent='\t', lineEnd='\n'):
         nTindent(depth, stream, indent)
         fprintf(stream, "<dict>")
         fprintf(stream, lineEnd)
-        for key, value in obj.iteritems():
+        for key, value in obj.items():
             nTindent(depth+1, stream, indent)
             fprintf(stream, "<key name=%s>", quote(key))
             fprintf(stream, lineEnd)
@@ -4033,7 +4033,7 @@ character. The following type codes are defined:
 'c'         char            character           1
 'b'         signed char     int                 1
 'B'         unsigned char   int                 1
-'u'         Py UNICODE      Unicode character   2
+''         Py UNICODE      Unicode character   2
 'h'         signed short    int                 2
 'H'         unsigned short  int                 2
 'i'         signed int      int                 2

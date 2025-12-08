@@ -278,8 +278,8 @@ class MeccanoPopup(BasePopup):
     div = LabelDivider(frameC,text='Alignment Tensors')
     div.grid(row=3,column=0,sticky='ew')
     
-    headingList = ['Type', u'Axial (\u03B6)',u'Rhombic (\u03B7)',
-                   u'Euler \u03B1',u'Euler \u03B2',u'Euler \u03B3']
+    headingList = ['Type', 'Axial (\u03B6)','Rhombic (\u03B7)',
+                   'Euler \u03B1','Euler \u03B2','Euler \u03B3']
     editWidgets      = [None,self.editAxialEntry,
                         self.editRhombicEntry,self.editAlphaEulerEntry,
                         self.editBetaEulerEntry,self.editGammaEulerEntry]
@@ -914,12 +914,12 @@ class MeccanoPopup(BasePopup):
          tensor = conditionState.dynamicAlignment
          if tensor:
            vals = (tensor.aAxial, tensor.aRhombic, tensor.alpha, tensor.beta, tensor.gamma)
-           dyamicTensor = u'\u03B6:%.3f \u03B7:%.3f \u03B1:%.3f \u03B2:%.3f \u03B3:%.3f ' % vals
+           dyamicTensor = '\u03B6:%.3f \u03B7:%.3f \u03B1:%.3f \u03B2:%.3f \u03B3:%.3f ' % vals
 
          tensor = conditionState.staticAlignment
          if tensor:
            vals = (tensor.aAxial, tensor.aRhombic, tensor.alpha, tensor.beta, tensor.gamma)
-           staticTensor = u'\u03B6:%.3f \u03B7:%.3f \u03B1:%.3f \u03B2:%.3f \u03B3:%.3f ' % vals
+           staticTensor = '\u03B6:%.3f \u03B7:%.3f \u03B1:%.3f \u03B2:%.3f \u03B3:%.3f ' % vals
            
          datum = [conditionState.serial,
                   conditionState.name,

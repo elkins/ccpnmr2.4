@@ -374,7 +374,7 @@ if __name__ == '__main__':
     testData = data[:nTest]
     data = data[nTest:]
     
-    #for i in xrange():
+    #for i in range():
     #  n = len(data)
     #  j = randint(0, n-1)
     #  testData.append(data.pop(j))

@@ -527,7 +527,7 @@ class Tailer(object):
         self.seek_end()
         end_pos = self.file.tell()
 
-        for _i in xrange(lines):
+        for _i in range(lines):
             if not self.seek_line():
                 break
 
@@ -543,7 +543,7 @@ class Tailer(object):
         """
         self.seek(0)
 
-        for _i in xrange(lines):
+        for _i in range(lines):
             if not self.seek_line_forward():
                 break
 

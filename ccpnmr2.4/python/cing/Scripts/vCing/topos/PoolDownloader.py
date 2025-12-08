@@ -217,7 +217,7 @@ if __name__ == "__main__":
             multi = True
         elif opt in ('-n',  '--nr'):
             poolRange = range(int(arg))
-        elif opt in ('-u', '--update'):
+        elif opt in ('-', '--update'):
             update = True
         elif opt in ('-p', '--pool'):
             pool = arg

@@ -85,7 +85,7 @@ def testSelectedPeaksPopup(argServer):
   popup = SelectedPeaksPopup(argServer.parent)
   popup.open()
    
-THROUGH_SPACE_RESIDUE_LIMITS = (('Intra only',0), (u'\u00B11',1), (u'\u00B12',2))
+THROUGH_SPACE_RESIDUE_LIMITS = (('Intra only',0), ('\u00B11',1), ('\u00B12',2))
 
 class EditPeakListsPopup(BasePopup):
   """
@@ -1333,7 +1333,7 @@ class EditPeakListsPopup(BasePopup):
       spectrum = self.peakList.dataSource
       nDim = spectrum.numDim
       isotopes = getSpectrumIsotopes(spectrum)
-      options = [u'\u0394 ppm F%d (%s):' % (i+1, iso) for i, iso in enumerate(isotopes)]
+      options = ['\u0394 ppm F%d (%s):' % (i+1, iso) for i, iso in enumerate(isotopes)]
       
       widget = MultiWidget(self, FloatEntry, useImages=False,
                            callback=self.shiftPeakList,

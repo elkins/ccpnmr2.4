@@ -4425,7 +4425,7 @@ def saveToStream(stream, topObject, mapping=None, comment=None, simplified=True,
 
         # put keys on stack
         keys = val.getFullKey(True)
-        for ii in reversed(xrange(len(keys))):
+        for ii in reversed(range(len(keys))):
           key = keys[ii]
           stack.append(key)
           if ((isinstance(key, memops.api.Implementation.MemopsObject) or isinstance(key, memops.api.Implementation.MemopsDataTypeObject))):

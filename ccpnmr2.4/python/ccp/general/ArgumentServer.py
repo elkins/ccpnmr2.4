@@ -104,7 +104,7 @@ class ArgumentServer:
       fileName = popup.getFile()
       popup.destroy()
     else:
-      fileName = raw_input('Enter file name: ').strip()
+      fileName = input('Enter file name: ').strip()
 
     return fileName
 

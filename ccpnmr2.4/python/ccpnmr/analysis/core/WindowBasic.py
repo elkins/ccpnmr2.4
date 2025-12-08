@@ -2108,7 +2108,7 @@ def initWindowMacros(project):
          ('movePeak',              'p'),
          ('movePeakAnnotation',    'q'),
          ('snapPeaks',             'P'),
-         ('popupMenu',             'u'),
+         ('popupMenu',             ''),
          ('unitePeakPositions',    'l'),
          ('unitePeakPositionsMulti','L'),
          ('orthogScrollLeft',      'j'),

@@ -387,8 +387,8 @@ class Ticks:
     n0 = int(ceil((s0+w)/delta))
     n1 = int(floor((s1-w)/delta))
  
-#    ticks = [ n * delta for n in xrange(n0, n1+1) ]
-    ticks = map(lambda x: x*delta,  xrange(n0, n1+1))
+#    ticks = [ n * delta for n in range(n0, n1+1) ]
+    ticks = map(lambda x: x*delta,  range(n0, n1+1))
  
     return ticks
  

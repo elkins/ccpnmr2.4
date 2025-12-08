@@ -1078,7 +1078,7 @@ class AnalysisPopup(BasePopup, Analysis):
                      tipText='Find, connect and assign sequentially related spin systems using peak matching')
     menuNames.append(label)
     label='Automated Seq. Assignment'
-    menu.add_command(label=label, shortcut='u',
+    menu.add_command(label=label, shortcut='',
                      image=self.iconSpecialTool, compound='left',
                      command=self.autoBackboneAssign,
                      tipText='Automatic protein sequence assignment')
@@ -1216,7 +1216,7 @@ class AnalysisPopup(BasePopup, Analysis):
                      image=self.iconTool, compound='left',
                      command=self.calcHeteroNoe,
                      tipText='A tool to quickly calculate heteronuclear NOE values by peak intensity comparison')
-    menu.add_command(label=u'3J H-H\u03B1 Coupling', shortcut='C', 
+    menu.add_command(label='3J H-H\u03B1 Coupling', shortcut='C', 
                      image=self.iconTool, compound='left',
                      command=self.calcHnHaCoupling,
                      tipText='A tool to extract amide H to alpha H 3J coupling and predict phi angles using HNHA experiments')
@@ -1245,7 +1245,7 @@ class AnalysisPopup(BasePopup, Analysis):
                                  'NMR Series',
                                  'Shift Differences',
                                  'Heteronuclear NOE',
-                                 u'3J H-H\u03B1 Coupling',
+                                 '3J H-H\u03B1 Coupling',
                                  'Follow Intensity Changes',
                                  'Follow Shift Changes',
                                  'PALES: Alignment and RDCs',

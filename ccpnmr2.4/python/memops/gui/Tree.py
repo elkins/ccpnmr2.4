@@ -675,7 +675,7 @@ class Tree(Frame):
       callbacks = [None] * n  
 
     if not editWidgets:
-      editWidgets = [[] for x in xrange(n)]  
+      editWidgets = [[] for x in range(n)]  
 
     for i, parent in enumerate(parents):
       object = objects[i]

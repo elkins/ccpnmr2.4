@@ -45,9 +45,9 @@ class LostInTranslation():
                     continue
                 value = propBaseMap[key]
                 # All that's written needs to be unicode.
-                nf.write( u"%-20s = " % key )
+                nf.write( "%-20s = " % key )
                 nf.write( value ) # might be utf-8
-                nf.write( u"\n" ) # might be utf-8
+                nf.write( "\n" ) # might be utf-8
 #                nTmessage("Lost: " + key)
             nf.close()
 
