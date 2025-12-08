@@ -61,11 +61,11 @@ import os
 
 from memops.universal.Io import getTopDirectory
 
-from distanceConstraintsIO import NmrStarDistanceConstraintFile
-from distanceConstraintsIO import NmrStarFile
-from distanceConstraintsIO import NmrStarDistanceConstraint
-from distanceConstraintsIO import NmrStarDistanceConstraintItem
-from distanceConstraintsIO import NmrStarDistanceConstraintMember
+from .distanceConstraintsIO import NmrStarDistanceConstraintFile
+from .distanceConstraintsIO import NmrStarFile
+from .distanceConstraintsIO import NmrStarDistanceConstraint
+from .distanceConstraintsIO import NmrStarDistanceConstraintItem
+from .distanceConstraintsIO import NmrStarDistanceConstraintMember
 
 #####################
 # Class definitions #

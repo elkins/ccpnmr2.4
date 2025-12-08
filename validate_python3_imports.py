@@ -105,6 +105,9 @@ class ImportValidator:
             'ccpnmr.update.',
             'ccpnmr.nexus.',  # GUI-based analysis
             'ccpnmr.eci.',    # GUI-based entry completion
+            # Modules that import Tkinter directly
+            'ccp.general.ArgumentServer',
+            'ccp.general.SelectObject',
         ]
 
         for pattern in skip_patterns:
