@@ -301,7 +301,7 @@ class BlueprintComponent(memops.api.Implementation.DataObject):
         relatedExpBlueprints = trialMolComponent.__dict__.get('relatedExpBlueprints')
         relatedExpBlueprints.remove(self)
 
-    expBlueprint(= dataDict.get('expBlueprint'))    if (not (expBlueprint(in objsToBeDeleted)):)      objKey = dataDict.get('serial')
+    expBlueprint = dataDict.get('expBlueprint'))    if (not (expBlueprintin objsToBeDeleted)):)      objKey = dataDict.get('serial')
       if (objKey is None):
         raise ApiError("""%s._singleDelete:
          Key could not be calculated for object to be deleted""" % self.qualifiedName
@@ -2690,7 +2690,7 @@ class BlueprintComponent(memops.api.Implementation.DataObject):
 
   activeAccess = memops.api.Implementation.DataObject.activeAccess
   
-  expBlueprint(= property(getExpBlueprint,  None, None,)
+  expBlueprint = property(getExpBlueprint,  None, None,)
   r"""The trial to which this component belongs.
   """)
   
@@ -2889,7 +2889,7 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
       blueprintDbRefs = dbRef.__dict__.get('blueprintDbRefs')
       blueprintDbRefs.remove(self)
 
-    expBlueprint(= dataDict.get('expBlueprint'))    if (not (expBlueprint(in objsToBeDeleted)):)      objKey = dataDict.get('serial')
+    expBlueprint = dataDict.get('expBlueprint'))    if (not (expBlueprintin objsToBeDeleted)):)      objKey = dataDict.get('serial')
       if (objKey is None):
         raise ApiError("""%s._singleDelete:
          Key could not be calculated for object to be deleted""" % self.qualifiedName
@@ -3531,7 +3531,7 @@ class BlueprintDbRef(memops.api.Implementation.DataObject):
   r"""The database reference to which this entry belongs.
   """)
   
-  expBlueprint(= property(getExpBlueprint,  None, None,)
+  expBlueprint = property(getExpBlueprint,  None, None,)
   r"""The trial to which this entry belongs.
   """)
   
@@ -3733,7 +3733,7 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
       blueprintStatuss = experiment.__dict__.get('blueprintStatuss')
       blueprintStatuss.remove(self)
 
-    expBlueprint(= dataDict.get('expBlueprint'))    if (not (expBlueprint(in objsToBeDeleted)):)      objKey = dataDict.get('serial')
+    expBlueprint = dataDict.get('expBlueprint'))    if (not (expBlueprintin objsToBeDeleted)):)      objKey = dataDict.get('serial')
       if (objKey is None):
         raise ApiError("""%s._singleDelete:
          Key could not be calculated for object to be deleted""" % self.qualifiedName
@@ -4531,7 +4531,7 @@ class BlueprintStatus(memops.api.Implementation.DataObject):
   r"""
   """)
   
-  expBlueprint(= property(getExpBlueprint,  None, None,)
+  expBlueprint = property(getExpBlueprint,  None, None,)
   r"""parent link
   """)
   
@@ -7878,7 +7878,7 @@ class ExpBlueprintStore(memops.api.Implementation.TopObject):
 
     expBlueprints = dataDict.get('expBlueprints').values()
     for expBlueprint in expBlueprints:
-    if (not (expBlueprint(in objsToBeDeleted)):)        objsToBeDeleted.add(expBlueprint)
+    if (not (expBlueprintin objsToBeDeleted)):)        objsToBeDeleted.add(expBlueprint)
         objsToBeChecked.append(expBlueprint)
 
     memopsRoot = dataDict.get('memopsRoot')

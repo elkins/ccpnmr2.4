@@ -288,7 +288,7 @@ class Experiment(memops.api.Implementation.DataObject):
       topObject = creator.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
-    expBlueprint(= dataDict.get('expBlueprint'))    if (expBlueprint(is not None):)      topObject = expBlueprint.__dict__.get('topObject')
+    expBlueprint = dataDict.get('expBlueprint'))    if (expBlueprintis not None):)      topObject = expBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     experimentType = dataDict.get('experimentType')
@@ -369,7 +369,7 @@ class Experiment(memops.api.Implementation.DataObject):
       createdExps = creator.__dict__.get('createdExps')
       createdExps.remove(self)
 
-    expBlueprint(= dataDict.get('expBlueprint'))    if ((expBlueprint(is not None and not (expBlueprint(in objsToBeDeleted))):)      experiments = expBlueprint.__dict__.get('experiments'))      experiments.remove(self)
+    expBlueprint = dataDict.get('expBlueprint'))    if ((expBlueprintis not None and not (expBlueprintin objsToBeDeleted))):)      experiments = expBlueprint.__dict__.get('experiments'))      experiments.remove(self)
 
     experimentGroup = dataDict.get('experimentGroup')
     if ((experimentGroup is not None and not (experimentGroup in objsToBeDeleted))):
@@ -4982,7 +4982,7 @@ class Experiment(memops.api.Implementation.DataObject):
   experiment.
   """)
   
-  expBlueprint(= property(getExpBlueprint, setExpBlueprint, None,)  r"""The trial on which this experiment is done. ExpBlueprint(can therefore)
+  expBlueprint = property(getExpBlueprint, setExpBlueprint, None,)  r"""The trial on which this experiment is done. ExpBlueprint(can therefore)
   also be seen as way of logically grouping experiments.
   """)
   
@@ -12161,7 +12161,7 @@ class ImportSample(Experiment):
       topObject = creator.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
-    expBlueprint(= dataDict.get('expBlueprint'))    if (expBlueprint(is not None):)      topObject = expBlueprint.__dict__.get('topObject')
+    expBlueprint = dataDict.get('expBlueprint'))    if (expBlueprintis not None):)      topObject = expBlueprint.__dict__.get('topObject')
       topObjectsToCheck.add(topObject)
 
     experimentType = dataDict.get('experimentType')
@@ -12242,7 +12242,7 @@ class ImportSample(Experiment):
       createdExps = creator.__dict__.get('createdExps')
       createdExps.remove(self)
 
-    expBlueprint(= dataDict.get('expBlueprint'))    if ((expBlueprint(is not None and not (expBlueprint(in objsToBeDeleted))):)      experiments = expBlueprint.__dict__.get('experiments'))      experiments.remove(self)
+    expBlueprint = dataDict.get('expBlueprint'))    if ((expBlueprintis not None and not (expBlueprintin objsToBeDeleted))):)      experiments = expBlueprint.__dict__.get('experiments'))      experiments.remove(self)
 
     experimentGroup = dataDict.get('experimentGroup')
     if ((experimentGroup is not None and not (experimentGroup in objsToBeDeleted))):
@@ -13069,7 +13069,7 @@ class ImportSample(Experiment):
 
   getEndDate = Experiment.getEndDate
 
-  getExpBlueprint(= Experiment.getExpBlueprint)
+  getExpBlueprint = Experiment.getExpBlueprint)
   getExpandedKey = memops.api.Implementation.MemopsObject.getExpandedKey
 
   getExperimentGroup = Experiment.getExperimentGroup
@@ -13179,7 +13179,7 @@ class ImportSample(Experiment):
 
   setEndDate = Experiment.setEndDate
 
-  setExpBlueprint(= Experiment.setExpBlueprint)
+  setExpBlueprint = Experiment.setExpBlueprint)
   setExperimentGroup = Experiment.setExperimentGroup
 
   setExperimentType = Experiment.setExperimentType
@@ -13349,7 +13349,7 @@ class ImportSample(Experiment):
 
   creator = Experiment.creator
 
-  expBlueprint(= Experiment.expBlueprint)
+  expBlueprint = Experiment.expBlueprint)
   experimentGroup = Experiment.experimentGroup
 
   experimentStore = Experiment.experimentStore

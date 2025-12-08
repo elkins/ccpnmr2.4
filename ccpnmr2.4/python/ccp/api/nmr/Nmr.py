@@ -11283,7 +11283,7 @@ applicable:
 stateSetType: cis/trans
 ChainState names: cis, trans
 Links: 
-to the two atoms that are cis or trans (in the case of peptide bonds to 
+to the two atoms that are cis or trans in the case of peptide bonds to 
 the two alpha carbons of the residues involved). 
 
 stateSetType: 
@@ -14417,7 +14417,7 @@ given dimension can have several alternative referencings.
   qualifiedName = memops.api.Implementation.ComplexDataType.qualifiedName
   
   refPoint = property(getRefPoint, setRefPoint, None,
-  r"""Point number (in floating point rather than integer) to which 
+  r"""Point number in floating point rather than integer) to which 
   referencing value applies
   """)
   
@@ -41306,11 +41306,11 @@ of ExpDims as well.
   """)
   
   spinningAngle = property(getSpinningAngle, setSpinningAngle, None,
-  r"""NMR tube spinning angle (in degrees) relative to the magnet bore axis.
+  r"""NMR tube spinning angle in degrees) relative to the magnet bore axis.
   """)
   
   spinningRate = property(getSpinningRate, setSpinningRate, None,
-  r"""NMR tube spinning rate (in Hz)
+  r"""NMR tube spinning rate in Hz)
   """)
   
   userExpCode = property(getUserExpCode, setUserExpCode, None,
@@ -59308,7 +59308,7 @@ decayRate.
   applicationData = memops.api.Implementation.DataObject.applicationData
   
   boxWidth = property(getBoxWidth, setBoxWidth, None,
-  r"""The full width of the peak footprint(in points, i.e. the width of the)
+  r"""The full width of the peak footprintin points, i.e. the width of the)
   area that should be considered for integration, fitting, etc. It is not
   a very precise definition, but this is an input parameter rather than an 
   output parameter.
@@ -59346,7 +59346,7 @@ decayRate.
   standard deviation of measured position
   boxWidth - footprint(width of)
   peak for integration limits etc.
-  decayRate - fitted decay rate (in Hz)
+  decayRate - fitted decay rate in Hz)
   """)
 
   metaclass = memops.api.Implementation.ComplexDataType.metaclass
@@ -59361,7 +59361,7 @@ decayRate.
   packageShortName = memops.api.Implementation.ComplexDataType.packageShortName
   
   phase = property(getPhase, setPhase, None,
-  r"""Phase (in degrees) of peak
+  r"""Phase in degrees) of peak
   """)
   
   phaseError = property(getPhaseError, setPhaseError, None,
@@ -59375,7 +59375,7 @@ decayRate.
   """)
   
   positionError = property(getPositionError, setPositionError, None,
-  r"""Uncertainty (standard deviation) of peak position (in point numbers).
+  r"""Uncertainty (standard deviation) of peak position in point numbers).
   """)
 
   qualifiedName = memops.api.Implementation.ComplexDataType.qualifiedName
@@ -100986,12 +100986,12 @@ the original data.
   packageShortName = memops.api.Implementation.ComplexDataType.packageShortName
   
   phase0 = property(getPhase0, setPhase0, None,
-  r"""Zero order phase correction (in degrees) applied after Fourier 
+  r"""Zero order phase correction in degrees) applied after Fourier 
   transformation.
   """)
   
   phase1 = property(getPhase1, setPhase1, None,
-  r"""First order phase correction (in degrees) applied after Fourier 
+  r"""First order phase correction in degrees) applied after Fourier 
   transformation. By definition the point fo no effect of the first order 
   phase correction is point number one (before removal of points, if any). 
   
@@ -138023,7 +138023,7 @@ class SpectralDensity(DerivedData):
   figOfMerit = DerivedData.figOfMerit
   
   frequency = property(getFrequency, setFrequency, None,
-  r"""The frequency that the spectral density refers to (in MHz).
+  r"""The frequency that the spectral density refers to in MHz).
   """)
 
   inConstructor = memops.api.Implementation.ComplexDataType.inConstructor
@@ -145569,7 +145569,7 @@ measurements that do not fit any of the predefined categories.
   serial = DerivedDataList.serial
   
   sf = property(getSf, setSf, None,
-  r"""spectrometer frequency (in MHz) at which measurements were carried out
+  r"""spectrometer frequency in MHz) at which measurements were carried out
   """)
   
   unit = property(getUnit, setUnit, None,
@@ -147138,7 +147138,7 @@ class IsotropicS2List(DerivedDataList):
   serial = DerivedDataList.serial
   
   sf = property(getSf, setSf, None,
-  r"""Spectrometer frequency (in MHz) where order parameters were determined.
+  r"""Spectrometer frequency in MHz) where order parameters were determined.
   """)
   
   tauEUnit = property(getTauEUnit, setTauEUnit, None,

@@ -1386,13 +1386,13 @@ class ChemElement(memops.api.Implementation.DataObject):
   """)
   
   atomicRadius = property(getAtomicRadius, setAtomicRadius, None,
-  r"""Standard atomic radius (in Angstrom)
+  r"""Standard atomic radius in Angstrom)
   """)
 
   className = memops.api.Implementation.ComplexDataType.className
   
   covalentRadius = property(getCovalentRadius, setCovalentRadius, None,
-  r"""Standard covalent radius (in Angstrom).
+  r"""Standard covalent radius in Angstrom).
   """)
 
   fieldNames = memops.api.Implementation.ComplexDataType.fieldNames
@@ -1402,7 +1402,7 @@ class ChemElement(memops.api.Implementation.DataObject):
   isDeleted = memops.api.Implementation.MemopsObject.isDeleted
   
   mass = property(getMass, setMass, None,
-  r"""Standard mass (in atomic mass units), equal to average mass of natural 
+  r"""Standard mass in atomic mass units), equal to average mass of natural 
   isotopic composition.
   """)
 
@@ -4114,7 +4114,7 @@ class Isotope(memops.api.Implementation.DataObject):
   fieldNames = memops.api.Implementation.ComplexDataType.fieldNames
   
   gyroMagneticRatio = property(getGyroMagneticRatio, setGyroMagneticRatio, None,
-  r"""Gyromagnetic ratio (in rad/Ts)
+  r"""Gyromagnetic ratio in rad/Ts)
   """)
   
   halfLife = property(getHalfLife, setHalfLife, None,
@@ -4141,7 +4141,7 @@ class Isotope(memops.api.Implementation.DataObject):
   """)
   
   mass = property(getMass, setMass, None,
-  r"""Isotope mass (in atomic mass units).
+  r"""Isotope mass in atomic mass units).
   """)
   
   massNumber = property(getMassNumber, setMassNumber, None,

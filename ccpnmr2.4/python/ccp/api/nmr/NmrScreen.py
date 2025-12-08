@@ -8139,7 +8139,7 @@ class NmrScreen(memops.api.Implementation.TopObject):
   """)
   
   temperature = property(getTemperature, setTemperature, None,
-  r"""Temperature (in K) for all experiments in NmrScreen. NB, it is up to 
+  r"""Temperature in K) for all experiments in NmrScreen. NB, it is up to 
   users to make sure that all experiments do in fact corrspond to this 
   temperature. If not set, emperatures must be extracted form the 
   DataSource experimental conditions.

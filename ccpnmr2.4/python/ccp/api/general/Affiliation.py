@@ -6194,7 +6194,9 @@ class Person(memops.api.Implementation.DataObject):
         editors = editorCitation.__dict__.get('editors')
         editors.remove(self)
 
-    for expBlueprint in dataDict.get('expBlueprints'):      if (not (expBlueprint(in objsToBeDeleted)):)        expBlueprint.__dict__['owner'] = None
+    for expBlueprint in dataDict.get('expBlueprints'):
+      if (not (expBlueprint in objsToBeDeleted)):
+        expBlueprint.__dict__['owner'] = None
 
     for target in dataDict.get('targets'):
       if (not (target in objsToBeDeleted)):
